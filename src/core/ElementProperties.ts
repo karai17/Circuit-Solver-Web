@@ -127,7 +127,7 @@ class ElementProperties {
 			Resistance: 1.0 / settings.R_MAX,
 			tag: 'DIO',
 			units: '',
-			options: ['Emission Coefficient', 'Saturation Current', 'Series Resistance'],
+			options: ['Emission Coefficient', 'Saturation Current'],
 			options_units: ['', 'A'],
 			option_limits: {
 				'Emission Coefficient': [settings.MIN_GAIN, settings.MAX_GAIN],
@@ -146,7 +146,7 @@ class ElementProperties {
 			Resistance: 1.0 / settings.R_MAX,
 			tag: 'LED',
 			units: '',
-			options: ['Emission Coefficient', 'Saturation Current', 'Wavelength', 'Series Resistance'],
+			options: ['Emission Coefficient', 'Saturation Current', 'Wavelength'],
 			options_units: ['', 'A', 'nm'],
 			option_limits: {
 				'Emission Coefficient': [settings.MIN_GAIN, settings.MAX_GAIN],
