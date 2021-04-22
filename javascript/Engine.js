@@ -1070,48 +1070,50 @@ function load_app() {
                 if (global.flags.flag_add_element) {
                     drag_padding = workspace.bounds.get_width() * 0.025;
                     drag_line_buffer = [];
-                    if (view_port.left <= workspace.bounds.left ||
-                        view_port.top <= workspace.bounds.top ||
-                        view_port.right >= workspace.bounds.right ||
-                        view_port.bottom >= workspace.bounds.bottom) {
-                        canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-                        drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                            workspace.bounds.bottom - drag_padding,
-                            workspace.bounds.right - drag_padding,
-                            workspace.bounds.bottom - drag_padding]);
-                        drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                            workspace.bounds.top + drag_padding,
-                            workspace.bounds.right - drag_padding,
-                            workspace.bounds.top + drag_padding]);
-                        drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                            workspace.bounds.top + drag_padding,
-                            workspace.bounds.left + drag_padding,
-                            workspace.bounds.bottom - drag_padding]);
-                        drag_line_buffer.push([workspace.bounds.right - drag_padding,
-                            workspace.bounds.top + drag_padding,
-                            workspace.bounds.right - drag_padding,
-                            workspace.bounds.bottom - drag_padding]);
-                        canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
-                    }
-                    else {
-                        canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-                        drag_line_buffer.push([view_port.left + drag_padding,
-                            view_port.bottom - drag_padding,
-                            view_port.right - drag_padding,
-                            view_port.bottom - drag_padding]);
-                        drag_line_buffer.push([view_port.left + drag_padding,
-                            view_port.top + drag_padding,
-                            view_port.right - drag_padding,
-                            view_port.top + drag_padding]);
-                        drag_line_buffer.push([view_port.left + drag_padding,
-                            view_port.top + drag_padding,
-                            view_port.left + drag_padding,
-                            view_port.bottom - drag_padding]);
-                        drag_line_buffer.push([view_port.right - drag_padding,
-                            view_port.top + drag_padding,
-                            view_port.right - drag_padding,
-                            view_port.bottom - drag_padding]);
-                        canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                    if (!global.variables.element_on_board) {
+                        if (view_port.left <= workspace.bounds.left ||
+                            view_port.top <= workspace.bounds.top ||
+                            view_port.right >= workspace.bounds.right ||
+                            view_port.bottom >= workspace.bounds.bottom) {
+                            canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+                            drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                workspace.bounds.bottom - drag_padding,
+                                workspace.bounds.right - drag_padding,
+                                workspace.bounds.bottom - drag_padding]);
+                            drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                workspace.bounds.top + drag_padding,
+                                workspace.bounds.right - drag_padding,
+                                workspace.bounds.top + drag_padding]);
+                            drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                workspace.bounds.top + drag_padding,
+                                workspace.bounds.left + drag_padding,
+                                workspace.bounds.bottom - drag_padding]);
+                            drag_line_buffer.push([workspace.bounds.right - drag_padding,
+                                workspace.bounds.top + drag_padding,
+                                workspace.bounds.right - drag_padding,
+                                workspace.bounds.bottom - drag_padding]);
+                            canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                        }
+                        else {
+                            canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
+                            drag_line_buffer.push([view_port.left + drag_padding,
+                                view_port.bottom - drag_padding,
+                                view_port.right - drag_padding,
+                                view_port.bottom - drag_padding]);
+                            drag_line_buffer.push([view_port.left + drag_padding,
+                                view_port.top + drag_padding,
+                                view_port.right - drag_padding,
+                                view_port.top + drag_padding]);
+                            drag_line_buffer.push([view_port.left + drag_padding,
+                                view_port.top + drag_padding,
+                                view_port.left + drag_padding,
+                                view_port.bottom - drag_padding]);
+                            drag_line_buffer.push([view_port.right - drag_padding,
+                                view_port.top + drag_padding,
+                                view_port.right - drag_padding,
+                                view_port.bottom - drag_padding]);
+                            canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                        }
                     }
                 }
                 else {
@@ -1199,48 +1201,50 @@ function load_app() {
                         if (global.flags.flag_add_element) {
                             drag_padding = workspace.bounds.get_width() * 0.025;
                             drag_line_buffer = [];
-                            if (view_port.left <= workspace.bounds.left ||
-                                view_port.top <= workspace.bounds.top ||
-                                view_port.right >= workspace.bounds.right ||
-                                view_port.bottom >= workspace.bounds.bottom) {
-                                canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-                                drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                                    workspace.bounds.bottom - drag_padding,
-                                    workspace.bounds.right - drag_padding,
-                                    workspace.bounds.bottom - drag_padding]);
-                                drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                                    workspace.bounds.top + drag_padding,
-                                    workspace.bounds.right - drag_padding,
-                                    workspace.bounds.top + drag_padding]);
-                                drag_line_buffer.push([workspace.bounds.left + drag_padding,
-                                    workspace.bounds.top + drag_padding,
-                                    workspace.bounds.left + drag_padding,
-                                    workspace.bounds.bottom - drag_padding]);
-                                drag_line_buffer.push([workspace.bounds.right - drag_padding,
-                                    workspace.bounds.top + drag_padding,
-                                    workspace.bounds.right - drag_padding,
-                                    workspace.bounds.bottom - drag_padding]);
-                                canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
-                            }
-                            else {
-                                canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-                                drag_line_buffer.push([view_port.left + drag_padding,
-                                    view_port.bottom - drag_padding,
-                                    view_port.right - drag_padding,
-                                    view_port.bottom - drag_padding]);
-                                drag_line_buffer.push([view_port.left + drag_padding,
-                                    view_port.top + drag_padding,
-                                    view_port.right - drag_padding,
-                                    view_port.top + drag_padding]);
-                                drag_line_buffer.push([view_port.left + drag_padding,
-                                    view_port.top + drag_padding,
-                                    view_port.left + drag_padding,
-                                    view_port.bottom - drag_padding]);
-                                drag_line_buffer.push([view_port.right - drag_padding,
-                                    view_port.top + drag_padding,
-                                    view_port.right - drag_padding,
-                                    view_port.bottom - drag_padding]);
-                                canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                            if (!global.variables.element_on_board) {
+                                if (view_port.left <= workspace.bounds.left ||
+                                    view_port.top <= workspace.bounds.top ||
+                                    view_port.right >= workspace.bounds.right ||
+                                    view_port.bottom >= workspace.bounds.bottom) {
+                                    canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+                                    drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                        workspace.bounds.bottom - drag_padding,
+                                        workspace.bounds.right - drag_padding,
+                                        workspace.bounds.bottom - drag_padding]);
+                                    drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                        workspace.bounds.top + drag_padding,
+                                        workspace.bounds.right - drag_padding,
+                                        workspace.bounds.top + drag_padding]);
+                                    drag_line_buffer.push([workspace.bounds.left + drag_padding,
+                                        workspace.bounds.top + drag_padding,
+                                        workspace.bounds.left + drag_padding,
+                                        workspace.bounds.bottom - drag_padding]);
+                                    drag_line_buffer.push([workspace.bounds.right - drag_padding,
+                                        workspace.bounds.top + drag_padding,
+                                        workspace.bounds.right - drag_padding,
+                                        workspace.bounds.bottom - drag_padding]);
+                                    canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                                }
+                                else {
+                                    canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
+                                    drag_line_buffer.push([view_port.left + drag_padding,
+                                        view_port.bottom - drag_padding,
+                                        view_port.right - drag_padding,
+                                        view_port.bottom - drag_padding]);
+                                    drag_line_buffer.push([view_port.left + drag_padding,
+                                        view_port.top + drag_padding,
+                                        view_port.right - drag_padding,
+                                        view_port.top + drag_padding]);
+                                    drag_line_buffer.push([view_port.left + drag_padding,
+                                        view_port.top + drag_padding,
+                                        view_port.left + drag_padding,
+                                        view_port.bottom - drag_padding]);
+                                    drag_line_buffer.push([view_port.right - drag_padding,
+                                        view_port.top + drag_padding,
+                                        view_port.right - drag_padding,
+                                        view_port.bottom - drag_padding]);
+                                    canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
+                                }
                             }
                         }
                         else {
