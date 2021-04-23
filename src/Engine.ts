@@ -1024,8 +1024,8 @@ function load_app(): void {
 				if (global.flags.flag_build_element) {
 					node_space_x_cache = 0.29375 * global.variables.node_space_x;
 					node_space_y_cache = 0.29375 * global.variables.node_space_y;
-					mult_node_space_x_cache = 1.25 * node_space_x_cache;
-					mult_node_space_y_cache = 1.25 * node_space_y_cache;
+					mult_node_space_x_cache = 1.75 * node_space_x_cache;
+					mult_node_space_y_cache = 1.75 * node_space_y_cache;
 					node_length = nodes.length;
 					for (var i: number = 0; i < node_length; i++) {
 						nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
@@ -1156,8 +1156,8 @@ function load_app(): void {
 						if (global.flags.flag_build_element) {
 							node_space_x_cache = 0.29375 * global.variables.node_space_x;
 							node_space_y_cache = 0.29375 * global.variables.node_space_y;
-							mult_node_space_x_cache = 1.25 * node_space_x_cache;
-							mult_node_space_y_cache = 1.25 * node_space_y_cache;
+							mult_node_space_x_cache = 1.75 * node_space_x_cache;
+							mult_node_space_y_cache = 1.75 * node_space_y_cache;
 							node_length = nodes.length;
 							for (var i: number = 0; i < node_length; i++) {
 								nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
