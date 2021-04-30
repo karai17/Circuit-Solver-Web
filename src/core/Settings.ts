@@ -63,10 +63,10 @@ class Settings {
 		this.R_MAX = 1e9;
 		this.INV_R_MAX = 1.0 / this.R_MAX;
 		this.R_SHUNT = 1e12;
-		this.RELTOL = 1e-1;
-		this.ABSTOL = 1e-1;
-		this.VNTOL = 1e-1;
-		this.TOLERANCE = 1e-1;
+		this.RELTOL = 1e-3;
+		this.ABSTOL = 1e-3;
+		this.VNTOL = 1e-3;
+		this.TOLERANCE = 1e-3;
 		this.ITL4 = 96;
 		this.ITL1 = 24;
 		this.MAX_VOLTAGE = 500e6;

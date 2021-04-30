@@ -153,7 +153,7 @@ var fps_div: number = 0;
 var watermark_paint: Paint = new Paint();
 var web_link_text_paint: Paint = new Paint();
 var drag_text_paint: Paint = new Paint();
-var drag_line_paint: Paint = new Paint();
+var drag_fill_paint: Paint = new Paint();
 var drag_padding: number = 0;
 var drag_line_buffer: Array<Array<number>> = [];
 var webpage_document_title: HTMLElement = global.CONSTANTS.NULL;
@@ -204,16 +204,16 @@ function load_app(): void {
 	drag_text_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
 	drag_text_paint.set_alpha(255);
 	drag_text_paint.set_paint_align(paint.align.CENTER);
-	drag_line_paint = new Paint();
-	drag_line_paint.set_paint_style(paint.style.STROKE);
-	drag_line_paint.set_paint_cap(paint.cap.ROUND);
-	drag_line_paint.set_paint_join(paint.join.ROUND);
-	drag_line_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-	drag_line_paint.set_color(global.COLORS.GENERAL_WHITE_COLOR);
-	drag_line_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
-	drag_line_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
-	drag_line_paint.set_alpha(255);
-	drag_line_paint.set_paint_align(paint.align.CENTER);
+	drag_fill_paint = new Paint();
+	drag_fill_paint.set_paint_style(paint.style.FILL);
+	drag_fill_paint.set_paint_cap(paint.cap.ROUND);
+	drag_fill_paint.set_paint_join(paint.join.ROUND);
+	drag_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+	drag_fill_paint.set_color(global.COLORS.GENERAL_GREEN_COLOR);
+	drag_fill_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+	drag_fill_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
+	drag_fill_paint.set_alpha(127);
+	drag_fill_paint.set_paint_align(paint.align.CENTER);
 
 	function initialize(step: number): void {
 		if (step === 0) {
@@ -367,8 +367,6 @@ function load_app(): void {
 				}
 			}
 		}
-		mouse_event.preventDefault();
-		mouse_event.stopPropagation();
 	}
 	function mouse_move(mouse_event: MouseEvent): void {
 		if (!global.flags.flag_mouse_move_event) {
@@ -381,8 +379,6 @@ function load_app(): void {
 				}
 			}
 		}
-		mouse_event.preventDefault();
-		mouse_event.stopPropagation();
 	}
 	function mouse_up(mouse_event: MouseEvent): void {
 		if (mouse_event_latch) {
@@ -395,24 +391,18 @@ function load_app(): void {
 				}
 			}
 		}
-		mouse_event.preventDefault();
-		mouse_event.stopPropagation();
 	}
 	function mouse_wheel(mouse_event: MouseEvent): void {
 		if (!global.flags.flag_mouse_wheel_event && !MOBILE_MODE) {
 			global.flags.flag_mouse_wheel_event = true;
 			global.events.mouse_wheel_event_queue.push(mouse_event);
 		}
-		mouse_event.preventDefault();
-		mouse_event.stopPropagation();
 	}
 	function double_click(mouse_event: MouseEvent): void {
 		if (!MOBILE_MODE) {
 			global.flags.flag_mouse_double_click_event = true;
 			global.events.mouse_double_click_event_queue.push(mouse_event);
 		}
-		mouse_event.preventDefault();
-		mouse_event.stopPropagation();
 	}
 	function key_down(key_event: KeyboardEvent): void {
 		global.flags.flag_key_down_event = true;
@@ -423,8 +413,6 @@ function load_app(): void {
 			ctrl: key_event.getModifierState('Control'),
 			caps: key_event.getModifierState('CapsLock')
 		});
-		key_event.preventDefault();
-		key_event.stopPropagation();
 	}
 	function key_up(key_event: KeyboardEvent): void {
 		global.flags.flag_key_up_event = true;
@@ -435,8 +423,6 @@ function load_app(): void {
 			ctrl: key_event.getModifierState('Control'),
 			caps: key_event.getModifierState('CapsLock')
 		});
-		key_event.preventDefault();
-		key_event.stopPropagation();
 	}
 	function resize_components(): void {
 		global.variables.natural_height = 2 * (view_port.view_height * global.settings.WORKSPACE_RATIO_Y);
@@ -725,8 +711,8 @@ function load_app(): void {
 				web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 				drag_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
 				drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
-				drag_line_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-				drag_line_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+				drag_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+				drag_fill_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 				global.variables.mouse_x = 0;
 				global.variables.mouse_y = 0;
 				resize_components();
@@ -1072,49 +1058,20 @@ function load_app(): void {
 				}
 				if (global.flags.flag_add_element) {
 					drag_padding = workspace.bounds.get_width() * 0.025;
-					drag_line_buffer = [];
 					if (!global.variables.element_on_board) {
 						if (view_port.left <= workspace.bounds.left ||
 							view_port.top <= workspace.bounds.top ||
 							view_port.right >= workspace.bounds.right ||
 							view_port.bottom >= workspace.bounds.bottom) {
+							canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding,
+								workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding,
+								drag_fill_paint);
 							canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-							drag_line_buffer.push([workspace.bounds.left + drag_padding,
-							workspace.bounds.bottom - drag_padding,
-							workspace.bounds.right - drag_padding,
-							workspace.bounds.bottom - drag_padding]);
-							drag_line_buffer.push([workspace.bounds.left + drag_padding,
-							workspace.bounds.top + drag_padding,
-							workspace.bounds.right - drag_padding,
-							workspace.bounds.top + drag_padding]);
-							drag_line_buffer.push([workspace.bounds.left + drag_padding,
-							workspace.bounds.top + drag_padding,
-							workspace.bounds.left + drag_padding,
-							workspace.bounds.bottom - drag_padding]);
-							drag_line_buffer.push([workspace.bounds.right - drag_padding,
-							workspace.bounds.top + drag_padding,
-							workspace.bounds.right - drag_padding,
-							workspace.bounds.bottom - drag_padding]);
-							canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
 						} else {
+							canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding,
+								view_port.right - drag_padding, view_port.bottom - drag_padding,
+								drag_fill_paint);
 							canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-							drag_line_buffer.push([view_port.left + drag_padding,
-							view_port.bottom - drag_padding,
-							view_port.right - drag_padding,
-							view_port.bottom - drag_padding]);
-							drag_line_buffer.push([view_port.left + drag_padding,
-							view_port.top + drag_padding,
-							view_port.right - drag_padding,
-							view_port.top + drag_padding]);
-							drag_line_buffer.push([view_port.left + drag_padding,
-							view_port.top + drag_padding,
-							view_port.left + drag_padding,
-							view_port.bottom - drag_padding]);
-							drag_line_buffer.push([view_port.right - drag_padding,
-							view_port.top + drag_padding,
-							view_port.right - drag_padding,
-							view_port.bottom - drag_padding]);
-							canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
 						}
 					}
 				} else {
@@ -1203,49 +1160,20 @@ function load_app(): void {
 						}
 						if (global.flags.flag_add_element) {
 							drag_padding = workspace.bounds.get_width() * 0.025;
-							drag_line_buffer = [];
 							if (!global.variables.element_on_board) {
 								if (view_port.left <= workspace.bounds.left ||
 									view_port.top <= workspace.bounds.top ||
 									view_port.right >= workspace.bounds.right ||
 									view_port.bottom >= workspace.bounds.bottom) {
+									canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding,
+										workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding,
+										drag_fill_paint);
 									canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-									drag_line_buffer.push([workspace.bounds.left + drag_padding,
-									workspace.bounds.bottom - drag_padding,
-									workspace.bounds.right - drag_padding,
-									workspace.bounds.bottom - drag_padding]);
-									drag_line_buffer.push([workspace.bounds.left + drag_padding,
-									workspace.bounds.top + drag_padding,
-									workspace.bounds.right - drag_padding,
-									workspace.bounds.top + drag_padding]);
-									drag_line_buffer.push([workspace.bounds.left + drag_padding,
-									workspace.bounds.top + drag_padding,
-									workspace.bounds.left + drag_padding,
-									workspace.bounds.bottom - drag_padding]);
-									drag_line_buffer.push([workspace.bounds.right - drag_padding,
-									workspace.bounds.top + drag_padding,
-									workspace.bounds.right - drag_padding,
-									workspace.bounds.bottom - drag_padding]);
-									canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
 								} else {
+									canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding,
+										view_port.right - drag_padding, view_port.bottom - drag_padding,
+										drag_fill_paint);
 									canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-									drag_line_buffer.push([view_port.left + drag_padding,
-									view_port.bottom - drag_padding,
-									view_port.right - drag_padding,
-									view_port.bottom - drag_padding]);
-									drag_line_buffer.push([view_port.left + drag_padding,
-									view_port.top + drag_padding,
-									view_port.right - drag_padding,
-									view_port.top + drag_padding]);
-									drag_line_buffer.push([view_port.left + drag_padding,
-									view_port.top + drag_padding,
-									view_port.left + drag_padding,
-									view_port.bottom - drag_padding]);
-									drag_line_buffer.push([view_port.right - drag_padding,
-									view_port.top + drag_padding,
-									view_port.right - drag_padding,
-									view_port.bottom - drag_padding]);
-									canvas.draw_dashed_line_buffer(drag_line_buffer, [4, 12], drag_line_paint);
 								}
 							}
 						} else {
