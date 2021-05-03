@@ -42,9 +42,18 @@ class GraphicsEngine {
         this.radiusp = 0;
         this.end_degree_radians = 0;
         this.start_degree_radians = 0;
+        this.last_clear_x = 0;
+        this.last_clear_y = 0;
+        this.last_clear_width = 0;
+        this.last_clear_height = 0;
+        this.last_clear_x_int = 0;
+        this.last_clear_y_int = 0;
+        this.last_clear_width_int = 0;
+        this.last_clear_height_int = 0;
     }
     set_context(ctx) {
         this.ctx = ctx;
+        this.on_resize();
     }
     get_context() {
         return this.ctx;
@@ -60,6 +69,13 @@ class GraphicsEngine {
         this.last_text_size = -1;
         this.last_text_align = '';
         this.last_line_cap = '';
+        this.last_clear_x = -1;
+        this.last_clear_y = -1;
+        this.last_clear_width = -1;
+        this.last_clear_height = -1;
+    }
+    begin() {
+        this.ctx.beginPath();
     }
     apply_paint(paint, is_text) {
         this.ctx.beginPath();
@@ -114,14 +130,6 @@ class GraphicsEngine {
         this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + x2) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + y2) >> global.CONSTANTS.ZERO);
         this.ctx.stroke();
     }
-    draw_dashed_line(x1, y1, x2, y2, pattern, paint) {
-        this.apply_paint(paint, false);
-        this.ctx.setLineDash(pattern);
-        this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + x1) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + y1) >> global.CONSTANTS.ZERO);
-        this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + x2) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + y2) >> global.CONSTANTS.ZERO);
-        this.ctx.stroke();
-        this.ctx.setLineDash([]);
-    }
     draw_line_buffer(coords, paint) {
         this.apply_paint(paint, false);
         for (var i = coords.length - 1; i > -1; i--) {
@@ -130,17 +138,6 @@ class GraphicsEngine {
             this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
         }
         this.ctx.stroke();
-    }
-    draw_dashed_line_buffer(coords, pattern, paint) {
-        this.apply_paint(paint, false);
-        this.ctx.setLineDash(pattern);
-        for (var i = coords.length - 1; i > -1; i--) {
-            this.cache = coords[i];
-            this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO);
-            this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
-        }
-        this.ctx.stroke();
-        this.ctx.setLineDash([]);
     }
     draw_rect(left, top, right, bottom, paint) {
         this.width = (global.CONSTANTS.ZERO_PT_FIVE + (right - left)) >> global.CONSTANTS.ZERO;
@@ -484,7 +481,23 @@ class GraphicsEngine {
         this.ctx.clearRect(0, 0, (_surface.width + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO, (_surface.height + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO);
     }
     clear_xywh(x, y, w, h) {
-        this.ctx.clearRect((x - this.padding + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO, (y - this.padding + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO, ((w + this.padding + global.CONSTANTS.ZERO_PT_FIVE) << 1) >> global.CONSTANTS.ZERO, ((h + this.padding + global.CONSTANTS.ZERO_PT_FIVE) << 1) >> global.CONSTANTS.ZERO);
+        if (this.last_clear_x !== x) {
+            this.last_clear_x = x;
+            this.last_clear_x_int = (x - this.padding + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO;
+        }
+        if (this.last_clear_y !== y) {
+            this.last_clear_y = y;
+            this.last_clear_y_int = (y - this.padding + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO;
+        }
+        if (this.last_clear_width !== w) {
+            this.last_clear_width = w;
+            this.last_clear_width_int = ((w + this.padding + global.CONSTANTS.ZERO_PT_FIVE) << 1) >> global.CONSTANTS.ZERO;
+        }
+        if (this.last_clear_height !== h) {
+            this.last_clear_height = h;
+            this.last_clear_height_int = ((h + this.padding + global.CONSTANTS.ZERO_PT_FIVE) << 1) >> global.CONSTANTS.ZERO;
+        }
+        this.ctx.clearRect(this.last_clear_x_int, this.last_clear_y_int, this.last_clear_width_int, this.last_clear_height_int);
     }
     release() {
         this.general_path.reset();

@@ -129,7 +129,7 @@ class ConfirmWindow {
 			global.variables.mouse_x = this.tab_index_location[this.tab_indexer][0];
 			global.variables.mouse_y = this.tab_index_location[this.tab_indexer][1];
 
-			if (this.tab_indexer == 0) {
+			if (this.tab_indexer === 0) {
 				engine_functions.clear_all_elements();
 				scope_manager.clear_entries();
 				graph_window.reset();

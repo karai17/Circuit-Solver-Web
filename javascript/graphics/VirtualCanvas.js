@@ -11,9 +11,9 @@ class VirtualCanvas {
         }
         this.context = this.surface.getContext('2d', { alpha: false });
     }
-    resize() {
-        this.surface.width = window.innerWidth * global.variables.device_pixel_ratio;
-        this.surface.height = window.innerHeight * global.variables.device_pixel_ratio;
+    resize(width, height) {
+        this.surface.width = width;
+        this.surface.height = height;
         this.surface.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
         this.surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
         try {

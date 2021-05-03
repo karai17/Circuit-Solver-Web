@@ -42,7 +42,6 @@ class MultiSelectManager {
         this.multi_selected_element = false;
         this.mouse_down_flag = false;
         this.selected_components_bounds = new RectF(-this.OFFSCREEN_X, -this.OFFSCREEN_Y, this.OFFSCREEN_X + 1, this.OFFSCREEN_Y + 1);
-        this.enable_keys = true;
         this.draw_bounds_flag = new RectF(0, 0, 0, 0);
     }
     reset_enveloping_bounds() {
@@ -492,7 +491,7 @@ class MultiSelectManager {
         this.multi_select = false;
     }
     key_down(key_event) {
-        if (this.enable_keys && !MOBILE_MODE) {
+        if (!MOBILE_MODE) {
             if (!global.flags.flag_simulating &&
                 !global.flags.flag_save_image &&
                 !global.flags.flag_save_circuit &&
@@ -513,7 +512,7 @@ class MultiSelectManager {
         }
     }
     key_up(key_event) {
-        if (this.enable_keys && !global.flags.flag_history_lock && !MOBILE_MODE) {
+        if (!global.flags.flag_history_lock && !MOBILE_MODE) {
             if (!this.mouse_down_flag) {
                 this.ctrl_pressed_started = false;
                 this.ctrl_pressed = false;
@@ -536,10 +535,9 @@ class MultiSelectManager {
             !global.flags.flag_menu_element_toolbox &&
             !global.flags.flag_history_lock &&
             !MOBILE_MODE) {
-            if (this.enable_keys && !global.flags.flag_history_lock) {
+            if (!global.flags.flag_history_lock) {
                 this.mouse_down_flag = true;
                 if (this.ctrl_pressed_started) {
-                    this.ctrl_pressed_started = true;
                     this.multi_select = true;
                     this.select_x = global.variables.mouse_x;
                     this.select_y = global.variables.mouse_y;

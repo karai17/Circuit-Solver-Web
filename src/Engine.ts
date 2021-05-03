@@ -241,12 +241,12 @@ function load_app(): void {
 			register_cross_platform_listeners();
 
 			if (!MOBILE_MODE) {
-				window.addEventListener('keydown', key_down, false);
-				window.addEventListener('keyup', key_up, false);
+				window.addEventListener('keydown', key_down, true);
+				window.addEventListener('keyup', key_up, true);
 			}
-			window.addEventListener('resize', resize_canvas, false);
+			window.addEventListener('resize', resize_canvas, true);
 			if (!MOBILE_MODE) {
-				window.addEventListener('dblclick', double_click, false);
+				window.addEventListener('dblclick', double_click, true);
 				webpage_document_title = document.getElementById('title_text');
 			}
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] === global.CONSTANTS.ON) {
@@ -257,19 +257,19 @@ function load_app(): void {
 	}
 	function register_cross_platform_listeners(): void {
 		if (MOBILE_MODE === true) {
-			surface.addEventListener('touchstart', mouse_down, false);
-			surface.addEventListener('touchmove', mouse_move, false);
-			surface.addEventListener('touchend', mouse_up, false);
+			surface.addEventListener('touchstart', mouse_down, true);
+			surface.addEventListener('touchmove', mouse_move, true);
+			surface.addEventListener('touchend', mouse_up, true);
 		} else {
-			surface.addEventListener('mousedown', mouse_down, false);
-			surface.addEventListener('mousemove', mouse_move, false);
-			surface.addEventListener('mouseup', mouse_up, false);
+			surface.addEventListener('mousedown', mouse_down, true);
+			surface.addEventListener('mousemove', mouse_move, true);
+			surface.addEventListener('mouseup', mouse_up, true);
 		}
 		if (!MOBILE_MODE) {
 			if (global.variables.browser_firefox) {
-				surface.addEventListener('DOMMouseScroll', mouse_wheel, false);
+				surface.addEventListener('DOMMouseScroll', mouse_wheel, true);
 			} else {
-				surface.addEventListener('mousewheel', mouse_wheel, false);
+				surface.addEventListener('mousewheel', mouse_wheel, true);
 			}
 		}
 	}
@@ -292,9 +292,13 @@ function load_app(): void {
 		solver_container.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
 		solver_container.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
 		solver_container.style.background = 'black';
-		view_port.resize(canvas_aspect_ratio, window.innerWidth * global.variables.device_pixel_ratio, window.innerHeight * global.variables.device_pixel_ratio);
-		surface.width = window.innerWidth * global.variables.device_pixel_ratio;
-		surface.height = window.innerHeight * global.variables.device_pixel_ratio;
+
+		let cached_width = window.innerWidth * global.variables.device_pixel_ratio;
+		let cached_height = window.innerHeight * global.variables.device_pixel_ratio;
+
+		view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
+		surface.width = cached_width;
+		surface.height = cached_height;
 		surface.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
 		surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
 		global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
@@ -332,7 +336,7 @@ function load_app(): void {
 		global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
 		global.flags.flag_build_element = true;
 		global.variables.flag_build_counter = 0;
-		virtual_surface.resize();
+		virtual_surface.resize(cached_width, cached_height);
 		global.flags.flag_resize_event = true;
 		canvas.on_resize();
 		surface.style.backfaceVisibility = 'hidden';
@@ -406,7 +410,7 @@ function load_app(): void {
 	}
 	function key_down(key_event: KeyboardEvent): void {
 		global.flags.flag_key_down_event = true;
-		global.events.key_down_event_queue.push({
+		global.events.key_down_event_queue.push(<KEY_EVENT_T>{
 			event: key_event,
 			alt: key_event.getModifierState('Alt'),
 			shift: key_event.getModifierState('Shift'),
@@ -416,7 +420,7 @@ function load_app(): void {
 	}
 	function key_up(key_event: KeyboardEvent): void {
 		global.flags.flag_key_up_event = true;
-		global.events.key_up_event_queue.push({
+		global.events.key_up_event_queue.push(<KEY_EVENT_T>{
 			event: key_event,
 			alt: key_event.getModifierState('Alt'),
 			shift: key_event.getModifierState('Shift'),
@@ -571,7 +575,7 @@ function load_app(): void {
 					resize_canvas();
 				}
 				fps_div ^= 1;
-				if (((fps_div == 1 || temp_draw_signal) && global.flags.flag_simulating) || !global.flags.flag_simulating) {
+				if (((fps_div === 1 || temp_draw_signal) && global.flags.flag_simulating) || !global.flags.flag_simulating) {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
@@ -733,9 +737,9 @@ function load_app(): void {
 				fifo_index = global.events.key_up_event_queue.length - 1;
 				global.events.key_up_event = global.events.key_up_event_queue[fifo_index];
 				handle_key_up();
-				global.events.key_down_event_queue = [];
 				global.events.key_up_event_queue.splice(fifo_index, 1);
 				if (global.events.key_up_event_queue.length === 0) {
+					global.events.key_down_event_queue = [];
 					global.flags.flag_key_up_event = false;
 				}
 				global.flags.flag_canvas_draw_request = true;
