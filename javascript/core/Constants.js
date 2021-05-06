@@ -32,8 +32,8 @@ class Constants {
         this.WIRE_STYLE_4 = 4;
         this.FLIP_0 = 0;
         this.FLIP_180 = 1;
-        this.SIGNAL_BUILD_COUNTER_MAX = 3;
-        this.SIGNAL_WIRE_DELETED_COUNTER_MAX = 3;
+        this.SIGNAL_BUILD_COUNTER_MAX = 5;
+        this.SIGNAL_WIRE_DELETED_COUNTER_MAX = 5;
         this.TEXT_STYLE_1 = 'Style1';
         this.TEXT_STYLE_2 = 'Style2';
         this.TEXT_STYLE_3 = 'Style3';
@@ -56,9 +56,9 @@ class Constants {
         this.LANGUAGE_INDEX_GERMAN = indexer++;
         this.LANGUAGE_INDEX_INDONESIAN = indexer++;
         this.PICTURE_ZOOM = this.ZOOM_MAX;
-        this.PICTURE_REQUEST_MAX_TIME = 3;
-        this.CANVAS_DRAW_REQUEST_COUNTER_MAX = 3;
-        this.CANVAS_REDRAW_MAX = 3;
+        this.PICTURE_REQUEST_MAX_TIME = 5;
+        this.CANVAS_DRAW_REQUEST_COUNTER_MAX = 5;
+        this.CANVAS_REDRAW_MAX = 5;
         this.PACKET_DIVIDER = '#DIVIDER#';
         this.WIRE_DIVIDER = '#WIRE#';
         this.ID_DIVIDER = '#ID#';

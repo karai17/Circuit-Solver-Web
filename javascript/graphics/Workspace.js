@@ -47,7 +47,6 @@ class Workspace {
         this.work_area_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
         this.work_area_paint.set_alpha(255);
         this.work_area_paint.set_paint_align(paint.align.CENTER);
-        this.OPTION_DRAW_GRID = false;
         this.line_buffer = [];
         this.grid_moved = true;
     }
@@ -115,49 +114,7 @@ class Workspace {
     }
     workspace_draw(canvas) {
         if (this.flag_draw_to_screen) {
-            if (this.OPTION_DRAW_GRID === true) {
-                canvas.draw_rect2(this.bounds, this.work_area_paint);
-                canvas.draw_rect2(this.bounds, this.grid_paint);
-            }
             canvas.draw_rect2(this.bounds, this.bounds_paint);
-            if (this.OPTION_DRAW_GRID === true) {
-                if (this.grid_moved === true) {
-                    let floored_sqrt_m_1 = Math.floor(global.settings.SQRT_MAXNODES_M1);
-                    let floored_sqrt = Math.floor(global.settings.SQRT_MAXNODES);
-                    let x_space = Math.floor(global.variables.node_space_x >> 1);
-                    let y_space = Math.floor(global.variables.node_space_y >> 1);
-                    let loop_temp = Math.floor(nodes.length - floored_sqrt);
-                    let horizontal_index = 0;
-                    let index = 0;
-                    let node_index = 0;
-                    let node_index_alt = 0;
-                    let cached_location_i = global.CONSTANTS.NULL;
-                    let cached_location_horizontal = global.CONSTANTS.NULL;
-                    let cached_location_index = global.CONSTANTS.NULL;
-                    let cached_location_alt = global.CONSTANTS.NULL;
-                    let temp_index = 0;
-                    for (var i = 0; i < floored_sqrt; i++) {
-                        node_index = (horizontal_index + floored_sqrt_m_1) >> global.CONSTANTS.ZERO;
-                        node_index_alt = (loop_temp + i) >> global.CONSTANTS.ZERO;
-                        if (i < floored_sqrt_m_1) {
-                            cached_location_i = nodes[i].location;
-                            cached_location_horizontal = nodes[horizontal_index].location;
-                            cached_location_index = nodes[node_index].location;
-                            cached_location_alt = nodes[node_index_alt].location;
-                            if (i > 0) {
-                                this.line_buffer[index++] = Array(cached_location_i.x, cached_location_i.y, cached_location_alt.x, cached_location_alt.y);
-                                this.line_buffer[index++] = Array(cached_location_horizontal.x, cached_location_horizontal.y, cached_location_index.x, cached_location_index.y);
-                            }
-                            temp_index = (nodes.length - floored_sqrt + i) >> global.CONSTANTS.ZERO;
-                            this.line_buffer[index++] = Array(cached_location_i.x + x_space, cached_location_i.y, cached_location_alt.x + x_space, nodes[temp_index].location.y);
-                            this.line_buffer[index++] = Array(cached_location_horizontal.x, cached_location_horizontal.y + y_space, cached_location_index.x, cached_location_index.y + y_space);
-                        }
-                        horizontal_index += floored_sqrt;
-                    }
-                    this.grid_moved = false;
-                }
-                canvas.draw_line_buffer(this.line_buffer, this.grid_paint);
-            }
         }
         if (this.flag_resize_flag) {
             if (!this.flag_draw_to_screen) {

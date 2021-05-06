@@ -57,6 +57,22 @@ class BottomMenu {
         this.INITIAL_RESIZE_COUNTER_MAX = global.CONSTANTS.CANVAS_REDRAW_MAX;
         this.reload_bottom_path = true;
     }
+    bottom_menu_recolor_conditions() {
+        return !global.flags.flag_menu_element_toolbox &&
+            !global.flags.flag_menu_element_toolbox &&
+            !global.flags.flag_simulating &&
+            !global.flags.flag_zoom &&
+            !global.flags.flag_select_settings &&
+            !global.flags.flag_save_image &&
+            !global.flags.flag_save_circuit &&
+            !global.flags.flag_select_timestep &&
+            !global.flags.flag_element_options_edit &&
+            !global.flags.flag_element_options &&
+            !global.flags.flag_graph &&
+            !global.flags.flag_remove_all &&
+            !multi_select_manager.ctrl_pressed_started &&
+            !MOBILE_MODE;
+    }
     load_bottom_path() {
         this.bottom_path.reset();
         this.bottom_path.move_to(view_port.left, this.file_button.top);
@@ -173,40 +189,14 @@ class BottomMenu {
     recolor() {
         if (!global.flags.flag_simulating && !global.flags.flag_graph && !global.flags.flag_menu_element_toolbox) {
             if (this.file_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_simulating &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_remove_all &&
-                !multi_select_manager.ctrl_pressed_started &&
-                !MOBILE_MODE) {
+                this.bottom_menu_recolor_conditions()) {
                 this.file_button.text_paint.set_color(global.COLORS.GENERAL_CYAN_COLOR);
             }
             else {
                 this.file_button.text_paint.set_color(global.COLORS.MENU_ICON_DEFAULT_COLOR);
             }
             if (this.time_step_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_simulating &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_remove_all &&
-                !multi_select_manager.ctrl_pressed_started &&
-                !MOBILE_MODE) {
+                this.bottom_menu_recolor_conditions()) {
                 this.time_step_button.text_paint.set_color(global.COLORS.GENERAL_CYAN_COLOR);
             }
             else {
@@ -215,40 +205,14 @@ class BottomMenu {
         }
         else {
             if (this.file_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_simulating &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_remove_all &&
-                !multi_select_manager.ctrl_pressed_started &&
-                !MOBILE_MODE) {
+                this.bottom_menu_recolor_conditions()) {
                 this.file_button.text_paint.set_color(global.COLORS.GENERAL_CYAN_COLOR);
             }
             else {
                 this.file_button.text_paint.set_color(global.COLORS.MENU_ICON_INACTIVE_COLOR);
             }
             if (this.time_step_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_simulating &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_remove_all &&
-                !multi_select_manager.ctrl_pressed_started &&
-                !MOBILE_MODE) {
+                this.bottom_menu_recolor_conditions()) {
                 this.time_step_button.text_paint.set_color(global.COLORS.GENERAL_CYAN_COLOR);
             }
             else {

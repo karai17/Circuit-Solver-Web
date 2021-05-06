@@ -18,28 +18,7 @@ class Viewport {
         else {
             this.apply_spread_factor = false;
         }
-        this.screen_width = screen_width;
-        this.screen_height = screen_height;
-        this.center_x = this.screen_width >> 1;
-        this.center_y = this.screen_height >> 1;
-        this.aspect_ratio = aspect_ratio;
-        this.view_width = Math.min(this.screen_width, this.screen_height);
-        this.view_height = this.view_width / this.aspect_ratio;
-        if (this.apply_spread_factor) {
-            this.width_spread_factor = this.screen_width / this.view_width;
-            this.height_spread_factor = this.screen_height / this.view_height;
-            this.spread_factor = Math.min(this.width_spread_factor, this.height_spread_factor);
-            this.view_width *= this.spread_factor;
-            this.view_height *= this.spread_factor;
-        }
-        this.left = this.center_x - (this.view_width >> 1);
-        this.top = this.center_y - (this.view_height >> 1);
-        this.right = this.center_x + (this.view_width >> 1);
-        this.bottom = this.center_y + (this.view_height >> 1);
-        this.line_paint.set_stroke_width(1.5 * global.variables.canvas_stroke_width_2);
-        this.line_paint.set_text_size(global.variables.canvas_text_size_4);
-        global.flags.flag_build_element = true;
-        global.variables.flag_build_counter = 0;
+        this.resize(aspect_ratio, screen_width, screen_height);
     }
     resize(aspect_ratio, screen_width, screen_height) {
         this.screen_width = screen_width;

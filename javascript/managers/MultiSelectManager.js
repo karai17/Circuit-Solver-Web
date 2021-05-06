@@ -44,6 +44,35 @@ class MultiSelectManager {
         this.selected_components_bounds = new RectF(-this.OFFSCREEN_X, -this.OFFSCREEN_Y, this.OFFSCREEN_X + 1, this.OFFSCREEN_Y + 1);
         this.draw_bounds_flag = new RectF(0, 0, 0, 0);
     }
+    multi_select_input_conditions() {
+        return !global.flags.flag_simulating &&
+            !global.flags.flag_save_image &&
+            !global.flags.flag_save_circuit &&
+            !global.flags.flag_zoom &&
+            !global.flags.flag_element_options &&
+            !global.flags.flag_element_options_edit &&
+            !global.flags.flag_graph &&
+            !global.flags.flag_select_element &&
+            !global.flags.flag_select_timestep &&
+            !global.flags.flag_select_settings &&
+            !global.flags.flag_remove_all &&
+            !global.flags.flag_menu_element_toolbox &&
+            !global.flags.flag_history_lock &&
+            !MOBILE_MODE;
+    }
+    multi_select_draw_conditions() {
+        return !global.flags.flag_save_image &&
+            !global.flags.flag_save_circuit &&
+            !global.flags.flag_zoom &&
+            !global.flags.flag_element_options &&
+            !global.flags.flag_element_options_edit &&
+            !global.flags.flag_graph &&
+            !global.flags.flag_select_element &&
+            !global.flags.flag_select_timestep &&
+            !global.flags.flag_select_settings &&
+            !global.flags.flag_remove_all &&
+            !global.flags.flag_menu_element_toolbox;
+    }
     reset_enveloping_bounds() {
         global.variables.multi_selected = false;
         this.selected_components_bounds.left = -this.OFFSCREEN_X;
@@ -491,23 +520,9 @@ class MultiSelectManager {
         this.multi_select = false;
     }
     key_down(key_event) {
-        if (!MOBILE_MODE) {
-            if (!global.flags.flag_simulating &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_select_element &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_remove_all &&
-                !global.flags.flag_menu_element_toolbox &&
-                !global.flags.flag_history_lock) {
-                if (key_event['ctrl']) {
-                    this.ctrl_pressed_started = true;
-                }
+        if (this.multi_select_input_conditions()) {
+            if (key_event['ctrl']) {
+                this.ctrl_pressed_started = true;
             }
         }
     }
@@ -521,20 +536,7 @@ class MultiSelectManager {
         }
     }
     mouse_down() {
-        if (!global.flags.flag_simulating &&
-            !global.flags.flag_save_image &&
-            !global.flags.flag_save_circuit &&
-            !global.flags.flag_zoom &&
-            !global.flags.flag_element_options &&
-            !global.flags.flag_element_options_edit &&
-            !global.flags.flag_graph &&
-            !global.flags.flag_select_element &&
-            !global.flags.flag_select_timestep &&
-            !global.flags.flag_select_settings &&
-            !global.flags.flag_remove_all &&
-            !global.flags.flag_menu_element_toolbox &&
-            !global.flags.flag_history_lock &&
-            !MOBILE_MODE) {
+        if (this.multi_select_input_conditions()) {
             if (!global.flags.flag_history_lock) {
                 this.mouse_down_flag = true;
                 if (this.ctrl_pressed_started) {
@@ -585,20 +587,7 @@ class MultiSelectManager {
         }
     }
     mouse_move() {
-        if (!global.flags.flag_simulating &&
-            !global.flags.flag_save_image &&
-            !global.flags.flag_save_circuit &&
-            !global.flags.flag_zoom &&
-            !global.flags.flag_element_options &&
-            !global.flags.flag_element_options_edit &&
-            !global.flags.flag_graph &&
-            !global.flags.flag_select_element &&
-            !global.flags.flag_select_timestep &&
-            !global.flags.flag_select_settings &&
-            !global.flags.flag_remove_all &&
-            !global.flags.flag_menu_element_toolbox &&
-            !global.flags.flag_history_lock &&
-            !MOBILE_MODE) {
+        if (this.multi_select_input_conditions()) {
             if (this.ctrl_pressed_started) {
                 if (Math.abs(global.variables.mouse_x - this.select_x) > global.variables.node_space_x || Math.abs(global.variables.mouse_y - this.select_y) > global.variables.node_space_y) {
                     this.ctrl_pressed = true;
@@ -1172,17 +1161,7 @@ class MultiSelectManager {
         }
     }
     determine_enveloping_bounds(bounds) {
-        if (!global.flags.flag_save_image &&
-            !global.flags.flag_save_circuit &&
-            !global.flags.flag_zoom &&
-            !global.flags.flag_element_options &&
-            !global.flags.flag_element_options_edit &&
-            !global.flags.flag_graph &&
-            !global.flags.flag_select_element &&
-            !global.flags.flag_select_timestep &&
-            !global.flags.flag_select_settings &&
-            !global.flags.flag_remove_all &&
-            !global.flags.flag_menu_element_toolbox) {
+        if (this.multi_select_draw_conditions()) {
             global.variables.multi_selected = true;
             this.selected_components_bounds.left = Math.min(this.selected_components_bounds.left, bounds.left - global.variables.node_space_x);
             this.selected_components_bounds.top = Math.min(this.selected_components_bounds.top, bounds.top - global.variables.node_space_y);
@@ -1192,17 +1171,7 @@ class MultiSelectManager {
     }
     draw_bounds(canvas) {
         if (this.multi_select) {
-            if (!global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_graph &&
-                !global.flags.flag_select_element &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_remove_all &&
-                !global.flags.flag_menu_element_toolbox) {
+            if (this.multi_select_draw_conditions()) {
                 canvas.draw_rect2(this.multi_select_bounds, this.fill_paint);
             }
         }

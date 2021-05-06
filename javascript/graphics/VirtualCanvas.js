@@ -1,14 +1,9 @@
 'use strict';
 class VirtualCanvas {
     constructor(width, height, id) {
-        this.OPTION_ASSIGN_ID = false;
         this.surface = document.createElement('canvas');
         this.surface.width = 1;
         this.surface.height = 1;
-        if (this.OPTION_ASSIGN_ID) {
-            this.id = id;
-            this.surface.id = 'virutal_canvas_' + this.id;
-        }
         this.context = this.surface.getContext('2d', { alpha: false });
     }
     resize(width, height) {

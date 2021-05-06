@@ -348,6 +348,7 @@ function load_app() {
         }
     }
     function mouse_down(mouse_event) {
+        mouse_event.preventDefault();
         if (global.variables.system_initialization['completed']) {
             if (MOBILE_MODE === false) {
                 global.variables.mouse_x = mouse_event.clientX * global.variables.device_pixel_ratio;
@@ -379,6 +380,7 @@ function load_app() {
         }
     }
     function mouse_move(mouse_event) {
+        mouse_event.preventDefault();
         if (!global.flags.flag_mouse_move_event) {
             if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
                 global.flags.flag_mouse_move_event = true;
@@ -392,6 +394,7 @@ function load_app() {
         }
     }
     function mouse_up(mouse_event) {
+        mouse_event.preventDefault();
         if (mouse_event_latch) {
             if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
                 global.flags.flag_mouse_up_event = true;
@@ -405,18 +408,21 @@ function load_app() {
         }
     }
     function mouse_wheel(mouse_event) {
+        mouse_event.preventDefault();
         if (!global.flags.flag_mouse_wheel_event && !MOBILE_MODE) {
             global.flags.flag_mouse_wheel_event = true;
             global.events.mouse_wheel_event_queue.push(mouse_event);
         }
     }
     function double_click(mouse_event) {
+        mouse_event.preventDefault();
         if (!MOBILE_MODE) {
             global.flags.flag_mouse_double_click_event = true;
             global.events.mouse_double_click_event_queue.push(mouse_event);
         }
     }
     function key_down(key_event) {
+        key_event.preventDefault();
         global.flags.flag_key_down_event = true;
         global.events.key_down_event_queue.push({
             event: key_event,
@@ -427,6 +433,7 @@ function load_app() {
         });
     }
     function key_up(key_event) {
+        key_event.preventDefault();
         global.flags.flag_key_up_event = true;
         global.events.key_up_event_queue.push({
             event: key_event,
@@ -1013,22 +1020,26 @@ function load_app() {
                     mult_node_space_x_cache = 1.75 * node_space_x_cache;
                     mult_node_space_y_cache = 1.75 * node_space_y_cache;
                     node_length = nodes.length;
-                    for (var i = 0; i < node_length; i++) {
+                    for (var i = 0; i < node_length; i += 2) {
                         nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                        if (node_length - 1 - i === i + 1) {
+                        nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        if (node_length - 2 - i === i + 2) {
                             break;
                         }
-                        nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
                     }
                 }
                 if (global.CONSTANTS.DEVELOPER_MODE) {
                     node_length = nodes.length;
-                    for (var i = 0; i < node_length; i++) {
+                    for (var i = 0; i < node_length; i += 2) {
                         nodes[i].draw(canvas);
-                        if (node_length - 1 - i === i + 1) {
+                        nodes[i + 1].draw(canvas);
+                        nodes[node_length - 1 - i].draw(canvas);
+                        nodes[node_length - 2 - i].draw(canvas);
+                        if (node_length - 2 - i === i + 2) {
                             break;
                         }
-                        nodes[node_length - 1 - i].draw(canvas);
                     }
                 }
                 global.variables.element_on_board = false;
@@ -1043,12 +1054,14 @@ function load_app() {
                     global.variables.node_line_buffer = [];
                     global.variables.node_line_buffer_index = 0;
                     node_length = nodes.length;
-                    for (var i = 0; i < node_length; i++) {
+                    for (var i = 0; i < node_length; i += 2) {
                         nodes[i].draw(canvas);
-                        if (node_length - 1 - i === i + 1) {
+                        nodes[i + 1].draw(canvas);
+                        nodes[node_length - 1 - i].draw(canvas);
+                        nodes[node_length - 2 - i].draw(canvas);
+                        if (node_length - 2 - i === i + 2) {
                             break;
                         }
-                        nodes[node_length - 1 - i].draw(canvas);
                     }
                     if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
                         canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
@@ -1112,22 +1125,26 @@ function load_app() {
                             mult_node_space_x_cache = 1.75 * node_space_x_cache;
                             mult_node_space_y_cache = 1.75 * node_space_y_cache;
                             node_length = nodes.length;
-                            for (var i = 0; i < node_length; i++) {
+                            for (var i = 0; i < node_length; i += 2) {
                                 nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                                if (node_length - 1 - i === i + 1) {
+                                nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                if (node_length - 2 - i === i + 2) {
                                     break;
                                 }
-                                nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
                             }
                         }
                         if (global.CONSTANTS.DEVELOPER_MODE) {
                             node_length = nodes.length;
-                            for (var i = 0; i < node_length; i++) {
+                            for (var i = 0; i < node_length; i += 2) {
                                 nodes[i].draw(canvas);
-                                if (node_length - 1 - i === i + 1) {
+                                nodes[i + 1].draw(canvas);
+                                nodes[node_length - 1 - i].draw(canvas);
+                                nodes[node_length - 2 - i].draw(canvas);
+                                if (node_length - 2 - i === i + 2) {
                                     break;
                                 }
-                                nodes[node_length - 1 - i].draw(canvas);
                             }
                         }
                         global.variables.element_on_board = false;
@@ -1141,12 +1158,14 @@ function load_app() {
                             global.variables.node_line_buffer = [];
                             global.variables.node_line_buffer_index = 0;
                             node_length = nodes.length;
-                            for (var i = 0; i < node_length; i++) {
+                            for (var i = 0; i < node_length; i += 2) {
                                 nodes[i].draw(canvas);
-                                if (node_length - 1 - i === i + 1) {
+                                nodes[i + 1].draw(canvas);
+                                nodes[node_length - 1 - i].draw(canvas);
+                                nodes[node_length - 2 - i].draw(canvas);
+                                if (node_length - 2 - i === i + 2) {
                                     break;
                                 }
-                                nodes[node_length - 1 - i].draw(canvas);
                             }
                             if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
                                 canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
@@ -1220,12 +1239,12 @@ function load_app() {
         global.variables.mouse_down_y = global.variables.mouse_y;
         global.variables.translation_lock = true;
         if (!MOBILE_MODE) {
-            if ('which' in global.events.mouse_down_event) {
-                global.variables.is_right_click = global.events.mouse_down_event.which === 3;
-            }
-            else if ('button' in global.events.mouse_down_event) {
-                //@ts-expect-error
+            if ('button' in global.events.mouse_down_event) {
                 global.variables.is_right_click = global.events.mouse_down_event.button === 2;
+            }
+            else if ('which' in global.events.mouse_down_event) {
+                //@ts-expect-error
+                global.variables.is_right_click = global.events.mouse_down_event.which === 3;
             }
         }
         else {
