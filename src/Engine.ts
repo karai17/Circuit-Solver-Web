@@ -588,7 +588,7 @@ function load_app(): void {
 							if (!global.flags.flag_on_restore_event) {
 								if (!global.flags.flag_draw_block) {
 									ctx.drawImage(
-										virtual_surface.get_surface(),
+										virtual_surface.surface,
 										view_port.left,
 										view_port.top,
 										view_port.view_width,

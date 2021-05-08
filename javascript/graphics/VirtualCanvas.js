@@ -30,7 +30,4 @@ class VirtualCanvas {
         }
         catch (e) { }
     }
-    get_surface() {
-        return this.surface;
-    }
 }

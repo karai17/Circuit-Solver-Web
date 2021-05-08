@@ -1,6 +1,6 @@
 'use strict';
 class VirtualCanvas {
-	private surface: HTMLCanvasElement;
+	public surface: HTMLCanvasElement;
 	private id: number;
 	public context: CanvasRenderingContext2D;
 	constructor(width: number, height: number, id: number) {
@@ -31,8 +31,5 @@ class VirtualCanvas {
 			this.context.globalCompositeOperation = 'source-over';
 			this.surface.style.backfaceVisibility = 'hidden';
 		} catch (e) { }
-	}
-	get_surface(): HTMLCanvasElement {
-		return this.surface;
 	}
 }

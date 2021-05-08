@@ -595,7 +595,7 @@ function load_app() {
                         if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
                             if (!global.flags.flag_on_restore_event) {
                                 if (!global.flags.flag_draw_block) {
-                                    ctx.drawImage(virtual_surface.get_surface(), view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                                    ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
                                 }
                                 canvas.release();
                                 canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
