@@ -167,7 +167,7 @@ class Constants {
 		for (var i: number = 0; i <= 256; i++) {
 			this.ALPHA_ARRAY.push(i / 256.0);
 		}
-		this.GARBAGE_COLLECTOR_SIZE = 16;
+		this.GARBAGE_COLLECTOR_SIZE = 18;
 		this.SINE_WAVE_STYLE_0 = 0;
 		this.SINE_WAVE_STYLE_1 = 1;
 		this.METER_STYLE_0 = 0;

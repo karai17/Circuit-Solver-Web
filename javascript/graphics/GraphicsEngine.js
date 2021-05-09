@@ -93,7 +93,7 @@ class GraphicsEngine {
                 this.last_text_align = paint.text_align;
             }
             if (this.last_text_size !== paint.text_size || this.last_font !== paint.font) {
-                this.ctx.font = global.TEMPLATES.FONT_TEMPLATE.replace('s', paint.text_size).replace('f', paint.font);
+                this.ctx.font = paint.text_size + "px " + paint.font;
                 this.last_text_size = paint.text_size;
                 this.last_font = paint.font;
             }
@@ -153,6 +153,7 @@ class GraphicsEngine {
                 break;
             }
         }
+        this.cache = [];
         this.ctx.stroke();
     }
     draw_rect(left, top, right, bottom, paint) {
@@ -360,6 +361,7 @@ class GraphicsEngine {
                 this.ctx.fill();
                 break;
         }
+        this.cache = [];
     }
     draw_color(_surface, color, alpha) {
         this.fill_paint.set_color(color);
@@ -471,6 +473,7 @@ class GraphicsEngine {
                 this.ctx.fill();
                 break;
         }
+        this.dict = global.CONSTANTS.NULL;
     }
     draw_path2(path, x_offset, y_offset, paint) {
         x_offset = (global.CONSTANTS.ZERO_PT_FIVE + x_offset) >> global.CONSTANTS.ZERO;
@@ -509,6 +512,7 @@ class GraphicsEngine {
                 this.ctx.fill();
                 break;
         }
+        this.dict = global.CONSTANTS.NULL;
     }
     rotate(x, y, angle) {
         this.r_theta = ((global.CONSTANTS.ZERO_PT_FIVE + angle) >> global.CONSTANTS.ZERO) * global.CONSTANTS.PI_DIV_180;

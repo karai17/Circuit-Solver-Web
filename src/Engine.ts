@@ -4,6 +4,21 @@ const paint: Paint = new Paint();
 var global: Global = new Global();
 
 //@ts-ignore
+String.prototype.myReplace = function (pattern, nw) {
+	var curidx = 0, len = this.length, patlen = pattern.length, res = "";
+	while (curidx < len) {
+		var nwidx = this.indexOf(pattern, curidx);
+		if (nwidx == -1) {
+			break;
+		}
+		res = res + this.substr(curidx, nwidx - curidx);
+		res = res + nw;
+		curidx = nwidx + patlen;
+	}
+	return res;
+};
+
+//@ts-ignore
 String.prototype.hashCode = function (): number {
 	let hash: number = 0;
 	let i: number = 0;
@@ -245,6 +260,7 @@ function load_app(): void {
 				window.addEventListener('keyup', key_up, true);
 			}
 			window.addEventListener('resize', resize_canvas, true);
+			window.addEventListener('focus', refresh_canvas_settings, true);
 			if (!MOBILE_MODE) {
 				window.addEventListener('dblclick', double_click, true);
 				webpage_document_title = document.getElementById('title_text');
@@ -273,11 +289,19 @@ function load_app(): void {
 			}
 		}
 	}
-	function start_system(): void {
-		if (!MOBILE_MODE) {
-			register();
-		}
-		main();
+	function refresh_canvas_settings(): void {
+		try {
+			ctx.globalCompositeOperation = 'copy';
+			ctx.imageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.mozImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.oImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.webkitImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.msImageSmoothingEnabled = false;
+		} catch (e) { }
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -2147,10 +2171,6 @@ function load_app(): void {
 			global.variables.browser_ie = true;
 		}
 	}
-	function main(): void {
-		throttle_loop();
-		requestAnimationFrame(main);
-	}
 	function throttle_loop(): void {
 		switch (++fps_counter) {
 			case fps_compare:
@@ -2162,6 +2182,10 @@ function load_app(): void {
 			default:
 				break;
 		}
+		requestAnimationFrame(throttle_loop);
 	}
-	start_system();
+	if (!MOBILE_MODE) {
+		register();
+	}
+	throttle_loop();
 }

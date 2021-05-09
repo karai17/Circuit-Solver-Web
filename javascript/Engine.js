@@ -246,6 +246,7 @@ function load_app() {
                 window.addEventListener('keyup', key_up, true);
             }
             window.addEventListener('resize', resize_canvas, true);
+            window.addEventListener('focus', refresh_canvas_settings, true);
             if (!MOBILE_MODE) {
                 window.addEventListener('dblclick', double_click, true);
                 webpage_document_title = document.getElementById('title_text');
@@ -276,11 +277,20 @@ function load_app() {
             }
         }
     }
-    function start_system() {
-        if (!MOBILE_MODE) {
-            register();
+    function refresh_canvas_settings() {
+        try {
+            ctx.globalCompositeOperation = 'copy';
+            ctx.imageSmoothingEnabled = false;
+            //@ts-expect-error
+            ctx.mozImageSmoothingEnabled = false;
+            //@ts-expect-error
+            ctx.oImageSmoothingEnabled = false;
+            //@ts-expect-error
+            ctx.webkitImageSmoothingEnabled = false;
+            //@ts-expect-error
+            ctx.msImageSmoothingEnabled = false;
         }
-        main();
+        catch (e) { }
     }
     function resize_canvas() {
         global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -2134,10 +2144,6 @@ function load_app() {
             global.variables.browser_ie = true;
         }
     }
-    function main() {
-        throttle_loop();
-        requestAnimationFrame(main);
-    }
     function throttle_loop() {
         switch (++fps_counter) {
             case fps_compare:
@@ -2149,6 +2155,10 @@ function load_app() {
             default:
                 break;
         }
+        requestAnimationFrame(throttle_loop);
     }
-    start_system();
+    if (!MOBILE_MODE) {
+        register();
+    }
+    throttle_loop();
 }

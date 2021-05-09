@@ -142,7 +142,7 @@ class GraphicsEngine {
 				this.last_text_align = paint.text_align;
 			}
 			if (this.last_text_size !== paint.text_size || this.last_font !== paint.font) {
-				this.ctx.font = global.TEMPLATES.FONT_TEMPLATE.replace('s', <string>(<unknown>paint.text_size)).replace('f', paint.font);
+				this.ctx.font = paint.text_size + "px " + paint.font;
 				this.last_text_size = paint.text_size;
 				this.last_font = paint.font;
 			}
@@ -201,7 +201,7 @@ class GraphicsEngine {
 				break;
 			}
 		}
-
+		this.cache = [];
 		this.ctx.stroke();
 	}
 	draw_rect(left: number, top: number, right: number, bottom: number, paint: Paint): void {
@@ -409,6 +409,8 @@ class GraphicsEngine {
 				this.ctx.fill();
 				break;
 		}
+
+		this.cache = [];
 	}
 	draw_color(_surface: HTMLCanvasElement, color: string, alpha: number): void {
 		this.fill_paint.set_color(color);
@@ -529,6 +531,7 @@ class GraphicsEngine {
 				this.ctx.fill();
 				break;
 		}
+		this.dict = global.CONSTANTS.NULL;
 	}
 	draw_path2(path: Path, x_offset: number, y_offset: number, paint: Paint): void {
 		x_offset = (global.CONSTANTS.ZERO_PT_FIVE + x_offset) >> global.CONSTANTS.ZERO;
@@ -564,6 +567,7 @@ class GraphicsEngine {
 				this.ctx.fill();
 				break;
 		}
+		this.dict = global.CONSTANTS.NULL;
 	}
 	rotate(x: number, y: number, angle: number): void {
 		this.r_theta = ((global.CONSTANTS.ZERO_PT_FIVE + angle) >> global.CONSTANTS.ZERO) * global.CONSTANTS.PI_DIV_180;

@@ -6,7 +6,6 @@ class Templates {
 	public readonly PIXEL_TEMPLATE: string;
 	public readonly PNG_TEMPLATE: string;
 	public readonly TIME_DATA_TEMPLATE: TIME_DATA_TEMPLATE_T;
-	public readonly FONT_TEMPLATE: string;
 	public readonly TEXT_UNDERSCORE_TEMPLATE: string;
 	public readonly VERSION_TAG_TEMPLATE: string;
 	public readonly TIMESTEP_TEMPLATE: string;
@@ -18,7 +17,6 @@ class Templates {
 		this.DIVISION_TEXT_TEMPLATE = '{A} / {B}';
 		this.PIXEL_TEMPLATE = '{VALUE}px';
 		this.PNG_TEMPLATE = '{NAME}.png';
-		this.FONT_TEMPLATE = 'spx f';
 		this.TEXT_UNDERSCORE_TEMPLATE = '{TEXT}_';
 		this.VERSION_TAG_TEMPLATE = 'v{VERSION_TAG}   ';
 		this.TIMESTEP_TEMPLATE = 'Δt:={TIMESTEP}s';

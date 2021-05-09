@@ -41,7 +41,7 @@ class Paint {
 		this.alpha = 1;
 		this.metric_array = [];
 		this.saved_metric = null;
-		this.garbage_collector_size = 16;
+		this.garbage_collector_size = 18;
 		this.temp_boolean = false;
 		this.paint_surface = new VirtualCanvas(1, 1, -1);
 		this.last_font = '';
@@ -113,7 +113,7 @@ class Paint {
 	}
 	measure(txt: string): PAINT_METRICS_T {
 		if (this.last_font !== this.font || this.last_text_size !== this.text_size) {
-			this.paint_surface.context.font = global.TEMPLATES.FONT_TEMPLATE.replace('s', this.text_size + '').replace('f', this.font);
+			this.paint_surface.context.font = this.text_size + "px " + this.font;
 			this.last_font = this.font;
 			this.last_text_size = this.text_size;
 		}
@@ -184,7 +184,7 @@ class Paint {
 			this.saved_metric = global.CONSTANTS.NULL;
 		}
 		if (!global.utils.not_null(this.garbage_collector_size)) {
-			this.garbage_collector_size = 16;
+			this.garbage_collector_size = 18;
 		}
 		if (!global.utils.not_null(this.paint_style)) {
 			this.paint_style = this.style.STROKE;
@@ -201,8 +201,8 @@ class Paint {
 		if (!global.utils.not_null(this.text_baseline)) {
 			this.text_baseline = this.baseline.MIDDLE;
 		}
-		if (this.garbage_collector_size !== 16) {
-			this.garbage_collector_size = 16;
+		if (this.garbage_collector_size !== 18) {
+			this.garbage_collector_size = 18;
 		}
 	}
 }
