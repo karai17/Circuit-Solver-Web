@@ -42,6 +42,7 @@ class PulseWidthModulator {
 	private circle_buffer: Array<Array<number>>;
 	private build_element_flag: boolean;
 	private angle: number;
+	private node_id_array: Array<number>;
 	constructor(type: number, id: number, n1: number, n2: number, n3: number) {
 		this.initialized = false;
 		this.bounds = new RectF(0, 0, 0, 0);
@@ -143,6 +144,7 @@ class PulseWidthModulator {
 		this.circle_buffer = [];
 		this.build_element_flag = true;
 		this.angle = 0;
+		this.node_id_array = [];
 	}
 	refresh_bounds(): void {
 		if (this.elm.consistent()) {
@@ -187,7 +189,11 @@ class PulseWidthModulator {
 					this.elm.properties['Counter']++;
 				}
 				this.elm.properties['Saw Wave'] =
-					0.5 - (1 / Math.PI) * Math.atan(1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS));
+					0.5 -
+					(1 / Math.PI) *
+						Math.atan(
+							1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS)
+						);
 				if (this.elm.properties['Saw Wave'] > 1.0 - this.elm.properties['Duty'] * 0.01) {
 					this.elm.properties['A'] = global.utils.copy(this.elm.properties['High Voltage']);
 				} else {
@@ -618,7 +624,8 @@ class PulseWidthModulator {
 			((this.c_x >= view_port.left - global.variables.node_space_x &&
 				this.c_x - global.variables.node_space_x <= view_port.right &&
 				this.c_y >= view_port.top + -global.variables.node_space_y &&
-				this.c_y - global.variables.node_space_y <= view_port.bottom) || global.flags.flag_picture_request)
+				this.c_y - global.variables.node_space_y <= view_port.bottom) ||
+				global.flags.flag_picture_request)
 		) {
 			let cache_0: number = 2.0 * this.x_space;
 			let cache_1: number = 2.0 * this.y_space;
@@ -835,9 +842,9 @@ class PulseWidthModulator {
 					!global.flags.flag_add_element
 				) {
 					if (this.elm.consistent()) {
-						let node_id_array: Array<number> = this.elm.get_nodes();
-						for (var i = 0; i < node_id_array.length; i++) {
-							canvas.draw_rect2(nodes[node_id_array[i]].get_bounds(), this.line_paint);
+						this.node_id_array = this.elm.get_nodes();
+						for (var i = 0; i < this.node_id_array.length; i++) {
+							canvas.draw_rect2(nodes[this.node_id_array[i]].get_bounds(), this.line_paint);
 						}
 					}
 				}
@@ -873,8 +880,8 @@ class PulseWidthModulator {
 	time_data(): TIME_DATA_TEMPLATE_T {
 		/* #INSERT_GENERATE_TIME_DATA# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		let time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		let keys: Array<string> = Object.keys(this.elm.properties);
+		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+		var keys: Array<string> = Object.keys(this.elm.properties);
 		for (var i: number = keys.length - 1; i > -1; i--) {
 			if (typeof this.elm.properties[keys[i]] === 'number') {
 				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {

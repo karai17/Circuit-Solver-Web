@@ -84,7 +84,7 @@ class EngineFunctions {
 			global.variables.user_file_selected = true;
 			global.flags.flag_canvas_draw_event = true;
 		};
-		reader.onerror = function (err: ProgressEvent<FileReader>) { };
+		reader.onerror = function (err: ProgressEvent<FileReader>) {};
 		reader.readAsText(input.files[0]);
 	}
 	file_event_mobile(title: string, data: string): void {
@@ -122,7 +122,7 @@ class EngineFunctions {
 		global.flags.flag_canvas_draw_event = true;
 		try {
 			engine_functions.parse_elements(global.variables.user_file.content);
-		} catch (error) { }
+		} catch (error) {}
 		global.variables.history['packet'].push(engine_functions.history_snapshot());
 		global.flags.flag_draw_block = true;
 		global.variables.user_file_selected = false;
@@ -2318,7 +2318,7 @@ class EngineFunctions {
 	/* #INSERT_GENERATE_ASSIGNMENT_INDEX# */
 	/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 	get_resistor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < resistors.length; i++) {
@@ -2338,7 +2338,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_capacitor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < capacitors.length; i++) {
@@ -2358,7 +2358,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_inductor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < inductors.length; i++) {
@@ -2378,7 +2378,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_ground_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < grounds.length; i++) {
@@ -2398,7 +2398,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_dcsource_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < dcsources.length; i++) {
@@ -2418,7 +2418,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_dccurrent_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < dccurrents.length; i++) {
@@ -2438,7 +2438,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_acsource_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < acsources.length; i++) {
@@ -2458,7 +2458,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_accurrent_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < accurrents.length; i++) {
@@ -2478,7 +2478,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_squarewave_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < squarewaves.length; i++) {
@@ -2498,7 +2498,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_sawwave_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < sawwaves.length; i++) {
@@ -2518,7 +2518,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_trianglewave_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < trianglewaves.length; i++) {
@@ -2538,7 +2538,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_constant_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < constants.length; i++) {
@@ -2558,7 +2558,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_wire_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < wires.length; i++) {
@@ -2578,7 +2578,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_net_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < nets.length; i++) {
@@ -2598,7 +2598,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_note_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < notes.length; i++) {
@@ -2618,7 +2618,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_rail_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < rails.length; i++) {
@@ -2638,7 +2638,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_voltmeter_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < voltmeters.length; i++) {
@@ -2658,7 +2658,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_ohmmeter_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < ohmmeters.length; i++) {
@@ -2678,7 +2678,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_ammeter_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < ammeters.length; i++) {
@@ -2698,7 +2698,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_wattmeter_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < wattmeters.length; i++) {
@@ -2718,7 +2718,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_fuse_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < fuses.length; i++) {
@@ -2738,7 +2738,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_spst_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < spsts.length; i++) {
@@ -2758,7 +2758,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_spdt_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < spdts.length; i++) {
@@ -2778,7 +2778,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_not_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < nots.length; i++) {
@@ -2798,7 +2798,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_diode_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < diodes.length; i++) {
@@ -2818,7 +2818,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_led_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < leds.length; i++) {
@@ -2838,7 +2838,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_zener_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < zeners.length; i++) {
@@ -2858,7 +2858,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_potentiometer_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < potentiometers.length; i++) {
@@ -2878,7 +2878,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_and_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < ands.length; i++) {
@@ -2898,7 +2898,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_or_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < ors.length; i++) {
@@ -2918,7 +2918,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_nand_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < nands.length; i++) {
@@ -2938,7 +2938,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_nor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < nors.length; i++) {
@@ -2958,7 +2958,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_xor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < xors.length; i++) {
@@ -2978,7 +2978,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_xnor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < xnors.length; i++) {
@@ -2998,7 +2998,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_dff_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < dffs.length; i++) {
@@ -3018,7 +3018,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vsat_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vsats.length; i++) {
@@ -3038,7 +3038,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_adder_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < adders.length; i++) {
@@ -3058,7 +3058,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_subtractor_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < subtractors.length; i++) {
@@ -3078,7 +3078,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_multiplier_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < multipliers.length; i++) {
@@ -3098,7 +3098,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_divider_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < dividers.length; i++) {
@@ -3118,7 +3118,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_gain_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < gains.length; i++) {
@@ -3138,7 +3138,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_absval_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < absvals.length; i++) {
@@ -3158,7 +3158,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vcsw_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vcsws.length; i++) {
@@ -3178,7 +3178,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vcvs_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vcvss.length; i++) {
@@ -3198,7 +3198,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vccs_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vccss.length; i++) {
@@ -3218,7 +3218,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_cccs_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < cccss.length; i++) {
@@ -3238,7 +3238,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_ccvs_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < ccvss.length; i++) {
@@ -3258,7 +3258,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_opamp_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < opamps.length; i++) {
@@ -3278,7 +3278,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_nmosfet_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < nmosfets.length; i++) {
@@ -3298,7 +3298,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_pmosfet_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < pmosfets.length; i++) {
@@ -3318,7 +3318,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_npn_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < npns.length; i++) {
@@ -3338,7 +3338,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_pnp_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < pnps.length; i++) {
@@ -3358,7 +3358,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_adc_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < adcs.length; i++) {
@@ -3378,7 +3378,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_dac_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < dacs.length; i++) {
@@ -3398,7 +3398,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_samplers_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < sandhs.length; i++) {
@@ -3418,7 +3418,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_pwm_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < pwms.length; i++) {
@@ -3438,7 +3438,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_integrator_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < integrators.length; i++) {
@@ -3458,7 +3458,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_differentiator_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < differentiators.length; i++) {
@@ -3478,7 +3478,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_lowpass_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < lowpasses.length; i++) {
@@ -3498,7 +3498,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_highpass_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < highpasses.length; i++) {
@@ -3518,7 +3518,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_relay_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < relays.length; i++) {
@@ -3538,7 +3538,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_pid_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < pids.length; i++) {
@@ -3558,7 +3558,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_lut_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < luts.length; i++) {
@@ -3578,7 +3578,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vcr_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vcrs.length; i++) {
@@ -3598,7 +3598,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vcca_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vccas.length; i++) {
@@ -3618,7 +3618,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_vcl_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < vcls.length; i++) {
@@ -3638,7 +3638,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_grt_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < grts.length; i++) {
@@ -3658,7 +3658,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_tptz_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < tptzs.length; i++) {
@@ -3678,7 +3678,7 @@ class EngineFunctions {
 		return assignment;
 	}
 	get_transformer_assignment(): number {
-		let assignment: number = 0;
+		var assignment: number = 0;
 		var ids: Array<number> = [];
 
 		for (var i: number = 0; i < transformers.length; i++) {
@@ -3707,8 +3707,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		resistors.push(new Resistor(global.ELEMENT_TYPES.TYPE_RESISTOR, engine_functions.get_resistor_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3732,8 +3732,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		capacitors.push(new Capacitor(global.ELEMENT_TYPES.TYPE_CAPACITOR, engine_functions.get_capacitor_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3757,8 +3757,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		inductors.push(new Inductor(global.ELEMENT_TYPES.TYPE_INDUCTOR, engine_functions.get_inductor_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3780,7 +3780,7 @@ class EngineFunctions {
 		this.x1 = global.variables.mouse_x;
 		this.y1 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
 		this.mapper1.map_node1(p1[0], p1[1]);
 
 		grounds.push(new Ground(global.ELEMENT_TYPES.TYPE_GROUND, engine_functions.get_ground_assignment(), this.mapper1.n1));
@@ -3804,8 +3804,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		dcsources.push(new DCSource(global.ELEMENT_TYPES.TYPE_DCSOURCE, engine_functions.get_dcsource_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3829,8 +3829,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		dccurrents.push(new DCCurrent(global.ELEMENT_TYPES.TYPE_DCCURRENT, engine_functions.get_dccurrent_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3854,8 +3854,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		acsources.push(new ACSource(global.ELEMENT_TYPES.TYPE_ACSOURCE, engine_functions.get_acsource_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3879,8 +3879,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		accurrents.push(new ACCurrent(global.ELEMENT_TYPES.TYPE_ACCURRENT, engine_functions.get_accurrent_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3904,8 +3904,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		squarewaves.push(new SquareWave(global.ELEMENT_TYPES.TYPE_SQUAREWAVE, engine_functions.get_squarewave_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3929,8 +3929,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		sawwaves.push(new SawWave(global.ELEMENT_TYPES.TYPE_SAW, engine_functions.get_sawwave_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3954,8 +3954,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		trianglewaves.push(new TriangleWave(global.ELEMENT_TYPES.TYPE_TRI, engine_functions.get_trianglewave_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -3977,7 +3977,7 @@ class EngineFunctions {
 		this.x1 = global.variables.mouse_x;
 		this.y1 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
 		this.mapper1.map_node1(p1[0], p1[1]);
 
 		constants.push(new Constant(global.ELEMENT_TYPES.TYPE_CONSTANT, engine_functions.get_constant_assignment(), this.mapper1.n1));
@@ -3999,7 +3999,7 @@ class EngineFunctions {
 		this.x1 = global.variables.mouse_x;
 		this.y1 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
 		this.mapper1.map_node1(p1[0], p1[1]);
 
 		nets.push(new Net(global.ELEMENT_TYPES.TYPE_NET, engine_functions.get_net_assignment(), this.mapper1.n1));
@@ -4021,7 +4021,7 @@ class EngineFunctions {
 		this.x1 = global.variables.mouse_x;
 		this.y1 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
 		this.mapper1.map_node1(p1[0], p1[1]);
 
 		notes.push(new Note(global.ELEMENT_TYPES.TYPE_NOTE, engine_functions.get_note_assignment(), this.mapper1.n1));
@@ -4043,7 +4043,7 @@ class EngineFunctions {
 		this.x1 = global.variables.mouse_x;
 		this.y1 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
 		this.mapper1.map_node1(p1[0], p1[1]);
 
 		rails.push(new Rail(global.ELEMENT_TYPES.TYPE_RAIL, engine_functions.get_rail_assignment(), this.mapper1.n1));
@@ -4067,8 +4067,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		voltmeters.push(new VoltMeter(global.ELEMENT_TYPES.TYPE_VOLTMETER, engine_functions.get_voltmeter_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4092,8 +4092,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		ohmmeters.push(new OhmMeter(global.ELEMENT_TYPES.TYPE_OHMMETER, engine_functions.get_ohmmeter_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4117,8 +4117,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		ammeters.push(new AmMeter(global.ELEMENT_TYPES.TYPE_AMMETER, engine_functions.get_ammeter_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4144,9 +4144,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		wattmeters.push(new WattMeter(global.ELEMENT_TYPES.TYPE_WATTMETER, engine_functions.get_wattmeter_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4170,8 +4170,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		fuses.push(new Fuse(global.ELEMENT_TYPES.TYPE_FUSE, engine_functions.get_fuse_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4195,8 +4195,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		spsts.push(new SinglePoleSingleThrow(global.ELEMENT_TYPES.TYPE_SPST, engine_functions.get_spst_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4222,9 +4222,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		spdts.push(new SinglePoleDoubleThrow(global.ELEMENT_TYPES.TYPE_SPDT, engine_functions.get_spdt_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4248,8 +4248,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		nots.push(new NOTGate(global.ELEMENT_TYPES.TYPE_NOT, engine_functions.get_not_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4273,8 +4273,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		diodes.push(new Diode(global.ELEMENT_TYPES.TYPE_DIODE, engine_functions.get_diode_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4298,8 +4298,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		leds.push(new LightEmittingDiode(global.ELEMENT_TYPES.TYPE_LED, engine_functions.get_led_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4323,8 +4323,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		zeners.push(new ZenerDiode(global.ELEMENT_TYPES.TYPE_ZENER, engine_functions.get_zener_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4350,9 +4350,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		potentiometers.push(new Potentiometer(global.ELEMENT_TYPES.TYPE_POTENTIOMETER, engine_functions.get_potentiometer_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4378,9 +4378,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		ands.push(new ANDGate(global.ELEMENT_TYPES.TYPE_AND, engine_functions.get_and_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4406,9 +4406,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		ors.push(new ORGate(global.ELEMENT_TYPES.TYPE_OR, engine_functions.get_or_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4434,9 +4434,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		nands.push(new NANDGate(global.ELEMENT_TYPES.TYPE_NAND, engine_functions.get_nand_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4462,9 +4462,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		nors.push(new NORGate(global.ELEMENT_TYPES.TYPE_NOR, engine_functions.get_nor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4490,9 +4490,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		xors.push(new XORGate(global.ELEMENT_TYPES.TYPE_XOR, engine_functions.get_xor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4518,9 +4518,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		xnors.push(new XNORGate(global.ELEMENT_TYPES.TYPE_XNOR, engine_functions.get_xnor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4548,10 +4548,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		dffs.push(new DFlipFlop(global.ELEMENT_TYPES.TYPE_DFF, engine_functions.get_dff_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -4575,8 +4575,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		vsats.push(new VoltageSaturation(global.ELEMENT_TYPES.TYPE_VSAT, engine_functions.get_vsat_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4602,9 +4602,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		adders.push(new Adder(global.ELEMENT_TYPES.TYPE_ADD, engine_functions.get_adder_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4630,9 +4630,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		subtractors.push(new Subtractor(global.ELEMENT_TYPES.TYPE_SUB, engine_functions.get_subtractor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4658,9 +4658,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		multipliers.push(new Multiplier(global.ELEMENT_TYPES.TYPE_MUL, engine_functions.get_multiplier_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4686,9 +4686,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		dividers.push(new Divider(global.ELEMENT_TYPES.TYPE_DIV, engine_functions.get_divider_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4712,8 +4712,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		gains.push(new GainBlock(global.ELEMENT_TYPES.TYPE_GAIN, engine_functions.get_gain_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4737,8 +4737,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		absvals.push(new AbsoluteValue(global.ELEMENT_TYPES.TYPE_ABS, engine_functions.get_absval_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -4764,9 +4764,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		vcsws.push(new VoltageControlledSwitch(global.ELEMENT_TYPES.TYPE_VCSW, engine_functions.get_vcsw_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4794,10 +4794,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		vcvss.push(new VoltageControlledVoltageSource(global.ELEMENT_TYPES.TYPE_VCVS, engine_functions.get_vcvs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -4825,10 +4825,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		vccss.push(new VoltageControlledCurrentSource(global.ELEMENT_TYPES.TYPE_VCCS, engine_functions.get_vccs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -4856,10 +4856,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		cccss.push(new CurrentControlledCurrentSource(global.ELEMENT_TYPES.TYPE_CCCS, engine_functions.get_cccs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -4887,10 +4887,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		ccvss.push(new CurrentControlledVoltageSource(global.ELEMENT_TYPES.TYPE_CCVS, engine_functions.get_ccvs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -4916,9 +4916,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		opamps.push(new OperationalAmplifier(global.ELEMENT_TYPES.TYPE_OPAMP, engine_functions.get_opamp_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4944,9 +4944,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x - 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		nmosfets.push(new NChannelMOSFET(global.ELEMENT_TYPES.TYPE_NMOS, engine_functions.get_nmosfet_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -4972,9 +4972,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x - 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		pmosfets.push(new PChannelMOSFET(global.ELEMENT_TYPES.TYPE_PMOS, engine_functions.get_pmosfet_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5000,9 +5000,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x - 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		npns.push(new NPNBipolarJunctionTransistor(global.ELEMENT_TYPES.TYPE_NPN, engine_functions.get_npn_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5028,9 +5028,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x - 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		pnps.push(new PNPBipolarJunctionTransistor(global.ELEMENT_TYPES.TYPE_PNP, engine_functions.get_pnp_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5054,8 +5054,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		adcs.push(new ADCModule(global.ELEMENT_TYPES.TYPE_ADC, engine_functions.get_adc_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5079,8 +5079,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		dacs.push(new DACModule(global.ELEMENT_TYPES.TYPE_DAC, engine_functions.get_dac_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5106,9 +5106,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		sandhs.push(new SampleAndHold(global.ELEMENT_TYPES.TYPE_SAH, engine_functions.get_samplers_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5134,9 +5134,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		pwms.push(new PulseWidthModulator(global.ELEMENT_TYPES.TYPE_PWM, engine_functions.get_pwm_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5160,8 +5160,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		integrators.push(new IntegratorModule(global.ELEMENT_TYPES.TYPE_INTEGRATOR, engine_functions.get_integrator_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5185,8 +5185,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		differentiators.push(new DifferentiatorModule(global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR, engine_functions.get_differentiator_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5210,8 +5210,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		lowpasses.push(new LowPassFilter(global.ELEMENT_TYPES.TYPE_LPF, engine_functions.get_lowpass_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5235,8 +5235,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		highpasses.push(new HighPassFilter(global.ELEMENT_TYPES.TYPE_HPF, engine_functions.get_highpass_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5264,10 +5264,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		relays.push(new Relay(global.ELEMENT_TYPES.TYPE_REL, engine_functions.get_relay_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -5293,9 +5293,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		pids.push(new PIDModule(global.ELEMENT_TYPES.TYPE_PID, engine_functions.get_pid_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5319,8 +5319,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		luts.push(new LookUpTable(global.ELEMENT_TYPES.TYPE_LUT, engine_functions.get_lut_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5346,9 +5346,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		vcrs.push(new VoltageControlledResistor(global.ELEMENT_TYPES.TYPE_VCR, engine_functions.get_vcr_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5374,9 +5374,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		vccas.push(new VoltageControlledCapacitor(global.ELEMENT_TYPES.TYPE_VCCA, engine_functions.get_vcca_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5402,9 +5402,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		vcls.push(new VoltageControlledInductor(global.ELEMENT_TYPES.TYPE_VCL, engine_functions.get_vcl_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5430,9 +5430,9 @@ class EngineFunctions {
 		this.x3 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y3 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
+		var p1: Array<number> = this.mapper3.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper3.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper3.snap_to_grid(this.x3, this.y3);
 		this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
 
 		grts.push(new GreaterThan(global.ELEMENT_TYPES.TYPE_GRT, engine_functions.get_grt_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
@@ -5456,8 +5456,8 @@ class EngineFunctions {
 		this.x2 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y2 = global.variables.mouse_y;
 
-		let p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
+		var p1: Array<number> = this.mapper2.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper2.snap_to_grid(this.x2, this.y2);
 		this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
 
 		tptzs.push(new TPTZModule(global.ELEMENT_TYPES.TYPE_TPTZ, engine_functions.get_tptz_assignment(), this.mapper2.n1, this.mapper2.n2));
@@ -5485,10 +5485,10 @@ class EngineFunctions {
 		this.x4 = global.variables.mouse_x + 2 * global.variables.node_space_x;
 		this.y4 = global.variables.mouse_y + 2 * global.variables.node_space_y;
 
-		let p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
-		let p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
-		let p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
-		let p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
+		var p1: Array<number> = this.mapper4.snap_to_grid(this.x1, this.y1);
+		var p2: Array<number> = this.mapper4.snap_to_grid(this.x2, this.y2);
+		var p3: Array<number> = this.mapper4.snap_to_grid(this.x3, this.y3);
+		var p4: Array<number> = this.mapper4.snap_to_grid(this.x4, this.y4);
 		this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
 
 		transformers.push(new Transformer(global.ELEMENT_TYPES.TYPE_TRAN, engine_functions.get_transformer_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
@@ -5509,7 +5509,7 @@ class EngineFunctions {
 	assign_element_simulation_ids() {
 		/* #INSERT_GENERATE_ELEMENT_SIMULATION_IDS# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		let elm_max: number = global.utils.element_max();
+		var elm_max: number = global.utils.element_max();
 		for (var i: number = 0; i < elm_max; i++) {
 			if (i > -1 && i < resistors.length) {
 				resistors[i].simulation_id = i;
@@ -6327,7 +6327,7 @@ class EngineFunctions {
 		if (global.variables.user_file_selected) {
 			try {
 				this.parse_elements(global.variables.user_file.content);
-			} catch (error) { }
+			} catch (error) {}
 			global.variables.history['packet'].push(engine_functions.history_snapshot());
 			global.variables.user_file_selected = false;
 			mouse_event_latch = false;

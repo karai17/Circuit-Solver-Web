@@ -285,7 +285,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) { }
+		} catch (e) {}
 		virtual_surface.refresh_settings();
 		canvas.on_resize();
 	}
@@ -331,7 +331,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) { }
+		} catch (e) {}
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -1086,26 +1086,37 @@ function load_app(): void {
 				if (global.flags.flag_add_element) {
 					drag_padding = workspace.bounds.get_width() * 0.025;
 					if (!global.variables.element_on_board) {
-						if (view_port.left <= workspace.bounds.left ||
-							view_port.top <= workspace.bounds.top ||
-							view_port.right >= workspace.bounds.right ||
-							view_port.bottom >= workspace.bounds.bottom) {
-							canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding,
-								workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding,
-								drag_fill_paint);
-							canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+						if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
+							canvas.draw_rect(
+								workspace.bounds.left + drag_padding,
+								workspace.bounds.top + drag_padding,
+								workspace.bounds.right - drag_padding,
+								workspace.bounds.bottom - drag_padding,
+								drag_fill_paint
+							);
+							canvas.draw_text(
+								language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]],
+								workspace.bounds.get_center_x(),
+								workspace.bounds.get_center_y(),
+								drag_text_paint
+							);
 						} else {
-							canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding,
-								view_port.right - drag_padding, view_port.bottom - drag_padding,
-								drag_fill_paint);
+							canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
 							canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
 						}
 					}
 				} else {
-					if (!global.variables.element_on_board && DESKTOP_MODE && !global.flags.flag_select_timestep &&
-						!global.flags.flag_select_settings && !global.flags.flag_graph &&
-						!global.flags.flag_zoom && !global.flags.flag_remove_all &&
-						!global.flags.flag_save_circuit && !global.flags.flag_save_image) {
+					if (
+						!global.variables.element_on_board &&
+						DESKTOP_MODE &&
+						!global.flags.flag_select_timestep &&
+						!global.flags.flag_select_settings &&
+						!global.flags.flag_graph &&
+						!global.flags.flag_zoom &&
+						!global.flags.flag_remove_all &&
+						!global.flags.flag_save_circuit &&
+						!global.flags.flag_save_image
+					) {
 						canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
 					}
 				}
@@ -1194,26 +1205,36 @@ function load_app(): void {
 						if (global.flags.flag_add_element) {
 							drag_padding = workspace.bounds.get_width() * 0.025;
 							if (!global.variables.element_on_board) {
-								if (view_port.left <= workspace.bounds.left ||
-									view_port.top <= workspace.bounds.top ||
-									view_port.right >= workspace.bounds.right ||
-									view_port.bottom >= workspace.bounds.bottom) {
-									canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding,
-										workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding,
-										drag_fill_paint);
-									canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+								if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
+									canvas.draw_rect(
+										workspace.bounds.left + drag_padding,
+										workspace.bounds.top + drag_padding,
+										workspace.bounds.right - drag_padding,
+										workspace.bounds.bottom - drag_padding,
+										drag_fill_paint
+									);
+									canvas.draw_text(
+										language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]],
+										workspace.bounds.get_center_x(),
+										workspace.bounds.get_center_y(),
+										drag_text_paint
+									);
 								} else {
-									canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding,
-										view_port.right - drag_padding, view_port.bottom - drag_padding,
-										drag_fill_paint);
+									canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
 									canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
 								}
 							}
 						} else {
-							if (!global.variables.element_on_board && !global.flags.flag_select_timestep &&
-								!global.flags.flag_select_settings && !global.flags.flag_graph &&
-								!global.flags.flag_zoom && !global.flags.flag_remove_all &&
-								!global.flags.flag_save_circuit && !global.flags.flag_save_image) {
+							if (
+								!global.variables.element_on_board &&
+								!global.flags.flag_select_timestep &&
+								!global.flags.flag_select_settings &&
+								!global.flags.flag_graph &&
+								!global.flags.flag_zoom &&
+								!global.flags.flag_remove_all &&
+								!global.flags.flag_save_circuit &&
+								!global.flags.flag_save_image
+							) {
 								canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
 							}
 						}
@@ -1541,7 +1562,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-			0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+				0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;

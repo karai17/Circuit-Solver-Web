@@ -143,7 +143,11 @@ class ElementOptionsEditWindow {
         this.select_offset_x = -1;
         this.mouse_down_flag = false;
         this.ascending_flag = false;
+        this.text = '';
+        this.adj_text = '';
         this.cached_measured_text = 0;
+        this.min = 0;
+        this.max = 0;
         this.width_mul_0p3636 = 0;
         this.height_mul_0p3636 = 0;
     }
@@ -1195,7 +1199,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_resistor(global.variables.selected_id);
             if (index < resistors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1218,7 +1222,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_capacitor(global.variables.selected_id);
             if (index < capacitors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1244,7 +1248,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_inductor(global.variables.selected_id);
             if (index < inductors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1270,7 +1274,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_ground(global.variables.selected_id);
             if (index < grounds.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1293,7 +1297,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_dcsource(global.variables.selected_id);
             if (index < dcsources.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1316,7 +1320,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_dccurrent(global.variables.selected_id);
             if (index < dccurrents.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1339,7 +1343,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_acsource(global.variables.selected_id);
             if (index < acsources.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1362,7 +1366,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_accurrent(global.variables.selected_id);
             if (index < accurrents.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1385,7 +1389,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_squarewave(global.variables.selected_id);
             if (index < squarewaves.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1408,7 +1412,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_sawwave(global.variables.selected_id);
             if (index < sawwaves.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1431,7 +1435,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_trianglewave(global.variables.selected_id);
             if (index < trianglewaves.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1454,7 +1458,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_constant(global.variables.selected_id);
             if (index < constants.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1477,8 +1481,11 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_net(global.variables.selected_id);
             if (index < nets.length) {
-                let value = global.utils.copy(this.input_button.text);
+                //@ts-expect-error
+                var value = global.utils.copy(this.input_button.text);
+                //@ts-expect-error
                 global.variables.selected_properties[global.variables.selected_properties['options'][this.option_index]] = value;
+                //@ts-expect-error
                 nets[index].elm.properties[nets[index].elm.properties['options'][this.option_index]] = value;
             }
         }
@@ -1486,8 +1493,11 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_note(global.variables.selected_id);
             if (index < notes.length) {
-                let value = global.utils.copy(this.input_button.text);
+                //@ts-expect-error
+                var value = global.utils.copy(this.input_button.text);
+                //@ts-expect-error
                 global.variables.selected_properties[global.variables.selected_properties['options'][this.option_index]] = value;
+                //@ts-expect-error
                 notes[index].elm.properties[notes[index].elm.properties['options'][this.option_index]] = value;
             }
         }
@@ -1495,7 +1505,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_rail(global.variables.selected_id);
             if (index < rails.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1518,7 +1528,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_voltmeter(global.variables.selected_id);
             if (index < voltmeters.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1541,7 +1551,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_ohmmeter(global.variables.selected_id);
             if (index < ohmmeters.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1564,7 +1574,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_ammeter(global.variables.selected_id);
             if (index < ammeters.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1587,7 +1597,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_wattmeter(global.variables.selected_id);
             if (index < wattmeters.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1610,7 +1620,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_fuse(global.variables.selected_id);
             if (index < fuses.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1633,7 +1643,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_spst(global.variables.selected_id);
             if (index < spsts.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1656,7 +1666,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_spdt(global.variables.selected_id);
             if (index < spdts.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1679,7 +1689,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_not(global.variables.selected_id);
             if (index < nots.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1702,7 +1712,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_diode(global.variables.selected_id);
             if (index < diodes.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1725,7 +1735,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_led(global.variables.selected_id);
             if (index < leds.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1748,7 +1758,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_zener(global.variables.selected_id);
             if (index < zeners.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1771,7 +1781,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_potentiometer(global.variables.selected_id);
             if (index < potentiometers.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1794,7 +1804,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_and(global.variables.selected_id);
             if (index < ands.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1817,7 +1827,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_or(global.variables.selected_id);
             if (index < ors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1840,7 +1850,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_nand(global.variables.selected_id);
             if (index < nands.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1863,7 +1873,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_nor(global.variables.selected_id);
             if (index < nors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1886,7 +1896,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_xor(global.variables.selected_id);
             if (index < xors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1909,7 +1919,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_xnor(global.variables.selected_id);
             if (index < xnors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1932,7 +1942,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_dff(global.variables.selected_id);
             if (index < dffs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1955,7 +1965,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vsat(global.variables.selected_id);
             if (index < vsats.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -1978,7 +1988,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_adder(global.variables.selected_id);
             if (index < adders.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2001,7 +2011,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_subtractor(global.variables.selected_id);
             if (index < subtractors.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2024,7 +2034,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_multiplier(global.variables.selected_id);
             if (index < multipliers.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2047,7 +2057,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_divider(global.variables.selected_id);
             if (index < dividers.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2070,7 +2080,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_gain(global.variables.selected_id);
             if (index < gains.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2093,7 +2103,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_absval(global.variables.selected_id);
             if (index < absvals.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2116,7 +2126,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vcsw(global.variables.selected_id);
             if (index < vcsws.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2139,7 +2149,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vcvs(global.variables.selected_id);
             if (index < vcvss.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2162,7 +2172,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vccs(global.variables.selected_id);
             if (index < vccss.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2185,7 +2195,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_cccs(global.variables.selected_id);
             if (index < cccss.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2208,7 +2218,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_ccvs(global.variables.selected_id);
             if (index < ccvss.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2231,7 +2241,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_opamp(global.variables.selected_id);
             if (index < opamps.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2254,7 +2264,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_nmosfet(global.variables.selected_id);
             if (index < nmosfets.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2277,7 +2287,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_pmosfet(global.variables.selected_id);
             if (index < pmosfets.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2300,7 +2310,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_npn(global.variables.selected_id);
             if (index < npns.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2323,7 +2333,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_pnp(global.variables.selected_id);
             if (index < pnps.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2346,7 +2356,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_adc(global.variables.selected_id);
             if (index < adcs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2369,7 +2379,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_dac(global.variables.selected_id);
             if (index < dacs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2392,7 +2402,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_samplers(global.variables.selected_id);
             if (index < sandhs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2415,7 +2425,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_pwm(global.variables.selected_id);
             if (index < pwms.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2438,7 +2448,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_integrator(global.variables.selected_id);
             if (index < integrators.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2461,7 +2471,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_differentiator(global.variables.selected_id);
             if (index < differentiators.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2484,7 +2494,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_lowpass(global.variables.selected_id);
             if (index < lowpasses.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2507,7 +2517,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_highpass(global.variables.selected_id);
             if (index < highpasses.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2530,7 +2540,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_relay(global.variables.selected_id);
             if (index < relays.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2556,7 +2566,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_pid(global.variables.selected_id);
             if (index < pids.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2579,7 +2589,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_lut(global.variables.selected_id);
             if (index < luts.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2602,7 +2612,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vcr(global.variables.selected_id);
             if (index < vcrs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2625,7 +2635,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vcca(global.variables.selected_id);
             if (index < vccas.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2648,7 +2658,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_vcl(global.variables.selected_id);
             if (index < vcls.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2671,7 +2681,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_grt(global.variables.selected_id);
             if (index < grts.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2694,7 +2704,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_tptz(global.variables.selected_id);
             if (index < tptzs.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2717,7 +2727,7 @@ class ElementOptionsEditWindow {
             var index = -1;
             index = engine_functions.get_transformer(global.variables.selected_id);
             if (index < transformers.length) {
-                let value = string_operator.parse(this.input_button.text);
+                var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
                         Math.abs(value) <= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]))) {
@@ -2857,22 +2867,22 @@ class ElementOptionsEditWindow {
             }
             this.cancel_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
             this.input_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
-            let text = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
-            canvas.draw_text(text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
-            this.measured_text = this.input_button.text_paint.measure_text(text);
-            let adj_text = this.input_button.text;
+            this.text = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
+            canvas.draw_text(this.text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
+            this.measured_text = this.input_button.text_paint.measure_text(this.text);
+            this.adj_text = this.input_button.text;
             if (this.select_all && this.select_start === -1 && this.select_end === -1) {
                 canvas.draw_rect3(this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.measured_text * 1.1, this.input_button.get_height() * 0.7, this.select_paint);
             }
             this.cached_measured_text = this.measured_text * 0.5;
             if (this.select_start !== -1 && this.select_end !== -1) {
-                let min = Math.min(this.select_start, this.select_end);
-                let max = Math.max(this.select_start, this.select_end);
-                this.select_width = this.text_paint.measure_text(adj_text.substring(min, max));
-                this.select_offset_x = this.text_paint.measure_text(adj_text.substring(0, min));
+                this.min = Math.min(this.select_start, this.select_end);
+                this.max = Math.max(this.select_start, this.select_end);
+                this.select_width = this.text_paint.measure_text(this.adj_text.substring(this.min, this.max));
+                this.select_offset_x = this.text_paint.measure_text(this.adj_text.substring(0, this.min));
                 canvas.draw_rect(this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x, this.input_button.get_center_y() - this.input_button.get_height() * 0.35 + this.offset_y, this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x + this.select_width, this.input_button.get_center_y() + this.input_button.get_height() * 0.35 + this.offset_y, this.select_paint);
             }
-            canvas.draw_text('  _', this.input_button.get_center_x() - this.cached_measured_text + this.input_button.text_paint.measure_text(adj_text.substring(0, this.cursor_position)) + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
+            canvas.draw_text('  _', this.input_button.get_center_x() - this.cached_measured_text + this.input_button.text_paint.measure_text(this.adj_text.substring(0, this.cursor_position)) + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
             if (this.exit_button.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
                 canvas.draw_rect(this.exit_button.left + this.offset_x, this.exit_button.top + this.offset_y, this.exit_button.right + this.offset_x, this.exit_button.bottom + this.offset_y, this.hover_paint);
             }

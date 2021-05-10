@@ -147,6 +147,9 @@ class SettingsWindow {
         this.toggle_switch_button.draw_stroke = false;
         this.toggle_switch_button.draw_text = true;
         this.toggle_switch_button.line_paint.set_color(global.COLORS.GENERAL_BOUNDS_COLOR);
+        this.padding = 0;
+        this.width_mul_0p3636 = 0;
+        this.height_mul_0p3636 = 0;
     }
     mouse_down() {
         if (global.flags.flag_select_settings) {
@@ -402,12 +405,12 @@ class SettingsWindow {
                             canvas.draw_text(i + 1 + '', this.attributes[i].left + this.offset_x, this.attributes[i].top + this.offset_y, this.shorcut_text_paint);
                         }
                         if (global.variables.system_options['values'][i] === global.CONSTANTS.ON || global.variables.system_options['values'][i] === global.CONSTANTS.OFF) {
-                            let padding = this.attributes[i].get_height() * 0.1;
+                            this.padding = this.attributes[i].get_height() * 0.1;
                             this.toggle_switch_button.state = global.variables.system_options['values'][i];
                             this.toggle_switch_button.left = this.attributes[i].right - this.attributes[i].get_width() * 0.3;
                             this.toggle_switch_button.right = this.attributes[i].right - this.PADDING * this.bounds.get_width();
-                            this.toggle_switch_button.top = this.attributes[i].top + padding;
-                            this.toggle_switch_button.bottom = this.attributes[i].bottom - padding;
+                            this.toggle_switch_button.top = this.attributes[i].top + this.padding;
+                            this.toggle_switch_button.bottom = this.attributes[i].bottom - this.padding;
                             if (global.variables.system_options['values'][i] === global.CONSTANTS.ON) {
                                 this.toggle_switch_button.toggle_paint.set_color(global.COLORS.GENERAL_CYAN_COLOR);
                             }
@@ -427,10 +430,10 @@ class SettingsWindow {
             if (this.exit_button.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
                 canvas.draw_rect(this.exit_button.left + this.offset_x, this.exit_button.top + this.offset_y, this.exit_button.right + this.offset_x, this.exit_button.bottom + this.offset_y, this.hover_paint);
             }
-            let width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
-            let height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
-            canvas.draw_line(this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
-            canvas.draw_line(this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
+            this.width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
+            this.height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
+            canvas.draw_line(this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
+            canvas.draw_line(this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
         }
     }
 }

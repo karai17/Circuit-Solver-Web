@@ -104,7 +104,7 @@ class ConfirmWindow {
 		this.tab_index_location = [
 			[this.option_0.get_center_x(), this.option_0.get_center_y()],
 			[this.option_1.get_center_x(), this.option_1.get_center_y()]
-		]
+		];
 		this.OFFSCREEN_X = -500e3;
 		this.OFFSCREEN_Y = -500e3;
 	}
@@ -122,7 +122,6 @@ class ConfirmWindow {
 		global.variables.mouse_x = this.tab_index_location[this.tab_indexer][0];
 		global.variables.mouse_y = this.tab_index_location[this.tab_indexer][1];
 		this.hover();
-
 	}
 	handle_enter() {
 		if (this.tab_indexer > -1) {
@@ -226,8 +225,8 @@ class ConfirmWindow {
 		this.fill_paint.set_text_size(global.variables.canvas_text_size_5);
 		this.bounds_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
 		this.bounds_paint.set_text_size(global.variables.canvas_text_size_5);
-		this.tab_index_location[0] = [this.option_0.get_center_x(), this.option_0.get_center_y()]
-		this.tab_index_location[1] = [this.option_1.get_center_x(), this.option_1.get_center_y()]
+		this.tab_index_location[0] = [this.option_0.get_center_x(), this.option_0.get_center_y()];
+		this.tab_index_location[1] = [this.option_1.get_center_x(), this.option_1.get_center_y()];
 	}
 	draw_window(canvas: GraphicsEngine): void {
 		if (global.flags.flag_remove_all) {

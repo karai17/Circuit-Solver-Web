@@ -590,7 +590,7 @@ class ElementOptions {
 			}
 		}
 	}
-	mouse_move(): void { }
+	mouse_move(): void {}
 	mouse_up(): void {
 		if (!global.variables.mouse_keyboard_lock) {
 			if (
@@ -2935,8 +2935,20 @@ class ElementOptions {
 		canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_width, rect.right - this.cached_width, rect.top + this.cached_width, this.line_paint_alt);
 		canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_width, rect.left + this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
 		canvas.draw_line(rect.right - this.cached_width, rect.top + this.cached_width, rect.right - this.cached_width, rect.bottom - this.cached_height, this.line_paint_alt);
-		canvas.draw_line(rect.right - this.cached_width, rect.bottom - this.cached_height, rect.right - this.cached_width - this.width_mul_0p125, rect.bottom - this.cached_height - this.height_mul_0p125, this.line_paint_alt);
-		canvas.draw_line(rect.right - this.cached_width, rect.bottom - this.cached_height, rect.right - this.cached_width + this.width_mul_0p125, rect.bottom - this.cached_height - this.height_mul_0p125, this.line_paint_alt);
+		canvas.draw_line(
+			rect.right - this.cached_width,
+			rect.bottom - this.cached_height,
+			rect.right - this.cached_width - this.width_mul_0p125,
+			rect.bottom - this.cached_height - this.height_mul_0p125,
+			this.line_paint_alt
+		);
+		canvas.draw_line(
+			rect.right - this.cached_width,
+			rect.bottom - this.cached_height,
+			rect.right - this.cached_width + this.width_mul_0p125,
+			rect.bottom - this.cached_height - this.height_mul_0p125,
+			this.line_paint_alt
+		);
 	}
 	draw_wire_style(rect: RectF, canvas: GraphicsEngine): void {
 		this.cached_width = rect.get_width() * 0.303;

@@ -64,6 +64,7 @@ class Constant {
         this.circle_buffer = [];
         this.build_element_flag = true;
         this.angle = 0;
+        this.node_id_array = [];
     }
     refresh_bounds() {
         if (this.elm.consistent()) {
@@ -533,9 +534,9 @@ class Constant {
                     !global.flags.flag_remove_all &&
                     !global.flags.flag_add_element) {
                     if (this.elm.consistent()) {
-                        let node_id_array = this.elm.get_nodes();
-                        for (var i = 0; i < node_id_array.length; i++) {
-                            canvas.draw_rect2(nodes[node_id_array[i]].get_bounds(), this.line_paint);
+                        this.node_id_array = this.elm.get_nodes();
+                        for (var i = 0; i < this.node_id_array.length; i++) {
+                            canvas.draw_rect2(nodes[this.node_id_array[i]].get_bounds(), this.line_paint);
                         }
                     }
                 }
@@ -571,8 +572,8 @@ class Constant {
     time_data() {
         /* #INSERT_GENERATE_TIME_DATA# */
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-        let time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-        let keys = Object.keys(this.elm.properties);
+        var time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+        var keys = Object.keys(this.elm.properties);
         for (var i = keys.length - 1; i > -1; i--) {
             if (typeof this.elm.properties[keys[i]] === 'number') {
                 if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {

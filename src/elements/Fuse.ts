@@ -30,6 +30,7 @@ class Fuse {
 	private circle_buffer: Array<Array<number>>;
 	private build_element_flag: boolean;
 	private angle: number;
+	private node_id_array: Array<number>;
 	constructor(type: number, id: number, n1: number, n2: number) {
 		this.initialized = false;
 		this.bounds = new RectF(0, 0, 0, 0);
@@ -109,6 +110,7 @@ class Fuse {
 		this.circle_buffer = [];
 		this.build_element_flag = true;
 		this.angle = 0;
+		this.node_id_array = [];
 	}
 	refresh_bounds(): void {
 		if (this.elm.consistent()) {
@@ -472,7 +474,8 @@ class Fuse {
 			((this.c_x >= view_port.left - global.variables.node_space_x &&
 				this.c_x - global.variables.node_space_x <= view_port.right &&
 				this.c_y >= view_port.top + -global.variables.node_space_y &&
-				this.c_y - global.variables.node_space_y <= view_port.bottom) || global.flags.flag_picture_request)
+				this.c_y - global.variables.node_space_y <= view_port.bottom) ||
+				global.flags.flag_picture_request)
 		) {
 			this.connect1_x = this.c_x - this.x_space * global.utils.cosine(this.theta);
 			this.connect1_y = this.c_y - this.y_space * global.utils.sine(this.theta);
@@ -541,7 +544,7 @@ class Fuse {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -660,9 +663,9 @@ class Fuse {
 					!global.flags.flag_add_element
 				) {
 					if (this.elm.consistent()) {
-						let node_id_array: Array<number> = this.elm.get_nodes();
-						for (var i = 0; i < node_id_array.length; i++) {
-							canvas.draw_rect2(nodes[node_id_array[i]].get_bounds(), this.line_paint);
+						this.node_id_array = this.elm.get_nodes();
+						for (var i = 0; i < this.node_id_array.length; i++) {
+							canvas.draw_rect2(nodes[this.node_id_array[i]].get_bounds(), this.line_paint);
 						}
 					}
 				}
@@ -698,8 +701,8 @@ class Fuse {
 	time_data(): TIME_DATA_TEMPLATE_T {
 		/* #INSERT_GENERATE_TIME_DATA# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		let time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		let keys: Array<string> = Object.keys(this.elm.properties);
+		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+		var keys: Array<string> = Object.keys(this.elm.properties);
 		for (var i: number = keys.length - 1; i > -1; i--) {
 			if (typeof this.elm.properties[keys[i]] === 'number') {
 				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {

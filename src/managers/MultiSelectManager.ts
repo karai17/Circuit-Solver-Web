@@ -69,7 +69,8 @@ class MultiSelectManager {
 		this.draw_bounds_flag = new RectF(0, 0, 0, 0);
 	}
 	multi_select_input_conditions(): boolean {
-		return !global.flags.flag_simulating &&
+		return (
+			!global.flags.flag_simulating &&
 			!global.flags.flag_save_image &&
 			!global.flags.flag_save_circuit &&
 			!global.flags.flag_zoom &&
@@ -82,10 +83,12 @@ class MultiSelectManager {
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox &&
 			!global.flags.flag_history_lock &&
-			!MOBILE_MODE;
+			!MOBILE_MODE
+		);
 	}
 	multi_select_draw_conditions(): boolean {
-		return !global.flags.flag_save_image &&
+		return (
+			!global.flags.flag_save_image &&
 			!global.flags.flag_save_circuit &&
 			!global.flags.flag_zoom &&
 			!global.flags.flag_element_options &&
@@ -96,6 +99,7 @@ class MultiSelectManager {
 			!global.flags.flag_select_settings &&
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox
+		);
 	}
 	reset_enveloping_bounds(): void {
 		global.variables.multi_selected = false;

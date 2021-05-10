@@ -38,10 +38,11 @@ class TimeStepWindow {
 	private text: string;
 	private adj_text: string;
 	private cached_measured_text: number;
-	private min;
-	private max;
+	private min: number;
+	private max: number;
 	private width_mul_0p3636: number;
 	private height_mul_0p3636: number;
+
 	constructor() {
 		this.TITLE_HEIGHT_RATIO = 0.25;
 		this.BUTTON_WIDTH_RATIO = 0.3;
@@ -181,8 +182,8 @@ class TimeStepWindow {
 		this.select_offset_x = -1;
 		this.mouse_down_flag = false;
 		this.ascending_flag = false;
-		this.text = "";
-		this.adj_text = "";
+		this.text = '';
+		this.adj_text = '';
 		this.cached_measured_text = 0;
 		this.min = 0;
 		this.max = 0;

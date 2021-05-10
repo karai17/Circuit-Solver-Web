@@ -473,8 +473,8 @@ class Wire {
     time_data() {
         /* #INSERT_GENERATE_TIME_DATA# */
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-        let time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-        let keys = Object.keys(this.elm.properties);
+        var time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+        var keys = Object.keys(this.elm.properties);
         for (var i = keys.length - 1; i > -1; i--) {
             if (typeof this.elm.properties[keys[i]] === 'number') {
                 if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {

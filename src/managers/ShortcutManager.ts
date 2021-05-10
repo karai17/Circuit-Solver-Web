@@ -138,8 +138,7 @@ class ShortcutManager {
 			if (global.flags.flag_remove_all) {
 				confirm_window.handle_tab();
 			}
-		}
-		else if (this.command === this.SHORTCUT_ENTER && key_event['ctrl'] === false) {
+		} else if (this.command === this.SHORTCUT_ENTER && key_event['ctrl'] === false) {
 			/* Quick testing for tab capability. */
 			if (global.flags.flag_remove_all) {
 				confirm_window.handle_enter();

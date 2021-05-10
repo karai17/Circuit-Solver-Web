@@ -115,7 +115,7 @@ class Paint {
 	}
 	measure(txt: string): PAINT_METRICS_T {
 		if (this.last_font !== this.font || this.last_text_size !== this.text_size) {
-			this.paint_surface.context.font = this.text_size + "px " + this.font;
+			this.paint_surface.context.font = this.text_size + 'px ' + this.font;
 			this.last_font = this.font;
 			this.last_text_size = this.text_size;
 		}

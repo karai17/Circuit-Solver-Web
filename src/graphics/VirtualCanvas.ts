@@ -26,7 +26,7 @@ class VirtualCanvas {
 			this.context.msImageSmoothingEnabled = false;
 			this.context.globalCompositeOperation = 'source-over';
 			this.surface.style.backfaceVisibility = 'hidden';
-		} catch (e) { }
+		} catch (e) {}
 	}
 	resize(width: number, height: number): void {
 		this.surface.width = width;
@@ -49,6 +49,6 @@ class VirtualCanvas {
 			this.context.msImageSmoothingEnabled = false;
 			this.context.globalCompositeOperation = 'source-over';
 			this.surface.style.backfaceVisibility = 'hidden';
-		} catch (e) { }
+		} catch (e) {}
 	}
 }

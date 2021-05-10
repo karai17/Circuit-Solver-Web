@@ -93,6 +93,7 @@ class VoltageControlledInductor {
         this.circle_buffer = [];
         this.build_element_flag = true;
         this.angle = 0;
+        this.node_id_array = [];
     }
     refresh_bounds() {
         if (this.elm.consistent()) {
@@ -545,7 +546,8 @@ class VoltageControlledInductor {
             ((this.c_x >= view_port.left - global.variables.node_space_x &&
                 this.c_x - global.variables.node_space_x <= view_port.right &&
                 this.c_y >= view_port.top + -global.variables.node_space_y &&
-                this.c_y - global.variables.node_space_y <= view_port.bottom) || global.flags.flag_picture_request)) {
+                this.c_y - global.variables.node_space_y <= view_port.bottom) ||
+                global.flags.flag_picture_request)) {
             let cache_2 = this.x_space;
             let cache_3 = this.y_space;
             let cache_8 = this.x_space;
@@ -763,9 +765,9 @@ class VoltageControlledInductor {
                     !global.flags.flag_remove_all &&
                     !global.flags.flag_add_element) {
                     if (this.elm.consistent()) {
-                        let node_id_array = this.elm.get_nodes();
-                        for (var i = 0; i < node_id_array.length; i++) {
-                            canvas.draw_rect2(nodes[node_id_array[i]].get_bounds(), this.line_paint);
+                        this.node_id_array = this.elm.get_nodes();
+                        for (var i = 0; i < this.node_id_array.length; i++) {
+                            canvas.draw_rect2(nodes[this.node_id_array[i]].get_bounds(), this.line_paint);
                         }
                     }
                 }
@@ -813,8 +815,8 @@ class VoltageControlledInductor {
     time_data() {
         /* #INSERT_GENERATE_TIME_DATA# */
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-        let time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-        let keys = Object.keys(this.elm.properties);
+        var time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+        var keys = Object.keys(this.elm.properties);
         for (var i = keys.length - 1; i > -1; i--) {
             if (typeof this.elm.properties[keys[i]] === 'number') {
                 if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {

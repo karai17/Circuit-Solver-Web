@@ -140,7 +140,7 @@ class GraphicsEngine {
 				this.last_text_align = paint.text_align;
 			}
 			if (this.last_text_size !== paint.text_size || this.last_font !== paint.font) {
-				this.ctx.font = paint.text_size + "px " + paint.font;
+				this.ctx.font = paint.text_size + 'px ' + paint.font;
 				this.last_text_size = paint.text_size;
 				this.last_font = paint.font;
 			}
@@ -187,20 +187,20 @@ class GraphicsEngine {
 				this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO);
 				this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
 			}
-			this.cache = coords[(coords.length - 1) - i];
+			this.cache = coords[coords.length - 1 - i];
 			this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO);
 			this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
 			if (coords.length - i < coords.length) {
-				this.cache = coords[(coords.length) - i];
+				this.cache = coords[coords.length - i];
 				this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO);
 				this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
 			}
-			if ((coords.length) - i == i - 2) {
+			if (coords.length - i == i - 2) {
 				break;
 			}
 		}
-		this.cache = [];
 		this.ctx.stroke();
+		this.cache = [];
 	}
 	draw_rect(left: number, top: number, right: number, bottom: number, paint: Paint): void {
 		this.width = (global.CONSTANTS.ZERO_PT_FIVE + (right - left)) >> global.CONSTANTS.ZERO;
@@ -368,19 +368,19 @@ class GraphicsEngine {
 				this.ctx.moveTo(this.x, this.y);
 				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
 			}
-			this.cache = buffer[(buffer.length - 1) - i];
+			this.cache = buffer[buffer.length - 1 - i];
 			this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 			this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 			this.ctx.moveTo(this.x, this.y);
 			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
 			if (buffer.length - i < buffer.length) {
-				this.cache = buffer[(buffer.length) - i];
+				this.cache = buffer[buffer.length - i];
 				this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 				this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 				this.ctx.moveTo(this.x, this.y);
 				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
 			}
-			if ((buffer.length) - i == i - 2) {
+			if (buffer.length - i == i - 2) {
 				break;
 			}
 		}
@@ -603,12 +603,7 @@ class GraphicsEngine {
 			this.last_clear_height_int = ((h + this.padding + global.CONSTANTS.ZERO_PT_FIVE) << 1) >> global.CONSTANTS.ZERO;
 		}
 
-		this.ctx.clearRect(
-			this.last_clear_x_int,
-			this.last_clear_y_int,
-			this.last_clear_width_int,
-			this.last_clear_height_int
-		);
+		this.ctx.clearRect(this.last_clear_x_int, this.last_clear_y_int, this.last_clear_width_int, this.last_clear_height_int);
 	}
 	release(): void {
 		this.general_path.reset();

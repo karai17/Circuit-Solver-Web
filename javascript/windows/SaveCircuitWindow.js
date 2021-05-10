@@ -142,6 +142,13 @@ class SaveCircuitWindow {
         this.select_offset_x = -1;
         this.mouse_down_flag = false;
         this.ascending_flag = false;
+        this.text = '';
+        this.adj_text = '';
+        this.cached_measured_text = 0;
+        this.min = 0;
+        this.max = 0;
+        this.width_mul_0p3636 = 0;
+        this.height_mul_0p3636 = 0;
     }
     mouse_down() {
         if (global.flags.flag_save_circuit) {
@@ -744,29 +751,29 @@ class SaveCircuitWindow {
             }
             this.cancel_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
             this.input_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
-            let text = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
-            canvas.draw_text(text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
-            this.measured_text = this.input_button.text_paint.measure_text(text);
-            let adj_text = this.input_button.text;
+            this.text = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
+            canvas.draw_text(this.text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
+            this.measured_text = this.input_button.text_paint.measure_text(this.text);
+            this.adj_text = this.input_button.text;
             if (this.select_all && this.select_start === -1 && this.select_end === -1) {
                 canvas.draw_rect3(this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.measured_text * 1.1, this.input_button.get_height() * 0.7, this.select_paint);
             }
-            let cached_measured_text = this.measured_text * 0.5;
+            this.cached_measured_text = this.measured_text * 0.5;
             if (this.select_start !== -1 && this.select_end !== -1) {
-                let min = Math.min(this.select_start, this.select_end);
-                let max = Math.max(this.select_start, this.select_end);
-                this.select_width = this.text_paint.measure_text(adj_text.substring(min, max));
-                this.select_offset_x = this.text_paint.measure_text(adj_text.substring(0, min));
-                canvas.draw_rect(this.input_button.get_center_x() - cached_measured_text + this.select_offset_x + this.offset_x, this.input_button.get_center_y() - this.input_button.get_height() * 0.35 + this.offset_y, this.input_button.get_center_x() - cached_measured_text + this.select_offset_x + this.offset_x + this.select_width, this.input_button.get_center_y() + this.input_button.get_height() * 0.35 + this.offset_y, this.select_paint);
+                this.min = Math.min(this.select_start, this.select_end);
+                this.max = Math.max(this.select_start, this.select_end);
+                this.select_width = this.text_paint.measure_text(this.adj_text.substring(this.min, this.max));
+                this.select_offset_x = this.text_paint.measure_text(this.adj_text.substring(0, this.min));
+                canvas.draw_rect(this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x, this.input_button.get_center_y() - this.input_button.get_height() * 0.35 + this.offset_y, this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x + this.select_width, this.input_button.get_center_y() + this.input_button.get_height() * 0.35 + this.offset_y, this.select_paint);
             }
-            canvas.draw_text('  _', this.input_button.get_center_x() - cached_measured_text + this.input_button.text_paint.measure_text(adj_text.substring(0, this.cursor_position)) + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
+            canvas.draw_text('  _', this.input_button.get_center_x() - this.cached_measured_text + this.input_button.text_paint.measure_text(this.adj_text.substring(0, this.cursor_position)) + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
             if (this.exit_button.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
                 canvas.draw_rect(this.exit_button.left + this.offset_x, this.exit_button.top + this.offset_y, this.exit_button.right + this.offset_x, this.exit_button.bottom + this.offset_y, this.hover_paint);
             }
-            let width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
-            let height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
-            canvas.draw_line(this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
-            canvas.draw_line(this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
+            this.width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
+            this.height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
+            canvas.draw_line(this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
+            canvas.draw_line(this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
             canvas.draw_text('[' + this.input_button.text.length + ' / ' + global.CONSTANTS.MAX_TEXT_LENGTH + ']', this.input_button.left + this.offset_x, this.okay_button.get_center_y() + this.offset_y, this.text_paint);
         }
     }

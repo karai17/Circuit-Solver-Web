@@ -108,7 +108,8 @@ class ScopeManager {
 				} else if (this.entry[i]['element_type'] === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 					this.index = engine_functions.get_ohmmeter(this.entry[i]['element_id']);
 					if (this.index > -1 && this.index < ohmmeters.length) {
-						this.push_to_graph(i,
+						this.push_to_graph(
+							i,
 							Math.abs(engine_functions.get_voltage(ohmmeters[this.index].elm.n1, ohmmeters[this.index].elm.n2) / matrix_x[ohmmeters[this.index].get_simulation_index()][0]),
 							simulation_manager.simulation_time
 						);

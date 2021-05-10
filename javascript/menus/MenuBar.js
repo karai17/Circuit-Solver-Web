@@ -465,7 +465,8 @@ class MenuBar {
                         }
                     }
                 }
-                else if (((this.contains(this.menu_icons[this.ADD_INDEX], true) && this.menu_icons[this.ADD_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())) ||
+                else if (((this.contains(this.menu_icons[this.ADD_INDEX], true) &&
+                    this.menu_icons[this.ADD_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())) ||
                     (!this.contains(this.element_window.bounds, false) && global.flags.flag_menu_element_toolbox)) &&
                     !global.flags.flag_graph &&
                     !global.flags.flag_add_element) {

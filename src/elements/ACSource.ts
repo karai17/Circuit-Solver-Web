@@ -35,6 +35,7 @@ class ACSource {
 	private circle_buffer: Array<Array<number>>;
 	private build_element_flag: boolean;
 	private angle: number;
+	private node_id_array: Array<number>;
 	constructor(type: number, id: number, n1: number, n2: number) {
 		this.initialized = false;
 		this.bounds = new RectF(0, 0, 0, 0);
@@ -119,6 +120,7 @@ class ACSource {
 		this.circle_buffer = [];
 		this.build_element_flag = true;
 		this.angle = 0;
+		this.node_id_array = [];
 	}
 	refresh_bounds(): void {
 		if (this.elm.consistent()) {
@@ -143,8 +145,8 @@ class ACSource {
 				this.elm.n1,
 				this.elm.n2,
 				global.utils.sine(2 * Math.PI * this.elm.properties['Frequency'] * simulation_manager.simulation_time + global.utils.to_radians(this.elm.properties['Phase'])) *
-				this.elm.properties['Voltage'] +
-				this.elm.properties['Offset'],
+					this.elm.properties['Voltage'] +
+					this.elm.properties['Offset'],
 				simulation_manager.ELEMENT_ACSOURCE_OFFSET + this.simulation_id
 			);
 		}
@@ -486,7 +488,8 @@ class ACSource {
 			((this.c_x >= view_port.left - global.variables.node_space_x &&
 				this.c_x - global.variables.node_space_x <= view_port.right &&
 				this.c_y >= view_port.top + -global.variables.node_space_y &&
-				this.c_y - global.variables.node_space_y <= view_port.bottom) || global.flags.flag_picture_request)
+				this.c_y - global.variables.node_space_y <= view_port.bottom) ||
+				global.flags.flag_picture_request)
 		) {
 			let cache_0: number = 1.25 * this.x_space;
 			let cache_1: number = 1.25 * this.y_space;
@@ -547,7 +550,7 @@ class ACSource {
 		this.theta = global.utils.retrieve_angle_radian(this.p2.x - this.p1.x, this.p2.y - this.p1.y);
 		this.build_element();
 	}
-	update(): void { }
+	update(): void {}
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -555,7 +558,7 @@ class ACSource {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;
@@ -698,9 +701,9 @@ class ACSource {
 					!global.flags.flag_add_element
 				) {
 					if (this.elm.consistent()) {
-						let node_id_array: Array<number> = this.elm.get_nodes();
-						for (var i = 0; i < node_id_array.length; i++) {
-							canvas.draw_rect2(nodes[node_id_array[i]].get_bounds(), this.line_paint);
+						this.node_id_array = this.elm.get_nodes();
+						for (var i = 0; i < this.node_id_array.length; i++) {
+							canvas.draw_rect2(nodes[this.node_id_array[i]].get_bounds(), this.line_paint);
 						}
 					}
 				}
@@ -736,8 +739,8 @@ class ACSource {
 	time_data(): TIME_DATA_TEMPLATE_T {
 		/* #INSERT_GENERATE_TIME_DATA# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		let time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		let keys: Array<string> = Object.keys(this.elm.properties);
+		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
+		var keys: Array<string> = Object.keys(this.elm.properties);
 		for (var i: number = keys.length - 1; i > -1; i--) {
 			if (typeof this.elm.properties[keys[i]] === 'number') {
 				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
@@ -749,5 +752,5 @@ class ACSource {
 		return time_data;
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
 	}
-	reset(): void { }
+	reset(): void {}
 }

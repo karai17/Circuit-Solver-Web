@@ -142,8 +142,8 @@ class TimeStepWindow {
         this.select_offset_x = -1;
         this.mouse_down_flag = false;
         this.ascending_flag = false;
-        this.text = "";
-        this.adj_text = "";
+        this.text = '';
+        this.adj_text = '';
         this.cached_measured_text = 0;
         this.min = 0;
         this.max = 0;

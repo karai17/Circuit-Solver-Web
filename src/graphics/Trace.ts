@@ -19,6 +19,12 @@ class Trace {
 	private y_axis_length: number;
 	private trace_stroke_paint: Paint;
 	private trace_fill_paint: Paint;
+	private abs_temp: number;
+	private temp_div: number;
+	private temp_const: number;
+	private constant: number;
+	private constant2: number;
+
 	constructor(x_len: number, y_len: number, ratio: number) {
 		this.trace_path = new Path();
 		this.magnitude_list = [];
@@ -57,6 +63,11 @@ class Trace {
 		this.trace_fill_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
 		this.trace_fill_paint.set_alpha(255);
 		this.trace_fill_paint.set_paint_align(paint.align.CENTER);
+		this.abs_temp = 0;
+		this.temp_div = 0;
+		this.temp_const = 0;
+		this.constant = 0;
+		this.constant2 = 0;
 	}
 	set_color(color: string): void {
 		this.trace_stroke_paint.set_color(color);
@@ -146,45 +157,45 @@ class Trace {
 		this.last_norm = this.norm;
 		this.norm = 0;
 		this.plot_magnitude = 0;
-		let abs_temp: number = 0;
+		this.abs_temp = 0;
 		for (var i: number = 0; i < this.magnitude_list.length; i++) {
-			abs_temp = Math.abs(this.magnitude_list[i].y);
-			if (abs_temp > this.norm) {
-				this.norm = abs_temp;
+			this.abs_temp = Math.abs(this.magnitude_list[i].y);
+			if (this.abs_temp > this.norm) {
+				this.norm = this.abs_temp;
 			}
 		}
 		this.norm = 2 * this.norm;
 		this.temporary_norm = this.norm;
 		if (this.last_norm !== 0 && this.temporary_norm !== 0) {
-			let temp_div: number = this.last_norm / (this.height * this.ratio);
-			let temp_const: number = (this.height * this.ratio) / this.temporary_norm;
+			this.temp_div = this.last_norm / (this.height * this.ratio);
+			this.temp_const = (this.height * this.ratio) / this.temporary_norm;
 			for (var i: number = 0; i < this.trace.length; i++) {
-				this.plot_magnitude = this.trace[i].y * temp_div;
-				this.trace[i].y = this.plot_magnitude * temp_const;
+				this.plot_magnitude = this.trace[i].y * this.temp_div;
+				this.trace[i].y = this.plot_magnitude * this.temp_const;
 			}
 		}
-		let constant: number = this.width / (this.x_axis_length >> 1);
-		let constant2: number = (this.height * this.ratio) / this.temporary_norm;
+		this.constant = this.width / (this.x_axis_length >> 1);
+		this.constant2 = (this.height * this.ratio) / this.temporary_norm;
 		if (this.temporary_norm > 0) {
 			if (global.utils.not_null(value / this.temporary_norm)) {
-				this.trace.push(new PointF(this.trace.length * constant + this.trim, value * constant2));
+				this.trace.push(new PointF(this.trace.length * this.constant + this.trim, value * this.constant2));
 			} else {
-				this.trace.push(new PointF(this.trace.length * constant + this.trim, 0));
+				this.trace.push(new PointF(this.trace.length * this.constant + this.trim, 0));
 			}
 			if (this.trace.length > this.x_axis_length >> 1) {
 				this.trace.splice(0, 1);
 				this.magnitude_list.splice(0, 1);
 				for (var i: number = 0; i < this.trace.length; i++) {
-					this.trace[i].x = i * constant + this.trim;
+					this.trace[i].x = i * this.constant + this.trim;
 				}
 			}
 		} else {
-			this.trace.push(new PointF(this.trace.length * constant + this.trim, 0));
+			this.trace.push(new PointF(this.trace.length * this.constant + this.trim, 0));
 			if (this.trace.length > this.x_axis_length >> 1) {
 				this.trace.splice(0, 1);
 				this.magnitude_list.splice(0, 1);
 				for (var i: number = 0; i < this.trace.length; i++) {
-					this.trace[i].x = i * constant + this.trim;
+					this.trace[i].x = i * this.constant + this.trim;
 				}
 			}
 		}
