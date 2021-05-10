@@ -13,8 +13,6 @@ class LinearAlgebra {
         this.abs_a = 0;
         this.p_vector = [];
         this.lup_det = 0;
-        this.general_matrix;
-        this.general_vector;
         this.flag_first_solution = true;
     }
     lup_solve(a_matrix, b_matrix) {
@@ -32,10 +30,9 @@ class LinearAlgebra {
                 this.flag_first_solution = false;
             }
             else {
-                for (var i = 0; i < this.p_vector.length; i++) {
-                    this.p_vector[i] = i;
-                }
+                this.p_vector[this.p_vector.length - 1] = this.p_vector.length - 1;
                 for (var i = 0; i < this.x_matrix.length; i++) {
+                    this.p_vector[i] = i;
                     for (var j = 0; j < this.x_matrix[0].length; j++) {
                         this.x_matrix[i][j] = 0;
                     }
@@ -96,30 +93,29 @@ class LinearAlgebra {
         for (var i = 0; i < n; i++) {
             matrix[i][i] = value;
         }
-        return matrix;
     }
     matrix(rows, cols) {
-        this.general_matrix = [];
+        let general_matrix = [];
         for (var i = 0; i < rows; i++) {
-            this.general_matrix.push(new Array(cols));
+            general_matrix.push(new Array(cols));
             for (var j = 0; j < cols; j++) {
-                this.general_matrix[i][j] = 0;
+                general_matrix[i][j] = 0;
             }
         }
-        return this.general_matrix;
+        return general_matrix;
     }
     vector(size) {
-        this.general_vector = new Array(size);
+        let general_vector = new Array(size);
         for (var i = 0; i < size; i++) {
-            this.general_vector[i] = 0;
+            general_vector[i] = 0;
         }
-        return this.general_vector;
+        return general_vector;
     }
     vector2(size) {
-        this.general_vector = new Array(size);
+        let general_vector = new Array(size);
         for (var i = 0; i < size; i++) {
-            this.general_vector[i] = i;
+            general_vector[i] = i;
         }
-        return this.general_vector;
+        return general_vector;
     }
 }

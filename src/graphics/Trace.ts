@@ -214,7 +214,7 @@ class Trace {
 	}
 	draw_trace(canvas: GraphicsEngine, x_offset: number, y_offset: number): void {
 		if (this.trace.length > 0) {
-			canvas.draw_path2(this.trace_path, x_offset, y_offset, this.trace_stroke_paint);
+			canvas.draw_path2(this.trace_path.path_2d, x_offset, y_offset, this.trace_stroke_paint);
 		}
 	}
 	patch(): void {

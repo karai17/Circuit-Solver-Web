@@ -107,6 +107,10 @@ class ElementOptions {
         };
         this.first_touch_x = 0;
         this.first_touch_y = 0;
+        this.cached_width = 0;
+        this.cached_height = 0;
+        this.width_mul_0p125 = 0;
+        this.height_mul_0p125 = 0;
     }
     set_show(show_0, show_1, show_2, show_3) {
         this.show_0 = show_0;
@@ -2612,15 +2616,15 @@ class ElementOptions {
                             }
                             break;
                         case this.EDIT_ICON:
-                            canvas.draw_path(this.edit_path0, this.icon_paint);
+                            canvas.draw_path(this.edit_path0.path_2d, this.icon_paint);
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('E', this.option_0.left - (this.option_0.get_width() >> 2), this.option_0.get_center_y(), this.text_paint);
                             }
                             break;
                         case this.TRASH_ICON:
                             this.update_color();
-                            canvas.draw_path(this.trash_path0, this.icon_paint);
-                            canvas.draw_path(this.trash_path1, this.icon_paint);
+                            canvas.draw_path(this.trash_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.trash_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('DEL', this.option_0.left - (this.option_0.get_width() >> 2), this.option_0.get_center_y(), this.text_paint);
@@ -2628,8 +2632,8 @@ class ElementOptions {
                             break;
                         case this.FLIP_ICON:
                             this.update_color();
-                            canvas.draw_path(this.flip_path0, this.icon_paint);
-                            canvas.draw_path(this.flip_path1, this.icon_paint);
+                            canvas.draw_path(this.flip_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.flip_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('F', this.option_0.left - (this.option_0.get_width() >> 2), this.option_0.get_center_y(), this.text_paint);
@@ -2675,15 +2679,15 @@ class ElementOptions {
                             }
                             break;
                         case this.EDIT_ICON:
-                            canvas.draw_path(this.edit_path0, this.icon_paint);
+                            canvas.draw_path(this.edit_path0.path_2d, this.icon_paint);
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('E', this.option_1.left - (this.option_1.get_width() >> 2), this.option_1.get_center_y(), this.text_paint);
                             }
                             break;
                         case this.TRASH_ICON:
                             this.update_color();
-                            canvas.draw_path(this.trash_path0, this.icon_paint);
-                            canvas.draw_path(this.trash_path1, this.icon_paint);
+                            canvas.draw_path(this.trash_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.trash_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('DEL', this.option_1.left - (this.option_1.get_width() >> 2), this.option_1.get_center_y(), this.text_paint);
@@ -2691,8 +2695,8 @@ class ElementOptions {
                             break;
                         case this.FLIP_ICON:
                             this.update_color();
-                            canvas.draw_path(this.flip_path0, this.icon_paint);
-                            canvas.draw_path(this.flip_path1, this.icon_paint);
+                            canvas.draw_path(this.flip_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.flip_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('F', this.option_1.left - (this.option_1.get_width() >> 2), this.option_1.get_center_y(), this.text_paint);
@@ -2744,15 +2748,15 @@ class ElementOptions {
                             }
                             break;
                         case this.EDIT_ICON:
-                            canvas.draw_path(this.edit_path0, this.icon_paint);
+                            canvas.draw_path(this.edit_path0.path_2d, this.icon_paint);
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('E', this.option_2.left - (this.option_2.get_width() >> 2), this.option_2.get_center_y(), this.text_paint);
                             }
                             break;
                         case this.TRASH_ICON:
                             this.update_color();
-                            canvas.draw_path(this.trash_path0, this.icon_paint);
-                            canvas.draw_path(this.trash_path1, this.icon_paint);
+                            canvas.draw_path(this.trash_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.trash_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('DEL', this.option_2.left - (this.option_2.get_width() >> 2), this.option_2.get_center_y(), this.text_paint);
@@ -2760,8 +2764,8 @@ class ElementOptions {
                             break;
                         case this.FLIP_ICON:
                             this.update_color();
-                            canvas.draw_path(this.flip_path0, this.icon_paint);
-                            canvas.draw_path(this.flip_path1, this.icon_paint);
+                            canvas.draw_path(this.flip_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.flip_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('F', this.option_2.left - (this.option_2.get_width() >> 2), this.option_2.get_center_y(), this.text_paint);
@@ -2799,15 +2803,15 @@ class ElementOptions {
                             }
                             break;
                         case this.EDIT_ICON:
-                            canvas.draw_path(this.edit_path0, this.icon_paint);
+                            canvas.draw_path(this.edit_path0.path_2d, this.icon_paint);
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('E', this.option_3.left - (this.option_3.get_width() >> 2), this.option_3.get_center_y(), this.text_paint);
                             }
                             break;
                         case this.TRASH_ICON:
                             this.update_color();
-                            canvas.draw_path(this.trash_path0, this.icon_paint);
-                            canvas.draw_path(this.trash_path1, this.icon_paint);
+                            canvas.draw_path(this.trash_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.trash_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('DEL', this.option_3.left - (this.option_3.get_width() >> 2), this.option_3.get_center_y(), this.text_paint);
@@ -2815,8 +2819,8 @@ class ElementOptions {
                             break;
                         case this.FLIP_ICON:
                             this.update_color();
-                            canvas.draw_path(this.flip_path0, this.icon_paint);
-                            canvas.draw_path(this.flip_path1, this.icon_paint);
+                            canvas.draw_path(this.flip_path0.path_2d, this.icon_paint);
+                            canvas.draw_path(this.flip_path1.path_2d, this.icon_paint);
                             this.restore_color();
                             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
                                 canvas.draw_text('F', this.option_3.left - (this.option_3.get_width() >> 2), this.option_3.get_center_y(), this.text_paint);
@@ -2830,47 +2834,47 @@ class ElementOptions {
         }
     }
     draw_rotate(rect, canvas) {
-        let cached_width = rect.get_width() * 0.303;
-        let cached_height = rect.get_height() * 0.303;
-        let width_mul_0p125 = rect.get_width() * 0.125;
-        let height_mul_0p125 = rect.get_height() * 0.125;
-        canvas.draw_line(rect.left + cached_width, rect.top + cached_width, rect.right - cached_width, rect.top + cached_width, this.line_paint_alt);
-        canvas.draw_line(rect.left + cached_width, rect.top + cached_width, rect.left + cached_width, rect.bottom - cached_width, this.line_paint_alt);
-        canvas.draw_line(rect.right - cached_width, rect.top + cached_width, rect.right - cached_width, rect.bottom - cached_height, this.line_paint_alt);
-        canvas.draw_line(rect.right - cached_width, rect.bottom - cached_height, rect.right - cached_width - width_mul_0p125, rect.bottom - cached_height - height_mul_0p125, this.line_paint_alt);
-        canvas.draw_line(rect.right - cached_width, rect.bottom - cached_height, rect.right - cached_width + width_mul_0p125, rect.bottom - cached_height - height_mul_0p125, this.line_paint_alt);
+        this.cached_width = rect.get_width() * 0.303;
+        this.cached_height = rect.get_height() * 0.303;
+        this.width_mul_0p125 = rect.get_width() * 0.125;
+        this.height_mul_0p125 = rect.get_height() * 0.125;
+        canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_width, rect.right - this.cached_width, rect.top + this.cached_width, this.line_paint_alt);
+        canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_width, rect.left + this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
+        canvas.draw_line(rect.right - this.cached_width, rect.top + this.cached_width, rect.right - this.cached_width, rect.bottom - this.cached_height, this.line_paint_alt);
+        canvas.draw_line(rect.right - this.cached_width, rect.bottom - this.cached_height, rect.right - this.cached_width - this.width_mul_0p125, rect.bottom - this.cached_height - this.height_mul_0p125, this.line_paint_alt);
+        canvas.draw_line(rect.right - this.cached_width, rect.bottom - this.cached_height, rect.right - this.cached_width + this.width_mul_0p125, rect.bottom - this.cached_height - this.height_mul_0p125, this.line_paint_alt);
     }
     draw_wire_style(rect, canvas) {
-        let cached_width = rect.get_width() * 0.303;
-        let cached_height = rect.get_height() * 0.303;
+        this.cached_width = rect.get_width() * 0.303;
+        this.cached_height = rect.get_height() * 0.303;
         if (global.variables.selected_wire_style === global.CONSTANTS.WIRE_STYLE_0) {
-            canvas.draw_circle(rect.left + cached_width, rect.top + cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_circle(rect.right - cached_width, rect.bottom - cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.top + cached_height, rect.right - cached_width, rect.bottom - cached_width, this.line_paint_alt);
+            canvas.draw_circle(rect.left + this.cached_width, rect.top + this.cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_circle(rect.right - this.cached_width, rect.bottom - this.cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_height, rect.right - this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
         }
         else if (global.variables.selected_wire_style === global.CONSTANTS.WIRE_STYLE_1) {
-            canvas.draw_circle(rect.left + cached_width, rect.top + cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_circle(rect.right - cached_width, rect.bottom - cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.top + cached_height, rect.right - cached_width, rect.top + cached_height, this.line_paint_alt);
-            canvas.draw_line(rect.right - cached_width, rect.top + cached_height, rect.right - cached_width, rect.bottom - cached_width, this.line_paint_alt);
+            canvas.draw_circle(rect.left + this.cached_width, rect.top + this.cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_circle(rect.right - this.cached_width, rect.bottom - this.cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_height, rect.right - this.cached_width, rect.top + this.cached_height, this.line_paint_alt);
+            canvas.draw_line(rect.right - this.cached_width, rect.top + this.cached_height, rect.right - this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
         }
         else if (global.variables.selected_wire_style === global.CONSTANTS.WIRE_STYLE_2) {
-            canvas.draw_circle(rect.right - cached_width, rect.top + cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_circle(rect.left + cached_width, rect.bottom - cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_line(rect.right - cached_width, rect.top + cached_height, rect.right - cached_width, rect.bottom - cached_width, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.bottom - cached_width, rect.right - cached_width, rect.bottom - cached_width, this.line_paint_alt);
+            canvas.draw_circle(rect.right - this.cached_width, rect.top + this.cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_circle(rect.left + this.cached_width, rect.bottom - this.cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_line(rect.right - this.cached_width, rect.top + this.cached_height, rect.right - this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.bottom - this.cached_width, rect.right - this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
         }
         else if (global.variables.selected_wire_style === global.CONSTANTS.WIRE_STYLE_3) {
-            canvas.draw_circle(rect.right - cached_width, rect.bottom - cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_circle(rect.left + cached_width, rect.top + cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.top + cached_height, rect.left + cached_width, rect.bottom - cached_width, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.bottom - cached_width, rect.right - cached_width, rect.bottom - cached_width, this.line_paint_alt);
+            canvas.draw_circle(rect.right - this.cached_width, rect.bottom - this.cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_circle(rect.left + this.cached_width, rect.top + this.cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_height, rect.left + this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.bottom - this.cached_width, rect.right - this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
         }
         else if (global.variables.selected_wire_style === global.CONSTANTS.WIRE_STYLE_4) {
-            canvas.draw_circle(rect.left + cached_width, rect.bottom - cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_circle(rect.right - cached_width, rect.top + cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.top + cached_height, rect.right - cached_width, rect.top + cached_height, this.line_paint_alt);
-            canvas.draw_line(rect.left + cached_width, rect.top + cached_height, rect.left + cached_width, rect.bottom - cached_width, this.line_paint_alt);
+            canvas.draw_circle(rect.left + this.cached_width, rect.bottom - this.cached_width, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_circle(rect.right - this.cached_width, rect.top + this.cached_height, global.variables.canvas_stroke_width_1, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_height, rect.right - this.cached_width, rect.top + this.cached_height, this.line_paint_alt);
+            canvas.draw_line(rect.left + this.cached_width, rect.top + this.cached_height, rect.left + this.cached_width, rect.bottom - this.cached_width, this.line_paint_alt);
         }
     }
 }

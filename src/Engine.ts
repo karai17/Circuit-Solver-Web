@@ -4,29 +4,13 @@ const paint: Paint = new Paint();
 var global: Global = new Global();
 
 //@ts-ignore
-String.prototype.myReplace = function (pattern, nw) {
-	var curidx = 0, len = this.length, patlen = pattern.length, res = "";
-	while (curidx < len) {
-		var nwidx = this.indexOf(pattern, curidx);
-		if (nwidx == -1) {
-			break;
-		}
-		res = res + this.substr(curidx, nwidx - curidx);
-		res = res + nw;
-		curidx = nwidx + patlen;
-	}
-	return res;
-};
-
-//@ts-ignore
 String.prototype.hashCode = function (): number {
 	let hash: number = 0;
-	let i: number = 0;
 	let chr: string = '';
 	if (this.length === 0) {
 		return hash;
 	}
-	for (i = 0; i < this.length; i++) {
+	for (var i: number = 0; i < this.length; i++) {
 		chr = this.charCodeAt(i);
 		hash = (hash << 5) - hash + <number>(<unknown>chr);
 		hash |= 0;
@@ -302,6 +286,8 @@ function load_app(): void {
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
 		} catch (e) { }
+		virtual_surface.refresh_settings();
+		canvas.on_resize();
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;

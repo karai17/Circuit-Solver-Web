@@ -35,6 +35,13 @@ class TimeStepWindow {
 	private select_offset_x: number;
 	private mouse_down_flag: boolean;
 	private ascending_flag: boolean;
+	private text: string;
+	private adj_text: string;
+	private cached_measured_text: number;
+	private min;
+	private max;
+	private width_mul_0p3636: number;
+	private height_mul_0p3636: number;
 	constructor() {
 		this.TITLE_HEIGHT_RATIO = 0.25;
 		this.BUTTON_WIDTH_RATIO = 0.3;
@@ -174,6 +181,13 @@ class TimeStepWindow {
 		this.select_offset_x = -1;
 		this.mouse_down_flag = false;
 		this.ascending_flag = false;
+		this.text = "";
+		this.adj_text = "";
+		this.cached_measured_text = 0;
+		this.min = 0;
+		this.max = 0;
+		this.width_mul_0p3636 = 0;
+		this.height_mul_0p3636 = 0;
 	}
 	mouse_down(): void {
 		if (global.flags.flag_select_timestep) {
@@ -683,10 +697,10 @@ class TimeStepWindow {
 			}
 			this.cancel_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
 			this.input_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
-			let text: string = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
-			canvas.draw_text(text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
-			this.measured_text = this.input_button.text_paint.measure_text(text);
-			let adj_text: string = this.input_button.text;
+			this.text = this.input_button.text.substring(0, this.cursor_position) + this.input_button.text.substring(this.cursor_position, this.input_button.text.length);
+			canvas.draw_text(this.text, this.input_button.get_center_x() + this.offset_x, this.input_button.get_center_y() + this.offset_y, this.input_button.text_paint);
+			this.measured_text = this.input_button.text_paint.measure_text(this.text);
+			this.adj_text = this.input_button.text;
 			if (this.select_all && this.select_start === -1 && this.select_end === -1) {
 				canvas.draw_rect3(
 					this.input_button.get_center_x() + this.offset_x,
@@ -696,23 +710,23 @@ class TimeStepWindow {
 					this.select_paint
 				);
 			}
-			let cached_measured_text: number = this.measured_text * 0.5;
+			this.cached_measured_text = this.measured_text * 0.5;
 			if (this.select_start !== -1 && this.select_end !== -1) {
-				let min = Math.min(this.select_start, this.select_end);
-				let max = Math.max(this.select_start, this.select_end);
-				this.select_width = this.text_paint.measure_text(adj_text.substring(min, max));
-				this.select_offset_x = this.text_paint.measure_text(adj_text.substring(0, min));
+				this.min = Math.min(this.select_start, this.select_end);
+				this.max = Math.max(this.select_start, this.select_end);
+				this.select_width = this.text_paint.measure_text(this.adj_text.substring(this.min, this.max));
+				this.select_offset_x = this.text_paint.measure_text(this.adj_text.substring(0, this.min));
 				canvas.draw_rect(
-					this.input_button.get_center_x() - cached_measured_text + this.select_offset_x + this.offset_x,
+					this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x,
 					this.input_button.get_center_y() - this.input_button.get_height() * 0.35 + this.offset_y,
-					this.input_button.get_center_x() - cached_measured_text + this.select_offset_x + this.offset_x + this.select_width,
+					this.input_button.get_center_x() - this.cached_measured_text + this.select_offset_x + this.offset_x + this.select_width,
 					this.input_button.get_center_y() + this.input_button.get_height() * 0.35 + this.offset_y,
 					this.select_paint
 				);
 			}
 			canvas.draw_text(
 				'  _',
-				this.input_button.get_center_x() - cached_measured_text + this.input_button.text_paint.measure_text(adj_text.substring(0, this.cursor_position)) + this.offset_x,
+				this.input_button.get_center_x() - this.cached_measured_text + this.input_button.text_paint.measure_text(this.adj_text.substring(0, this.cursor_position)) + this.offset_x,
 				this.input_button.get_center_y() + this.offset_y,
 				this.input_button.text_paint
 			);
@@ -725,20 +739,20 @@ class TimeStepWindow {
 					this.hover_paint
 				);
 			}
-			let width_mul_0p3636: number = this.exit_button.get_width() * 0.3636;
-			let height_mul_0p3636: number = this.exit_button.get_height() * 0.3636;
+			this.width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
+			this.height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
 			canvas.draw_line(
-				this.exit_button.left + width_mul_0p3636 + this.offset_x,
-				this.exit_button.top + height_mul_0p3636 + this.offset_y,
-				this.exit_button.right - width_mul_0p3636 + this.offset_x,
-				this.exit_button.bottom - height_mul_0p3636 + this.offset_y,
+				this.exit_button.left + this.width_mul_0p3636 + this.offset_x,
+				this.exit_button.top + this.height_mul_0p3636 + this.offset_y,
+				this.exit_button.right - this.width_mul_0p3636 + this.offset_x,
+				this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y,
 				this.line_paint
 			);
 			canvas.draw_line(
-				this.exit_button.right - width_mul_0p3636 + this.offset_x,
-				this.exit_button.top + height_mul_0p3636 + this.offset_y,
-				this.exit_button.left + width_mul_0p3636 + this.offset_x,
-				this.exit_button.bottom - height_mul_0p3636 + this.offset_y,
+				this.exit_button.right - this.width_mul_0p3636 + this.offset_x,
+				this.exit_button.top + this.height_mul_0p3636 + this.offset_y,
+				this.exit_button.left + this.width_mul_0p3636 + this.offset_x,
+				this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y,
 				this.line_paint
 			);
 			canvas.draw_text(

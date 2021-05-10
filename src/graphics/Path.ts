@@ -4,6 +4,7 @@ class Path {
 	private indexer: number;
 	private iterator: number;
 	private length: number;
+
 	constructor() {
 		this.path_2d = [];
 		this.indexer = 0;
@@ -14,18 +15,18 @@ class Path {
 		this.length = this.path_2d.length;
 		for (var i: number = 0; i < this.length; i++) {
 			temp = this.path_2d[i];
-			if (temp['command'] === 'MOVE') {
+			if (temp['command'] === global.CONSTANTS.MOVE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
-			} else if (temp['command'] === 'LINE') {
+			} else if (temp['command'] === global.CONSTANTS.LINE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
-			} else if (temp['command'] === 'QUAD') {
+			} else if (temp['command'] === global.CONSTANTS.QUAD_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
 				temp['x2'] = global.utils.remap_position(temp['x2'], true);
 				temp['y2'] = global.utils.remap_position(temp['y2'], false);
-			} else if (temp['command'] === 'CURVE') {
+			} else if (temp['command'] === global.CONSTANTS.CURVE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
 				temp['x2'] = global.utils.remap_position(temp['x2'], true);
@@ -39,18 +40,18 @@ class Path {
 			}
 
 			temp = this.path_2d[this.length - 1 - i];
-			if (temp['command'] === 'MOVE') {
+			if (temp['command'] === global.CONSTANTS.MOVE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
-			} else if (temp['command'] === 'LINE') {
+			} else if (temp['command'] === global.CONSTANTS.LINE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
-			} else if (temp['command'] === 'QUAD') {
+			} else if (temp['command'] === global.CONSTANTS.QUAD_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
 				temp['x2'] = global.utils.remap_position(temp['x2'], true);
 				temp['y2'] = global.utils.remap_position(temp['y2'], false);
-			} else if (temp['command'] === 'CURVE') {
+			} else if (temp['command'] === global.CONSTANTS.CURVE_COMMAND) {
 				temp['x1'] = global.utils.remap_position(temp['x1'], true);
 				temp['y1'] = global.utils.remap_position(temp['y1'], false);
 				temp['x2'] = global.utils.remap_position(temp['x2'], true);
@@ -66,14 +67,14 @@ class Path {
 	}
 	move_to(x: number, y: number): void {
 		this.path_2d[this.indexer++] = {
-			command: 'MOVE',
+			command: global.CONSTANTS.MOVE_COMMAND,
 			x1: (global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO,
 			y1: (global.CONSTANTS.ZERO_PT_FIVE + y) >> global.CONSTANTS.ZERO
 		};
 	}
 	curve_to(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number): void {
 		this.path_2d[this.indexer++] = {
-			command: 'CURVE',
+			command: global.CONSTANTS.CURVE_COMMAND,
 			x1: (global.CONSTANTS.ZERO_PT_FIVE + x1) >> global.CONSTANTS.ZERO,
 			y1: (global.CONSTANTS.ZERO_PT_FIVE + y1) >> global.CONSTANTS.ZERO,
 			x2: (global.CONSTANTS.ZERO_PT_FIVE + x2) >> global.CONSTANTS.ZERO,
@@ -84,7 +85,7 @@ class Path {
 	}
 	quad_to(x1: number, y1: number, x2: number, y2: number): void {
 		this.path_2d[this.indexer++] = {
-			command: 'QUAD',
+			command: global.CONSTANTS.QUAD_COMMAND,
 			x1: (global.CONSTANTS.ZERO_PT_FIVE + (x2 + x1) * 0.5) >> global.CONSTANTS.ZERO,
 			y1: (global.CONSTANTS.ZERO_PT_FIVE + (y2 + y1) * 0.5) >> global.CONSTANTS.ZERO,
 			x2: (global.CONSTANTS.ZERO_PT_FIVE + x2) >> global.CONSTANTS.ZERO,
@@ -93,14 +94,14 @@ class Path {
 	}
 	line_to(x: number, y: number): void {
 		this.path_2d[this.indexer++] = {
-			command: 'LINE',
+			command: global.CONSTANTS.LINE_COMMAND,
 			x1: (global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO,
 			y1: (global.CONSTANTS.ZERO_PT_FIVE + y) >> global.CONSTANTS.ZERO
 		};
 	}
 	close(): void {
 		this.path_2d[this.indexer++] = {
-			command: 'CLOSE',
+			command: global.CONSTANTS.CLOSE_COMMAND,
 			x1: 0,
 			y1: 0
 		};

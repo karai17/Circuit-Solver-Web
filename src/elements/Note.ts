@@ -101,7 +101,7 @@ class Note {
 	push_reference(ref: WIRE_REFERENCE_T): void {
 		this.wire_reference.push(ref);
 	}
-	stamp(): void {}
+	stamp(): void { }
 	get_vertices(): Array<number> {
 		let p1: Array<number> = this.elm.snap_to_grid(this.bounds.get_center_x(), this.bounds.get_center_y());
 		let vertices: Array<number> = Array(p1[0], p1[1]);
@@ -423,8 +423,8 @@ class Note {
 		this.c_y = this.bounds.get_center_y();
 		this.build_element_flag = false;
 	}
-	update(): void {}
-	set_flip(flip: number): void {}
+	update(): void { }
+	set_flip(flip: number): void { }
 	set_rotation(rotation: number): void {
 		this.build_element_flag = true;
 		wire_manager.reset_wire_builder();
@@ -441,7 +441,7 @@ class Note {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -618,5 +618,5 @@ class Note {
 		return time_data;
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
 	}
-	reset(): void {}
+	reset(): void { }
 }

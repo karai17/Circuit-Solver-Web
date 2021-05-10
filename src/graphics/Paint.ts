@@ -23,6 +23,7 @@ class Paint {
 	private last_font: string;
 	private last_text_size: number;
 	private metric: TextMetrics;
+
 	constructor() {
 		this.style = new PaintStyle();
 		this.align = new PaintAlign();
@@ -49,6 +50,7 @@ class Paint {
 		this.metric = null;
 		this.reset_array();
 	}
+
 	set_alpha(alpha: number): void {
 		this.alpha = alpha * 0.0039215686;
 	}

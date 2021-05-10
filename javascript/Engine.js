@@ -5,12 +5,11 @@ var global = new Global();
 //@ts-ignore
 String.prototype.hashCode = function () {
     let hash = 0;
-    let i = 0;
     let chr = '';
     if (this.length === 0) {
         return hash;
     }
-    for (i = 0; i < this.length; i++) {
+    for (var i = 0; i < this.length; i++) {
         chr = this.charCodeAt(i);
         hash = (hash << 5) - hash + chr;
         hash |= 0;
@@ -291,6 +290,8 @@ function load_app() {
             ctx.msImageSmoothingEnabled = false;
         }
         catch (e) { }
+        virtual_surface.refresh_settings();
+        canvas.on_resize();
     }
     function resize_canvas() {
         global.variables.device_pixel_ratio = window.devicePixelRatio;

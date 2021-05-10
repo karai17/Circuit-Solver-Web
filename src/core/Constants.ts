@@ -80,6 +80,11 @@ class Constants {
 	public readonly METER_SYMBOL_CURRENT: number;
 	public readonly METER_SYMBOL_RESISTANCE: number;
 	public readonly METER_SYMBOL_POWER: number;
+	public readonly MOVE_COMMAND: PAINT_COMMAND_T;
+	public readonly LINE_COMMAND: PAINT_COMMAND_T;
+	public readonly QUAD_COMMAND: PAINT_COMMAND_T;
+	public readonly CURVE_COMMAND: PAINT_COMMAND_T;
+	public readonly CLOSE_COMMAND: PAINT_COMMAND_T;
 
 	constructor() {
 		let indexer: number = 0;
@@ -176,5 +181,10 @@ class Constants {
 		this.METER_SYMBOL_CURRENT = 1;
 		this.METER_SYMBOL_RESISTANCE = 2;
 		this.METER_SYMBOL_POWER = 3;
+		this.MOVE_COMMAND = 'MOVE';
+		this.LINE_COMMAND = 'LINE';
+		this.QUAD_COMMAND = 'QUAD';
+		this.CURVE_COMMAND = 'CURVE';
+		this.CLOSE_COMMAND = 'CLOSE';
 	}
 }

@@ -44,7 +44,17 @@ class MenuBar {
 	private first_touch_x: number;
 	private first_touch_y: number;
 	private line_buffer: Array<Array<number>>;
-	private circle_buffer: Array<Array<number>>;
+
+	private pad_w: number;
+	private pad_h: number;
+	private width_rshift_3: number;
+	private width_rshift_2: number;
+	private indexer: number;
+	private width_mul_0p64: number;
+	private height_mul_0p64: number;
+	private cached_value: number;
+	private height_rshift_3: number;
+
 	constructor() {
 		let temp_stroke_width: number = 0.65 * global.variables.canvas_stroke_width_3;
 		this.MAX_ICONS = 8;
@@ -248,7 +258,15 @@ class MenuBar {
 		this.first_touch_x = 0;
 		this.first_touch_y = 0;
 		this.line_buffer = [];
-		this.circle_buffer = [];
+		this.pad_w = 0;
+		this.pad_h = 0;
+		this.width_rshift_3 = 0;
+		this.width_rshift_2 = 0;
+		this.indexer = 0;
+		this.width_mul_0p64 = 0;
+		this.height_mul_0p64 = 0;
+		this.cached_value = 0;
+		this.height_rshift_3 = 0;
 	}
 	load_icons(): void {
 		let temp_bounds: RectF = new RectF(0, 0, 0, 0);
@@ -531,10 +549,10 @@ class MenuBar {
 	mouse_up(): void {
 		if (!global.variables.is_right_click && !this.escape_interrupt) {
 			if (!global.variables.mouse_keyboard_lock && !multi_select_manager.ctrl_pressed && global.variables.component_touched) {
-				let cached_value: number = this.base_width;
+				this.cached_value = this.base_width;
 				if (
 					this.contains(this.menu_icons[this.UP_DOWN_INDEX], true) &&
-					this.menu_icons[this.UP_DOWN_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.UP_DOWN_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_zoom &&
@@ -558,7 +576,7 @@ class MenuBar {
 						}
 					}
 				} else if (
-					((this.contains(this.menu_icons[this.ADD_INDEX], true) && this.menu_icons[this.ADD_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())) ||
+					((this.contains(this.menu_icons[this.ADD_INDEX], true) && this.menu_icons[this.ADD_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())) ||
 						(!this.contains(this.element_window.bounds, false) && global.flags.flag_menu_element_toolbox)) &&
 					!global.flags.flag_graph &&
 					!global.flags.flag_add_element
@@ -593,7 +611,7 @@ class MenuBar {
 					(!this.contains(graph_window.bounds, false) &&
 						((!this.contains(this.menu_icons[this.GO_INDEX], true) && global.flags.flag_graph) || (this.contains(this.menu_icons[this.GO_INDEX], true) && !global.flags.flag_menu_open)))
 				) {
-					if (this.contains(this.graph_button, false) && this.graph_button.contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())) {
+					if (this.contains(this.graph_button, false) && this.graph_button.contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())) {
 						if (
 							!global.flags.flag_save_image &&
 							!global.flags.flag_save_circuit &&
@@ -633,7 +651,7 @@ class MenuBar {
 					if (!global.flags.flag_menu_open) {
 						if (
 							this.contains(this.menu_icons[this.REMOVE_ALL_INDEX], false) &&
-							this.menu_icons[this.REMOVE_ALL_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+							this.menu_icons[this.REMOVE_ALL_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 						) {
 							if (
 								!global.flags.flag_save_image &&
@@ -667,13 +685,13 @@ class MenuBar {
 							!global.flags.flag_remove_all &&
 							global.flags.flag_menu_open &&
 							!global.flags.flag_menu_element_toolbox &&
-							this.menu_icons[this.REMOVE_ALL_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+							this.menu_icons[this.REMOVE_ALL_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 						) {
 							this.handle_remove_all_flag(!global.flags.flag_remove_all);
 							global.variables.component_touched = true;
 						}
 					}
-				} else if (this.contains(this.settings_button, false) && this.settings_button.contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())) {
+				} else if (this.contains(this.settings_button, false) && this.settings_button.contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())) {
 					if (
 						!global.flags.flag_simulating &&
 						!global.flags.flag_save_image &&
@@ -692,7 +710,7 @@ class MenuBar {
 					}
 				} else if (
 					this.contains(this.menu_icons[this.SAVE_INDEX], true) &&
-					this.menu_icons[this.SAVE_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.SAVE_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_save_image &&
@@ -713,7 +731,7 @@ class MenuBar {
 					}
 				} else if (
 					this.contains(this.menu_icons[this.SAVE_IMG_INDEX], true) &&
-					this.menu_icons[this.SAVE_IMG_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.SAVE_IMG_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_save_image &&
@@ -734,7 +752,7 @@ class MenuBar {
 					}
 				} else if (
 					this.contains(this.menu_icons[this.UNDO_INDEX], true) &&
-					this.menu_icons[this.UNDO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.UNDO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_simulating &&
@@ -756,7 +774,7 @@ class MenuBar {
 					}
 				} else if (
 					this.contains(this.menu_icons[this.REDO_INDEX], true) &&
-					this.menu_icons[this.REDO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.REDO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_simulating &&
@@ -778,7 +796,7 @@ class MenuBar {
 					}
 				} else if (
 					this.contains(this.menu_icons[this.GO_INDEX], true) &&
-					this.menu_icons[this.GO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, cached_value, this.bounds.get_height())
+					this.menu_icons[this.GO_INDEX].contains_xywh(this.first_touch_x, this.first_touch_y, this.cached_value, this.bounds.get_height())
 				) {
 					if (
 						!global.flags.flag_save_image &&
@@ -1033,10 +1051,6 @@ class MenuBar {
 	}
 	draw_menu_bar(canvas: GraphicsEngine): void {
 		this.recolor();
-		let temp_stroke_width: number = 0.65 * global.variables.canvas_stroke_width_3;
-		if (MOBILE_MODE) {
-			temp_stroke_width = 0.85 * global.variables.canvas_stroke_width_3;
-		}
 		if (global.flags.flag_menu_open) {
 			if (global.flags.flag_menu_element_toolbox) {
 				if (!MOBILE_MODE) {
@@ -1056,15 +1070,15 @@ class MenuBar {
 				!multi_select_manager.ctrl_pressed_started &&
 				!MOBILE_MODE
 			) {
-				let cached_value: number = this.base_width;
+				this.cached_value = this.base_width;
 				for (var i: number = 0; i < this.menu_icons.length; i++) {
-					if (this.menu_icons[i].contains_xywh(global.variables.mouse_x, global.variables.mouse_y, cached_value, this.bounds.get_height())) {
-						canvas.draw_rect3(this.menu_icons[i].get_center_x(), this.menu_icons[i].get_center_y(), cached_value, this.bounds.get_height(), this.hover_paint);
+					if (this.menu_icons[i].contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.cached_value, this.bounds.get_height())) {
+						canvas.draw_rect3(this.menu_icons[i].get_center_x(), this.menu_icons[i].get_center_y(), this.cached_value, this.bounds.get_height(), this.hover_paint);
 					}
 				}
 			}
-			let width_mul_0p64: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() * 0.64;
-			let height_mul_0p64: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_height() * 0.64;
+			this.width_mul_0p64 = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() * 0.64;
+			this.height_mul_0p64 = this.menu_icons[this.REMOVE_ALL_INDEX].get_height() * 0.64;
 			canvas.draw_arc3(
 				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x(),
 				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y(),
@@ -1073,33 +1087,32 @@ class MenuBar {
 				290,
 				this.remove_all_paint
 			);
-			let indexer: number = 0;
-			this.circle_buffer = [];
+			this.indexer = 0;
 			this.line_buffer = [];
-			this.line_buffer[indexer++] = Array(
-				this.menu_icons[this.REMOVE_ALL_INDEX].left + width_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].top + height_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].right - width_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].bottom - height_mul_0p64
+			this.line_buffer[this.indexer++] = Array(
+				this.menu_icons[this.REMOVE_ALL_INDEX].left + this.width_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].top + this.height_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].right - this.width_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].bottom - this.height_mul_0p64
 			);
-			this.line_buffer[indexer++] = Array(
-				this.menu_icons[this.REMOVE_ALL_INDEX].right - width_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].top + height_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].left + width_mul_0p64,
-				this.menu_icons[this.REMOVE_ALL_INDEX].bottom - height_mul_0p64
+			this.line_buffer[this.indexer++] = Array(
+				this.menu_icons[this.REMOVE_ALL_INDEX].right - this.width_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].top + this.height_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].left + this.width_mul_0p64,
+				this.menu_icons[this.REMOVE_ALL_INDEX].bottom - this.height_mul_0p64
 			);
 			canvas.draw_line_buffer(this.line_buffer, this.remove_all_paint);
-			indexer = 0;
+			this.indexer = 0;
 			this.line_buffer = [];
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('X', this.menu_icons[this.REMOVE_ALL_INDEX].left, this.menu_icons[this.REMOVE_ALL_INDEX].top, this.text_paint);
 			}
-			canvas.draw_path(this.save_ckt_path1, this.save_circuit_paint);
-			canvas.draw_path(this.save_ckt_path2, this.save_circuit_paint);
+			canvas.draw_path(this.save_ckt_path1.path_2d, this.save_circuit_paint);
+			canvas.draw_path(this.save_ckt_path2.path_2d, this.save_circuit_paint);
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('S', this.menu_icons[this.SAVE_INDEX].left, this.menu_icons[this.SAVE_INDEX].top, this.text_paint);
 			}
-			canvas.draw_path(this.save_img_path, this.save_image_fill_paint);
+			canvas.draw_path(this.save_img_path.path_2d, this.save_image_fill_paint);
 			canvas.draw_circle(
 				this.menu_icons[this.SAVE_IMG_INDEX].get_center_x(),
 				this.menu_icons[this.SAVE_IMG_INDEX].get_center_y(),
@@ -1109,48 +1122,48 @@ class MenuBar {
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('I', this.menu_icons[this.SAVE_IMG_INDEX].left, this.menu_icons[this.SAVE_IMG_INDEX].top, this.text_paint);
 			}
-			let width_rshift_3: number = this.menu_icons[this.ADD_INDEX].get_width() >> 3;
-			let height_rshift_3: number = this.menu_icons[this.ADD_INDEX].get_height() >> 3;
+			this.width_rshift_3 = this.menu_icons[this.ADD_INDEX].get_width() >> 3;
+			this.height_rshift_3 = this.menu_icons[this.ADD_INDEX].get_height() >> 3;
 			canvas.draw_circle3(this.menu_icons[this.ADD_INDEX], 1, this.add_paint);
-			this.line_buffer[indexer++] = Array(
-				this.menu_icons[this.ADD_INDEX].get_center_x() - width_rshift_3,
+			this.line_buffer[this.indexer++] = Array(
+				this.menu_icons[this.ADD_INDEX].get_center_x() - this.width_rshift_3,
 				this.menu_icons[this.ADD_INDEX].get_center_y(),
-				this.menu_icons[this.ADD_INDEX].get_center_x() + width_rshift_3,
+				this.menu_icons[this.ADD_INDEX].get_center_x() + this.width_rshift_3,
 				this.menu_icons[this.ADD_INDEX].get_center_y()
 			);
-			this.line_buffer[indexer++] = Array(
+			this.line_buffer[this.indexer++] = Array(
 				this.menu_icons[this.ADD_INDEX].get_center_x(),
-				this.menu_icons[this.ADD_INDEX].get_center_y() - height_rshift_3,
+				this.menu_icons[this.ADD_INDEX].get_center_y() - this.height_rshift_3,
 				this.menu_icons[this.ADD_INDEX].get_center_x(),
-				this.menu_icons[this.ADD_INDEX].get_center_y() + height_rshift_3
+				this.menu_icons[this.ADD_INDEX].get_center_y() + this.height_rshift_3
 			);
 			canvas.draw_line_buffer(this.line_buffer, this.line_paint);
-			indexer = 0;
+			this.indexer = 0;
 			this.line_buffer = [];
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('N', this.menu_icons[this.ADD_INDEX].left, this.menu_icons[this.ADD_INDEX].top, this.text_paint);
 			}
 			if (!global.flags.flag_simulating) {
-				canvas.draw_path(this.go_path, this.go_paint);
+				canvas.draw_path(this.go_path.path_2d, this.go_paint);
 			} else {
-				let w_pad: number = this.menu_icons[this.GO_INDEX].get_width() * 0.333;
-				let h_pad: number = this.menu_icons[this.GO_INDEX].get_height() * 0.333;
+				this.pad_w = this.menu_icons[this.GO_INDEX].get_width() * 0.333;
+				this.pad_h = this.menu_icons[this.GO_INDEX].get_height() * 0.333;
 				canvas.draw_rect(
-					this.menu_icons[this.GO_INDEX].get_center_x() - w_pad,
-					this.menu_icons[this.GO_INDEX].get_center_y() - h_pad,
-					this.menu_icons[this.GO_INDEX].get_center_x() + w_pad,
-					this.menu_icons[this.GO_INDEX].get_center_y() + h_pad,
+					this.menu_icons[this.GO_INDEX].get_center_x() - this.pad_w,
+					this.menu_icons[this.GO_INDEX].get_center_y() - this.pad_h,
+					this.menu_icons[this.GO_INDEX].get_center_x() + this.pad_w,
+					this.menu_icons[this.GO_INDEX].get_center_y() + this.pad_h,
 					this.go_paint
 				);
 			}
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('A', this.menu_icons[this.GO_INDEX].left, this.menu_icons[this.GO_INDEX].top, this.text_paint);
 			}
-			canvas.draw_path(this.undo_path, this.undo_paint);
+			canvas.draw_path(this.undo_path.path_2d, this.undo_paint);
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('Z', this.menu_icons[this.UNDO_INDEX].left, this.menu_icons[this.UNDO_INDEX].top, this.text_paint);
 			}
-			canvas.draw_path(this.redo_path, this.redo_paint);
+			canvas.draw_path(this.redo_path.path_2d, this.redo_paint);
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] === global.CONSTANTS.ON) {
 				canvas.draw_text('Y', this.menu_icons[this.REDO_INDEX].left, this.menu_icons[this.REDO_INDEX].top, this.text_paint);
 			}
@@ -1162,7 +1175,7 @@ class MenuBar {
 				this.up_down_paint
 			);
 		} else {
-			let indexer: number = 0;
+			this.indexer = 0;
 			this.line_buffer = [];
 			canvas.draw_circle3(this.menu_icons[this.REMOVE_ALL_INDEX], 1.15, this.fill_paint);
 			if (
@@ -1207,40 +1220,40 @@ class MenuBar {
 				false,
 				this.up_down_paint
 			);
-			let pad_w: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() * 0.075;
-			let pad_h: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_height() * 0.075;
-			let width_rshift_3: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() >> 3;
-			let width_rshift_2: number = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() >> 2;
+			this.pad_w = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() * 0.075;
+			this.pad_h = this.menu_icons[this.REMOVE_ALL_INDEX].get_height() * 0.075;
+			this.width_rshift_3 = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() >> 3;
+			this.width_rshift_2 = this.menu_icons[this.REMOVE_ALL_INDEX].get_width() >> 2;
 			this.line_buffer = [];
-			indexer = 0;
+			this.indexer = 0;
 			canvas.draw_circle(
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - width_rshift_3,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - width_rshift_3,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - this.width_rshift_3,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - this.width_rshift_3,
 				this.menu_icons[this.REMOVE_ALL_INDEX].get_width() * 0.2,
 				this.zoom_paint
 			);
-			this.line_buffer[indexer++] = Array(
+			this.line_buffer[this.indexer++] = Array(
 				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() + (this.menu_icons[this.REMOVE_ALL_INDEX].get_width() >> 4),
 				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() + (this.menu_icons[this.REMOVE_ALL_INDEX].get_height() >> 4),
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() + width_rshift_2,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() + width_rshift_2
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() + this.width_rshift_2,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() + this.width_rshift_2
 			);
-			this.line_buffer[indexer++] = Array(
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - width_rshift_3 - pad_w,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - width_rshift_3,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - width_rshift_3 + pad_w,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - width_rshift_3
+			this.line_buffer[this.indexer++] = Array(
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - this.width_rshift_3 - this.pad_w,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - this.width_rshift_3,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - this.width_rshift_3 + this.pad_w,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - this.width_rshift_3
 			);
-			this.line_buffer[indexer++] = Array(
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - width_rshift_3,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - width_rshift_3 - pad_h,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - width_rshift_3,
-				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - width_rshift_3 + pad_h
+			this.line_buffer[this.indexer++] = Array(
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - this.width_rshift_3,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - this.width_rshift_3 - this.pad_h,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_x() - this.width_rshift_3,
+				this.menu_icons[this.REMOVE_ALL_INDEX].get_center_y() - this.width_rshift_3 + this.pad_h
 			);
 			canvas.draw_line_buffer(this.line_buffer, this.zoom_paint);
 		}
 		if (!global.flags.flag_menu_element_toolbox) {
-			let indexer: number = 0;
+			this.indexer = 0;
 			this.line_buffer = [];
 			canvas.draw_circle3(this.graph_button, 1.15, this.fill_paint);
 			if (
@@ -1261,18 +1274,19 @@ class MenuBar {
 				canvas.draw_circle3(this.graph_button, 1.15, this.hover_paint);
 			}
 			this.sine_wave.draw_sine_wave(canvas, 1);
-			let pad: number = 0.25;
-			this.line_buffer[indexer++] = Array(
-				this.graph_button.left + this.graph_button.get_width() * pad,
-				this.graph_button.top + this.graph_button.get_height() * 1.1 * pad,
-				this.graph_button.left + this.graph_button.get_width() * pad,
-				this.graph_button.bottom - this.graph_button.get_height() * pad
+			this.pad_w = 0.25;
+			this.pad_h = 0.25;
+			this.line_buffer[this.indexer++] = Array(
+				this.graph_button.left + this.graph_button.get_width() * this.pad_w,
+				this.graph_button.top + this.graph_button.get_height() * 1.1 * this.pad_h,
+				this.graph_button.left + this.graph_button.get_width() * this.pad_w,
+				this.graph_button.bottom - this.graph_button.get_height() * this.pad_h
 			);
-			this.line_buffer[indexer++] = Array(
-				this.graph_button.left + this.graph_button.get_width() * pad,
-				this.graph_button.bottom - this.graph_button.get_height() * pad,
-				this.graph_button.right - this.graph_button.get_width() * 1.1 * pad,
-				this.graph_button.bottom - this.graph_button.get_height() * pad
+			this.line_buffer[this.indexer++] = Array(
+				this.graph_button.left + this.graph_button.get_width() * this.pad_w,
+				this.graph_button.bottom - this.graph_button.get_height() * this.pad_h,
+				this.graph_button.right - this.graph_button.get_width() * 1.1 * this.pad_w,
+				this.graph_button.bottom - this.graph_button.get_height() * this.pad_h
 			);
 			canvas.draw_line_buffer(this.line_buffer, this.sine_wave.sine_wave_paint);
 		}
@@ -1295,7 +1309,7 @@ class MenuBar {
 		) {
 			canvas.draw_circle3(this.settings_button, 1.15, this.hover_paint);
 		}
-		canvas.draw_path(this.settings_path, this.settings_paint);
+		canvas.draw_path(this.settings_path.path_2d, this.settings_paint);
 		if (
 			this.settings_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) &&
 			!global.flags.flag_menu_element_toolbox &&

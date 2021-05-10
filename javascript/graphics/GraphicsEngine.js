@@ -16,7 +16,6 @@ class GraphicsEngine {
         this.r_theta = 0;
         this.r_x = 0;
         this.r_y = 0;
-        this.general_integer = 0;
         this.padding = 6;
         this.transform_var_1 = 0;
         this.transform_var_2 = 0;
@@ -79,7 +78,7 @@ class GraphicsEngine {
     }
     apply_paint(paint, is_text) {
         this.ctx.beginPath();
-        if (paint.style.FILL === paint.paint_style || paint.style.FILL_AND_STROKE === paint.paint_style) {
+        if ((paint.style.FILL === paint.paint_style || paint.style.FILL_AND_STROKE === paint.paint_style) && this.last_fill_color !== paint.color) {
             this.ctx.fillStyle = paint.color;
             this.last_fill_color = paint.color;
         }
@@ -241,7 +240,7 @@ class GraphicsEngine {
             this.general_path.line_to(this.c_xp - this.radiusp, this.c_yp - this.radiusp);
             this.general_path.line_to(this.c_xp, this.c_yp + this.radiusp);
         }
-        this.draw_path(this.general_path, paint);
+        this.draw_path(this.general_path.path_2d, paint);
     }
     draw_circle(x, y, radius, paint) {
         this.x = (global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO;
@@ -375,11 +374,11 @@ class GraphicsEngine {
         this.apply_paint(this.fill_paint, false);
         this.ctx.fillRect((global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + y) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + w) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + h) >> global.CONSTANTS.ZERO);
     }
-    draw_text(txt, x, y, paint) {
+    draw_text(text, x, y, paint) {
         this.x = (global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO;
         this.y = (global.CONSTANTS.ZERO_PT_FIVE + y) >> global.CONSTANTS.ZERO;
         this.apply_paint(paint, true);
-        this.ctx.fillText(txt, this.x, this.y);
+        this.ctx.fillText(text, this.x, this.y);
     }
     draw_arc(rect, start_degree, end_degree, paint) {
         this.radius = (global.CONSTANTS.ZERO_PT_FIVE + Math.max(rect.get_width() >> 1, rect.get_height() >> 1)) >> global.CONSTANTS.ZERO;
@@ -414,7 +413,7 @@ class GraphicsEngine {
         this.general_path.reset();
         this.general_path.move_to(this.temp_x, this.temp_y);
         this.general_path.curve_to(this.temp_x, this.temp_y, (this.x + amplitude * global.utils.cosine(this.degree)) >> global.CONSTANTS.ZERO, (this.y + amplitude * global.utils.sine(this.degree)) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + x2) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + y2) >> global.CONSTANTS.ZERO);
-        this.draw_path(this.general_path, paint);
+        this.draw_path(this.general_path.path_2d, paint);
     }
     draw_arc3(c_x, c_y, radius, start_degree, end_degree, paint) {
         this.radius = (global.CONSTANTS.ZERO_PT_FIVE + radius) >> global.CONSTANTS.ZERO;
@@ -442,19 +441,19 @@ class GraphicsEngine {
     }
     draw_path(path, paint) {
         this.apply_paint(paint, false);
-        for (var i = 0; i < path.path_2d.length; i++) {
-            this.dict = path.path_2d[i];
+        for (var i = 0; i < path.length; i++) {
+            this.dict = path[i];
             this.command = this.dict['command'];
-            if (this.command === 'MOVE') {
+            if (this.command === global.CONSTANTS.MOVE_COMMAND) {
                 this.ctx.moveTo(this.dict['x1'], this.dict['y1']);
             }
-            else if (this.command === 'LINE') {
+            else if (this.command === global.CONSTANTS.LINE_COMMAND) {
                 this.ctx.lineTo(this.dict['x1'], this.dict['y1']);
             }
-            else if (this.command === 'QUAD') {
+            else if (this.command === global.CONSTANTS.QUAD_COMMAND) {
                 this.ctx.quadraticCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2']);
             }
-            else if (this.command === 'CURVE') {
+            else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
                 this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
             }
         }
@@ -480,19 +479,19 @@ class GraphicsEngine {
         y_offset = (global.CONSTANTS.ZERO_PT_FIVE + y_offset) >> global.CONSTANTS.ZERO;
         this.apply_paint(paint, false);
         this.ctx.translate(x_offset, y_offset);
-        for (var i = 0; i < path.path_2d.length; i++) {
-            this.dict = path.path_2d[i];
+        for (var i = 0; i < path.length; i++) {
+            this.dict = path[i];
             this.command = this.dict['command'];
-            if (this.command === 'MOVE') {
+            if (this.command === global.CONSTANTS.MOVE_COMMAND) {
                 this.ctx.moveTo(this.dict['x1'], this.dict['y1']);
             }
-            else if (this.command === 'LINE') {
+            else if (this.command === global.CONSTANTS.LINE_COMMAND) {
                 this.ctx.lineTo(this.dict['x1'], this.dict['y1']);
             }
-            else if (this.command === 'QUAD') {
+            else if (this.command === global.CONSTANTS.QUAD_COMMAND) {
                 this.ctx.quadraticCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2']);
             }
-            else if (this.command === 'CURVE') {
+            else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
                 this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
             }
         }

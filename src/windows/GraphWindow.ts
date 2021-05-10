@@ -34,6 +34,10 @@ class GraphWindow {
 	private trim: number;
 	private width: number;
 	private height: number;
+	private cached_value: number;
+	private cached_value_t_p_o1: number;
+	private temp: number;
+	private index: number;
 	constructor() {
 		this.bounds = new RectF(0, 0, 0, 0);
 		this.inner_bounds = new RectF(0, 0, 0, 0);
@@ -170,6 +174,10 @@ class GraphWindow {
 		this.first_touch_x = 0;
 		this.first_touch_y = 0;
 		this.line_buffer = [];
+		this.cached_value = 0;
+		this.cached_value_t_p_o1 = 0;
+		this.temp = 0;
+		this.index = 0;
 	}
 	load_axis(): void {
 		this.x_axis = new Array(this.GRAPH_X_AXIS_LENGTH).fill(new PointF(0, 0));
@@ -338,13 +346,15 @@ class GraphWindow {
 		if (global.flags.flag_graph) {
 			canvas.draw_rect2(this.bounds, this.fill_paint);
 			canvas.draw_rect2(this.inner_bounds, this.line_paint);
-			let cached_value: number = this.x_axis.length >> 1;
-			let cached_value_t_p_o1: number = (global.CONSTANTS.ZERO_PT_FIVE + cached_value * 0.1) >> global.CONSTANTS.ZERO;
-			let temp: number = 0;
-			let index: number = 0;
-			for (var i: number = 0; i < cached_value; i += cached_value_t_p_o1) {
-				temp = i + cached_value;
-				this.line_buffer[index++] = Array(this.x_axis[temp].x, this.x_axis[temp].y, this.x_axis[temp].x, this.x_axis[temp].y - this.inner_bounds.get_width() * 0.01);
+
+			this.cached_value = this.x_axis.length >> 1;
+			this.cached_value_t_p_o1 = (global.CONSTANTS.ZERO_PT_FIVE + this.cached_value * 0.1) >> global.CONSTANTS.ZERO;
+			this.temp = 0;
+			this.index = 0;
+
+			for (var i: number = 0; i < this.cached_value; i += this.cached_value_t_p_o1) {
+				this.temp = i + this.cached_value;
+				this.line_buffer[this.index++] = Array(this.x_axis[this.temp].x, this.x_axis[this.temp].y, this.x_axis[this.temp].x, this.x_axis[this.temp].y - this.inner_bounds.get_width() * 0.01);
 			}
 			canvas.draw_line_buffer(this.line_buffer, this.line_paint);
 			if (scope_manager.entry.length > 0) {

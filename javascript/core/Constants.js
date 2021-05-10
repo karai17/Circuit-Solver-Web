@@ -96,5 +96,10 @@ class Constants {
         this.METER_SYMBOL_CURRENT = 1;
         this.METER_SYMBOL_RESISTANCE = 2;
         this.METER_SYMBOL_POWER = 3;
+        this.MOVE_COMMAND = 'MOVE';
+        this.LINE_COMMAND = 'LINE';
+        this.QUAD_COMMAND = 'QUAD';
+        this.CURVE_COMMAND = 'CURVE';
+        this.CLOSE_COMMAND = 'CLOSE';
     }
 }

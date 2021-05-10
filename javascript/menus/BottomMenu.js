@@ -55,6 +55,7 @@ class BottomMenu {
         this.first_touch_y = 0;
         this.initial_resize_counter = 0;
         this.INITIAL_RESIZE_COUNTER_MAX = global.CONSTANTS.CANVAS_REDRAW_MAX;
+        this.padding = 0;
         this.reload_bottom_path = true;
     }
     bottom_menu_recolor_conditions() {
@@ -225,9 +226,9 @@ class BottomMenu {
         this.file_button.text = language_manager.FILE[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + global.variables.user_file.title;
         this.time_step_button.text = global.TEMPLATES.TIMESTEP_TEMPLATE.replace('{TIMESTEP}', global.utils.exponentiate_quickly(simulation_manager.time_step));
         this.time_step_button_width = 1.25 * this.time_step_button.text_paint.measure_text(this.time_step_button.text);
-        let padding = 2 * global.variables.canvas_stroke_width_4;
-        this.file_button.set_bounds(view_port.left, menu_bar.settings_button.bottom + padding, view_port.left + this.file_button.text_paint.measure_text(global.TEMPLATES.FILE_BUTTON_TEXT_TEMPLATE.replace('{TEXT}', this.file_button.text)), view_port.bottom);
-        this.time_step_button.set_bounds(view_port.right - this.time_step_button_width, menu_bar.settings_button.bottom + padding, view_port.right, view_port.bottom);
+        this.padding = 2 * global.variables.canvas_stroke_width_4;
+        this.file_button.set_bounds(view_port.left, menu_bar.settings_button.bottom + this.padding, view_port.left + this.file_button.text_paint.measure_text(global.TEMPLATES.FILE_BUTTON_TEXT_TEMPLATE.replace('{TEXT}', this.file_button.text)), view_port.bottom);
+        this.time_step_button.set_bounds(view_port.right - this.time_step_button_width, menu_bar.settings_button.bottom + this.padding, view_port.right, view_port.bottom);
         if (this.draw_bottom_path) {
             if (this.file_button.draw_fill) {
                 this.file_button.draw_fill = false;
@@ -243,7 +244,7 @@ class BottomMenu {
                     this.reload_bottom_path = false;
                 }
             }
-            canvas.draw_path(this.bottom_path, this.fill_paint);
+            canvas.draw_path(this.bottom_path.path_2d, this.fill_paint);
         }
         else {
             if (!this.file_button.draw_fill) {

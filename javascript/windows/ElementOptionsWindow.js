@@ -141,6 +141,8 @@ class ElementOptionsWindow {
         this.toggle_switch_button.draw_stroke = false;
         this.toggle_switch_button.draw_text = true;
         this.toggle_switch_button.line_paint.set_color(global.COLORS.GENERAL_BOUNDS_COLOR);
+        this.width_mul_0p3636 = 0;
+        this.height_mul_0p3636 = 0;
     }
     mouse_down() {
         if (global.flags.flag_element_options) {
@@ -493,10 +495,10 @@ class ElementOptionsWindow {
             if (this.exit_button.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
                 canvas.draw_rect(this.exit_button.left + this.offset_x, this.exit_button.top + this.offset_y, this.exit_button.right + this.offset_x, this.exit_button.bottom + this.offset_y, this.hover_paint);
             }
-            let width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
-            let height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
-            canvas.draw_line(this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
-            canvas.draw_line(this.exit_button.right - width_mul_0p3636 + this.offset_x, this.exit_button.top + height_mul_0p3636 + this.offset_y, this.exit_button.left + width_mul_0p3636 + this.offset_x, this.exit_button.bottom - height_mul_0p3636 + this.offset_y, this.line_paint);
+            this.width_mul_0p3636 = this.exit_button.get_width() * 0.3636;
+            this.height_mul_0p3636 = this.exit_button.get_height() * 0.3636;
+            canvas.draw_line(this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
+            canvas.draw_line(this.exit_button.right - this.width_mul_0p3636 + this.offset_x, this.exit_button.top + this.height_mul_0p3636 + this.offset_y, this.exit_button.left + this.width_mul_0p3636 + this.offset_x, this.exit_button.bottom - this.height_mul_0p3636 + this.offset_y, this.line_paint);
         }
     }
 }

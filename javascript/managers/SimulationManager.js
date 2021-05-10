@@ -975,16 +975,14 @@ class SimulationManager {
                 this.first_matrix_build = false;
             }
             else {
-                for (var i = 0; i < matrix_z.length; i++) {
-                    matrix_z[i][0] = 0;
-                }
                 for (var i = 0; i < matrix_a.length; i++) {
+                    matrix_z[i][0] = 0;
                     for (var j = 0; j < matrix_a[0].length; j++) {
                         matrix_a[i][j] = 0;
                     }
                 }
             }
-            matrix_a = linear_algebra.set_matrix_diagonal(matrix_a, global.settings.INV_R_MAX, this.node_size);
+            linear_algebra.set_matrix_diagonal(matrix_a, global.settings.INV_R_MAX, this.node_size);
             engine_functions.stamp_elements();
             if (this.first_x_matrix_copy) {
                 if (!this.first_x_matrix_solution) {

@@ -9,6 +9,25 @@ class VirtualCanvas {
 		this.surface.height = 1;
 		this.context = this.surface.getContext('2d', { alpha: false });
 	}
+	refresh_settings(): void {
+		try {
+			this.surface.style.position = 'absolute';
+			this.surface.style.visibility = 'hidden';
+			this.surface.style.display = 'none';
+			this.surface.style.zIndex = '0';
+			this.context.imageSmoothingEnabled = false;
+			//@ts-expect-error
+			this.context.mozImageSmoothingEnabled = false;
+			//@ts-expect-error
+			this.context.oImageSmoothingEnabled = false;
+			//@ts-expect-error
+			this.context.webkitImageSmoothingEnabled = false;
+			//@ts-expect-error
+			this.context.msImageSmoothingEnabled = false;
+			this.context.globalCompositeOperation = 'source-over';
+			this.surface.style.backfaceVisibility = 'hidden';
+		} catch (e) { }
+	}
 	resize(width: number, height: number): void {
 		this.surface.width = width;
 		this.surface.height = height;
