@@ -152,8 +152,8 @@ class GraphicsEngine {
                 break;
             }
         }
-        this.cache = [];
         this.ctx.stroke();
+        this.cache = [];
     }
     draw_rect(left, top, right, bottom, paint) {
         this.width = (global.CONSTANTS.ZERO_PT_FIVE + (right - left)) >> global.CONSTANTS.ZERO;
