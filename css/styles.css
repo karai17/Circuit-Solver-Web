@@ -1,9 +1,11 @@
 body {
-	overflow: hidden;
-}
-
-html {
-	touch-action: manipulation;
-	transform: translateZ(0);
-	transform: translate3d(0, 0, 0);
+    overflow: hidden;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    perspective: 1000;
+    -webkit-transform: rotateZ(0deg);
 }
