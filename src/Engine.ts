@@ -2203,7 +2203,7 @@ function load_app(): void {
 		}
 	}
 	function throttle_loop(): void {
-		if (fps_iterator ^= 1) {
+		if ((fps_iterator ^= 1)) {
 			system_loop();
 		}
 		requestAnimationFrame(throttle_loop);
