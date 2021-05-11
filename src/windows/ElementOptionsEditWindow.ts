@@ -1158,15 +1158,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1187,15 +1187,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1219,15 +1219,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1251,15 +1251,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1280,15 +1280,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1309,15 +1309,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1338,15 +1338,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1367,15 +1367,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1396,15 +1396,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1425,15 +1425,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1454,15 +1454,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1483,15 +1483,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1534,15 +1534,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1563,15 +1563,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1592,15 +1592,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1621,15 +1621,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1650,15 +1650,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1679,15 +1679,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1708,15 +1708,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1737,15 +1737,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1766,15 +1766,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1795,15 +1795,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1824,15 +1824,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1853,15 +1853,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1882,15 +1882,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1911,15 +1911,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1940,15 +1940,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1969,15 +1969,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -1998,15 +1998,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2027,15 +2027,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2056,15 +2056,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2085,15 +2085,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2114,15 +2114,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2143,15 +2143,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2172,15 +2172,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2201,15 +2201,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2230,15 +2230,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2259,15 +2259,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2288,15 +2288,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2317,15 +2317,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2346,15 +2346,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2375,15 +2375,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2404,15 +2404,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2433,15 +2433,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2462,15 +2462,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2491,15 +2491,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2520,15 +2520,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2549,15 +2549,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2578,15 +2578,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2607,15 +2607,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2636,15 +2636,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2665,15 +2665,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2694,15 +2694,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2723,15 +2723,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2752,15 +2752,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2781,15 +2781,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2810,15 +2810,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2839,15 +2839,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2871,15 +2871,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2900,15 +2900,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2929,15 +2929,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2958,15 +2958,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -2987,15 +2987,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -3016,15 +3016,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -3045,15 +3045,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;
@@ -3074,15 +3074,15 @@ class ElementOptionsEditWindow {
 				} else {
 					toast.set_text(
 						'PARAM = [|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
-						) +
-						'|, ' +
-						'|' +
-						global.utils.exponentiate_quickly(
-							global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
-						) +
-						'|]'
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]
+							) +
+							'|, ' +
+							'|' +
+							global.utils.exponentiate_quickly(
+								global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MAX]
+							) +
+							'|]'
 					);
 					toast.show(global.COLORS.GENERAL_RED_COLOR);
 					ERROR_FLAG = true;

@@ -359,7 +359,7 @@ class EngineFunctions {
 					let width: number = 1.5125 * global.variables.selected_bounds.get_width();
 					/* #INSERT_GENERATE_FIND_SELECTION_NEIGHBORS# */
 					/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-					for (var i: number = 0; i < resistors.length; i++) {
+					for (var i: number = resistors.length - 1; i > -1; i--) {
 						if (resistors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: resistors[i].elm.type,
@@ -370,7 +370,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < capacitors.length; i++) {
+					for (var i: number = capacitors.length - 1; i > -1; i--) {
 						if (capacitors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: capacitors[i].elm.type,
@@ -381,7 +381,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < inductors.length; i++) {
+					for (var i: number = inductors.length - 1; i > -1; i--) {
 						if (inductors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: inductors[i].elm.type,
@@ -392,7 +392,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < grounds.length; i++) {
+					for (var i: number = grounds.length - 1; i > -1; i--) {
 						if (grounds[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: grounds[i].elm.type,
@@ -403,7 +403,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < dcsources.length; i++) {
+					for (var i: number = dcsources.length - 1; i > -1; i--) {
 						if (dcsources[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: dcsources[i].elm.type,
@@ -414,7 +414,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < dccurrents.length; i++) {
+					for (var i: number = dccurrents.length - 1; i > -1; i--) {
 						if (dccurrents[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: dccurrents[i].elm.type,
@@ -425,7 +425,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < acsources.length; i++) {
+					for (var i: number = acsources.length - 1; i > -1; i--) {
 						if (acsources[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: acsources[i].elm.type,
@@ -436,7 +436,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < accurrents.length; i++) {
+					for (var i: number = accurrents.length - 1; i > -1; i--) {
 						if (accurrents[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: accurrents[i].elm.type,
@@ -447,7 +447,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < squarewaves.length; i++) {
+					for (var i: number = squarewaves.length - 1; i > -1; i--) {
 						if (squarewaves[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: squarewaves[i].elm.type,
@@ -458,7 +458,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < sawwaves.length; i++) {
+					for (var i: number = sawwaves.length - 1; i > -1; i--) {
 						if (sawwaves[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: sawwaves[i].elm.type,
@@ -469,7 +469,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < trianglewaves.length; i++) {
+					for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 						if (trianglewaves[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: trianglewaves[i].elm.type,
@@ -480,7 +480,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < constants.length; i++) {
+					for (var i: number = constants.length - 1; i > -1; i--) {
 						if (constants[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: constants[i].elm.type,
@@ -491,7 +491,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < wires.length; i++) {
+					for (var i: number = wires.length - 1; i > -1; i--) {
 						if (wires[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: wires[i].elm.type,
@@ -502,7 +502,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < nets.length; i++) {
+					for (var i: number = nets.length - 1; i > -1; i--) {
 						if (nets[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: nets[i].elm.type,
@@ -513,7 +513,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < notes.length; i++) {
+					for (var i: number = notes.length - 1; i > -1; i--) {
 						if (notes[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: notes[i].elm.type,
@@ -524,7 +524,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < rails.length; i++) {
+					for (var i: number = rails.length - 1; i > -1; i--) {
 						if (rails[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: rails[i].elm.type,
@@ -535,7 +535,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < voltmeters.length; i++) {
+					for (var i: number = voltmeters.length - 1; i > -1; i--) {
 						if (voltmeters[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: voltmeters[i].elm.type,
@@ -546,7 +546,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < ohmmeters.length; i++) {
+					for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 						if (ohmmeters[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: ohmmeters[i].elm.type,
@@ -557,7 +557,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < ammeters.length; i++) {
+					for (var i: number = ammeters.length - 1; i > -1; i--) {
 						if (ammeters[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: ammeters[i].elm.type,
@@ -568,7 +568,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < wattmeters.length; i++) {
+					for (var i: number = wattmeters.length - 1; i > -1; i--) {
 						if (wattmeters[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: wattmeters[i].elm.type,
@@ -579,7 +579,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < fuses.length; i++) {
+					for (var i: number = fuses.length - 1; i > -1; i--) {
 						if (fuses[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: fuses[i].elm.type,
@@ -590,7 +590,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < spsts.length; i++) {
+					for (var i: number = spsts.length - 1; i > -1; i--) {
 						if (spsts[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: spsts[i].elm.type,
@@ -601,7 +601,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < spdts.length; i++) {
+					for (var i: number = spdts.length - 1; i > -1; i--) {
 						if (spdts[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: spdts[i].elm.type,
@@ -612,7 +612,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < nots.length; i++) {
+					for (var i: number = nots.length - 1; i > -1; i--) {
 						if (nots[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: nots[i].elm.type,
@@ -623,7 +623,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < diodes.length; i++) {
+					for (var i: number = diodes.length - 1; i > -1; i--) {
 						if (diodes[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: diodes[i].elm.type,
@@ -634,7 +634,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < leds.length; i++) {
+					for (var i: number = leds.length - 1; i > -1; i--) {
 						if (leds[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: leds[i].elm.type,
@@ -645,7 +645,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < zeners.length; i++) {
+					for (var i: number = zeners.length - 1; i > -1; i--) {
 						if (zeners[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: zeners[i].elm.type,
@@ -656,7 +656,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < potentiometers.length; i++) {
+					for (var i: number = potentiometers.length - 1; i > -1; i--) {
 						if (potentiometers[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: potentiometers[i].elm.type,
@@ -667,7 +667,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < ands.length; i++) {
+					for (var i: number = ands.length - 1; i > -1; i--) {
 						if (ands[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: ands[i].elm.type,
@@ -678,7 +678,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < ors.length; i++) {
+					for (var i: number = ors.length - 1; i > -1; i--) {
 						if (ors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: ors[i].elm.type,
@@ -689,7 +689,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < nands.length; i++) {
+					for (var i: number = nands.length - 1; i > -1; i--) {
 						if (nands[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: nands[i].elm.type,
@@ -700,7 +700,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < nors.length; i++) {
+					for (var i: number = nors.length - 1; i > -1; i--) {
 						if (nors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: nors[i].elm.type,
@@ -711,7 +711,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < xors.length; i++) {
+					for (var i: number = xors.length - 1; i > -1; i--) {
 						if (xors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: xors[i].elm.type,
@@ -722,7 +722,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < xnors.length; i++) {
+					for (var i: number = xnors.length - 1; i > -1; i--) {
 						if (xnors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: xnors[i].elm.type,
@@ -733,7 +733,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < dffs.length; i++) {
+					for (var i: number = dffs.length - 1; i > -1; i--) {
 						if (dffs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: dffs[i].elm.type,
@@ -744,7 +744,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vsats.length; i++) {
+					for (var i: number = vsats.length - 1; i > -1; i--) {
 						if (vsats[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vsats[i].elm.type,
@@ -755,7 +755,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < adders.length; i++) {
+					for (var i: number = adders.length - 1; i > -1; i--) {
 						if (adders[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: adders[i].elm.type,
@@ -766,7 +766,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < subtractors.length; i++) {
+					for (var i: number = subtractors.length - 1; i > -1; i--) {
 						if (subtractors[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: subtractors[i].elm.type,
@@ -777,7 +777,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < multipliers.length; i++) {
+					for (var i: number = multipliers.length - 1; i > -1; i--) {
 						if (multipliers[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: multipliers[i].elm.type,
@@ -788,7 +788,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < dividers.length; i++) {
+					for (var i: number = dividers.length - 1; i > -1; i--) {
 						if (dividers[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: dividers[i].elm.type,
@@ -799,7 +799,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < gains.length; i++) {
+					for (var i: number = gains.length - 1; i > -1; i--) {
 						if (gains[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: gains[i].elm.type,
@@ -810,7 +810,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < absvals.length; i++) {
+					for (var i: number = absvals.length - 1; i > -1; i--) {
 						if (absvals[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: absvals[i].elm.type,
@@ -821,7 +821,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vcsws.length; i++) {
+					for (var i: number = vcsws.length - 1; i > -1; i--) {
 						if (vcsws[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vcsws[i].elm.type,
@@ -832,7 +832,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vcvss.length; i++) {
+					for (var i: number = vcvss.length - 1; i > -1; i--) {
 						if (vcvss[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vcvss[i].elm.type,
@@ -843,7 +843,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vccss.length; i++) {
+					for (var i: number = vccss.length - 1; i > -1; i--) {
 						if (vccss[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vccss[i].elm.type,
@@ -854,7 +854,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < cccss.length; i++) {
+					for (var i: number = cccss.length - 1; i > -1; i--) {
 						if (cccss[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: cccss[i].elm.type,
@@ -865,7 +865,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < ccvss.length; i++) {
+					for (var i: number = ccvss.length - 1; i > -1; i--) {
 						if (ccvss[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: ccvss[i].elm.type,
@@ -876,7 +876,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < opamps.length; i++) {
+					for (var i: number = opamps.length - 1; i > -1; i--) {
 						if (opamps[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: opamps[i].elm.type,
@@ -887,7 +887,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < nmosfets.length; i++) {
+					for (var i: number = nmosfets.length - 1; i > -1; i--) {
 						if (nmosfets[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: nmosfets[i].elm.type,
@@ -898,7 +898,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < pmosfets.length; i++) {
+					for (var i: number = pmosfets.length - 1; i > -1; i--) {
 						if (pmosfets[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: pmosfets[i].elm.type,
@@ -909,7 +909,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < npns.length; i++) {
+					for (var i: number = npns.length - 1; i > -1; i--) {
 						if (npns[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: npns[i].elm.type,
@@ -920,7 +920,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < pnps.length; i++) {
+					for (var i: number = pnps.length - 1; i > -1; i--) {
 						if (pnps[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: pnps[i].elm.type,
@@ -931,7 +931,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < adcs.length; i++) {
+					for (var i: number = adcs.length - 1; i > -1; i--) {
 						if (adcs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: adcs[i].elm.type,
@@ -942,7 +942,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < dacs.length; i++) {
+					for (var i: number = dacs.length - 1; i > -1; i--) {
 						if (dacs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: dacs[i].elm.type,
@@ -953,7 +953,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < sandhs.length; i++) {
+					for (var i: number = sandhs.length - 1; i > -1; i--) {
 						if (sandhs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: sandhs[i].elm.type,
@@ -964,7 +964,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < pwms.length; i++) {
+					for (var i: number = pwms.length - 1; i > -1; i--) {
 						if (pwms[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: pwms[i].elm.type,
@@ -975,7 +975,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < integrators.length; i++) {
+					for (var i: number = integrators.length - 1; i > -1; i--) {
 						if (integrators[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: integrators[i].elm.type,
@@ -986,7 +986,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < differentiators.length; i++) {
+					for (var i: number = differentiators.length - 1; i > -1; i--) {
 						if (differentiators[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: differentiators[i].elm.type,
@@ -997,7 +997,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < lowpasses.length; i++) {
+					for (var i: number = lowpasses.length - 1; i > -1; i--) {
 						if (lowpasses[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: lowpasses[i].elm.type,
@@ -1008,7 +1008,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < highpasses.length; i++) {
+					for (var i: number = highpasses.length - 1; i > -1; i--) {
 						if (highpasses[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: highpasses[i].elm.type,
@@ -1019,7 +1019,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < relays.length; i++) {
+					for (var i: number = relays.length - 1; i > -1; i--) {
 						if (relays[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: relays[i].elm.type,
@@ -1030,7 +1030,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < pids.length; i++) {
+					for (var i: number = pids.length - 1; i > -1; i--) {
 						if (pids[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: pids[i].elm.type,
@@ -1041,7 +1041,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < luts.length; i++) {
+					for (var i: number = luts.length - 1; i > -1; i--) {
 						if (luts[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: luts[i].elm.type,
@@ -1052,7 +1052,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vcrs.length; i++) {
+					for (var i: number = vcrs.length - 1; i > -1; i--) {
 						if (vcrs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vcrs[i].elm.type,
@@ -1063,7 +1063,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vccas.length; i++) {
+					for (var i: number = vccas.length - 1; i > -1; i--) {
 						if (vccas[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vccas[i].elm.type,
@@ -1074,7 +1074,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < vcls.length; i++) {
+					for (var i: number = vcls.length - 1; i > -1; i--) {
 						if (vcls[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: vcls[i].elm.type,
@@ -1085,7 +1085,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < grts.length; i++) {
+					for (var i: number = grts.length - 1; i > -1; i--) {
 						if (grts[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: grts[i].elm.type,
@@ -1096,7 +1096,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < tptzs.length; i++) {
+					for (var i: number = tptzs.length - 1; i > -1; i--) {
 						if (tptzs[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: tptzs[i].elm.type,
@@ -1107,7 +1107,7 @@ class EngineFunctions {
 							}
 						}
 					}
-					for (var i: number = 0; i < transformers.length; i++) {
+					for (var i: number = transformers.length - 1; i > -1; i--) {
 						if (transformers[i].bounds.is_near(global.variables.selected_bounds, width)) {
 							global.variables.selection_nearest_neighbors.push({
 								Type: transformers[i].elm.type,
@@ -1131,7 +1131,7 @@ class EngineFunctions {
 						/* #INSERT_GENERATE_SWAP_SELECTION_NEIGHBORS# */
 						/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_RESISTOR) {
-							for (var i: number = 0; i < resistors.length; i++) {
+							for (var i: number = resistors.length - 1; i > -1; i--) {
 								if (resistors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									resistors[i].select();
 									break;
@@ -1139,7 +1139,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
-							for (var i: number = 0; i < capacitors.length; i++) {
+							for (var i: number = capacitors.length - 1; i > -1; i--) {
 								if (capacitors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									capacitors[i].select();
 									break;
@@ -1147,7 +1147,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
-							for (var i: number = 0; i < inductors.length; i++) {
+							for (var i: number = inductors.length - 1; i > -1; i--) {
 								if (inductors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									inductors[i].select();
 									break;
@@ -1155,7 +1155,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_GROUND) {
-							for (var i: number = 0; i < grounds.length; i++) {
+							for (var i: number = grounds.length - 1; i > -1; i--) {
 								if (grounds[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									grounds[i].select();
 									break;
@@ -1163,7 +1163,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
-							for (var i: number = 0; i < dcsources.length; i++) {
+							for (var i: number = dcsources.length - 1; i > -1; i--) {
 								if (dcsources[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									dcsources[i].select();
 									break;
@@ -1171,7 +1171,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
-							for (var i: number = 0; i < dccurrents.length; i++) {
+							for (var i: number = dccurrents.length - 1; i > -1; i--) {
 								if (dccurrents[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									dccurrents[i].select();
 									break;
@@ -1179,7 +1179,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
-							for (var i: number = 0; i < acsources.length; i++) {
+							for (var i: number = acsources.length - 1; i > -1; i--) {
 								if (acsources[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									acsources[i].select();
 									break;
@@ -1187,7 +1187,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
-							for (var i: number = 0; i < accurrents.length; i++) {
+							for (var i: number = accurrents.length - 1; i > -1; i--) {
 								if (accurrents[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									accurrents[i].select();
 									break;
@@ -1195,7 +1195,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
-							for (var i: number = 0; i < squarewaves.length; i++) {
+							for (var i: number = squarewaves.length - 1; i > -1; i--) {
 								if (squarewaves[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									squarewaves[i].select();
 									break;
@@ -1203,7 +1203,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SAW) {
-							for (var i: number = 0; i < sawwaves.length; i++) {
+							for (var i: number = sawwaves.length - 1; i > -1; i--) {
 								if (sawwaves[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									sawwaves[i].select();
 									break;
@@ -1211,7 +1211,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_TRI) {
-							for (var i: number = 0; i < trianglewaves.length; i++) {
+							for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 								if (trianglewaves[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									trianglewaves[i].select();
 									break;
@@ -1219,7 +1219,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_CONSTANT) {
-							for (var i: number = 0; i < constants.length; i++) {
+							for (var i: number = constants.length - 1; i > -1; i--) {
 								if (constants[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									constants[i].select();
 									break;
@@ -1227,7 +1227,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_WIRE) {
-							for (var i: number = 0; i < wires.length; i++) {
+							for (var i: number = wires.length - 1; i > -1; i--) {
 								if (wires[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									wires[i].select();
 									break;
@@ -1235,7 +1235,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NET) {
-							for (var i: number = 0; i < nets.length; i++) {
+							for (var i: number = nets.length - 1; i > -1; i--) {
 								if (nets[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									nets[i].select();
 									break;
@@ -1243,7 +1243,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NOTE) {
-							for (var i: number = 0; i < notes.length; i++) {
+							for (var i: number = notes.length - 1; i > -1; i--) {
 								if (notes[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									notes[i].select();
 									break;
@@ -1251,7 +1251,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_RAIL) {
-							for (var i: number = 0; i < rails.length; i++) {
+							for (var i: number = rails.length - 1; i > -1; i--) {
 								if (rails[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									rails[i].select();
 									break;
@@ -1259,7 +1259,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
-							for (var i: number = 0; i < voltmeters.length; i++) {
+							for (var i: number = voltmeters.length - 1; i > -1; i--) {
 								if (voltmeters[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									voltmeters[i].select();
 									break;
@@ -1267,7 +1267,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_OHMMETER) {
-							for (var i: number = 0; i < ohmmeters.length; i++) {
+							for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 								if (ohmmeters[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									ohmmeters[i].select();
 									break;
@@ -1275,7 +1275,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_AMMETER) {
-							for (var i: number = 0; i < ammeters.length; i++) {
+							for (var i: number = ammeters.length - 1; i > -1; i--) {
 								if (ammeters[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									ammeters[i].select();
 									break;
@@ -1283,7 +1283,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_WATTMETER) {
-							for (var i: number = 0; i < wattmeters.length; i++) {
+							for (var i: number = wattmeters.length - 1; i > -1; i--) {
 								if (wattmeters[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									wattmeters[i].select();
 									break;
@@ -1291,7 +1291,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_FUSE) {
-							for (var i: number = 0; i < fuses.length; i++) {
+							for (var i: number = fuses.length - 1; i > -1; i--) {
 								if (fuses[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									fuses[i].select();
 									break;
@@ -1299,7 +1299,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SPST) {
-							for (var i: number = 0; i < spsts.length; i++) {
+							for (var i: number = spsts.length - 1; i > -1; i--) {
 								if (spsts[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									spsts[i].select();
 									break;
@@ -1307,7 +1307,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SPDT) {
-							for (var i: number = 0; i < spdts.length; i++) {
+							for (var i: number = spdts.length - 1; i > -1; i--) {
 								if (spdts[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									spdts[i].select();
 									break;
@@ -1315,7 +1315,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NOT) {
-							for (var i: number = 0; i < nots.length; i++) {
+							for (var i: number = nots.length - 1; i > -1; i--) {
 								if (nots[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									nots[i].select();
 									break;
@@ -1323,7 +1323,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DIODE) {
-							for (var i: number = 0; i < diodes.length; i++) {
+							for (var i: number = diodes.length - 1; i > -1; i--) {
 								if (diodes[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									diodes[i].select();
 									break;
@@ -1331,7 +1331,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_LED) {
-							for (var i: number = 0; i < leds.length; i++) {
+							for (var i: number = leds.length - 1; i > -1; i--) {
 								if (leds[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									leds[i].select();
 									break;
@@ -1339,7 +1339,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ZENER) {
-							for (var i: number = 0; i < zeners.length; i++) {
+							for (var i: number = zeners.length - 1; i > -1; i--) {
 								if (zeners[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									zeners[i].select();
 									break;
@@ -1347,7 +1347,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
-							for (var i: number = 0; i < potentiometers.length; i++) {
+							for (var i: number = potentiometers.length - 1; i > -1; i--) {
 								if (potentiometers[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									potentiometers[i].select();
 									break;
@@ -1355,7 +1355,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_AND) {
-							for (var i: number = 0; i < ands.length; i++) {
+							for (var i: number = ands.length - 1; i > -1; i--) {
 								if (ands[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									ands[i].select();
 									break;
@@ -1363,7 +1363,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_OR) {
-							for (var i: number = 0; i < ors.length; i++) {
+							for (var i: number = ors.length - 1; i > -1; i--) {
 								if (ors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									ors[i].select();
 									break;
@@ -1371,7 +1371,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NAND) {
-							for (var i: number = 0; i < nands.length; i++) {
+							for (var i: number = nands.length - 1; i > -1; i--) {
 								if (nands[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									nands[i].select();
 									break;
@@ -1379,7 +1379,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NOR) {
-							for (var i: number = 0; i < nors.length; i++) {
+							for (var i: number = nors.length - 1; i > -1; i--) {
 								if (nors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									nors[i].select();
 									break;
@@ -1387,7 +1387,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_XOR) {
-							for (var i: number = 0; i < xors.length; i++) {
+							for (var i: number = xors.length - 1; i > -1; i--) {
 								if (xors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									xors[i].select();
 									break;
@@ -1395,7 +1395,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_XNOR) {
-							for (var i: number = 0; i < xnors.length; i++) {
+							for (var i: number = xnors.length - 1; i > -1; i--) {
 								if (xnors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									xnors[i].select();
 									break;
@@ -1403,7 +1403,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DFF) {
-							for (var i: number = 0; i < dffs.length; i++) {
+							for (var i: number = dffs.length - 1; i > -1; i--) {
 								if (dffs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									dffs[i].select();
 									break;
@@ -1411,7 +1411,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VSAT) {
-							for (var i: number = 0; i < vsats.length; i++) {
+							for (var i: number = vsats.length - 1; i > -1; i--) {
 								if (vsats[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vsats[i].select();
 									break;
@@ -1419,7 +1419,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ADD) {
-							for (var i: number = 0; i < adders.length; i++) {
+							for (var i: number = adders.length - 1; i > -1; i--) {
 								if (adders[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									adders[i].select();
 									break;
@@ -1427,7 +1427,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SUB) {
-							for (var i: number = 0; i < subtractors.length; i++) {
+							for (var i: number = subtractors.length - 1; i > -1; i--) {
 								if (subtractors[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									subtractors[i].select();
 									break;
@@ -1435,7 +1435,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_MUL) {
-							for (var i: number = 0; i < multipliers.length; i++) {
+							for (var i: number = multipliers.length - 1; i > -1; i--) {
 								if (multipliers[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									multipliers[i].select();
 									break;
@@ -1443,7 +1443,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DIV) {
-							for (var i: number = 0; i < dividers.length; i++) {
+							for (var i: number = dividers.length - 1; i > -1; i--) {
 								if (dividers[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									dividers[i].select();
 									break;
@@ -1451,7 +1451,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_GAIN) {
-							for (var i: number = 0; i < gains.length; i++) {
+							for (var i: number = gains.length - 1; i > -1; i--) {
 								if (gains[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									gains[i].select();
 									break;
@@ -1459,7 +1459,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ABS) {
-							for (var i: number = 0; i < absvals.length; i++) {
+							for (var i: number = absvals.length - 1; i > -1; i--) {
 								if (absvals[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									absvals[i].select();
 									break;
@@ -1467,7 +1467,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCSW) {
-							for (var i: number = 0; i < vcsws.length; i++) {
+							for (var i: number = vcsws.length - 1; i > -1; i--) {
 								if (vcsws[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vcsws[i].select();
 									break;
@@ -1475,7 +1475,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCVS) {
-							for (var i: number = 0; i < vcvss.length; i++) {
+							for (var i: number = vcvss.length - 1; i > -1; i--) {
 								if (vcvss[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vcvss[i].select();
 									break;
@@ -1483,7 +1483,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCCS) {
-							for (var i: number = 0; i < vccss.length; i++) {
+							for (var i: number = vccss.length - 1; i > -1; i--) {
 								if (vccss[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vccss[i].select();
 									break;
@@ -1491,7 +1491,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_CCCS) {
-							for (var i: number = 0; i < cccss.length; i++) {
+							for (var i: number = cccss.length - 1; i > -1; i--) {
 								if (cccss[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									cccss[i].select();
 									break;
@@ -1499,7 +1499,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_CCVS) {
-							for (var i: number = 0; i < ccvss.length; i++) {
+							for (var i: number = ccvss.length - 1; i > -1; i--) {
 								if (ccvss[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									ccvss[i].select();
 									break;
@@ -1507,7 +1507,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_OPAMP) {
-							for (var i: number = 0; i < opamps.length; i++) {
+							for (var i: number = opamps.length - 1; i > -1; i--) {
 								if (opamps[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									opamps[i].select();
 									break;
@@ -1515,7 +1515,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NMOS) {
-							for (var i: number = 0; i < nmosfets.length; i++) {
+							for (var i: number = nmosfets.length - 1; i > -1; i--) {
 								if (nmosfets[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									nmosfets[i].select();
 									break;
@@ -1523,7 +1523,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_PMOS) {
-							for (var i: number = 0; i < pmosfets.length; i++) {
+							for (var i: number = pmosfets.length - 1; i > -1; i--) {
 								if (pmosfets[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									pmosfets[i].select();
 									break;
@@ -1531,7 +1531,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_NPN) {
-							for (var i: number = 0; i < npns.length; i++) {
+							for (var i: number = npns.length - 1; i > -1; i--) {
 								if (npns[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									npns[i].select();
 									break;
@@ -1539,7 +1539,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_PNP) {
-							for (var i: number = 0; i < pnps.length; i++) {
+							for (var i: number = pnps.length - 1; i > -1; i--) {
 								if (pnps[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									pnps[i].select();
 									break;
@@ -1547,7 +1547,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_ADC) {
-							for (var i: number = 0; i < adcs.length; i++) {
+							for (var i: number = adcs.length - 1; i > -1; i--) {
 								if (adcs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									adcs[i].select();
 									break;
@@ -1555,7 +1555,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DAC) {
-							for (var i: number = 0; i < dacs.length; i++) {
+							for (var i: number = dacs.length - 1; i > -1; i--) {
 								if (dacs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									dacs[i].select();
 									break;
@@ -1563,7 +1563,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_SAH) {
-							for (var i: number = 0; i < sandhs.length; i++) {
+							for (var i: number = sandhs.length - 1; i > -1; i--) {
 								if (sandhs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									sandhs[i].select();
 									break;
@@ -1571,7 +1571,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_PWM) {
-							for (var i: number = 0; i < pwms.length; i++) {
+							for (var i: number = pwms.length - 1; i > -1; i--) {
 								if (pwms[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									pwms[i].select();
 									break;
@@ -1579,7 +1579,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
-							for (var i: number = 0; i < integrators.length; i++) {
+							for (var i: number = integrators.length - 1; i > -1; i--) {
 								if (integrators[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									integrators[i].select();
 									break;
@@ -1587,7 +1587,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
-							for (var i: number = 0; i < differentiators.length; i++) {
+							for (var i: number = differentiators.length - 1; i > -1; i--) {
 								if (differentiators[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									differentiators[i].select();
 									break;
@@ -1595,7 +1595,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_LPF) {
-							for (var i: number = 0; i < lowpasses.length; i++) {
+							for (var i: number = lowpasses.length - 1; i > -1; i--) {
 								if (lowpasses[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									lowpasses[i].select();
 									break;
@@ -1603,7 +1603,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_HPF) {
-							for (var i: number = 0; i < highpasses.length; i++) {
+							for (var i: number = highpasses.length - 1; i > -1; i--) {
 								if (highpasses[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									highpasses[i].select();
 									break;
@@ -1611,7 +1611,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_REL) {
-							for (var i: number = 0; i < relays.length; i++) {
+							for (var i: number = relays.length - 1; i > -1; i--) {
 								if (relays[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									relays[i].select();
 									break;
@@ -1619,7 +1619,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_PID) {
-							for (var i: number = 0; i < pids.length; i++) {
+							for (var i: number = pids.length - 1; i > -1; i--) {
 								if (pids[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									pids[i].select();
 									break;
@@ -1627,7 +1627,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_LUT) {
-							for (var i: number = 0; i < luts.length; i++) {
+							for (var i: number = luts.length - 1; i > -1; i--) {
 								if (luts[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									luts[i].select();
 									break;
@@ -1635,7 +1635,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCR) {
-							for (var i: number = 0; i < vcrs.length; i++) {
+							for (var i: number = vcrs.length - 1; i > -1; i--) {
 								if (vcrs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vcrs[i].select();
 									break;
@@ -1643,7 +1643,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCCA) {
-							for (var i: number = 0; i < vccas.length; i++) {
+							for (var i: number = vccas.length - 1; i > -1; i--) {
 								if (vccas[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vccas[i].select();
 									break;
@@ -1651,7 +1651,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_VCL) {
-							for (var i: number = 0; i < vcls.length; i++) {
+							for (var i: number = vcls.length - 1; i > -1; i--) {
 								if (vcls[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									vcls[i].select();
 									break;
@@ -1659,7 +1659,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_GRT) {
-							for (var i: number = 0; i < grts.length; i++) {
+							for (var i: number = grts.length - 1; i > -1; i--) {
 								if (grts[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									grts[i].select();
 									break;
@@ -1667,7 +1667,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_TPTZ) {
-							for (var i: number = 0; i < tptzs.length; i++) {
+							for (var i: number = tptzs.length - 1; i > -1; i--) {
 								if (tptzs[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									tptzs[i].select();
 									break;
@@ -1675,7 +1675,7 @@ class EngineFunctions {
 							}
 						}
 						if (global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Type'] === global.ELEMENT_TYPES.TYPE_TRAN) {
-							for (var i: number = 0; i < transformers.length; i++) {
+							for (var i: number = transformers.length - 1; i > -1; i--) {
 								if (transformers[i].elm.id === global.variables.selection_nearest_neighbors[global.variables.nearest_neighbor_index]['Id']) {
 									transformers[i].select();
 									break;
@@ -1691,7 +1691,7 @@ class EngineFunctions {
 	/* #INSERT_GENERATE_ELEMENT_INDEX# */
 	/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 	get_resistor(id: number): number {
-		for (var i: number = 0; i < resistors.length; i++) {
+		for (var i: number = resistors.length - 1; i > -1; i--) {
 			if (resistors[i].elm.id === id) {
 				return i;
 			}
@@ -1700,7 +1700,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_capacitor(id: number): number {
-		for (var i: number = 0; i < capacitors.length; i++) {
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
 			if (capacitors[i].elm.id === id) {
 				return i;
 			}
@@ -1709,7 +1709,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_inductor(id: number): number {
-		for (var i: number = 0; i < inductors.length; i++) {
+		for (var i: number = inductors.length - 1; i > -1; i--) {
 			if (inductors[i].elm.id === id) {
 				return i;
 			}
@@ -1718,7 +1718,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_ground(id: number): number {
-		for (var i: number = 0; i < grounds.length; i++) {
+		for (var i: number = grounds.length - 1; i > -1; i--) {
 			if (grounds[i].elm.id === id) {
 				return i;
 			}
@@ -1727,7 +1727,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_dcsource(id: number): number {
-		for (var i: number = 0; i < dcsources.length; i++) {
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
 			if (dcsources[i].elm.id === id) {
 				return i;
 			}
@@ -1736,7 +1736,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_dccurrent(id: number): number {
-		for (var i: number = 0; i < dccurrents.length; i++) {
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
 			if (dccurrents[i].elm.id === id) {
 				return i;
 			}
@@ -1745,7 +1745,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_acsource(id: number): number {
-		for (var i: number = 0; i < acsources.length; i++) {
+		for (var i: number = acsources.length - 1; i > -1; i--) {
 			if (acsources[i].elm.id === id) {
 				return i;
 			}
@@ -1754,7 +1754,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_accurrent(id: number): number {
-		for (var i: number = 0; i < accurrents.length; i++) {
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
 			if (accurrents[i].elm.id === id) {
 				return i;
 			}
@@ -1763,7 +1763,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_squarewave(id: number): number {
-		for (var i: number = 0; i < squarewaves.length; i++) {
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
 			if (squarewaves[i].elm.id === id) {
 				return i;
 			}
@@ -1772,7 +1772,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_sawwave(id: number): number {
-		for (var i: number = 0; i < sawwaves.length; i++) {
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
 			if (sawwaves[i].elm.id === id) {
 				return i;
 			}
@@ -1781,7 +1781,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_trianglewave(id: number): number {
-		for (var i: number = 0; i < trianglewaves.length; i++) {
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 			if (trianglewaves[i].elm.id === id) {
 				return i;
 			}
@@ -1790,7 +1790,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_constant(id: number): number {
-		for (var i: number = 0; i < constants.length; i++) {
+		for (var i: number = constants.length - 1; i > -1; i--) {
 			if (constants[i].elm.id === id) {
 				return i;
 			}
@@ -1799,7 +1799,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_wire(id: number): number {
-		for (var i: number = 0; i < wires.length; i++) {
+		for (var i: number = wires.length - 1; i > -1; i--) {
 			if (wires[i].elm.id === id) {
 				return i;
 			}
@@ -1808,7 +1808,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_net(id: number): number {
-		for (var i: number = 0; i < nets.length; i++) {
+		for (var i: number = nets.length - 1; i > -1; i--) {
 			if (nets[i].elm.id === id) {
 				return i;
 			}
@@ -1817,7 +1817,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_note(id: number): number {
-		for (var i: number = 0; i < notes.length; i++) {
+		for (var i: number = notes.length - 1; i > -1; i--) {
 			if (notes[i].elm.id === id) {
 				return i;
 			}
@@ -1826,7 +1826,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_rail(id: number): number {
-		for (var i: number = 0; i < rails.length; i++) {
+		for (var i: number = rails.length - 1; i > -1; i--) {
 			if (rails[i].elm.id === id) {
 				return i;
 			}
@@ -1835,7 +1835,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_voltmeter(id: number): number {
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			if (voltmeters[i].elm.id === id) {
 				return i;
 			}
@@ -1844,7 +1844,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_ohmmeter(id: number): number {
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			if (ohmmeters[i].elm.id === id) {
 				return i;
 			}
@@ -1853,7 +1853,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_ammeter(id: number): number {
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			if (ammeters[i].elm.id === id) {
 				return i;
 			}
@@ -1862,7 +1862,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_wattmeter(id: number): number {
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			if (wattmeters[i].elm.id === id) {
 				return i;
 			}
@@ -1871,7 +1871,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_fuse(id: number): number {
-		for (var i: number = 0; i < fuses.length; i++) {
+		for (var i: number = fuses.length - 1; i > -1; i--) {
 			if (fuses[i].elm.id === id) {
 				return i;
 			}
@@ -1880,7 +1880,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_spst(id: number): number {
-		for (var i: number = 0; i < spsts.length; i++) {
+		for (var i: number = spsts.length - 1; i > -1; i--) {
 			if (spsts[i].elm.id === id) {
 				return i;
 			}
@@ -1889,7 +1889,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_spdt(id: number): number {
-		for (var i: number = 0; i < spdts.length; i++) {
+		for (var i: number = spdts.length - 1; i > -1; i--) {
 			if (spdts[i].elm.id === id) {
 				return i;
 			}
@@ -1898,7 +1898,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_not(id: number): number {
-		for (var i: number = 0; i < nots.length; i++) {
+		for (var i: number = nots.length - 1; i > -1; i--) {
 			if (nots[i].elm.id === id) {
 				return i;
 			}
@@ -1907,7 +1907,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_diode(id: number): number {
-		for (var i: number = 0; i < diodes.length; i++) {
+		for (var i: number = diodes.length - 1; i > -1; i--) {
 			if (diodes[i].elm.id === id) {
 				return i;
 			}
@@ -1916,7 +1916,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_led(id: number): number {
-		for (var i: number = 0; i < leds.length; i++) {
+		for (var i: number = leds.length - 1; i > -1; i--) {
 			if (leds[i].elm.id === id) {
 				return i;
 			}
@@ -1925,7 +1925,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_zener(id: number): number {
-		for (var i: number = 0; i < zeners.length; i++) {
+		for (var i: number = zeners.length - 1; i > -1; i--) {
 			if (zeners[i].elm.id === id) {
 				return i;
 			}
@@ -1934,7 +1934,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_potentiometer(id: number): number {
-		for (var i: number = 0; i < potentiometers.length; i++) {
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			if (potentiometers[i].elm.id === id) {
 				return i;
 			}
@@ -1943,7 +1943,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_and(id: number): number {
-		for (var i: number = 0; i < ands.length; i++) {
+		for (var i: number = ands.length - 1; i > -1; i--) {
 			if (ands[i].elm.id === id) {
 				return i;
 			}
@@ -1952,7 +1952,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_or(id: number): number {
-		for (var i: number = 0; i < ors.length; i++) {
+		for (var i: number = ors.length - 1; i > -1; i--) {
 			if (ors[i].elm.id === id) {
 				return i;
 			}
@@ -1961,7 +1961,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_nand(id: number): number {
-		for (var i: number = 0; i < nands.length; i++) {
+		for (var i: number = nands.length - 1; i > -1; i--) {
 			if (nands[i].elm.id === id) {
 				return i;
 			}
@@ -1970,7 +1970,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_nor(id: number): number {
-		for (var i: number = 0; i < nors.length; i++) {
+		for (var i: number = nors.length - 1; i > -1; i--) {
 			if (nors[i].elm.id === id) {
 				return i;
 			}
@@ -1979,7 +1979,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_xor(id: number): number {
-		for (var i: number = 0; i < xors.length; i++) {
+		for (var i: number = xors.length - 1; i > -1; i--) {
 			if (xors[i].elm.id === id) {
 				return i;
 			}
@@ -1988,7 +1988,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_xnor(id: number): number {
-		for (var i: number = 0; i < xnors.length; i++) {
+		for (var i: number = xnors.length - 1; i > -1; i--) {
 			if (xnors[i].elm.id === id) {
 				return i;
 			}
@@ -1997,7 +1997,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_dff(id: number): number {
-		for (var i: number = 0; i < dffs.length; i++) {
+		for (var i: number = dffs.length - 1; i > -1; i--) {
 			if (dffs[i].elm.id === id) {
 				return i;
 			}
@@ -2006,7 +2006,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vsat(id: number): number {
-		for (var i: number = 0; i < vsats.length; i++) {
+		for (var i: number = vsats.length - 1; i > -1; i--) {
 			if (vsats[i].elm.id === id) {
 				return i;
 			}
@@ -2015,7 +2015,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_adder(id: number): number {
-		for (var i: number = 0; i < adders.length; i++) {
+		for (var i: number = adders.length - 1; i > -1; i--) {
 			if (adders[i].elm.id === id) {
 				return i;
 			}
@@ -2024,7 +2024,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_subtractor(id: number): number {
-		for (var i: number = 0; i < subtractors.length; i++) {
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
 			if (subtractors[i].elm.id === id) {
 				return i;
 			}
@@ -2033,7 +2033,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_multiplier(id: number): number {
-		for (var i: number = 0; i < multipliers.length; i++) {
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
 			if (multipliers[i].elm.id === id) {
 				return i;
 			}
@@ -2042,7 +2042,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_divider(id: number): number {
-		for (var i: number = 0; i < dividers.length; i++) {
+		for (var i: number = dividers.length - 1; i > -1; i--) {
 			if (dividers[i].elm.id === id) {
 				return i;
 			}
@@ -2051,7 +2051,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_gain(id: number): number {
-		for (var i: number = 0; i < gains.length; i++) {
+		for (var i: number = gains.length - 1; i > -1; i--) {
 			if (gains[i].elm.id === id) {
 				return i;
 			}
@@ -2060,7 +2060,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_absval(id: number): number {
-		for (var i: number = 0; i < absvals.length; i++) {
+		for (var i: number = absvals.length - 1; i > -1; i--) {
 			if (absvals[i].elm.id === id) {
 				return i;
 			}
@@ -2069,7 +2069,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vcsw(id: number): number {
-		for (var i: number = 0; i < vcsws.length; i++) {
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
 			if (vcsws[i].elm.id === id) {
 				return i;
 			}
@@ -2078,7 +2078,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vcvs(id: number): number {
-		for (var i: number = 0; i < vcvss.length; i++) {
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
 			if (vcvss[i].elm.id === id) {
 				return i;
 			}
@@ -2087,7 +2087,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vccs(id: number): number {
-		for (var i: number = 0; i < vccss.length; i++) {
+		for (var i: number = vccss.length - 1; i > -1; i--) {
 			if (vccss[i].elm.id === id) {
 				return i;
 			}
@@ -2096,7 +2096,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_cccs(id: number): number {
-		for (var i: number = 0; i < cccss.length; i++) {
+		for (var i: number = cccss.length - 1; i > -1; i--) {
 			if (cccss[i].elm.id === id) {
 				return i;
 			}
@@ -2105,7 +2105,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_ccvs(id: number): number {
-		for (var i: number = 0; i < ccvss.length; i++) {
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
 			if (ccvss[i].elm.id === id) {
 				return i;
 			}
@@ -2114,7 +2114,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_opamp(id: number): number {
-		for (var i: number = 0; i < opamps.length; i++) {
+		for (var i: number = opamps.length - 1; i > -1; i--) {
 			if (opamps[i].elm.id === id) {
 				return i;
 			}
@@ -2123,7 +2123,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_nmosfet(id: number): number {
-		for (var i: number = 0; i < nmosfets.length; i++) {
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
 			if (nmosfets[i].elm.id === id) {
 				return i;
 			}
@@ -2132,7 +2132,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_pmosfet(id: number): number {
-		for (var i: number = 0; i < pmosfets.length; i++) {
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
 			if (pmosfets[i].elm.id === id) {
 				return i;
 			}
@@ -2141,7 +2141,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_npn(id: number): number {
-		for (var i: number = 0; i < npns.length; i++) {
+		for (var i: number = npns.length - 1; i > -1; i--) {
 			if (npns[i].elm.id === id) {
 				return i;
 			}
@@ -2150,7 +2150,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_pnp(id: number): number {
-		for (var i: number = 0; i < pnps.length; i++) {
+		for (var i: number = pnps.length - 1; i > -1; i--) {
 			if (pnps[i].elm.id === id) {
 				return i;
 			}
@@ -2159,7 +2159,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_adc(id: number): number {
-		for (var i: number = 0; i < adcs.length; i++) {
+		for (var i: number = adcs.length - 1; i > -1; i--) {
 			if (adcs[i].elm.id === id) {
 				return i;
 			}
@@ -2168,7 +2168,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_dac(id: number): number {
-		for (var i: number = 0; i < dacs.length; i++) {
+		for (var i: number = dacs.length - 1; i > -1; i--) {
 			if (dacs[i].elm.id === id) {
 				return i;
 			}
@@ -2177,7 +2177,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_samplers(id: number): number {
-		for (var i: number = 0; i < sandhs.length; i++) {
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
 			if (sandhs[i].elm.id === id) {
 				return i;
 			}
@@ -2186,7 +2186,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_pwm(id: number): number {
-		for (var i: number = 0; i < pwms.length; i++) {
+		for (var i: number = pwms.length - 1; i > -1; i--) {
 			if (pwms[i].elm.id === id) {
 				return i;
 			}
@@ -2195,7 +2195,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_integrator(id: number): number {
-		for (var i: number = 0; i < integrators.length; i++) {
+		for (var i: number = integrators.length - 1; i > -1; i--) {
 			if (integrators[i].elm.id === id) {
 				return i;
 			}
@@ -2204,7 +2204,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_differentiator(id: number): number {
-		for (var i: number = 0; i < differentiators.length; i++) {
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
 			if (differentiators[i].elm.id === id) {
 				return i;
 			}
@@ -2213,7 +2213,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_lowpass(id: number): number {
-		for (var i: number = 0; i < lowpasses.length; i++) {
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
 			if (lowpasses[i].elm.id === id) {
 				return i;
 			}
@@ -2222,7 +2222,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_highpass(id: number): number {
-		for (var i: number = 0; i < highpasses.length; i++) {
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
 			if (highpasses[i].elm.id === id) {
 				return i;
 			}
@@ -2231,7 +2231,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_relay(id: number): number {
-		for (var i: number = 0; i < relays.length; i++) {
+		for (var i: number = relays.length - 1; i > -1; i--) {
 			if (relays[i].elm.id === id) {
 				return i;
 			}
@@ -2240,7 +2240,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_pid(id: number): number {
-		for (var i: number = 0; i < pids.length; i++) {
+		for (var i: number = pids.length - 1; i > -1; i--) {
 			if (pids[i].elm.id === id) {
 				return i;
 			}
@@ -2249,7 +2249,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_lut(id: number): number {
-		for (var i: number = 0; i < luts.length; i++) {
+		for (var i: number = luts.length - 1; i > -1; i--) {
 			if (luts[i].elm.id === id) {
 				return i;
 			}
@@ -2258,7 +2258,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vcr(id: number): number {
-		for (var i: number = 0; i < vcrs.length; i++) {
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
 			if (vcrs[i].elm.id === id) {
 				return i;
 			}
@@ -2267,7 +2267,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vcca(id: number): number {
-		for (var i: number = 0; i < vccas.length; i++) {
+		for (var i: number = vccas.length - 1; i > -1; i--) {
 			if (vccas[i].elm.id === id) {
 				return i;
 			}
@@ -2276,7 +2276,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_vcl(id: number): number {
-		for (var i: number = 0; i < vcls.length; i++) {
+		for (var i: number = vcls.length - 1; i > -1; i--) {
 			if (vcls[i].elm.id === id) {
 				return i;
 			}
@@ -2285,7 +2285,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_grt(id: number): number {
-		for (var i: number = 0; i < grts.length; i++) {
+		for (var i: number = grts.length - 1; i > -1; i--) {
 			if (grts[i].elm.id === id) {
 				return i;
 			}
@@ -2294,7 +2294,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_tptz(id: number): number {
-		for (var i: number = 0; i < tptzs.length; i++) {
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
 			if (tptzs[i].elm.id === id) {
 				return i;
 			}
@@ -2303,7 +2303,7 @@ class EngineFunctions {
 		return -1;
 	}
 	get_transformer(id: number): number {
-		for (var i: number = 0; i < transformers.length; i++) {
+		for (var i: number = transformers.length - 1; i > -1; i--) {
 			if (transformers[i].elm.id === id) {
 				return i;
 			}
@@ -2321,7 +2321,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < resistors.length; i++) {
+		for (var i: number = resistors.length - 1; i > -1; i--) {
 			ids.push(resistors[i].elm.id);
 		}
 
@@ -2341,7 +2341,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < capacitors.length; i++) {
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
 			ids.push(capacitors[i].elm.id);
 		}
 
@@ -2361,7 +2361,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < inductors.length; i++) {
+		for (var i: number = inductors.length - 1; i > -1; i--) {
 			ids.push(inductors[i].elm.id);
 		}
 
@@ -2381,7 +2381,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < grounds.length; i++) {
+		for (var i: number = grounds.length - 1; i > -1; i--) {
 			ids.push(grounds[i].elm.id);
 		}
 
@@ -2401,7 +2401,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < dcsources.length; i++) {
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
 			ids.push(dcsources[i].elm.id);
 		}
 
@@ -2421,7 +2421,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < dccurrents.length; i++) {
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
 			ids.push(dccurrents[i].elm.id);
 		}
 
@@ -2441,7 +2441,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < acsources.length; i++) {
+		for (var i: number = acsources.length - 1; i > -1; i--) {
 			ids.push(acsources[i].elm.id);
 		}
 
@@ -2461,7 +2461,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < accurrents.length; i++) {
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
 			ids.push(accurrents[i].elm.id);
 		}
 
@@ -2481,7 +2481,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < squarewaves.length; i++) {
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
 			ids.push(squarewaves[i].elm.id);
 		}
 
@@ -2501,7 +2501,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < sawwaves.length; i++) {
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
 			ids.push(sawwaves[i].elm.id);
 		}
 
@@ -2521,7 +2521,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < trianglewaves.length; i++) {
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 			ids.push(trianglewaves[i].elm.id);
 		}
 
@@ -2541,7 +2541,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < constants.length; i++) {
+		for (var i: number = constants.length - 1; i > -1; i--) {
 			ids.push(constants[i].elm.id);
 		}
 
@@ -2561,7 +2561,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < wires.length; i++) {
+		for (var i: number = wires.length - 1; i > -1; i--) {
 			ids.push(wires[i].elm.id);
 		}
 
@@ -2581,7 +2581,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < nets.length; i++) {
+		for (var i: number = nets.length - 1; i > -1; i--) {
 			ids.push(nets[i].elm.id);
 		}
 
@@ -2601,7 +2601,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < notes.length; i++) {
+		for (var i: number = notes.length - 1; i > -1; i--) {
 			ids.push(notes[i].elm.id);
 		}
 
@@ -2621,7 +2621,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < rails.length; i++) {
+		for (var i: number = rails.length - 1; i > -1; i--) {
 			ids.push(rails[i].elm.id);
 		}
 
@@ -2641,7 +2641,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			ids.push(voltmeters[i].elm.id);
 		}
 
@@ -2661,7 +2661,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ids.push(ohmmeters[i].elm.id);
 		}
 
@@ -2681,7 +2681,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ids.push(ammeters[i].elm.id);
 		}
 
@@ -2701,7 +2701,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			ids.push(wattmeters[i].elm.id);
 		}
 
@@ -2721,7 +2721,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < fuses.length; i++) {
+		for (var i: number = fuses.length - 1; i > -1; i--) {
 			ids.push(fuses[i].elm.id);
 		}
 
@@ -2741,7 +2741,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < spsts.length; i++) {
+		for (var i: number = spsts.length - 1; i > -1; i--) {
 			ids.push(spsts[i].elm.id);
 		}
 
@@ -2761,7 +2761,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < spdts.length; i++) {
+		for (var i: number = spdts.length - 1; i > -1; i--) {
 			ids.push(spdts[i].elm.id);
 		}
 
@@ -2781,7 +2781,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < nots.length; i++) {
+		for (var i: number = nots.length - 1; i > -1; i--) {
 			ids.push(nots[i].elm.id);
 		}
 
@@ -2801,7 +2801,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < diodes.length; i++) {
+		for (var i: number = diodes.length - 1; i > -1; i--) {
 			ids.push(diodes[i].elm.id);
 		}
 
@@ -2821,7 +2821,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < leds.length; i++) {
+		for (var i: number = leds.length - 1; i > -1; i--) {
 			ids.push(leds[i].elm.id);
 		}
 
@@ -2841,7 +2841,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < zeners.length; i++) {
+		for (var i: number = zeners.length - 1; i > -1; i--) {
 			ids.push(zeners[i].elm.id);
 		}
 
@@ -2861,7 +2861,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < potentiometers.length; i++) {
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			ids.push(potentiometers[i].elm.id);
 		}
 
@@ -2881,7 +2881,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < ands.length; i++) {
+		for (var i: number = ands.length - 1; i > -1; i--) {
 			ids.push(ands[i].elm.id);
 		}
 
@@ -2901,7 +2901,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < ors.length; i++) {
+		for (var i: number = ors.length - 1; i > -1; i--) {
 			ids.push(ors[i].elm.id);
 		}
 
@@ -2921,7 +2921,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < nands.length; i++) {
+		for (var i: number = nands.length - 1; i > -1; i--) {
 			ids.push(nands[i].elm.id);
 		}
 
@@ -2941,7 +2941,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < nors.length; i++) {
+		for (var i: number = nors.length - 1; i > -1; i--) {
 			ids.push(nors[i].elm.id);
 		}
 
@@ -2961,7 +2961,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < xors.length; i++) {
+		for (var i: number = xors.length - 1; i > -1; i--) {
 			ids.push(xors[i].elm.id);
 		}
 
@@ -2981,7 +2981,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < xnors.length; i++) {
+		for (var i: number = xnors.length - 1; i > -1; i--) {
 			ids.push(xnors[i].elm.id);
 		}
 
@@ -3001,7 +3001,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < dffs.length; i++) {
+		for (var i: number = dffs.length - 1; i > -1; i--) {
 			ids.push(dffs[i].elm.id);
 		}
 
@@ -3021,7 +3021,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vsats.length; i++) {
+		for (var i: number = vsats.length - 1; i > -1; i--) {
 			ids.push(vsats[i].elm.id);
 		}
 
@@ -3041,7 +3041,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < adders.length; i++) {
+		for (var i: number = adders.length - 1; i > -1; i--) {
 			ids.push(adders[i].elm.id);
 		}
 
@@ -3061,7 +3061,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < subtractors.length; i++) {
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
 			ids.push(subtractors[i].elm.id);
 		}
 
@@ -3081,7 +3081,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < multipliers.length; i++) {
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
 			ids.push(multipliers[i].elm.id);
 		}
 
@@ -3101,7 +3101,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < dividers.length; i++) {
+		for (var i: number = dividers.length - 1; i > -1; i--) {
 			ids.push(dividers[i].elm.id);
 		}
 
@@ -3121,7 +3121,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < gains.length; i++) {
+		for (var i: number = gains.length - 1; i > -1; i--) {
 			ids.push(gains[i].elm.id);
 		}
 
@@ -3141,7 +3141,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < absvals.length; i++) {
+		for (var i: number = absvals.length - 1; i > -1; i--) {
 			ids.push(absvals[i].elm.id);
 		}
 
@@ -3161,7 +3161,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vcsws.length; i++) {
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
 			ids.push(vcsws[i].elm.id);
 		}
 
@@ -3181,7 +3181,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vcvss.length; i++) {
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
 			ids.push(vcvss[i].elm.id);
 		}
 
@@ -3201,7 +3201,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vccss.length; i++) {
+		for (var i: number = vccss.length - 1; i > -1; i--) {
 			ids.push(vccss[i].elm.id);
 		}
 
@@ -3221,7 +3221,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < cccss.length; i++) {
+		for (var i: number = cccss.length - 1; i > -1; i--) {
 			ids.push(cccss[i].elm.id);
 		}
 
@@ -3241,7 +3241,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < ccvss.length; i++) {
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
 			ids.push(ccvss[i].elm.id);
 		}
 
@@ -3261,7 +3261,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < opamps.length; i++) {
+		for (var i: number = opamps.length - 1; i > -1; i--) {
 			ids.push(opamps[i].elm.id);
 		}
 
@@ -3281,7 +3281,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < nmosfets.length; i++) {
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
 			ids.push(nmosfets[i].elm.id);
 		}
 
@@ -3301,7 +3301,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < pmosfets.length; i++) {
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
 			ids.push(pmosfets[i].elm.id);
 		}
 
@@ -3321,7 +3321,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < npns.length; i++) {
+		for (var i: number = npns.length - 1; i > -1; i--) {
 			ids.push(npns[i].elm.id);
 		}
 
@@ -3341,7 +3341,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < pnps.length; i++) {
+		for (var i: number = pnps.length - 1; i > -1; i--) {
 			ids.push(pnps[i].elm.id);
 		}
 
@@ -3361,7 +3361,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < adcs.length; i++) {
+		for (var i: number = adcs.length - 1; i > -1; i--) {
 			ids.push(adcs[i].elm.id);
 		}
 
@@ -3381,7 +3381,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < dacs.length; i++) {
+		for (var i: number = dacs.length - 1; i > -1; i--) {
 			ids.push(dacs[i].elm.id);
 		}
 
@@ -3401,7 +3401,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < sandhs.length; i++) {
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
 			ids.push(sandhs[i].elm.id);
 		}
 
@@ -3421,7 +3421,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < pwms.length; i++) {
+		for (var i: number = pwms.length - 1; i > -1; i--) {
 			ids.push(pwms[i].elm.id);
 		}
 
@@ -3441,7 +3441,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < integrators.length; i++) {
+		for (var i: number = integrators.length - 1; i > -1; i--) {
 			ids.push(integrators[i].elm.id);
 		}
 
@@ -3461,7 +3461,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < differentiators.length; i++) {
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
 			ids.push(differentiators[i].elm.id);
 		}
 
@@ -3481,7 +3481,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < lowpasses.length; i++) {
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
 			ids.push(lowpasses[i].elm.id);
 		}
 
@@ -3501,7 +3501,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < highpasses.length; i++) {
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
 			ids.push(highpasses[i].elm.id);
 		}
 
@@ -3521,7 +3521,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < relays.length; i++) {
+		for (var i: number = relays.length - 1; i > -1; i--) {
 			ids.push(relays[i].elm.id);
 		}
 
@@ -3541,7 +3541,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < pids.length; i++) {
+		for (var i: number = pids.length - 1; i > -1; i--) {
 			ids.push(pids[i].elm.id);
 		}
 
@@ -3561,7 +3561,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < luts.length; i++) {
+		for (var i: number = luts.length - 1; i > -1; i--) {
 			ids.push(luts[i].elm.id);
 		}
 
@@ -3581,7 +3581,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vcrs.length; i++) {
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
 			ids.push(vcrs[i].elm.id);
 		}
 
@@ -3601,7 +3601,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vccas.length; i++) {
+		for (var i: number = vccas.length - 1; i > -1; i--) {
 			ids.push(vccas[i].elm.id);
 		}
 
@@ -3621,7 +3621,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < vcls.length; i++) {
+		for (var i: number = vcls.length - 1; i > -1; i--) {
 			ids.push(vcls[i].elm.id);
 		}
 
@@ -3641,7 +3641,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < grts.length; i++) {
+		for (var i: number = grts.length - 1; i > -1; i--) {
 			ids.push(grts[i].elm.id);
 		}
 
@@ -3661,7 +3661,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < tptzs.length; i++) {
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
 			ids.push(tptzs[i].elm.id);
 		}
 
@@ -3681,7 +3681,7 @@ class EngineFunctions {
 		var assignment: number = 0;
 		var ids: Array<number> = [];
 
-		for (var i: number = 0; i < transformers.length; i++) {
+		for (var i: number = transformers.length - 1; i > -1; i--) {
 			ids.push(transformers[i].elm.id);
 		}
 
@@ -5789,275 +5789,275 @@ class EngineFunctions {
 	stamp_elements() {
 		/* #INSERT_GENERATE_ELEMENT_STAMP# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < resistors.length; i++) {
+		for (var i: number = resistors.length - 1; i > -1; i--) {
 			resistors[i].stamp();
 		}
 
-		for (var i: number = 0; i < capacitors.length; i++) {
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
 			capacitors[i].stamp();
 		}
 
-		for (var i: number = 0; i < inductors.length; i++) {
+		for (var i: number = inductors.length - 1; i > -1; i--) {
 			inductors[i].stamp();
 		}
 
-		for (var i: number = 0; i < grounds.length; i++) {
+		for (var i: number = grounds.length - 1; i > -1; i--) {
 			grounds[i].stamp();
 		}
 
-		for (var i: number = 0; i < dcsources.length; i++) {
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
 			dcsources[i].stamp();
 		}
 
-		for (var i: number = 0; i < dccurrents.length; i++) {
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
 			dccurrents[i].stamp();
 		}
 
-		for (var i: number = 0; i < acsources.length; i++) {
+		for (var i: number = acsources.length - 1; i > -1; i--) {
 			acsources[i].stamp();
 		}
 
-		for (var i: number = 0; i < accurrents.length; i++) {
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
 			accurrents[i].stamp();
 		}
 
-		for (var i: number = 0; i < squarewaves.length; i++) {
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
 			squarewaves[i].stamp();
 		}
 
-		for (var i: number = 0; i < sawwaves.length; i++) {
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
 			sawwaves[i].stamp();
 		}
 
-		for (var i: number = 0; i < trianglewaves.length; i++) {
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 			trianglewaves[i].stamp();
 		}
 
-		for (var i: number = 0; i < constants.length; i++) {
+		for (var i: number = constants.length - 1; i > -1; i--) {
 			constants[i].stamp();
 		}
 
-		for (var i: number = 0; i < nets.length; i++) {
+		for (var i: number = nets.length - 1; i > -1; i--) {
 			nets[i].stamp();
 		}
 
-		for (var i: number = 0; i < notes.length; i++) {
+		for (var i: number = notes.length - 1; i > -1; i--) {
 			notes[i].stamp();
 		}
 
-		for (var i: number = 0; i < rails.length; i++) {
+		for (var i: number = rails.length - 1; i > -1; i--) {
 			rails[i].stamp();
 		}
 
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].stamp();
 		}
 
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].stamp();
 		}
 
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].stamp();
 		}
 
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].stamp();
 		}
 
-		for (var i: number = 0; i < fuses.length; i++) {
+		for (var i: number = fuses.length - 1; i > -1; i--) {
 			fuses[i].stamp();
 		}
 
-		for (var i: number = 0; i < spsts.length; i++) {
+		for (var i: number = spsts.length - 1; i > -1; i--) {
 			spsts[i].stamp();
 		}
 
-		for (var i: number = 0; i < spdts.length; i++) {
+		for (var i: number = spdts.length - 1; i > -1; i--) {
 			spdts[i].stamp();
 		}
 
-		for (var i: number = 0; i < nots.length; i++) {
+		for (var i: number = nots.length - 1; i > -1; i--) {
 			nots[i].stamp();
 		}
 
-		for (var i: number = 0; i < diodes.length; i++) {
+		for (var i: number = diodes.length - 1; i > -1; i--) {
 			diodes[i].stamp();
 		}
 
-		for (var i: number = 0; i < leds.length; i++) {
+		for (var i: number = leds.length - 1; i > -1; i--) {
 			leds[i].stamp();
 		}
 
-		for (var i: number = 0; i < zeners.length; i++) {
+		for (var i: number = zeners.length - 1; i > -1; i--) {
 			zeners[i].stamp();
 		}
 
-		for (var i: number = 0; i < potentiometers.length; i++) {
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			potentiometers[i].stamp();
 		}
 
-		for (var i: number = 0; i < ands.length; i++) {
+		for (var i: number = ands.length - 1; i > -1; i--) {
 			ands[i].stamp();
 		}
 
-		for (var i: number = 0; i < ors.length; i++) {
+		for (var i: number = ors.length - 1; i > -1; i--) {
 			ors[i].stamp();
 		}
 
-		for (var i: number = 0; i < nands.length; i++) {
+		for (var i: number = nands.length - 1; i > -1; i--) {
 			nands[i].stamp();
 		}
 
-		for (var i: number = 0; i < nors.length; i++) {
+		for (var i: number = nors.length - 1; i > -1; i--) {
 			nors[i].stamp();
 		}
 
-		for (var i: number = 0; i < xors.length; i++) {
+		for (var i: number = xors.length - 1; i > -1; i--) {
 			xors[i].stamp();
 		}
 
-		for (var i: number = 0; i < xnors.length; i++) {
+		for (var i: number = xnors.length - 1; i > -1; i--) {
 			xnors[i].stamp();
 		}
 
-		for (var i: number = 0; i < dffs.length; i++) {
+		for (var i: number = dffs.length - 1; i > -1; i--) {
 			dffs[i].stamp();
 		}
 
-		for (var i: number = 0; i < vsats.length; i++) {
+		for (var i: number = vsats.length - 1; i > -1; i--) {
 			vsats[i].stamp();
 		}
 
-		for (var i: number = 0; i < adders.length; i++) {
+		for (var i: number = adders.length - 1; i > -1; i--) {
 			adders[i].stamp();
 		}
 
-		for (var i: number = 0; i < subtractors.length; i++) {
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
 			subtractors[i].stamp();
 		}
 
-		for (var i: number = 0; i < multipliers.length; i++) {
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
 			multipliers[i].stamp();
 		}
 
-		for (var i: number = 0; i < dividers.length; i++) {
+		for (var i: number = dividers.length - 1; i > -1; i--) {
 			dividers[i].stamp();
 		}
 
-		for (var i: number = 0; i < gains.length; i++) {
+		for (var i: number = gains.length - 1; i > -1; i--) {
 			gains[i].stamp();
 		}
 
-		for (var i: number = 0; i < absvals.length; i++) {
+		for (var i: number = absvals.length - 1; i > -1; i--) {
 			absvals[i].stamp();
 		}
 
-		for (var i: number = 0; i < vcsws.length; i++) {
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
 			vcsws[i].stamp();
 		}
 
-		for (var i: number = 0; i < vcvss.length; i++) {
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
 			vcvss[i].stamp();
 		}
 
-		for (var i: number = 0; i < vccss.length; i++) {
+		for (var i: number = vccss.length - 1; i > -1; i--) {
 			vccss[i].stamp();
 		}
 
-		for (var i: number = 0; i < cccss.length; i++) {
+		for (var i: number = cccss.length - 1; i > -1; i--) {
 			cccss[i].stamp();
 		}
 
-		for (var i: number = 0; i < ccvss.length; i++) {
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
 			ccvss[i].stamp();
 		}
 
-		for (var i: number = 0; i < opamps.length; i++) {
+		for (var i: number = opamps.length - 1; i > -1; i--) {
 			opamps[i].stamp();
 		}
 
-		for (var i: number = 0; i < nmosfets.length; i++) {
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
 			nmosfets[i].stamp();
 		}
 
-		for (var i: number = 0; i < pmosfets.length; i++) {
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
 			pmosfets[i].stamp();
 		}
 
-		for (var i: number = 0; i < npns.length; i++) {
+		for (var i: number = npns.length - 1; i > -1; i--) {
 			npns[i].stamp();
 		}
 
-		for (var i: number = 0; i < pnps.length; i++) {
+		for (var i: number = pnps.length - 1; i > -1; i--) {
 			pnps[i].stamp();
 		}
 
-		for (var i: number = 0; i < adcs.length; i++) {
+		for (var i: number = adcs.length - 1; i > -1; i--) {
 			adcs[i].stamp();
 		}
 
-		for (var i: number = 0; i < dacs.length; i++) {
+		for (var i: number = dacs.length - 1; i > -1; i--) {
 			dacs[i].stamp();
 		}
 
-		for (var i: number = 0; i < sandhs.length; i++) {
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
 			sandhs[i].stamp();
 		}
 
-		for (var i: number = 0; i < pwms.length; i++) {
+		for (var i: number = pwms.length - 1; i > -1; i--) {
 			pwms[i].stamp();
 		}
 
-		for (var i: number = 0; i < integrators.length; i++) {
+		for (var i: number = integrators.length - 1; i > -1; i--) {
 			integrators[i].stamp();
 		}
 
-		for (var i: number = 0; i < differentiators.length; i++) {
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
 			differentiators[i].stamp();
 		}
 
-		for (var i: number = 0; i < lowpasses.length; i++) {
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
 			lowpasses[i].stamp();
 		}
 
-		for (var i: number = 0; i < highpasses.length; i++) {
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
 			highpasses[i].stamp();
 		}
 
-		for (var i: number = 0; i < relays.length; i++) {
+		for (var i: number = relays.length - 1; i > -1; i--) {
 			relays[i].stamp();
 		}
 
-		for (var i: number = 0; i < pids.length; i++) {
+		for (var i: number = pids.length - 1; i > -1; i--) {
 			pids[i].stamp();
 		}
 
-		for (var i: number = 0; i < luts.length; i++) {
+		for (var i: number = luts.length - 1; i > -1; i--) {
 			luts[i].stamp();
 		}
 
-		for (var i: number = 0; i < vcrs.length; i++) {
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
 			vcrs[i].stamp();
 		}
 
-		for (var i: number = 0; i < vccas.length; i++) {
+		for (var i: number = vccas.length - 1; i > -1; i--) {
 			vccas[i].stamp();
 		}
 
-		for (var i: number = 0; i < vcls.length; i++) {
+		for (var i: number = vcls.length - 1; i > -1; i--) {
 			vcls[i].stamp();
 		}
 
-		for (var i: number = 0; i < grts.length; i++) {
+		for (var i: number = grts.length - 1; i > -1; i--) {
 			grts[i].stamp();
 		}
 
-		for (var i: number = 0; i < tptzs.length; i++) {
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
 			tptzs[i].stamp();
 		}
 
-		for (var i: number = 0; i < transformers.length; i++) {
+		for (var i: number = transformers.length - 1; i > -1; i--) {
 			transformers[i].stamp();
 		}
 
@@ -6361,16 +6361,16 @@ class EngineFunctions {
 		}
 		/* #INSERT_METER_RESIZE_TRACE# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].resize_meter_trace = true;
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -8988,211 +8988,211 @@ class EngineFunctions {
 		packet[indexer++] = JSON.stringify(this.meta_data);
 		/* #INSERT_GENERATE_ELEMENT_HISTORY# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < resistors.length; i++) {
+		for (var i: number = resistors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(resistors[i]);
 		}
-		for (var i: number = 0; i < capacitors.length; i++) {
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(capacitors[i]);
 		}
-		for (var i: number = 0; i < inductors.length; i++) {
+		for (var i: number = inductors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(inductors[i]);
 		}
-		for (var i: number = 0; i < grounds.length; i++) {
+		for (var i: number = grounds.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(grounds[i]);
 		}
-		for (var i: number = 0; i < dcsources.length; i++) {
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(dcsources[i]);
 		}
-		for (var i: number = 0; i < dccurrents.length; i++) {
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(dccurrents[i]);
 		}
-		for (var i: number = 0; i < acsources.length; i++) {
+		for (var i: number = acsources.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(acsources[i]);
 		}
-		for (var i: number = 0; i < accurrents.length; i++) {
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(accurrents[i]);
 		}
-		for (var i: number = 0; i < squarewaves.length; i++) {
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(squarewaves[i]);
 		}
-		for (var i: number = 0; i < sawwaves.length; i++) {
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(sawwaves[i]);
 		}
-		for (var i: number = 0; i < trianglewaves.length; i++) {
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(trianglewaves[i]);
 		}
-		for (var i: number = 0; i < constants.length; i++) {
+		for (var i: number = constants.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(constants[i]);
 		}
-		for (var i: number = 0; i < wires.length; i++) {
+		for (var i: number = wires.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(wires[i]);
 		}
-		for (var i: number = 0; i < nets.length; i++) {
+		for (var i: number = nets.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(nets[i]);
 		}
-		for (var i: number = 0; i < notes.length; i++) {
+		for (var i: number = notes.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(notes[i]);
 		}
-		for (var i: number = 0; i < rails.length; i++) {
+		for (var i: number = rails.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(rails[i]);
 		}
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(voltmeters[i]);
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(ohmmeters[i]);
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(ammeters[i]);
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(wattmeters[i]);
 		}
-		for (var i: number = 0; i < fuses.length; i++) {
+		for (var i: number = fuses.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(fuses[i]);
 		}
-		for (var i: number = 0; i < spsts.length; i++) {
+		for (var i: number = spsts.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(spsts[i]);
 		}
-		for (var i: number = 0; i < spdts.length; i++) {
+		for (var i: number = spdts.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(spdts[i]);
 		}
-		for (var i: number = 0; i < nots.length; i++) {
+		for (var i: number = nots.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(nots[i]);
 		}
-		for (var i: number = 0; i < diodes.length; i++) {
+		for (var i: number = diodes.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(diodes[i]);
 		}
-		for (var i: number = 0; i < leds.length; i++) {
+		for (var i: number = leds.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(leds[i]);
 		}
-		for (var i: number = 0; i < zeners.length; i++) {
+		for (var i: number = zeners.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(zeners[i]);
 		}
-		for (var i: number = 0; i < potentiometers.length; i++) {
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(potentiometers[i]);
 		}
-		for (var i: number = 0; i < ands.length; i++) {
+		for (var i: number = ands.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(ands[i]);
 		}
-		for (var i: number = 0; i < ors.length; i++) {
+		for (var i: number = ors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(ors[i]);
 		}
-		for (var i: number = 0; i < nands.length; i++) {
+		for (var i: number = nands.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(nands[i]);
 		}
-		for (var i: number = 0; i < nors.length; i++) {
+		for (var i: number = nors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(nors[i]);
 		}
-		for (var i: number = 0; i < xors.length; i++) {
+		for (var i: number = xors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(xors[i]);
 		}
-		for (var i: number = 0; i < xnors.length; i++) {
+		for (var i: number = xnors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(xnors[i]);
 		}
-		for (var i: number = 0; i < dffs.length; i++) {
+		for (var i: number = dffs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(dffs[i]);
 		}
-		for (var i: number = 0; i < vsats.length; i++) {
+		for (var i: number = vsats.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vsats[i]);
 		}
-		for (var i: number = 0; i < adders.length; i++) {
+		for (var i: number = adders.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(adders[i]);
 		}
-		for (var i: number = 0; i < subtractors.length; i++) {
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(subtractors[i]);
 		}
-		for (var i: number = 0; i < multipliers.length; i++) {
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(multipliers[i]);
 		}
-		for (var i: number = 0; i < dividers.length; i++) {
+		for (var i: number = dividers.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(dividers[i]);
 		}
-		for (var i: number = 0; i < gains.length; i++) {
+		for (var i: number = gains.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(gains[i]);
 		}
-		for (var i: number = 0; i < absvals.length; i++) {
+		for (var i: number = absvals.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(absvals[i]);
 		}
-		for (var i: number = 0; i < vcsws.length; i++) {
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vcsws[i]);
 		}
-		for (var i: number = 0; i < vcvss.length; i++) {
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vcvss[i]);
 		}
-		for (var i: number = 0; i < vccss.length; i++) {
+		for (var i: number = vccss.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vccss[i]);
 		}
-		for (var i: number = 0; i < cccss.length; i++) {
+		for (var i: number = cccss.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(cccss[i]);
 		}
-		for (var i: number = 0; i < ccvss.length; i++) {
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(ccvss[i]);
 		}
-		for (var i: number = 0; i < opamps.length; i++) {
+		for (var i: number = opamps.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(opamps[i]);
 		}
-		for (var i: number = 0; i < nmosfets.length; i++) {
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(nmosfets[i]);
 		}
-		for (var i: number = 0; i < pmosfets.length; i++) {
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(pmosfets[i]);
 		}
-		for (var i: number = 0; i < npns.length; i++) {
+		for (var i: number = npns.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(npns[i]);
 		}
-		for (var i: number = 0; i < pnps.length; i++) {
+		for (var i: number = pnps.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(pnps[i]);
 		}
-		for (var i: number = 0; i < adcs.length; i++) {
+		for (var i: number = adcs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(adcs[i]);
 		}
-		for (var i: number = 0; i < dacs.length; i++) {
+		for (var i: number = dacs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(dacs[i]);
 		}
-		for (var i: number = 0; i < sandhs.length; i++) {
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(sandhs[i]);
 		}
-		for (var i: number = 0; i < pwms.length; i++) {
+		for (var i: number = pwms.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(pwms[i]);
 		}
-		for (var i: number = 0; i < integrators.length; i++) {
+		for (var i: number = integrators.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(integrators[i]);
 		}
-		for (var i: number = 0; i < differentiators.length; i++) {
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(differentiators[i]);
 		}
-		for (var i: number = 0; i < lowpasses.length; i++) {
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(lowpasses[i]);
 		}
-		for (var i: number = 0; i < highpasses.length; i++) {
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(highpasses[i]);
 		}
-		for (var i: number = 0; i < relays.length; i++) {
+		for (var i: number = relays.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(relays[i]);
 		}
-		for (var i: number = 0; i < pids.length; i++) {
+		for (var i: number = pids.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(pids[i]);
 		}
-		for (var i: number = 0; i < luts.length; i++) {
+		for (var i: number = luts.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(luts[i]);
 		}
-		for (var i: number = 0; i < vcrs.length; i++) {
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vcrs[i]);
 		}
-		for (var i: number = 0; i < vccas.length; i++) {
+		for (var i: number = vccas.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vccas[i]);
 		}
-		for (var i: number = 0; i < vcls.length; i++) {
+		for (var i: number = vcls.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(vcls[i]);
 		}
-		for (var i: number = 0; i < grts.length; i++) {
+		for (var i: number = grts.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(grts[i]);
 		}
-		for (var i: number = 0; i < tptzs.length; i++) {
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(tptzs[i]);
 		}
-		for (var i: number = 0; i < transformers.length; i++) {
+		for (var i: number = transformers.length - 1; i > -1; i--) {
 			packet[indexer++] = JSON.stringify(transformers[i]);
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -10065,211 +10065,211 @@ class EngineFunctions {
 				if (!global.variables.component_touched || urgent || global.variables.selected) {
 					/* #INSERT_GENERATE_RESET_MULTI_SELECT_ELEMENTS# */
 					/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-					for (var i: number = 0; i < resistors.length; i++) {
+					for (var i: number = resistors.length - 1; i > -1; i--) {
 						resistors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < capacitors.length; i++) {
+					for (var i: number = capacitors.length - 1; i > -1; i--) {
 						capacitors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < inductors.length; i++) {
+					for (var i: number = inductors.length - 1; i > -1; i--) {
 						inductors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < grounds.length; i++) {
+					for (var i: number = grounds.length - 1; i > -1; i--) {
 						grounds[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < dcsources.length; i++) {
+					for (var i: number = dcsources.length - 1; i > -1; i--) {
 						dcsources[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < dccurrents.length; i++) {
+					for (var i: number = dccurrents.length - 1; i > -1; i--) {
 						dccurrents[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < acsources.length; i++) {
+					for (var i: number = acsources.length - 1; i > -1; i--) {
 						acsources[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < accurrents.length; i++) {
+					for (var i: number = accurrents.length - 1; i > -1; i--) {
 						accurrents[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < squarewaves.length; i++) {
+					for (var i: number = squarewaves.length - 1; i > -1; i--) {
 						squarewaves[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < sawwaves.length; i++) {
+					for (var i: number = sawwaves.length - 1; i > -1; i--) {
 						sawwaves[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < trianglewaves.length; i++) {
+					for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 						trianglewaves[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < constants.length; i++) {
+					for (var i: number = constants.length - 1; i > -1; i--) {
 						constants[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < wires.length; i++) {
+					for (var i: number = wires.length - 1; i > -1; i--) {
 						wires[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < nets.length; i++) {
+					for (var i: number = nets.length - 1; i > -1; i--) {
 						nets[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < notes.length; i++) {
+					for (var i: number = notes.length - 1; i > -1; i--) {
 						notes[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < rails.length; i++) {
+					for (var i: number = rails.length - 1; i > -1; i--) {
 						rails[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < voltmeters.length; i++) {
+					for (var i: number = voltmeters.length - 1; i > -1; i--) {
 						voltmeters[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < ohmmeters.length; i++) {
+					for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 						ohmmeters[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < ammeters.length; i++) {
+					for (var i: number = ammeters.length - 1; i > -1; i--) {
 						ammeters[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < wattmeters.length; i++) {
+					for (var i: number = wattmeters.length - 1; i > -1; i--) {
 						wattmeters[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < fuses.length; i++) {
+					for (var i: number = fuses.length - 1; i > -1; i--) {
 						fuses[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < spsts.length; i++) {
+					for (var i: number = spsts.length - 1; i > -1; i--) {
 						spsts[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < spdts.length; i++) {
+					for (var i: number = spdts.length - 1; i > -1; i--) {
 						spdts[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < nots.length; i++) {
+					for (var i: number = nots.length - 1; i > -1; i--) {
 						nots[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < diodes.length; i++) {
+					for (var i: number = diodes.length - 1; i > -1; i--) {
 						diodes[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < leds.length; i++) {
+					for (var i: number = leds.length - 1; i > -1; i--) {
 						leds[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < zeners.length; i++) {
+					for (var i: number = zeners.length - 1; i > -1; i--) {
 						zeners[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < potentiometers.length; i++) {
+					for (var i: number = potentiometers.length - 1; i > -1; i--) {
 						potentiometers[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < ands.length; i++) {
+					for (var i: number = ands.length - 1; i > -1; i--) {
 						ands[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < ors.length; i++) {
+					for (var i: number = ors.length - 1; i > -1; i--) {
 						ors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < nands.length; i++) {
+					for (var i: number = nands.length - 1; i > -1; i--) {
 						nands[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < nors.length; i++) {
+					for (var i: number = nors.length - 1; i > -1; i--) {
 						nors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < xors.length; i++) {
+					for (var i: number = xors.length - 1; i > -1; i--) {
 						xors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < xnors.length; i++) {
+					for (var i: number = xnors.length - 1; i > -1; i--) {
 						xnors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < dffs.length; i++) {
+					for (var i: number = dffs.length - 1; i > -1; i--) {
 						dffs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vsats.length; i++) {
+					for (var i: number = vsats.length - 1; i > -1; i--) {
 						vsats[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < adders.length; i++) {
+					for (var i: number = adders.length - 1; i > -1; i--) {
 						adders[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < subtractors.length; i++) {
+					for (var i: number = subtractors.length - 1; i > -1; i--) {
 						subtractors[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < multipliers.length; i++) {
+					for (var i: number = multipliers.length - 1; i > -1; i--) {
 						multipliers[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < dividers.length; i++) {
+					for (var i: number = dividers.length - 1; i > -1; i--) {
 						dividers[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < gains.length; i++) {
+					for (var i: number = gains.length - 1; i > -1; i--) {
 						gains[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < absvals.length; i++) {
+					for (var i: number = absvals.length - 1; i > -1; i--) {
 						absvals[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vcsws.length; i++) {
+					for (var i: number = vcsws.length - 1; i > -1; i--) {
 						vcsws[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vcvss.length; i++) {
+					for (var i: number = vcvss.length - 1; i > -1; i--) {
 						vcvss[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vccss.length; i++) {
+					for (var i: number = vccss.length - 1; i > -1; i--) {
 						vccss[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < cccss.length; i++) {
+					for (var i: number = cccss.length - 1; i > -1; i--) {
 						cccss[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < ccvss.length; i++) {
+					for (var i: number = ccvss.length - 1; i > -1; i--) {
 						ccvss[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < opamps.length; i++) {
+					for (var i: number = opamps.length - 1; i > -1; i--) {
 						opamps[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < nmosfets.length; i++) {
+					for (var i: number = nmosfets.length - 1; i > -1; i--) {
 						nmosfets[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < pmosfets.length; i++) {
+					for (var i: number = pmosfets.length - 1; i > -1; i--) {
 						pmosfets[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < npns.length; i++) {
+					for (var i: number = npns.length - 1; i > -1; i--) {
 						npns[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < pnps.length; i++) {
+					for (var i: number = pnps.length - 1; i > -1; i--) {
 						pnps[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < adcs.length; i++) {
+					for (var i: number = adcs.length - 1; i > -1; i--) {
 						adcs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < dacs.length; i++) {
+					for (var i: number = dacs.length - 1; i > -1; i--) {
 						dacs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < sandhs.length; i++) {
+					for (var i: number = sandhs.length - 1; i > -1; i--) {
 						sandhs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < pwms.length; i++) {
+					for (var i: number = pwms.length - 1; i > -1; i--) {
 						pwms[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < integrators.length; i++) {
+					for (var i: number = integrators.length - 1; i > -1; i--) {
 						integrators[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < differentiators.length; i++) {
+					for (var i: number = differentiators.length - 1; i > -1; i--) {
 						differentiators[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < lowpasses.length; i++) {
+					for (var i: number = lowpasses.length - 1; i > -1; i--) {
 						lowpasses[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < highpasses.length; i++) {
+					for (var i: number = highpasses.length - 1; i > -1; i--) {
 						highpasses[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < relays.length; i++) {
+					for (var i: number = relays.length - 1; i > -1; i--) {
 						relays[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < pids.length; i++) {
+					for (var i: number = pids.length - 1; i > -1; i--) {
 						pids[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < luts.length; i++) {
+					for (var i: number = luts.length - 1; i > -1; i--) {
 						luts[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vcrs.length; i++) {
+					for (var i: number = vcrs.length - 1; i > -1; i--) {
 						vcrs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vccas.length; i++) {
+					for (var i: number = vccas.length - 1; i > -1; i--) {
 						vccas[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < vcls.length; i++) {
+					for (var i: number = vcls.length - 1; i > -1; i--) {
 						vcls[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < grts.length; i++) {
+					for (var i: number = grts.length - 1; i > -1; i--) {
 						grts[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < tptzs.length; i++) {
+					for (var i: number = tptzs.length - 1; i > -1; i--) {
 						tptzs[i].multi_selected = false;
 					}
-					for (var i: number = 0; i < transformers.length; i++) {
+					for (var i: number = transformers.length - 1; i > -1; i--) {
 						transformers[i].multi_selected = false;
 					}
 					/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -10286,342 +10286,342 @@ class EngineFunctions {
 	draw_unselected_components(canvas: GraphicsEngine) {
 		/* #INSERT_GENERATE_DRAW_UNSELECTED# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < resistors.length; i++) {
+		for (var i: number = resistors.length - 1; i > -1; i--) {
 			resistors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < capacitors.length; i++) {
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
 			capacitors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < inductors.length; i++) {
+		for (var i: number = inductors.length - 1; i > -1; i--) {
 			inductors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < grounds.length; i++) {
+		for (var i: number = grounds.length - 1; i > -1; i--) {
 			grounds[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < dcsources.length; i++) {
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
 			dcsources[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < dccurrents.length; i++) {
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
 			dccurrents[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < acsources.length; i++) {
+		for (var i: number = acsources.length - 1; i > -1; i--) {
 			acsources[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < accurrents.length; i++) {
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
 			accurrents[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < squarewaves.length; i++) {
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
 			squarewaves[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < sawwaves.length; i++) {
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
 			sawwaves[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < trianglewaves.length; i++) {
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 			trianglewaves[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < constants.length; i++) {
+		for (var i: number = constants.length - 1; i > -1; i--) {
 			constants[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < nets.length; i++) {
+		for (var i: number = nets.length - 1; i > -1; i--) {
 			nets[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < notes.length; i++) {
+		for (var i: number = notes.length - 1; i > -1; i--) {
 			notes[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < rails.length; i++) {
+		for (var i: number = rails.length - 1; i > -1; i--) {
 			rails[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < fuses.length; i++) {
+		for (var i: number = fuses.length - 1; i > -1; i--) {
 			fuses[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < spsts.length; i++) {
+		for (var i: number = spsts.length - 1; i > -1; i--) {
 			spsts[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < spdts.length; i++) {
+		for (var i: number = spdts.length - 1; i > -1; i--) {
 			spdts[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < nots.length; i++) {
+		for (var i: number = nots.length - 1; i > -1; i--) {
 			nots[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < diodes.length; i++) {
+		for (var i: number = diodes.length - 1; i > -1; i--) {
 			diodes[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < leds.length; i++) {
+		for (var i: number = leds.length - 1; i > -1; i--) {
 			leds[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < zeners.length; i++) {
+		for (var i: number = zeners.length - 1; i > -1; i--) {
 			zeners[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < potentiometers.length; i++) {
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			potentiometers[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < ands.length; i++) {
+		for (var i: number = ands.length - 1; i > -1; i--) {
 			ands[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < ors.length; i++) {
+		for (var i: number = ors.length - 1; i > -1; i--) {
 			ors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < nands.length; i++) {
+		for (var i: number = nands.length - 1; i > -1; i--) {
 			nands[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < nors.length; i++) {
+		for (var i: number = nors.length - 1; i > -1; i--) {
 			nors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < xors.length; i++) {
+		for (var i: number = xors.length - 1; i > -1; i--) {
 			xors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < xnors.length; i++) {
+		for (var i: number = xnors.length - 1; i > -1; i--) {
 			xnors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < dffs.length; i++) {
+		for (var i: number = dffs.length - 1; i > -1; i--) {
 			dffs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vsats.length; i++) {
+		for (var i: number = vsats.length - 1; i > -1; i--) {
 			vsats[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < adders.length; i++) {
+		for (var i: number = adders.length - 1; i > -1; i--) {
 			adders[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < subtractors.length; i++) {
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
 			subtractors[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < multipliers.length; i++) {
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
 			multipliers[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < dividers.length; i++) {
+		for (var i: number = dividers.length - 1; i > -1; i--) {
 			dividers[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < gains.length; i++) {
+		for (var i: number = gains.length - 1; i > -1; i--) {
 			gains[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < absvals.length; i++) {
+		for (var i: number = absvals.length - 1; i > -1; i--) {
 			absvals[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vcsws.length; i++) {
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
 			vcsws[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vcvss.length; i++) {
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
 			vcvss[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vccss.length; i++) {
+		for (var i: number = vccss.length - 1; i > -1; i--) {
 			vccss[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < cccss.length; i++) {
+		for (var i: number = cccss.length - 1; i > -1; i--) {
 			cccss[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < ccvss.length; i++) {
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
 			ccvss[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < opamps.length; i++) {
+		for (var i: number = opamps.length - 1; i > -1; i--) {
 			opamps[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < nmosfets.length; i++) {
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
 			nmosfets[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < pmosfets.length; i++) {
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
 			pmosfets[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < npns.length; i++) {
+		for (var i: number = npns.length - 1; i > -1; i--) {
 			npns[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < pnps.length; i++) {
+		for (var i: number = pnps.length - 1; i > -1; i--) {
 			pnps[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < adcs.length; i++) {
+		for (var i: number = adcs.length - 1; i > -1; i--) {
 			adcs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < dacs.length; i++) {
+		for (var i: number = dacs.length - 1; i > -1; i--) {
 			dacs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < sandhs.length; i++) {
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
 			sandhs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < pwms.length; i++) {
+		for (var i: number = pwms.length - 1; i > -1; i--) {
 			pwms[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < integrators.length; i++) {
+		for (var i: number = integrators.length - 1; i > -1; i--) {
 			integrators[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < differentiators.length; i++) {
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
 			differentiators[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < lowpasses.length; i++) {
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
 			lowpasses[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < highpasses.length; i++) {
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
 			highpasses[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < relays.length; i++) {
+		for (var i: number = relays.length - 1; i > -1; i--) {
 			relays[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < pids.length; i++) {
+		for (var i: number = pids.length - 1; i > -1; i--) {
 			pids[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < luts.length; i++) {
+		for (var i: number = luts.length - 1; i > -1; i--) {
 			luts[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vcrs.length; i++) {
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
 			vcrs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vccas.length; i++) {
+		for (var i: number = vccas.length - 1; i > -1; i--) {
 			vccas[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < vcls.length; i++) {
+		for (var i: number = vcls.length - 1; i > -1; i--) {
 			vcls[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < grts.length; i++) {
+		for (var i: number = grts.length - 1; i > -1; i--) {
 			grts[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < tptzs.length; i++) {
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
 			tptzs[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
 
-		for (var i: number = 0; i < transformers.length; i++) {
+		for (var i: number = transformers.length - 1; i > -1; i--) {
 			transformers[i].draw_component(canvas);
 			global.variables.element_on_board = true;
 		}
@@ -10633,7 +10633,7 @@ class EngineFunctions {
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 		if (global.variables.selected) {
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
-				for (var i: number = 0; i < resistors.length; i++) {
+				for (var i: number = resistors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === resistors[i].elm.id) {
 						resistors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10642,7 +10642,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
-				for (var i: number = 0; i < capacitors.length; i++) {
+				for (var i: number = capacitors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === capacitors[i].elm.id) {
 						capacitors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10651,7 +10651,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
-				for (var i: number = 0; i < inductors.length; i++) {
+				for (var i: number = inductors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === inductors[i].elm.id) {
 						inductors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10660,7 +10660,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
-				for (var i: number = 0; i < grounds.length; i++) {
+				for (var i: number = grounds.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === grounds[i].elm.id) {
 						grounds[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10669,7 +10669,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
-				for (var i: number = 0; i < dcsources.length; i++) {
+				for (var i: number = dcsources.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === dcsources[i].elm.id) {
 						dcsources[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10678,7 +10678,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
-				for (var i: number = 0; i < dccurrents.length; i++) {
+				for (var i: number = dccurrents.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === dccurrents[i].elm.id) {
 						dccurrents[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10687,7 +10687,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
-				for (var i: number = 0; i < acsources.length; i++) {
+				for (var i: number = acsources.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === acsources[i].elm.id) {
 						acsources[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10696,7 +10696,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
-				for (var i: number = 0; i < accurrents.length; i++) {
+				for (var i: number = accurrents.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === accurrents[i].elm.id) {
 						accurrents[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10705,7 +10705,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
-				for (var i: number = 0; i < squarewaves.length; i++) {
+				for (var i: number = squarewaves.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === squarewaves[i].elm.id) {
 						squarewaves[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10714,7 +10714,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
-				for (var i: number = 0; i < sawwaves.length; i++) {
+				for (var i: number = sawwaves.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === sawwaves[i].elm.id) {
 						sawwaves[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10723,7 +10723,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
-				for (var i: number = 0; i < trianglewaves.length; i++) {
+				for (var i: number = trianglewaves.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === trianglewaves[i].elm.id) {
 						trianglewaves[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10732,7 +10732,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
-				for (var i: number = 0; i < constants.length; i++) {
+				for (var i: number = constants.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === constants[i].elm.id) {
 						constants[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10741,7 +10741,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
-				for (var i: number = 0; i < wires.length; i++) {
+				for (var i: number = wires.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === wires[i].elm.id) {
 						wires[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10750,7 +10750,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
-				for (var i: number = 0; i < nets.length; i++) {
+				for (var i: number = nets.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === nets[i].elm.id) {
 						nets[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10759,7 +10759,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
-				for (var i: number = 0; i < notes.length; i++) {
+				for (var i: number = notes.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === notes[i].elm.id) {
 						notes[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10768,7 +10768,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
-				for (var i: number = 0; i < rails.length; i++) {
+				for (var i: number = rails.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === rails[i].elm.id) {
 						rails[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10777,7 +10777,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
-				for (var i: number = 0; i < voltmeters.length; i++) {
+				for (var i: number = voltmeters.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === voltmeters[i].elm.id) {
 						voltmeters[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10786,7 +10786,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
-				for (var i: number = 0; i < ohmmeters.length; i++) {
+				for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === ohmmeters[i].elm.id) {
 						ohmmeters[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10795,7 +10795,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
-				for (var i: number = 0; i < ammeters.length; i++) {
+				for (var i: number = ammeters.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === ammeters[i].elm.id) {
 						ammeters[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10804,7 +10804,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
-				for (var i: number = 0; i < wattmeters.length; i++) {
+				for (var i: number = wattmeters.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === wattmeters[i].elm.id) {
 						wattmeters[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10813,7 +10813,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
-				for (var i: number = 0; i < fuses.length; i++) {
+				for (var i: number = fuses.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === fuses[i].elm.id) {
 						fuses[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10822,7 +10822,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
-				for (var i: number = 0; i < spsts.length; i++) {
+				for (var i: number = spsts.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === spsts[i].elm.id) {
 						spsts[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10831,7 +10831,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
-				for (var i: number = 0; i < spdts.length; i++) {
+				for (var i: number = spdts.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === spdts[i].elm.id) {
 						spdts[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10840,7 +10840,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
-				for (var i: number = 0; i < nots.length; i++) {
+				for (var i: number = nots.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === nots[i].elm.id) {
 						nots[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10849,7 +10849,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
-				for (var i: number = 0; i < diodes.length; i++) {
+				for (var i: number = diodes.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === diodes[i].elm.id) {
 						diodes[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10858,7 +10858,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
-				for (var i: number = 0; i < leds.length; i++) {
+				for (var i: number = leds.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === leds[i].elm.id) {
 						leds[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10867,7 +10867,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
-				for (var i: number = 0; i < zeners.length; i++) {
+				for (var i: number = zeners.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === zeners[i].elm.id) {
 						zeners[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10876,7 +10876,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
-				for (var i: number = 0; i < potentiometers.length; i++) {
+				for (var i: number = potentiometers.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === potentiometers[i].elm.id) {
 						potentiometers[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10885,7 +10885,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
-				for (var i: number = 0; i < ands.length; i++) {
+				for (var i: number = ands.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === ands[i].elm.id) {
 						ands[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10894,7 +10894,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
-				for (var i: number = 0; i < ors.length; i++) {
+				for (var i: number = ors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === ors[i].elm.id) {
 						ors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10903,7 +10903,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
-				for (var i: number = 0; i < nands.length; i++) {
+				for (var i: number = nands.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === nands[i].elm.id) {
 						nands[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10912,7 +10912,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
-				for (var i: number = 0; i < nors.length; i++) {
+				for (var i: number = nors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === nors[i].elm.id) {
 						nors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10921,7 +10921,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
-				for (var i: number = 0; i < xors.length; i++) {
+				for (var i: number = xors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === xors[i].elm.id) {
 						xors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10930,7 +10930,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
-				for (var i: number = 0; i < xnors.length; i++) {
+				for (var i: number = xnors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === xnors[i].elm.id) {
 						xnors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10939,7 +10939,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
-				for (var i: number = 0; i < dffs.length; i++) {
+				for (var i: number = dffs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === dffs[i].elm.id) {
 						dffs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10948,7 +10948,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
-				for (var i: number = 0; i < vsats.length; i++) {
+				for (var i: number = vsats.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vsats[i].elm.id) {
 						vsats[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10957,7 +10957,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
-				for (var i: number = 0; i < adders.length; i++) {
+				for (var i: number = adders.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === adders[i].elm.id) {
 						adders[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10966,7 +10966,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
-				for (var i: number = 0; i < subtractors.length; i++) {
+				for (var i: number = subtractors.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === subtractors[i].elm.id) {
 						subtractors[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10975,7 +10975,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
-				for (var i: number = 0; i < multipliers.length; i++) {
+				for (var i: number = multipliers.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === multipliers[i].elm.id) {
 						multipliers[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10984,7 +10984,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
-				for (var i: number = 0; i < dividers.length; i++) {
+				for (var i: number = dividers.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === dividers[i].elm.id) {
 						dividers[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -10993,7 +10993,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
-				for (var i: number = 0; i < gains.length; i++) {
+				for (var i: number = gains.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === gains[i].elm.id) {
 						gains[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11002,7 +11002,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
-				for (var i: number = 0; i < absvals.length; i++) {
+				for (var i: number = absvals.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === absvals[i].elm.id) {
 						absvals[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11011,7 +11011,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
-				for (var i: number = 0; i < vcsws.length; i++) {
+				for (var i: number = vcsws.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vcsws[i].elm.id) {
 						vcsws[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11020,7 +11020,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
-				for (var i: number = 0; i < vcvss.length; i++) {
+				for (var i: number = vcvss.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vcvss[i].elm.id) {
 						vcvss[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11029,7 +11029,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
-				for (var i: number = 0; i < vccss.length; i++) {
+				for (var i: number = vccss.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vccss[i].elm.id) {
 						vccss[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11038,7 +11038,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
-				for (var i: number = 0; i < cccss.length; i++) {
+				for (var i: number = cccss.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === cccss[i].elm.id) {
 						cccss[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11047,7 +11047,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
-				for (var i: number = 0; i < ccvss.length; i++) {
+				for (var i: number = ccvss.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === ccvss[i].elm.id) {
 						ccvss[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11056,7 +11056,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
-				for (var i: number = 0; i < opamps.length; i++) {
+				for (var i: number = opamps.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === opamps[i].elm.id) {
 						opamps[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11065,7 +11065,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
-				for (var i: number = 0; i < nmosfets.length; i++) {
+				for (var i: number = nmosfets.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === nmosfets[i].elm.id) {
 						nmosfets[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11074,7 +11074,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
-				for (var i: number = 0; i < pmosfets.length; i++) {
+				for (var i: number = pmosfets.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === pmosfets[i].elm.id) {
 						pmosfets[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11083,7 +11083,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
-				for (var i: number = 0; i < npns.length; i++) {
+				for (var i: number = npns.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === npns[i].elm.id) {
 						npns[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11092,7 +11092,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
-				for (var i: number = 0; i < pnps.length; i++) {
+				for (var i: number = pnps.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === pnps[i].elm.id) {
 						pnps[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11101,7 +11101,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
-				for (var i: number = 0; i < adcs.length; i++) {
+				for (var i: number = adcs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === adcs[i].elm.id) {
 						adcs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11110,7 +11110,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
-				for (var i: number = 0; i < dacs.length; i++) {
+				for (var i: number = dacs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === dacs[i].elm.id) {
 						dacs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11119,7 +11119,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
-				for (var i: number = 0; i < sandhs.length; i++) {
+				for (var i: number = sandhs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === sandhs[i].elm.id) {
 						sandhs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11128,7 +11128,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
-				for (var i: number = 0; i < pwms.length; i++) {
+				for (var i: number = pwms.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === pwms[i].elm.id) {
 						pwms[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11137,7 +11137,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
-				for (var i: number = 0; i < integrators.length; i++) {
+				for (var i: number = integrators.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === integrators[i].elm.id) {
 						integrators[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11146,7 +11146,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
-				for (var i: number = 0; i < differentiators.length; i++) {
+				for (var i: number = differentiators.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === differentiators[i].elm.id) {
 						differentiators[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11155,7 +11155,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
-				for (var i: number = 0; i < lowpasses.length; i++) {
+				for (var i: number = lowpasses.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === lowpasses[i].elm.id) {
 						lowpasses[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11164,7 +11164,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
-				for (var i: number = 0; i < highpasses.length; i++) {
+				for (var i: number = highpasses.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === highpasses[i].elm.id) {
 						highpasses[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11173,7 +11173,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
-				for (var i: number = 0; i < relays.length; i++) {
+				for (var i: number = relays.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === relays[i].elm.id) {
 						relays[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11182,7 +11182,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
-				for (var i: number = 0; i < pids.length; i++) {
+				for (var i: number = pids.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === pids[i].elm.id) {
 						pids[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11191,7 +11191,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
-				for (var i: number = 0; i < luts.length; i++) {
+				for (var i: number = luts.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === luts[i].elm.id) {
 						luts[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11200,7 +11200,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
-				for (var i: number = 0; i < vcrs.length; i++) {
+				for (var i: number = vcrs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vcrs[i].elm.id) {
 						vcrs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11209,7 +11209,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
-				for (var i: number = 0; i < vccas.length; i++) {
+				for (var i: number = vccas.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vccas[i].elm.id) {
 						vccas[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11218,7 +11218,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
-				for (var i: number = 0; i < vcls.length; i++) {
+				for (var i: number = vcls.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === vcls[i].elm.id) {
 						vcls[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11227,7 +11227,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
-				for (var i: number = 0; i < grts.length; i++) {
+				for (var i: number = grts.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === grts[i].elm.id) {
 						grts[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11236,7 +11236,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
-				for (var i: number = 0; i < tptzs.length; i++) {
+				for (var i: number = tptzs.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === tptzs[i].elm.id) {
 						tptzs[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11245,7 +11245,7 @@ class EngineFunctions {
 				}
 			}
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
-				for (var i: number = 0; i < transformers.length; i++) {
+				for (var i: number = transformers.length - 1; i > -1; i--) {
 					if (global.variables.selected_id === transformers[i].elm.id) {
 						transformers[i].draw_component(canvas);
 						global.variables.element_on_board = true;
@@ -11260,16 +11260,16 @@ class EngineFunctions {
 	draw_meter_traces(canvas: GraphicsEngine): void {
 		/* #INSERT_GENERATE_ENGINE_FUNCTION_DRAW_TRACES# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].draw_trace(canvas);
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].draw_trace(canvas);
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].draw_trace(canvas);
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].draw_trace(canvas);
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -11346,16 +11346,16 @@ class EngineFunctions {
 		global.variables.canvas_text_size_6_zoom = global.variables.canvas_text_size_base * 43 * global.variables.workspace_zoom_scale;
 		/* #INSERT_GENERATE_ENGINE_FUNCTION_REFRESH_TRACES# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].refresh_bounds();
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -11387,16 +11387,16 @@ class EngineFunctions {
 		global.variables.canvas_text_size_5_zoom = global.variables.canvas_text_size_base * 21 * global.variables.workspace_zoom_scale;
 		/* #INSERT_GENERATE_ENGINE_FUNCTION_REFRESH_TRACES# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].refresh_bounds();
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].refresh_bounds();
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */

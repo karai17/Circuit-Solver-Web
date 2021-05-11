@@ -185,7 +185,7 @@ class SettingsWindow {
 		this.toggle_switch_button.line_paint.set_color(global.COLORS.GENERAL_BOUNDS_COLOR);
 		this.padding = 0;
 		this.width_mul_0p3636 = 0;
-		this.height_mul_0p3636 = 0
+		this.height_mul_0p3636 = 0;
 	}
 	mouse_down(): void {
 		if (global.flags.flag_select_settings) {

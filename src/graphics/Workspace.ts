@@ -109,16 +109,16 @@ class Workspace {
 		global.variables.node_space_y = this.bounds.get_height() / global.settings.SQRT_MAXNODES;
 		/* #INSERT_METER_RESIZE_TRACE# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		for (var i: number = 0; i < voltmeters.length; i++) {
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
 			voltmeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < ohmmeters.length; i++) {
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
 			ohmmeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < ammeters.length; i++) {
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
 			ammeters[i].resize_meter_trace = true;
 		}
-		for (var i: number = 0; i < wattmeters.length; i++) {
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
 			wattmeters[i].resize_meter_trace = true;
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */

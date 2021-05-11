@@ -269,7 +269,6 @@ class GraphicsEngine {
 		}
 	}
 	draw_arrow(c_x: number, c_y: number, radius: number, is_up: boolean, paint: Paint): void {
-		this.general_path.reset();
 		this.c_xp = (global.CONSTANTS.ZERO_PT_FIVE + c_x) >> global.CONSTANTS.ZERO;
 		this.c_yp = (global.CONSTANTS.ZERO_PT_FIVE + c_y) >> global.CONSTANTS.ZERO;
 		this.radiusp = (global.CONSTANTS.ZERO_PT_FIVE + radius) >> global.CONSTANTS.ZERO;
@@ -287,12 +286,13 @@ class GraphicsEngine {
 			this.general_path.line_to(this.c_xp, this.c_yp + this.radiusp);
 		}
 		this.draw_path(this.general_path.path_2d, paint);
+		this.general_path.reset();
 	}
 	draw_circle(x: number, y: number, radius: number, paint: Paint): void {
 		this.x = (global.CONSTANTS.ZERO_PT_FIVE + x) >> global.CONSTANTS.ZERO;
 		this.y = (global.CONSTANTS.ZERO_PT_FIVE + y) >> global.CONSTANTS.ZERO;
 		this.apply_paint(paint, false);
-		this.ctx.arc(this.x, this.y, radius, 0, this.PI_MUL_2);
+		this.ctx.arc(this.x, this.y, radius, 0, this.FAST_PI_MUL_2);
 		switch (paint.paint_style) {
 			case paint.style.FILL:
 				this.ctx.fill();
@@ -314,7 +314,7 @@ class GraphicsEngine {
 		this.x = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_x()) >> global.CONSTANTS.ZERO;
 		this.y = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_y()) >> global.CONSTANTS.ZERO;
 		this.apply_paint(paint, false);
-		this.ctx.arc(this.x, this.y, this.width, 0, this.PI_MUL_2);
+		this.ctx.arc(this.x, this.y, this.width, 0, this.FAST_PI_MUL_2);
 		switch (paint.paint_style) {
 			case paint.style.FILL:
 				this.ctx.fill();
@@ -336,7 +336,7 @@ class GraphicsEngine {
 		this.x = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_x()) >> global.CONSTANTS.ZERO;
 		this.y = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_y()) >> global.CONSTANTS.ZERO;
 		this.apply_paint(paint, false);
-		this.ctx.arc(this.x, this.y, this.width, 0, this.PI_MUL_2);
+		this.ctx.arc(this.x, this.y, this.width, 0, this.FAST_PI_MUL_2);
 		switch (paint.paint_style) {
 			case paint.style.FILL:
 				this.ctx.fill();
@@ -360,37 +360,29 @@ class GraphicsEngine {
 			this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 			this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 			this.ctx.moveTo(this.x, this.y);
-			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
+			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.FAST_PI_MUL_2);
 			if (i - 1 > -1) {
 				this.cache = buffer[i - 1];
 				this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 				this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 				this.ctx.moveTo(this.x, this.y);
-				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
+				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.FAST_PI_MUL_2);
 			}
 			this.cache = buffer[buffer.length - 1 - i];
 			this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 			this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 			this.ctx.moveTo(this.x, this.y);
-			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
+			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.FAST_PI_MUL_2);
 			if (buffer.length - i < buffer.length) {
 				this.cache = buffer[buffer.length - i];
 				this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
 				this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
 				this.ctx.moveTo(this.x, this.y);
-				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
+				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.FAST_PI_MUL_2);
 			}
 			if (buffer.length - i == i - 2) {
 				break;
 			}
-		}
-
-		for (var i: number = buffer.length - 1; i > -1; i--) {
-			this.cache = buffer[i];
-			this.x = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO;
-			this.y = (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO;
-			this.ctx.moveTo(this.x, this.y);
-			this.ctx.arc(this.x, this.y, this.cache[2], 0, this.PI_MUL_2);
 		}
 		switch (paint.paint_style) {
 			case paint.style.FILL:
@@ -463,7 +455,6 @@ class GraphicsEngine {
 		this.temp_x = (global.CONSTANTS.ZERO_PT_FIVE + x1) >> global.CONSTANTS.ZERO;
 		this.temp_y = (global.CONSTANTS.ZERO_PT_FIVE + y1) >> global.CONSTANTS.ZERO;
 		this.degree = global.utils.retrieve_angle_radian(x2 - x1, y2 - y1) - global.CONSTANTS.PI_DIV_2;
-		this.general_path.reset();
 		this.general_path.move_to(this.temp_x, this.temp_y);
 		this.general_path.curve_to(
 			this.temp_x,
@@ -474,6 +465,7 @@ class GraphicsEngine {
 			(global.CONSTANTS.ZERO_PT_FIVE + y2) >> global.CONSTANTS.ZERO
 		);
 		this.draw_path(this.general_path.path_2d, paint);
+		this.general_path.reset();
 	}
 	draw_arc3(c_x: number, c_y: number, radius: number, start_degree: number, end_degree: number, paint: Paint): void {
 		this.radius = (global.CONSTANTS.ZERO_PT_FIVE + radius) >> global.CONSTANTS.ZERO;

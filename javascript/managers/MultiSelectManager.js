@@ -94,415 +94,415 @@ class MultiSelectManager {
         if (this.multi_select) {
             /* #INSERT_GENERATE_MULTI_SELECT_ELEMENTS# */
             /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-            for (var i = 0; i < resistors.length; i++) {
+            for (var i = resistors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(resistors[i].bounds.get_center_x(), resistors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     resistors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < capacitors.length; i++) {
+            for (var i = capacitors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(capacitors[i].bounds.get_center_x(), capacitors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     capacitors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < inductors.length; i++) {
+            for (var i = inductors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(inductors[i].bounds.get_center_x(), inductors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     inductors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < grounds.length; i++) {
+            for (var i = grounds.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(grounds[i].bounds.get_center_x(), grounds[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     grounds[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < dcsources.length; i++) {
+            for (var i = dcsources.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(dcsources[i].bounds.get_center_x(), dcsources[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     dcsources[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < dccurrents.length; i++) {
+            for (var i = dccurrents.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(dccurrents[i].bounds.get_center_x(), dccurrents[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     dccurrents[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < acsources.length; i++) {
+            for (var i = acsources.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(acsources[i].bounds.get_center_x(), acsources[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     acsources[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < accurrents.length; i++) {
+            for (var i = accurrents.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(accurrents[i].bounds.get_center_x(), accurrents[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     accurrents[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < squarewaves.length; i++) {
+            for (var i = squarewaves.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(squarewaves[i].bounds.get_center_x(), squarewaves[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     squarewaves[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < sawwaves.length; i++) {
+            for (var i = sawwaves.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(sawwaves[i].bounds.get_center_x(), sawwaves[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     sawwaves[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < trianglewaves.length; i++) {
+            for (var i = trianglewaves.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(trianglewaves[i].bounds.get_center_x(), trianglewaves[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     trianglewaves[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < constants.length; i++) {
+            for (var i = constants.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(constants[i].bounds.get_center_x(), constants[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     constants[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < wires.length; i++) {
+            for (var i = wires.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(wires[i].bounds.get_center_x(), wires[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     wires[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < nets.length; i++) {
+            for (var i = nets.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(nets[i].bounds.get_center_x(), nets[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     nets[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < notes.length; i++) {
+            for (var i = notes.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(notes[i].bounds.get_center_x(), notes[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     notes[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < rails.length; i++) {
+            for (var i = rails.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(rails[i].bounds.get_center_x(), rails[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     rails[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < voltmeters.length; i++) {
+            for (var i = voltmeters.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(voltmeters[i].bounds.get_center_x(), voltmeters[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     voltmeters[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < ohmmeters.length; i++) {
+            for (var i = ohmmeters.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(ohmmeters[i].bounds.get_center_x(), ohmmeters[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     ohmmeters[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < ammeters.length; i++) {
+            for (var i = ammeters.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(ammeters[i].bounds.get_center_x(), ammeters[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     ammeters[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < wattmeters.length; i++) {
+            for (var i = wattmeters.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(wattmeters[i].bounds.get_center_x(), wattmeters[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     wattmeters[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < fuses.length; i++) {
+            for (var i = fuses.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(fuses[i].bounds.get_center_x(), fuses[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     fuses[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < spsts.length; i++) {
+            for (var i = spsts.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(spsts[i].bounds.get_center_x(), spsts[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     spsts[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < spdts.length; i++) {
+            for (var i = spdts.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(spdts[i].bounds.get_center_x(), spdts[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     spdts[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < nots.length; i++) {
+            for (var i = nots.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(nots[i].bounds.get_center_x(), nots[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     nots[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < diodes.length; i++) {
+            for (var i = diodes.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(diodes[i].bounds.get_center_x(), diodes[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     diodes[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < leds.length; i++) {
+            for (var i = leds.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(leds[i].bounds.get_center_x(), leds[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     leds[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < zeners.length; i++) {
+            for (var i = zeners.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(zeners[i].bounds.get_center_x(), zeners[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     zeners[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < potentiometers.length; i++) {
+            for (var i = potentiometers.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(potentiometers[i].bounds.get_center_x(), potentiometers[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     potentiometers[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < ands.length; i++) {
+            for (var i = ands.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(ands[i].bounds.get_center_x(), ands[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     ands[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < ors.length; i++) {
+            for (var i = ors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(ors[i].bounds.get_center_x(), ors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     ors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < nands.length; i++) {
+            for (var i = nands.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(nands[i].bounds.get_center_x(), nands[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     nands[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < nors.length; i++) {
+            for (var i = nors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(nors[i].bounds.get_center_x(), nors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     nors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < xors.length; i++) {
+            for (var i = xors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(xors[i].bounds.get_center_x(), xors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     xors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < xnors.length; i++) {
+            for (var i = xnors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(xnors[i].bounds.get_center_x(), xnors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     xnors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < dffs.length; i++) {
+            for (var i = dffs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(dffs[i].bounds.get_center_x(), dffs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     dffs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vsats.length; i++) {
+            for (var i = vsats.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vsats[i].bounds.get_center_x(), vsats[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vsats[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < adders.length; i++) {
+            for (var i = adders.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(adders[i].bounds.get_center_x(), adders[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     adders[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < subtractors.length; i++) {
+            for (var i = subtractors.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(subtractors[i].bounds.get_center_x(), subtractors[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     subtractors[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < multipliers.length; i++) {
+            for (var i = multipliers.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(multipliers[i].bounds.get_center_x(), multipliers[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     multipliers[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < dividers.length; i++) {
+            for (var i = dividers.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(dividers[i].bounds.get_center_x(), dividers[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     dividers[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < gains.length; i++) {
+            for (var i = gains.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(gains[i].bounds.get_center_x(), gains[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     gains[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < absvals.length; i++) {
+            for (var i = absvals.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(absvals[i].bounds.get_center_x(), absvals[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     absvals[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vcsws.length; i++) {
+            for (var i = vcsws.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vcsws[i].bounds.get_center_x(), vcsws[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vcsws[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vcvss.length; i++) {
+            for (var i = vcvss.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vcvss[i].bounds.get_center_x(), vcvss[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vcvss[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vccss.length; i++) {
+            for (var i = vccss.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vccss[i].bounds.get_center_x(), vccss[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vccss[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < cccss.length; i++) {
+            for (var i = cccss.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(cccss[i].bounds.get_center_x(), cccss[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     cccss[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < ccvss.length; i++) {
+            for (var i = ccvss.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(ccvss[i].bounds.get_center_x(), ccvss[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     ccvss[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < opamps.length; i++) {
+            for (var i = opamps.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(opamps[i].bounds.get_center_x(), opamps[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     opamps[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < nmosfets.length; i++) {
+            for (var i = nmosfets.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(nmosfets[i].bounds.get_center_x(), nmosfets[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     nmosfets[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < pmosfets.length; i++) {
+            for (var i = pmosfets.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(pmosfets[i].bounds.get_center_x(), pmosfets[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     pmosfets[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < npns.length; i++) {
+            for (var i = npns.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(npns[i].bounds.get_center_x(), npns[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     npns[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < pnps.length; i++) {
+            for (var i = pnps.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(pnps[i].bounds.get_center_x(), pnps[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     pnps[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < adcs.length; i++) {
+            for (var i = adcs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(adcs[i].bounds.get_center_x(), adcs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     adcs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < dacs.length; i++) {
+            for (var i = dacs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(dacs[i].bounds.get_center_x(), dacs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     dacs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < sandhs.length; i++) {
+            for (var i = sandhs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(sandhs[i].bounds.get_center_x(), sandhs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     sandhs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < pwms.length; i++) {
+            for (var i = pwms.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(pwms[i].bounds.get_center_x(), pwms[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     pwms[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < integrators.length; i++) {
+            for (var i = integrators.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(integrators[i].bounds.get_center_x(), integrators[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     integrators[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < differentiators.length; i++) {
+            for (var i = differentiators.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(differentiators[i].bounds.get_center_x(), differentiators[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     differentiators[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < lowpasses.length; i++) {
+            for (var i = lowpasses.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(lowpasses[i].bounds.get_center_x(), lowpasses[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     lowpasses[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < highpasses.length; i++) {
+            for (var i = highpasses.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(highpasses[i].bounds.get_center_x(), highpasses[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     highpasses[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < relays.length; i++) {
+            for (var i = relays.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(relays[i].bounds.get_center_x(), relays[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     relays[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < pids.length; i++) {
+            for (var i = pids.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(pids[i].bounds.get_center_x(), pids[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     pids[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < luts.length; i++) {
+            for (var i = luts.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(luts[i].bounds.get_center_x(), luts[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     luts[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vcrs.length; i++) {
+            for (var i = vcrs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vcrs[i].bounds.get_center_x(), vcrs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vcrs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vccas.length; i++) {
+            for (var i = vccas.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vccas[i].bounds.get_center_x(), vccas[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vccas[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < vcls.length; i++) {
+            for (var i = vcls.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(vcls[i].bounds.get_center_x(), vcls[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     vcls[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < grts.length; i++) {
+            for (var i = grts.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(grts[i].bounds.get_center_x(), grts[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     grts[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < tptzs.length; i++) {
+            for (var i = tptzs.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(tptzs[i].bounds.get_center_x(), tptzs[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     tptzs[i].multi_selected = true;
                 }
             }
-            for (var i = 0; i < transformers.length; i++) {
+            for (var i = transformers.length - 1; i > -1; i--) {
                 if (this.multi_select_bounds.contains_xy(transformers[i].bounds.get_center_x(), transformers[i].bounds.get_center_y())) {
                     this.multi_selected_element = true;
                     transformers[i].multi_selected = true;
@@ -671,487 +671,349 @@ class MultiSelectManager {
             this.elements_moved = true;
             /* #INSERT_GENERATE_MULTI_SELECT_ELEMENT_MOVE# */
             /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-            for (var i = 0; i < resistors.length; i++) {
+            for (var i = resistors.length - 1; i > -1; i--) {
                 if (resistors[i].multi_selected) {
-                    {
-                        resistors[i].move_element(dx, dy);
-                    }
+                    resistors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < capacitors.length; i++) {
+            for (var i = capacitors.length - 1; i > -1; i--) {
                 if (capacitors[i].multi_selected) {
-                    {
-                        capacitors[i].move_element(dx, dy);
-                    }
+                    capacitors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < inductors.length; i++) {
+            for (var i = inductors.length - 1; i > -1; i--) {
                 if (inductors[i].multi_selected) {
-                    {
-                        inductors[i].move_element(dx, dy);
-                    }
+                    inductors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < grounds.length; i++) {
+            for (var i = grounds.length - 1; i > -1; i--) {
                 if (grounds[i].multi_selected) {
-                    {
-                        grounds[i].move_element(dx, dy);
-                    }
+                    grounds[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < dcsources.length; i++) {
+            for (var i = dcsources.length - 1; i > -1; i--) {
                 if (dcsources[i].multi_selected) {
-                    {
-                        dcsources[i].move_element(dx, dy);
-                    }
+                    dcsources[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < dccurrents.length; i++) {
+            for (var i = dccurrents.length - 1; i > -1; i--) {
                 if (dccurrents[i].multi_selected) {
-                    {
-                        dccurrents[i].move_element(dx, dy);
-                    }
+                    dccurrents[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < acsources.length; i++) {
+            for (var i = acsources.length - 1; i > -1; i--) {
                 if (acsources[i].multi_selected) {
-                    {
-                        acsources[i].move_element(dx, dy);
-                    }
+                    acsources[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < accurrents.length; i++) {
+            for (var i = accurrents.length - 1; i > -1; i--) {
                 if (accurrents[i].multi_selected) {
-                    {
-                        accurrents[i].move_element(dx, dy);
-                    }
+                    accurrents[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < squarewaves.length; i++) {
+            for (var i = squarewaves.length - 1; i > -1; i--) {
                 if (squarewaves[i].multi_selected) {
-                    {
-                        squarewaves[i].move_element(dx, dy);
-                    }
+                    squarewaves[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < sawwaves.length; i++) {
+            for (var i = sawwaves.length - 1; i > -1; i--) {
                 if (sawwaves[i].multi_selected) {
-                    {
-                        sawwaves[i].move_element(dx, dy);
-                    }
+                    sawwaves[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < trianglewaves.length; i++) {
+            for (var i = trianglewaves.length - 1; i > -1; i--) {
                 if (trianglewaves[i].multi_selected) {
-                    {
-                        trianglewaves[i].move_element(dx, dy);
-                    }
+                    trianglewaves[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < constants.length; i++) {
+            for (var i = constants.length - 1; i > -1; i--) {
                 if (constants[i].multi_selected) {
-                    {
-                        constants[i].move_element(dx, dy);
-                    }
+                    constants[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < wires.length; i++) {
+            for (var i = wires.length - 1; i > -1; i--) {
                 if (wires[i].multi_selected) {
-                    {
-                        wires[i].move_element(dx, dy);
-                    }
+                    wires[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < nets.length; i++) {
+            for (var i = nets.length - 1; i > -1; i--) {
                 if (nets[i].multi_selected) {
-                    {
-                        nets[i].move_element(dx, dy);
-                    }
+                    nets[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < notes.length; i++) {
+            for (var i = notes.length - 1; i > -1; i--) {
                 if (notes[i].multi_selected) {
-                    {
-                        notes[i].move_element(dx, dy);
-                    }
+                    notes[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < rails.length; i++) {
+            for (var i = rails.length - 1; i > -1; i--) {
                 if (rails[i].multi_selected) {
-                    {
-                        rails[i].move_element(dx, dy);
-                    }
+                    rails[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < voltmeters.length; i++) {
+            for (var i = voltmeters.length - 1; i > -1; i--) {
                 if (voltmeters[i].multi_selected) {
-                    {
-                        voltmeters[i].move_element(dx, dy);
-                    }
+                    voltmeters[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < ohmmeters.length; i++) {
+            for (var i = ohmmeters.length - 1; i > -1; i--) {
                 if (ohmmeters[i].multi_selected) {
-                    {
-                        ohmmeters[i].move_element(dx, dy);
-                    }
+                    ohmmeters[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < ammeters.length; i++) {
+            for (var i = ammeters.length - 1; i > -1; i--) {
                 if (ammeters[i].multi_selected) {
-                    {
-                        ammeters[i].move_element(dx, dy);
-                    }
+                    ammeters[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < wattmeters.length; i++) {
+            for (var i = wattmeters.length - 1; i > -1; i--) {
                 if (wattmeters[i].multi_selected) {
-                    {
-                        wattmeters[i].move_element(dx, dy);
-                    }
+                    wattmeters[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < fuses.length; i++) {
+            for (var i = fuses.length - 1; i > -1; i--) {
                 if (fuses[i].multi_selected) {
-                    {
-                        fuses[i].move_element(dx, dy);
-                    }
+                    fuses[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < spsts.length; i++) {
+            for (var i = spsts.length - 1; i > -1; i--) {
                 if (spsts[i].multi_selected) {
-                    {
-                        spsts[i].move_element(dx, dy);
-                    }
+                    spsts[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < spdts.length; i++) {
+            for (var i = spdts.length - 1; i > -1; i--) {
                 if (spdts[i].multi_selected) {
-                    {
-                        spdts[i].move_element(dx, dy);
-                    }
+                    spdts[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < nots.length; i++) {
+            for (var i = nots.length - 1; i > -1; i--) {
                 if (nots[i].multi_selected) {
-                    {
-                        nots[i].move_element(dx, dy);
-                    }
+                    nots[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < diodes.length; i++) {
+            for (var i = diodes.length - 1; i > -1; i--) {
                 if (diodes[i].multi_selected) {
-                    {
-                        diodes[i].move_element(dx, dy);
-                    }
+                    diodes[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < leds.length; i++) {
+            for (var i = leds.length - 1; i > -1; i--) {
                 if (leds[i].multi_selected) {
-                    {
-                        leds[i].move_element(dx, dy);
-                    }
+                    leds[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < zeners.length; i++) {
+            for (var i = zeners.length - 1; i > -1; i--) {
                 if (zeners[i].multi_selected) {
-                    {
-                        zeners[i].move_element(dx, dy);
-                    }
+                    zeners[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < potentiometers.length; i++) {
+            for (var i = potentiometers.length - 1; i > -1; i--) {
                 if (potentiometers[i].multi_selected) {
-                    {
-                        potentiometers[i].move_element(dx, dy);
-                    }
+                    potentiometers[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < ands.length; i++) {
+            for (var i = ands.length - 1; i > -1; i--) {
                 if (ands[i].multi_selected) {
-                    {
-                        ands[i].move_element(dx, dy);
-                    }
+                    ands[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < ors.length; i++) {
+            for (var i = ors.length - 1; i > -1; i--) {
                 if (ors[i].multi_selected) {
-                    {
-                        ors[i].move_element(dx, dy);
-                    }
+                    ors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < nands.length; i++) {
+            for (var i = nands.length - 1; i > -1; i--) {
                 if (nands[i].multi_selected) {
-                    {
-                        nands[i].move_element(dx, dy);
-                    }
+                    nands[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < nors.length; i++) {
+            for (var i = nors.length - 1; i > -1; i--) {
                 if (nors[i].multi_selected) {
-                    {
-                        nors[i].move_element(dx, dy);
-                    }
+                    nors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < xors.length; i++) {
+            for (var i = xors.length - 1; i > -1; i--) {
                 if (xors[i].multi_selected) {
-                    {
-                        xors[i].move_element(dx, dy);
-                    }
+                    xors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < xnors.length; i++) {
+            for (var i = xnors.length - 1; i > -1; i--) {
                 if (xnors[i].multi_selected) {
-                    {
-                        xnors[i].move_element(dx, dy);
-                    }
+                    xnors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < dffs.length; i++) {
+            for (var i = dffs.length - 1; i > -1; i--) {
                 if (dffs[i].multi_selected) {
-                    {
-                        dffs[i].move_element(dx, dy);
-                    }
+                    dffs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vsats.length; i++) {
+            for (var i = vsats.length - 1; i > -1; i--) {
                 if (vsats[i].multi_selected) {
-                    {
-                        vsats[i].move_element(dx, dy);
-                    }
+                    vsats[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < adders.length; i++) {
+            for (var i = adders.length - 1; i > -1; i--) {
                 if (adders[i].multi_selected) {
-                    {
-                        adders[i].move_element(dx, dy);
-                    }
+                    adders[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < subtractors.length; i++) {
+            for (var i = subtractors.length - 1; i > -1; i--) {
                 if (subtractors[i].multi_selected) {
-                    {
-                        subtractors[i].move_element(dx, dy);
-                    }
+                    subtractors[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < multipliers.length; i++) {
+            for (var i = multipliers.length - 1; i > -1; i--) {
                 if (multipliers[i].multi_selected) {
-                    {
-                        multipliers[i].move_element(dx, dy);
-                    }
+                    multipliers[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < dividers.length; i++) {
+            for (var i = dividers.length - 1; i > -1; i--) {
                 if (dividers[i].multi_selected) {
-                    {
-                        dividers[i].move_element(dx, dy);
-                    }
+                    dividers[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < gains.length; i++) {
+            for (var i = gains.length - 1; i > -1; i--) {
                 if (gains[i].multi_selected) {
-                    {
-                        gains[i].move_element(dx, dy);
-                    }
+                    gains[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < absvals.length; i++) {
+            for (var i = absvals.length - 1; i > -1; i--) {
                 if (absvals[i].multi_selected) {
-                    {
-                        absvals[i].move_element(dx, dy);
-                    }
+                    absvals[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vcsws.length; i++) {
+            for (var i = vcsws.length - 1; i > -1; i--) {
                 if (vcsws[i].multi_selected) {
-                    {
-                        vcsws[i].move_element(dx, dy);
-                    }
+                    vcsws[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vcvss.length; i++) {
+            for (var i = vcvss.length - 1; i > -1; i--) {
                 if (vcvss[i].multi_selected) {
-                    {
-                        vcvss[i].move_element(dx, dy);
-                    }
+                    vcvss[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vccss.length; i++) {
+            for (var i = vccss.length - 1; i > -1; i--) {
                 if (vccss[i].multi_selected) {
-                    {
-                        vccss[i].move_element(dx, dy);
-                    }
+                    vccss[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < cccss.length; i++) {
+            for (var i = cccss.length - 1; i > -1; i--) {
                 if (cccss[i].multi_selected) {
-                    {
-                        cccss[i].move_element(dx, dy);
-                    }
+                    cccss[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < ccvss.length; i++) {
+            for (var i = ccvss.length - 1; i > -1; i--) {
                 if (ccvss[i].multi_selected) {
-                    {
-                        ccvss[i].move_element(dx, dy);
-                    }
+                    ccvss[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < opamps.length; i++) {
+            for (var i = opamps.length - 1; i > -1; i--) {
                 if (opamps[i].multi_selected) {
-                    {
-                        opamps[i].move_element(dx, dy);
-                    }
+                    opamps[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < nmosfets.length; i++) {
+            for (var i = nmosfets.length - 1; i > -1; i--) {
                 if (nmosfets[i].multi_selected) {
-                    {
-                        nmosfets[i].move_element(dx, dy);
-                    }
+                    nmosfets[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < pmosfets.length; i++) {
+            for (var i = pmosfets.length - 1; i > -1; i--) {
                 if (pmosfets[i].multi_selected) {
-                    {
-                        pmosfets[i].move_element(dx, dy);
-                    }
+                    pmosfets[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < npns.length; i++) {
+            for (var i = npns.length - 1; i > -1; i--) {
                 if (npns[i].multi_selected) {
-                    {
-                        npns[i].move_element(dx, dy);
-                    }
+                    npns[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < pnps.length; i++) {
+            for (var i = pnps.length - 1; i > -1; i--) {
                 if (pnps[i].multi_selected) {
-                    {
-                        pnps[i].move_element(dx, dy);
-                    }
+                    pnps[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < adcs.length; i++) {
+            for (var i = adcs.length - 1; i > -1; i--) {
                 if (adcs[i].multi_selected) {
-                    {
-                        adcs[i].move_element(dx, dy);
-                    }
+                    adcs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < dacs.length; i++) {
+            for (var i = dacs.length - 1; i > -1; i--) {
                 if (dacs[i].multi_selected) {
-                    {
-                        dacs[i].move_element(dx, dy);
-                    }
+                    dacs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < sandhs.length; i++) {
+            for (var i = sandhs.length - 1; i > -1; i--) {
                 if (sandhs[i].multi_selected) {
-                    {
-                        sandhs[i].move_element(dx, dy);
-                    }
+                    sandhs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < pwms.length; i++) {
+            for (var i = pwms.length - 1; i > -1; i--) {
                 if (pwms[i].multi_selected) {
-                    {
-                        pwms[i].move_element(dx, dy);
-                    }
+                    pwms[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < integrators.length; i++) {
+            for (var i = integrators.length - 1; i > -1; i--) {
                 if (integrators[i].multi_selected) {
-                    {
-                        integrators[i].move_element(dx, dy);
-                    }
+                    integrators[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < differentiators.length; i++) {
+            for (var i = differentiators.length - 1; i > -1; i--) {
                 if (differentiators[i].multi_selected) {
-                    {
-                        differentiators[i].move_element(dx, dy);
-                    }
+                    differentiators[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < lowpasses.length; i++) {
+            for (var i = lowpasses.length - 1; i > -1; i--) {
                 if (lowpasses[i].multi_selected) {
-                    {
-                        lowpasses[i].move_element(dx, dy);
-                    }
+                    lowpasses[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < highpasses.length; i++) {
+            for (var i = highpasses.length - 1; i > -1; i--) {
                 if (highpasses[i].multi_selected) {
-                    {
-                        highpasses[i].move_element(dx, dy);
-                    }
+                    highpasses[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < relays.length; i++) {
+            for (var i = relays.length - 1; i > -1; i--) {
                 if (relays[i].multi_selected) {
-                    {
-                        relays[i].move_element(dx, dy);
-                    }
+                    relays[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < pids.length; i++) {
+            for (var i = pids.length - 1; i > -1; i--) {
                 if (pids[i].multi_selected) {
-                    {
-                        pids[i].move_element(dx, dy);
-                    }
+                    pids[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < luts.length; i++) {
+            for (var i = luts.length - 1; i > -1; i--) {
                 if (luts[i].multi_selected) {
-                    {
-                        luts[i].move_element(dx, dy);
-                    }
+                    luts[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vcrs.length; i++) {
+            for (var i = vcrs.length - 1; i > -1; i--) {
                 if (vcrs[i].multi_selected) {
-                    {
-                        vcrs[i].move_element(dx, dy);
-                    }
+                    vcrs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vccas.length; i++) {
+            for (var i = vccas.length - 1; i > -1; i--) {
                 if (vccas[i].multi_selected) {
-                    {
-                        vccas[i].move_element(dx, dy);
-                    }
+                    vccas[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < vcls.length; i++) {
+            for (var i = vcls.length - 1; i > -1; i--) {
                 if (vcls[i].multi_selected) {
-                    {
-                        vcls[i].move_element(dx, dy);
-                    }
+                    vcls[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < grts.length; i++) {
+            for (var i = grts.length - 1; i > -1; i--) {
                 if (grts[i].multi_selected) {
-                    {
-                        grts[i].move_element(dx, dy);
-                    }
+                    grts[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < tptzs.length; i++) {
+            for (var i = tptzs.length - 1; i > -1; i--) {
                 if (tptzs[i].multi_selected) {
-                    {
-                        tptzs[i].move_element(dx, dy);
-                    }
+                    tptzs[i].move_element(dx, dy);
                 }
             }
-            for (var i = 0; i < transformers.length; i++) {
+            for (var i = transformers.length - 1; i > -1; i--) {
                 if (transformers[i].multi_selected) {
-                    {
-                        transformers[i].move_element(dx, dy);
-                    }
+                    transformers[i].move_element(dx, dy);
                 }
             }
             /* <!-- END AUTOMATICALLY GENERATED !--> */

@@ -130,7 +130,7 @@ class ShortcutManager {
             packet[indexer++] = global.CONSTANTS.VERSION_DIVIDER + '\r\n';
             /* #INSERT_GENERATE_ELEMENT_EXPORT_SHORTCUT# */
             /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-            for (var i = 0; i < resistors.length; i++) {
+            for (var i = resistors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + resistors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(resistors[i].elm.properties);
@@ -138,7 +138,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(resistors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < capacitors.length; i++) {
+            for (var i = capacitors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + capacitors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(capacitors[i].elm.properties);
@@ -146,7 +146,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(capacitors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < inductors.length; i++) {
+            for (var i = inductors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + inductors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(inductors[i].elm.properties);
@@ -154,7 +154,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(inductors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < grounds.length; i++) {
+            for (var i = grounds.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + grounds[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(grounds[i].elm.properties);
@@ -162,7 +162,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(grounds[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < dcsources.length; i++) {
+            for (var i = dcsources.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + dcsources[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(dcsources[i].elm.properties);
@@ -170,7 +170,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(dcsources[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < dccurrents.length; i++) {
+            for (var i = dccurrents.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + dccurrents[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(dccurrents[i].elm.properties);
@@ -178,7 +178,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(dccurrents[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < acsources.length; i++) {
+            for (var i = acsources.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + acsources[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(acsources[i].elm.properties);
@@ -186,7 +186,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(acsources[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < accurrents.length; i++) {
+            for (var i = accurrents.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + accurrents[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(accurrents[i].elm.properties);
@@ -194,7 +194,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(accurrents[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < squarewaves.length; i++) {
+            for (var i = squarewaves.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + squarewaves[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(squarewaves[i].elm.properties);
@@ -202,7 +202,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(squarewaves[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < sawwaves.length; i++) {
+            for (var i = sawwaves.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + sawwaves[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(sawwaves[i].elm.properties);
@@ -210,7 +210,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(sawwaves[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < trianglewaves.length; i++) {
+            for (var i = trianglewaves.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + trianglewaves[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(trianglewaves[i].elm.properties);
@@ -218,7 +218,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(trianglewaves[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < constants.length; i++) {
+            for (var i = constants.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + constants[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(constants[i].elm.properties);
@@ -226,7 +226,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(constants[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < nets.length; i++) {
+            for (var i = nets.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + nets[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(nets[i].elm.properties);
@@ -234,7 +234,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(nets[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < notes.length; i++) {
+            for (var i = notes.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + notes[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(notes[i].elm.properties);
@@ -242,7 +242,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(notes[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < rails.length; i++) {
+            for (var i = rails.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + rails[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(rails[i].elm.properties);
@@ -250,7 +250,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(rails[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < voltmeters.length; i++) {
+            for (var i = voltmeters.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + voltmeters[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(voltmeters[i].elm.properties);
@@ -258,7 +258,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(voltmeters[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < ohmmeters.length; i++) {
+            for (var i = ohmmeters.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + ohmmeters[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(ohmmeters[i].elm.properties);
@@ -266,7 +266,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(ohmmeters[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < ammeters.length; i++) {
+            for (var i = ammeters.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + ammeters[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(ammeters[i].elm.properties);
@@ -274,7 +274,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(ammeters[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < wattmeters.length; i++) {
+            for (var i = wattmeters.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + wattmeters[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(wattmeters[i].elm.properties);
@@ -282,7 +282,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(wattmeters[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < fuses.length; i++) {
+            for (var i = fuses.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + fuses[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(fuses[i].elm.properties);
@@ -290,7 +290,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(fuses[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < spsts.length; i++) {
+            for (var i = spsts.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + spsts[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(spsts[i].elm.properties);
@@ -298,7 +298,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(spsts[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < spdts.length; i++) {
+            for (var i = spdts.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + spdts[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(spdts[i].elm.properties);
@@ -306,7 +306,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(spdts[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < nots.length; i++) {
+            for (var i = nots.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + nots[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(nots[i].elm.properties);
@@ -314,7 +314,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(nots[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < diodes.length; i++) {
+            for (var i = diodes.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + diodes[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(diodes[i].elm.properties);
@@ -322,7 +322,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(diodes[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < leds.length; i++) {
+            for (var i = leds.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + leds[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(leds[i].elm.properties);
@@ -330,7 +330,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(leds[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < zeners.length; i++) {
+            for (var i = zeners.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + zeners[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(zeners[i].elm.properties);
@@ -338,7 +338,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(zeners[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < potentiometers.length; i++) {
+            for (var i = potentiometers.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + potentiometers[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(potentiometers[i].elm.properties);
@@ -346,7 +346,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(potentiometers[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < ands.length; i++) {
+            for (var i = ands.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + ands[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(ands[i].elm.properties);
@@ -354,7 +354,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(ands[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < ors.length; i++) {
+            for (var i = ors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + ors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(ors[i].elm.properties);
@@ -362,7 +362,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(ors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < nands.length; i++) {
+            for (var i = nands.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + nands[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(nands[i].elm.properties);
@@ -370,7 +370,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(nands[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < nors.length; i++) {
+            for (var i = nors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + nors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(nors[i].elm.properties);
@@ -378,7 +378,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(nors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < xors.length; i++) {
+            for (var i = xors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + xors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(xors[i].elm.properties);
@@ -386,7 +386,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(xors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < xnors.length; i++) {
+            for (var i = xnors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + xnors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(xnors[i].elm.properties);
@@ -394,7 +394,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(xnors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < dffs.length; i++) {
+            for (var i = dffs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + dffs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(dffs[i].elm.properties);
@@ -402,7 +402,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(dffs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vsats.length; i++) {
+            for (var i = vsats.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vsats[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vsats[i].elm.properties);
@@ -410,7 +410,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vsats[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < adders.length; i++) {
+            for (var i = adders.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + adders[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(adders[i].elm.properties);
@@ -418,7 +418,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(adders[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < subtractors.length; i++) {
+            for (var i = subtractors.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + subtractors[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(subtractors[i].elm.properties);
@@ -426,7 +426,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(subtractors[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < multipliers.length; i++) {
+            for (var i = multipliers.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + multipliers[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(multipliers[i].elm.properties);
@@ -434,7 +434,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(multipliers[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < dividers.length; i++) {
+            for (var i = dividers.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + dividers[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(dividers[i].elm.properties);
@@ -442,7 +442,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(dividers[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < gains.length; i++) {
+            for (var i = gains.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + gains[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(gains[i].elm.properties);
@@ -450,7 +450,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(gains[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < absvals.length; i++) {
+            for (var i = absvals.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + absvals[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(absvals[i].elm.properties);
@@ -458,7 +458,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(absvals[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vcsws.length; i++) {
+            for (var i = vcsws.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vcsws[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vcsws[i].elm.properties);
@@ -466,7 +466,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vcsws[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vcvss.length; i++) {
+            for (var i = vcvss.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vcvss[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vcvss[i].elm.properties);
@@ -474,7 +474,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vcvss[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vccss.length; i++) {
+            for (var i = vccss.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vccss[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vccss[i].elm.properties);
@@ -482,7 +482,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vccss[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < cccss.length; i++) {
+            for (var i = cccss.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + cccss[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(cccss[i].elm.properties);
@@ -490,7 +490,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(cccss[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < ccvss.length; i++) {
+            for (var i = ccvss.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + ccvss[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(ccvss[i].elm.properties);
@@ -498,7 +498,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(ccvss[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < opamps.length; i++) {
+            for (var i = opamps.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + opamps[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(opamps[i].elm.properties);
@@ -506,7 +506,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(opamps[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < nmosfets.length; i++) {
+            for (var i = nmosfets.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + nmosfets[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(nmosfets[i].elm.properties);
@@ -514,7 +514,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(nmosfets[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < pmosfets.length; i++) {
+            for (var i = pmosfets.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + pmosfets[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(pmosfets[i].elm.properties);
@@ -522,7 +522,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(pmosfets[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < npns.length; i++) {
+            for (var i = npns.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + npns[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(npns[i].elm.properties);
@@ -530,7 +530,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(npns[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < pnps.length; i++) {
+            for (var i = pnps.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + pnps[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(pnps[i].elm.properties);
@@ -538,7 +538,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(pnps[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < adcs.length; i++) {
+            for (var i = adcs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + adcs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(adcs[i].elm.properties);
@@ -546,7 +546,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(adcs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < dacs.length; i++) {
+            for (var i = dacs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + dacs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(dacs[i].elm.properties);
@@ -554,7 +554,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(dacs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < sandhs.length; i++) {
+            for (var i = sandhs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + sandhs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(sandhs[i].elm.properties);
@@ -562,7 +562,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(sandhs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < pwms.length; i++) {
+            for (var i = pwms.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + pwms[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(pwms[i].elm.properties);
@@ -570,7 +570,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(pwms[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < integrators.length; i++) {
+            for (var i = integrators.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + integrators[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(integrators[i].elm.properties);
@@ -578,7 +578,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(integrators[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < differentiators.length; i++) {
+            for (var i = differentiators.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + differentiators[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(differentiators[i].elm.properties);
@@ -586,7 +586,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(differentiators[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < lowpasses.length; i++) {
+            for (var i = lowpasses.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + lowpasses[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(lowpasses[i].elm.properties);
@@ -594,7 +594,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(lowpasses[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < highpasses.length; i++) {
+            for (var i = highpasses.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + highpasses[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(highpasses[i].elm.properties);
@@ -602,7 +602,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(highpasses[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < relays.length; i++) {
+            for (var i = relays.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + relays[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(relays[i].elm.properties);
@@ -610,7 +610,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(relays[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < pids.length; i++) {
+            for (var i = pids.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + pids[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(pids[i].elm.properties);
@@ -618,7 +618,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(pids[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < luts.length; i++) {
+            for (var i = luts.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + luts[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(luts[i].elm.properties);
@@ -626,7 +626,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(luts[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vcrs.length; i++) {
+            for (var i = vcrs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vcrs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vcrs[i].elm.properties);
@@ -634,7 +634,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vcrs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vccas.length; i++) {
+            for (var i = vccas.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vccas[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vccas[i].elm.properties);
@@ -642,7 +642,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vccas[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < vcls.length; i++) {
+            for (var i = vcls.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + vcls[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(vcls[i].elm.properties);
@@ -650,7 +650,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(vcls[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < grts.length; i++) {
+            for (var i = grts.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + grts[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(grts[i].elm.properties);
@@ -658,7 +658,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(grts[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < tptzs.length; i++) {
+            for (var i = tptzs.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + tptzs[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(tptzs[i].elm.properties);
@@ -666,7 +666,7 @@ class ShortcutManager {
                 packet[indexer++] = JSON.stringify(tptzs[i].wire_reference);
                 packet[indexer++] = global.CONSTANTS.PACKET_DIVIDER + '\r\n';
             }
-            for (var i = 0; i < transformers.length; i++) {
+            for (var i = transformers.length - 1; i > -1; i--) {
                 packet[indexer++] = '"ref_id":' + transformers[i].elm.id;
                 packet[indexer++] = global.CONSTANTS.ID_DIVIDER + '\r\n';
                 packet[indexer++] = JSON.stringify(transformers[i].elm.properties);
@@ -701,211 +701,211 @@ class ShortcutManager {
             global.variables.multi_selected = true;
             /* #INSERT_GENERATE_MULTI_SELECT_ELEMENTS_SHORTCUT# */
             /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-            for (var i = 0; i < resistors.length; i++) {
+            for (var i = resistors.length - 1; i > -1; i--) {
                 resistors[i].multi_selected = true;
             }
-            for (var i = 0; i < capacitors.length; i++) {
+            for (var i = capacitors.length - 1; i > -1; i--) {
                 capacitors[i].multi_selected = true;
             }
-            for (var i = 0; i < inductors.length; i++) {
+            for (var i = inductors.length - 1; i > -1; i--) {
                 inductors[i].multi_selected = true;
             }
-            for (var i = 0; i < grounds.length; i++) {
+            for (var i = grounds.length - 1; i > -1; i--) {
                 grounds[i].multi_selected = true;
             }
-            for (var i = 0; i < dcsources.length; i++) {
+            for (var i = dcsources.length - 1; i > -1; i--) {
                 dcsources[i].multi_selected = true;
             }
-            for (var i = 0; i < dccurrents.length; i++) {
+            for (var i = dccurrents.length - 1; i > -1; i--) {
                 dccurrents[i].multi_selected = true;
             }
-            for (var i = 0; i < acsources.length; i++) {
+            for (var i = acsources.length - 1; i > -1; i--) {
                 acsources[i].multi_selected = true;
             }
-            for (var i = 0; i < accurrents.length; i++) {
+            for (var i = accurrents.length - 1; i > -1; i--) {
                 accurrents[i].multi_selected = true;
             }
-            for (var i = 0; i < squarewaves.length; i++) {
+            for (var i = squarewaves.length - 1; i > -1; i--) {
                 squarewaves[i].multi_selected = true;
             }
-            for (var i = 0; i < sawwaves.length; i++) {
+            for (var i = sawwaves.length - 1; i > -1; i--) {
                 sawwaves[i].multi_selected = true;
             }
-            for (var i = 0; i < trianglewaves.length; i++) {
+            for (var i = trianglewaves.length - 1; i > -1; i--) {
                 trianglewaves[i].multi_selected = true;
             }
-            for (var i = 0; i < constants.length; i++) {
+            for (var i = constants.length - 1; i > -1; i--) {
                 constants[i].multi_selected = true;
             }
-            for (var i = 0; i < wires.length; i++) {
+            for (var i = wires.length - 1; i > -1; i--) {
                 wires[i].multi_selected = true;
             }
-            for (var i = 0; i < nets.length; i++) {
+            for (var i = nets.length - 1; i > -1; i--) {
                 nets[i].multi_selected = true;
             }
-            for (var i = 0; i < notes.length; i++) {
+            for (var i = notes.length - 1; i > -1; i--) {
                 notes[i].multi_selected = true;
             }
-            for (var i = 0; i < rails.length; i++) {
+            for (var i = rails.length - 1; i > -1; i--) {
                 rails[i].multi_selected = true;
             }
-            for (var i = 0; i < voltmeters.length; i++) {
+            for (var i = voltmeters.length - 1; i > -1; i--) {
                 voltmeters[i].multi_selected = true;
             }
-            for (var i = 0; i < ohmmeters.length; i++) {
+            for (var i = ohmmeters.length - 1; i > -1; i--) {
                 ohmmeters[i].multi_selected = true;
             }
-            for (var i = 0; i < ammeters.length; i++) {
+            for (var i = ammeters.length - 1; i > -1; i--) {
                 ammeters[i].multi_selected = true;
             }
-            for (var i = 0; i < wattmeters.length; i++) {
+            for (var i = wattmeters.length - 1; i > -1; i--) {
                 wattmeters[i].multi_selected = true;
             }
-            for (var i = 0; i < fuses.length; i++) {
+            for (var i = fuses.length - 1; i > -1; i--) {
                 fuses[i].multi_selected = true;
             }
-            for (var i = 0; i < spsts.length; i++) {
+            for (var i = spsts.length - 1; i > -1; i--) {
                 spsts[i].multi_selected = true;
             }
-            for (var i = 0; i < spdts.length; i++) {
+            for (var i = spdts.length - 1; i > -1; i--) {
                 spdts[i].multi_selected = true;
             }
-            for (var i = 0; i < nots.length; i++) {
+            for (var i = nots.length - 1; i > -1; i--) {
                 nots[i].multi_selected = true;
             }
-            for (var i = 0; i < diodes.length; i++) {
+            for (var i = diodes.length - 1; i > -1; i--) {
                 diodes[i].multi_selected = true;
             }
-            for (var i = 0; i < leds.length; i++) {
+            for (var i = leds.length - 1; i > -1; i--) {
                 leds[i].multi_selected = true;
             }
-            for (var i = 0; i < zeners.length; i++) {
+            for (var i = zeners.length - 1; i > -1; i--) {
                 zeners[i].multi_selected = true;
             }
-            for (var i = 0; i < potentiometers.length; i++) {
+            for (var i = potentiometers.length - 1; i > -1; i--) {
                 potentiometers[i].multi_selected = true;
             }
-            for (var i = 0; i < ands.length; i++) {
+            for (var i = ands.length - 1; i > -1; i--) {
                 ands[i].multi_selected = true;
             }
-            for (var i = 0; i < ors.length; i++) {
+            for (var i = ors.length - 1; i > -1; i--) {
                 ors[i].multi_selected = true;
             }
-            for (var i = 0; i < nands.length; i++) {
+            for (var i = nands.length - 1; i > -1; i--) {
                 nands[i].multi_selected = true;
             }
-            for (var i = 0; i < nors.length; i++) {
+            for (var i = nors.length - 1; i > -1; i--) {
                 nors[i].multi_selected = true;
             }
-            for (var i = 0; i < xors.length; i++) {
+            for (var i = xors.length - 1; i > -1; i--) {
                 xors[i].multi_selected = true;
             }
-            for (var i = 0; i < xnors.length; i++) {
+            for (var i = xnors.length - 1; i > -1; i--) {
                 xnors[i].multi_selected = true;
             }
-            for (var i = 0; i < dffs.length; i++) {
+            for (var i = dffs.length - 1; i > -1; i--) {
                 dffs[i].multi_selected = true;
             }
-            for (var i = 0; i < vsats.length; i++) {
+            for (var i = vsats.length - 1; i > -1; i--) {
                 vsats[i].multi_selected = true;
             }
-            for (var i = 0; i < adders.length; i++) {
+            for (var i = adders.length - 1; i > -1; i--) {
                 adders[i].multi_selected = true;
             }
-            for (var i = 0; i < subtractors.length; i++) {
+            for (var i = subtractors.length - 1; i > -1; i--) {
                 subtractors[i].multi_selected = true;
             }
-            for (var i = 0; i < multipliers.length; i++) {
+            for (var i = multipliers.length - 1; i > -1; i--) {
                 multipliers[i].multi_selected = true;
             }
-            for (var i = 0; i < dividers.length; i++) {
+            for (var i = dividers.length - 1; i > -1; i--) {
                 dividers[i].multi_selected = true;
             }
-            for (var i = 0; i < gains.length; i++) {
+            for (var i = gains.length - 1; i > -1; i--) {
                 gains[i].multi_selected = true;
             }
-            for (var i = 0; i < absvals.length; i++) {
+            for (var i = absvals.length - 1; i > -1; i--) {
                 absvals[i].multi_selected = true;
             }
-            for (var i = 0; i < vcsws.length; i++) {
+            for (var i = vcsws.length - 1; i > -1; i--) {
                 vcsws[i].multi_selected = true;
             }
-            for (var i = 0; i < vcvss.length; i++) {
+            for (var i = vcvss.length - 1; i > -1; i--) {
                 vcvss[i].multi_selected = true;
             }
-            for (var i = 0; i < vccss.length; i++) {
+            for (var i = vccss.length - 1; i > -1; i--) {
                 vccss[i].multi_selected = true;
             }
-            for (var i = 0; i < cccss.length; i++) {
+            for (var i = cccss.length - 1; i > -1; i--) {
                 cccss[i].multi_selected = true;
             }
-            for (var i = 0; i < ccvss.length; i++) {
+            for (var i = ccvss.length - 1; i > -1; i--) {
                 ccvss[i].multi_selected = true;
             }
-            for (var i = 0; i < opamps.length; i++) {
+            for (var i = opamps.length - 1; i > -1; i--) {
                 opamps[i].multi_selected = true;
             }
-            for (var i = 0; i < nmosfets.length; i++) {
+            for (var i = nmosfets.length - 1; i > -1; i--) {
                 nmosfets[i].multi_selected = true;
             }
-            for (var i = 0; i < pmosfets.length; i++) {
+            for (var i = pmosfets.length - 1; i > -1; i--) {
                 pmosfets[i].multi_selected = true;
             }
-            for (var i = 0; i < npns.length; i++) {
+            for (var i = npns.length - 1; i > -1; i--) {
                 npns[i].multi_selected = true;
             }
-            for (var i = 0; i < pnps.length; i++) {
+            for (var i = pnps.length - 1; i > -1; i--) {
                 pnps[i].multi_selected = true;
             }
-            for (var i = 0; i < adcs.length; i++) {
+            for (var i = adcs.length - 1; i > -1; i--) {
                 adcs[i].multi_selected = true;
             }
-            for (var i = 0; i < dacs.length; i++) {
+            for (var i = dacs.length - 1; i > -1; i--) {
                 dacs[i].multi_selected = true;
             }
-            for (var i = 0; i < sandhs.length; i++) {
+            for (var i = sandhs.length - 1; i > -1; i--) {
                 sandhs[i].multi_selected = true;
             }
-            for (var i = 0; i < pwms.length; i++) {
+            for (var i = pwms.length - 1; i > -1; i--) {
                 pwms[i].multi_selected = true;
             }
-            for (var i = 0; i < integrators.length; i++) {
+            for (var i = integrators.length - 1; i > -1; i--) {
                 integrators[i].multi_selected = true;
             }
-            for (var i = 0; i < differentiators.length; i++) {
+            for (var i = differentiators.length - 1; i > -1; i--) {
                 differentiators[i].multi_selected = true;
             }
-            for (var i = 0; i < lowpasses.length; i++) {
+            for (var i = lowpasses.length - 1; i > -1; i--) {
                 lowpasses[i].multi_selected = true;
             }
-            for (var i = 0; i < highpasses.length; i++) {
+            for (var i = highpasses.length - 1; i > -1; i--) {
                 highpasses[i].multi_selected = true;
             }
-            for (var i = 0; i < relays.length; i++) {
+            for (var i = relays.length - 1; i > -1; i--) {
                 relays[i].multi_selected = true;
             }
-            for (var i = 0; i < pids.length; i++) {
+            for (var i = pids.length - 1; i > -1; i--) {
                 pids[i].multi_selected = true;
             }
-            for (var i = 0; i < luts.length; i++) {
+            for (var i = luts.length - 1; i > -1; i--) {
                 luts[i].multi_selected = true;
             }
-            for (var i = 0; i < vcrs.length; i++) {
+            for (var i = vcrs.length - 1; i > -1; i--) {
                 vcrs[i].multi_selected = true;
             }
-            for (var i = 0; i < vccas.length; i++) {
+            for (var i = vccas.length - 1; i > -1; i--) {
                 vccas[i].multi_selected = true;
             }
-            for (var i = 0; i < vcls.length; i++) {
+            for (var i = vcls.length - 1; i > -1; i--) {
                 vcls[i].multi_selected = true;
             }
-            for (var i = 0; i < grts.length; i++) {
+            for (var i = grts.length - 1; i > -1; i--) {
                 grts[i].multi_selected = true;
             }
-            for (var i = 0; i < tptzs.length; i++) {
+            for (var i = tptzs.length - 1; i > -1; i--) {
                 tptzs[i].multi_selected = true;
             }
-            for (var i = 0; i < transformers.length; i++) {
+            for (var i = transformers.length - 1; i > -1; i--) {
                 transformers[i].multi_selected = true;
             }
             /* <!-- END AUTOMATICALLY GENERATED !--> */
