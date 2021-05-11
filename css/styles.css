@@ -1,11 +1,15 @@
 body {
     overflow: hidden;
-    touch-action: manipulation;
+    touch-action: none;
     transform: translateZ(0);
     transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
+    transform: rotateZ(0deg);
     backface-visibility: hidden;
     perspective: 1000;
     -webkit-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
 }
