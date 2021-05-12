@@ -1,277 +1,275 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description"
+		content="
 				As I approached my senior year for my B.S. in Electrical Engineering, I wanted to create something that most people hadn't created before, a circuit simulator! It was about the experience, the learning, and the the journey itself. I put together this application to package my knowledge in Electrical Engineering to some day help another student have an easier time in their scholastic pursuits and in turn teach them about circuits. Circuit Solver is far from perfect and there are lots of things that could be optimized. It will however, simulate a majority of linear Circuits and a decent amount of smaller scale Non-Linear Circuits. If this app helps you in any way, i'd appreciate you spreading the word to help support my efforts Thanks!
-				Think of Circuit Solver as an electronic circuit board, you drag your electrical components and place them on one at a time. You hook up some sources and you place some meters to read the values. If you need to analyze the waveform, grab some electrical leads and view them with an oscilloscope. There are many SPICE tools out there for PC such as Multisim, LTSpice, and PSpice. Circuit Solver doesn't compare to their raw power but it is optimized to run on mobile devices which makes it both portable and easily accessible to anyone in need of circuit solutions. Circuit Solver strives to verify Ohm's law, Kirchhoff's current and voltage laws by creating models that are both stable and efficient."
-		/>
-		<meta
-			name="keywords"
-			content="Resistor,Capacitor,Inductor,AC Voltage Source,AC Current Source,DC Voltage Source,DC Current Source,Square Wave Source,Amp Meter,Ohm Meter,Volt Meter,Diode,Red LED,Green LED,Blue LED,Yellow LED,Orange LED,Wire,Voltage Controlled Voltage Source (VCVS),Voltage Controlled Current Source (VCCS),Current Controlled Current Source (CCCS),Current Controlled Voltage Source (CCVS),Switch (SPST),Switch (SPDT),Ground,Transformer,AND Gate,OR Gate,NOR Gate,NAND Gate,Inverter,Potentiometer,XOR Gate,XNOR Gate,NPN BJT,PNP BJT,NMOSFET,PMOSFET,OPAMP,Zener Diode,ACTUATOR SOLENOID,ALTERNATOR,ALTERNATING CURRENT (AC),AMBIENT TEMPERATURE,AMMETER,AMPERE,AMPERE,AMPLIFIER,AMPLITUDE,ANALOG IC,ANALOG GAUGE,ARMATURE,ARTIFICIAL MAGNETS,ATOM,AUXiliARY SPEED SENSOR,CALIBRATION,CAPACITOR,CHARGE,CURRENT,CURRENT FLOW,DIFFERENTIATOR CIRCUIT,DIGITAL IC,DIODE,DIRECT CURRENT (DC),DISCHARGE,,ELECTRICAL FIELD,ELECTRICITY,ELECTROCHEMICAL,ELECTRO,ELECTROLYTE,ELECTROMAGNET,ELECTROMAGNETIC,ELECTROMAGNETIC FIELD,ELECTROMAGNETIC INDUCTION,ELECTRON,ELECTRON THEORY,ELECTRONICS,ELECTRONIC CONTROL UNIT (ECU),ELECTRONIC GOVERNOR,ELECTRONIC IGNITION SYSTEM,ELEMENT,ENGINE CONTROLLER,FIELD EFFECT TRANSISTOR (FET),FIXED RESISTOR,FREOUENCY,MAGNETISM,FUSE,GATE,GENERATOR,GRID,GROUND,GROUNDED CIRCUIT,GROWLER,HYDROMETER,IGNITION CONTROL UN IT,INDUCTANCE,INDUCTOR,INSULATED GATE FIELD EFFECT TRANSISTOR (IGFET),INSULATOR,INTEGRATED CIRCUIT (IC),INTEGRATOR CIRCUIT,INVERTER,ION,ISOLATION DIODE,LIGHT EMITTING DIODE (LED),LINES OF FORCE,LIQUID CRYSTAL DISPLAY (LCD),MAGNET,MAGNETIC FIELD,MAGNETIC FLUX,MAGNETIC INDUCTION,MAGNETIC LINES OF FORCE,MAGNETIC MATERIAL,MAGNETIC NORTH,MAGNETIC PICKUP ASSEMBLY,MAGNETIC SOUTH,MAGNETIC SWITCH,MAGNETISM,MICROPROCESSOR,MILLIAMPERE,MOLECULE,MOTOR,MUL TIMETER,MUTUAL INDUCTION,NATURAL MAGNET,NEGATIVE,NEUTRON,NON,NORMALLY OPEN and NORMALLY CLOSED,OHM,OHMMETER,OHM'S LAW,OPEN OR OPEN CIRCUIT,OPERATIONAL AMPLIFIER,OVERRUNNING CLUTCH,PARALLEL CIRCUIT,PERMANENT MAGNET,PIEZO ELECTRIC DEVICE,PLATE,POLARITY,POLE,POLE SHOES,POSITIVE,POTENTIOMETER,POWER SWITCH TRANSISTOR,PRIMARY SPEED SENSOR,PRINCIPLE OF TURNING FORCE,PRINTED CIRCUIT BOARD,PROTON,PULSE,PULSE,RECTIFIER,REGULATOR,RELAY,RELUCTANCE,RELUCTOR,RESISTANCE,RESISTOR,RHEOSTAT,ROTOR,SEMICONDUCTOR,SENSOR,SERIES CIRCUIT,SERIES,SHORT (OR SHORT CIRCUIT),SHUNT,SOLENOID,STARTER MOTOR,STATOR,STORAGE BATTERY,SWITCH,SYNCHROGRAPH,TACHOMETER,TEMPORARY MAGNET,THERMISTOR,TRANSFORMER,TRANSIENT VOLTAGE PROTECTION MODULE (TVP),TRANSISTOR,TRIMMER RESISTOR,VACUUM FLORESCENT DISPLAY (VDC),VARIABLE RESISTOR,VOLT,VOLTAGE,VOLTAGE REGULATOR,VOLTMETER,WATT,WATT,WAVE,WAVEFORM,WINDING,WIRING,ZENER DIODE (Reverse Bias Direction Diode),acceptor atoms,AC coupling,AC load line,active component,active filter,active region,ADC,Aliased signals,alpha,amplifier,amplitude,analog,anode,Astable,attenuate,average value,AWG,bandwidth,barrier potential,base,base biasing,beta,bias,bipolar junction transistor,bode plot,branch current,breakdown voltage,bridge rectifier,buffer,bulk resistance,BW,bypass capacitor,CAD,calibration,Controller Area Network,capacitance,capacitor,cascaded amplifier,cascode amplifier,cathode,center tapped rectifier,center tapped transformer,charge,circuit,clamp,class A amplifier,class B amplifier,class C amplifier,clipper,closed circuit,closed-loop gain,collector,collector characteristic curve,common base amplifier,common collector amplifier,common drain amplifier,common emitter amplifier,common gate amplifier,common source amplifier,common-mode rejection ratio,common-mode signals,CMOS - complimentary MOSFET logic.,comparator,complementary transistors,constant current circuit,conventional current flow,coulomb,coupling,current,current amplifier,current divider,current feedback,current mirror,cutoff,DAC,Darlington pair,DC,DC load line,DC offset,DC power supply,decade,decibel,degenerative feedback,depletion layer or region,depletion mode,depletion-mode MOSFET,device,dielectric,dielectric constant,dielectric strength,differential amplifier,differentiator,diffusion,digital,Digitizing oscilloscope,diode,direct coupling,direct current (DC),donor atoms,doping,electric charge,electric field,electromotive force,electron,electron flow,electrostatic,emitter,emitter feedback,emitter follower,engineering notation,enhancement-mode MOSFET,equivalent resistance,fall time,farad,feedback,feedback amplifier,field effect transistor (FET),filter,Flip Flop,forward bias,free electrons,frequency-domain analysis,frequency response,frequency response curve,full wave rectifier,function generator,fundamental frequency,gain,gain bandwidth product,GPIB,ground,half power point,h-parameters,half wave rectifier,harmonic,Harmonics,hole,IC,IC voltage regulator,IGFET,impedance,Interleave,internal resistance,intrinsic material,inverting amplifier,inverting input,ion,junction,junction diode,kilo,Kirchhoff's current law,Kirchhoff's voltage law,knee voltage,L-C tank circuit,light-emitting diode (LED),limiter,LIN,linear,linear scale,line regulation,load,load current,load impedance,loading effect,load regulation,load resistance,majority carriers,metal oxide field effect transistor (MOSFET),mid-band gain,mid-point bias,mil,Miller's theorem,minority carriers,Mixed-signal oscilloscopes (MSOs),Monostable,MOSFET,Multivibrator,n-type semiconductor,negative,negative charge,negative feedback,negative ion,negative resistance,negative temperature coefficient,node,noise,non-inverting input,non-linear scale,Norton's theorem,NPN transistor,One Shot,Open-loop gain,passive component,peak to peak,pentavalent element,percent of regulation,percent of ripple,pinch-off region,PNP transistor,positive feedback,potential difference,potentiometer,power supply rejection ratio (PSRR),protoboard,quiescent point,RC time constant,recombination,rectification,rectifier,regenerative feedback,regulated power supply,regulator,resistance,resistor,reverse bias,reverse breakdown voltage,reverse current,reverse saturation current,R-2R ladder,saturation,schematic diagram,scientific notation,SDRAM,self biasing,semiconductor,series circuit,signal to noise ratio (SNR),silicon,silicon dioxide,silicon transistor,solid state,source follower,source impedance,spectrum analyzer,SPI,summing amplifier,superposition theorem,Thévenin's theorem,threshold voltage,transconductance,transistor,trivalent element,unity gain frequency,USB,valence shell,varactor diode,variable capacitor,variable resistor,virtual ground,volt,voltage,voltage amplifier,voltage divider,voltage divider biasing,voltage drop,voltage feedback,voltage follower,voltage gain,voltage multiplier,voltage regulator,voltage source,zener diode"
-		/>
-		<meta name="author" content="PhasorSystems" />
-		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
-		<title id="title_text">untitled</title>
-		<link rel="icon" href="images/favicon.png" />
+				Think of Circuit Solver as an electronic circuit board, you drag your electrical components and place them on one at a time. You hook up some sources and you place some meters to read the values. If you need to analyze the waveform, grab some electrical leads and view them with an oscilloscope. There are many SPICE tools out there for PC such as Multisim, LTSpice, and PSpice. Circuit Solver doesn't compare to their raw power but it is optimized to run on mobile devices which makes it both portable and easily accessible to anyone in need of circuit solutions. Circuit Solver strives to verify Ohm's law, Kirchhoff's current and voltage laws by creating models that are both stable and efficient." />
+	<meta name="keywords"
+		content="Resistor,Capacitor,Inductor,AC Voltage Source,AC Current Source,DC Voltage Source,DC Current Source,Square Wave Source,Amp Meter,Ohm Meter,Volt Meter,Diode,Red LED,Green LED,Blue LED,Yellow LED,Orange LED,Wire,Voltage Controlled Voltage Source (VCVS),Voltage Controlled Current Source (VCCS),Current Controlled Current Source (CCCS),Current Controlled Voltage Source (CCVS),Switch (SPST),Switch (SPDT),Ground,Transformer,AND Gate,OR Gate,NOR Gate,NAND Gate,Inverter,Potentiometer,XOR Gate,XNOR Gate,NPN BJT,PNP BJT,NMOSFET,PMOSFET,OPAMP,Zener Diode,ACTUATOR SOLENOID,ALTERNATOR,ALTERNATING CURRENT (AC),AMBIENT TEMPERATURE,AMMETER,AMPERE,AMPERE,AMPLIFIER,AMPLITUDE,ANALOG IC,ANALOG GAUGE,ARMATURE,ARTIFICIAL MAGNETS,ATOM,AUXiliARY SPEED SENSOR,CALIBRATION,CAPACITOR,CHARGE,CURRENT,CURRENT FLOW,DIFFERENTIATOR CIRCUIT,DIGITAL IC,DIODE,DIRECT CURRENT (DC),DISCHARGE,,ELECTRICAL FIELD,ELECTRICITY,ELECTROCHEMICAL,ELECTRO,ELECTROLYTE,ELECTROMAGNET,ELECTROMAGNETIC,ELECTROMAGNETIC FIELD,ELECTROMAGNETIC INDUCTION,ELECTRON,ELECTRON THEORY,ELECTRONICS,ELECTRONIC CONTROL UNIT (ECU),ELECTRONIC GOVERNOR,ELECTRONIC IGNITION SYSTEM,ELEMENT,ENGINE CONTROLLER,FIELD EFFECT TRANSISTOR (FET),FIXED RESISTOR,FREOUENCY,MAGNETISM,FUSE,GATE,GENERATOR,GRID,GROUND,GROUNDED CIRCUIT,GROWLER,HYDROMETER,IGNITION CONTROL UN IT,INDUCTANCE,INDUCTOR,INSULATED GATE FIELD EFFECT TRANSISTOR (IGFET),INSULATOR,INTEGRATED CIRCUIT (IC),INTEGRATOR CIRCUIT,INVERTER,ION,ISOLATION DIODE,LIGHT EMITTING DIODE (LED),LINES OF FORCE,LIQUID CRYSTAL DISPLAY (LCD),MAGNET,MAGNETIC FIELD,MAGNETIC FLUX,MAGNETIC INDUCTION,MAGNETIC LINES OF FORCE,MAGNETIC MATERIAL,MAGNETIC NORTH,MAGNETIC PICKUP ASSEMBLY,MAGNETIC SOUTH,MAGNETIC SWITCH,MAGNETISM,MICROPROCESSOR,MILLIAMPERE,MOLECULE,MOTOR,MUL TIMETER,MUTUAL INDUCTION,NATURAL MAGNET,NEGATIVE,NEUTRON,NON,NORMALLY OPEN and NORMALLY CLOSED,OHM,OHMMETER,OHM'S LAW,OPEN OR OPEN CIRCUIT,OPERATIONAL AMPLIFIER,OVERRUNNING CLUTCH,PARALLEL CIRCUIT,PERMANENT MAGNET,PIEZO ELECTRIC DEVICE,PLATE,POLARITY,POLE,POLE SHOES,POSITIVE,POTENTIOMETER,POWER SWITCH TRANSISTOR,PRIMARY SPEED SENSOR,PRINCIPLE OF TURNING FORCE,PRINTED CIRCUIT BOARD,PROTON,PULSE,PULSE,RECTIFIER,REGULATOR,RELAY,RELUCTANCE,RELUCTOR,RESISTANCE,RESISTOR,RHEOSTAT,ROTOR,SEMICONDUCTOR,SENSOR,SERIES CIRCUIT,SERIES,SHORT (OR SHORT CIRCUIT),SHUNT,SOLENOID,STARTER MOTOR,STATOR,STORAGE BATTERY,SWITCH,SYNCHROGRAPH,TACHOMETER,TEMPORARY MAGNET,THERMISTOR,TRANSFORMER,TRANSIENT VOLTAGE PROTECTION MODULE (TVP),TRANSISTOR,TRIMMER RESISTOR,VACUUM FLORESCENT DISPLAY (VDC),VARIABLE RESISTOR,VOLT,VOLTAGE,VOLTAGE REGULATOR,VOLTMETER,WATT,WATT,WAVE,WAVEFORM,WINDING,WIRING,ZENER DIODE (Reverse Bias Direction Diode),acceptor atoms,AC coupling,AC load line,active component,active filter,active region,ADC,Aliased signals,alpha,amplifier,amplitude,analog,anode,Astable,attenuate,average value,AWG,bandwidth,barrier potential,base,base biasing,beta,bias,bipolar junction transistor,bode plot,branch current,breakdown voltage,bridge rectifier,buffer,bulk resistance,BW,bypass capacitor,CAD,calibration,Controller Area Network,capacitance,capacitor,cascaded amplifier,cascode amplifier,cathode,center tapped rectifier,center tapped transformer,charge,circuit,clamp,class A amplifier,class B amplifier,class C amplifier,clipper,closed circuit,closed-loop gain,collector,collector characteristic curve,common base amplifier,common collector amplifier,common drain amplifier,common emitter amplifier,common gate amplifier,common source amplifier,common-mode rejection ratio,common-mode signals,CMOS - complimentary MOSFET logic.,comparator,complementary transistors,constant current circuit,conventional current flow,coulomb,coupling,current,current amplifier,current divider,current feedback,current mirror,cutoff,DAC,Darlington pair,DC,DC load line,DC offset,DC power supply,decade,decibel,degenerative feedback,depletion layer or region,depletion mode,depletion-mode MOSFET,device,dielectric,dielectric constant,dielectric strength,differential amplifier,differentiator,diffusion,digital,Digitizing oscilloscope,diode,direct coupling,direct current (DC),donor atoms,doping,electric charge,electric field,electromotive force,electron,electron flow,electrostatic,emitter,emitter feedback,emitter follower,engineering notation,enhancement-mode MOSFET,equivalent resistance,fall time,farad,feedback,feedback amplifier,field effect transistor (FET),filter,Flip Flop,forward bias,free electrons,frequency-domain analysis,frequency response,frequency response curve,full wave rectifier,function generator,fundamental frequency,gain,gain bandwidth product,GPIB,ground,half power point,h-parameters,half wave rectifier,harmonic,Harmonics,hole,IC,IC voltage regulator,IGFET,impedance,Interleave,internal resistance,intrinsic material,inverting amplifier,inverting input,ion,junction,junction diode,kilo,Kirchhoff's current law,Kirchhoff's voltage law,knee voltage,L-C tank circuit,light-emitting diode (LED),limiter,LIN,linear,linear scale,line regulation,load,load current,load impedance,loading effect,load regulation,load resistance,majority carriers,metal oxide field effect transistor (MOSFET),mid-band gain,mid-point bias,mil,Miller's theorem,minority carriers,Mixed-signal oscilloscopes (MSOs),Monostable,MOSFET,Multivibrator,n-type semiconductor,negative,negative charge,negative feedback,negative ion,negative resistance,negative temperature coefficient,node,noise,non-inverting input,non-linear scale,Norton's theorem,NPN transistor,One Shot,Open-loop gain,passive component,peak to peak,pentavalent element,percent of regulation,percent of ripple,pinch-off region,PNP transistor,positive feedback,potential difference,potentiometer,power supply rejection ratio (PSRR),protoboard,quiescent point,RC time constant,recombination,rectification,rectifier,regenerative feedback,regulated power supply,regulator,resistance,resistor,reverse bias,reverse breakdown voltage,reverse current,reverse saturation current,R-2R ladder,saturation,schematic diagram,scientific notation,SDRAM,self biasing,semiconductor,series circuit,signal to noise ratio (SNR),silicon,silicon dioxide,silicon transistor,solid state,source follower,source impedance,spectrum analyzer,SPI,summing amplifier,superposition theorem,Thévenin's theorem,threshold voltage,transconductance,transistor,trivalent element,unity gain frequency,USB,valence shell,varactor diode,variable capacitor,variable resistor,virtual ground,volt,voltage,voltage amplifier,voltage divider,voltage divider biasing,voltage drop,voltage feedback,voltage follower,voltage gain,voltage multiplier,voltage regulator,voltage source,zener diode" />
+	<meta name="author" content="PhasorSystems" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+	<title id="title_text">untitled</title>
+	<link rel="icon" href="images/favicon.png" />
 
-		<!-- CSS !-->
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
+	<!-- Solver Options !-->
+	<script defer src="javascript/core/Options.js"></script>
 
-	<body oncontextmenu="return false;" style="margin: 0; padding: 0; backface-visibility: hidden">
-		<div id="solver" style="margin: 0; padding: 0; backface-visibility: hidden">
-			<input type="file" id="file_explorer" onchange="engine_functions.file_event(this)" onclick="this.value=null;" style="position: absolute; visibility: hidden; display: none" accept=".txt" />
-			<button id="file_explorer_mobile" style="position: absolute; visibility: hidden; display: none" onclick="window.JsInterface.javascript_native_hook('pull-circuit', 'null', 'null')"></button>
-			<button
-				id="file_saver"
-				style="position: absolute; visibility: hidden; display: none"
-				onclick="window.JsInterface.javascript_native_hook('push-circuit', global.user_file.title + '.txt', engine_functions.history_snapshot())"
-			></button>
-			<button id="file_loader" style="position: absolute; visibility: hidden; display: none" onclick="engine_functions.handle_file_loading()"></button>
-			<button style="position: absolute; visibility: hidden; display: none" onclick="javascript_button_hook()"></button>
-			<input type="text" value="undefined" id="text_input" style="position: absolute; visibility: hidden; display: none" />
-		</div>
+	<!-- Core Repository !-->
+	<script defer src="javascript/core/Circuit.js"></script>
+	<script defer src="javascript/core/Colors.js"></script>
+	<script defer src="javascript/core/Constants.js"></script>
+	<script defer src="javascript/core/Digit.js"></script>
+	<script defer src="javascript/core/ElectricalNode.js"></script>
+	<script defer src="javascript/core/Element1.js"></script>
+	<script defer src="javascript/core/Element2.js"></script>
+	<script defer src="javascript/core/Element3.js"></script>
+	<script defer src="javascript/core/Element4.js"></script>
+	<script defer src="javascript/core/ElementProperties.js"></script>
+	<script defer src="javascript/core/ElementTypes.js"></script>
+	<script defer src="javascript/core/EngineFunctions.js"></script>
+	<script defer src="javascript/core/Events.js"></script>
+	<script defer src="javascript/core/Flags.js"></script>
+	<script defer src="javascript/core/Global.js"></script>
+	<script defer src="javascript/core/KeyCodes.js"></script>
+	<script defer src="javascript/core/Metadata.js"></script>
+	<script defer src="javascript/core/NodeNetwork.js"></script>
+	<script defer src="javascript/core/NodeReference.js"></script>
+	<script defer src="javascript/core/PIDController.js"></script>
+	<script defer src="javascript/core/Settings.js"></script>
+	<script defer src="javascript/core/StringOperator.js"></script>
+	<script defer src="javascript/core/Templates.js"></script>
+	<script defer src="javascript/core/TPTZController.js"></script>
+	<script defer src="javascript/core/Util.js"></script>
+	<script defer src="javascript/core/Variables.js"></script>
 
-		<!-- Solver Options !-->
-		<script src="javascript/core/Options.js"></script>
+	<!-- Maths Repository !-->
+	<script defer src="javascript/maths/LinearAlgebra.js"></script>
 
-		<!-- Core Repository !-->
-		<script src="javascript/core/Circuit.js"></script>
-		<script src="javascript/core/Colors.js"></script>
-		<script src="javascript/core/Constants.js"></script>
-		<script src="javascript/core/Digit.js"></script>
-		<script src="javascript/core/ElectricalNode.js"></script>
-		<script src="javascript/core/Element1.js"></script>
-		<script src="javascript/core/Element2.js"></script>
-		<script src="javascript/core/Element3.js"></script>
-		<script src="javascript/core/Element4.js"></script>
-		<script src="javascript/core/ElementProperties.js"></script>
-		<script src="javascript/core/ElementTypes.js"></script>
-		<script src="javascript/core/EngineFunctions.js"></script>
-		<script src="javascript/core/Events.js"></script>
-		<script src="javascript/core/Flags.js"></script>
-		<script src="javascript/core/Global.js"></script>
-		<script src="javascript/core/KeyCodes.js"></script>
-		<script src="javascript/core/Metadata.js"></script>
-		<script src="javascript/core/NodeNetwork.js"></script>
-		<script src="javascript/core/NodeReference.js"></script>
-		<script src="javascript/core/PIDController.js"></script>
-		<script src="javascript/core/Settings.js"></script>
-		<script src="javascript/core/StringOperator.js"></script>
-		<script src="javascript/core/Templates.js"></script>
-		<script src="javascript/core/TPTZController.js"></script>
-		<script src="javascript/core/Util.js"></script>
-		<script src="javascript/core/Variables.js"></script>
+	<!-- Managers Repository !-->
+	<script defer src="javascript/managers/HistoryManager.js"></script>
+	<script defer src="javascript/managers/LanguageManager.js"></script>
+	<script defer src="javascript/managers/MultiSelectManager.js"></script>
+	<script defer src="javascript/managers/NodeManager.js"></script>
+	<script defer src="javascript/managers/ScopeManager.js"></script>
+	<script defer src="javascript/managers/SimulationManager.js"></script>
+	<script defer src="javascript/managers/WireManager.js"></script>
+	<script defer src="javascript/managers/ShortcutManager.js"></script>
 
-		<!-- Maths Repository !-->
-		<script src="javascript/maths/LinearAlgebra.js"></script>
+	<!-- Graphics Repository !-->
+	<script defer src="javascript/graphics/Arc.js"></script>
+	<script defer src="javascript/graphics/RectF.js"></script>
+	<script defer src="javascript/graphics/Button.js"></script>
+	<script defer src="javascript/graphics/GraphicsEngine.js"></script>
+	<script defer src="javascript/graphics/OnScreenKeyboard.js"></script>
+	<script defer src="javascript/graphics/Paint.js"></script>
+	<script defer src="javascript/graphics/PaintAlign.js"></script>
+	<script defer src="javascript/graphics/PaintCap.js"></script>
+	<script defer src="javascript/graphics/PaintJoin.js"></script>
+	<script defer src="javascript/graphics/PaintStyle.js"></script>
+	<script defer src="javascript/graphics/PaintBaseline.js"></script>
+	<script defer src="javascript/graphics/Path.js"></script>
+	<script defer src="javascript/graphics/PointF.js"></script>
+	<script defer src="javascript/graphics/SineWave.js"></script>
+	<script defer src="javascript/graphics/Toast.js"></script>
+	<script defer src="javascript/graphics/ToggleSwitch.js"></script>
+	<script defer src="javascript/graphics/Trace.js"></script>
+	<script defer src="javascript/graphics/VirtualCanvas.js"></script>
+	<script defer src="javascript/graphics/Workspace.js"></script>
+	<script defer src="javascript/graphics/Viewport.js"></script>
 
-		<!-- Managers Repository !-->
-		<script src="javascript/managers/HistoryManager.js"></script>
-		<script src="javascript/managers/LanguageManager.js"></script>
-		<script src="javascript/managers/MultiSelectManager.js"></script>
-		<script src="javascript/managers/NodeManager.js"></script>
-		<script src="javascript/managers/ScopeManager.js"></script>
-		<script src="javascript/managers/SimulationManager.js"></script>
-		<script src="javascript/managers/WireManager.js"></script>
-		<script src="javascript/managers/ShortcutManager.js"></script>
+	<!-- Menu Repository !-->
+	<script defer src="javascript/menus/BottomMenu.js"></script>
+	<script defer src="javascript/menus/MenuBar.js"></script>
 
-		<!-- Graphics Repository !-->
-		<script src="javascript/graphics/Arc.js"></script>
-		<script src="javascript/graphics/RectF.js"></script>
-		<script src="javascript/graphics/Button.js"></script>
-		<script src="javascript/graphics/GraphicsEngine.js"></script>
-		<script src="javascript/graphics/OnScreenKeyboard.js"></script>
-		<script src="javascript/graphics/Paint.js"></script>
-		<script src="javascript/graphics/PaintAlign.js"></script>
-		<script src="javascript/graphics/PaintCap.js"></script>
-		<script src="javascript/graphics/PaintJoin.js"></script>
-		<script src="javascript/graphics/PaintStyle.js"></script>
-		<script src="javascript/graphics/PaintBaseline.js"></script>
-		<script src="javascript/graphics/Path.js"></script>
-		<script src="javascript/graphics/PointF.js"></script>
-		<script src="javascript/graphics/SineWave.js"></script>
-		<script src="javascript/graphics/Toast.js"></script>
-		<script src="javascript/graphics/ToggleSwitch.js"></script>
-		<script src="javascript/graphics/Trace.js"></script>
-		<script src="javascript/graphics/VirtualCanvas.js"></script>
-		<script src="javascript/graphics/Workspace.js"></script>
-		<script src="javascript/graphics/Viewport.js"></script>
+	<!-- Window Repository !-->
+	<script defer src="javascript/windows/ConfirmWindow.js"></script>
+	<script defer src="javascript/windows/ElementOptions.js"></script>
+	<script defer src="javascript/windows/ElementOptionsEditWindow.js"></script>
+	<script defer src="javascript/windows/ElementOptionsWindow.js"></script>
+	<script defer src="javascript/windows/ElementWindow.js"></script>
+	<script defer src="javascript/windows/GraphWindow.js"></script>
+	<script defer src="javascript/windows/SaveCircuitWindow.js"></script>
+	<script defer src="javascript/windows/SaveImageWindow.js"></script>
+	<script defer src="javascript/windows/SettingsWindow.js"></script>
+	<script defer src="javascript/windows/TimeStepWindow.js"></script>
+	<script defer src="javascript/windows/ZoomWindow.js"></script>
 
-		<!-- Menu Repository !-->
-		<script src="javascript/menus/BottomMenu.js"></script>
-		<script src="javascript/menus/MenuBar.js"></script>
+	<!-- Symbol Repository !-->
+	<script defer src="javascript/symbols/MeterSymbols.js"></script>
 
-		<!-- Window Repository !-->
-		<script src="javascript/windows/ConfirmWindow.js"></script>
-		<script src="javascript/windows/ElementOptions.js"></script>
-		<script src="javascript/windows/ElementOptionsEditWindow.js"></script>
-		<script src="javascript/windows/ElementOptionsWindow.js"></script>
-		<script src="javascript/windows/ElementWindow.js"></script>
-		<script src="javascript/windows/GraphWindow.js"></script>
-		<script src="javascript/windows/SaveCircuitWindow.js"></script>
-		<script src="javascript/windows/SaveImageWindow.js"></script>
-		<script src="javascript/windows/SettingsWindow.js"></script>
-		<script src="javascript/windows/TimeStepWindow.js"></script>
-		<script src="javascript/windows/ZoomWindow.js"></script>
+	<!-- /* #INSERT_GENERATE_INDEX_HTML_ELEMENT_SYMBOL_REFERENCES# */ !-->
+	<!-- /* AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY */ !-->
+	<script defer src="javascript/symbols/ResistorSymbol.js"></script>
+	<script defer src="javascript/symbols/CapacitorSymbol.js"></script>
+	<script defer src="javascript/symbols/InductorSymbol.js"></script>
+	<script defer src="javascript/symbols/GroundSymbol.js"></script>
+	<script defer src="javascript/symbols/DCSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/DCCurrentSymbol.js"></script>
+	<script defer src="javascript/symbols/ACSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/ACCurrentSymbol.js"></script>
+	<script defer src="javascript/symbols/SquareWaveSymbol.js"></script>
+	<script defer src="javascript/symbols/SawWaveSymbol.js"></script>
+	<script defer src="javascript/symbols/TriangleWaveSymbol.js"></script>
+	<script defer src="javascript/symbols/ConstantSymbol.js"></script>
+	<script defer src="javascript/symbols/NetSymbol.js"></script>
+	<script defer src="javascript/symbols/NoteSymbol.js"></script>
+	<script defer src="javascript/symbols/RailSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltMeterSymbol.js"></script>
+	<script defer src="javascript/symbols/OhmMeterSymbol.js"></script>
+	<script defer src="javascript/symbols/AmMeterSymbol.js"></script>
+	<script defer src="javascript/symbols/WattMeterSymbol.js"></script>
+	<script defer src="javascript/symbols/FuseSymbol.js"></script>
+	<script defer src="javascript/symbols/SinglePoleSingleThrowSymbol.js"></script>
+	<script defer src="javascript/symbols/SinglePoleDoubleThrowSymbol.js"></script>
+	<script defer src="javascript/symbols/NOTGateSymbol.js"></script>
+	<script defer src="javascript/symbols/DiodeSymbol.js"></script>
+	<script defer src="javascript/symbols/LightEmittingDiodeSymbol.js"></script>
+	<script defer src="javascript/symbols/ZenerDiodeSymbol.js"></script>
+	<script defer src="javascript/symbols/PotentiometerSymbol.js"></script>
+	<script defer src="javascript/symbols/ANDGateSymbol.js"></script>
+	<script defer src="javascript/symbols/ORGateSymbol.js"></script>
+	<script defer src="javascript/symbols/NANDGateSymbol.js"></script>
+	<script defer src="javascript/symbols/NORGateSymbol.js"></script>
+	<script defer src="javascript/symbols/XORGateSymbol.js"></script>
+	<script defer src="javascript/symbols/XNORGateSymbol.js"></script>
+	<script defer src="javascript/symbols/DFlipFlopSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageSaturationSymbol.js"></script>
+	<script defer src="javascript/symbols/AdderSymbol.js"></script>
+	<script defer src="javascript/symbols/SubtractorSymbol.js"></script>
+	<script defer src="javascript/symbols/MultiplierSymbol.js"></script>
+	<script defer src="javascript/symbols/DividerSymbol.js"></script>
+	<script defer src="javascript/symbols/GainBlockSymbol.js"></script>
+	<script defer src="javascript/symbols/AbsoluteValueSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledSwitchSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledVoltageSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledCurrentSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/CurrentControlledCurrentSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/CurrentControlledVoltageSourceSymbol.js"></script>
+	<script defer src="javascript/symbols/OperationalAmplifierSymbol.js"></script>
+	<script defer src="javascript/symbols/NChannelMOSFETSymbol.js"></script>
+	<script defer src="javascript/symbols/PChannelMOSFETSymbol.js"></script>
+	<script defer src="javascript/symbols/NPNBipolarJunctionTransistorSymbol.js"></script>
+	<script defer src="javascript/symbols/PNPBipolarJunctionTransistorSymbol.js"></script>
+	<script defer src="javascript/symbols/ADCModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/DACModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/SampleAndHoldSymbol.js"></script>
+	<script defer src="javascript/symbols/PulseWidthModulatorSymbol.js"></script>
+	<script defer src="javascript/symbols/IntegratorModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/DifferentiatorModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/LowPassFilterSymbol.js"></script>
+	<script defer src="javascript/symbols/HighPassFilterSymbol.js"></script>
+	<script defer src="javascript/symbols/RelaySymbol.js"></script>
+	<script defer src="javascript/symbols/PIDModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/LookUpTableSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledResistorSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledCapacitorSymbol.js"></script>
+	<script defer src="javascript/symbols/VoltageControlledInductorSymbol.js"></script>
+	<script defer src="javascript/symbols/GreaterThanSymbol.js"></script>
+	<script defer src="javascript/symbols/TPTZModuleSymbol.js"></script>
+	<script defer src="javascript/symbols/TransformerSymbol.js"></script>
+	<!-- /* END AUTOMATICALLY GENERATED */ !-->
 
-		<!-- Symbol Repository !-->
-		<script src="javascript/symbols/MeterSymbols.js"></script>
-<!-- /* #INSERT_GENERATE_INDEX_HTML_ELEMENT_SYMBOL_REFERENCES# */ !-->
-<!-- /* AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY */ !-->
-	<script src="javascript/symbols/ResistorSymbol.js"></script>
-	<script src="javascript/symbols/CapacitorSymbol.js"></script>
-	<script src="javascript/symbols/InductorSymbol.js"></script>
-	<script src="javascript/symbols/GroundSymbol.js"></script>
-	<script src="javascript/symbols/DCSourceSymbol.js"></script>
-	<script src="javascript/symbols/DCCurrentSymbol.js"></script>
-	<script src="javascript/symbols/ACSourceSymbol.js"></script>
-	<script src="javascript/symbols/ACCurrentSymbol.js"></script>
-	<script src="javascript/symbols/SquareWaveSymbol.js"></script>
-	<script src="javascript/symbols/SawWaveSymbol.js"></script>
-	<script src="javascript/symbols/TriangleWaveSymbol.js"></script>
-	<script src="javascript/symbols/ConstantSymbol.js"></script>
-	<script src="javascript/symbols/NetSymbol.js"></script>
-	<script src="javascript/symbols/NoteSymbol.js"></script>
-	<script src="javascript/symbols/RailSymbol.js"></script>
-	<script src="javascript/symbols/VoltMeterSymbol.js"></script>
-	<script src="javascript/symbols/OhmMeterSymbol.js"></script>
-	<script src="javascript/symbols/AmMeterSymbol.js"></script>
-	<script src="javascript/symbols/WattMeterSymbol.js"></script>
-	<script src="javascript/symbols/FuseSymbol.js"></script>
-	<script src="javascript/symbols/SinglePoleSingleThrowSymbol.js"></script>
-	<script src="javascript/symbols/SinglePoleDoubleThrowSymbol.js"></script>
-	<script src="javascript/symbols/NOTGateSymbol.js"></script>
-	<script src="javascript/symbols/DiodeSymbol.js"></script>
-	<script src="javascript/symbols/LightEmittingDiodeSymbol.js"></script>
-	<script src="javascript/symbols/ZenerDiodeSymbol.js"></script>
-	<script src="javascript/symbols/PotentiometerSymbol.js"></script>
-	<script src="javascript/symbols/ANDGateSymbol.js"></script>
-	<script src="javascript/symbols/ORGateSymbol.js"></script>
-	<script src="javascript/symbols/NANDGateSymbol.js"></script>
-	<script src="javascript/symbols/NORGateSymbol.js"></script>
-	<script src="javascript/symbols/XORGateSymbol.js"></script>
-	<script src="javascript/symbols/XNORGateSymbol.js"></script>
-	<script src="javascript/symbols/DFlipFlopSymbol.js"></script>
-	<script src="javascript/symbols/VoltageSaturationSymbol.js"></script>
-	<script src="javascript/symbols/AdderSymbol.js"></script>
-	<script src="javascript/symbols/SubtractorSymbol.js"></script>
-	<script src="javascript/symbols/MultiplierSymbol.js"></script>
-	<script src="javascript/symbols/DividerSymbol.js"></script>
-	<script src="javascript/symbols/GainBlockSymbol.js"></script>
-	<script src="javascript/symbols/AbsoluteValueSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledSwitchSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledVoltageSourceSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledCurrentSourceSymbol.js"></script>
-	<script src="javascript/symbols/CurrentControlledCurrentSourceSymbol.js"></script>
-	<script src="javascript/symbols/CurrentControlledVoltageSourceSymbol.js"></script>
-	<script src="javascript/symbols/OperationalAmplifierSymbol.js"></script>
-	<script src="javascript/symbols/NChannelMOSFETSymbol.js"></script>
-	<script src="javascript/symbols/PChannelMOSFETSymbol.js"></script>
-	<script src="javascript/symbols/NPNBipolarJunctionTransistorSymbol.js"></script>
-	<script src="javascript/symbols/PNPBipolarJunctionTransistorSymbol.js"></script>
-	<script src="javascript/symbols/ADCModuleSymbol.js"></script>
-	<script src="javascript/symbols/DACModuleSymbol.js"></script>
-	<script src="javascript/symbols/SampleAndHoldSymbol.js"></script>
-	<script src="javascript/symbols/PulseWidthModulatorSymbol.js"></script>
-	<script src="javascript/symbols/IntegratorModuleSymbol.js"></script>
-	<script src="javascript/symbols/DifferentiatorModuleSymbol.js"></script>
-	<script src="javascript/symbols/LowPassFilterSymbol.js"></script>
-	<script src="javascript/symbols/HighPassFilterSymbol.js"></script>
-	<script src="javascript/symbols/RelaySymbol.js"></script>
-	<script src="javascript/symbols/PIDModuleSymbol.js"></script>
-	<script src="javascript/symbols/LookUpTableSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledResistorSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledCapacitorSymbol.js"></script>
-	<script src="javascript/symbols/VoltageControlledInductorSymbol.js"></script>
-	<script src="javascript/symbols/GreaterThanSymbol.js"></script>
-	<script src="javascript/symbols/TPTZModuleSymbol.js"></script>
-	<script src="javascript/symbols/TransformerSymbol.js"></script>
-<!-- /* END AUTOMATICALLY GENERATED */ !-->
+	<!-- Element Repository !-->
+	<!-- /* #INSERT_GENERATE_INDEX_HTML_ELEMENT_REFERENCES# */ !-->
+	<!-- /* AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY */ !-->
+	<script defer src="javascript/elements/Resistor.js"></script>
+	<script defer src="javascript/elements/Capacitor.js"></script>
+	<script defer src="javascript/elements/Inductor.js"></script>
+	<script defer src="javascript/elements/Ground.js"></script>
+	<script defer src="javascript/elements/DCSource.js"></script>
+	<script defer src="javascript/elements/DCCurrent.js"></script>
+	<script defer src="javascript/elements/ACSource.js"></script>
+	<script defer src="javascript/elements/ACCurrent.js"></script>
+	<script defer src="javascript/elements/SquareWave.js"></script>
+	<script defer src="javascript/elements/SawWave.js"></script>
+	<script defer src="javascript/elements/TriangleWave.js"></script>
+	<script defer src="javascript/elements/Constant.js"></script>
+	<script defer src="javascript/elements/Wire.js"></script>
+	<script defer src="javascript/elements/Net.js"></script>
+	<script defer src="javascript/elements/Note.js"></script>
+	<script defer src="javascript/elements/Rail.js"></script>
+	<script defer src="javascript/elements/VoltMeter.js"></script>
+	<script defer src="javascript/elements/OhmMeter.js"></script>
+	<script defer src="javascript/elements/AmMeter.js"></script>
+	<script defer src="javascript/elements/WattMeter.js"></script>
+	<script defer src="javascript/elements/Fuse.js"></script>
+	<script defer src="javascript/elements/SinglePoleSingleThrow.js"></script>
+	<script defer src="javascript/elements/SinglePoleDoubleThrow.js"></script>
+	<script defer src="javascript/elements/NOTGate.js"></script>
+	<script defer src="javascript/elements/Diode.js"></script>
+	<script defer src="javascript/elements/LightEmittingDiode.js"></script>
+	<script defer src="javascript/elements/ZenerDiode.js"></script>
+	<script defer src="javascript/elements/Potentiometer.js"></script>
+	<script defer src="javascript/elements/ANDGate.js"></script>
+	<script defer src="javascript/elements/ORGate.js"></script>
+	<script defer src="javascript/elements/NANDGate.js"></script>
+	<script defer src="javascript/elements/NORGate.js"></script>
+	<script defer src="javascript/elements/XORGate.js"></script>
+	<script defer src="javascript/elements/XNORGate.js"></script>
+	<script defer src="javascript/elements/DFlipFlop.js"></script>
+	<script defer src="javascript/elements/VoltageSaturation.js"></script>
+	<script defer src="javascript/elements/Adder.js"></script>
+	<script defer src="javascript/elements/Subtractor.js"></script>
+	<script defer src="javascript/elements/Multiplier.js"></script>
+	<script defer src="javascript/elements/Divider.js"></script>
+	<script defer src="javascript/elements/GainBlock.js"></script>
+	<script defer src="javascript/elements/AbsoluteValue.js"></script>
+	<script defer src="javascript/elements/VoltageControlledSwitch.js"></script>
+	<script defer src="javascript/elements/VoltageControlledVoltageSource.js"></script>
+	<script defer src="javascript/elements/VoltageControlledCurrentSource.js"></script>
+	<script defer src="javascript/elements/CurrentControlledCurrentSource.js"></script>
+	<script defer src="javascript/elements/CurrentControlledVoltageSource.js"></script>
+	<script defer src="javascript/elements/OperationalAmplifier.js"></script>
+	<script defer src="javascript/elements/NChannelMOSFET.js"></script>
+	<script defer src="javascript/elements/PChannelMOSFET.js"></script>
+	<script defer src="javascript/elements/NPNBipolarJunctionTransistor.js"></script>
+	<script defer src="javascript/elements/PNPBipolarJunctionTransistor.js"></script>
+	<script defer src="javascript/elements/ADCModule.js"></script>
+	<script defer src="javascript/elements/DACModule.js"></script>
+	<script defer src="javascript/elements/SampleAndHold.js"></script>
+	<script defer src="javascript/elements/PulseWidthModulator.js"></script>
+	<script defer src="javascript/elements/IntegratorModule.js"></script>
+	<script defer src="javascript/elements/DifferentiatorModule.js"></script>
+	<script defer src="javascript/elements/LowPassFilter.js"></script>
+	<script defer src="javascript/elements/HighPassFilter.js"></script>
+	<script defer src="javascript/elements/Relay.js"></script>
+	<script defer src="javascript/elements/PIDModule.js"></script>
+	<script defer src="javascript/elements/LookUpTable.js"></script>
+	<script defer src="javascript/elements/VoltageControlledResistor.js"></script>
+	<script defer src="javascript/elements/VoltageControlledCapacitor.js"></script>
+	<script defer src="javascript/elements/VoltageControlledInductor.js"></script>
+	<script defer src="javascript/elements/GreaterThan.js"></script>
+	<script defer src="javascript/elements/TPTZModule.js"></script>
+	<script defer src="javascript/elements/Transformer.js"></script>
+	<!-- /* END AUTOMATICALLY GENERATED */ !-->
 
-		<!-- Element Repository !-->
-<!-- /* #INSERT_GENERATE_INDEX_HTML_ELEMENT_REFERENCES# */ !-->
-<!-- /* AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY */ !-->
-	<script src="javascript/elements/Resistor.js"></script>
-	<script src="javascript/elements/Capacitor.js"></script>
-	<script src="javascript/elements/Inductor.js"></script>
-	<script src="javascript/elements/Ground.js"></script>
-	<script src="javascript/elements/DCSource.js"></script>
-	<script src="javascript/elements/DCCurrent.js"></script>
-	<script src="javascript/elements/ACSource.js"></script>
-	<script src="javascript/elements/ACCurrent.js"></script>
-	<script src="javascript/elements/SquareWave.js"></script>
-	<script src="javascript/elements/SawWave.js"></script>
-	<script src="javascript/elements/TriangleWave.js"></script>
-	<script src="javascript/elements/Constant.js"></script>
-	<script src="javascript/elements/Wire.js"></script>
-	<script src="javascript/elements/Net.js"></script>
-	<script src="javascript/elements/Note.js"></script>
-	<script src="javascript/elements/Rail.js"></script>
-	<script src="javascript/elements/VoltMeter.js"></script>
-	<script src="javascript/elements/OhmMeter.js"></script>
-	<script src="javascript/elements/AmMeter.js"></script>
-	<script src="javascript/elements/WattMeter.js"></script>
-	<script src="javascript/elements/Fuse.js"></script>
-	<script src="javascript/elements/SinglePoleSingleThrow.js"></script>
-	<script src="javascript/elements/SinglePoleDoubleThrow.js"></script>
-	<script src="javascript/elements/NOTGate.js"></script>
-	<script src="javascript/elements/Diode.js"></script>
-	<script src="javascript/elements/LightEmittingDiode.js"></script>
-	<script src="javascript/elements/ZenerDiode.js"></script>
-	<script src="javascript/elements/Potentiometer.js"></script>
-	<script src="javascript/elements/ANDGate.js"></script>
-	<script src="javascript/elements/ORGate.js"></script>
-	<script src="javascript/elements/NANDGate.js"></script>
-	<script src="javascript/elements/NORGate.js"></script>
-	<script src="javascript/elements/XORGate.js"></script>
-	<script src="javascript/elements/XNORGate.js"></script>
-	<script src="javascript/elements/DFlipFlop.js"></script>
-	<script src="javascript/elements/VoltageSaturation.js"></script>
-	<script src="javascript/elements/Adder.js"></script>
-	<script src="javascript/elements/Subtractor.js"></script>
-	<script src="javascript/elements/Multiplier.js"></script>
-	<script src="javascript/elements/Divider.js"></script>
-	<script src="javascript/elements/GainBlock.js"></script>
-	<script src="javascript/elements/AbsoluteValue.js"></script>
-	<script src="javascript/elements/VoltageControlledSwitch.js"></script>
-	<script src="javascript/elements/VoltageControlledVoltageSource.js"></script>
-	<script src="javascript/elements/VoltageControlledCurrentSource.js"></script>
-	<script src="javascript/elements/CurrentControlledCurrentSource.js"></script>
-	<script src="javascript/elements/CurrentControlledVoltageSource.js"></script>
-	<script src="javascript/elements/OperationalAmplifier.js"></script>
-	<script src="javascript/elements/NChannelMOSFET.js"></script>
-	<script src="javascript/elements/PChannelMOSFET.js"></script>
-	<script src="javascript/elements/NPNBipolarJunctionTransistor.js"></script>
-	<script src="javascript/elements/PNPBipolarJunctionTransistor.js"></script>
-	<script src="javascript/elements/ADCModule.js"></script>
-	<script src="javascript/elements/DACModule.js"></script>
-	<script src="javascript/elements/SampleAndHold.js"></script>
-	<script src="javascript/elements/PulseWidthModulator.js"></script>
-	<script src="javascript/elements/IntegratorModule.js"></script>
-	<script src="javascript/elements/DifferentiatorModule.js"></script>
-	<script src="javascript/elements/LowPassFilter.js"></script>
-	<script src="javascript/elements/HighPassFilter.js"></script>
-	<script src="javascript/elements/Relay.js"></script>
-	<script src="javascript/elements/PIDModule.js"></script>
-	<script src="javascript/elements/LookUpTable.js"></script>
-	<script src="javascript/elements/VoltageControlledResistor.js"></script>
-	<script src="javascript/elements/VoltageControlledCapacitor.js"></script>
-	<script src="javascript/elements/VoltageControlledInductor.js"></script>
-	<script src="javascript/elements/GreaterThan.js"></script>
-	<script src="javascript/elements/TPTZModule.js"></script>
-	<script src="javascript/elements/Transformer.js"></script>
-<!-- /* END AUTOMATICALLY GENERATED */ !-->
+	<!-- Library Repository !-->
+	<script defer src="javascript/libraries/Lodash/Lodash.js"></script>
+	<script defer src="javascript/libraries/FileSaver/FileSaver.js"></script>
+	<script defer src="javascript/Engine.js"></script>
 
-		<!-- Library Repository !-->
-		<script src="javascript/libraries/Lodash/Lodash.js"></script>
-		<script src="javascript/libraries/FileSaver/FileSaver.js"></script>
-		<script src="javascript/Engine.js"></script>
-		<script>
-			load_app();
-		</script>
-	</body>
+	<!-- CSS !-->
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body oncontextmenu="return false;" style="margin: 0; padding: 0; backface-visibility: hidden">
+	<div id="solver" style="margin: 0; padding: 0; backface-visibility: hidden">
+		<input type="file" id="file_explorer" onchange="engine_functions.file_event(this)" onclick="this.value=null;"
+			style="position: absolute; visibility: hidden; display: none" accept=".txt" />
+		<button id="file_explorer_mobile" style="position: absolute; visibility: hidden; display: none"
+			onclick="window.JsInterface.javascript_native_hook('pull-circuit', 'null', 'null')"></button>
+		<button id="file_saver" style="position: absolute; visibility: hidden; display: none"
+			onclick="window.JsInterface.javascript_native_hook('push-circuit', global.user_file.title + '.txt', engine_functions.history_snapshot())"></button>
+		<button id="file_loader" style="position: absolute; visibility: hidden; display: none"
+			onclick="engine_functions.handle_file_loading()"></button>
+		<button style="position: absolute; visibility: hidden; display: none"
+			onclick="javascript_button_hook()"></button>
+		<input type="text" value="undefined" id="text_input"
+			style="position: absolute; visibility: hidden; display: none" />
+	</div>
+</body>
+
 </html>

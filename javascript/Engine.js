@@ -2181,3 +2181,4 @@ function load_app() {
     }
     throttle_loop();
 }
+load_app();

@@ -2213,3 +2213,4 @@ function load_app(): void {
 	}
 	throttle_loop();
 }
+load_app();
