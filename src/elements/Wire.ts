@@ -24,7 +24,6 @@ class Wire {
 	private angle: number;
 	private indexer: number;
 	public is_translating: boolean;
-	private node_id_array: Array<number>;
 	constructor(type: number, id: number, n1: number, n2: number) {
 		this.initialized = false;
 		this.elm = new Element2(id, type, global.utils.copy(global.PROPERTY.PROPERTY_WIRE));
@@ -98,8 +97,8 @@ class Wire {
 			this.p2.set_point(nodes[this.elm.n2].location.x, nodes[this.elm.n2].location.y);
 		}
 	}
-	stamp(): void {}
-	release_wires(): void {}
+	stamp(): void { }
+	release_wires(): void { }
 	release_nodes(): void {
 		if (this.elm.consistent()) {
 			nodes[this.elm.n1].remove_reference(this.elm.id, this.elm.type);
@@ -130,7 +129,7 @@ class Wire {
 		}
 		this.build_element_flag = true;
 	}
-	move_element(dx: number, dy: number): void {}
+	move_element(dx: number, dy: number): void { }
 	mouse_down(): void {
 		if (
 			global.flags.flag_idle &&
@@ -156,7 +155,7 @@ class Wire {
 			}
 		}
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (global.flags.flag_idle) {
 			if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
@@ -310,7 +309,7 @@ class Wire {
 		}
 		this.set_wire_style(this.elm.wire_style);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	remove_focus(): void {
 		if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
 			global.variables.focused_id = global.CONSTANTS.NULL;
@@ -592,5 +591,5 @@ class Wire {
 		return time_data;
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
 	}
-	reset(): void {}
+	reset(): void { }
 }

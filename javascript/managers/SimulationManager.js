@@ -84,7 +84,6 @@ class SimulationManager {
     setup() {
         this.patch();
         global.variables.is_singular = false;
-        this.first_matrix_build = true;
         this.reset_simulation();
         if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] === global.CONSTANTS.ON) {
             this.time_step = this.determine_optimal_timestep();
@@ -987,6 +986,7 @@ class SimulationManager {
             if (this.first_x_matrix_copy) {
                 if (!this.first_x_matrix_solution) {
                     matrix_x_copy = linear_algebra.matrix(this.node_size + this.offset, 1);
+                    this.first_x_matrix_solution = true;
                 }
                 else {
                     matrix_x_copy = global.utils.copy(matrix_x);
@@ -1005,9 +1005,6 @@ class SimulationManager {
                     this.iterator = global.settings.ITL4;
                     matrix_x[i][0] = 0;
                 }
-            }
-            if (!this.first_x_matrix_solution) {
-                this.first_x_matrix_solution = true;
             }
             if (global.variables.is_singular) {
                 this.iterator = 0;
