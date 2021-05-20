@@ -1,4 +1,4 @@
-![alt text](https://github.com/SummersEdge23/Circuit-Solver-Web/tree/master/images/BoostConverter.png?raw=true)
+![Screenshot](https://github.com/SummersEdge23/Circuit-Solver-Web/tree/master/images/BoostConverter.png)
 
 As I approached my senior year for my B.S. in Electrical Engineering, I wanted to create something that most people hadn't created before, a circuit simulator! It was about the experience, the learning, and the the journey itself. I put together this application to package my knowledge in Electrical Engineering to some day help another student have an easier time in their scholastic pursuits and in turn teach them about circuits. Circuit Solver is far from perfect and there are lots of things that could be optimized. It will however, simulate a majority of linear Circuits and a decent amount of smaller scale Non-Linear Circuits. If this app helps you in any way, i'd appreciate you spreading the word to help support my efforts Thanks!
 
