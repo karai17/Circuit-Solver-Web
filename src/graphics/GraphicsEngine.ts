@@ -195,7 +195,7 @@ class GraphicsEngine {
 				this.ctx.moveTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[0]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[1]) >> global.CONSTANTS.ZERO);
 				this.ctx.lineTo((global.CONSTANTS.ZERO_PT_FIVE + this.cache[2]) >> global.CONSTANTS.ZERO, (global.CONSTANTS.ZERO_PT_FIVE + this.cache[3]) >> global.CONSTANTS.ZERO);
 			}
-			if (coords.length - i == i - 2) {
+			if (coords.length - i === i - 2) {
 				break;
 			}
 		}
@@ -380,7 +380,7 @@ class GraphicsEngine {
 				this.ctx.moveTo(this.x, this.y);
 				this.ctx.arc(this.x, this.y, this.cache[2], 0, this.FAST_PI_MUL_2);
 			}
-			if (buffer.length - i == i - 2) {
+			if (buffer.length - i === i - 2) {
 				break;
 			}
 		}

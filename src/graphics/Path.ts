@@ -60,7 +60,7 @@ class Path {
 				temp['y3'] = global.utils.remap_position(temp['y3'], false);
 			}
 
-			if (this.iterator == i) {
+			if (this.iterator === i) {
 				break;
 			}
 		}
