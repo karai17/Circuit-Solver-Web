@@ -248,6 +248,7 @@ function load_app(): void {
 				window.addEventListener('dblclick', double_click, true);
 				webpage_document_title = document.getElementById('title_text');
 			}
+
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] === global.CONSTANTS.ON) {
 				view_port.apply_spread_factor = true;
 				global.flags.flag_force_resize_event = true;
@@ -635,7 +636,7 @@ function load_app(): void {
 								}
 								canvas.release();
 								canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-								draw();
+								draw().then(function () { });
 								if (global.flags.flag_draw_block) {
 									global.flags.flag_draw_block = false;
 								}
@@ -1033,7 +1034,7 @@ function load_app(): void {
 		web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 		drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 	}
-	function draw(): void {
+	async function draw() {
 		refactor_sizes();
 		engine_functions.image_manager();
 		if (!global.flags.flag_picture_request) {
@@ -1288,6 +1289,8 @@ function load_app(): void {
 			canvas.draw_text(global.variables.mouse_x + ', ' + global.variables.mouse_y, global.variables.mouse_x, global.variables.mouse_y + 50, watermark_paint);
 		}
 		view_port.draw_viewport(canvas);
+
+		return null;
 	}
 	function handle_mouse_down(): void {
 		global.variables.component_touched = false;
