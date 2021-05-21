@@ -58,7 +58,7 @@ class Path {
                 temp['x3'] = global.utils.remap_position(temp['x3'], true);
                 temp['y3'] = global.utils.remap_position(temp['y3'], false);
             }
-            if (this.iterator == i) {
+            if (this.iterator === i) {
                 break;
             }
         }
