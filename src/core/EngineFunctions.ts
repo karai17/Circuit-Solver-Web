@@ -8908,7 +8908,7 @@ class EngineFunctions {
 			/* <!-- END AUTOMATICALLY GENERATED !--> */
 		}
 	}
-	async history_snapshot() {
+	history_snapshot(): string {
 		let packet: Array<string> = [];
 		let indexer: number = 0;
 		this.meta_data.elm.properties['date'] = global.utils.get_date_stamp();
