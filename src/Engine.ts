@@ -569,6 +569,29 @@ function load_app(): void {
 			);
 		}
 	}
+	async function render() {
+		if (!global.flags.flag_draw_block) {
+			ctx.drawImage(
+				virtual_surface.surface,
+				view_port.left,
+				view_port.top,
+				view_port.view_width,
+				view_port.view_height,
+				view_port.left,
+				view_port.top,
+				view_port.view_width,
+				view_port.view_height
+			);
+		}
+		canvas.release();
+		canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+		draw();
+		if (global.flags.flag_draw_block) {
+			global.flags.flag_draw_block = false;
+		}
+
+		return null;
+	}
 	function system_loop(): void {
 		try {
 			if (normal_draw_permissions()) {
@@ -621,25 +644,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								if (!global.flags.flag_draw_block) {
-									ctx.drawImage(
-										virtual_surface.surface,
-										view_port.left,
-										view_port.top,
-										view_port.view_width,
-										view_port.view_height,
-										view_port.left,
-										view_port.top,
-										view_port.view_width,
-										view_port.view_height
-									);
-								}
-								canvas.release();
-								canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-								draw().then(function () { });
-								if (global.flags.flag_draw_block) {
-									global.flags.flag_draw_block = false;
-								}
+								render().then(function () { });
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1034,7 +1039,7 @@ function load_app(): void {
 		web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 		drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
 	}
-	async function draw() {
+	function draw(): void {
 		refactor_sizes();
 		engine_functions.image_manager();
 		if (!global.flags.flag_picture_request) {
@@ -1289,8 +1294,6 @@ function load_app(): void {
 			canvas.draw_text(global.variables.mouse_x + ', ' + global.variables.mouse_y, global.variables.mouse_x, global.variables.mouse_y + 50, watermark_paint);
 		}
 		view_port.draw_viewport(canvas);
-
-		return null;
 	}
 	function handle_mouse_down(): void {
 		global.variables.component_touched = false;

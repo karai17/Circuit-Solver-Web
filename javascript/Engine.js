@@ -583,6 +583,20 @@ function load_app() {
                 !global.variables.system_initialization['completed']);
         }
     }
+    function render() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!global.flags.flag_draw_block) {
+                ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+            }
+            canvas.release();
+            canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+            draw();
+            if (global.flags.flag_draw_block) {
+                global.flags.flag_draw_block = false;
+            }
+            return null;
+        });
+    }
     function system_loop() {
         try {
             if (normal_draw_permissions()) {
@@ -636,15 +650,26 @@ function load_app() {
                     if (global.variables.system_initialization['completed']) {
                         if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
                             if (!global.flags.flag_on_restore_event) {
-                                if (!global.flags.flag_draw_block) {
-                                    ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-                                }
-                                canvas.release();
-                                canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-                                draw().then(function () { });
-                                if (global.flags.flag_draw_block) {
-                                    global.flags.flag_draw_block = false;
-                                }
+                                render().then(function () { });
+                                // if (!global.flags.flag_draw_block) {
+                                // 	ctx.drawImage(
+                                // 		virtual_surface.surface,
+                                // 		view_port.left,
+                                // 		view_port.top,
+                                // 		view_port.view_width,
+                                // 		view_port.view_height,
+                                // 		view_port.left,
+                                // 		view_port.top,
+                                // 		view_port.view_width,
+                                // 		view_port.view_height
+                                // 	);
+                                // }
+                                // canvas.release();
+                                // canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                                // draw().then(function () { });
+                                // if (global.flags.flag_draw_block) {
+                                // 	global.flags.flag_draw_block = false;
+                                // }
                             }
                             if (global.flags.flag_canvas_draw_request) {
                                 if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1040,235 +1065,232 @@ function load_app() {
         drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
     }
     function draw() {
-        return __awaiter(this, void 0, void 0, function* () {
-            refactor_sizes();
-            engine_functions.image_manager();
-            if (!global.flags.flag_picture_request) {
-                if (!MOBILE_MODE) {
-                    if (global.flags.flag_idle &&
-                        !global.flags.flag_save_image &&
-                        !global.flags.flag_save_circuit &&
-                        !global.flags.flag_zoom &&
-                        !global.flags.flag_element_options &&
-                        !global.flags.flag_element_options_edit &&
-                        !global.flags.flag_select_element &&
-                        !global.flags.flag_select_timestep &&
-                        !global.flags.flag_select_settings &&
-                        !global.flags.flag_remove_all &&
-                        !global.flags.flag_menu_element_toolbox &&
-                        !global.flags.flag_graph) {
-                        multi_select_manager.reset_enveloping_bounds();
-                    }
-                    if (global.flags.flag_build_element) {
-                        node_space_x_cache = 0.29375 * global.variables.node_space_x;
-                        node_space_y_cache = 0.29375 * global.variables.node_space_y;
-                        mult_node_space_x_cache = 1.75 * node_space_x_cache;
-                        mult_node_space_y_cache = 1.75 * node_space_y_cache;
-                        node_length = nodes.length;
-                        for (var i = 0; i < node_length; i += 2) {
-                            nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                            nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                            nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                            nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                            if (node_length - 2 - i === i + 2) {
-                                break;
-                            }
+        refactor_sizes();
+        engine_functions.image_manager();
+        if (!global.flags.flag_picture_request) {
+            if (!MOBILE_MODE) {
+                if (global.flags.flag_idle &&
+                    !global.flags.flag_save_image &&
+                    !global.flags.flag_save_circuit &&
+                    !global.flags.flag_zoom &&
+                    !global.flags.flag_element_options &&
+                    !global.flags.flag_element_options_edit &&
+                    !global.flags.flag_select_element &&
+                    !global.flags.flag_select_timestep &&
+                    !global.flags.flag_select_settings &&
+                    !global.flags.flag_remove_all &&
+                    !global.flags.flag_menu_element_toolbox &&
+                    !global.flags.flag_graph) {
+                    multi_select_manager.reset_enveloping_bounds();
+                }
+                if (global.flags.flag_build_element) {
+                    node_space_x_cache = 0.29375 * global.variables.node_space_x;
+                    node_space_y_cache = 0.29375 * global.variables.node_space_y;
+                    mult_node_space_x_cache = 1.75 * node_space_x_cache;
+                    mult_node_space_y_cache = 1.75 * node_space_y_cache;
+                    node_length = nodes.length;
+                    for (var i = 0; i < node_length; i += 2) {
+                        nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                        if (node_length - 2 - i === i + 2) {
+                            break;
                         }
                     }
-                    if (global.CONSTANTS.DEVELOPER_MODE) {
-                        node_length = nodes.length;
-                        for (var i = 0; i < node_length; i += 2) {
-                            nodes[i].draw(canvas);
-                            nodes[i + 1].draw(canvas);
-                            nodes[node_length - 1 - i].draw(canvas);
-                            nodes[node_length - 2 - i].draw(canvas);
-                            if (node_length - 2 - i === i + 2) {
-                                break;
-                            }
+                }
+                if (global.CONSTANTS.DEVELOPER_MODE) {
+                    node_length = nodes.length;
+                    for (var i = 0; i < node_length; i += 2) {
+                        nodes[i].draw(canvas);
+                        nodes[i + 1].draw(canvas);
+                        nodes[node_length - 1 - i].draw(canvas);
+                        nodes[node_length - 2 - i].draw(canvas);
+                        if (node_length - 2 - i === i + 2) {
+                            break;
                         }
                     }
-                    global.variables.element_on_board = false;
-                    global.variables.wire_line_buffer = [];
-                    global.variables.wire_line_buffer_index = 0;
-                    workspace.workspace_draw(canvas);
-                    engine_functions.draw_unselected_components(canvas);
-                    engine_functions.draw_wires(canvas);
-                    engine_functions.draw_selected_components(canvas);
-                    engine_functions.draw_meter_traces(canvas);
-                    if (global.variables.wire_builder['step'] > 0) {
-                        global.variables.node_line_buffer = [];
-                        global.variables.node_line_buffer_index = 0;
-                        node_length = nodes.length;
-                        for (var i = 0; i < node_length; i += 2) {
-                            nodes[i].draw(canvas);
-                            nodes[i + 1].draw(canvas);
-                            nodes[node_length - 1 - i].draw(canvas);
-                            nodes[node_length - 2 - i].draw(canvas);
-                            if (node_length - 2 - i === i + 2) {
-                                break;
-                            }
-                        }
-                        if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
-                            canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
-                            canvas.draw_rect2(nodes[global.variables.wire_builder['n1']].bounds, nodes[global.variables.wire_builder['n1']].node_fill_paint);
+                }
+                global.variables.element_on_board = false;
+                global.variables.wire_line_buffer = [];
+                global.variables.wire_line_buffer_index = 0;
+                workspace.workspace_draw(canvas);
+                engine_functions.draw_unselected_components(canvas);
+                engine_functions.draw_wires(canvas);
+                engine_functions.draw_selected_components(canvas);
+                engine_functions.draw_meter_traces(canvas);
+                if (global.variables.wire_builder['step'] > 0) {
+                    global.variables.node_line_buffer = [];
+                    global.variables.node_line_buffer_index = 0;
+                    node_length = nodes.length;
+                    for (var i = 0; i < node_length; i += 2) {
+                        nodes[i].draw(canvas);
+                        nodes[i + 1].draw(canvas);
+                        nodes[node_length - 1 - i].draw(canvas);
+                        nodes[node_length - 2 - i].draw(canvas);
+                        if (node_length - 2 - i === i + 2) {
+                            break;
                         }
                     }
-                    if (global.flags.flag_add_element) {
-                        drag_padding = workspace.bounds.get_width() * 0.025;
-                        if (!global.variables.element_on_board) {
-                            if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
-                                canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding, workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding, drag_fill_paint);
-                                canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-                            }
-                            else {
-                                canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
-                                canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-                            }
+                    if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
+                        canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
+                        canvas.draw_rect2(nodes[global.variables.wire_builder['n1']].bounds, nodes[global.variables.wire_builder['n1']].node_fill_paint);
+                    }
+                }
+                if (global.flags.flag_add_element) {
+                    drag_padding = workspace.bounds.get_width() * 0.025;
+                    if (!global.variables.element_on_board) {
+                        if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
+                            canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding, workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding, drag_fill_paint);
+                            canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+                        }
+                        else {
+                            canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
+                            canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
                         }
                     }
-                    else {
-                        if (!global.variables.element_on_board &&
-                            DESKTOP_MODE &&
-                            !global.flags.flag_select_timestep &&
-                            !global.flags.flag_select_settings &&
-                            !global.flags.flag_graph &&
-                            !global.flags.flag_zoom &&
-                            !global.flags.flag_remove_all &&
-                            !global.flags.flag_save_circuit &&
-                            !global.flags.flag_save_image) {
-                            canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
-                        }
-                    }
-                    multi_select_manager.draw_bounds(canvas);
-                    element_options.draw_options(canvas);
-                    menu_bar.draw_menu_bar(canvas);
-                    bottom_menu.draw_bottom_menu(canvas);
-                    time_step_window.draw_window(canvas);
-                    save_circuit_window.draw_window(canvas);
-                    save_image_window.draw_window(canvas);
-                    element_options_window.draw_window(canvas);
-                    element_options_edit_window.draw_window(canvas);
-                    zoom_window.draw_window(canvas);
-                    settings_window.draw_window(canvas);
-                    confirm_window.draw_window(canvas);
-                    graph_window.draw_window(canvas);
-                    toast.draw_toast(canvas);
                 }
                 else {
-                    if (global.flags.flag_idle &&
-                        !global.flags.flag_save_image &&
-                        !global.flags.flag_save_circuit &&
-                        !global.flags.flag_zoom &&
-                        !global.flags.flag_element_options &&
-                        !global.flags.flag_element_options_edit &&
+                    if (!global.variables.element_on_board &&
+                        DESKTOP_MODE &&
                         !global.flags.flag_select_timestep &&
                         !global.flags.flag_select_settings &&
-                        !global.flags.flag_remove_all) {
-                        workspace.workspace_draw(canvas);
-                        if (!global.flags.flag_graph) {
-                            if (global.flags.flag_build_element) {
-                                node_space_x_cache = 0.29375 * global.variables.node_space_x;
-                                node_space_y_cache = 0.29375 * global.variables.node_space_y;
-                                mult_node_space_x_cache = 1.75 * node_space_x_cache;
-                                mult_node_space_y_cache = 1.75 * node_space_y_cache;
-                                node_length = nodes.length;
-                                for (var i = 0; i < node_length; i += 2) {
-                                    nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                                    nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                                    nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                                    nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-                                    if (node_length - 2 - i === i + 2) {
-                                        break;
-                                    }
-                                }
-                            }
-                            if (global.CONSTANTS.DEVELOPER_MODE) {
-                                node_length = nodes.length;
-                                for (var i = 0; i < node_length; i += 2) {
-                                    nodes[i].draw(canvas);
-                                    nodes[i + 1].draw(canvas);
-                                    nodes[node_length - 1 - i].draw(canvas);
-                                    nodes[node_length - 2 - i].draw(canvas);
-                                    if (node_length - 2 - i === i + 2) {
-                                        break;
-                                    }
-                                }
-                            }
-                            global.variables.element_on_board = false;
-                            global.variables.wire_line_buffer = [];
-                            global.variables.wire_line_buffer_index = 0;
-                            engine_functions.draw_unselected_components(canvas);
-                            engine_functions.draw_wires(canvas);
-                            engine_functions.draw_selected_components(canvas);
-                            engine_functions.draw_meter_traces(canvas);
-                            if (global.variables.wire_builder['step'] > 0) {
-                                global.variables.node_line_buffer = [];
-                                global.variables.node_line_buffer_index = 0;
-                                node_length = nodes.length;
-                                for (var i = 0; i < node_length; i += 2) {
-                                    nodes[i].draw(canvas);
-                                    nodes[i + 1].draw(canvas);
-                                    nodes[node_length - 1 - i].draw(canvas);
-                                    nodes[node_length - 2 - i].draw(canvas);
-                                    if (node_length - 2 - i === i + 2) {
-                                        break;
-                                    }
-                                }
-                                if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
-                                    canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
-                                    canvas.draw_rect2(nodes[global.variables.wire_builder['n1']].bounds, nodes[global.variables.wire_builder['n1']].node_fill_paint);
-                                }
-                            }
-                            if (global.flags.flag_add_element) {
-                                drag_padding = workspace.bounds.get_width() * 0.025;
-                                if (!global.variables.element_on_board) {
-                                    if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
-                                        canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding, workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding, drag_fill_paint);
-                                        canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
-                                    }
-                                    else {
-                                        canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
-                                        canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
-                                    }
-                                }
-                            }
-                            else {
-                                if (!global.variables.element_on_board &&
-                                    !global.flags.flag_select_timestep &&
-                                    !global.flags.flag_select_settings &&
-                                    !global.flags.flag_graph &&
-                                    !global.flags.flag_zoom &&
-                                    !global.flags.flag_remove_all &&
-                                    !global.flags.flag_save_circuit &&
-                                    !global.flags.flag_save_image) {
-                                    canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
-                                }
-                            }
-                            element_options.draw_options(canvas);
-                            bottom_menu.draw_bottom_menu(canvas);
-                        }
-                        menu_bar.draw_menu_bar(canvas);
+                        !global.flags.flag_graph &&
+                        !global.flags.flag_zoom &&
+                        !global.flags.flag_remove_all &&
+                        !global.flags.flag_save_circuit &&
+                        !global.flags.flag_save_image) {
+                        canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
                     }
-                    time_step_window.draw_window(canvas);
-                    save_circuit_window.draw_window(canvas);
-                    save_image_window.draw_window(canvas);
-                    element_options_window.draw_window(canvas);
-                    element_options_edit_window.draw_window(canvas);
-                    zoom_window.draw_window(canvas);
-                    settings_window.draw_window(canvas);
-                    confirm_window.draw_window(canvas);
-                    graph_window.draw_window(canvas);
-                    on_screen_keyboard.draw_keyboard(canvas);
-                    toast.draw_toast(canvas);
                 }
+                multi_select_manager.draw_bounds(canvas);
+                element_options.draw_options(canvas);
+                menu_bar.draw_menu_bar(canvas);
+                bottom_menu.draw_bottom_menu(canvas);
+                time_step_window.draw_window(canvas);
+                save_circuit_window.draw_window(canvas);
+                save_image_window.draw_window(canvas);
+                element_options_window.draw_window(canvas);
+                element_options_edit_window.draw_window(canvas);
+                zoom_window.draw_window(canvas);
+                settings_window.draw_window(canvas);
+                confirm_window.draw_window(canvas);
+                graph_window.draw_window(canvas);
+                toast.draw_toast(canvas);
             }
-            if (global.CONSTANTS.DEVELOPER_MODE) {
-                canvas.draw_circle(global.variables.mouse_x, global.variables.mouse_y, 20, watermark_paint);
-                canvas.draw_text(global.variables.mouse_x + ', ' + global.variables.mouse_y, global.variables.mouse_x, global.variables.mouse_y + 50, watermark_paint);
+            else {
+                if (global.flags.flag_idle &&
+                    !global.flags.flag_save_image &&
+                    !global.flags.flag_save_circuit &&
+                    !global.flags.flag_zoom &&
+                    !global.flags.flag_element_options &&
+                    !global.flags.flag_element_options_edit &&
+                    !global.flags.flag_select_timestep &&
+                    !global.flags.flag_select_settings &&
+                    !global.flags.flag_remove_all) {
+                    workspace.workspace_draw(canvas);
+                    if (!global.flags.flag_graph) {
+                        if (global.flags.flag_build_element) {
+                            node_space_x_cache = 0.29375 * global.variables.node_space_x;
+                            node_space_y_cache = 0.29375 * global.variables.node_space_y;
+                            mult_node_space_x_cache = 1.75 * node_space_x_cache;
+                            mult_node_space_y_cache = 1.75 * node_space_y_cache;
+                            node_length = nodes.length;
+                            for (var i = 0; i < node_length; i += 2) {
+                                nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+                                if (node_length - 2 - i === i + 2) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (global.CONSTANTS.DEVELOPER_MODE) {
+                            node_length = nodes.length;
+                            for (var i = 0; i < node_length; i += 2) {
+                                nodes[i].draw(canvas);
+                                nodes[i + 1].draw(canvas);
+                                nodes[node_length - 1 - i].draw(canvas);
+                                nodes[node_length - 2 - i].draw(canvas);
+                                if (node_length - 2 - i === i + 2) {
+                                    break;
+                                }
+                            }
+                        }
+                        global.variables.element_on_board = false;
+                        global.variables.wire_line_buffer = [];
+                        global.variables.wire_line_buffer_index = 0;
+                        engine_functions.draw_unselected_components(canvas);
+                        engine_functions.draw_wires(canvas);
+                        engine_functions.draw_selected_components(canvas);
+                        engine_functions.draw_meter_traces(canvas);
+                        if (global.variables.wire_builder['step'] > 0) {
+                            global.variables.node_line_buffer = [];
+                            global.variables.node_line_buffer_index = 0;
+                            node_length = nodes.length;
+                            for (var i = 0; i < node_length; i += 2) {
+                                nodes[i].draw(canvas);
+                                nodes[i + 1].draw(canvas);
+                                nodes[node_length - 1 - i].draw(canvas);
+                                nodes[node_length - 2 - i].draw(canvas);
+                                if (node_length - 2 - i === i + 2) {
+                                    break;
+                                }
+                            }
+                            if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
+                                canvas.draw_line_buffer(global.variables.node_line_buffer, nodes[global.variables.wire_builder['n1']].node_line_paint);
+                                canvas.draw_rect2(nodes[global.variables.wire_builder['n1']].bounds, nodes[global.variables.wire_builder['n1']].node_fill_paint);
+                            }
+                        }
+                        if (global.flags.flag_add_element) {
+                            drag_padding = workspace.bounds.get_width() * 0.025;
+                            if (!global.variables.element_on_board) {
+                                if (view_port.left <= workspace.bounds.left || view_port.top <= workspace.bounds.top || view_port.right >= workspace.bounds.right || view_port.bottom >= workspace.bounds.bottom) {
+                                    canvas.draw_rect(workspace.bounds.left + drag_padding, workspace.bounds.top + drag_padding, workspace.bounds.right - drag_padding, workspace.bounds.bottom - drag_padding, drag_fill_paint);
+                                    canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), drag_text_paint);
+                                }
+                                else {
+                                    canvas.draw_rect(view_port.left + drag_padding, view_port.top + drag_padding, view_port.right - drag_padding, view_port.bottom - drag_padding, drag_fill_paint);
+                                    canvas.draw_text(language_manager.DRAG_AND_DROP[global.CONSTANTS.LANGUAGES[global.variables.language_index]], view_port.center_x, view_port.center_y, drag_text_paint);
+                                }
+                            }
+                        }
+                        else {
+                            if (!global.variables.element_on_board &&
+                                !global.flags.flag_select_timestep &&
+                                !global.flags.flag_select_settings &&
+                                !global.flags.flag_graph &&
+                                !global.flags.flag_zoom &&
+                                !global.flags.flag_remove_all &&
+                                !global.flags.flag_save_circuit &&
+                                !global.flags.flag_save_image) {
+                                canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
+                            }
+                        }
+                        element_options.draw_options(canvas);
+                        bottom_menu.draw_bottom_menu(canvas);
+                    }
+                    menu_bar.draw_menu_bar(canvas);
+                }
+                time_step_window.draw_window(canvas);
+                save_circuit_window.draw_window(canvas);
+                save_image_window.draw_window(canvas);
+                element_options_window.draw_window(canvas);
+                element_options_edit_window.draw_window(canvas);
+                zoom_window.draw_window(canvas);
+                settings_window.draw_window(canvas);
+                confirm_window.draw_window(canvas);
+                graph_window.draw_window(canvas);
+                on_screen_keyboard.draw_keyboard(canvas);
+                toast.draw_toast(canvas);
             }
-            view_port.draw_viewport(canvas);
-            return null;
-        });
+        }
+        if (global.CONSTANTS.DEVELOPER_MODE) {
+            canvas.draw_circle(global.variables.mouse_x, global.variables.mouse_y, 20, watermark_paint);
+            canvas.draw_text(global.variables.mouse_x + ', ' + global.variables.mouse_y, global.variables.mouse_x, global.variables.mouse_y + 50, watermark_paint);
+        }
+        view_port.draw_viewport(canvas);
     }
     function handle_mouse_down() {
         global.variables.component_touched = false;
