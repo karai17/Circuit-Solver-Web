@@ -277,7 +277,7 @@ class Util {
 	not_null(obj: any) {
 		return !(obj == this.NULL);
 	}
-	copy(obj: any) {
+	copy(obj: any): any {
 		return _.cloneDeep(obj);
 	}
 	print(obj: any) {
