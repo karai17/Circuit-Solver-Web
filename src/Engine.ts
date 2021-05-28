@@ -356,7 +356,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) { }
+		} catch (e) {}
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -571,17 +571,7 @@ function load_app(): void {
 	}
 	async function render() {
 		if (!global.flags.flag_draw_block) {
-			ctx.drawImage(
-				virtual_surface.surface,
-				view_port.left,
-				view_port.top,
-				view_port.view_width,
-				view_port.view_height,
-				view_port.left,
-				view_port.top,
-				view_port.view_width,
-				view_port.view_height
-			);
+			ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
 		}
 		canvas.release();
 		canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
@@ -644,7 +634,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () { });
+								render().then(function () {});
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1594,7 +1584,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-			0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+				0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;
@@ -2216,7 +2206,7 @@ function load_app(): void {
 		}
 		requestAnimationFrame(throttle_loop);
 	}
-	if (!MOBILE_MODE) {
+	if (!MOBILE_MODE && !DESKTOP_MODE) {
 		register();
 	}
 	throttle_loop();

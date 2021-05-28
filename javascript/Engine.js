@@ -2193,7 +2193,7 @@ function load_app() {
         }
         requestAnimationFrame(throttle_loop);
     }
-    if (!MOBILE_MODE) {
+    if (!MOBILE_MODE && !DESKTOP_MODE) {
         register();
     }
     throttle_loop();

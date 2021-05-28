@@ -178,6 +178,7 @@ class SimulationManager {
 		this.patch();
 		global.variables.is_singular = false;
 		this.reset_simulation();
+		this.reset_elements();
 		if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] === global.CONSTANTS.ON) {
 			this.time_step = this.determine_optimal_timestep();
 			bottom_menu.resize_bottom_menu();
@@ -656,6 +657,7 @@ class SimulationManager {
 		this.simulation_step = 0;
 		this.solutions_ready = false;
 		global.variables.is_singular = false;
+		this.time_data.splice(0, this.time_data.length);
 		toast.set_text(language_manager.STOP_SIMULATION[global.CONSTANTS.LANGUAGES[global.variables.language_index]]);
 		toast.show(global.COLORS.GENERAL_GREEN_COLOR);
 	}
