@@ -178,7 +178,6 @@ class SimulationManager {
 		this.patch();
 		global.variables.is_singular = false;
 		this.reset_simulation();
-		this.reset_elements();
 		if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] === global.CONSTANTS.ON) {
 			this.time_step = this.determine_optimal_timestep();
 			bottom_menu.resize_bottom_menu();
@@ -364,15 +363,6 @@ class SimulationManager {
 		for (var i: number = nots.length - 1; i > -1; i--) {
 			this.time_data.push(nots[i].time_data());
 		}
-		for (var i: number = diodes.length - 1; i > -1; i--) {
-			this.time_data.push(diodes[i].time_data());
-		}
-		for (var i: number = leds.length - 1; i > -1; i--) {
-			this.time_data.push(leds[i].time_data());
-		}
-		for (var i: number = zeners.length - 1; i > -1; i--) {
-			this.time_data.push(zeners[i].time_data());
-		}
 		for (var i: number = potentiometers.length - 1; i > -1; i--) {
 			this.time_data.push(potentiometers[i].time_data());
 		}
@@ -435,18 +425,6 @@ class SimulationManager {
 		}
 		for (var i: number = opamps.length - 1; i > -1; i--) {
 			this.time_data.push(opamps[i].time_data());
-		}
-		for (var i: number = nmosfets.length - 1; i > -1; i--) {
-			this.time_data.push(nmosfets[i].time_data());
-		}
-		for (var i: number = pmosfets.length - 1; i > -1; i--) {
-			this.time_data.push(pmosfets[i].time_data());
-		}
-		for (var i: number = npns.length - 1; i > -1; i--) {
-			this.time_data.push(npns[i].time_data());
-		}
-		for (var i: number = pnps.length - 1; i > -1; i--) {
-			this.time_data.push(pnps[i].time_data());
 		}
 		for (var i: number = adcs.length - 1; i > -1; i--) {
 			this.time_data.push(adcs[i].time_data());
@@ -592,7 +570,10 @@ class SimulationManager {
 		}
 
 		let ts_final: number = 1;
-		let multiplier: number = 0.016;
+		let f_multiplier: number = 0.016;
+		let rl_multiplier: number = 1000;
+		let lc_multiplier: number = 8;
+		let rc_multiplier: number = 100;
 
 		if (!min_freq_updated) {
 			min_frequency = global.settings.MIN_FREQUENCY;
@@ -620,13 +601,13 @@ class SimulationManager {
 		}
 
 		if (parallel_series_updated) {
-			let rc_parallel: number = Math.min(Math.max(parallel_resistance * min_capacitance * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let rl_parallel: number = Math.min(Math.max((min_inductance / parallel_resistance) * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let max_period: number = (1.0 / max_frequency) * multiplier;
-			let rc_series: number = Math.min(Math.max(series_resistance * min_capacitance * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let rl_series: number = Math.min(Math.max((min_inductance / series_resistance) * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let min_period: number = (1.0 / min_frequency) * multiplier;
+			let rc_parallel: number = Math.min(Math.max(parallel_resistance * min_capacitance * rc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let rl_parallel: number = Math.min(Math.max((min_inductance / parallel_resistance) * rl_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * lc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let max_period: number = (1.0 / max_frequency) * f_multiplier;
+			let rc_series: number = Math.min(Math.max(series_resistance * min_capacitance * rc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let rl_series: number = Math.min(Math.max((min_inductance / series_resistance) * rl_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let min_period: number = (1.0 / min_frequency) * f_multiplier;
 			let ts1: number = global.utils.min3(rc_parallel, rl_parallel, max_period);
 			let ts2: number = global.utils.min3(rc_series, rl_series, min_period);
 			ts_final = global.utils.min3(ts1, ts2, t_lc);
@@ -635,9 +616,9 @@ class SimulationManager {
 				ts_final = 1;
 			}
 		} else {
-			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let max_period: number = (1.0 / max_frequency) * multiplier;
-			let min_period: number = (1.0 / min_frequency) * multiplier;
+			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * lc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let max_period: number = (1.0 / max_frequency) * f_multiplier;
+			let min_period: number = (1.0 / min_frequency) * f_multiplier;
 			ts_final = global.utils.min3(max_period, min_period, t_lc);
 			ts_final = Math.min(Math.max(ts_final, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
 
