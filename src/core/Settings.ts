@@ -93,7 +93,7 @@ class Settings {
 		this.MIN_DUTY_CYCLE = 2;
 		this.MAX_POSTSCALER = 500e6;
 		this.MIN_POSTSCALER = 1;
-		this.MIN_TIME_CONSTANT = 100e-9;
+		this.MIN_TIME_CONSTANT = 100e-8;
 		this.MAX_TIME_CONSTANT = 10;
 		this.THERMAL_VOLTAGE = 25.6e-3;
 		this.GMIN_DEFAULT = 1e-9;

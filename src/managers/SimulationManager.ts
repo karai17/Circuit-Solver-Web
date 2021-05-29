@@ -570,16 +570,16 @@ class SimulationManager {
 		}
 
 		let ts_final: number = 1;
-		let f_multiplier: number = 0.016;
-		let rl_multiplier: number = 1000;
-		let lc_multiplier: number = 8;
-		let rc_multiplier: number = 100;
+		let f_multiplier: number = 0.015;
+		let rl_multiplier: number = 0.01;
+		let lc_multiplier: number = 0.01;
+		let rc_multiplier: number = 0.01;
 
 		if (!min_freq_updated) {
-			min_frequency = global.settings.MIN_FREQUENCY;
+			min_frequency = global.settings.MAX_FREQUENCY;
 		}
 		if (!max_freq_updated) {
-			max_frequency = global.settings.MIN_FREQUENCY;
+			max_frequency = global.settings.MAX_FREQUENCY;
 		}
 		if (!min_res_updated) {
 			min_resistance = global.settings.R_MAX * 0.5;
@@ -601,28 +601,31 @@ class SimulationManager {
 		}
 
 		if (parallel_series_updated) {
-			let rc_parallel: number = Math.min(Math.max(parallel_resistance * min_capacitance * rc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let rl_parallel: number = Math.min(Math.max((min_inductance / parallel_resistance) * rl_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * lc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
+			let rc_parallel: number = parallel_resistance * min_capacitance * rc_multiplier;
+			let rl_parallel: number = (min_inductance / parallel_resistance) * rl_multiplier;
+			let rc_series: number = series_resistance * min_capacitance * rc_multiplier;
+			let rl_series: number = (min_inductance / series_resistance) * rl_multiplier;
 			let max_period: number = (1.0 / max_frequency) * f_multiplier;
-			let rc_series: number = Math.min(Math.max(series_resistance * min_capacitance * rc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			let rl_series: number = Math.min(Math.max((min_inductance / series_resistance) * rl_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
 			let min_period: number = (1.0 / min_frequency) * f_multiplier;
-			let ts1: number = global.utils.min3(rc_parallel, rl_parallel, max_period);
-			let ts2: number = global.utils.min3(rc_series, rl_series, min_period);
-			ts_final = global.utils.min3(ts1, ts2, t_lc);
+			let t_s1: number = global.utils.min3(rc_parallel, rl_parallel, max_period);
+			let t_s2: number = global.utils.min3(rc_series, rl_series, min_period);
+			let t_lc: number = Math.sqrt(min_capacitance * min_inductance) * lc_multiplier;
+
+			ts_final = global.utils.min3(t_s1, t_s2, t_lc);
 			ts_final = Math.min(Math.max(ts_final, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-			if (!max_freq_updated && !min_freq_updated && !min_cap_updated && !max_cap_updated && !min_ind_updated && !max_ind_updated) {
+
+			if (!max_freq_updated && !min_freq_updated && !max_cap_updated && !min_cap_updated && !max_ind_updated && !min_ind_updated) {
 				ts_final = 1;
 			}
 		} else {
-			let t_lc: number = Math.min(Math.max(Math.sqrt(min_capacitance * min_inductance) * lc_multiplier, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
 			let max_period: number = (1.0 / max_frequency) * f_multiplier;
 			let min_period: number = (1.0 / min_frequency) * f_multiplier;
+			let t_lc: number = Math.sqrt(min_capacitance * min_inductance) * lc_multiplier;
+
 			ts_final = global.utils.min3(max_period, min_period, t_lc);
 			ts_final = Math.min(Math.max(ts_final, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
 
-			if (!max_freq_updated && !min_freq_updated && !min_cap_updated && !max_cap_updated && !min_ind_updated && !max_ind_updated) {
+			if (!max_freq_updated && !min_freq_updated && !max_cap_updated && !min_cap_updated && !max_ind_updated && !min_ind_updated) {
 				ts_final = 1;
 			}
 		}

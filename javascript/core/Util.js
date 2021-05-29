@@ -217,6 +217,9 @@ class Util {
     get_average2(a, b) {
         return (a + b) * 0.5;
     }
+    get_average3(a, b, c) {
+        return (a + b + c) * 0.333;
+    }
     equilateral_triangle_center(p1_x, p2_x, p3_x, p1_y, p2_y, p3_y) {
         let temp = 0;
         temp = this.norm(p2_x - p1_x, p2_y - p1_y) * 0.5;
