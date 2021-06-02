@@ -416,8 +416,8 @@ class Ground {
 		this.c_y = this.bounds.get_center_y();
 		this.build_element_flag = false;
 	}
-	update(): void {}
-	set_flip(flip: number): void {}
+	update(): void { }
+	set_flip(flip: number): void { }
 	set_rotation(rotation: number): void {
 		this.build_element_flag = true;
 		wire_manager.reset_wire_builder();
@@ -434,7 +434,7 @@ class Ground {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -568,21 +568,5 @@ class Ground {
 			this.multi_selected = false;
 		}
 	}
-	time_data(): TIME_DATA_TEMPLATE_T {
-		/* #INSERT_GENERATE_TIME_DATA# */
-		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		var keys: Array<string> = Object.keys(this.elm.properties);
-		for (var i: number = keys.length - 1; i > -1; i--) {
-			if (typeof this.elm.properties[keys[i]] === 'number') {
-				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-					time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-				}
-			}
-		}
-
-		return time_data;
-		/* <!-- END AUTOMATICALLY GENERATED !--> */
-	}
-	reset(): void {}
+	reset(): void { }
 }

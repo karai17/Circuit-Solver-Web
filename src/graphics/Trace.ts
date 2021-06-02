@@ -120,8 +120,7 @@ class Trace {
 			}
 		}
 		this.create_path();
-	}
-	reset(): void {
+	} reset(): void {
 		this.trace.splice(0, this.trace.length);
 		this.magnitude_list.splice(0, this.magnitude_list.length);
 		this.norm = 1;

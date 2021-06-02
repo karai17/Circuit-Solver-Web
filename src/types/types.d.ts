@@ -118,12 +118,6 @@ declare type SYSTEM_INITIALIZATION_T = {
 	max: number;
 	completed: boolean;
 };
-declare type TIME_DATA_TEMPLATE_T = {
-	[Frequency: string]: number;
-	Resistance: number;
-	Capacitance: number;
-	Inductance: number;
-};
 declare type ANCHOR_POINT_T = {
 	p1: number;
 	p2: number;

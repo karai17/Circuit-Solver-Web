@@ -41,7 +41,6 @@ class Constants {
 	public readonly LANGUAGE_INDEX_GERMAN: number;
 	public readonly LANGUAGE_INDEX_INDONESIAN: number;
 	public readonly SYSTEM_OPTION_LANGUAGE: number;
-	public readonly SYSTEM_OPTION_AUTOMATIC_TIMESTEP: number;
 	public readonly SYSTEM_OPTION_SHORTCUT_HINTS: number;
 	public readonly SYSTEM_OPTION_STRETCH_WINDOW: number;
 	public readonly DEFAULT_FONT: string;
@@ -90,7 +89,7 @@ class Constants {
 		let indexer: number = 0;
 		this.NULL = null;
 		this.NODE_HINTS = true;
-		this.VERSION_TAG = '1.1.07';
+		this.VERSION_TAG = '1.1.08';
 		if (MOBILE_MODE) {
 			this.ZOOM_MAX = 3.5;
 			this.ZOOM_MIN = 1.0;
@@ -127,7 +126,6 @@ class Constants {
 		this.DEFAULT_FONT = 'Arial';
 		indexer = 0;
 		this.SYSTEM_OPTION_LANGUAGE = indexer++;
-		this.SYSTEM_OPTION_AUTOMATIC_TIMESTEP = indexer++;
 		this.SYSTEM_OPTION_SHORTCUT_HINTS = indexer++;
 		this.SYSTEM_OPTION_STRETCH_WINDOW = indexer++;
 		this.LANGUAGES = ['English', 'Spanish', 'French', 'Italian', 'Dutch', 'Russian', 'German', 'Indonesian'];

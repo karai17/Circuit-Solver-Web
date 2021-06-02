@@ -45,9 +45,9 @@ class SettingsWindow {
 		}
 		this.ATTRIBUTE_SIZE = 6;
 		if (MOBILE_MODE === false) {
-			this.ATTRIBUTE_SHOW_SIZE = 4;
+			this.ATTRIBUTE_SHOW_SIZE = 3;
 		} else {
-			this.ATTRIBUTE_SHOW_SIZE = 2;
+			this.ATTRIBUTE_SHOW_SIZE = 1;
 		}
 		this.ATTRIBUTE_SELECT = ['1', '2', '3', '4', '5', '6'];
 		this.line_paint = new Paint();
@@ -251,12 +251,6 @@ class SettingsWindow {
 						) {
 							this.on_attribute_clicked(global.CONSTANTS.SYSTEM_OPTION_LANGUAGE);
 						} else if (
-							this.null_index_check(this.attributes, global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP) &&
-							this.attributes[global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP].contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) &&
-							this.attributes[global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP].contains_xy(this.first_touch_x - this.offset_x, this.first_touch_y - this.offset_y)
-						) {
-							this.on_attribute_clicked(global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP);
-						} else if (
 							this.null_index_check(this.attributes, global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS) &&
 							this.attributes[global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS].contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) &&
 							this.attributes[global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS].contains_xy(this.first_touch_x - this.offset_x, this.first_touch_y - this.offset_y)
@@ -290,15 +284,6 @@ class SettingsWindow {
 						global.variables.language_index = 0;
 					}
 					global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_LANGUAGE] = global.CONSTANTS.LANGUAGES[global.variables.language_index];
-				}
-				global.variables.component_touched = true;
-			} else if (index === global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP) {
-				if (global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP < this.ATTRIBUTE_SHOW_SIZE) {
-					if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] === global.CONSTANTS.OFF) {
-						global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] = global.CONSTANTS.ON;
-					} else {
-						global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] = global.CONSTANTS.OFF;
-					}
 				}
 				global.variables.component_touched = true;
 			} else if (index === global.CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS) {
@@ -440,13 +425,6 @@ class SettingsWindow {
 						if (i === global.CONSTANTS.SYSTEM_OPTION_LANGUAGE) {
 							canvas.draw_text(
 								language_manager.LANGUAGE[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + ':=',
-								this.attributes[i].left + this.PADDING * this.bounds.get_width() + this.offset_x,
-								this.attributes[i].get_center_y() + this.offset_y,
-								this.text_paint
-							);
-						} else if (i === global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP) {
-							canvas.draw_text(
-								language_manager.AUTOMATIC_TIMESTEP[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + ':=',
 								this.attributes[i].left + this.PADDING * this.bounds.get_width() + this.offset_x,
 								this.attributes[i].get_center_y() + this.offset_y,
 								this.text_paint

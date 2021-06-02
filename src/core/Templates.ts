@@ -5,7 +5,6 @@ class Templates {
 	public readonly DIVISION_TEXT_TEMPLATE: string;
 	public readonly PIXEL_TEMPLATE: string;
 	public readonly PNG_TEMPLATE: string;
-	public readonly TIME_DATA_TEMPLATE: TIME_DATA_TEMPLATE_T;
 	public readonly TEXT_UNDERSCORE_TEMPLATE: string;
 	public readonly VERSION_TAG_TEMPLATE: string;
 	public readonly TIMESTEP_TEMPLATE: string;
@@ -22,11 +21,5 @@ class Templates {
 		this.TIMESTEP_TEMPLATE = 'Δt:={TIMESTEP}s';
 		this.FILE_BUTTON_TEXT_TEMPLATE = '  {TEXT}  ';
 		this.DEBUG_TEMPLATE = '({ID},{TYPE}),';
-		this.TIME_DATA_TEMPLATE = {
-			Frequency: -1,
-			Resistance: -1,
-			Capacitance: -1,
-			Inductance: -1
-		};
 	}
 }

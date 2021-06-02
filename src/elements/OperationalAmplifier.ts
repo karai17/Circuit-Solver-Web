@@ -181,7 +181,7 @@ class OperationalAmplifier {
 			engine_functions.stamp_ideal_opamp(this.elm.n1, this.elm.n2, this.elm.n3, simulation_manager.ELEMENT_OPAMP_OFFSET + this.simulation_id);
 		}
 	}
-	update(): void {}
+	update(): void { }
 	get_vertices(): Array<number> {
 		let vertices: Array<number> = [];
 		let p1: Array<number> = [];
@@ -856,21 +856,5 @@ class OperationalAmplifier {
 			this.multi_selected = false;
 		}
 	}
-	time_data(): TIME_DATA_TEMPLATE_T {
-		/* #INSERT_GENERATE_TIME_DATA# */
-		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		var keys: Array<string> = Object.keys(this.elm.properties);
-		for (var i: number = keys.length - 1; i > -1; i--) {
-			if (typeof this.elm.properties[keys[i]] === 'number') {
-				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-					time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-				}
-			}
-		}
-
-		return time_data;
-		/* <!-- END AUTOMATICALLY GENERATED !--> */
-	}
-	reset(): void {}
+	reset(): void { }
 }

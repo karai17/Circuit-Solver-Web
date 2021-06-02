@@ -13,7 +13,6 @@ class SimulationManager {
         this.first_error_check = true;
         this.first_x_matrix_copy = true;
         this.first_x_matrix_solution = false;
-        this.time_data = [];
         /* #INSERT_GENERATE_ELEMENT_SIMULATION_OFFSETS# */
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
         this.ELEMENT_DCSOURCE_OFFSET = 0;
@@ -85,13 +84,6 @@ class SimulationManager {
         this.patch();
         global.variables.is_singular = false;
         this.reset_simulation();
-        if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_AUTOMATIC_TIMESTEP] === global.CONSTANTS.ON) {
-            this.time_step = this.determine_optimal_timestep();
-            bottom_menu.resize_bottom_menu();
-        }
-        else {
-            this.time_data.splice(0, this.time_data.length);
-        }
         this.reset_elements();
         this.reset_meter_values();
         node_manager.generate_unique_nodes_list();
@@ -193,345 +185,8 @@ class SimulationManager {
         toast.show(global.COLORS.GENERAL_GREEN_COLOR);
         this.solutions_ready = false;
         global.flags.flag_build_element = true;
-        timestep_manager.initialize(this.time_step);
         bottom_menu.TIME_STEP_UPDATE_LOCK = true;
         this.initialized = true;
-    }
-    determine_optimal_timestep() {
-        this.time_data.splice(0, this.time_data.length);
-        /* #INSERT_GENERATE_PUSH_TIME_DATA# */
-        /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-        for (var i = resistors.length - 1; i > -1; i--) {
-            this.time_data.push(resistors[i].time_data());
-        }
-        for (var i = capacitors.length - 1; i > -1; i--) {
-            this.time_data.push(capacitors[i].time_data());
-        }
-        for (var i = inductors.length - 1; i > -1; i--) {
-            this.time_data.push(inductors[i].time_data());
-        }
-        for (var i = grounds.length - 1; i > -1; i--) {
-            this.time_data.push(grounds[i].time_data());
-        }
-        for (var i = dcsources.length - 1; i > -1; i--) {
-            this.time_data.push(dcsources[i].time_data());
-        }
-        for (var i = dccurrents.length - 1; i > -1; i--) {
-            this.time_data.push(dccurrents[i].time_data());
-        }
-        for (var i = acsources.length - 1; i > -1; i--) {
-            this.time_data.push(acsources[i].time_data());
-        }
-        for (var i = accurrents.length - 1; i > -1; i--) {
-            this.time_data.push(accurrents[i].time_data());
-        }
-        for (var i = squarewaves.length - 1; i > -1; i--) {
-            this.time_data.push(squarewaves[i].time_data());
-        }
-        for (var i = sawwaves.length - 1; i > -1; i--) {
-            this.time_data.push(sawwaves[i].time_data());
-        }
-        for (var i = trianglewaves.length - 1; i > -1; i--) {
-            this.time_data.push(trianglewaves[i].time_data());
-        }
-        for (var i = constants.length - 1; i > -1; i--) {
-            this.time_data.push(constants[i].time_data());
-        }
-        for (var i = wires.length - 1; i > -1; i--) {
-            this.time_data.push(wires[i].time_data());
-        }
-        for (var i = nets.length - 1; i > -1; i--) {
-            this.time_data.push(nets[i].time_data());
-        }
-        for (var i = notes.length - 1; i > -1; i--) {
-            this.time_data.push(notes[i].time_data());
-        }
-        for (var i = rails.length - 1; i > -1; i--) {
-            this.time_data.push(rails[i].time_data());
-        }
-        for (var i = voltmeters.length - 1; i > -1; i--) {
-            this.time_data.push(voltmeters[i].time_data());
-        }
-        for (var i = ohmmeters.length - 1; i > -1; i--) {
-            this.time_data.push(ohmmeters[i].time_data());
-        }
-        for (var i = ammeters.length - 1; i > -1; i--) {
-            this.time_data.push(ammeters[i].time_data());
-        }
-        for (var i = wattmeters.length - 1; i > -1; i--) {
-            this.time_data.push(wattmeters[i].time_data());
-        }
-        for (var i = fuses.length - 1; i > -1; i--) {
-            this.time_data.push(fuses[i].time_data());
-        }
-        for (var i = spsts.length - 1; i > -1; i--) {
-            this.time_data.push(spsts[i].time_data());
-        }
-        for (var i = spdts.length - 1; i > -1; i--) {
-            this.time_data.push(spdts[i].time_data());
-        }
-        for (var i = nots.length - 1; i > -1; i--) {
-            this.time_data.push(nots[i].time_data());
-        }
-        for (var i = potentiometers.length - 1; i > -1; i--) {
-            this.time_data.push(potentiometers[i].time_data());
-        }
-        for (var i = ands.length - 1; i > -1; i--) {
-            this.time_data.push(ands[i].time_data());
-        }
-        for (var i = ors.length - 1; i > -1; i--) {
-            this.time_data.push(ors[i].time_data());
-        }
-        for (var i = nands.length - 1; i > -1; i--) {
-            this.time_data.push(nands[i].time_data());
-        }
-        for (var i = nors.length - 1; i > -1; i--) {
-            this.time_data.push(nors[i].time_data());
-        }
-        for (var i = xors.length - 1; i > -1; i--) {
-            this.time_data.push(xors[i].time_data());
-        }
-        for (var i = xnors.length - 1; i > -1; i--) {
-            this.time_data.push(xnors[i].time_data());
-        }
-        for (var i = dffs.length - 1; i > -1; i--) {
-            this.time_data.push(dffs[i].time_data());
-        }
-        for (var i = vsats.length - 1; i > -1; i--) {
-            this.time_data.push(vsats[i].time_data());
-        }
-        for (var i = adders.length - 1; i > -1; i--) {
-            this.time_data.push(adders[i].time_data());
-        }
-        for (var i = subtractors.length - 1; i > -1; i--) {
-            this.time_data.push(subtractors[i].time_data());
-        }
-        for (var i = multipliers.length - 1; i > -1; i--) {
-            this.time_data.push(multipliers[i].time_data());
-        }
-        for (var i = dividers.length - 1; i > -1; i--) {
-            this.time_data.push(dividers[i].time_data());
-        }
-        for (var i = gains.length - 1; i > -1; i--) {
-            this.time_data.push(gains[i].time_data());
-        }
-        for (var i = absvals.length - 1; i > -1; i--) {
-            this.time_data.push(absvals[i].time_data());
-        }
-        for (var i = vcsws.length - 1; i > -1; i--) {
-            this.time_data.push(vcsws[i].time_data());
-        }
-        for (var i = vcvss.length - 1; i > -1; i--) {
-            this.time_data.push(vcvss[i].time_data());
-        }
-        for (var i = vccss.length - 1; i > -1; i--) {
-            this.time_data.push(vccss[i].time_data());
-        }
-        for (var i = cccss.length - 1; i > -1; i--) {
-            this.time_data.push(cccss[i].time_data());
-        }
-        for (var i = ccvss.length - 1; i > -1; i--) {
-            this.time_data.push(ccvss[i].time_data());
-        }
-        for (var i = opamps.length - 1; i > -1; i--) {
-            this.time_data.push(opamps[i].time_data());
-        }
-        for (var i = adcs.length - 1; i > -1; i--) {
-            this.time_data.push(adcs[i].time_data());
-        }
-        for (var i = dacs.length - 1; i > -1; i--) {
-            this.time_data.push(dacs[i].time_data());
-        }
-        for (var i = sandhs.length - 1; i > -1; i--) {
-            this.time_data.push(sandhs[i].time_data());
-        }
-        for (var i = pwms.length - 1; i > -1; i--) {
-            this.time_data.push(pwms[i].time_data());
-        }
-        for (var i = integrators.length - 1; i > -1; i--) {
-            this.time_data.push(integrators[i].time_data());
-        }
-        for (var i = differentiators.length - 1; i > -1; i--) {
-            this.time_data.push(differentiators[i].time_data());
-        }
-        for (var i = lowpasses.length - 1; i > -1; i--) {
-            this.time_data.push(lowpasses[i].time_data());
-        }
-        for (var i = highpasses.length - 1; i > -1; i--) {
-            this.time_data.push(highpasses[i].time_data());
-        }
-        for (var i = relays.length - 1; i > -1; i--) {
-            this.time_data.push(relays[i].time_data());
-        }
-        for (var i = pids.length - 1; i > -1; i--) {
-            this.time_data.push(pids[i].time_data());
-        }
-        for (var i = luts.length - 1; i > -1; i--) {
-            this.time_data.push(luts[i].time_data());
-        }
-        for (var i = vcrs.length - 1; i > -1; i--) {
-            this.time_data.push(vcrs[i].time_data());
-        }
-        for (var i = vccas.length - 1; i > -1; i--) {
-            this.time_data.push(vccas[i].time_data());
-        }
-        for (var i = vcls.length - 1; i > -1; i--) {
-            this.time_data.push(vcls[i].time_data());
-        }
-        for (var i = grts.length - 1; i > -1; i--) {
-            this.time_data.push(grts[i].time_data());
-        }
-        for (var i = tptzs.length - 1; i > -1; i--) {
-            this.time_data.push(tptzs[i].time_data());
-        }
-        for (var i = transformers.length - 1; i > -1; i--) {
-            this.time_data.push(transformers[i].time_data());
-        }
-        /* <!-- END AUTOMATICALLY GENERATED !--> */
-        let max_frequency = global.CONSTANTS.ZERO;
-        let min_frequency = Number.MAX_VALUE;
-        let max_resistance = global.CONSTANTS.ZERO;
-        let min_resistance = Number.MAX_VALUE;
-        let max_capacitance = global.CONSTANTS.ZERO;
-        let min_capacitance = Number.MAX_VALUE;
-        let max_inductance = global.CONSTANTS.ZERO;
-        let min_inductance = Number.MAX_VALUE;
-        let parallel_resistance = global.CONSTANTS.ZERO;
-        let series_resistance = global.CONSTANTS.ZERO;
-        let parallel_series_updated = false;
-        let min_freq_updated = false;
-        let max_freq_updated = false;
-        let min_res_updated = false;
-        let max_res_updated = false;
-        let min_cap_updated = false;
-        let max_cap_updated = false;
-        let min_ind_updated = false;
-        let max_ind_updated = false;
-        for (var i = 0; i < this.time_data.length; i++) {
-            if (this.time_data[i]['Resistance'] > 0) {
-                parallel_resistance += 1.0 / this.time_data[i]['Resistance'];
-                series_resistance += this.time_data[i]['Resistance'];
-                if (!parallel_series_updated) {
-                    parallel_series_updated = true;
-                }
-            }
-            if (this.time_data[i]['Frequency'] < min_frequency && this.time_data[i]['Frequency'] > 0) {
-                min_frequency = this.time_data[i]['Frequency'];
-                if (!min_freq_updated) {
-                    min_freq_updated = true;
-                }
-            }
-            if (this.time_data[i]['Frequency'] > max_frequency && this.time_data[i]['Frequency'] > 0) {
-                max_frequency = this.time_data[i]['Frequency'];
-                if (!max_freq_updated) {
-                    max_freq_updated = true;
-                }
-            }
-            if (this.time_data[i]['Capacitance'] > max_capacitance && this.time_data[i]['Capacitance'] > 0) {
-                max_capacitance = this.time_data[i]['Capacitance'];
-                if (!max_cap_updated) {
-                    max_cap_updated = true;
-                }
-            }
-            if (this.time_data[i]['Resistance'] > max_resistance && this.time_data[i]['Resistance'] > 0) {
-                max_resistance = this.time_data[i]['Resistance'];
-                if (!max_res_updated) {
-                    max_res_updated = true;
-                }
-            }
-            if (this.time_data[i]['Inductance'] > max_inductance && this.time_data[i]['Inductance'] > 0) {
-                max_inductance = this.time_data[i]['Inductance'];
-                if (!max_ind_updated) {
-                    max_ind_updated = true;
-                }
-            }
-            if (this.time_data[i]['Capacitance'] < min_capacitance && this.time_data[i]['Capacitance'] > 0) {
-                min_capacitance = this.time_data[i]['Capacitance'];
-                if (!min_cap_updated) {
-                    min_cap_updated = true;
-                }
-            }
-            if (this.time_data[i]['Resistance'] < min_resistance && this.time_data[i]['Resistance'] > 0) {
-                min_resistance = this.time_data[i]['Resistance'];
-                if (!min_res_updated) {
-                    min_res_updated = true;
-                }
-            }
-            if (this.time_data[i]['Inductance'] < min_inductance && this.time_data[i]['Inductance'] > 0) {
-                min_inductance = this.time_data[i]['Inductance'];
-                if (!min_ind_updated) {
-                    min_ind_updated = true;
-                }
-            }
-        }
-        if (!(min_resistance >= 1.0 / global.settings.R_MAX && min_resistance <= global.settings.R_MAX && max_resistance >= 1.0 / global.settings.R_MAX && max_resistance <= global.settings.R_MAX)) {
-            parallel_series_updated = false;
-            max_res_updated = false;
-            min_res_updated = false;
-        }
-        if (!parallel_series_updated) {
-            parallel_resistance = 376.73;
-            series_resistance = 376.73;
-        }
-        else {
-            parallel_resistance = 1.0 / parallel_resistance;
-        }
-        let ts_final = 1;
-        let f_multiplier = 0.015;
-        let rl_multiplier = 0.01;
-        let lc_multiplier = 0.01;
-        let rc_multiplier = 0.01;
-        if (!min_freq_updated) {
-            min_frequency = global.settings.MAX_FREQUENCY;
-        }
-        if (!max_freq_updated) {
-            max_frequency = global.settings.MAX_FREQUENCY;
-        }
-        if (!min_res_updated) {
-            min_resistance = global.settings.R_MAX * 0.5;
-        }
-        if (!max_res_updated) {
-            max_resistance = global.settings.R_MAX * 0.5;
-        }
-        if (!min_cap_updated) {
-            min_capacitance = global.settings.MAX_CAPACITANCE;
-        }
-        if (!max_cap_updated) {
-            max_capacitance = global.settings.MAX_CAPACITANCE;
-        }
-        if (!min_ind_updated) {
-            min_inductance = global.settings.MAX_INDUCTANCE;
-        }
-        if (!max_ind_updated) {
-            max_inductance = global.settings.MAX_INDUCTANCE;
-        }
-        if (parallel_series_updated) {
-            let rc_parallel = parallel_resistance * min_capacitance * rc_multiplier;
-            let rl_parallel = (min_inductance / parallel_resistance) * rl_multiplier;
-            let rc_series = series_resistance * min_capacitance * rc_multiplier;
-            let rl_series = (min_inductance / series_resistance) * rl_multiplier;
-            let max_period = (1.0 / max_frequency) * f_multiplier;
-            let min_period = (1.0 / min_frequency) * f_multiplier;
-            let t_s1 = global.utils.min3(rc_parallel, rl_parallel, max_period);
-            let t_s2 = global.utils.min3(rc_series, rl_series, min_period);
-            let t_lc = Math.sqrt(min_capacitance * min_inductance) * lc_multiplier;
-            ts_final = global.utils.min3(t_s1, t_s2, t_lc);
-            ts_final = Math.min(Math.max(ts_final, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-            if (!max_freq_updated && !min_freq_updated && !max_cap_updated && !min_cap_updated && !max_ind_updated && !min_ind_updated) {
-                ts_final = 1;
-            }
-        }
-        else {
-            let max_period = (1.0 / max_frequency) * f_multiplier;
-            let min_period = (1.0 / min_frequency) * f_multiplier;
-            let t_lc = Math.sqrt(min_capacitance * min_inductance) * lc_multiplier;
-            ts_final = global.utils.min3(max_period, min_period, t_lc);
-            ts_final = Math.min(Math.max(ts_final, global.settings.MIN_TIME_CONSTANT), global.settings.MAX_TIME_CONSTANT);
-            if (!max_freq_updated && !min_freq_updated && !max_cap_updated && !min_cap_updated && !max_ind_updated && !min_ind_updated) {
-                ts_final = 1;
-            }
-        }
-        return ts_final;
     }
     terminate() {
         this.node_size = 0;
@@ -543,9 +198,6 @@ class SimulationManager {
         this.simulation_step = 0;
         this.solutions_ready = false;
         global.variables.is_singular = false;
-        this.time_data.splice(0, this.time_data.length);
-        timestep_manager.reset();
-        this.time_step = timestep_manager.initial_timestep();
         bottom_menu.TIME_STEP_UPDATE_LOCK = false;
         toast.set_text(language_manager.STOP_SIMULATION[global.CONSTANTS.LANGUAGES[global.variables.language_index]]);
         toast.show(global.COLORS.GENERAL_GREEN_COLOR);
@@ -918,23 +570,9 @@ class SimulationManager {
     simulate() {
         if (global.flags.flag_simulating && this.initialized) {
             if (this.simulation_step === 0) {
-                if (this.simulation_time >= 1.5 * this.time_step) {
-                    if (timestep_manager.save_properties) {
-                        for (var i = capacitors.length - 1; i > -1; i--) {
-                            capacitors[i].save();
-                        }
-                        timestep_manager.save_properties = false;
-                    }
-                }
                 this.solve();
                 if (this.continue_solving && !MOBILE_MODE) {
                     this.solve();
-                }
-                if (this.simulation_time >= 1.5 * this.time_step) {
-                    this.simulation_step = timestep_manager.update(this.simulation_step, matrix_x);
-                }
-                else {
-                    timestep_manager.publish_solution = true;
                 }
             }
             else {
@@ -960,11 +598,8 @@ class SimulationManager {
                 global.flags.flag_canvas_draw_request = true;
                 this.continue_solving = true;
                 this.iterator = 0;
-                if (timestep_manager.publish_solution) {
-                    this.update_vir();
-                    this.led_check();
-                    timestep_manager.publish_solution = false;
-                }
+                this.update_vir();
+                this.led_check();
                 this.simulation_time += this.time_step;
                 this.simulation_step = 0;
             }

@@ -11,11 +11,5 @@ class Templates {
         this.TIMESTEP_TEMPLATE = 'Δt:={TIMESTEP}s';
         this.FILE_BUTTON_TEXT_TEMPLATE = '  {TEXT}  ';
         this.DEBUG_TEMPLATE = '({ID},{TYPE}),';
-        this.TIME_DATA_TEMPLATE = {
-            Frequency: -1,
-            Resistance: -1,
-            Capacitance: -1,
-            Inductance: -1
-        };
     }
 }

@@ -861,22 +861,6 @@ class Relay {
 			this.multi_selected = false;
 		}
 	}
-	time_data(): TIME_DATA_TEMPLATE_T {
-		/* #INSERT_GENERATE_TIME_DATA# */
-		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		var keys: Array<string> = Object.keys(this.elm.properties);
-		for (var i: number = keys.length - 1; i > -1; i--) {
-			if (typeof this.elm.properties[keys[i]] === 'number') {
-				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-					time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-				}
-			}
-		}
-
-		return time_data;
-		/* <!-- END AUTOMATICALLY GENERATED !--> */
-	}
 	reset(): void {
 		this.elm.properties['Input Voltage1'] = 0;
 		this.elm.properties['Status'] = global.CONSTANTS.OFF;
@@ -885,6 +869,4 @@ class Relay {
 		this.elm.properties['Transient Current'] = global.utils.copy(this.elm.properties['Initial Current']);
 		this.elm.properties['Equivalent Current'] = this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] + this.elm.properties['Transient Current'];
 	}
-	save() { }
-	restore() { }
 }

@@ -249,8 +249,7 @@ class GraphWindow {
 		} else if (index === 2) {
 			this.graph_trace_c.reset();
 		}
-	}
-	reset(): void {
+	} reset(): void {
 		this.graph_trace_a.reset();
 		this.graph_trace_b.reset();
 		this.graph_trace_c.reset();
@@ -326,7 +325,7 @@ class GraphWindow {
 			this.mouse_hover();
 		}
 	}
-	mouse_up(): void {}
+	mouse_up(): void { }
 	mouse_hover(): void {
 		if (this.inner_bounds.contains_xy(global.variables.mouse_x, global.variables.mouse_y)) {
 			this.meter_hover_index = Math.round(((global.variables.mouse_x - this.inner_bounds.left) / (this.inner_bounds.get_width() / this.GRAPH_X_AXIS_LENGTH)) * 0.5);
@@ -470,9 +469,9 @@ class GraphWindow {
 					canvas.draw_text(
 						this.time_axis_value + 's',
 						this.inner_bounds.right -
-							this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
-							this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
-							view_port.view_width * 0.1,
+						this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
+						this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
+						view_port.view_width * 0.1,
 						this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1),
 						this.text_paint
 					);

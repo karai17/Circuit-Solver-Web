@@ -708,32 +708,10 @@ class Capacitor {
 			this.multi_selected = false;
 		}
 	}
-	time_data(): TIME_DATA_TEMPLATE_T {
-		/* #INSERT_GENERATE_TIME_DATA# */
-		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		var keys: Array<string> = Object.keys(this.elm.properties);
-		for (var i: number = keys.length - 1; i > -1; i--) {
-			if (typeof this.elm.properties[keys[i]] === 'number') {
-				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-					time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-				}
-			}
-		}
-
-		return time_data;
-		/* <!-- END AUTOMATICALLY GENERATED !--> */
-	}
 	reset(): void {
 		this.elm.properties['Transient Resistance'] = simulation_manager.time_step / (2 * this.elm.properties['Capacitance']);
 		this.elm.properties['Transient Voltage'] = global.utils.copy(this.elm.properties['Initial Voltage']);
 		this.elm.properties['Transient Current'] = 0;
 		this.elm.properties['Equivalent Current'] = -this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] - this.elm.properties['Transient Current'];
-	}
-	save() {
-		timestep_manager.push_property(this.elm.type, this.elm.id, this.elm.properties);
-	}
-	restore() {
-		this.elm.properties = global.utils.copy(timestep_manager.retrieve_property(this.elm.type, this.elm.id));
 	}
 }

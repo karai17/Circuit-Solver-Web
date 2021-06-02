@@ -35,8 +35,7 @@ class PIDController {
 		this.previous_time = current_time;
 		this.last_error = error;
 		return this.check_limits(this.k_p * error + this.k_i * this.integral_error + this.k_d * derivative_error);
-	}
-	reset(): void {
+	} reset(): void {
 		this.previous_time = 0;
 		this.last_error = 0;
 		this.integral_error = 0;

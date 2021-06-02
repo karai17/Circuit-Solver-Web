@@ -949,21 +949,6 @@ class NPNBipolarJunctionTransistor {
             this.kappa = 0.414;
         }
     }
-    time_data() {
-        /* #INSERT_GENERATE_TIME_DATA# */
-        /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-        var time_data = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-        var keys = Object.keys(this.elm.properties);
-        for (var i = keys.length - 1; i > -1; i--) {
-            if (typeof this.elm.properties[keys[i]] === 'number') {
-                if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-                    time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-                }
-            }
-        }
-        return time_data;
-        /* <!-- END AUTOMATICALLY GENERATED !--> */
-    }
     reset() {
         this.elm.properties['Vbe'] = 0;
         this.elm.properties['Vbc'] = 0;
@@ -971,6 +956,4 @@ class NPNBipolarJunctionTransistor {
         this.elm.properties['Last Io'] = global.settings.TOLERANCE * 2;
         this.update();
     }
-    save() { }
-    restore() { }
 }

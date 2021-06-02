@@ -946,22 +946,6 @@ class PChannelMOSFET {
 			this.kappa = 0.414;
 		}
 	}
-	time_data(): TIME_DATA_TEMPLATE_T {
-		/* #INSERT_GENERATE_TIME_DATA# */
-		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		var time_data: TIME_DATA_TEMPLATE_T = global.utils.copy(global.TEMPLATES.TIME_DATA_TEMPLATE);
-		var keys: Array<string> = Object.keys(this.elm.properties);
-		for (var i: number = keys.length - 1; i > -1; i--) {
-			if (typeof this.elm.properties[keys[i]] === 'number') {
-				if (keys[i] === 'Frequency' || keys[i] === 'Resistance' || keys[i] === 'Capacitance' || keys[i] === 'Inductance') {
-					time_data[keys[i]] = global.utils.copy(this.elm.properties[keys[i]]);
-				}
-			}
-		}
-
-		return time_data;
-		/* <!-- END AUTOMATICALLY GENERATED !--> */
-	}
 	reset(): void {
 		this.y_out = 0;
 		this.y_hat = 0;
@@ -972,6 +956,4 @@ class PChannelMOSFET {
 		this.elm.properties['Last Io'] = global.settings.TOLERANCE * 2;
 		this.update();
 	}
-	save() { }
-	restore() { }
 }
