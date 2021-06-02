@@ -672,4 +672,6 @@ class Fuse {
     reset() {
         this.elm.properties['Broken'] = false;
     }
+    save() { }
+    restore() { }
 }

@@ -971,4 +971,6 @@ class NPNBipolarJunctionTransistor {
         this.elm.properties['Last Io'] = global.settings.TOLERANCE * 2;
         this.update();
     }
+    save() { }
+    restore() { }
 }

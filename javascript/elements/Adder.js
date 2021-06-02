@@ -806,4 +806,6 @@ class Adder {
     reset() {
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

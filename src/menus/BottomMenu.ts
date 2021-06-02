@@ -14,7 +14,9 @@ class BottomMenu {
 	private initial_resize_counter: number;
 	private reload_bottom_path: boolean;
 	private padding: number;
+	public TIME_STEP_UPDATE_LOCK: boolean;
 	constructor() {
+		this.TIME_STEP_UPDATE_LOCK = false;
 		this.draw_bottom_path = true;
 		this.time_step_button_width = 1;
 		this.line_paint = new Paint();
@@ -101,7 +103,7 @@ class BottomMenu {
 		this.bottom_path.line_to(view_port.left, view_port.bottom + 5);
 		this.bottom_path.close();
 	}
-	update(): void {}
+	update(): void { }
 	resize_bottom_menu(): void {
 		this.initial_resize_counter = 0;
 		this.reload_bottom_path = true;
@@ -141,7 +143,7 @@ class BottomMenu {
 		this.first_touch_x = global.variables.mouse_x;
 		this.first_touch_y = global.variables.mouse_y;
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (!global.variables.is_right_click && this.time_step_button.contains_xy(this.first_touch_x, this.first_touch_y)) {
 			if (!global.variables.mouse_keyboard_lock && !multi_select_manager.ctrl_pressed && global.variables.component_touched) {
@@ -232,8 +234,10 @@ class BottomMenu {
 	draw_bottom_menu(canvas: GraphicsEngine): void {
 		this.recolor();
 		this.file_button.text = language_manager.FILE[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + global.variables.user_file.title;
-		this.time_step_button.text = global.TEMPLATES.TIMESTEP_TEMPLATE.replace('{TIMESTEP}', global.utils.exponentiate_quickly(simulation_manager.time_step));
-		this.time_step_button_width = 1.25 * this.time_step_button.text_paint.measure_text(this.time_step_button.text);
+		if (!this.TIME_STEP_UPDATE_LOCK) {
+			this.time_step_button.text = global.TEMPLATES.TIMESTEP_TEMPLATE.replace('{TIMESTEP}', global.utils.exponentiate_quickly(simulation_manager.time_step));
+			this.time_step_button_width = 1.25 * this.time_step_button.text_paint.measure_text(this.time_step_button.text);
+		}
 		this.padding = 2 * global.variables.canvas_stroke_width_4;
 		this.file_button.set_bounds(
 			view_port.left,
@@ -241,7 +245,9 @@ class BottomMenu {
 			view_port.left + this.file_button.text_paint.measure_text(global.TEMPLATES.FILE_BUTTON_TEXT_TEMPLATE.replace('{TEXT}', this.file_button.text)),
 			view_port.bottom
 		);
-		this.time_step_button.set_bounds(view_port.right - this.time_step_button_width, menu_bar.settings_button.bottom + this.padding, view_port.right, view_port.bottom);
+		if (!this.TIME_STEP_UPDATE_LOCK) {
+			this.time_step_button.set_bounds(view_port.right - this.time_step_button_width, menu_bar.settings_button.bottom + this.padding, view_port.right, view_port.bottom);
+		}
 		if (this.draw_bottom_path) {
 			if (this.file_button.draw_fill) {
 				this.file_button.draw_fill = false;

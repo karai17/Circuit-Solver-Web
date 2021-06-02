@@ -727,4 +727,6 @@ class HighPassFilter {
         this.elm.properties['X Hat'] = 0;
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

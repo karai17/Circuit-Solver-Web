@@ -725,4 +725,6 @@ class LowPassFilter {
         this.elm.properties['Y Out'] = 0;
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

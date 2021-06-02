@@ -764,4 +764,6 @@ class VoltMeter {
     reset() {
         this.elm.properties['Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

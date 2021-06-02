@@ -172,8 +172,8 @@ class Relay {
 			this.elm.properties['Transient Voltage'] =
 				voltage -
 				this.elm.properties['Coil Resistance'] *
-					(this.elm.properties['Equivalent Current'] / (1.0 + this.elm.properties['Coil Resistance'] / this.elm.properties['Transient Resistance']) +
-						voltage / (this.elm.properties['Transient Resistance'] + this.elm.properties['Coil Resistance']));
+				(this.elm.properties['Equivalent Current'] / (1.0 + this.elm.properties['Coil Resistance'] / this.elm.properties['Transient Resistance']) +
+					voltage / (this.elm.properties['Transient Resistance'] + this.elm.properties['Coil Resistance']));
 			this.elm.properties['Transient Current'] = voltage / this.elm.properties['Transient Resistance'] + this.elm.properties['Equivalent Current'];
 			this.elm.properties['Equivalent Current'] = this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] + this.elm.properties['Transient Current'];
 		}
@@ -693,7 +693,7 @@ class Relay {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -885,4 +885,6 @@ class Relay {
 		this.elm.properties['Transient Current'] = global.utils.copy(this.elm.properties['Initial Current']);
 		this.elm.properties['Equivalent Current'] = this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] + this.elm.properties['Transient Current'];
 	}
+	save() { }
+	restore() { }
 }

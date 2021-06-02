@@ -552,7 +552,7 @@ class Capacitor {
 		this.elm.properties['Transient Resistance'] = simulation_manager.time_step / (2 * this.elm.properties['Capacitance']);
 		this.elm.properties['Equivalent Current'] = -this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] - this.elm.properties['Transient Current'];
 	}
-	update(): void {}
+	update(): void { }
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -560,7 +560,7 @@ class Capacitor {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -729,5 +729,11 @@ class Capacitor {
 		this.elm.properties['Transient Voltage'] = global.utils.copy(this.elm.properties['Initial Voltage']);
 		this.elm.properties['Transient Current'] = 0;
 		this.elm.properties['Equivalent Current'] = -this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] - this.elm.properties['Transient Current'];
+	}
+	save() {
+		timestep_manager.push_property(this.elm.type, this.elm.id, this.elm.properties);
+	}
+	restore() {
+		this.elm.properties = global.utils.copy(timestep_manager.retrieve_property(this.elm.type, this.elm.id));
 	}
 }

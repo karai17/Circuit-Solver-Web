@@ -700,4 +700,6 @@ class TPTZModule {
         this.tptz_controller.set_initial(0);
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

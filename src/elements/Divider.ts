@@ -866,4 +866,6 @@ class Divider {
 	reset(): void {
 		this.elm.properties['Output Voltage'] = 0;
 	}
+	save() { }
+	restore() { }
 }

@@ -841,4 +841,6 @@ class SampleAndHold {
     reset() {
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

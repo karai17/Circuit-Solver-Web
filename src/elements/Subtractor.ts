@@ -864,4 +864,6 @@ class Subtractor {
 	reset(): void {
 		this.elm.properties['Output Voltage'] = 0;
 	}
+	save() { }
+	restore() { }
 }

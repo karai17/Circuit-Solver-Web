@@ -757,4 +757,6 @@ class NORGate {
     reset() {
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

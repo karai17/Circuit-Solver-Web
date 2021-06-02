@@ -1377,3 +1377,9 @@ declare type ELEMENT_PROPERTY_T = PROPERTY_META_DATA_T &
 	PROPERTY_DFF_T &
 	PROPERTY_VCCA_T &
 	PROPERTY_VCL_T;
+
+declare type PROPERTY_STORAGE_T = {
+	Type: number;
+	Id: number;
+	Property: ELEMENT_PROPERTY_T;
+};

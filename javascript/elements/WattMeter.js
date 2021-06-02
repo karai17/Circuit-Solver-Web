@@ -920,4 +920,6 @@ class WattMeter {
     reset() {
         this.elm.properties['Wattage'] = 0;
     }
+    save() { }
+    restore() { }
 }

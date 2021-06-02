@@ -789,4 +789,6 @@ class ZenerDiode {
         this.elm.properties['Equivalent Current'] = 0;
         this.update();
     }
+    save() { }
+    restore() { }
 }

@@ -775,4 +775,6 @@ class OhmMeter {
     reset() {
         this.elm.properties['Sensed Resistance'] = global.settings.INV_R_MAX;
     }
+    save() { }
+    restore() { }
 }

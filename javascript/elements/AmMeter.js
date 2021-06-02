@@ -778,4 +778,6 @@ class AmMeter {
     reset() {
         this.elm.properties['Current'] = 0;
     }
+    save() { }
+    restore() { }
 }

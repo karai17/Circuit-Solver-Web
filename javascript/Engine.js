@@ -48,6 +48,7 @@ var language_manager = new LanguageManager();
 var shortcut_manager = new ShortcutManager();
 var string_operator = new StringOperator();
 var multi_select_manager = new MultiSelectManager();
+var timestep_manager = new TimeStepManager();
 var canvas_aspect_ratio = 1.333;
 if (MOBILE_MODE) {
     canvas_aspect_ratio = 1.618;
@@ -598,103 +599,102 @@ function load_app() {
         });
     }
     function system_loop() {
-        try {
-            if (normal_draw_permissions()) {
-                global.variables.canvas_draw_counter = 0;
-                global.flags.flag_canvas_draw_event = true;
+        // try {
+        if (normal_draw_permissions()) {
+            global.variables.canvas_draw_counter = 0;
+            global.flags.flag_canvas_draw_event = true;
+        }
+        if (global.flags.flag_canvas_draw_event) {
+            if (global.variables.system_initialization['completed']) {
+                temp_draw_signal =
+                    !global.flags.flag_simulating ||
+                        global.flags.flag_resize_event ||
+                        global.flags.flag_mouse_down_event ||
+                        global.flags.flag_mouse_move_event ||
+                        global.flags.flag_mouse_up_event ||
+                        global.flags.flag_mouse_wheel_event ||
+                        global.flags.flag_mouse_double_click_event ||
+                        global.flags.flag_key_up_event ||
+                        global.flags.flag_key_down_event ||
+                        global.flags.flag_picture_request ||
+                        !workspace.flag_draw_to_screen ||
+                        toast.draw_text;
             }
-            if (global.flags.flag_canvas_draw_event) {
+            else {
+                temp_draw_signal =
+                    !global.flags.flag_simulating ||
+                        global.flags.flag_resize_event ||
+                        global.flags.flag_mouse_down_event ||
+                        global.flags.flag_mouse_move_event ||
+                        global.flags.flag_mouse_up_event ||
+                        global.flags.flag_mouse_wheel_event ||
+                        global.flags.flag_mouse_double_click_event ||
+                        global.flags.flag_key_up_event ||
+                        global.flags.flag_key_down_event ||
+                        global.flags.flag_picture_request ||
+                        !workspace.flag_draw_to_screen;
+            }
+            global.variables.last_selected = global.variables.selected;
+            update();
+            if (global.variables.last_selected !== global.variables.selected) {
+                wire_manager.reset_wire_builder();
+            }
+            if (global.flags.flag_force_resize_event) {
+                global.flags.flag_build_element = true;
+                global.variables.flag_build_counter = 0;
+                global.flags.flag_force_resize_event = false;
+                global.flags.flag_draw_block = true;
+                resize_canvas();
+            }
+            fps_div ^= 1;
+            if (((fps_div === 1 || temp_draw_signal) && global.flags.flag_simulating) || !global.flags.flag_simulating) {
                 if (global.variables.system_initialization['completed']) {
-                    temp_draw_signal =
-                        !global.flags.flag_simulating ||
-                            global.flags.flag_resize_event ||
-                            global.flags.flag_mouse_down_event ||
-                            global.flags.flag_mouse_move_event ||
-                            global.flags.flag_mouse_up_event ||
-                            global.flags.flag_mouse_wheel_event ||
-                            global.flags.flag_mouse_double_click_event ||
-                            global.flags.flag_key_up_event ||
-                            global.flags.flag_key_down_event ||
-                            global.flags.flag_picture_request ||
-                            !workspace.flag_draw_to_screen ||
-                            toast.draw_text;
-                }
-                else {
-                    temp_draw_signal =
-                        !global.flags.flag_simulating ||
-                            global.flags.flag_resize_event ||
-                            global.flags.flag_mouse_down_event ||
-                            global.flags.flag_mouse_move_event ||
-                            global.flags.flag_mouse_up_event ||
-                            global.flags.flag_mouse_wheel_event ||
-                            global.flags.flag_mouse_double_click_event ||
-                            global.flags.flag_key_up_event ||
-                            global.flags.flag_key_down_event ||
-                            global.flags.flag_picture_request ||
-                            !workspace.flag_draw_to_screen;
-                }
-                global.variables.last_selected = global.variables.selected;
-                update();
-                if (global.variables.last_selected !== global.variables.selected) {
-                    wire_manager.reset_wire_builder();
-                }
-                if (global.flags.flag_force_resize_event) {
-                    global.flags.flag_build_element = true;
-                    global.variables.flag_build_counter = 0;
-                    global.flags.flag_force_resize_event = false;
-                    global.flags.flag_draw_block = true;
-                    resize_canvas();
-                }
-                fps_div ^= 1;
-                if (((fps_div === 1 || temp_draw_signal) && global.flags.flag_simulating) || !global.flags.flag_simulating) {
-                    if (global.variables.system_initialization['completed']) {
-                        if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
-                            if (!global.flags.flag_on_restore_event) {
-                                render().then(function () { });
-                            }
-                            if (global.flags.flag_canvas_draw_request) {
-                                if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
-                                    global.variables.flag_canvas_draw_request_counter = 0;
-                                    global.flags.flag_canvas_draw_request = false;
-                                }
+                    if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
+                        if (!global.flags.flag_on_restore_event) {
+                            render().then(function () { });
+                        }
+                        if (global.flags.flag_canvas_draw_request) {
+                            if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
+                                global.variables.flag_canvas_draw_request_counter = 0;
+                                global.flags.flag_canvas_draw_request = false;
                             }
                         }
                     }
                 }
-                if (global.flags.flag_build_element) {
-                    if (global.variables.flag_build_counter++ >= global.CONSTANTS.SIGNAL_BUILD_COUNTER_MAX) {
-                        global.flags.flag_build_element = false;
-                        global.variables.flag_build_counter = 0;
-                    }
-                }
-                if (global.flags.flag_wire_deleted) {
-                    if (global.variables.flag_wire_deleted_counter++ >= global.CONSTANTS.SIGNAL_WIRE_DELETED_COUNTER_MAX) {
-                        global.flags.flag_wire_deleted = false;
-                        global.variables.flag_wire_deleted_counter = 0;
-                    }
-                }
-                if (global.variables.canvas_draw_counter++ > global.CONSTANTS.CANVAS_REDRAW_MAX) {
-                    global.variables.canvas_draw_counter = 0;
-                    global.flags.flag_canvas_draw_event = false;
+            }
+            if (global.flags.flag_build_element) {
+                if (global.variables.flag_build_counter++ >= global.CONSTANTS.SIGNAL_BUILD_COUNTER_MAX) {
+                    global.flags.flag_build_element = false;
+                    global.variables.flag_build_counter = 0;
                 }
             }
-        }
-        catch (e) {
-            if (!global.CONSTANTS.DEVELOPER_MODE && !MOBILE_MODE) {
-                let post_data = e + '\r\n' + e.stack + '\r\n';
-                let url = 'solver_errors.php?msg="' + post_data + '"';
-                let method = 'POST';
-                let should_be_async = true;
-                let request = new XMLHttpRequest();
-                request.onload = function () {
-                    let status = request.status;
-                    let data = request.responseText;
-                };
-                request.open(method, url, should_be_async);
-                request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-                request.send(post_data);
+            if (global.flags.flag_wire_deleted) {
+                if (global.variables.flag_wire_deleted_counter++ >= global.CONSTANTS.SIGNAL_WIRE_DELETED_COUNTER_MAX) {
+                    global.flags.flag_wire_deleted = false;
+                    global.variables.flag_wire_deleted_counter = 0;
+                }
+            }
+            if (global.variables.canvas_draw_counter++ > global.CONSTANTS.CANVAS_REDRAW_MAX) {
+                global.variables.canvas_draw_counter = 0;
+                global.flags.flag_canvas_draw_event = false;
             }
         }
+        // } catch (e) {
+        // 	if (!global.CONSTANTS.DEVELOPER_MODE && !MOBILE_MODE) {
+        // 		let post_data: string = e + '\r\n' + e.stack + '\r\n';
+        // 		let url: string = 'solver_errors.php?msg="' + post_data + '"';
+        // 		let method: string = 'POST';
+        // 		let should_be_async: boolean = true;
+        // 		let request: XMLHttpRequest = new XMLHttpRequest();
+        // 		request.onload = function (): void {
+        // 			let status: number = request.status;
+        // 			let data: string = request.responseText;
+        // 		};
+        // 		request.open(method, url, should_be_async);
+        // 		request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+        // 		request.send(post_data);
+        // 	}
+        // }
     }
     function update() {
         if (global.variables.system_initialization['completed']) {

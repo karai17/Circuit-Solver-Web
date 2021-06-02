@@ -887,4 +887,6 @@ class LightEmittingDiode {
         this.led_status = global.CONSTANTS.OFF;
         this.update();
     }
+    save() { }
+    restore() { }
 }

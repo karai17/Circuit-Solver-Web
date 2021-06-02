@@ -679,4 +679,10 @@ class Capacitor {
         this.elm.properties['Transient Current'] = 0;
         this.elm.properties['Equivalent Current'] = -this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] - this.elm.properties['Transient Current'];
     }
+    save() {
+        timestep_manager.push_property(this.elm.type, this.elm.id, this.elm.properties);
+    }
+    restore() {
+        this.elm.properties = global.utils.copy(timestep_manager.retrieve_property(this.elm.type, this.elm.id));
+    }
 }

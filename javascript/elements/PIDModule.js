@@ -875,4 +875,6 @@ class PIDModule {
         this.pid_controller.reset();
         this.elm.properties['Output Voltage'] = 0;
     }
+    save() { }
+    restore() { }
 }

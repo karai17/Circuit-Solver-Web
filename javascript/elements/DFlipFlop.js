@@ -816,4 +816,6 @@ class DFlipFlop {
         this.elm.properties['Q'] = 0;
         this.elm.properties['!Q'] = 1;
     }
+    save() { }
+    restore() { }
 }

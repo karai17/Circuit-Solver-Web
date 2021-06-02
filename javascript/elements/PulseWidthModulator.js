@@ -859,4 +859,6 @@ class PulseWidthModulator {
     reset() {
         this.elm.properties['A'] = 0;
     }
+    save() { }
+    restore() { }
 }

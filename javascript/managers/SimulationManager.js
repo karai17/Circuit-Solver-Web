@@ -193,6 +193,8 @@ class SimulationManager {
         toast.show(global.COLORS.GENERAL_GREEN_COLOR);
         this.solutions_ready = false;
         global.flags.flag_build_element = true;
+        timestep_manager.initialize(this.time_step);
+        bottom_menu.TIME_STEP_UPDATE_LOCK = true;
         this.initialized = true;
     }
     determine_optimal_timestep() {
@@ -542,6 +544,9 @@ class SimulationManager {
         this.solutions_ready = false;
         global.variables.is_singular = false;
         this.time_data.splice(0, this.time_data.length);
+        timestep_manager.reset();
+        this.time_step = timestep_manager.initial_timestep();
+        bottom_menu.TIME_STEP_UPDATE_LOCK = false;
         toast.set_text(language_manager.STOP_SIMULATION[global.CONSTANTS.LANGUAGES[global.variables.language_index]]);
         toast.show(global.COLORS.GENERAL_GREEN_COLOR);
     }
@@ -913,9 +918,23 @@ class SimulationManager {
     simulate() {
         if (global.flags.flag_simulating && this.initialized) {
             if (this.simulation_step === 0) {
+                if (this.simulation_time >= 1.5 * this.time_step) {
+                    if (timestep_manager.save_properties) {
+                        for (var i = capacitors.length - 1; i > -1; i--) {
+                            capacitors[i].save();
+                        }
+                        timestep_manager.save_properties = false;
+                    }
+                }
                 this.solve();
                 if (this.continue_solving && !MOBILE_MODE) {
                     this.solve();
+                }
+                if (this.simulation_time >= 1.5 * this.time_step) {
+                    this.simulation_step = timestep_manager.update(this.simulation_step, matrix_x);
+                }
+                else {
+                    timestep_manager.publish_solution = true;
                 }
             }
             else {
@@ -941,8 +960,11 @@ class SimulationManager {
                 global.flags.flag_canvas_draw_request = true;
                 this.continue_solving = true;
                 this.iterator = 0;
-                this.update_vir();
-                this.led_check();
+                if (timestep_manager.publish_solution) {
+                    this.update_vir();
+                    this.led_check();
+                    timestep_manager.publish_solution = false;
+                }
                 this.simulation_time += this.time_step;
                 this.simulation_step = 0;
             }
