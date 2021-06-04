@@ -215,8 +215,8 @@ class ConfirmWindow {
     draw_window(canvas) {
         if (global.flags.flag_remove_all) {
             if (!MOBILE_MODE) {
-                this.hover();
                 canvas.draw_color2(global.COLORS.GENERAL_BLACK_COLOR, 130, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                this.hover();
             }
             canvas.draw_rect2(this.bounds, this.bounds_paint);
             canvas.draw_text(language_manager.CONFIRM_REMOVE_ALL[global.CONSTANTS.LANGUAGES[global.variables.language_index]], this.bounds.get_center_x(), this.bounds.top + this.bounds.get_height() * 0.33, this.text_paint);

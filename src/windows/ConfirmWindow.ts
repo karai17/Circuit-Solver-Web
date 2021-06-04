@@ -153,7 +153,6 @@ class ConfirmWindow {
 	}
 	mouse_move(): void {
 		if (global.flags.flag_remove_all && !global.variables.is_right_click) {
-
 		}
 	}
 	mouse_up(): void {
@@ -229,8 +228,8 @@ class ConfirmWindow {
 	draw_window(canvas: GraphicsEngine): void {
 		if (global.flags.flag_remove_all) {
 			if (!MOBILE_MODE) {
-				this.hover();
 				canvas.draw_color2(global.COLORS.GENERAL_BLACK_COLOR, 130, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+				this.hover();
 			}
 			canvas.draw_rect2(this.bounds, this.bounds_paint);
 			canvas.draw_text(

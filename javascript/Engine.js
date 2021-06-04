@@ -180,6 +180,8 @@ function load_app() {
     let node_length = 0;
     let cached_width = 0;
     let cached_height = 0;
+    let temp_mouse_x = 0;
+    let temp_mouse_y = 0;
     watermark_paint = new Paint();
     watermark_paint.set_paint_style(paint.style.FILL);
     watermark_paint.set_paint_cap(paint.cap.ROUND);
@@ -417,12 +419,17 @@ function load_app() {
     function mouse_move(mouse_event) {
         mouse_event.preventDefault();
         if (!global.flags.flag_mouse_move_event) {
-            if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
-                global.flags.flag_mouse_move_event = true;
-                if (MOBILE_MODE) {
+            if (!MOBILE_MODE) {
+                temp_mouse_x = mouse_event.clientX * global.variables.device_pixel_ratio;
+                temp_mouse_y = mouse_event.clientY * global.variables.device_pixel_ratio;
+                if (temp_mouse_x >= view_port.left && temp_mouse_x <= view_port.right && temp_mouse_y >= view_port.top && temp_mouse_y <= view_port.bottom) {
+                    global.flags.flag_mouse_move_event = true;
                     global.events.mouse_move_event = mouse_event;
                 }
-                else {
+            }
+            else {
+                if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
+                    global.flags.flag_mouse_move_event = true;
                     global.events.mouse_move_event = mouse_event;
                 }
             }
