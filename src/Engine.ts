@@ -274,45 +274,37 @@ function load_app(): void {
 		}
 	}
 	function on_focus(): void {
-		global.variables.device_pixel_ratio = window.devicePixelRatio;
-		if (global.flags.flag_resize_event === false) {
-			global.utils.last_view_port_right = view_port.right;
-			global.utils.last_view_port_bottom = view_port.bottom;
-			global.utils.last_view_port_width = view_port.view_width;
-			global.utils.last_view_port_height = view_port.view_height;
-			global.utils.last_surface_width = surface.width;
-			global.utils.last_surface_height = surface.height;
-		}
-		cached_width = window.innerWidth * global.variables.device_pixel_ratio;
-		cached_height = window.innerHeight * global.variables.device_pixel_ratio;
-
-		view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
-
-		global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
-		global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
-		if (MOBILE_MODE) {
-			global.variables.canvas_stroke_width_base = 0.000775 * view_port.view_width;
-			global.variables.canvas_text_size_base = 0.000775 * view_port.view_width;
-		} else {
-			global.variables.canvas_stroke_width_base = 0.000725 * view_port.view_width;
-			global.variables.canvas_text_size_base = 0.000725 * view_port.view_width;
-		}
-		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
-		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
-		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
-		global.variables.canvas_stroke_width_4 = global.variables.canvas_stroke_width_base * 16;
-		global.variables.canvas_stroke_width_5 = global.variables.canvas_stroke_width_base * 21;
-		global.variables.canvas_stroke_width_6 = global.variables.canvas_stroke_width_base * 43;
-		global.variables.canvas_text_size_1 = global.variables.canvas_text_size_base * 2.25;
-		global.variables.canvas_text_size_2 = global.variables.canvas_text_size_base * 2.65;
-		global.variables.canvas_text_size_3 = global.variables.canvas_text_size_base * 9;
-		global.variables.canvas_text_size_4 = global.variables.canvas_text_size_base * 16;
-		global.variables.canvas_text_size_5 = global.variables.canvas_text_size_base * 21;
-		global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
+		global.flags.flag_focus_event = true;
+		global.variables.flag_focus_counter = 0;
 		global.flags.flag_build_element = true;
 		global.variables.flag_build_counter = 0;
-		global.flags.flag_resize_event = true;
-		canvas.on_resize();
+		global.flags.flag_mouse_down_event = true;
+	}
+	function focus_canvas(): void {
+		try {
+			virtual_surface.context.imageSmoothingEnabled = false;
+			//@ts-expect-error
+			virtual_surface.context.mozImageSmoothingEnabled = false;
+			//@ts-expect-error
+			virtual_surface.context.oImageSmoothingEnabled = false;
+			//@ts-expect-error
+			virtual_surface.context.webkitImageSmoothingEnabled = false;
+			//@ts-expect-error
+			virtual_surface.context.msImageSmoothingEnabled = false;
+
+			ctx.imageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.mozImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.oImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.webkitImageSmoothingEnabled = false;
+			//@ts-expect-error
+			ctx.msImageSmoothingEnabled = false;
+			ctx.globalCompositeOperation = 'copy';
+			virtual_surface.context.globalCompositeOperation = 'source-over';
+			canvas.on_resize();
+		} catch (e) { }
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -356,7 +348,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) {}
+		} catch (e) { }
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -540,6 +532,7 @@ function load_app(): void {
 		if (global.variables.system_initialization['completed']) {
 			return (
 				global.flags.flag_resize_event ||
+				global.flags.flag_focus_event ||
 				global.flags.flag_mouse_down_event ||
 				global.flags.flag_mouse_move_event ||
 				global.flags.flag_mouse_up_event ||
@@ -556,6 +549,7 @@ function load_app(): void {
 		} else {
 			return (
 				global.flags.flag_resize_event ||
+				global.flags.flag_focus_event ||
 				global.flags.flag_mouse_down_event ||
 				global.flags.flag_mouse_move_event ||
 				global.flags.flag_mouse_up_event ||
@@ -572,6 +566,13 @@ function load_app(): void {
 	async function render() {
 		if (!global.flags.flag_draw_block) {
 			ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+		}
+		if (global.flags.flag_focus_event) {
+			if (global.variables.flag_focus_counter++ >= global.CONSTANTS.SIGNAL_FOCUS_COUNTER_MAX) {
+				focus_canvas();
+				global.flags.flag_focus_event = false;
+				global.variables.flag_focus_counter = 0;
+			}
 		}
 		canvas.release();
 		canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
@@ -592,6 +593,7 @@ function load_app(): void {
 				if (global.variables.system_initialization['completed']) {
 					temp_draw_signal =
 						!global.flags.flag_simulating ||
+						global.flags.flag_focus_event ||
 						global.flags.flag_resize_event ||
 						global.flags.flag_mouse_down_event ||
 						global.flags.flag_mouse_move_event ||
@@ -606,6 +608,7 @@ function load_app(): void {
 				} else {
 					temp_draw_signal =
 						!global.flags.flag_simulating ||
+						global.flags.flag_focus_event ||
 						global.flags.flag_resize_event ||
 						global.flags.flag_mouse_down_event ||
 						global.flags.flag_mouse_move_event ||
@@ -634,7 +637,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () {});
+								render().then(function () { });
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1584,7 +1587,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-				0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+			0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;

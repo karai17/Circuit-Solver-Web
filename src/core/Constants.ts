@@ -25,6 +25,7 @@ class Constants {
 	public readonly WIRE_STYLE_3: number;
 	public readonly WIRE_STYLE_4: number;
 	public readonly SIGNAL_BUILD_COUNTER_MAX: number;
+	public readonly SIGNAL_FOCUS_COUNTER_MAX: number;
 	public readonly SIGNAL_WIRE_DELETED_COUNTER_MAX: number;
 	public readonly TEXT_STYLE_1: string;
 	public readonly TEXT_STYLE_2: string;
@@ -117,6 +118,7 @@ class Constants {
 		this.FLIP_0 = 0;
 		this.FLIP_180 = 1;
 		this.SIGNAL_BUILD_COUNTER_MAX = 5;
+		this.SIGNAL_FOCUS_COUNTER_MAX = 5;
 		this.SIGNAL_WIRE_DELETED_COUNTER_MAX = 5;
 		this.TEXT_STYLE_1 = 'Style1';
 		this.TEXT_STYLE_2 = 'Style2';

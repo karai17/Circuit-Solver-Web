@@ -31,6 +31,7 @@ class Variables {
 	public component_translating: boolean;
 	public flag_build_counter: number;
 	public flag_wire_deleted_counter: number;
+	public flag_focus_counter: number;
 	public component_touched: boolean;
 	public mouse_keyboard_lock: boolean;
 	public translation_lock: boolean;
@@ -97,7 +98,7 @@ class Variables {
 	public move_paint: Paint;
 	public wire_paint: Paint;
 	public history: HISTORY_T;
-	public element_on_board: boolean = false;
+	public element_on_board: boolean;
 
 	constructor(CONSTANTS: Constants, COLORS: Colors) {
 		this.device_pixel_ratio = 1;
@@ -114,6 +115,7 @@ class Variables {
 		this.natural_width = 0;
 		this.natural_height = 0;
 		this.virtual_canvas_id = 0;
+		this.element_on_board = false;
 		this.focused = false;
 		this.focused_id = CONSTANTS.NULL;
 		this.focused_type = CONSTANTS.NULL;
@@ -134,6 +136,7 @@ class Variables {
 		this.clipboard_property = CONSTANTS.NULL;
 		this.component_translating = false;
 		this.flag_build_counter = 0;
+		this.flag_focus_counter = 0;
 		this.flag_wire_deleted_counter = 0;
 		this.component_touched = false;
 		this.mouse_keyboard_lock = false;

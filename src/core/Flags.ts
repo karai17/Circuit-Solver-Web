@@ -19,6 +19,7 @@ class Flags {
 	public flag_wire_created: boolean;
 	public flag_history_lock: boolean;
 	public flag_build_element: boolean;
+	public flag_focus_event: boolean;
 	public flag_resize_event: boolean;
 	public flag_force_resize_event: boolean;
 	public flag_on_restore_event: boolean;

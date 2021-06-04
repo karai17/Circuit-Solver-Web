@@ -512,7 +512,7 @@ class ElementOptions {
     }
     mouse_move() { }
     mouse_up() {
-        if (!global.variables.mouse_keyboard_lock) {
+        if (!global.variables.mouse_keyboard_lock && !global.variables.is_right_click) {
             if (!global.flags.flag_save_image &&
                 !global.flags.flag_save_circuit &&
                 !global.flags.flag_zoom &&
