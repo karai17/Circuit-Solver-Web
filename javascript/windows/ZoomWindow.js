@@ -144,20 +144,17 @@ class ZoomWindow {
         this.first_touch_y = 0;
     }
     mouse_down() {
-        if (global.flags.flag_zoom) {
+        if (global.flags.flag_zoom && !global.variables.is_right_click) {
             this.first_touch_x = global.variables.mouse_x;
             this.first_touch_y = global.variables.mouse_y;
         }
     }
     mouse_move() {
-        if (global.flags.flag_zoom) {
-            if (!MOBILE_MODE) {
-                this.hover();
-            }
+        if (global.flags.flag_zoom && !global.variables.is_right_click) {
         }
     }
     mouse_up() {
-        if (global.flags.flag_zoom) {
+        if (global.flags.flag_zoom && !global.variables.is_right_click) {
             if (!global.variables.mouse_keyboard_lock) {
                 if (!this.bounds.contains_xy(global.variables.mouse_x, global.variables.mouse_y) && !this.bounds.contains_xy(this.first_touch_x, this.first_touch_y)) {
                     menu_bar.handle_zoom_flag(!global.flags.flag_zoom);
@@ -268,6 +265,7 @@ class ZoomWindow {
     draw_window(canvas) {
         if (global.flags.flag_zoom) {
             if (!MOBILE_MODE) {
+                this.hover();
                 canvas.draw_color2(global.COLORS.GENERAL_BLACK_COLOR, 130, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
             }
             canvas.draw_rect2(this.bounds, this.bounds_paint);

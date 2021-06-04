@@ -2105,7 +2105,20 @@ function load_app(): void {
 		multi_select_manager.mouse_up();
 		global.variables.component_touched = component_touched;
 		engine_functions.reset_selection(false);
-		engine_functions.handle_nearest_neighbors(temp_translation_lock);
+		if (global.flags.flag_idle &&
+			!global.flags.flag_save_image &&
+			!global.flags.flag_save_circuit &&
+			!global.flags.flag_zoom &&
+			!global.flags.flag_element_options &&
+			!global.flags.flag_element_options_edit &&
+			!global.flags.flag_select_element &&
+			!global.flags.flag_select_timestep &&
+			!global.flags.flag_select_settings &&
+			!global.flags.flag_remove_all &&
+			!global.flags.flag_menu_element_toolbox &&
+			!global.flags.flag_graph) {
+			engine_functions.handle_nearest_neighbors(temp_translation_lock);
+		}
 		global.flags.flag_history_lock = false;
 	}
 	function handle_mouse_wheel(): void {

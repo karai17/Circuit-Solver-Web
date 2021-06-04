@@ -146,20 +146,18 @@ class ConfirmWindow {
 		global.variables.component_touched = true;
 	}
 	mouse_down(): void {
-		if (global.flags.flag_remove_all) {
+		if (global.flags.flag_remove_all && !global.variables.is_right_click) {
 			this.first_touch_x = global.variables.mouse_x;
 			this.first_touch_y = global.variables.mouse_y;
 		}
 	}
 	mouse_move(): void {
-		if (global.flags.flag_remove_all) {
-			if (!MOBILE_MODE) {
-				this.hover();
-			}
+		if (global.flags.flag_remove_all && !global.variables.is_right_click) {
+
 		}
 	}
 	mouse_up(): void {
-		if (global.flags.flag_remove_all) {
+		if (global.flags.flag_remove_all && !global.variables.is_right_click) {
 			if (!global.variables.mouse_keyboard_lock) {
 				if (!this.bounds.contains_xy(global.variables.mouse_x, global.variables.mouse_y) && !this.bounds.contains_xy(this.first_touch_x, this.first_touch_y)) {
 					menu_bar.handle_remove_all_flag(!global.flags.flag_remove_all);
@@ -231,6 +229,7 @@ class ConfirmWindow {
 	draw_window(canvas: GraphicsEngine): void {
 		if (global.flags.flag_remove_all) {
 			if (!MOBILE_MODE) {
+				this.hover();
 				canvas.draw_color2(global.COLORS.GENERAL_BLACK_COLOR, 130, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
 			}
 			canvas.draw_rect2(this.bounds, this.bounds_paint);

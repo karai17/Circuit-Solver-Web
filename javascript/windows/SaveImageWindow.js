@@ -151,7 +151,7 @@ class SaveImageWindow {
         this.height_mul_0p3636 = 0;
     }
     mouse_down() {
-        if (global.flags.flag_save_image) {
+        if (global.flags.flag_save_image && !global.variables.is_right_click) {
             if (this.title_bounds.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) &&
                 !this.exit_button.contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y)) {
                 this.anchor_x = global.variables.mouse_x - this.offset_x;
@@ -165,7 +165,7 @@ class SaveImageWindow {
         }
     }
     mouse_move() {
-        if (global.flags.flag_save_image) {
+        if (global.flags.flag_save_image && !global.variables.is_right_click) {
             if (!this.window_anchored) {
                 this.offset_x = global.variables.mouse_x - this.anchor_x;
                 this.offset_y = global.variables.mouse_y - this.anchor_y;
@@ -197,7 +197,7 @@ class SaveImageWindow {
         }
     }
     mouse_up() {
-        if (global.flags.flag_save_image) {
+        if (global.flags.flag_save_image && !global.variables.is_right_click) {
             if (!global.variables.mouse_keyboard_lock) {
                 if (this.window_anchored) {
                     this.insert_cursor(true, false);

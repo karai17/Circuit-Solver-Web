@@ -428,7 +428,7 @@ class ElementWindow {
 		}
 	}
 	mouse_down(): void {
-		if (global.flags.flag_menu_element_toolbox) {
+		if (global.flags.flag_menu_element_toolbox && !global.variables.is_right_click) {
 			if (!global.variables.mouse_keyboard_lock) {
 				this.first_touch_x = global.variables.mouse_x;
 				this.first_touch_y = global.variables.mouse_y;
@@ -521,7 +521,7 @@ class ElementWindow {
 		}
 	}
 	mouse_move(): void {
-		if (global.flags.flag_menu_element_toolbox) {
+		if (global.flags.flag_menu_element_toolbox && !global.variables.is_right_click) {
 			if (!global.variables.mouse_keyboard_lock) {
 				let cached_value: number = this.bounds.get_width() / this.MAX_ICONS;
 				/* #INSERT_GENERATE_ELEMENT_WINDOW_MOUSE_MOVE# */
@@ -599,7 +599,7 @@ class ElementWindow {
 		}
 	}
 	mouse_up(): void {
-		if (global.flags.flag_menu_element_toolbox) {
+		if (global.flags.flag_menu_element_toolbox && !global.variables.is_right_click) {
 			if (!global.variables.mouse_keyboard_lock) {
 				if (
 					this.positions[this.NAVIGATE_BACK_INDEX].contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() / this.MAX_ICONS, this.bounds.get_height()) &&

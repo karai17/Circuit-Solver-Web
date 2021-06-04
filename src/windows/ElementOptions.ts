@@ -562,7 +562,7 @@ class ElementOptions {
 			!global.flags.flag_select_settings &&
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox &&
-			!global.flags.flag_graph
+			!global.flags.flag_graph && !global.variables.is_right_click
 		) {
 			if (global.variables.selected) {
 				if (this.opts['c0'] !== this.NO_ICON) {
