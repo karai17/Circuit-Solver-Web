@@ -413,7 +413,11 @@ function load_app(): void {
 					global.events.mouse_move_event = mouse_event;
 				}
 			} else {
-				if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
+				//@ts-expect-error
+				touch = mouse_event.touches[0];
+				temp_mouse_x = touch.clientX * global.variables.device_pixel_ratio;
+				temp_mouse_y = touch.clientY * global.variables.device_pixel_ratio;
+				if (temp_mouse_x >= view_port.left && temp_mouse_x <= view_port.right && temp_mouse_y >= view_port.top && temp_mouse_y <= view_port.bottom) {
 					global.flags.flag_mouse_move_event = true;
 					global.events.mouse_move_event = mouse_event;
 				}
