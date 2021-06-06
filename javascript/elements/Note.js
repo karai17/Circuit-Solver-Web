@@ -128,7 +128,7 @@ class Note {
                         this.handle_wire_builder(this.elm.n1, global.variables.anchor_point['p1']);
                         global.variables.component_touched = true;
                     }
-                    else if (this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() * 0.8, this.bounds.get_height() * 0.8)) {
+                    else if (this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width(), this.bounds.get_height())) {
                         this.is_translating = false;
                         global.variables.focused_id = this.elm.id;
                         global.variables.focused_type = this.elm.type;

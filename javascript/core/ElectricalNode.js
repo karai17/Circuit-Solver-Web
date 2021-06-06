@@ -27,12 +27,8 @@ class ElectricalNode {
         this.references = [];
         this.column = Math.floor(this.id / Math.round(global.settings.SQRT_MAXNODES));
         this.row = this.id % Math.round(global.settings.SQRT_MAXNODES);
-        let node_space_x = 1.175 * (global.variables.node_space_x >> 2);
-        let node_space_y = 1.175 * (global.variables.node_space_y >> 2);
-        if (MOBILE_MODE) {
-            node_space_x *= 1.25;
-            node_space_y *= 1.25;
-        }
+        let node_space_x = 1.5 * (global.variables.node_space_x >> 2);
+        let node_space_y = 1.5 * (global.variables.node_space_y >> 2);
         this.bounds = new RectF(this.location.x - node_space_x, this.location.y - node_space_y, this.location.x + node_space_x, this.location.y + node_space_y);
         this.loc_x_precalc = this.row * global.settings.INV_SQRT_M_1;
         this.loc_y_precalc = this.column * global.settings.INV_SQRT_M_1;
