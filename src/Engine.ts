@@ -427,14 +427,8 @@ function load_app(): void {
 	function mouse_up(mouse_event: MouseEvent): void {
 		mouse_event.preventDefault();
 		if (mouse_event_latch) {
-			if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
-				global.flags.flag_mouse_up_event = true;
-				if (MOBILE_MODE) {
-					global.events.mouse_up_event_queue.push(mouse_event);
-				} else {
-					global.events.mouse_up_event_queue.push(mouse_event);
-				}
-			}
+			global.flags.flag_mouse_up_event = true;
+			global.events.mouse_up_event_queue.push(mouse_event);
 		}
 	}
 	function mouse_wheel(mouse_event: MouseEvent): void {
@@ -453,25 +447,29 @@ function load_app(): void {
 	}
 	function key_down(key_event: KeyboardEvent): void {
 		key_event.preventDefault();
-		global.flags.flag_key_down_event = true;
-		global.events.key_down_event_queue.push(<KEY_EVENT_T>{
-			event: key_event,
-			alt: key_event.getModifierState('Alt'),
-			shift: key_event.getModifierState('Shift'),
-			ctrl: key_event.getModifierState('Control'),
-			caps: key_event.getModifierState('CapsLock')
-		});
+		if (!MOBILE_MODE) {
+			global.flags.flag_key_down_event = true;
+			global.events.key_down_event_queue.push(<KEY_EVENT_T>{
+				event: key_event,
+				alt: key_event.getModifierState('Alt'),
+				shift: key_event.getModifierState('Shift'),
+				ctrl: key_event.getModifierState('Control'),
+				caps: key_event.getModifierState('CapsLock')
+			});
+		}
 	}
 	function key_up(key_event: KeyboardEvent): void {
 		key_event.preventDefault();
-		global.flags.flag_key_up_event = true;
-		global.events.key_up_event_queue.push(<KEY_EVENT_T>{
-			event: key_event,
-			alt: key_event.getModifierState('Alt'),
-			shift: key_event.getModifierState('Shift'),
-			ctrl: key_event.getModifierState('Control'),
-			caps: key_event.getModifierState('CapsLock')
-		});
+		if (!MOBILE_MODE) {
+			global.flags.flag_key_up_event = true;
+			global.events.key_up_event_queue.push(<KEY_EVENT_T>{
+				event: key_event,
+				alt: key_event.getModifierState('Alt'),
+				shift: key_event.getModifierState('Shift'),
+				ctrl: key_event.getModifierState('Control'),
+				caps: key_event.getModifierState('CapsLock')
+			});
+		}
 	}
 	function resize_components(): void {
 		global.variables.natural_height = 2 * (view_port.view_height * global.settings.WORKSPACE_RATIO_Y);

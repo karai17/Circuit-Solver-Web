@@ -442,15 +442,8 @@ function load_app() {
     function mouse_up(mouse_event) {
         mouse_event.preventDefault();
         if (mouse_event_latch) {
-            if (global.variables.mouse_x >= view_port.left && global.variables.mouse_x <= view_port.right && global.variables.mouse_y >= view_port.top && global.variables.mouse_y <= view_port.bottom) {
-                global.flags.flag_mouse_up_event = true;
-                if (MOBILE_MODE) {
-                    global.events.mouse_up_event_queue.push(mouse_event);
-                }
-                else {
-                    global.events.mouse_up_event_queue.push(mouse_event);
-                }
-            }
+            global.flags.flag_mouse_up_event = true;
+            global.events.mouse_up_event_queue.push(mouse_event);
         }
     }
     function mouse_wheel(mouse_event) {
@@ -469,25 +462,29 @@ function load_app() {
     }
     function key_down(key_event) {
         key_event.preventDefault();
-        global.flags.flag_key_down_event = true;
-        global.events.key_down_event_queue.push({
-            event: key_event,
-            alt: key_event.getModifierState('Alt'),
-            shift: key_event.getModifierState('Shift'),
-            ctrl: key_event.getModifierState('Control'),
-            caps: key_event.getModifierState('CapsLock')
-        });
+        if (!MOBILE_MODE) {
+            global.flags.flag_key_down_event = true;
+            global.events.key_down_event_queue.push({
+                event: key_event,
+                alt: key_event.getModifierState('Alt'),
+                shift: key_event.getModifierState('Shift'),
+                ctrl: key_event.getModifierState('Control'),
+                caps: key_event.getModifierState('CapsLock')
+            });
+        }
     }
     function key_up(key_event) {
         key_event.preventDefault();
-        global.flags.flag_key_up_event = true;
-        global.events.key_up_event_queue.push({
-            event: key_event,
-            alt: key_event.getModifierState('Alt'),
-            shift: key_event.getModifierState('Shift'),
-            ctrl: key_event.getModifierState('Control'),
-            caps: key_event.getModifierState('CapsLock')
-        });
+        if (!MOBILE_MODE) {
+            global.flags.flag_key_up_event = true;
+            global.events.key_up_event_queue.push({
+                event: key_event,
+                alt: key_event.getModifierState('Alt'),
+                shift: key_event.getModifierState('Shift'),
+                ctrl: key_event.getModifierState('Control'),
+                caps: key_event.getModifierState('CapsLock')
+            });
+        }
     }
     function resize_components() {
         global.variables.natural_height = 2 * (view_port.view_height * global.settings.WORKSPACE_RATIO_Y);
