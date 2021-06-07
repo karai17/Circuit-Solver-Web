@@ -296,7 +296,7 @@ class ADCModule {
 				if (global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
 					global.variables.is_dragging = false;
 					if (!this.is_translating) {
-						if (!this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1)) {
+						if (!this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() * 0.75, this.bounds.get_height() * 0.75)) {
 							this.release_nodes();
 							this.bounds.anchored = false;
 							this.is_translating = true;
@@ -571,7 +571,7 @@ class ADCModule {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;
@@ -685,7 +685,9 @@ class ADCModule {
 					!global.flags.flag_select_settings &&
 					!global.flags.flag_select_element &&
 					!global.flags.flag_remove_all &&
-					!global.flags.flag_add_element
+					!global.flags.flag_add_element &&
+
+					!global.variables.is_dragging
 				) {
 					if (this.elm.consistent()) {
 						this.node_id_array = this.elm.get_nodes();

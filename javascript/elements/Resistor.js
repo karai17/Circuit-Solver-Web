@@ -245,7 +245,7 @@ class Resistor {
                 if (global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
                     global.variables.is_dragging = false;
                     if (!this.is_translating) {
-                        if (!this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1)) {
+                        if (!this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() * 0.75, this.bounds.get_height() * 0.75)) {
                             this.release_nodes();
                             this.bounds.anchored = false;
                             this.is_translating = true;
@@ -634,7 +634,8 @@ class Resistor {
                     !global.flags.flag_select_settings &&
                     !global.flags.flag_select_element &&
                     !global.flags.flag_remove_all &&
-                    !global.flags.flag_add_element) {
+                    !global.flags.flag_add_element &&
+                    !global.variables.is_dragging) {
                     if (this.elm.consistent()) {
                         this.node_id_array = this.elm.get_nodes();
                         for (var i = 0; i < this.node_id_array.length; i++) {

@@ -44,6 +44,24 @@ class Trace {
         this.constant = 0;
         this.constant2 = 0;
     }
+    get_max() {
+        let max = 0;
+        for (var i = this.magnitude_list.length - 1; i > -1; i--) {
+            if (-this.magnitude_list[i].y > max) {
+                max = -this.magnitude_list[i].y;
+            }
+        }
+        return max;
+    }
+    get_min() {
+        let min = Number.MAX_VALUE;
+        for (var i = this.magnitude_list.length - 1; i > -1; i--) {
+            if (-this.magnitude_list[i].y < min) {
+                min = -this.magnitude_list[i].y;
+            }
+        }
+        return min;
+    }
     set_color(color) {
         this.trace_stroke_paint.set_color(color);
         this.trace_fill_paint.set_color(color);

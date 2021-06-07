@@ -10,6 +10,7 @@ class Templates {
 	public readonly TIMESTEP_TEMPLATE: string;
 	public readonly FILE_BUTTON_TEXT_TEMPLATE: string;
 	public readonly DEBUG_TEMPLATE: string;
+	public readonly GRAPH_DETAILS_TEMPLATE: string;
 	constructor() {
 		this.ELEMENT_TAG_TEMPLATE = '{TAG}{ID}';
 		this.ELEMENT_VAL_TEMPLATE = '{VAL}{UNIT}';
@@ -21,5 +22,6 @@ class Templates {
 		this.TIMESTEP_TEMPLATE = 'Δt:={TIMESTEP}s';
 		this.FILE_BUTTON_TEXT_TEMPLATE = '  {TEXT}  ';
 		this.DEBUG_TEMPLATE = '({ID},{TYPE}),';
+		this.GRAPH_DETAILS_TEMPLATE = '  {SCOPE}, Max: {MAX}, Min: {MIN} [{UNITS}]';
 	}
 }

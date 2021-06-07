@@ -131,12 +131,10 @@ class GraphWindow {
         this.download_button = new Button(this.inner_bounds.right - width, this.inner_bounds.top + padding, this.inner_bounds.right - padding, this.inner_bounds.top + padding + height);
         this.download_button.text = 'CSV';
         this.download_button.text_paint.set_color(global.COLORS.GENERAL_WHITE_COLOR);
-        this.download_button.fill_paint.set_color(global.COLORS.GENERAL_FILL_COLOR);
-        this.download_button.fill_paint.set_alpha(255);
+        this.download_button.fill_paint.set_color(global.COLORS.GENERAL_GREEN_COLOR);
+        this.download_button.fill_paint.set_alpha(164);
         this.download_button.draw_stroke = false;
         this.download_button.draw_fill = true;
-        this.first_touch_x = 0;
-        this.first_touch_y = 0;
         this.line_buffer = [];
         this.cached_value = 0;
         this.cached_value_t_p_o1 = 0;
@@ -233,8 +231,6 @@ class GraphWindow {
     }
     mouse_down() {
         if (global.flags.flag_graph && !global.variables.is_right_click) {
-            this.first_touch_x = global.variables.mouse_x;
-            this.first_touch_y = global.variables.mouse_y;
             if (this.download_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y)) {
                 this.generate_csv();
             }
@@ -331,7 +327,6 @@ class GraphWindow {
             }
             canvas.draw_line_buffer(this.line_buffer, this.line_paint);
             if (scope_manager.entry.length > 0) {
-                canvas.draw_text(scope_manager.get_scope_name(this.SCOPE_0_INDEX), this.bounds.get_center_x() - 1.25 * global.variables.canvas_text_size_base * (3.5 * this.text_paint.measure_text(scope_manager.get_scope_name(this.SCOPE_0_INDEX))), this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_a_paint);
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_a.trace.length) {
                     if (this.graph_trace_a.get_value(this.meter_hover_index)[1] !== '') {
                         canvas.draw_text(this.graph_trace_a.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_0_INDEX), this.inner_bounds.left, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_a_paint);
@@ -346,7 +341,6 @@ class GraphWindow {
                 }
             }
             if (scope_manager.entry.length > 1) {
-                canvas.draw_text(scope_manager.get_scope_name(this.SCOPE_1_INDEX), this.bounds.get_center_x(), this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_b_paint);
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_b.trace.length) {
                     if (this.graph_trace_b.get_value(this.meter_hover_index)[1] !== '') {
                         canvas.draw_text(this.graph_trace_b.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_1_INDEX), this.inner_bounds.left + view_port.view_width * 0.1, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_b_paint);
@@ -361,7 +355,6 @@ class GraphWindow {
                 }
             }
             if (scope_manager.entry.length > 2) {
-                canvas.draw_text(scope_manager.get_scope_name(this.SCOPE_2_INDEX), this.bounds.get_center_x() + 1.25 * global.variables.canvas_text_size_base * (3.5 * this.text_paint.measure_text(scope_manager.get_scope_name(this.SCOPE_2_INDEX))), this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_c_paint);
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_c.trace.length) {
                     if (this.graph_trace_c.get_value(this.meter_hover_index)[1] !== '') {
                         canvas.draw_text(this.graph_trace_c.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_2_INDEX), this.inner_bounds.left + view_port.view_width * 0.2, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_c_paint);
@@ -418,10 +411,28 @@ class GraphWindow {
                 }
             }
             canvas.draw_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step', this.inner_bounds.right - this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   '), this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.text_paint);
+            if (this.graph_trace_a.magnitude_list.length > 0) {
+                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", global.utils.exponentiate_quickly(this.graph_trace_a.get_max()))
+                    .replace("{MIN}", global.utils.exponentiate_quickly(this.graph_trace_a.get_min()))
+                    .replace("{UNITS}", scope_manager.get_units(this.SCOPE_0_INDEX))
+                    .replace("{SCOPE}", scope_manager.get_scope_name(this.SCOPE_0_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.023125, this.graph_text_a_paint);
+            }
+            if (this.graph_trace_b.magnitude_list.length > 0) {
+                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", global.utils.exponentiate_quickly(this.graph_trace_b.get_max()))
+                    .replace("{MIN}", global.utils.exponentiate_quickly(this.graph_trace_b.get_min()))
+                    .replace("{UNITS}", scope_manager.get_units(this.SCOPE_1_INDEX))
+                    .replace("{SCOPE}", scope_manager.get_scope_name(this.SCOPE_1_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.060125, this.graph_text_b_paint);
+            }
+            if (this.graph_trace_c.magnitude_list.length > 0) {
+                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", global.utils.exponentiate_quickly(this.graph_trace_c.get_max()))
+                    .replace("{MIN}", global.utils.exponentiate_quickly(this.graph_trace_c.get_min()))
+                    .replace("{UNITS}", scope_manager.get_units(this.SCOPE_2_INDEX))
+                    .replace("{SCOPE}", scope_manager.get_scope_name(this.SCOPE_2_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.096125, this.graph_text_c_paint);
+            }
             if (this.download_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) && !MOBILE_MODE) {
                 this.download_button.fill_paint.set_color(global.COLORS.GENERAL_HOVER_COLOR);
                 this.download_button.draw_button(canvas);
-                this.download_button.fill_paint.set_color(global.COLORS.GENERAL_FILL_COLOR);
+                this.download_button.fill_paint.set_color(global.COLORS.GENERAL_GREEN_COLOR);
             }
             else {
                 this.download_button.draw_button(canvas);
