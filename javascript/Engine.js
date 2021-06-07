@@ -1585,7 +1585,7 @@ function load_app() {
         global.variables.dx = -(global.variables.last_mouse_x - global.variables.mouse_x) * global.settings.TRANSLATION_SCALE;
         global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
         if (global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-            0.5 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+            1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
             global.variables.translation_lock) {
             global.variables.translation_lock = false;
             global.variables.is_dragging = global.variables.temp_is_dragging;
