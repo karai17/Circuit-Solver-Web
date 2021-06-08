@@ -272,39 +272,19 @@ class Note {
 		global.variables.selected = true;
 	}
 	remove_focus(): void {
-		if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
-			global.variables.focused_id = global.CONSTANTS.NULL;
-			global.variables.focused_type = global.CONSTANTS.NULL;
-			global.variables.focused_bounds = global.CONSTANTS.NULL;
-			global.variables.focused = false;
-		}
+		global.utils.remove_focus(this.elm.type, this.elm.id);
 	}
 	remove_selection(): void {
-		if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
-			global.variables.selected_id = global.CONSTANTS.NULL;
-			global.variables.selected_type = -1;
-			global.variables.selected_bounds = global.CONSTANTS.NULL;
-			global.variables.selected_properties = global.CONSTANTS.NULL;
-			global.variables.selected_wire_style = global.CONSTANTS.NULL;
-			global.variables.selected = false;
-		}
+		global.utils.remove_selection(this.elm.type, this.elm.id);
 	}
 	wire_reference_maintenance(): void {
-		if (this.wire_reference.length > 0 && global.flags.flag_wire_deleted) {
-			let id: number = -1;
-			for (var i: number = this.wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(this.wire_reference[i]['wire_id']);
-				if (!(id > -1 && id < wires.length)) {
-					this.wire_reference.splice(i, 1);
-				}
-			}
-		}
+		global.utils.wire_reference_maintenance(this.wire_reference);
 	}
 	unanchor_wires(): void {
-		global.utils.unanchor_wires2(this.wire_reference, this.get_vertices());
+		global.utils.unanchor_wires(this.wire_reference, this.get_vertices());
 	}
 	anchor_wires(): void {
-		global.utils.anchor_wires2(this.wire_reference, this.get_vertices());
+		global.utils.anchor_wires(this.wire_reference, this.get_vertices());
 	}
 	push_history(): void {
 		if (this.initialized) {

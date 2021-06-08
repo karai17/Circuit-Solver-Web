@@ -97,8 +97,8 @@ class Wire {
 			this.p2.set_point(nodes[this.elm.n2].location.x, nodes[this.elm.n2].location.y);
 		}
 	}
-	stamp(): void {}
-	release_wires(): void {}
+	stamp(): void { }
+	release_wires(): void { }
 	release_nodes(): void {
 		if (this.elm.consistent()) {
 			nodes[this.elm.n1].remove_reference(this.elm.id, this.elm.type);
@@ -129,7 +129,7 @@ class Wire {
 		}
 		this.build_element_flag = true;
 	}
-	move_element(dx: number, dy: number): void {}
+	move_element(dx: number, dy: number): void { }
 	mouse_down(): void {
 		if (
 			global.flags.flag_idle &&
@@ -155,7 +155,7 @@ class Wire {
 			}
 		}
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (global.flags.flag_idle) {
 			if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
@@ -309,24 +309,12 @@ class Wire {
 		}
 		this.set_wire_style(this.elm.wire_style);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	remove_focus(): void {
-		if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
-			global.variables.focused_id = global.CONSTANTS.NULL;
-			global.variables.focused_type = global.CONSTANTS.NULL;
-			global.variables.focused_bounds = global.CONSTANTS.NULL;
-			global.variables.focused = false;
-		}
+		global.utils.remove_focus(this.elm.type, this.elm.id);
 	}
 	remove_selection(): void {
-		if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
-			global.variables.selected_id = global.CONSTANTS.NULL;
-			global.variables.selected_type = -1;
-			global.variables.selected_bounds = global.CONSTANTS.NULL;
-			global.variables.selected_properties = global.CONSTANTS.NULL;
-			global.variables.selected_wire_style = global.CONSTANTS.NULL;
-			global.variables.selected = false;
-		}
+		global.utils.remove_selection(this.elm.type, this.elm.id);
 	}
 	recolor(): void {
 		if (global.variables.selected) {
@@ -575,5 +563,5 @@ class Wire {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }

@@ -483,7 +483,8 @@ class ElementOptions {
             !global.flags.flag_select_settings &&
             !global.flags.flag_remove_all &&
             !global.flags.flag_menu_element_toolbox &&
-            !global.flags.flag_graph && !global.variables.is_right_click) {
+            !global.flags.flag_graph &&
+            !global.variables.is_right_click) {
             if (global.variables.selected) {
                 if (this.opts['c0'] !== this.NO_ICON) {
                     if (this.option_0.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.option_0.get_width() * 1.25, this.option_0.get_height() * 1.25)) {

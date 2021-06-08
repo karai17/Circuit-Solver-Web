@@ -288,149 +288,7 @@ class Util {
 
 		return [m_x, m_y];
 	}
-	unanchor_wires2(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
-		if (wire_reference.length > 0) {
-			let id: number = -1;
-			for (var i: number = wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						wires[id].release_nodes();
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.y = vertices[1];
-							wires[id].p2.x = vertices[0];
-						}
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						wires[id].release_nodes();
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-					}
-				} else {
-					wire_reference.splice(i, 1);
-				}
-			}
-		}
-	}
-	anchor_wires2(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
-		if (wire_reference.length > 0) {
-			let id: number = -1;
-			for (var i: number = wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[0];
-							wires[id].p2.y = vertices[1];
-						}
-						wires[id].capture_nodes();
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-						wires[id].capture_nodes();
-					}
-				} else {
-					wire_reference.splice(i, 1);
-				}
-			}
-		}
-	}
-	unanchor_wires3(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
-		if (wire_reference.length > 0) {
-			let id: number = -1;
-			for (var i: number = wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						wires[id].release_nodes();
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.y = vertices[1];
-							wires[id].p2.x = vertices[0];
-						}
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						wires[id].release_nodes();
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p3']) {
-						wires[id].release_nodes();
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[4];
-							wires[id].p1.y = vertices[5];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[4];
-							wires[id].p2.y = vertices[5];
-						}
-					}
-				} else {
-					wire_reference.splice(i, 1);
-				}
-			}
-		}
-	}
-	anchor_wires3(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
-		if (wire_reference.length > 0) {
-			let id: number = -1;
-			for (var i: number = wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[0];
-							wires[id].p2.y = vertices[1];
-						}
-						wires[id].capture_nodes();
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-						wires[id].capture_nodes();
-					} else if (wire_reference[i]['anchor_point'] === global.variables.anchor_point['p3']) {
-						if (wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[4];
-							wires[id].p1.y = vertices[5];
-						} else if (wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[4];
-							wires[id].p2.y = vertices[5];
-						}
-						wires[id].capture_nodes();
-					}
-				} else {
-					wire_reference.splice(i, 1);
-				}
-			}
-		}
-	}
-	unanchor_wires4(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
+	unanchor_wires(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
 		if (wire_reference.length > 0) {
 			let id: number = -1;
 			for (var i: number = wire_reference.length - 1; i > -1; i--) {
@@ -479,7 +337,7 @@ class Util {
 			}
 		}
 	}
-	anchor_wires4(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
+	anchor_wires(wire_reference: Array<WIRE_REFERENCE_T>, vertices: Array<number>): void {
 		if (wire_reference.length > 0) {
 			let id: number = -1;
 			for (var i: number = wire_reference.length - 1; i > -1; i--) {
@@ -526,6 +384,52 @@ class Util {
 					wire_reference.splice(i, 1);
 				}
 			}
+		}
+	}
+	update_wire_builder(n: number, anchor: number, type: number, id: number): void {
+		if (global.variables.wire_builder['step'] === 0) {
+			global.variables.wire_builder['n1'] = n;
+			global.variables.wire_builder['type1'] = type;
+			global.variables.wire_builder['id1'] = id;
+			global.variables.wire_builder['anchor_point1'] = anchor;
+			global.variables.wire_builder['linkage1']['wire'] = global.variables.wire_builder['step'];
+			global.variables.wire_builder['step']++;
+		} else if (global.variables.wire_builder['step'] === 1) {
+			global.variables.wire_builder['n2'] = n;
+			global.variables.wire_builder['type2'] = type;
+			global.variables.wire_builder['id2'] = id;
+			global.variables.wire_builder['anchor_point2'] = anchor;
+			global.variables.wire_builder['linkage2']['wire'] = global.variables.wire_builder['step'];
+			global.variables.wire_builder['step']++;
+		}
+	}
+	wire_reference_maintenance(wire_reference: Array<WIRE_REFERENCE_T>): void {
+		if (wire_reference.length > 0 && global.flags.flag_wire_deleted) {
+			let id: number = -1;
+			for (var i: number = wire_reference.length - 1; i > -1; i--) {
+				id = engine_functions.get_wire(wire_reference[i]['wire_id']);
+				if (!(id > -1 && id < wires.length)) {
+					wire_reference.splice(i, 1);
+				}
+			}
+		}
+	}
+	remove_focus(type: number, id: number): void {
+		if (global.variables.focused && global.variables.focused_id === id && global.variables.focused_type === type) {
+			global.variables.focused_id = global.CONSTANTS.NULL;
+			global.variables.focused_type = global.CONSTANTS.NULL;
+			global.variables.focused_bounds = global.CONSTANTS.NULL;
+			global.variables.focused = false;
+		}
+	}
+	remove_selection(type: number, id: number): void {
+		if (global.variables.selected_id === id && global.variables.selected_type === type) {
+			global.variables.selected_id = global.CONSTANTS.NULL;
+			global.variables.selected_type = -1;
+			global.variables.selected_bounds = global.CONSTANTS.NULL;
+			global.variables.selected_properties = global.CONSTANTS.NULL;
+			global.variables.selected_wire_style = global.CONSTANTS.NULL;
+			global.variables.selected = false;
 		}
 	}
 	get_average4(a: number, b: number, c: number, d: number): number {

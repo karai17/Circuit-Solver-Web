@@ -244,21 +244,7 @@ class AbsoluteValue {
 		}
 	}
 	handle_wire_builder(n: number, anchor: number): void {
-		if (global.variables.wire_builder['step'] === 0) {
-			global.variables.wire_builder['n1'] = n;
-			global.variables.wire_builder['type1'] = this.elm.type;
-			global.variables.wire_builder['id1'] = this.elm.id;
-			global.variables.wire_builder['anchor_point1'] = anchor;
-			global.variables.wire_builder['linkage1']['wire'] = global.variables.wire_builder['step'];
-			global.variables.wire_builder['step']++;
-		} else if (global.variables.wire_builder['step'] === 1) {
-			global.variables.wire_builder['n2'] = n;
-			global.variables.wire_builder['type2'] = this.elm.type;
-			global.variables.wire_builder['id2'] = this.elm.id;
-			global.variables.wire_builder['anchor_point2'] = anchor;
-			global.variables.wire_builder['linkage2']['wire'] = global.variables.wire_builder['step'];
-			global.variables.wire_builder['step']++;
-		}
+		global.utils.update_wire_builder(n, anchor, this.elm.type, this.elm.id);
 	}
 	move_element(dx: number, dy: number): void {
 		wire_manager.reset_wire_builder();
@@ -346,39 +332,19 @@ class AbsoluteValue {
 		global.variables.selected = true;
 	}
 	remove_focus(): void {
-		if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
-			global.variables.focused_id = global.CONSTANTS.NULL;
-			global.variables.focused_type = global.CONSTANTS.NULL;
-			global.variables.focused_bounds = global.CONSTANTS.NULL;
-			global.variables.focused = false;
-		}
+		global.utils.remove_focus(this.elm.type, this.elm.id);
 	}
 	remove_selection(): void {
-		if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
-			global.variables.selected_id = global.CONSTANTS.NULL;
-			global.variables.selected_type = -1;
-			global.variables.selected_bounds = global.CONSTANTS.NULL;
-			global.variables.selected_properties = global.CONSTANTS.NULL;
-			global.variables.selected_wire_style = global.CONSTANTS.NULL;
-			global.variables.selected = false;
-		}
+		global.utils.remove_selection(this.elm.type, this.elm.id);
 	}
 	wire_reference_maintenance(): void {
-		if (this.wire_reference.length > 0 && global.flags.flag_wire_deleted) {
-			let id: number = -1;
-			for (var i: number = this.wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(this.wire_reference[i]['wire_id']);
-				if (!(id > -1 && id < wires.length)) {
-					this.wire_reference.splice(i, 1);
-				}
-			}
-		}
+		global.utils.wire_reference_maintenance(this.wire_reference);
 	}
 	unanchor_wires(): void {
-		global.utils.unanchor_wires2(this.wire_reference, this.get_vertices());
+		global.utils.unanchor_wires(this.wire_reference, this.get_vertices());
 	}
 	anchor_wires(): void {
-		global.utils.anchor_wires2(this.wire_reference, this.get_vertices());
+		global.utils.anchor_wires(this.wire_reference, this.get_vertices());
 	}
 	set_flip(flip: number): void {
 		this.build_element_flag = true;

@@ -291,22 +291,10 @@ class Wire {
     }
     increment_flip() { }
     remove_focus() {
-        if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
-            global.variables.focused_id = global.CONSTANTS.NULL;
-            global.variables.focused_type = global.CONSTANTS.NULL;
-            global.variables.focused_bounds = global.CONSTANTS.NULL;
-            global.variables.focused = false;
-        }
+        global.utils.remove_focus(this.elm.type, this.elm.id);
     }
     remove_selection() {
-        if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
-            global.variables.selected_id = global.CONSTANTS.NULL;
-            global.variables.selected_type = -1;
-            global.variables.selected_bounds = global.CONSTANTS.NULL;
-            global.variables.selected_properties = global.CONSTANTS.NULL;
-            global.variables.selected_wire_style = global.CONSTANTS.NULL;
-            global.variables.selected = false;
-        }
+        global.utils.remove_selection(this.elm.type, this.elm.id);
     }
     recolor() {
         if (global.variables.selected) {
