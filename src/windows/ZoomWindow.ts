@@ -167,7 +167,6 @@ class ZoomWindow {
 	}
 	mouse_move(): void {
 		if (global.flags.flag_zoom && !global.variables.is_right_click) {
-
 		}
 	}
 	mouse_up(): void {

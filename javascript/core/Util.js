@@ -231,6 +231,21 @@ class Util {
         let c_y = p_y + temp * this.sine(theta_p_p3);
         return Array(c_x, c_y);
     }
+    clip_bounds(m_x, m_y) {
+        if (m_x < workspace.bounds.left + 2.5 * global.variables.node_space_x) {
+            m_x = workspace.bounds.left + 2.5 * global.variables.node_space_x;
+        }
+        else if (m_x > workspace.bounds.right - 2.0 * global.variables.node_space_x) {
+            m_x = workspace.bounds.right - 2.0 * global.variables.node_space_x;
+        }
+        if (m_y < workspace.bounds.top + 2.5 * global.variables.node_space_y) {
+            m_y = workspace.bounds.top + 2.5 * global.variables.node_space_y;
+        }
+        else if (m_y > workspace.bounds.bottom - 2.0 * global.variables.node_space_y) {
+            m_y = workspace.bounds.bottom - 2.0 * global.variables.node_space_y;
+        }
+        return [m_x, m_y];
+    }
     get_average4(a, b, c, d) {
         return (a + b + c + d) * 0.25;
     }

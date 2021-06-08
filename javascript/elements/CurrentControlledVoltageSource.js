@@ -263,18 +263,7 @@ class CurrentControlledVoltageSource {
         this.release_nodes();
         this.m_x = this.c_x + dx;
         this.m_y = this.c_y + dy;
-        if (this.m_x < workspace.bounds.left + 2.5 * global.variables.node_space_x) {
-            this.m_x = workspace.bounds.left + 2.5 * global.variables.node_space_x;
-        }
-        else if (this.m_x > workspace.bounds.right - 2.0 * global.variables.node_space_x) {
-            this.m_x = workspace.bounds.right - 2.0 * global.variables.node_space_x;
-        }
-        if (this.m_y < workspace.bounds.top + 2.5 * global.variables.node_space_y) {
-            this.m_y = workspace.bounds.top + 2.5 * global.variables.node_space_y;
-        }
-        else if (this.m_y > workspace.bounds.bottom - 2.0 * global.variables.node_space_y) {
-            this.m_y = workspace.bounds.bottom - 2.0 * global.variables.node_space_y;
-        }
+        [this.m_x, this.m_y] = global.utils.clip_bounds(this.m_x, this.m_y);
         this.grid_point = this.elm.snap_to_grid(this.m_x, this.m_y);
         this.bounds.set_center(this.grid_point[0], this.grid_point[1]);
         this.refactor();

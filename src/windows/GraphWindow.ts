@@ -246,7 +246,8 @@ class GraphWindow {
 		} else if (index === 2) {
 			this.graph_trace_c.reset();
 		}
-	} reset(): void {
+	}
+	reset(): void {
 		this.graph_trace_a.reset();
 		this.graph_trace_b.reset();
 		this.graph_trace_c.reset();
@@ -449,9 +450,9 @@ class GraphWindow {
 					canvas.draw_text(
 						this.time_axis_value + 's',
 						this.inner_bounds.right -
-						this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
-						this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
-						view_port.view_width * 0.1,
+							this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
+							this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
+							view_port.view_width * 0.1,
 						this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1),
 						this.text_paint
 					);
@@ -508,25 +509,37 @@ class GraphWindow {
 			);
 
 			if (this.graph_trace_a.magnitude_list.length > 0) {
-				canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_a.get_max())))
-					.replace("{MIN}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_a.get_min())))
-					.replace("{UNITS}", <string>(<unknown>scope_manager.get_units(this.SCOPE_0_INDEX)))
-					.replace("{SCOPE}", <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_0_INDEX)))
-					, this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.023125, this.graph_text_a_paint);
+				canvas.draw_text(
+					global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_a.get_max())))
+						.replace('{MIN}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_a.get_min())))
+						.replace('{UNITS}', <string>(<unknown>scope_manager.get_units(this.SCOPE_0_INDEX)))
+						.replace('{SCOPE}', <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_0_INDEX))),
+					this.inner_bounds.left,
+					this.inner_bounds.top + this.inner_bounds.get_height() * 0.023125,
+					this.graph_text_a_paint
+				);
 			}
 			if (this.graph_trace_b.magnitude_list.length > 0) {
-				canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_b.get_max())))
-					.replace("{MIN}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_b.get_min())))
-					.replace("{UNITS}", <string>(<unknown>scope_manager.get_units(this.SCOPE_1_INDEX)))
-					.replace("{SCOPE}", <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_1_INDEX)))
-					, this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.060125, this.graph_text_b_paint);
+				canvas.draw_text(
+					global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_b.get_max())))
+						.replace('{MIN}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_b.get_min())))
+						.replace('{UNITS}', <string>(<unknown>scope_manager.get_units(this.SCOPE_1_INDEX)))
+						.replace('{SCOPE}', <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_1_INDEX))),
+					this.inner_bounds.left,
+					this.inner_bounds.top + this.inner_bounds.get_height() * 0.060125,
+					this.graph_text_b_paint
+				);
 			}
 			if (this.graph_trace_c.magnitude_list.length > 0) {
-				canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace("{MAX}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_c.get_max())))
-					.replace("{MIN}", <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_c.get_min())))
-					.replace("{UNITS}", <string>(<unknown>scope_manager.get_units(this.SCOPE_2_INDEX)))
-					.replace("{SCOPE}", <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_2_INDEX)))
-					, this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.096125, this.graph_text_c_paint);
+				canvas.draw_text(
+					global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_c.get_max())))
+						.replace('{MIN}', <string>(<unknown>global.utils.exponentiate_quickly(this.graph_trace_c.get_min())))
+						.replace('{UNITS}', <string>(<unknown>scope_manager.get_units(this.SCOPE_2_INDEX)))
+						.replace('{SCOPE}', <string>(<unknown>scope_manager.get_scope_name(this.SCOPE_2_INDEX))),
+					this.inner_bounds.left,
+					this.inner_bounds.top + this.inner_bounds.get_height() * 0.096125,
+					this.graph_text_c_paint
+				);
 			}
 			if (this.download_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) && !MOBILE_MODE) {
 				this.download_button.fill_paint.set_color(global.COLORS.GENERAL_HOVER_COLOR);

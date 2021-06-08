@@ -105,7 +105,8 @@ class Path {
 			x1: 0,
 			y1: 0
 		};
-	} reset(): void {
+	}
+	reset(): void {
 		this.indexer = 0;
 		this.path_2d = [];
 	}

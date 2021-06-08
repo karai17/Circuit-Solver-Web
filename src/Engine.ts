@@ -306,7 +306,7 @@ function load_app(): void {
 			ctx.globalCompositeOperation = 'copy';
 			virtual_surface.context.globalCompositeOperation = 'source-over';
 			canvas.on_resize();
-		} catch (e) { }
+		} catch (e) {}
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -350,7 +350,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) { }
+		} catch (e) {}
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -646,7 +646,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () { });
+								render().then(function () {});
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1596,7 +1596,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-			1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+				1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;
@@ -2114,7 +2114,8 @@ function load_app(): void {
 		multi_select_manager.mouse_up();
 		global.variables.component_touched = component_touched;
 		engine_functions.reset_selection(false);
-		if (global.flags.flag_idle &&
+		if (
+			global.flags.flag_idle &&
 			!global.flags.flag_save_image &&
 			!global.flags.flag_save_circuit &&
 			!global.flags.flag_zoom &&
@@ -2125,7 +2126,8 @@ function load_app(): void {
 			!global.flags.flag_select_settings &&
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox &&
-			!global.flags.flag_graph) {
+			!global.flags.flag_graph
+		) {
 			engine_functions.handle_nearest_neighbors(temp_translation_lock);
 		}
 		global.flags.flag_history_lock = false;

@@ -370,16 +370,7 @@ class PIDModule {
 		this.release_nodes();
 		this.m_x = this.c_x + dx;
 		this.m_y = this.c_y + dy;
-		if (this.m_x < workspace.bounds.left + 2.5 * global.variables.node_space_x) {
-			this.m_x = workspace.bounds.left + 2.5 * global.variables.node_space_x;
-		} else if (this.m_x > workspace.bounds.right - 2.0 * global.variables.node_space_x) {
-			this.m_x = workspace.bounds.right - 2.0 * global.variables.node_space_x;
-		}
-		if (this.m_y < workspace.bounds.top + 2.5 * global.variables.node_space_y) {
-			this.m_y = workspace.bounds.top + 2.5 * global.variables.node_space_y;
-		} else if (this.m_y > workspace.bounds.bottom - 2.0 * global.variables.node_space_y) {
-			this.m_y = workspace.bounds.bottom - 2.0 * global.variables.node_space_y;
-		}
+		[this.m_x, this.m_y] = global.utils.clip_bounds(this.m_x, this.m_y);
 		this.grid_point = this.elm.snap_to_grid(this.m_x, this.m_y);
 		this.bounds.set_center(this.grid_point[0], this.grid_point[1]);
 		this.refactor();
@@ -402,16 +393,7 @@ class PIDModule {
 					} else {
 						this.m_x = global.variables.mouse_x;
 						this.m_y = global.variables.mouse_y;
-						if (this.m_x < workspace.bounds.left + 2.5 * global.variables.node_space_x) {
-							this.m_x = workspace.bounds.left + 2.5 * global.variables.node_space_x;
-						} else if (this.m_x > workspace.bounds.right - 2.0 * global.variables.node_space_x) {
-							this.m_x = workspace.bounds.right - 2.0 * global.variables.node_space_x;
-						}
-						if (this.m_y < workspace.bounds.top + 2.5 * global.variables.node_space_y) {
-							this.m_y = workspace.bounds.top + 2.5 * global.variables.node_space_y;
-						} else if (this.m_y > workspace.bounds.bottom - 2.0 * global.variables.node_space_y) {
-							this.m_y = workspace.bounds.bottom - 2.0 * global.variables.node_space_y;
-						}
+						[this.m_x, this.m_y] = global.utils.clip_bounds(this.m_x, this.m_y);
 						this.grid_point = this.elm.snap_to_grid(this.m_x, this.m_y);
 						wire_manager.reset_wire_builder();
 						this.bounds.set_center(this.grid_point[0], this.grid_point[1]);
@@ -498,86 +480,10 @@ class PIDModule {
 		}
 	}
 	unanchor_wires(): void {
-		if (this.wire_reference.length > 0) {
-			let vertices: Array<number> = this.get_vertices();
-			let id: number = -1;
-			for (var i: number = this.wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(this.wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						wires[id].release_nodes();
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.y = vertices[1];
-							wires[id].p2.x = vertices[0];
-						}
-					} else if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						wires[id].release_nodes();
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-					} else if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p3']) {
-						wires[id].release_nodes();
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[4];
-							wires[id].p1.y = vertices[5];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[4];
-							wires[id].p2.y = vertices[5];
-						}
-					}
-				} else {
-					this.wire_reference.splice(i, 1);
-				}
-			}
-		}
+		global.utils.unanchor_wires3(this.wire_reference, this.get_vertices());
 	}
 	anchor_wires(): void {
-		if (this.wire_reference.length > 0) {
-			let vertices: Array<number> = this.get_vertices();
-			let id: number = -1;
-			for (var i: number = this.wire_reference.length - 1; i > -1; i--) {
-				id = engine_functions.get_wire(this.wire_reference[i]['wire_id']);
-				if (id > -1 && id < wires.length) {
-					if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p1']) {
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[0];
-							wires[id].p1.y = vertices[1];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[0];
-							wires[id].p2.y = vertices[1];
-						}
-						wires[id].capture_nodes();
-					} else if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p2']) {
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[2];
-							wires[id].p1.y = vertices[3];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[2];
-							wires[id].p2.y = vertices[3];
-						}
-						wires[id].capture_nodes();
-					} else if (this.wire_reference[i]['anchor_point'] === global.variables.anchor_point['p3']) {
-						if (this.wire_reference[i]['linkage'] === 0) {
-							wires[id].p1.x = vertices[4];
-							wires[id].p1.y = vertices[5];
-						} else if (this.wire_reference[i]['linkage'] === 1) {
-							wires[id].p2.x = vertices[4];
-							wires[id].p2.y = vertices[5];
-						}
-						wires[id].capture_nodes();
-					}
-				} else {
-					this.wire_reference.splice(i, 1);
-				}
-			}
-		}
+		global.utils.anchor_wires3(this.wire_reference, this.get_vertices());
 	}
 	set_flip(flip: number): void {
 		this.build_element_flag = true;
@@ -825,7 +731,6 @@ class PIDModule {
 					!global.flags.flag_select_element &&
 					!global.flags.flag_remove_all &&
 					!global.flags.flag_add_element &&
-
 					!global.variables.is_dragging
 				) {
 					if (this.elm.consistent()) {

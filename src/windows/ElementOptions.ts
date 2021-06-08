@@ -562,7 +562,8 @@ class ElementOptions {
 			!global.flags.flag_select_settings &&
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox &&
-			!global.flags.flag_graph && !global.variables.is_right_click
+			!global.flags.flag_graph &&
+			!global.variables.is_right_click
 		) {
 			if (global.variables.selected) {
 				if (this.opts['c0'] !== this.NO_ICON) {
@@ -590,7 +591,7 @@ class ElementOptions {
 			}
 		}
 	}
-	mouse_move(): void { }
+	mouse_move(): void {}
 	mouse_up(): void {
 		if (!global.variables.mouse_keyboard_lock && !global.variables.is_right_click) {
 			if (

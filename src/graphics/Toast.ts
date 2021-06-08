@@ -73,7 +73,8 @@ class Toast {
 				this.reset();
 			}
 		}
-	} reset(): void {
+	}
+	reset(): void {
 		this.text = '';
 		this.last_text = '-';
 		this.timer = 0;
