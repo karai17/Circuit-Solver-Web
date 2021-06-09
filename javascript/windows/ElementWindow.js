@@ -59,6 +59,7 @@ class ElementWindow {
         this.hover_paint.set_alpha(255);
         this.hover_paint.set_paint_align(paint.align.CENTER);
         this.bounds = new RectF(left, top, right, bottom);
+        this.temp_bounds = new RectF(0, 0, 0, 0);
         this.load_positions();
         this.page_number = 0;
         this.element_index = 1;
@@ -214,17 +215,16 @@ class ElementWindow {
         /* <!-- END AUTOMATICALLY GENERATED !--> */
     }
     load_positions() {
-        let temp_bounds = new RectF(0, 0, 0, 0);
         this.positions.splice(0, this.positions.length);
         let height = 0;
         for (var i = 0; i < this.MAX_ICONS; i++) {
-            temp_bounds.left = this.bounds.left + i * ((this.bounds.right - this.bounds.left) / this.MAX_ICONS);
-            temp_bounds.top = this.bounds.top + global.variables.canvas_stroke_width_3;
-            temp_bounds.right = this.bounds.left + ((i + 1) * (this.bounds.right - this.bounds.left)) / this.MAX_ICONS;
-            temp_bounds.bottom = this.bounds.bottom - global.variables.canvas_stroke_width_3;
-            height = temp_bounds.get_height();
-            temp_bounds.set_center2(temp_bounds.get_center_x(), temp_bounds.get_center_y(), height, height);
-            this.positions.push(new RectF(temp_bounds.left, temp_bounds.top, temp_bounds.right, temp_bounds.bottom));
+            this.temp_bounds.left = this.bounds.left + i * ((this.bounds.right - this.bounds.left) / this.MAX_ICONS);
+            this.temp_bounds.top = this.bounds.top + global.variables.canvas_stroke_width_3;
+            this.temp_bounds.right = this.bounds.left + ((i + 1) * (this.bounds.right - this.bounds.left)) / this.MAX_ICONS;
+            this.temp_bounds.bottom = this.bounds.bottom - global.variables.canvas_stroke_width_3;
+            height = this.temp_bounds.get_height();
+            this.temp_bounds.set_center2(this.temp_bounds.get_center_x(), this.temp_bounds.get_center_y(), height, height);
+            this.positions.push(new RectF(this.temp_bounds.left, this.temp_bounds.top, this.temp_bounds.right, this.temp_bounds.bottom));
         }
     }
     update() {

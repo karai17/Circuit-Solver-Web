@@ -183,7 +183,10 @@ class GraphWindow {
 		let top: number = this.bounds.top + 2 * this.padding;
 		let right: number = this.bounds.right - this.padding;
 		let bottom: number = this.bounds.bottom - this.padding;
-		this.inner_bounds = new RectF(left, top, right, bottom);
+		this.inner_bounds.left = left;
+		this.inner_bounds.top = top;
+		this.inner_bounds.right = right;
+		this.inner_bounds.bottom = bottom;
 		this.trim = (this.bounds.get_width() - this.inner_bounds.get_width()) * 0.5;
 		this.width = this.inner_bounds.get_width();
 		this.height = this.inner_bounds.get_height();
@@ -352,7 +355,9 @@ class GraphWindow {
 
 			for (var i: number = 0; i < this.cached_value; i += this.cached_value_t_p_o1) {
 				this.temp = i + this.cached_value;
-				this.line_buffer[this.index++] = Array(this.x_axis[this.temp].x, this.x_axis[this.temp].y, this.x_axis[this.temp].x, this.x_axis[this.temp].y - this.inner_bounds.get_width() * 0.01);
+				if (i > 0) {
+					this.line_buffer[this.index++] = Array(this.x_axis[this.temp].x, this.x_axis[this.temp].y, this.x_axis[this.temp].x, this.x_axis[this.temp].y - this.inner_bounds.get_width() * 0.01);
+				}
 			}
 			canvas.draw_line_buffer(this.line_buffer, this.line_paint);
 			if (scope_manager.entry.length > 0) {
@@ -450,9 +455,9 @@ class GraphWindow {
 					canvas.draw_text(
 						this.time_axis_value + 's',
 						this.inner_bounds.right -
-							this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
-							this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
-							view_port.view_width * 0.1,
+						this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
+						this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
+						view_port.view_width * 0.1,
 						this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1),
 						this.text_paint
 					);

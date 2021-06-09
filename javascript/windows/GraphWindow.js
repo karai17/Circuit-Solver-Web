@@ -148,7 +148,10 @@ class GraphWindow {
         let top = this.bounds.top + 2 * this.padding;
         let right = this.bounds.right - this.padding;
         let bottom = this.bounds.bottom - this.padding;
-        this.inner_bounds = new RectF(left, top, right, bottom);
+        this.inner_bounds.left = left;
+        this.inner_bounds.top = top;
+        this.inner_bounds.right = right;
+        this.inner_bounds.bottom = bottom;
         this.trim = (this.bounds.get_width() - this.inner_bounds.get_width()) * 0.5;
         this.width = this.inner_bounds.get_width();
         this.height = this.inner_bounds.get_height();
@@ -323,7 +326,9 @@ class GraphWindow {
             this.index = 0;
             for (var i = 0; i < this.cached_value; i += this.cached_value_t_p_o1) {
                 this.temp = i + this.cached_value;
-                this.line_buffer[this.index++] = Array(this.x_axis[this.temp].x, this.x_axis[this.temp].y, this.x_axis[this.temp].x, this.x_axis[this.temp].y - this.inner_bounds.get_width() * 0.01);
+                if (i > 0) {
+                    this.line_buffer[this.index++] = Array(this.x_axis[this.temp].x, this.x_axis[this.temp].y, this.x_axis[this.temp].x, this.x_axis[this.temp].y - this.inner_bounds.get_width() * 0.01);
+                }
             }
             canvas.draw_line_buffer(this.line_buffer, this.line_paint);
             if (scope_manager.entry.length > 0) {
