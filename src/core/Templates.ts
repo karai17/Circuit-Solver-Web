@@ -22,6 +22,6 @@ class Templates {
 		this.TIMESTEP_TEMPLATE = 'Δt:={TIMESTEP}s';
 		this.FILE_BUTTON_TEXT_TEMPLATE = '  {TEXT}  ';
 		this.DEBUG_TEMPLATE = '({ID},{TYPE}),';
-		this.GRAPH_DETAILS_TEMPLATE = '  {SCOPE}, Max: {MAX}, Min: {MIN} [{UNITS}]';
+		this.GRAPH_DETAILS_TEMPLATE = '{SCOPE}, Max: {MAX}, Min: {MIN} [{UNITS}]';
 	}
 }

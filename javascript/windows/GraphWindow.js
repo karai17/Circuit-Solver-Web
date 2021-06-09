@@ -121,6 +121,14 @@ class GraphWindow {
         this.meter_hover_index = -1;
         this.time_axis_value = '';
         this.time_tag = '';
+        this.info_text_a = '';
+        this.info_text_b = '';
+        this.info_text_c = '';
+        this.info_text_width = 0;
+        this.value_text_a = '';
+        this.value_text_b = '';
+        this.value_text_c = '';
+        this.value_text_width = 0;
         this.load_axis();
         let padding = 0.0125 * this.bounds.get_width();
         if (MOBILE_MODE) {
@@ -331,27 +339,34 @@ class GraphWindow {
                 }
             }
             canvas.draw_line_buffer(this.line_buffer, this.line_paint);
+            this.value_text_a = '';
+            this.value_text_b = '';
+            this.value_text_c = '';
+            this.value_text_width = this.inner_bounds.left;
             if (scope_manager.entry.length > 0) {
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_a.trace.length) {
                     if (this.graph_trace_a.get_value(this.meter_hover_index)[1] !== '') {
-                        canvas.draw_text(this.graph_trace_a.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_0_INDEX), this.inner_bounds.left, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_a_paint);
-                    }
-                    else {
-                        canvas.draw_text('0' + scope_manager.get_units(this.SCOPE_0_INDEX), this.inner_bounds.left, this.inner_bounds.top - (this.inner_bounds.top - this.bounds.top) * 0.5, this.graph_text_a_paint);
+                        this.value_text_a = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_a.get_value(this.meter_hover_index)[1])
+                            .replace("{UNIT}", scope_manager.get_units(this.SCOPE_0_INDEX));
                     }
                     this.time_axis_value = this.graph_trace_a.get_value(this.meter_hover_index)[0];
                     if (MOBILE_MODE) {
                         canvas.draw_line(this.bounds.left + this.graph_trace_a.trace[this.meter_hover_index].x, this.inner_bounds.top, this.bounds.left + this.graph_trace_a.trace[this.meter_hover_index].x, this.inner_bounds.bottom, this.line_paint);
                     }
                 }
+                if (this.meter_hover_index > -1 &&
+                    (this.meter_hover_index < this.graph_trace_a.trace.length || this.meter_hover_index < this.graph_trace_b.trace.length || this.meter_hover_index < this.graph_trace_c.trace.length)) {
+                    canvas.draw_text(this.time_axis_value + 's', this.inner_bounds.right -
+                        this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
+                        this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
+                        view_port.view_width * 0.1, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.text_paint);
+                }
             }
             if (scope_manager.entry.length > 1) {
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_b.trace.length) {
                     if (this.graph_trace_b.get_value(this.meter_hover_index)[1] !== '') {
-                        canvas.draw_text(this.graph_trace_b.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_1_INDEX), this.inner_bounds.left + view_port.view_width * 0.1, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_b_paint);
-                    }
-                    else {
-                        canvas.draw_text('0' + scope_manager.get_units(this.SCOPE_1_INDEX), this.inner_bounds.left + view_port.view_width * 0.1, this.inner_bounds.top - (this.inner_bounds.top - this.bounds.top) * 0.5, this.graph_text_b_paint);
+                        this.value_text_b = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_b.get_value(this.meter_hover_index)[1])
+                            .replace("{UNIT}", scope_manager.get_units(this.SCOPE_1_INDEX));
                     }
                     this.time_axis_value = this.graph_trace_b.get_value(this.meter_hover_index)[0];
                     if (MOBILE_MODE) {
@@ -362,10 +377,8 @@ class GraphWindow {
             if (scope_manager.entry.length > 2) {
                 if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_c.trace.length) {
                     if (this.graph_trace_c.get_value(this.meter_hover_index)[1] !== '') {
-                        canvas.draw_text(this.graph_trace_c.get_value(this.meter_hover_index)[1] + scope_manager.get_units(this.SCOPE_2_INDEX), this.inner_bounds.left + view_port.view_width * 0.2, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_c_paint);
-                    }
-                    else {
-                        canvas.draw_text('0' + scope_manager.get_units(this.SCOPE_2_INDEX), this.inner_bounds.left + view_port.view_width * 0.2, this.inner_bounds.top - (this.inner_bounds.top - this.bounds.top) * 0.5, this.graph_text_c_paint);
+                        this.value_text_c = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_c.get_value(this.meter_hover_index)[1])
+                            .replace("{UNIT}", scope_manager.get_units(this.SCOPE_2_INDEX));
                     }
                     this.time_axis_value = this.graph_trace_c.get_value(this.meter_hover_index)[0];
                     if (MOBILE_MODE) {
@@ -373,14 +386,18 @@ class GraphWindow {
                     }
                 }
             }
-            if (scope_manager.entry.length > 0) {
-                if (this.meter_hover_index > -1 &&
-                    (this.meter_hover_index < this.graph_trace_a.trace.length || this.meter_hover_index < this.graph_trace_b.trace.length || this.meter_hover_index < this.graph_trace_c.trace.length)) {
-                    canvas.draw_text(this.time_axis_value + 's', this.inner_bounds.right -
-                        this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
-                        this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
-                        view_port.view_width * 0.1, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.text_paint);
-                }
+            if (this.value_text_a.length > 0) {
+                canvas.draw_text(this.value_text_a, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_a_paint);
+                this.value_text_width += this.graph_text_a_paint.measure_text(this.value_text_a);
+                this.value_text_width += (this.inner_bounds.right - this.download_button.right);
+            }
+            if (this.value_text_b.length > 0) {
+                canvas.draw_text(this.value_text_b, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_b_paint);
+                this.value_text_width += this.graph_text_b_paint.measure_text(this.value_text_b);
+                this.value_text_width += (this.inner_bounds.right - this.download_button.right);
+            }
+            if (this.value_text_c.length > 0) {
+                canvas.draw_text(this.value_text_c, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_c_paint);
             }
             if (this.graph_trace_a.magnitude_list.length > 0) {
                 for (var i = Math.round(this.GRAPH_X_AXIS_LENGTH * 0.1); i < Math.round(this.GRAPH_X_AXIS_LENGTH >> 1); i += Math.round(this.GRAPH_X_AXIS_LENGTH * 0.1)) {
@@ -416,23 +433,40 @@ class GraphWindow {
                 }
             }
             canvas.draw_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step', this.inner_bounds.right - this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   '), this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.text_paint);
+            this.info_text_a = '';
+            this.info_text_b = '';
+            this.info_text_c = '';
+            this.info_text_width = this.inner_bounds.left + (this.inner_bounds.right - this.download_button.right);
             if (this.graph_trace_a.magnitude_list.length > 0) {
-                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_a.get_max()))
+                this.info_text_a = global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_a.get_max()))
                     .replace('{MIN}', global.utils.exponentiate_quickly(this.graph_trace_a.get_min()))
                     .replace('{UNITS}', scope_manager.get_units(this.SCOPE_0_INDEX))
-                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_0_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.023125, this.graph_text_a_paint);
+                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_0_INDEX));
             }
             if (this.graph_trace_b.magnitude_list.length > 0) {
-                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_b.get_max()))
+                this.info_text_b = global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_b.get_max()))
                     .replace('{MIN}', global.utils.exponentiate_quickly(this.graph_trace_b.get_min()))
                     .replace('{UNITS}', scope_manager.get_units(this.SCOPE_1_INDEX))
-                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_1_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.060125, this.graph_text_b_paint);
+                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_1_INDEX));
             }
             if (this.graph_trace_c.magnitude_list.length > 0) {
-                canvas.draw_text(global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_c.get_max()))
+                this.info_text_c = global.TEMPLATES.GRAPH_DETAILS_TEMPLATE.replace('{MAX}', global.utils.exponentiate_quickly(this.graph_trace_c.get_max()))
                     .replace('{MIN}', global.utils.exponentiate_quickly(this.graph_trace_c.get_min()))
                     .replace('{UNITS}', scope_manager.get_units(this.SCOPE_2_INDEX))
-                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_2_INDEX)), this.inner_bounds.left, this.inner_bounds.top + this.inner_bounds.get_height() * 0.096125, this.graph_text_c_paint);
+                    .replace('{SCOPE}', scope_manager.get_scope_name(this.SCOPE_2_INDEX));
+            }
+            if (this.info_text_a.length > 0) {
+                canvas.draw_text(this.info_text_a, this.info_text_width, this.download_button.get_center_y(), this.graph_text_a_paint);
+                this.info_text_width += this.graph_text_a_paint.measure_text(this.info_text_a);
+                this.info_text_width += (this.inner_bounds.right - this.download_button.right);
+            }
+            if (this.info_text_b.length > 0) {
+                canvas.draw_text(this.info_text_b, this.info_text_width, this.download_button.get_center_y(), this.graph_text_b_paint);
+                this.info_text_width += this.graph_text_b_paint.measure_text(this.info_text_b);
+                this.info_text_width += (this.inner_bounds.right - this.download_button.right);
+            }
+            if (this.info_text_c.length > 0) {
+                canvas.draw_text(this.info_text_c, this.info_text_width, this.download_button.get_center_y(), this.graph_text_c_paint);
             }
             if (this.download_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y) && !MOBILE_MODE) {
                 this.download_button.fill_paint.set_color(global.COLORS.GENERAL_HOVER_COLOR);
