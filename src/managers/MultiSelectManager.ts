@@ -5,6 +5,7 @@ class MultiSelectManager {
 	private multi_select_bounds: RectF;
 	public multi_select: boolean;
 	private line_paint: Paint;
+	private trim_paint: Paint;
 	private fill_paint: Paint;
 	private select_x: number;
 	private select_y: number;
@@ -39,6 +40,16 @@ class MultiSelectManager {
 		this.line_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
 		this.line_paint.set_alpha(255);
 		this.line_paint.set_paint_align(paint.align.CENTER);
+		this.trim_paint = new Paint();
+		this.trim_paint.set_paint_style(paint.style.STROKE);
+		this.trim_paint.set_paint_cap(paint.cap.ROUND);
+		this.trim_paint.set_paint_join(paint.join.ROUND);
+		this.trim_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+		this.trim_paint.set_color(global.COLORS.GENERAL_GRAY_COLOR);
+		this.trim_paint.set_text_size(global.variables.canvas_text_size_5);
+		this.trim_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
+		this.trim_paint.set_alpha(255);
+		this.trim_paint.set_paint_align(paint.align.CENTER);
 		this.fill_paint = new Paint();
 		this.fill_paint.set_paint_style(paint.style.FILL);
 		this.fill_paint.set_paint_cap(paint.cap.ROUND);
@@ -1124,10 +1135,15 @@ class MultiSelectManager {
 			this.selected_components_bounds.bottom = Math.max(this.selected_components_bounds.bottom, bounds.bottom + global.variables.node_space_y);
 		}
 	}
+	resize() {
+		this.line_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+		this.trim_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+	}
 	draw_bounds(canvas: GraphicsEngine): void {
 		if (this.multi_select) {
 			if (this.multi_select_draw_conditions()) {
 				canvas.draw_rect2(this.multi_select_bounds, this.fill_paint);
+				canvas.draw_rect2(this.multi_select_bounds, this.trim_paint);
 			}
 		}
 		if (global.variables.multi_selected) {

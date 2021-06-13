@@ -499,6 +499,7 @@ function load_app() {
         menu_bar.resize_menu_bar();
         bottom_menu.resize_bottom_menu();
         element_options.resize();
+        multi_select_manager.resize();
         time_step_window.resize_window();
         save_circuit_window.resize_window();
         save_image_window.resize_window();
@@ -1308,7 +1309,7 @@ function load_app() {
                 global.variables.is_right_click = global.events.mouse_down_event.button === 2;
             }
             else if ('which' in global.events.mouse_down_event) {
-                //@ts-expect-error
+                //@ts-ignore
                 global.variables.is_right_click = global.events.mouse_down_event.which === 3;
             }
         }
