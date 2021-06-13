@@ -163,6 +163,7 @@ var drag_line_buffer = [];
 var webpage_document_title = global.CONSTANTS.NULL;
 var last_webpage_document_title = 'untitled';
 var mouse_event_latch = false;
+var sizing_initialized = false;
 /* #END_GLOBAL_EXTRACT# */
 function load_app() {
     browser_detection();
@@ -787,6 +788,9 @@ function load_app() {
                 global.variables.mouse_x = 0;
                 global.variables.mouse_y = 0;
                 resize_components();
+                if (!sizing_initialized) {
+                    sizing_initialized = true;
+                }
                 global.flags.flag_resize_event = false;
             }
             if (global.events.key_down_event_queue.length > 0) {
@@ -1153,7 +1157,7 @@ function load_app() {
                         !global.flags.flag_zoom &&
                         !global.flags.flag_remove_all &&
                         !global.flags.flag_save_circuit &&
-                        !global.flags.flag_save_image) {
+                        !global.flags.flag_save_image && sizing_initialized) {
                         canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
                     }
                     if (!global.variables.element_on_board &&
@@ -1164,7 +1168,7 @@ function load_app() {
                         !global.flags.flag_zoom &&
                         !global.flags.flag_remove_all &&
                         !global.flags.flag_save_circuit &&
-                        !global.flags.flag_save_image) {
+                        !global.flags.flag_save_image && sizing_initialized) {
                         canvas.draw_text(language_manager.APP_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
                     }
                 }
@@ -1269,7 +1273,7 @@ function load_app() {
                                 !global.flags.flag_zoom &&
                                 !global.flags.flag_remove_all &&
                                 !global.flags.flag_save_circuit &&
-                                !global.flags.flag_save_image) {
+                                !global.flags.flag_save_image && sizing_initialized) {
                                 canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
                             }
                         }
