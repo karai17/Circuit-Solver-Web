@@ -188,7 +188,7 @@ function load_app() {
     watermark_paint.set_paint_join(paint.join.ROUND);
     watermark_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
     watermark_paint.set_color(global.COLORS.GENERAL_WHITE_COLOR);
-    watermark_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+    watermark_paint.set_text_size(global.variables.canvas_text_size_4_zoom);
     watermark_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
     watermark_paint.set_alpha(255);
     watermark_paint.set_paint_align(paint.align.LEFT);
@@ -777,7 +777,7 @@ function load_app() {
             }
             if (global.flags.flag_resize_event) {
                 watermark_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                watermark_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+                watermark_paint.set_text_size(global.variables.canvas_text_size_4_zoom);
                 web_link_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
                 web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
                 drag_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
@@ -1155,6 +1155,17 @@ function load_app() {
                         !global.flags.flag_save_circuit &&
                         !global.flags.flag_save_image) {
                         canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
+                    }
+                    if (!global.variables.element_on_board &&
+                        (!DESKTOP_MODE && !MOBILE_MODE) &&
+                        !global.flags.flag_select_timestep &&
+                        !global.flags.flag_select_settings &&
+                        !global.flags.flag_graph &&
+                        !global.flags.flag_zoom &&
+                        !global.flags.flag_remove_all &&
+                        !global.flags.flag_save_circuit &&
+                        !global.flags.flag_save_image) {
+                        canvas.draw_text(language_manager.APP_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
                     }
                 }
                 multi_select_manager.draw_bounds(canvas);

@@ -2,6 +2,7 @@
 class LanguageManager {
 	public readonly WATERMARK: string;
 	public readonly WEB_LINK: string;
+	public readonly APP_LINK: string;
 	public readonly DRAG_AND_DROP: LANGUAGE_T;
 	public readonly TEXT_PADDING: string;
 	public readonly CONNECTION_NOT_ALLOWED: LANGUAGE_T;
@@ -116,6 +117,7 @@ class LanguageManager {
 	constructor() {
 		this.WATERMARK = 'Created by Circuit Solver : { www.androidcircuitsolver.com/app.html }';
 		this.WEB_LINK = '{ www.androidcircuitsolver.com/app.html }';
+		this.APP_LINK = '{ Available on PlayStore | Circuit Solver }';
 		this.DRAG_AND_DROP = {
 			English: 'DRAG AND DROP',
 			Spanish: 'ARRASTRAR Y SOLTAR',
