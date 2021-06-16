@@ -11,6 +11,7 @@ class EngineFunctions {
         this.output = -1;
         this.v_node_1 = 0;
         this.v_node_2 = 0;
+        this.v_node_ground = 0;
         this.meta_data = new Metadata();
         this.x1 = -1;
         this.y1 = -1;
@@ -5648,7 +5649,7 @@ class EngineFunctions {
         if (this.node_3 !== -1) {
             matrix_a[this.node_3][this.offset + id] = 1;
         }
-        matrix_a[this.offset + id][this.offset + id] += 1e-18;
+        matrix_a[this.offset + id][this.offset + id] += 1e-9;
     }
     stamp_transformer(n1, n2, n3, n4, gain, id) {
         this.node_1 = this.map_node(n1);
@@ -5676,6 +5677,7 @@ class EngineFunctions {
     get_voltage(n1, n2) {
         this.node_1 = this.map_node(n1);
         this.node_2 = this.map_node(n2);
+        this.node_3 = 0;
         this.v_node_1 = 0;
         this.v_node_2 = 0;
         if (this.node_1 !== -1) {
@@ -5684,7 +5686,13 @@ class EngineFunctions {
         if (this.node_2 !== -1) {
             this.v_node_2 = matrix_x[this.node_2][0];
         }
-        return this.v_node_1 - this.v_node_2;
+        if (grounds.length > 0) {
+            this.node_3 = this.map_node(grounds[0].elm.n1);
+            if (this.node_3 !== -1) {
+                this.v_node_ground = matrix_x[this.map_node(grounds[0].elm.n1)][0];
+            }
+        }
+        return (this.v_node_1 - this.v_node_2) + -this.v_node_ground;
     }
     file_manager() {
         if (global.variables.user_file_selected) {

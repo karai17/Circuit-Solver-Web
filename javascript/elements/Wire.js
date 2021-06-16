@@ -247,11 +247,6 @@ class Wire {
         }
     }
     update() {
-        if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
-            if (this.elm.consistent()) {
-                this.wire_voltage = Math.max(engine_functions.get_voltage(this.elm.n1, -1), engine_functions.get_voltage(this.elm.n2, -1));
-            }
-        }
     }
     set_flip(flip) {
         this.build_element_flag = true;
@@ -358,6 +353,9 @@ class Wire {
             }
             if (global.flags.flag_simulating && simulation_manager.solutions_ready && this.is_selected_element() && simulation_manager.simulation_time >= simulation_manager.time_step) {
                 if (this.elm.consistent()) {
+                    if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
+                        this.wire_voltage = Math.max(engine_functions.get_voltage(this.elm.n1, -1), engine_functions.get_voltage(this.elm.n2, -1));
+                    }
                     this.angle = global.utils.retrieve_angle(this.p2.x - this.p1.x, this.p2.y - this.p1.y);
                     if ((this.angle > 170 && this.angle < 190) || (this.angle > -10 && this.angle < 10)) {
                         canvas.draw_text(global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace('{VAL}', global.utils.exponentiate_quickly(this.wire_voltage)).replace('{UNIT}', 'V'), this.c_x, this.c_y - this.y_space * 1.5, this.text_paint);
@@ -390,6 +388,9 @@ class Wire {
             }
             if (global.flags.flag_simulating && simulation_manager.solutions_ready && this.is_selected_element() && simulation_manager.simulation_time >= simulation_manager.time_step) {
                 if (this.elm.consistent()) {
+                    if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
+                        this.wire_voltage = Math.max(engine_functions.get_voltage(this.elm.n1, -1), engine_functions.get_voltage(this.elm.n2, -1));
+                    }
                     if (global.variables.workspace_zoom_scale > 1.085 || (!MOBILE_MODE && global.variables.workspace_zoom_scale >= 0.99)) {
                         if (global.utils.norm(this.wire_point.x - this.p1.x, this.wire_point.y - this.p1.y) > global.utils.norm(this.p2.x - this.wire_point.x, this.p2.y - this.wire_point.y) * 1.05) {
                             this.angle = global.utils.retrieve_angle(this.wire_point.x - this.p1.x, this.wire_point.y - this.p1.y);

@@ -10,6 +10,7 @@ class EngineFunctions {
 	public output: number;
 	public v_node_1: number;
 	public v_node_2: number;
+	public v_node_ground: number;
 	public meta_data: Metadata;
 	public x1: number;
 	public y1: number;
@@ -34,6 +35,7 @@ class EngineFunctions {
 		this.output = -1;
 		this.v_node_1 = 0;
 		this.v_node_2 = 0;
+		this.v_node_ground = 0;
 		this.meta_data = new Metadata();
 		this.x1 = -1;
 		this.y1 = -1;
@@ -84,7 +86,7 @@ class EngineFunctions {
 			global.variables.user_file_selected = true;
 			global.flags.flag_canvas_draw_event = true;
 		};
-		reader.onerror = function (err: ProgressEvent<FileReader>) {};
+		reader.onerror = function (err: ProgressEvent<FileReader>) { };
 		reader.readAsText(input.files[0]);
 	}
 	file_event_mobile(title: string, data: string): void {
@@ -122,7 +124,7 @@ class EngineFunctions {
 		global.flags.flag_canvas_draw_event = true;
 		try {
 			engine_functions.parse_elements(global.variables.user_file.content);
-		} catch (error) {}
+		} catch (error) { }
 		global.variables.history['packet'].push(engine_functions.history_snapshot());
 		global.flags.flag_draw_block = true;
 		global.variables.user_file_selected = false;
@@ -6285,7 +6287,7 @@ class EngineFunctions {
 		if (this.node_3 !== -1) {
 			matrix_a[this.node_3][this.offset + id] = 1;
 		}
-		matrix_a[this.offset + id][this.offset + id] += 1e-18;
+		matrix_a[this.offset + id][this.offset + id] += 1e-9;
 	}
 	stamp_transformer(n1: number, n2: number, n3: number, n4: number, gain: number, id: number): void {
 		this.node_1 = this.map_node(n1);
@@ -6313,6 +6315,7 @@ class EngineFunctions {
 	get_voltage(n1: number, n2: number): number {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);
+		this.node_3 = 0;
 		this.v_node_1 = 0;
 		this.v_node_2 = 0;
 		if (this.node_1 !== -1) {
@@ -6321,13 +6324,20 @@ class EngineFunctions {
 		if (this.node_2 !== -1) {
 			this.v_node_2 = matrix_x[this.node_2][0];
 		}
-		return this.v_node_1 - this.v_node_2;
+
+		if (grounds.length > 0) {
+			this.node_3 = this.map_node(grounds[0].elm.n1);
+			if (this.node_3 !== -1) {
+				this.v_node_ground = matrix_x[this.map_node(grounds[0].elm.n1)][0];
+			}
+		}
+		return (this.v_node_1 - this.v_node_2) + -this.v_node_ground;
 	}
 	file_manager() {
 		if (global.variables.user_file_selected) {
 			try {
 				this.parse_elements(global.variables.user_file.content);
-			} catch (error) {}
+			} catch (error) { }
 			global.variables.history['packet'].push(engine_functions.history_snapshot());
 			global.variables.user_file_selected = false;
 			mouse_event_latch = false;
