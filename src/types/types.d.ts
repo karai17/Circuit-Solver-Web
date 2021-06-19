@@ -1069,8 +1069,6 @@ declare type PROPERTY_DIFFERENTIATOR_T = {
 };
 declare type PROPERTY_GAIN_T = {
 	Gain: number;
-	'Input Voltage': number;
-	'Output Voltage': number;
 	tag: string;
 	units: string;
 	options: Array<string>;

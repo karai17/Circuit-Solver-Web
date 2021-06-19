@@ -805,8 +805,6 @@ class ElementProperties {
         };
         this.PROPERTY_GAIN = {
             Gain: 1,
-            'Input Voltage': 0,
-            'Output Voltage': 0,
             tag: 'GAIN',
             units: 'V',
             options: ['Gain'],

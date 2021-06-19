@@ -95,15 +95,11 @@ class GainBlock {
     }
     update() {
         if (global.flags.flag_simulating && simulation_manager.solutions_ready && simulation_manager.simulation_step !== 0) {
-            if (this.elm.consistent()) {
-                this.elm.properties['Input Voltage'] = engine_functions.get_voltage(this.elm.n1, -1);
-                this.elm.properties['Output Voltage'] = this.elm.properties['Input Voltage'] * this.elm.properties['Gain'];
-            }
         }
     }
     stamp() {
         if (this.elm.consistent()) {
-            engine_functions.stamp_voltage(this.elm.n2, -1, this.elm.properties['Output Voltage'], simulation_manager.ELEMENT_GAIN_OFFSET + this.simulation_id);
+            engine_functions.stamp_vcvs(this.elm.n1, -1, this.elm.n2, -1, -this.elm.properties['Gain'], simulation_manager.ELEMENT_GAIN_OFFSET + this.simulation_id);
         }
     }
     get_vertices() {
@@ -543,6 +539,5 @@ class GainBlock {
         }
     }
     reset() {
-        this.elm.properties['Output Voltage'] = 0;
     }
 }

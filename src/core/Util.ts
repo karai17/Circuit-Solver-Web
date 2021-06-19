@@ -568,7 +568,22 @@ class Util {
 	non_linear_max(): number {
 		/* #INSERT_GENERATE_MAX_NON_LINEAR# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-		this.non_linear_max_array = Array(diodes.length, leds.length, zeners.length, nmosfets.length, pmosfets.length, npns.length, pnps.length);
+		this.non_linear_max_array = Array(
+			nots.length,
+			diodes.length,
+			leds.length,
+			zeners.length,
+			ands.length,
+			ors.length,
+			nands.length,
+			nors.length,
+			xors.length,
+			xnors.length,
+			nmosfets.length,
+			pmosfets.length,
+			npns.length,
+			pnps.length
+		);
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
 		this.max_general_number = 0;
 		for (var i: number = 0; i < this.non_linear_max_array.length; i++) {
