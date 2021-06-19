@@ -617,6 +617,5 @@ class XORGate {
         }
     }
     reset() {
-        this.elm.properties['Output Voltage'] = 0;
     }
 }

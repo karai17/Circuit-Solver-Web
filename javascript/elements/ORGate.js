@@ -610,6 +610,5 @@ class ORGate {
         }
     }
     reset() {
-        this.elm.properties['Output Voltage'] = 0;
     }
 }

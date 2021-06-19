@@ -570,7 +570,7 @@ class XNORGate {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -728,6 +728,5 @@ class XNORGate {
 		}
 	}
 	reset(): void {
-		this.elm.properties['Output Voltage'] = 0;
 	}
 }

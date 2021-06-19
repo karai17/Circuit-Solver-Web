@@ -549,6 +549,5 @@ class NOTGate {
         }
     }
     reset() {
-        this.elm.properties['Output Voltage'] = 0;
     }
 }

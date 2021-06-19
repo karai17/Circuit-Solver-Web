@@ -600,6 +600,5 @@ class ANDGate {
         }
     }
     reset() {
-        this.elm.properties['Output Voltage'] = 0;
     }
 }
