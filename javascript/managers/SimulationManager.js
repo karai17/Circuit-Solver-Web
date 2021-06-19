@@ -524,6 +524,9 @@ class SimulationManager {
     non_linear_update() {
         /* #INSERT_GENERATE_NON_LINEAR_CHECK# */
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
+        for (var i = nots.length - 1; i > -1; i--) {
+            nots[i].update();
+        }
         for (var i = diodes.length - 1; i > -1; i--) {
             diodes[i].update();
         }
@@ -532,6 +535,24 @@ class SimulationManager {
         }
         for (var i = zeners.length - 1; i > -1; i--) {
             zeners[i].update();
+        }
+        for (var i = ands.length - 1; i > -1; i--) {
+            ands[i].update();
+        }
+        for (var i = ors.length - 1; i > -1; i--) {
+            ors[i].update();
+        }
+        for (var i = nands.length - 1; i > -1; i--) {
+            nands[i].update();
+        }
+        for (var i = nors.length - 1; i > -1; i--) {
+            nors[i].update();
+        }
+        for (var i = xors.length - 1; i > -1; i--) {
+            xors[i].update();
+        }
+        for (var i = xnors.length - 1; i > -1; i--) {
+            xnors[i].update();
         }
         for (var i = nmosfets.length - 1; i > -1; i--) {
             nmosfets[i].update();

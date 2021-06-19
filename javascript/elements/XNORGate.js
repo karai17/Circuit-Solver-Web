@@ -112,7 +112,7 @@ class XNORGate {
     vout_xnor(ui) {
         let product = 1;
         for (var i = 0; i < ui.length; i++) {
-            product *= (ui[i]);
+            product *= ui[i];
         }
         return 0.5 * (1 + product) + global.CONSTANTS.ZERO_BIAS;
     }
@@ -120,25 +120,28 @@ class XNORGate {
         let product = 1;
         for (var i = 0; i < ui.length; i++) {
             if (i !== terminal) {
-                product *= (ui[i]);
+                product *= ui[i];
             }
         }
-        return (0.5 * ui_prime[terminal] * product) + global.CONSTANTS.ZERO_BIAS;
+        return 0.5 * ui_prime[terminal] * product + global.CONSTANTS.ZERO_BIAS;
     }
     update() {
         if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
             if (this.elm.consistent()) {
                 this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
                 this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
-                this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+                this.elm.properties['V_1_prime'] = 10 * (1.0 - this.elm.properties['V_1'] * this.elm.properties['V_1']);
                 this.elm.properties['V_in2'] = engine_functions.get_voltage(this.elm.n2, -1);
                 this.elm.properties['V_2'] = Math.tanh(10 * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage'] - 0.5));
-                this.elm.properties['V_2_prime'] = 10 * (1.0 - (this.elm.properties['V_2'] * this.elm.properties['V_2']));
+                this.elm.properties['V_2_prime'] = 10 * (1.0 - this.elm.properties['V_2'] * this.elm.properties['V_2']);
                 this.elm.properties['V_out'] = this.vout_xnor([this.elm.properties['V_1'], this.elm.properties['V_2']]);
                 this.elm.properties['V_partial1'] = global.utils.limit(this.partial_xnor(0, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
                 this.elm.properties['V_partial2'] = global.utils.limit(this.partial_xnor(1, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
-                this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
-                    this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
+                this.elm.properties['V_eq'] =
+                    this.elm.properties['High Voltage'] *
+                        (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
+                            this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) -
+                            this.elm.properties['V_out']);
             }
         }
     }

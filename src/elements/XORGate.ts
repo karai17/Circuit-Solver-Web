@@ -170,7 +170,7 @@ class XORGate {
 		let product = 1;
 
 		for (var i = 0; i < ui.length; i++) {
-			product *= (- ui[i]);
+			product *= -ui[i];
 		}
 
 		return 0.5 * (1 - product) + global.CONSTANTS.ZERO_BIAS;
@@ -180,34 +180,49 @@ class XORGate {
 
 		for (var i = 0; i < ui.length; i++) {
 			if (i !== terminal) {
-				product *= (- ui[i]);
+				product *= -ui[i];
 			}
 		}
 
-		return (0.5 * ui_prime[terminal] * product) + global.CONSTANTS.ZERO_BIAS;
+		return 0.5 * ui_prime[terminal] * product + global.CONSTANTS.ZERO_BIAS;
 	}
 	update(): void {
 		if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
 			if (this.elm.consistent()) {
 				this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
 				this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+				this.elm.properties['V_1_prime'] = 10 * (1.0 - this.elm.properties['V_1'] * this.elm.properties['V_1']);
 				this.elm.properties['V_in2'] = engine_functions.get_voltage(this.elm.n2, -1);
 				this.elm.properties['V_2'] = Math.tanh(10 * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['V_2_prime'] = 10 * (1.0 - (this.elm.properties['V_2'] * this.elm.properties['V_2']));
+				this.elm.properties['V_2_prime'] = 10 * (1.0 - this.elm.properties['V_2'] * this.elm.properties['V_2']);
 				this.elm.properties['V_out'] = this.vout_xor([this.elm.properties['V_1'], this.elm.properties['V_2']]);
-				this.elm.properties['V_partial1'] = global.utils.limit(this.partial_xor(0, [this.elm.properties['V_1'], this.elm.properties['V_2']],
-					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
-				this.elm.properties['V_partial2'] = global.utils.limit(this.partial_xor(1, [this.elm.properties['V_1'], this.elm.properties['V_2']],
-					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
-				this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
-					this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
+				this.elm.properties['V_partial1'] = global.utils.limit(
+					this.partial_xor(0, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]),
+					0.0,
+					1.0
+				);
+				this.elm.properties['V_partial2'] = global.utils.limit(
+					this.partial_xor(1, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]),
+					0.0,
+					1.0
+				);
+				this.elm.properties['V_eq'] =
+					this.elm.properties['High Voltage'] *
+					(this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
+						this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) -
+						this.elm.properties['V_out']);
 			}
 		}
 	}
 	stamp(): void {
 		if (this.elm.consistent()) {
-			engine_functions.stamp_gate2(this.elm.n3, this.elm.properties['V_partial1'], this.elm.properties['V_partial2'], this.elm.properties['V_eq'], simulation_manager.ELEMENT_XOR_OFFSET + this.simulation_id);
+			engine_functions.stamp_gate2(
+				this.elm.n3,
+				this.elm.properties['V_partial1'],
+				this.elm.properties['V_partial2'],
+				this.elm.properties['V_eq'],
+				simulation_manager.ELEMENT_XOR_OFFSET + this.simulation_id
+			);
 		}
 	}
 	get_vertices(): Array<number> {
@@ -541,7 +556,7 @@ class XORGate {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {

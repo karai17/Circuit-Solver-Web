@@ -172,10 +172,10 @@ class NORGate {
 		let size = ui.length;
 
 		for (var i = 0; i < ui.length; i++) {
-			sum += (size) / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
+			sum += size / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
 		}
 
-		return (N / sum) + global.CONSTANTS.ZERO_BIAS;
+		return N / sum + global.CONSTANTS.ZERO_BIAS;
 	}
 	partial_nor(terminal: number, ui: Array<number>, ui_prime: Array<number>): number {
 		let sum = 0;
@@ -183,7 +183,7 @@ class NORGate {
 		let size = ui.length;
 
 		for (var i = 0; i < ui.length; i++) {
-			sum += (size) / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
+			sum += size / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
 		}
 
 		return -(2 * N * ui_prime[terminal]) / Math.pow((1 - ui[terminal] + global.CONSTANTS.ZERO_BIAS) * sum, 2);
@@ -193,23 +193,38 @@ class NORGate {
 			if (this.elm.consistent()) {
 				this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
 				this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+				this.elm.properties['V_1_prime'] = 10 * (1.0 - this.elm.properties['V_1'] * this.elm.properties['V_1']);
 				this.elm.properties['V_in2'] = engine_functions.get_voltage(this.elm.n2, -1);
 				this.elm.properties['V_2'] = Math.tanh(10 * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['V_2_prime'] = 10 * (1.0 - (this.elm.properties['V_2'] * this.elm.properties['V_2']));
+				this.elm.properties['V_2_prime'] = 10 * (1.0 - this.elm.properties['V_2'] * this.elm.properties['V_2']);
 				this.elm.properties['V_out'] = this.vout_nor([this.elm.properties['V_1'], this.elm.properties['V_2']]);
-				this.elm.properties['V_partial1'] = global.utils.limit(this.partial_nor(0, [this.elm.properties['V_1'], this.elm.properties['V_2']],
-					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
-				this.elm.properties['V_partial2'] = global.utils.limit(this.partial_nor(1, [this.elm.properties['V_1'], this.elm.properties['V_2']],
-					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
-				this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
-					this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
+				this.elm.properties['V_partial1'] = global.utils.limit(
+					this.partial_nor(0, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]),
+					0.0,
+					1.0
+				);
+				this.elm.properties['V_partial2'] = global.utils.limit(
+					this.partial_nor(1, [this.elm.properties['V_1'], this.elm.properties['V_2']], [this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]),
+					0.0,
+					1.0
+				);
+				this.elm.properties['V_eq'] =
+					this.elm.properties['High Voltage'] *
+					(this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
+						this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) -
+						this.elm.properties['V_out']);
 			}
 		}
 	}
 	stamp(): void {
 		if (this.elm.consistent()) {
-			engine_functions.stamp_gate2(this.elm.n3, this.elm.properties['V_partial1'], this.elm.properties['V_partial2'], this.elm.properties['V_eq'], simulation_manager.ELEMENT_NOR_OFFSET + this.simulation_id);
+			engine_functions.stamp_gate2(
+				this.elm.n3,
+				this.elm.properties['V_partial1'],
+				this.elm.properties['V_partial2'],
+				this.elm.properties['V_eq'],
+				simulation_manager.ELEMENT_NOR_OFFSET + this.simulation_id
+			);
 		}
 	}
 	get_vertices(): Array<number> {
@@ -547,7 +562,7 @@ class NORGate {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {

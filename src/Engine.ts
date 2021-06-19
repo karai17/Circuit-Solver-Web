@@ -307,7 +307,7 @@ function load_app(): void {
 			ctx.globalCompositeOperation = 'copy';
 			virtual_surface.context.globalCompositeOperation = 'source-over';
 			canvas.on_resize();
-		} catch (e) { }
+		} catch (e) {}
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -351,7 +351,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) { }
+		} catch (e) {}
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -648,7 +648,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () { });
+								render().then(function () {});
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -886,29 +886,8 @@ function load_app(): void {
 					for (var i: number = spdts.length - 1; i > -1; i--) {
 						spdts[i].update();
 					}
-					for (var i: number = nots.length - 1; i > -1; i--) {
-						nots[i].update();
-					}
 					for (var i: number = potentiometers.length - 1; i > -1; i--) {
 						potentiometers[i].update();
-					}
-					for (var i: number = ands.length - 1; i > -1; i--) {
-						ands[i].update();
-					}
-					for (var i: number = ors.length - 1; i > -1; i--) {
-						ors[i].update();
-					}
-					for (var i: number = nands.length - 1; i > -1; i--) {
-						nands[i].update();
-					}
-					for (var i: number = nors.length - 1; i > -1; i--) {
-						nors[i].update();
-					}
-					for (var i: number = xors.length - 1; i > -1; i--) {
-						xors[i].update();
-					}
-					for (var i: number = xnors.length - 1; i > -1; i--) {
-						xnors[i].update();
 					}
 					for (var i: number = dffs.length - 1; i > -1; i--) {
 						dffs[i].update();
@@ -1154,20 +1133,23 @@ function load_app(): void {
 						!global.flags.flag_zoom &&
 						!global.flags.flag_remove_all &&
 						!global.flags.flag_save_circuit &&
-						!global.flags.flag_save_image && sizing_initialized
+						!global.flags.flag_save_image &&
+						sizing_initialized
 					) {
 						canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
 					}
 					if (
 						!global.variables.element_on_board &&
-						(!DESKTOP_MODE && !MOBILE_MODE) &&
+						!DESKTOP_MODE &&
+						!MOBILE_MODE &&
 						!global.flags.flag_select_timestep &&
 						!global.flags.flag_select_settings &&
 						!global.flags.flag_graph &&
 						!global.flags.flag_zoom &&
 						!global.flags.flag_remove_all &&
 						!global.flags.flag_save_circuit &&
-						!global.flags.flag_save_image && sizing_initialized
+						!global.flags.flag_save_image &&
+						sizing_initialized
 					) {
 						canvas.draw_text(language_manager.APP_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
 					}
@@ -1285,7 +1267,8 @@ function load_app(): void {
 								!global.flags.flag_zoom &&
 								!global.flags.flag_remove_all &&
 								!global.flags.flag_save_circuit &&
-								!global.flags.flag_save_image && sizing_initialized
+								!global.flags.flag_save_image &&
+								sizing_initialized
 							) {
 								canvas.draw_text(language_manager.WEB_LINK, workspace.bounds.get_center_x(), workspace.bounds.get_center_y(), web_link_text_paint);
 							}
@@ -1614,7 +1597,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-			1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+				1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;

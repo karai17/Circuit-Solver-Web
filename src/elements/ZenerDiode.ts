@@ -212,7 +212,7 @@ class ZenerDiode {
 							Math.exp((-this.elm.properties['Voltage'] - adjusted_zener_voltage) * (1.0 / (this.elm.properties['Emission Coefficient'] * global.settings.THERMAL_VOLTAGE))));
 					this.elm.properties['Equivalent Current'] = -(
 						this.elm.properties['Saturation Current'] *
-						-Math.exp((-this.elm.properties['Voltage'] - adjusted_zener_voltage) / (this.elm.properties['Emission Coefficient'] * global.settings.THERMAL_VOLTAGE)) -
+							-Math.exp((-this.elm.properties['Voltage'] - adjusted_zener_voltage) / (this.elm.properties['Emission Coefficient'] * global.settings.THERMAL_VOLTAGE)) -
 						this.elm.properties['Voltage'] / this.elm.properties['Resistance']
 					);
 				}
@@ -528,7 +528,7 @@ class ZenerDiode {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;

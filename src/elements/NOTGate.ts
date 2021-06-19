@@ -142,10 +142,11 @@ class NOTGate {
 			if (this.elm.consistent()) {
 				this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
 				this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+				this.elm.properties['V_1_prime'] = 10 * (1.0 - this.elm.properties['V_1'] * this.elm.properties['V_1']);
 				this.elm.properties['V_out'] = 0.5 * (1 - this.elm.properties['V_1']);
 				this.elm.properties['V_partial1'] = global.utils.limit(-0.5 * this.elm.properties['V_1_prime'], 0.0, 1.0);
-				this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
+				this.elm.properties['V_eq'] =
+					this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
 			}
 		}
 	}
@@ -451,7 +452,7 @@ class NOTGate {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;

@@ -181,7 +181,7 @@ class OperationalAmplifier {
 			engine_functions.stamp_ideal_opamp(this.elm.n1, this.elm.n2, this.elm.n3, simulation_manager.ELEMENT_OPAMP_OFFSET + this.simulation_id);
 		}
 	}
-	update(): void { }
+	update(): void {}
 	get_vertices(): Array<number> {
 		let vertices: Array<number> = [];
 		let p1: Array<number> = [];
@@ -729,5 +729,5 @@ class OperationalAmplifier {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

@@ -86,7 +86,7 @@ class EngineFunctions {
 			global.variables.user_file_selected = true;
 			global.flags.flag_canvas_draw_event = true;
 		};
-		reader.onerror = function (err: ProgressEvent<FileReader>) { };
+		reader.onerror = function (err: ProgressEvent<FileReader>) {};
 		reader.readAsText(input.files[0]);
 	}
 	file_event_mobile(title: string, data: string): void {
@@ -124,7 +124,7 @@ class EngineFunctions {
 		global.flags.flag_canvas_draw_event = true;
 		try {
 			engine_functions.parse_elements(global.variables.user_file.content);
-		} catch (error) { }
+		} catch (error) {}
 		global.variables.history['packet'].push(engine_functions.history_snapshot());
 		global.flags.flag_draw_block = true;
 		global.variables.user_file_selected = false;
@@ -6354,13 +6354,13 @@ class EngineFunctions {
 				this.v_node_ground = matrix_x[this.map_node(grounds[0].elm.n1)][0];
 			}
 		}
-		return (this.v_node_1 - this.v_node_2) + -this.v_node_ground;
+		return this.v_node_1 - this.v_node_2 + -this.v_node_ground;
 	}
 	file_manager() {
 		if (global.variables.user_file_selected) {
 			try {
 				this.parse_elements(global.variables.user_file.content);
-			} catch (error) { }
+			} catch (error) {}
 			global.variables.history['packet'].push(engine_functions.history_snapshot());
 			global.variables.user_file_selected = false;
 			mouse_event_latch = false;

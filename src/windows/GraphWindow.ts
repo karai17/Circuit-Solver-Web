@@ -385,8 +385,10 @@ class GraphWindow {
 			if (scope_manager.entry.length > 0) {
 				if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_a.trace.length) {
 					if (this.graph_trace_a.get_value(this.meter_hover_index)[1] !== '') {
-						this.value_text_a = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_a.get_value(this.meter_hover_index)[1])
-							.replace("{UNIT}", scope_manager.get_units(this.SCOPE_0_INDEX));
+						this.value_text_a = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace('{VAL}', this.graph_trace_a.get_value(this.meter_hover_index)[1]).replace(
+							'{UNIT}',
+							scope_manager.get_units(this.SCOPE_0_INDEX)
+						);
 					}
 					this.time_axis_value = this.graph_trace_a.get_value(this.meter_hover_index)[0];
 					if (MOBILE_MODE) {
@@ -407,9 +409,9 @@ class GraphWindow {
 					canvas.draw_text(
 						this.time_axis_value + 's',
 						this.inner_bounds.right -
-						this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
-						this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
-						view_port.view_width * 0.1,
+							this.text_paint.measure_text(global.utils.exponentiate_quickly(simulation_manager.time_step) + 's/step   ') -
+							this.text_paint.measure_text(this.time_axis_value + 's') * 0.5 -
+							view_port.view_width * 0.1,
 						this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1),
 						this.text_paint
 					);
@@ -418,8 +420,10 @@ class GraphWindow {
 			if (scope_manager.entry.length > 1) {
 				if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_b.trace.length) {
 					if (this.graph_trace_b.get_value(this.meter_hover_index)[1] !== '') {
-						this.value_text_b = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_b.get_value(this.meter_hover_index)[1])
-							.replace("{UNIT}", scope_manager.get_units(this.SCOPE_1_INDEX));
+						this.value_text_b = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace('{VAL}', this.graph_trace_b.get_value(this.meter_hover_index)[1]).replace(
+							'{UNIT}',
+							scope_manager.get_units(this.SCOPE_1_INDEX)
+						);
 					}
 					this.time_axis_value = this.graph_trace_b.get_value(this.meter_hover_index)[0];
 					if (MOBILE_MODE) {
@@ -436,8 +440,10 @@ class GraphWindow {
 			if (scope_manager.entry.length > 2) {
 				if (this.meter_hover_index > -1 && this.meter_hover_index < this.graph_trace_c.trace.length) {
 					if (this.graph_trace_c.get_value(this.meter_hover_index)[1] !== '') {
-						this.value_text_c = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace("{VAL}", this.graph_trace_c.get_value(this.meter_hover_index)[1])
-							.replace("{UNIT}", scope_manager.get_units(this.SCOPE_2_INDEX));
+						this.value_text_c = global.TEMPLATES.ELEMENT_VAL_TEMPLATE.replace('{VAL}', this.graph_trace_c.get_value(this.meter_hover_index)[1]).replace(
+							'{UNIT}',
+							scope_manager.get_units(this.SCOPE_2_INDEX)
+						);
 					}
 					this.time_axis_value = this.graph_trace_c.get_value(this.meter_hover_index)[0];
 					if (MOBILE_MODE) {
@@ -455,12 +461,12 @@ class GraphWindow {
 			if (this.value_text_a.length > 0) {
 				canvas.draw_text(this.value_text_a, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_a_paint);
 				this.value_text_width += this.graph_text_a_paint.measure_text(this.value_text_a);
-				this.value_text_width += (this.inner_bounds.right - this.download_button.right);
+				this.value_text_width += this.inner_bounds.right - this.download_button.right;
 			}
 			if (this.value_text_b.length > 0) {
 				canvas.draw_text(this.value_text_b, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_b_paint);
 				this.value_text_width += this.graph_text_b_paint.measure_text(this.value_text_b);
-				this.value_text_width += (this.inner_bounds.right - this.download_button.right);
+				this.value_text_width += this.inner_bounds.right - this.download_button.right;
 			}
 			if (this.value_text_c.length > 0) {
 				canvas.draw_text(this.value_text_c, this.value_text_width, this.inner_bounds.top - ((this.inner_bounds.top - this.bounds.top) >> 1), this.graph_text_c_paint);
@@ -542,12 +548,12 @@ class GraphWindow {
 			if (this.info_text_a.length > 0) {
 				canvas.draw_text(this.info_text_a, this.info_text_width, this.download_button.get_center_y(), this.graph_text_a_paint);
 				this.info_text_width += this.graph_text_a_paint.measure_text(this.info_text_a);
-				this.info_text_width += (this.inner_bounds.right - this.download_button.right);
+				this.info_text_width += this.inner_bounds.right - this.download_button.right;
 			}
 			if (this.info_text_b.length > 0) {
 				canvas.draw_text(this.info_text_b, this.info_text_width, this.download_button.get_center_y(), this.graph_text_b_paint);
 				this.info_text_width += this.graph_text_b_paint.measure_text(this.info_text_b);
-				this.info_text_width += (this.inner_bounds.right - this.download_button.right);
+				this.info_text_width += this.inner_bounds.right - this.download_button.right;
 			}
 			if (this.info_text_c.length > 0) {
 				canvas.draw_text(this.info_text_c, this.info_text_width, this.download_button.get_center_y(), this.graph_text_c_paint);

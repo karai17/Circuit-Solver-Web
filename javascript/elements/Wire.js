@@ -246,8 +246,7 @@ class Wire {
             this.build_element_flag = false;
         }
     }
-    update() {
-    }
+    update() { }
     set_flip(flip) {
         this.build_element_flag = true;
         wire_manager.reset_wire_builder();

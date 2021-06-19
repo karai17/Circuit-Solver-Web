@@ -5715,7 +5715,7 @@ class EngineFunctions {
                 this.v_node_ground = matrix_x[this.map_node(grounds[0].elm.n1)][0];
             }
         }
-        return (this.v_node_1 - this.v_node_2) + -this.v_node_ground;
+        return this.v_node_1 - this.v_node_2 + -this.v_node_ground;
     }
     file_manager() {
         if (global.variables.user_file_selected) {

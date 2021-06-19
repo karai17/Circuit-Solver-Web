@@ -191,9 +191,9 @@ class PulseWidthModulator {
 				this.elm.properties['Saw Wave'] =
 					0.5 -
 					(1 / Math.PI) *
-					Math.atan(
-						1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS)
-					);
+						Math.atan(
+							1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS)
+						);
 				if (this.elm.properties['Saw Wave'] > 1.0 - this.elm.properties['Duty'] * 0.01) {
 					this.elm.properties['A'] = global.utils.copy(this.elm.properties['High Voltage']);
 				} else {
