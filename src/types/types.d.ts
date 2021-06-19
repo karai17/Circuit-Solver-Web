@@ -296,8 +296,12 @@ declare type PROPERTY_SPST_T = {
 };
 declare type PROPERTY_NOT_T = {
 	'High Voltage': number;
-	'Input Voltage': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -543,9 +547,16 @@ declare type PROPERTY_POTENTIOMETER_T = {
 };
 declare type PROPERTY_AND_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -556,9 +567,16 @@ declare type PROPERTY_AND_T = {
 };
 declare type PROPERTY_OR_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -569,9 +587,16 @@ declare type PROPERTY_OR_T = {
 };
 declare type PROPERTY_NAND_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -582,9 +607,16 @@ declare type PROPERTY_NAND_T = {
 };
 declare type PROPERTY_NOR_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -595,9 +627,16 @@ declare type PROPERTY_NOR_T = {
 };
 declare type PROPERTY_XOR_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;
@@ -608,9 +647,16 @@ declare type PROPERTY_XOR_T = {
 };
 declare type PROPERTY_XNOR_T = {
 	'High Voltage': number;
-	'Input Voltage1': number;
-	'Input Voltage2': number;
-	'Output Voltage': number;
+	'V_1': number;
+	'V_1_prime': number;
+	'V_in1': number;
+	'V_partial1': number;
+	'V_2': number;
+	'V_2_prime': number;
+	'V_in2': number;
+	'V_partial2': number;
+	'V_out': number;
+	'V_eq': number;
 	tag: string;
 	units: string;
 	options: Array<string>;

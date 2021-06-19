@@ -95,14 +95,18 @@ class NOTGate {
     update() {
         if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
             if (this.elm.consistent()) {
-                this.elm.properties['Input Voltage'] = Math.tanh(10 * (engine_functions.get_voltage(this.elm.n1, -1) / this.elm.properties['High Voltage'] - 0.5));
-                this.elm.properties['Output Voltage'] = this.elm.properties['High Voltage'] * 0.5 * (1 - this.elm.properties['Input Voltage']);
+                this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
+                this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
+                this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+                this.elm.properties['V_out'] = 0.5 * (1 - this.elm.properties['V_1']);
+                this.elm.properties['V_partial1'] = global.utils.limit(-0.5 * this.elm.properties['V_1_prime'], 0.0, 1.0);
+                this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
             }
         }
     }
     stamp() {
         if (this.elm.consistent()) {
-            engine_functions.stamp_voltage(this.elm.n2, -1, this.elm.properties['Output Voltage'], simulation_manager.ELEMENT_NOT_OFFSET + this.simulation_id);
+            engine_functions.stamp_gate1(this.elm.n2, this.elm.properties['V_partial1'], this.elm.properties['V_eq'], simulation_manager.ELEMENT_NOT_OFFSET + this.simulation_id);
         }
     }
     get_vertices() {

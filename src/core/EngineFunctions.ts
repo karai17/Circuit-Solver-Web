@@ -6147,6 +6147,29 @@ class EngineFunctions {
 		}
 		matrix_z[this.offset + id][0] += voltage;
 	}
+	stamp_gate1(n1: number, par_vout_par_vin1: number, v_eq: number, id: number): void {
+		this.node_1 = this.map_node(n1);
+		this.offset = simulation_manager.node_size;
+		if (this.node_1 !== -1) {
+			matrix_a[this.node_1][this.offset + id] = 1;
+			matrix_a[this.offset + id][this.node_1] = -1;
+			matrix_a[this.offset + id][this.node_1 + 1] = par_vout_par_vin1;
+			matrix_a[this.node_1][this.node_1] += 1.0 / global.settings.R_MAX;
+		}
+		matrix_z[this.offset + id][0] += v_eq;
+	}
+	stamp_gate2(n1: number, par_vout_par_vin1: number, par_vout_par_vin2: number, v_eq: number, id: number): void {
+		this.node_1 = this.map_node(n1);
+		this.offset = simulation_manager.node_size;
+		if (this.node_1 !== -1) {
+			matrix_a[this.node_1][this.offset + id] = 1;
+			matrix_a[this.offset + id][this.node_1] = -1;
+			matrix_a[this.offset + id][this.node_1 + 1] = par_vout_par_vin1;
+			matrix_a[this.offset + id][this.node_1 + 2] = par_vout_par_vin2;
+			matrix_a[this.node_1][this.node_1] += 1.0 / global.settings.R_MAX;
+		}
+		matrix_z[this.offset + id][0] += v_eq;
+	}
 	stamp_current(n1: number, n2: number, current: number): void {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);

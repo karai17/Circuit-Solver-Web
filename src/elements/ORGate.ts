@@ -162,20 +162,50 @@ class ORGate {
 	push_reference(ref: WIRE_REFERENCE_T): void {
 		this.wire_reference.push(ref);
 	}
+	vout_or(ui: Array<number>): number {
+		let sum = 0;
+		let N = 2;
+		let size = ui.length;
+
+		for (var i = 0; i < ui.length; i++) {
+			sum += (size) / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
+		}
+
+		return 1.0 - (N / sum) + global.CONSTANTS.ZERO_BIAS;
+	}
+	partial_or(terminal: number, ui: Array<number>, ui_prime: Array<number>): number {
+		let sum = 0;
+		let N = 2;
+		let size = ui.length;
+
+		for (var i = 0; i < ui.length; i++) {
+			sum += (size) / (1 - ui[i] + global.CONSTANTS.ZERO_BIAS);
+		}
+
+		return (2 * N * ui_prime[terminal]) / Math.pow((1 - ui[terminal] + global.CONSTANTS.ZERO_BIAS) * sum, 2);
+	}
 	update(): void {
 		if (global.flags.flag_simulating && simulation_manager.solutions_ready) {
 			if (this.elm.consistent()) {
-				this.elm.properties['Input Voltage1'] = Math.tanh(10 * (engine_functions.get_voltage(this.elm.n1, -1) / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['Input Voltage2'] = Math.tanh(10 * (engine_functions.get_voltage(this.elm.n2, -1) / this.elm.properties['High Voltage'] - 0.5));
-				this.elm.properties['Output Voltage'] =
-					this.elm.properties['High Voltage'] *
-					(1 - 2.0 / (2.0 / (1 - this.elm.properties['Input Voltage1'] + global.CONSTANTS.ZERO_BIAS) + 2.0 / (1 - this.elm.properties['Input Voltage2'] + global.CONSTANTS.ZERO_BIAS)));
+				this.elm.properties['V_in1'] = engine_functions.get_voltage(this.elm.n1, -1);
+				this.elm.properties['V_1'] = Math.tanh(10 * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage'] - 0.5));
+				this.elm.properties['V_1_prime'] = 10 * (1.0 - (this.elm.properties['V_1'] * this.elm.properties['V_1']));
+				this.elm.properties['V_in2'] = engine_functions.get_voltage(this.elm.n2, -1);
+				this.elm.properties['V_2'] = Math.tanh(10 * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage'] - 0.5));
+				this.elm.properties['V_2_prime'] = 10 * (1.0 - (this.elm.properties['V_2'] * this.elm.properties['V_2']));
+				this.elm.properties['V_out'] = this.vout_or([this.elm.properties['V_1'], this.elm.properties['V_2']]);
+				this.elm.properties['V_partial1'] = global.utils.limit(this.partial_or(0, [this.elm.properties['V_1'], this.elm.properties['V_2']],
+					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
+				this.elm.properties['V_partial2'] = global.utils.limit(this.partial_or(1, [this.elm.properties['V_1'], this.elm.properties['V_2']],
+					[this.elm.properties['V_1_prime'], this.elm.properties['V_2_prime']]), 0.0, 1.0);
+				this.elm.properties['V_eq'] = this.elm.properties['High Voltage'] * (this.elm.properties['V_partial1'] * (this.elm.properties['V_in1'] / this.elm.properties['High Voltage']) +
+					this.elm.properties['V_partial2'] * (this.elm.properties['V_in2'] / this.elm.properties['High Voltage']) - this.elm.properties['V_out']);
 			}
 		}
 	}
 	stamp(): void {
 		if (this.elm.consistent()) {
-			engine_functions.stamp_voltage(this.elm.n3, -1, this.elm.properties['Output Voltage'], simulation_manager.ELEMENT_OR_OFFSET + this.simulation_id);
+			engine_functions.stamp_gate2(this.elm.n3, this.elm.properties['V_partial1'], this.elm.properties['V_partial2'], this.elm.properties['V_eq'], simulation_manager.ELEMENT_OR_OFFSET + this.simulation_id);
 		}
 	}
 	get_vertices(): Array<number> {
