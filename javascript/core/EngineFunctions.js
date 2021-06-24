@@ -5712,7 +5712,7 @@ class EngineFunctions {
         if (grounds.length > 0) {
             this.node_3 = this.map_node(grounds[0].elm.n1);
             if (this.node_3 !== -1) {
-                this.v_node_ground = matrix_x[this.map_node(grounds[0].elm.n1)][0];
+                this.v_node_ground = matrix_x[this.node_3][0];
             }
         }
         return this.v_node_1 - this.v_node_2 + -this.v_node_ground;
