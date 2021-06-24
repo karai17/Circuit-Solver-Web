@@ -122,7 +122,8 @@ class OperationalAmplifier {
             engine_functions.stamp_ideal_opamp(this.elm.n1, this.elm.n2, this.elm.n3, simulation_manager.ELEMENT_OPAMP_OFFSET + this.simulation_id);
         }
     }
-    update() { }
+    update() {
+    }
     get_vertices() {
         let vertices = [];
         let p1 = [];
