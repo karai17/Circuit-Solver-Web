@@ -63,6 +63,10 @@ class Util {
         this.meter_max_array = [];
         this.non_linear_max_array = [];
         this.max_general_number = 0;
+        this.str = '';
+        this.val = 0;
+        this.abs_input = 0;
+        this.found = false;
     }
     sine(theta) {
         return this.TRIG_SINE_TABLE[(theta * this.TRIG_TABLE_INDEX_CONSTANT) & this.TRIG_TABLE_MASK];
@@ -422,28 +426,28 @@ class Util {
         }
     }
     exponentiate_quickly(input) {
-        let str = '';
-        let val = 0;
-        let abs_input = Math.abs(input);
-        let found = false;
+        this.str = '';
+        this.val = 0;
+        this.abs_input = Math.abs(input);
+        this.found = false;
         for (var i = 0; i < this.SI_UNIT_THRESHOLD_ARRAY.length; i++) {
-            if (abs_input >= this.SI_UNIT_THRESHOLD_ARRAY[i]) {
-                val = input * this.SI_UNIT_ARRAY[i];
-                str = this.round(val) + this.SI_UNIT_ABBREVIATION[i];
-                found = true;
+            if (this.abs_input >= this.SI_UNIT_THRESHOLD_ARRAY[i]) {
+                this.val = input * this.SI_UNIT_ARRAY[i];
+                this.str = this.round(this.val) + this.SI_UNIT_ABBREVIATION[i];
+                this.found = true;
                 break;
             }
-            else if (abs_input === 0) {
-                val = 0;
-                str = this.ELEMENT_VAL_TEMPLATE.replace('{VAL}', val).replace('{UNIT}', '');
-                found = true;
+            else if (this.abs_input === 0) {
+                this.val = 0;
+                this.str = this.ELEMENT_VAL_TEMPLATE.replace('{VAL}', this.val).replace('{UNIT}', '');
+                this.found = true;
                 break;
             }
         }
-        if (!found) {
-            str = '--- ';
+        if (!this.found) {
+            this.str = '--- ';
         }
-        return str;
+        return this.str;
     }
     element_max() {
         /* #INSERT_GENERATE_MAX_ELEMENT# */

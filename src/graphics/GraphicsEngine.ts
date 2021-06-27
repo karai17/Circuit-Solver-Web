@@ -505,6 +505,20 @@ class GraphicsEngine {
 			} else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
 				this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
 			}
+			if (i + 1 < path.length) {
+				i++;
+				this.dict = path[i];
+				this.command = this.dict['command'];
+				if (this.command === global.CONSTANTS.MOVE_COMMAND) {
+					this.ctx.moveTo(this.dict['x1'], this.dict['y1']);
+				} else if (this.command === global.CONSTANTS.LINE_COMMAND) {
+					this.ctx.lineTo(this.dict['x1'], this.dict['y1']);
+				} else if (this.command === global.CONSTANTS.QUAD_COMMAND) {
+					this.ctx.quadraticCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2']);
+				} else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
+					this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
+				}
+			}
 		}
 		switch (paint.paint_style) {
 			case paint.style.FILL:
@@ -539,6 +553,20 @@ class GraphicsEngine {
 				this.ctx.quadraticCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2']);
 			} else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
 				this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
+			}
+			if (i + 1 < path.length) {
+				i++;
+				this.dict = path[i];
+				this.command = this.dict['command'];
+				if (this.command === global.CONSTANTS.MOVE_COMMAND) {
+					this.ctx.moveTo(this.dict['x1'], this.dict['y1']);
+				} else if (this.command === global.CONSTANTS.LINE_COMMAND) {
+					this.ctx.lineTo(this.dict['x1'], this.dict['y1']);
+				} else if (this.command === global.CONSTANTS.QUAD_COMMAND) {
+					this.ctx.quadraticCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2']);
+				} else if (this.command === global.CONSTANTS.CURVE_COMMAND) {
+					this.ctx.bezierCurveTo(this.dict['x1'], this.dict['y1'], this.dict['x2'], this.dict['y2'], this.dict['x3'], this.dict['y3']);
+				}
 			}
 		}
 		this.ctx.translate(-x_offset, -y_offset);
@@ -601,6 +629,5 @@ class GraphicsEngine {
 		this.general_path.reset();
 		this.cache = [];
 		this.dict = global.CONSTANTS.NULL;
-		this.restore();
 	}
 }

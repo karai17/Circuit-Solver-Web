@@ -46,6 +46,10 @@ class Util {
 	public meter_max_array: Array<number>;
 	public non_linear_max_array: Array<number>;
 	public max_general_number: number;
+	private str: string;
+	private val: number;
+	private abs_input: number;
+	private found: boolean;
 	constructor(CONSTANTS: Constants, TEMPLATES: Templates, KEY_CODES: KeyCodes) {
 		this.TRIG_SINE_TABLE = CONSTANTS.TRIG_SINE_TABLE;
 		this.TRIG_TABLE_SCALE_CONSTANT = CONSTANTS.TRIG_TABLE_SCALE_CONSTANT;
@@ -109,6 +113,10 @@ class Util {
 		this.meter_max_array = [];
 		this.non_linear_max_array = [];
 		this.max_general_number = 0;
+		this.str = '';
+		this.val = 0;
+		this.abs_input = 0;
+		this.found = false;
 	}
 	sine(theta: number): number {
 		return this.TRIG_SINE_TABLE[(theta * this.TRIG_TABLE_INDEX_CONSTANT) & this.TRIG_TABLE_MASK];
@@ -447,27 +455,27 @@ class Util {
 		}
 	}
 	exponentiate_quickly(input: number): string {
-		let str: string = '';
-		let val: number = 0;
-		let abs_input: number = Math.abs(input);
-		let found: boolean = false;
+		this.str = '';
+		this.val = 0;
+		this.abs_input = Math.abs(input);
+		this.found = false;
 		for (var i: number = 0; i < this.SI_UNIT_THRESHOLD_ARRAY.length; i++) {
-			if (abs_input >= this.SI_UNIT_THRESHOLD_ARRAY[i]) {
-				val = input * this.SI_UNIT_ARRAY[i];
-				str = this.round(val) + this.SI_UNIT_ABBREVIATION[i];
-				found = true;
+			if (this.abs_input >= this.SI_UNIT_THRESHOLD_ARRAY[i]) {
+				this.val = input * this.SI_UNIT_ARRAY[i];
+				this.str = this.round(this.val) + this.SI_UNIT_ABBREVIATION[i];
+				this.found = true;
 				break;
-			} else if (abs_input === 0) {
-				val = 0;
-				str = this.ELEMENT_VAL_TEMPLATE.replace('{VAL}', <string>(<unknown>val)).replace('{UNIT}', '');
-				found = true;
+			} else if (this.abs_input === 0) {
+				this.val = 0;
+				this.str = this.ELEMENT_VAL_TEMPLATE.replace('{VAL}', <string>(<unknown>this.val)).replace('{UNIT}', '');
+				this.found = true;
 				break;
 			}
 		}
-		if (!found) {
-			str = '--- ';
+		if (!this.found) {
+			this.str = '--- ';
 		}
-		return str;
+		return this.str;
 	}
 	element_max(): number {
 		/* #INSERT_GENERATE_MAX_ELEMENT# */

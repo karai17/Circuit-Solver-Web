@@ -8,8 +8,7 @@ class Workspace {
 	private bounds_paint: Paint;
 	private grid_paint: Paint;
 	private work_area_paint: Paint;
-	private line_buffer: Array<Array<number>>;
-	private grid_moved: boolean;
+
 	constructor(left: number, top: number, right: number, bottom: number, scale: number) {
 		this.flag_resize_flag = false;
 		this.flag_draw_to_screen = false;
@@ -62,11 +61,8 @@ class Workspace {
 		this.work_area_paint.set_font(global.CONSTANTS.DEFAULT_FONT);
 		this.work_area_paint.set_alpha(255);
 		this.work_area_paint.set_paint_align(paint.align.CENTER);
-		this.line_buffer = [];
-		this.grid_moved = true;
 	}
 	workspace_resize(): void {
-		this.grid_moved = true;
 		this.view_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
 		this.view_paint.set_text_size(global.variables.canvas_text_size_4);
 		this.bounds_paint.set_stroke_width(global.variables.canvas_stroke_width_3 >> 1);
@@ -98,7 +94,6 @@ class Workspace {
 		this.grid_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
 	}
 	workspace_zoom(): void {
-		this.grid_moved = true;
 		global.flags.flag_build_element = true;
 		global.variables.flag_build_counter = 0;
 		this.bounds.left = global.variables.delta_x;
@@ -124,7 +119,6 @@ class Workspace {
 		/* <!-- END AUTOMATICALLY GENERATED !--> */
 	}
 	workspace_translate_bounds(dx: number, dy: number): void {
-		this.grid_moved = true;
 		global.flags.flag_build_element = true;
 		global.variables.flag_build_counter = 0;
 		this.bounds.left += dx;

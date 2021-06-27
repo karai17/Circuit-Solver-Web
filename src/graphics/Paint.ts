@@ -42,7 +42,7 @@ class Paint {
 		this.alpha = 1;
 		this.metric_array = [];
 		this.saved_metric = null;
-		this.garbage_collector_size = 18;
+		this.garbage_collector_size = 20;
 		this.temp_boolean = false;
 		this.paint_surface = new VirtualCanvas(1, 1, -1);
 		this.last_font = '';
@@ -122,8 +122,8 @@ class Paint {
 		this.metric = this.paint_surface.context.measureText(txt);
 		return {
 			width: this.metric.width,
-			ascent: this.metric.fontBoundingBoxAscent,
-			descent: this.metric.fontBoundingBoxDescent
+			ascent: this.metric.actualBoundingBoxAscent,
+			descent: this.metric.actualBoundingBoxDescent
 		};
 	}
 	measure_text(txt: string): number {
@@ -186,7 +186,7 @@ class Paint {
 			this.saved_metric = global.CONSTANTS.NULL;
 		}
 		if (!global.utils.not_null(this.garbage_collector_size)) {
-			this.garbage_collector_size = 18;
+			this.garbage_collector_size = 20;
 		}
 		if (!global.utils.not_null(this.paint_style)) {
 			this.paint_style = this.style.STROKE;
@@ -204,7 +204,7 @@ class Paint {
 			this.text_baseline = this.baseline.MIDDLE;
 		}
 		if (this.garbage_collector_size !== 18) {
-			this.garbage_collector_size = 18;
+			this.garbage_collector_size = 20;
 		}
 	}
 }
