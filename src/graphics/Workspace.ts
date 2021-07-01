@@ -19,8 +19,8 @@ class Workspace {
 			view_port.center_x + view_port.view_width * global.settings.WORKSPACE_RATIO_X * scale,
 			view_port.center_y + view_port.view_height * global.settings.WORKSPACE_RATIO_Y * scale
 		);
-		global.variables.node_space_x = this.bounds.get_width() / global.settings.SQRT_MAXNODES;
-		global.variables.node_space_y = this.bounds.get_height() / global.settings.SQRT_MAXNODES;
+		global.variables.node_space_x = this.bounds.get_width() * global.settings.INV_SQRT_MAXNODES;
+		global.variables.node_space_y = this.bounds.get_height() * global.settings.INV_SQRT_MAXNODES;
 		this.view_paint = new Paint();
 		this.view_paint.set_paint_style(paint.style.STROKE);
 		this.view_paint.set_paint_cap(paint.cap.ROUND);
@@ -85,8 +85,8 @@ class Workspace {
 				global.variables.natural_height * global.variables.workspace_zoom_scale
 			);
 		}
-		global.variables.node_space_x = this.bounds.get_width() / global.settings.SQRT_MAXNODES;
-		global.variables.node_space_y = this.bounds.get_height() / global.settings.SQRT_MAXNODES;
+		global.variables.node_space_x = this.bounds.get_width() * global.settings.INV_SQRT_MAXNODES;
+		global.variables.node_space_y = this.bounds.get_height() * global.settings.INV_SQRT_MAXNODES;
 		if (!this.flag_resize_flag || global.flags.flag_force_resize_event) {
 			zoom_window.set_zoom(global.variables.workspace_zoom_scale);
 			this.flag_resize_flag = true;
@@ -100,8 +100,8 @@ class Workspace {
 		this.bounds.top = global.variables.delta_y;
 		this.bounds.right = this.bounds.left + global.variables.natural_width * global.variables.workspace_zoom_scale;
 		this.bounds.bottom = this.bounds.top + global.variables.natural_height * global.variables.workspace_zoom_scale;
-		global.variables.node_space_x = this.bounds.get_width() / global.settings.SQRT_MAXNODES;
-		global.variables.node_space_y = this.bounds.get_height() / global.settings.SQRT_MAXNODES;
+		global.variables.node_space_x = this.bounds.get_width() * global.settings.INV_SQRT_MAXNODES;
+		global.variables.node_space_y = this.bounds.get_height() * global.settings.INV_SQRT_MAXNODES;
 		/* #INSERT_METER_RESIZE_TRACE# */
 		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 		for (var i: number = voltmeters.length - 1; i > -1; i--) {

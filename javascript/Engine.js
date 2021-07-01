@@ -168,6 +168,9 @@ var sizing_initialized = false;
 function load_app() {
     browser_detection();
     workspace = new Workspace(view_port.left, view_port.top, view_port.view_width, view_port.view_height, global.variables.workspace_zoom_scale);
+    let workspace_sqrt = Math.round(global.settings.SQRT_MAXNODES * 0.75);
+    let work_space_x_space = 0;
+    let work_space_y_space = 0;
     global.utils.last_surface_width = 0;
     global.utils.last_surface_height = 0;
     let canvas = new GraphicsEngine(virtual_surface.context);
@@ -664,7 +667,7 @@ function load_app() {
                     if (global.variables.system_initialization['completed']) {
                         if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
                             if (!global.flags.flag_on_restore_event) {
-                                render().then(function () { });
+                                render().then(null);
                             }
                             if (global.flags.flag_canvas_draw_request) {
                                 if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -2158,40 +2161,23 @@ function load_app() {
         multi_select_manager.key_up(global.events.key_up_event);
     }
     function handle_workspace_drag() {
-        let sqrt = Math.round(global.settings.SQRT_MAXNODES * 0.75);
-        let x_space = sqrt * global.variables.node_space_x;
-        let y_space = sqrt * global.variables.node_space_y;
-        if (workspace.bounds.left + global.variables.dx < view_port.left - x_space) {
-            global.variables.dx = view_port.left - x_space - workspace.bounds.left;
+        work_space_x_space = workspace_sqrt * global.variables.node_space_x;
+        work_space_y_space = workspace_sqrt * global.variables.node_space_y;
+        if (workspace.bounds.left + global.variables.dx < view_port.left - work_space_x_space) {
+            global.variables.dx = view_port.left - work_space_x_space - workspace.bounds.left;
         }
-        if (workspace.bounds.right + global.variables.dx > view_port.right + x_space) {
-            global.variables.dx = view_port.right + x_space - workspace.bounds.right;
+        if (workspace.bounds.right + global.variables.dx > view_port.right + work_space_x_space) {
+            global.variables.dx = view_port.right + work_space_x_space - workspace.bounds.right;
         }
-        if (workspace.bounds.top + global.variables.dy < view_port.top - y_space) {
-            global.variables.dy = view_port.top - y_space - workspace.bounds.top;
+        if (workspace.bounds.top + global.variables.dy < view_port.top - work_space_y_space) {
+            global.variables.dy = view_port.top - work_space_y_space - workspace.bounds.top;
         }
-        if (workspace.bounds.bottom + global.variables.dy > view_port.bottom + y_space) {
-            global.variables.dy = view_port.bottom + y_space - workspace.bounds.bottom;
+        if (workspace.bounds.bottom + global.variables.dy > view_port.bottom + work_space_y_space) {
+            global.variables.dy = view_port.bottom + work_space_y_space - workspace.bounds.bottom;
         }
         workspace.workspace_translate_bounds(global.variables.dx, global.variables.dy);
         global.variables.delta_x += global.variables.dx;
         global.variables.delta_y += global.variables.dy;
-    }
-    function register() {
-        if (!global.CONSTANTS.DEVELOPER_MODE) {
-            let post_data = 'pinged @ {' + global.utils.get_time_stamp() + '}';
-            let url = 'analytics.php?msg="' + post_data + '"';
-            let method = 'POST';
-            let should_be_async = true;
-            let request = new XMLHttpRequest();
-            request.onload = function () {
-                let status = request.status;
-                let data = request.responseText;
-            };
-            request.open(method, url, should_be_async);
-            request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-            request.send(post_data);
-        }
     }
     function browser_detection() {
         if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) !== -1) {
@@ -2212,13 +2198,10 @@ function load_app() {
         }
     }
     function throttle_loop() {
-        if ((fps_iterator ^= 1)) {
+        if (fps_iterator ^= 1) {
             system_loop();
         }
         requestAnimationFrame(throttle_loop);
-    }
-    if (!MOBILE_MODE && !DESKTOP_MODE) {
-        register();
     }
     throttle_loop();
 }

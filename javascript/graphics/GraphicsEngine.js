@@ -49,13 +49,12 @@ class GraphicsEngine {
         this.last_clear_y_int = 0;
         this.last_clear_width_int = 0;
         this.last_clear_height_int = 0;
+        this.surface_width = -1;
+        this.surface_height = -1;
     }
     set_context(ctx) {
         this.ctx = ctx;
         this.on_resize();
-    }
-    get_context() {
-        return this.ctx;
     }
     on_resize() {
         this.last_alpha = -1;
@@ -72,6 +71,8 @@ class GraphicsEngine {
         this.last_clear_y = -1;
         this.last_clear_width = -1;
         this.last_clear_height = -1;
+        this.surface_width = -1;
+        this.surface_height = -1;
     }
     begin() {
         this.ctx.beginPath();
@@ -553,7 +554,13 @@ class GraphicsEngine {
         this.ctx.setTransform(1, 0, 0, 1, 0, 0);
     }
     clear(_surface) {
-        this.ctx.clearRect(0, 0, (_surface.width + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO, (_surface.height + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO);
+        if (this.surface_width === -1) {
+            this.surface_width = (_surface.width + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO;
+        }
+        if (this.surface_height === -1) {
+            this.surface_height = (_surface.height + global.CONSTANTS.ZERO_PT_FIVE) >> global.CONSTANTS.ZERO;
+        }
+        this.ctx.clearRect(0, 0, this.surface_width, this.surface_height);
     }
     clear_xywh(x, y, w, h) {
         if (this.last_clear_x !== x) {

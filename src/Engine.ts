@@ -160,6 +160,9 @@ var sizing_initialized = false;
 function load_app(): void {
 	browser_detection();
 	workspace = new Workspace(view_port.left, view_port.top, view_port.view_width, view_port.view_height, global.variables.workspace_zoom_scale);
+	let workspace_sqrt: number = Math.round(global.settings.SQRT_MAXNODES * 0.75);
+	let work_space_x_space: number = 0;
+	let work_space_y_space: number = 0;
 	global.utils.last_surface_width = 0;
 	global.utils.last_surface_height = 0;
 	let canvas: GraphicsEngine = new GraphicsEngine(virtual_surface.context);
@@ -307,7 +310,7 @@ function load_app(): void {
 			ctx.globalCompositeOperation = 'copy';
 			virtual_surface.context.globalCompositeOperation = 'source-over';
 			canvas.on_resize();
-		} catch (e) {}
+		} catch (e) { }
 	}
 	function resize_canvas(): void {
 		global.variables.device_pixel_ratio = window.devicePixelRatio;
@@ -351,7 +354,7 @@ function load_app(): void {
 			ctx.webkitImageSmoothingEnabled = false;
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
-		} catch (e) {}
+		} catch (e) { }
 		global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 		global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 		global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -648,7 +651,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () {});
+								render().then(null);
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -1597,7 +1600,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-				1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+			1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;
@@ -2179,40 +2182,23 @@ function load_app(): void {
 		multi_select_manager.key_up(global.events.key_up_event);
 	}
 	function handle_workspace_drag(): void {
-		let sqrt: number = Math.round(global.settings.SQRT_MAXNODES * 0.75);
-		let x_space: number = sqrt * global.variables.node_space_x;
-		let y_space: number = sqrt * global.variables.node_space_y;
-		if (workspace.bounds.left + global.variables.dx < view_port.left - x_space) {
-			global.variables.dx = view_port.left - x_space - workspace.bounds.left;
+		work_space_x_space = workspace_sqrt * global.variables.node_space_x;
+		work_space_y_space = workspace_sqrt * global.variables.node_space_y;
+		if (workspace.bounds.left + global.variables.dx < view_port.left - work_space_x_space) {
+			global.variables.dx = view_port.left - work_space_x_space - workspace.bounds.left;
 		}
-		if (workspace.bounds.right + global.variables.dx > view_port.right + x_space) {
-			global.variables.dx = view_port.right + x_space - workspace.bounds.right;
+		if (workspace.bounds.right + global.variables.dx > view_port.right + work_space_x_space) {
+			global.variables.dx = view_port.right + work_space_x_space - workspace.bounds.right;
 		}
-		if (workspace.bounds.top + global.variables.dy < view_port.top - y_space) {
-			global.variables.dy = view_port.top - y_space - workspace.bounds.top;
+		if (workspace.bounds.top + global.variables.dy < view_port.top - work_space_y_space) {
+			global.variables.dy = view_port.top - work_space_y_space - workspace.bounds.top;
 		}
-		if (workspace.bounds.bottom + global.variables.dy > view_port.bottom + y_space) {
-			global.variables.dy = view_port.bottom + y_space - workspace.bounds.bottom;
+		if (workspace.bounds.bottom + global.variables.dy > view_port.bottom + work_space_y_space) {
+			global.variables.dy = view_port.bottom + work_space_y_space - workspace.bounds.bottom;
 		}
 		workspace.workspace_translate_bounds(global.variables.dx, global.variables.dy);
 		global.variables.delta_x += global.variables.dx;
 		global.variables.delta_y += global.variables.dy;
-	}
-	function register(): void {
-		if (!global.CONSTANTS.DEVELOPER_MODE) {
-			let post_data: string = 'pinged @ {' + global.utils.get_time_stamp() + '}';
-			let url: string = 'analytics.php?msg="' + post_data + '"';
-			let method: string = 'POST';
-			let should_be_async: boolean = true;
-			let request: XMLHttpRequest = new XMLHttpRequest();
-			request.onload = function (): void {
-				let status: number = request.status;
-				let data: string = request.responseText;
-			};
-			request.open(method, url, should_be_async);
-			request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-			request.send(post_data);
-		}
 	}
 	function browser_detection(): void {
 		if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) !== -1) {
@@ -2229,13 +2215,10 @@ function load_app(): void {
 		}
 	}
 	function throttle_loop(): void {
-		if ((fps_iterator ^= 1)) {
+		if (fps_iterator ^= 1) {
 			system_loop();
 		}
 		requestAnimationFrame(throttle_loop);
-	}
-	if (!MOBILE_MODE && !DESKTOP_MODE) {
-		register();
 	}
 	throttle_loop();
 }

@@ -110,7 +110,4 @@ class Path {
 		this.indexer = 0;
 		this.path_2d = [];
 	}
-	get_path(): Array<PATH_T> {
-		return this.path_2d;
-	}
 }

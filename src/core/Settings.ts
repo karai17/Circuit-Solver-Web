@@ -8,7 +8,8 @@ class Settings {
 	public MAXNODES: number;
 	public SQRT_MAXNODES: number;
 	public SQRT_MAXNODES_M1: number;
-	public INV_SQRT_M_1: number;
+	public INV_SQRT_MAXNODES_M_1: number;
+	public INV_SQRT_MAXNODES: number;
 	public R_MAX: number;
 	public INV_R_MAX: number;
 	public R_SHUNT: number;
@@ -57,7 +58,8 @@ class Settings {
 		this.MAXNODES = 900;
 		this.SQRT_MAXNODES = Math.round(Math.sqrt(this.MAXNODES));
 		this.SQRT_MAXNODES_M1 = this.SQRT_MAXNODES - 1;
-		this.INV_SQRT_M_1 = 1.0 / (this.SQRT_MAXNODES - 1);
+		this.INV_SQRT_MAXNODES_M_1 = 1.0 / (this.SQRT_MAXNODES - 1);
+		this.INV_SQRT_MAXNODES = 1.0 / this.SQRT_MAXNODES;
 		this.R_MAX = 1e9;
 		this.INV_R_MAX = 1.0 / this.R_MAX;
 		this.R_SHUNT = 1e12;
@@ -107,7 +109,8 @@ class Settings {
 		this.MAXNODES = 900;
 		this.SQRT_MAXNODES = Math.round(Math.sqrt(this.MAXNODES));
 		this.SQRT_MAXNODES_M1 = this.SQRT_MAXNODES - 1;
-		this.INV_SQRT_M_1 = 1.0 / (this.SQRT_MAXNODES - 1);
+		this.INV_SQRT_MAXNODES_M_1 = 1.0 / (this.SQRT_MAXNODES - 1);
+		this.INV_SQRT_MAXNODES = 1.0 / this.SQRT_MAXNODES;
 		this.R_MAX = 1e9;
 		this.INV_R_MAX = 1.0 / this.R_MAX;
 		this.R_SHUNT = 1e12;

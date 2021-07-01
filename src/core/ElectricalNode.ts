@@ -41,8 +41,8 @@ class ElectricalNode {
 		let node_space_x: number = 1.5 * (global.variables.node_space_x >> 2);
 		let node_space_y: number = 1.5 * (global.variables.node_space_y >> 2);
 		this.bounds = new RectF(this.location.x - node_space_x, this.location.y - node_space_y, this.location.x + node_space_x, this.location.y + node_space_y);
-		this.loc_x_precalc = this.row * global.settings.INV_SQRT_M_1;
-		this.loc_y_precalc = this.column * global.settings.INV_SQRT_M_1;
+		this.loc_x_precalc = this.row * global.settings.INV_SQRT_MAXNODES_M_1;
+		this.loc_y_precalc = this.column * global.settings.INV_SQRT_MAXNODES_M_1;
 	}
 	resize(n_x: number, n_y: number, m_n_x: number, m_n_y: number): void {
 		if (global.flags.flag_build_element) {
