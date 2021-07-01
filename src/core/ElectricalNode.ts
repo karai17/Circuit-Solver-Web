@@ -11,6 +11,8 @@ class ElectricalNode {
 	public bounds: RectF;
 	public loc_x_precalc: number;
 	public loc_y_precalc: number;
+	public str: string;
+
 	constructor(x: number, y: number, id: number) {
 		this.location = new PointF(x, y);
 		this.node_line_paint = new Paint();
@@ -43,6 +45,7 @@ class ElectricalNode {
 		this.bounds = new RectF(this.location.x - node_space_x, this.location.y - node_space_y, this.location.x + node_space_x, this.location.y + node_space_y);
 		this.loc_x_precalc = this.row * global.settings.INV_SQRT_MAXNODES_M_1;
 		this.loc_y_precalc = this.column * global.settings.INV_SQRT_MAXNODES_M_1;
+		this.str = "";
 	}
 	resize(n_x: number, n_y: number, m_n_x: number, m_n_y: number): void {
 		if (global.flags.flag_build_element) {
@@ -145,11 +148,11 @@ class ElectricalNode {
 		}
 	}
 	debug_info(): string {
-		let str: string = '';
+		this.str = "";
 		for (var i: number = 0; i < this.references.length; i++) {
-			str += global.TEMPLATES.DEBUG_TEMPLATE.replace('{ID}', <string>(<unknown>this.references[i].id)).replace('{TYPE}', <string>(<unknown>this.references[i].type));
+			this.str += global.TEMPLATES.DEBUG_TEMPLATE.replace('{ID}', <string>(<unknown>this.references[i].id)).replace('{TYPE}', <string>(<unknown>this.references[i].type));
 		}
-		return str;
+		return this.str;
 	}
 	draw(canvas: GraphicsEngine): void {
 		if (this.references.length > 0) {

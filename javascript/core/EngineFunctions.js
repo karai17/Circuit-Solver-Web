@@ -25,6 +25,7 @@ class EngineFunctions {
         this.mapper2 = new Element2(-1, -1, global.CONSTANTS.NULL);
         this.mapper3 = new Element3(-1, -1, global.CONSTANTS.NULL);
         this.mapper4 = new Element4(-1, -1, global.CONSTANTS.NULL);
+        this.stamp_cache = 0;
     }
     save_file(title, content) {
         let blob = new Blob([content], {
@@ -5465,15 +5466,16 @@ class EngineFunctions {
     stamp_resistor(n1, n2, resistance) {
         this.node_1 = this.map_node(n1);
         this.node_2 = this.map_node(n2);
+        this.stamp_cache = 1.0 / resistance;
         if (this.node_1 !== -1) {
-            matrix_a[this.node_1][this.node_1] += 1.0 / resistance;
+            matrix_a[this.node_1][this.node_1] += this.stamp_cache;
         }
         if (this.node_2 !== -1) {
-            matrix_a[this.node_2][this.node_2] += 1.0 / resistance;
+            matrix_a[this.node_2][this.node_2] += this.stamp_cache;
         }
         if (this.node_1 !== -1 && this.node_2 !== -1) {
-            matrix_a[this.node_1][this.node_2] += -1.0 / resistance;
-            matrix_a[this.node_2][this.node_1] += -1.0 / resistance;
+            matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+            matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
         }
     }
     stamp_node(n1, resistance) {
@@ -5493,19 +5495,20 @@ class EngineFunctions {
         this.node_1 = this.map_node(n1);
         this.node_2 = this.map_node(n2);
         this.offset = simulation_manager.node_size;
+        this.stamp_cache = 1.0 / global.settings.R_MAX;
         if (this.node_1 !== -1) {
             matrix_a[this.node_1][this.offset + id] = 1;
             matrix_a[this.offset + id][this.node_1] = 1;
-            matrix_a[this.node_1][this.node_1] += 1.0 / global.settings.R_MAX;
+            matrix_a[this.node_1][this.node_1] += this.stamp_cache;
         }
         if (this.node_2 !== -1) {
             matrix_a[this.node_2][this.offset + id] = -1;
             matrix_a[this.offset + id][this.node_2] = -1;
-            matrix_a[this.node_2][this.node_2] += 1.0 / global.settings.R_MAX;
+            matrix_a[this.node_2][this.node_2] += this.stamp_cache;
         }
         if (this.node_1 !== -1 && this.node_2 !== -1) {
-            matrix_a[this.node_1][this.node_2] += -1.0 / global.settings.R_MAX;
-            matrix_a[this.node_2][this.node_1] += -1.0 / global.settings.R_MAX;
+            matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+            matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
         }
         matrix_z[this.offset + id][0] += voltage;
     }
@@ -5545,33 +5548,35 @@ class EngineFunctions {
     stamp_capacitor(n1, n2, transient_resistance, transient_ieq) {
         this.node_1 = this.map_node(n1);
         this.node_2 = this.map_node(n2);
+        this.stamp_cache = 1.0 / transient_resistance;
         if (this.node_1 !== -1) {
-            matrix_a[this.node_1][this.node_1] += 1.0 / transient_resistance;
+            matrix_a[this.node_1][this.node_1] += this.stamp_cache;
             matrix_z[this.node_1][0] += -transient_ieq;
         }
         if (this.node_2 !== -1) {
-            matrix_a[this.node_2][this.node_2] += 1.0 / transient_resistance;
+            matrix_a[this.node_2][this.node_2] += this.stamp_cache;
             matrix_z[this.node_2][0] += transient_ieq;
         }
         if (this.node_1 !== -1 && this.node_2 !== -1) {
-            matrix_a[this.node_1][this.node_2] += -1.0 / transient_resistance;
-            matrix_a[this.node_2][this.node_1] += -1.0 / transient_resistance;
+            matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+            matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
         }
     }
     stamp_inductor(n1, n2, transient_resistance, transient_ieq) {
         this.node_1 = this.map_node(n1);
         this.node_2 = this.map_node(n2);
+        this.stamp_cache = 1.0 / transient_resistance;
         if (this.node_1 !== -1) {
-            matrix_a[this.node_1][this.node_1] += 1.0 / transient_resistance;
+            matrix_a[this.node_1][this.node_1] += this.stamp_cache;
             matrix_z[this.node_1][0] += -transient_ieq;
         }
         if (this.node_2 !== -1) {
-            matrix_a[this.node_2][this.node_2] += 1.0 / transient_resistance;
+            matrix_a[this.node_2][this.node_2] += this.stamp_cache;
             matrix_z[this.node_2][0] += transient_ieq;
         }
         if (this.node_1 !== -1 && this.node_2 !== -1) {
-            matrix_a[this.node_1][this.node_2] += -1.0 / transient_resistance;
-            matrix_a[this.node_2][this.node_1] += -1.0 / transient_resistance;
+            matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+            matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
         }
     }
     stamp_ccvs(n1, n2, n3, n4, gain, id) {

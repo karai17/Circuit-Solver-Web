@@ -24,6 +24,7 @@ class EngineFunctions {
 	public mapper2: Element2;
 	public mapper3: Element3;
 	public mapper4: Element4;
+	public stamp_cache: number;
 	constructor() {
 		this.node_1 = -1;
 		this.node_2 = -1;
@@ -49,6 +50,7 @@ class EngineFunctions {
 		this.mapper2 = new Element2(-1, -1, global.CONSTANTS.NULL);
 		this.mapper3 = new Element3(-1, -1, global.CONSTANTS.NULL);
 		this.mapper4 = new Element4(-1, -1, global.CONSTANTS.NULL);
+		this.stamp_cache = 0;
 	}
 	save_file(title: string, content: string): void {
 		let blob: Blob = new Blob([content], {
@@ -6103,15 +6105,16 @@ class EngineFunctions {
 	stamp_resistor(n1: number, n2: number, resistance: number): void {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);
+		this.stamp_cache = 1.0 / resistance;
 		if (this.node_1 !== -1) {
-			matrix_a[this.node_1][this.node_1] += 1.0 / resistance;
+			matrix_a[this.node_1][this.node_1] += this.stamp_cache;
 		}
 		if (this.node_2 !== -1) {
-			matrix_a[this.node_2][this.node_2] += 1.0 / resistance;
+			matrix_a[this.node_2][this.node_2] += this.stamp_cache;
 		}
 		if (this.node_1 !== -1 && this.node_2 !== -1) {
-			matrix_a[this.node_1][this.node_2] += -1.0 / resistance;
-			matrix_a[this.node_2][this.node_1] += -1.0 / resistance;
+			matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+			matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
 		}
 	}
 	stamp_node(n1: number, resistance: number): void {
@@ -6131,19 +6134,20 @@ class EngineFunctions {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);
 		this.offset = simulation_manager.node_size;
+		this.stamp_cache = 1.0 / global.settings.R_MAX;
 		if (this.node_1 !== -1) {
 			matrix_a[this.node_1][this.offset + id] = 1;
 			matrix_a[this.offset + id][this.node_1] = 1;
-			matrix_a[this.node_1][this.node_1] += 1.0 / global.settings.R_MAX;
+			matrix_a[this.node_1][this.node_1] += this.stamp_cache;
 		}
 		if (this.node_2 !== -1) {
 			matrix_a[this.node_2][this.offset + id] = -1;
 			matrix_a[this.offset + id][this.node_2] = -1;
-			matrix_a[this.node_2][this.node_2] += 1.0 / global.settings.R_MAX;
+			matrix_a[this.node_2][this.node_2] += this.stamp_cache;
 		}
 		if (this.node_1 !== -1 && this.node_2 !== -1) {
-			matrix_a[this.node_1][this.node_2] += -1.0 / global.settings.R_MAX;
-			matrix_a[this.node_2][this.node_1] += -1.0 / global.settings.R_MAX;
+			matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+			matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
 		}
 		matrix_z[this.offset + id][0] += voltage;
 	}
@@ -6183,33 +6187,35 @@ class EngineFunctions {
 	stamp_capacitor(n1: number, n2: number, transient_resistance: number, transient_ieq: number): void {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);
+		this.stamp_cache = 1.0 / transient_resistance;
 		if (this.node_1 !== -1) {
-			matrix_a[this.node_1][this.node_1] += 1.0 / transient_resistance;
+			matrix_a[this.node_1][this.node_1] += this.stamp_cache;
 			matrix_z[this.node_1][0] += -transient_ieq;
 		}
 		if (this.node_2 !== -1) {
-			matrix_a[this.node_2][this.node_2] += 1.0 / transient_resistance;
+			matrix_a[this.node_2][this.node_2] += this.stamp_cache;
 			matrix_z[this.node_2][0] += transient_ieq;
 		}
 		if (this.node_1 !== -1 && this.node_2 !== -1) {
-			matrix_a[this.node_1][this.node_2] += -1.0 / transient_resistance;
-			matrix_a[this.node_2][this.node_1] += -1.0 / transient_resistance;
+			matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+			matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
 		}
 	}
 	stamp_inductor(n1: number, n2: number, transient_resistance: number, transient_ieq: number): void {
 		this.node_1 = this.map_node(n1);
 		this.node_2 = this.map_node(n2);
+		this.stamp_cache = 1.0 / transient_resistance;
 		if (this.node_1 !== -1) {
-			matrix_a[this.node_1][this.node_1] += 1.0 / transient_resistance;
+			matrix_a[this.node_1][this.node_1] += this.stamp_cache;
 			matrix_z[this.node_1][0] += -transient_ieq;
 		}
 		if (this.node_2 !== -1) {
-			matrix_a[this.node_2][this.node_2] += 1.0 / transient_resistance;
+			matrix_a[this.node_2][this.node_2] += this.stamp_cache;
 			matrix_z[this.node_2][0] += transient_ieq;
 		}
 		if (this.node_1 !== -1 && this.node_2 !== -1) {
-			matrix_a[this.node_1][this.node_2] += -1.0 / transient_resistance;
-			matrix_a[this.node_2][this.node_1] += -1.0 / transient_resistance;
+			matrix_a[this.node_1][this.node_2] += -this.stamp_cache;
+			matrix_a[this.node_2][this.node_1] += -this.stamp_cache;
 		}
 	}
 	stamp_ccvs(n1: number, n2: number, n3: number, n4: number, gain: number, id: number): void {

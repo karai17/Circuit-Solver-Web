@@ -124,7 +124,6 @@ class Util {
 	cosine(theta: number): number {
 		return this.TRIG_SINE_TABLE[(theta * this.TRIG_TABLE_INDEX_CONSTANT + this.TRIG_TABLE_ROUND) & this.TRIG_TABLE_MASK];
 	}
-
 	remap_position(input: number, is_width: boolean): number {
 		if (is_width === true) {
 			return view_port.right - (this.last_view_port_right - input) * this.resize_w_factor;
