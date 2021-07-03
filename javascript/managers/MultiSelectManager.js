@@ -531,7 +531,7 @@ class MultiSelectManager {
     }
     key_down(key_event) {
         if (this.multi_select_input_conditions()) {
-            if (key_event['ctrl']) {
+            if (key_event['ctrl'] === true) {
                 this.ctrl_pressed_started = true;
             }
         }

@@ -203,7 +203,7 @@ class Paint {
 		if (!global.utils.not_null(this.text_baseline)) {
 			this.text_baseline = this.baseline.MIDDLE;
 		}
-		if (this.garbage_collector_size !== 18) {
+		if (this.garbage_collector_size !== 20) {
 			this.garbage_collector_size = 20;
 		}
 	}

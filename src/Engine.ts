@@ -245,13 +245,13 @@ function load_app(): void {
 			register_cross_platform_listeners();
 
 			if (!MOBILE_MODE) {
-				window.addEventListener('keydown', key_down, true);
-				window.addEventListener('keyup', key_up, true);
+				document.addEventListener('keydown', key_down, true);
+				document.addEventListener('keyup', key_up, true);
 			}
 			window.addEventListener('resize', resize_canvas, true);
 			window.addEventListener('focus', on_focus, true);
 			if (!MOBILE_MODE) {
-				window.addEventListener('dblclick', double_click, true);
+				document.addEventListener('dblclick', double_click, true);
 				webpage_document_title = document.getElementById('title_text');
 			}
 
@@ -263,19 +263,19 @@ function load_app(): void {
 	}
 	function register_cross_platform_listeners(): void {
 		if (MOBILE_MODE === true) {
-			surface.addEventListener('touchstart', mouse_down, true);
-			surface.addEventListener('touchmove', mouse_move, true);
-			surface.addEventListener('touchend', mouse_up, true);
+			document.addEventListener('touchstart', mouse_down, true);
+			document.addEventListener('touchmove', mouse_move, true);
+			document.addEventListener('touchend', mouse_up, true);
 		} else {
-			surface.addEventListener('mousedown', mouse_down, true);
-			surface.addEventListener('mousemove', mouse_move, true);
-			surface.addEventListener('mouseup', mouse_up, true);
+			document.addEventListener('mousedown', mouse_down, true);
+			document.addEventListener('mousemove', mouse_move, true);
+			document.addEventListener('mouseup', mouse_up, true);
 		}
 		if (!MOBILE_MODE) {
 			if (global.variables.browser_firefox) {
-				surface.addEventListener('DOMMouseScroll', mouse_wheel, true);
+				document.addEventListener('DOMMouseScroll', mouse_wheel, true);
 			} else {
-				surface.addEventListener('mousewheel', mouse_wheel, true);
+				document.addEventListener('mousewheel', mouse_wheel, true);
 			}
 		}
 	}
@@ -430,13 +430,10 @@ function load_app(): void {
 	}
 	function mouse_up(mouse_event: MouseEvent): void {
 		mouse_event.preventDefault();
-		if (mouse_event_latch) {
-			global.flags.flag_mouse_up_event = true;
-			global.events.mouse_up_event_queue.push(mouse_event);
-		}
+		global.flags.flag_mouse_up_event = true;
+		global.events.mouse_up_event_queue.push(mouse_event);
 	}
 	function mouse_wheel(mouse_event: MouseEvent): void {
-		mouse_event.preventDefault();
 		if (!global.flags.flag_mouse_wheel_event && !MOBILE_MODE) {
 			global.flags.flag_mouse_wheel_event = true;
 			global.events.mouse_wheel_event_queue.push(mouse_event);
@@ -719,12 +716,6 @@ function load_app(): void {
 				global.flags.flag_canvas_draw_request = true;
 				global.variables.flag_canvas_draw_request_counter = 0;
 			}
-			if (global.flags.flag_mouse_move_event) {
-				handle_mouse_move();
-				global.flags.flag_canvas_draw_request = true;
-				global.variables.flag_canvas_draw_request_counter = 0;
-				global.flags.flag_mouse_move_event = false;
-			}
 			if (global.events.mouse_up_event_queue.length > 0 && mouse_event_latch) {
 				fifo_index = global.events.mouse_up_event_queue.length - 1;
 				global.events.mouse_up_event = global.events.mouse_up_event_queue[fifo_index];
@@ -738,6 +729,12 @@ function load_app(): void {
 				}
 				global.flags.flag_canvas_draw_request = true;
 				global.variables.flag_canvas_draw_request_counter = 0;
+			}
+			if (global.flags.flag_mouse_move_event) {
+				handle_mouse_move();
+				global.flags.flag_canvas_draw_request = true;
+				global.variables.flag_canvas_draw_request_counter = 0;
+				global.flags.flag_mouse_move_event = false;
 			}
 			if (global.events.mouse_double_click_event_queue.length > 0) {
 				fifo_index = global.events.mouse_double_click_event_queue.length - 1;
@@ -2215,7 +2212,7 @@ function load_app(): void {
 		}
 	}
 	function throttle_loop(): void {
-		if (fps_iterator ^= 1) {
+		if ((fps_iterator ^= 1) > 0) {
 			system_loop();
 		}
 		requestAnimationFrame(throttle_loop);
