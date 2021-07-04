@@ -130,7 +130,6 @@ class EngineFunctions {
 		global.variables.history['packet'].push(engine_functions.history_snapshot());
 		global.flags.flag_draw_block = true;
 		global.variables.user_file_selected = false;
-		mouse_event_latch = false;
 	}
 	create_nodes(bounds: RectF): void {
 		let counter_x: number = 0;
@@ -6369,7 +6368,6 @@ class EngineFunctions {
 			} catch (error) { }
 			global.variables.history['packet'].push(engine_functions.history_snapshot());
 			global.variables.user_file_selected = false;
-			mouse_event_latch = false;
 		}
 	}
 	image_manager() {

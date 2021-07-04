@@ -34,6 +34,7 @@ class Flags {
 	public flag_picture_request: boolean;
 	public flag_canvas_draw_request: boolean;
 	public flag_canvas_draw_event: boolean;
+
 	constructor() {
 		this.flag_idle = true;
 		this.flag_simulating = false;
