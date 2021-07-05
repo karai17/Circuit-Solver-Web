@@ -47,7 +47,7 @@ class ElectricalNode {
 		this.loc_y_precalc = this.column * global.settings.INV_SQRT_MAXNODES_M_1;
 		this.str = "";
 	}
-	resize(n_x: number, n_y: number, m_n_x: number, m_n_y: number): void {
+	async resize(n_x: number, n_y: number, m_n_x: number, m_n_y: number) {
 		if (global.flags.flag_build_element) {
 			this.location.x = workspace.bounds.left + this.loc_x_precalc * workspace.bounds.get_width();
 			this.location.y = workspace.bounds.top + this.loc_y_precalc * workspace.bounds.get_height();
@@ -154,7 +154,7 @@ class ElectricalNode {
 		}
 		return this.str;
 	}
-	draw(canvas: GraphicsEngine): void {
+	async draw(canvas: GraphicsEngine) {
 		if (this.references.length > 0) {
 			if (global.CONSTANTS.DEVELOPER_MODE) {
 				canvas.draw_circle(this.location.x, this.location.y, 2 * global.variables.canvas_stroke_width_3, this.node_line_paint);
@@ -174,5 +174,7 @@ class ElectricalNode {
 		} else {
 			this.simulation_id = -1;
 		}
+
+		return null;
 	}
 }

@@ -11258,10 +11258,10 @@ class EngineFunctions {
 		let mult_node_space_y_cache: number = 1.25 * node_space_y_cache;
 		let node_length: number = nodes.length;
 		for (var i: number = 0; i < node_length; i += 2) {
-			nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-			nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-			nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
-			nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+			nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
+			nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
+			nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
+			nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
 			if (node_length - 2 - i === i + 2) {
 				break;
 			}
