@@ -1047,10 +1047,10 @@ function load_app(): void {
 					mult_node_space_y_cache = 1.75 * node_space_y_cache;
 					node_length = nodes.length;
 					for (var i: number = 0; i < node_length; i += 2) {
-						nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-						nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-						nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-						nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
+						nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+						nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+						nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+						nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
 						if (node_length - 2 - i === i + 2) {
 							break;
 						}
@@ -1059,10 +1059,10 @@ function load_app(): void {
 				if (global.CONSTANTS.DEVELOPER_MODE) {
 					node_length = nodes.length;
 					for (var i: number = 0; i < node_length; i += 2) {
-						nodes[i].draw(canvas).then(null);
-						nodes[i + 1].draw(canvas).then(null);
-						nodes[node_length - 1 - i].draw(canvas).then(null);
-						nodes[node_length - 2 - i].draw(canvas).then(null);
+						nodes[i].draw(canvas);
+						nodes[i + 1].draw(canvas);
+						nodes[node_length - 1 - i].draw(canvas);
+						nodes[node_length - 2 - i].draw(canvas);
 						if (node_length - 2 - i === i + 2) {
 							break;
 						}
@@ -1082,10 +1082,10 @@ function load_app(): void {
 					global.variables.node_line_buffer_index = 0;
 					node_length = nodes.length;
 					for (var i: number = 0; i < node_length; i += 2) {
-						nodes[i].draw(canvas).then(null);
-						nodes[i + 1].draw(canvas).then(null);
-						nodes[node_length - 1 - i].draw(canvas).then(null);
-						nodes[node_length - 2 - i].draw(canvas).then(null);
+						nodes[i].draw(canvas);
+						nodes[i + 1].draw(canvas);
+						nodes[node_length - 1 - i].draw(canvas);
+						nodes[node_length - 2 - i].draw(canvas);
 						if (node_length - 2 - i === i + 2) {
 							break;
 						}
@@ -1183,10 +1183,10 @@ function load_app(): void {
 							mult_node_space_y_cache = 1.75 * node_space_y_cache;
 							node_length = nodes.length;
 							for (var i: number = 0; i < node_length; i += 2) {
-								nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-								nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-								nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
-								nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache).then(null);
+								nodes[i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+								nodes[i + 1].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+								nodes[node_length - 1 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
+								nodes[node_length - 2 - i].resize(node_space_x_cache, node_space_y_cache, mult_node_space_x_cache, mult_node_space_y_cache);
 								if (node_length - 2 - i === i + 2) {
 									break;
 								}
@@ -1195,10 +1195,10 @@ function load_app(): void {
 						if (global.CONSTANTS.DEVELOPER_MODE) {
 							node_length = nodes.length;
 							for (var i: number = 0; i < node_length; i += 2) {
-								nodes[i].draw(canvas).then(null);
-								nodes[i + 1].draw(canvas).then(null);
-								nodes[node_length - 1 - i].draw(canvas).then(null);
-								nodes[node_length - 2 - i].draw(canvas).then(null);
+								nodes[i].draw(canvas);
+								nodes[i + 1].draw(canvas);
+								nodes[node_length - 1 - i].draw(canvas);
+								nodes[node_length - 2 - i].draw(canvas);
 								if (node_length - 2 - i === i + 2) {
 									break;
 								}
@@ -1217,10 +1217,10 @@ function load_app(): void {
 							global.variables.node_line_buffer_index = 0;
 							node_length = nodes.length;
 							for (var i: number = 0; i < node_length; i += 2) {
-								nodes[i].draw(canvas).then(null);
-								nodes[i + 1].draw(canvas).then(null);
-								nodes[node_length - 1 - i].draw(canvas).then(null);
-								nodes[node_length - 2 - i].draw(canvas).then(null);
+								nodes[i].draw(canvas);
+								nodes[i + 1].draw(canvas);
+								nodes[node_length - 1 - i].draw(canvas);
+								nodes[node_length - 2 - i].draw(canvas);
 								if (node_length - 2 - i === i + 2) {
 									break;
 								}

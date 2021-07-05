@@ -607,11 +607,11 @@ class SaveCircuitWindow {
         let mobile_node_space_x = 1.25 * node_space_x;
         let mobile_node_space_y = 1.25 * node_space_y;
         for (var i = nodes.length - 1; i > -1; i--) {
-            nodes[i].resize(node_space_x, node_space_y, mobile_node_space_x, mobile_node_space_y).then(null);
+            nodes[i].resize(node_space_x, node_space_y, mobile_node_space_x, mobile_node_space_y);
         }
         if (global.CONSTANTS.DEVELOPER_MODE) {
             for (var i = nodes.length - 1; i > -1; i--) {
-                nodes[i].draw(canvas).then(null);
+                nodes[i].draw(canvas);
             }
         }
         workspace.workspace_draw(canvas);

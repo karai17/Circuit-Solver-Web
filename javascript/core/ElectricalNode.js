@@ -1,13 +1,4 @@
 'use strict';
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 class ElectricalNode {
     constructor(x, y, id) {
         this.location = new PointF(x, y);
@@ -44,22 +35,20 @@ class ElectricalNode {
         this.str = "";
     }
     resize(n_x, n_y, m_n_x, m_n_y) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (global.flags.flag_build_element) {
-                this.location.x = workspace.bounds.left + this.loc_x_precalc * workspace.bounds.get_width();
-                this.location.y = workspace.bounds.top + this.loc_y_precalc * workspace.bounds.get_height();
-                if (!MOBILE_MODE) {
-                    this.bounds.set_bounds(this.location.x - n_x, this.location.y - n_y, this.location.x + n_x, this.location.y + n_y);
-                }
-                else {
-                    this.bounds.set_bounds(this.location.x - m_n_x, this.location.y - m_n_y, this.location.x + m_n_x, this.location.y + m_n_y);
-                }
-                this.node_line_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                this.node_line_paint.set_text_size(global.variables.canvas_text_size_5);
-                this.node_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                this.node_fill_paint.set_text_size(global.variables.canvas_text_size_5);
+        if (global.flags.flag_build_element) {
+            this.location.x = workspace.bounds.left + this.loc_x_precalc * workspace.bounds.get_width();
+            this.location.y = workspace.bounds.top + this.loc_y_precalc * workspace.bounds.get_height();
+            if (!MOBILE_MODE) {
+                this.bounds.set_bounds(this.location.x - n_x, this.location.y - n_y, this.location.x + n_x, this.location.y + n_y);
             }
-        });
+            else {
+                this.bounds.set_bounds(this.location.x - m_n_x, this.location.y - m_n_y, this.location.x + m_n_x, this.location.y + m_n_y);
+            }
+            this.node_line_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+            this.node_line_paint.set_text_size(global.variables.canvas_text_size_5);
+            this.node_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+            this.node_fill_paint.set_text_size(global.variables.canvas_text_size_5);
+        }
     }
     set_color(color) {
         this.node_line_paint.set_color(color);
@@ -156,29 +145,26 @@ class ElectricalNode {
         return this.str;
     }
     draw(canvas) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (this.references.length > 0) {
-                if (global.CONSTANTS.DEVELOPER_MODE) {
-                    canvas.draw_circle(this.location.x, this.location.y, 2 * global.variables.canvas_stroke_width_3, this.node_line_paint);
-                    canvas.draw_text(this.debug_info(), this.location.x, this.location.y, this.node_line_paint);
-                }
-                else {
-                    if (global.variables.wire_builder['step'] > 0) {
-                        if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
-                            if (global.variables.wire_builder['n1'] !== this.id && this.draw_node_builder_helper()) {
-                                global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top);
-                                global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.bottom, this.bounds.right, this.bounds.bottom);
-                                global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.top, this.bounds.left, this.bounds.bottom);
-                                global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.right, this.bounds.top, this.bounds.right, this.bounds.bottom);
-                            }
+        if (this.references.length > 0) {
+            if (global.CONSTANTS.DEVELOPER_MODE) {
+                canvas.draw_circle(this.location.x, this.location.y, 2 * global.variables.canvas_stroke_width_3, this.node_line_paint);
+                canvas.draw_text(this.debug_info(), this.location.x, this.location.y, this.node_line_paint);
+            }
+            else {
+                if (global.variables.wire_builder['step'] > 0) {
+                    if (global.variables.wire_builder['n1'] > -1 && global.variables.wire_builder['n1'] < global.settings.MAXNODES) {
+                        if (global.variables.wire_builder['n1'] !== this.id && this.draw_node_builder_helper()) {
+                            global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top);
+                            global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.bottom, this.bounds.right, this.bounds.bottom);
+                            global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.left, this.bounds.top, this.bounds.left, this.bounds.bottom);
+                            global.variables.node_line_buffer[global.variables.node_line_buffer_index++] = Array(this.bounds.right, this.bounds.top, this.bounds.right, this.bounds.bottom);
                         }
                     }
                 }
             }
-            else {
-                this.simulation_id = -1;
-            }
-            return null;
-        });
+        }
+        else {
+            this.simulation_id = -1;
+        }
     }
 }
