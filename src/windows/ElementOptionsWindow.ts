@@ -268,9 +268,9 @@ class ElementOptionsWindow {
 			} else {
 				element_options_edit_window.set_title(
 					language_manager.SET[global.CONSTANTS.LANGUAGES[global.variables.language_index]] +
-						' ' +
-						global.variables.selected_properties['options'][index] +
-						(global.variables.selected_properties['options_units'][index] === '' ? '' : ' [' + global.variables.selected_properties['options_units'][index] + ']')
+					' ' +
+					global.variables.selected_properties['options'][index] +
+					(global.variables.selected_properties['options_units'][index] === '' ? '' : ' [' + global.variables.selected_properties['options_units'][index] + ']')
 				);
 				if (!this.special_type(global.variables.selected_type)) {
 					element_options_edit_window.set_input_text(global.utils.exponentiate_quickly(<any>(<string>global.variables.selected_properties[global.variables.selected_properties['options'][index]])));
@@ -458,7 +458,7 @@ class ElementOptionsWindow {
 			this.okay_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
 			if (global.utils.not_null(global.variables.selected_properties['options'])) {
 				for (var i: number = 0; i < this.attributes.length; i++) {
-					if (i < global.variables.selected_properties['options'].length) {
+					if (i < global.variables.selected_properties['options'].length && global.utils.not_null(global.variables.selected_properties[global.variables.selected_properties['options'][i]])) {
 						if (this.attributes[i].contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
 							canvas.draw_rect(
 								this.attributes[i].left + this.offset_x,
@@ -489,7 +489,7 @@ class ElementOptionsWindow {
 							if (!this.special_type(global.variables.selected_type)) {
 								canvas.draw_text(
 									global.utils.exponentiate_quickly(<any>(<string>global.variables.selected_properties[global.variables.selected_properties['options'][i]])) +
-										global.variables.selected_properties['options_units'][i],
+									global.variables.selected_properties['options_units'][i],
 									this.attributes[i].right - this.PADDING * this.bounds.get_width() + this.offset_x,
 									this.attributes[i].get_center_y() + this.offset_y,
 									this.value_paint

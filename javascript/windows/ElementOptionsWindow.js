@@ -426,7 +426,7 @@ class ElementOptionsWindow {
             this.okay_button.draw_button_dxdy(canvas, this.offset_x, this.offset_y);
             if (global.utils.not_null(global.variables.selected_properties['options'])) {
                 for (var i = 0; i < this.attributes.length; i++) {
-                    if (i < global.variables.selected_properties['options'].length) {
+                    if (i < global.variables.selected_properties['options'].length && global.utils.not_null(global.variables.selected_properties[global.variables.selected_properties['options'][i]])) {
                         if (this.attributes[i].contains_xy(global.variables.mouse_x - this.offset_x, global.variables.mouse_y - this.offset_y) && this.window_anchored && !MOBILE_MODE) {
                             canvas.draw_rect(this.attributes[i].left + this.offset_x, this.attributes[i].top + this.offset_y, this.attributes[i].right + this.offset_x, this.attributes[i].bottom + this.offset_y, this.hover_paint);
                         }
