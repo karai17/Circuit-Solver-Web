@@ -125,7 +125,7 @@ class OhmMeterSymbol {
 	mouse_down(page: number, width: number, height: number) {
 		if (this.page === page) {
 			if (this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, width, height)) {
-				if (!this.flag_add_element) {
+				if (!this.flag_add_element && !global.flags.flag_history_lock && !global.flags.flag_add_element) {
 					this.flag_add_element = true;
 					global.flags.flag_add_element = true;
 					global.variables.component_touched = true;
