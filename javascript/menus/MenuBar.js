@@ -411,7 +411,7 @@ class MenuBar {
         }
     }
     mouse_wheel() {
-        if (!global.variables.focused) {
+        if (!global.variables.focused && !global.flags.flag_add_element) {
             this.element_window.mouse_wheel();
         }
     }

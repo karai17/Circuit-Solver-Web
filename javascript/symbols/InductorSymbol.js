@@ -113,6 +113,7 @@ class InductorSymbol {
         else {
             this.draw_tag = false;
         }
+        this.update();
         if (this.page === page) {
         }
     }
@@ -122,6 +123,7 @@ class InductorSymbol {
             }
             this.flag_add_element = false;
             global.flags.flag_add_element = false;
+            global.flags.flag_history_lock = false;
         }
     }
     build_element() {

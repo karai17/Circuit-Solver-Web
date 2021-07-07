@@ -101,6 +101,7 @@ class DiodeSymbol {
         else {
             this.draw_tag = false;
         }
+        this.update();
         if (this.page === page) {
         }
     }

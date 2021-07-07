@@ -117,6 +117,7 @@ class CurrentControlledCurrentSourceSymbol {
         else {
             this.draw_tag = false;
         }
+        this.update();
         if (this.page === page) {
         }
     }
