@@ -175,7 +175,7 @@ class VoltageControlledCurrentSource {
 	push_reference(ref: WIRE_REFERENCE_T): void {
 		this.wire_reference.push(ref);
 	}
-	update(): void {}
+	update(): void { }
 	stamp(): void {
 		if (this.elm.consistent()) {
 			engine_functions.stamp_vccs(this.elm.n1, this.elm.n2, this.elm.n3, this.elm.n4, -this.elm.properties['Gain']);
@@ -422,7 +422,7 @@ class VoltageControlledCurrentSource {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	build_element(): void {
@@ -538,7 +538,7 @@ class VoltageControlledCurrentSource {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -701,5 +701,5 @@ class VoltageControlledCurrentSource {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }

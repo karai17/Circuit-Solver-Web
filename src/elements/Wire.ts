@@ -97,8 +97,8 @@ class Wire {
 			this.p2.set_point(nodes[this.elm.n2].location.x, nodes[this.elm.n2].location.y);
 		}
 	}
-	stamp(): void {}
-	release_wires(): void {}
+	stamp(): void { }
+	release_wires(): void { }
 	release_nodes(): void {
 		if (this.elm.consistent()) {
 			nodes[this.elm.n1].remove_reference(this.elm.id, this.elm.type);
@@ -129,7 +129,7 @@ class Wire {
 		}
 		this.build_element_flag = true;
 	}
-	move_element(dx: number, dy: number): void {}
+	move_element(dx: number, dy: number): void { }
 	mouse_down(): void {
 		if (
 			global.flags.flag_idle &&
@@ -155,7 +155,7 @@ class Wire {
 			}
 		}
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (global.flags.flag_idle) {
 			if (global.variables.focused && global.variables.focused_id === this.elm.id && global.variables.focused_type === this.elm.type) {
@@ -266,7 +266,7 @@ class Wire {
 			this.build_element_flag = false;
 		}
 	}
-	update(): void {}
+	update(): void { }
 	set_flip(flip: number): void {
 		this.build_element_flag = true;
 		wire_manager.reset_wire_builder();
@@ -285,7 +285,7 @@ class Wire {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	set_wire_style(style: number): void {
@@ -303,7 +303,7 @@ class Wire {
 		}
 		this.set_wire_style(this.elm.wire_style);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	remove_focus(): void {
 		global.utils.remove_focus(this.elm.type, this.elm.id);
 	}
@@ -563,5 +563,5 @@ class Wire {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }

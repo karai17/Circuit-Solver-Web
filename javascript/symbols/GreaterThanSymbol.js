@@ -86,7 +86,7 @@ class GreaterThanSymbol {
         this.circle_buffer = [];
     }
     update() {
-        if (this.flag_add_element) {
+        if (this.flag_add_element && !global.flags.flag_history_lock && global.flags.flag_add_element && global.variables.component_touched) {
             if (workspace.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, workspace.bounds.get_width() - 4.5 * global.variables.node_space_x, workspace.bounds.get_height() - 4.5 * global.variables.node_space_y) &&
                 !this.bounds.contains_xy(global.variables.mouse_x, global.variables.mouse_y)) {
                 shortcut_manager.temp_history_snapshot = engine_functions.history_snapshot();
@@ -99,7 +99,7 @@ class GreaterThanSymbol {
     mouse_down(page, width, height) {
         if (this.page === page) {
             if (this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, width, height)) {
-                if (!this.flag_add_element && !global.flags.flag_history_lock && !global.flags.flag_add_element) {
+                if (!this.flag_add_element && !global.flags.flag_history_lock && !global.flags.flag_add_element && !global.variables.component_touched) {
                     this.flag_add_element = true;
                     global.flags.flag_add_element = true;
                     global.variables.component_touched = true;
@@ -114,8 +114,8 @@ class GreaterThanSymbol {
         else {
             this.draw_tag = false;
         }
-        this.update();
         if (this.page === page) {
+            this.update();
         }
     }
     mouse_up(page, width, height) {

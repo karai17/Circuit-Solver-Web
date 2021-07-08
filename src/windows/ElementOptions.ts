@@ -591,7 +591,7 @@ class ElementOptions {
 			}
 		}
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (!global.variables.mouse_keyboard_lock && !global.variables.is_right_click) {
 			if (
@@ -1084,10 +1084,10 @@ class ElementOptions {
 			if (index < voltmeters.length) {
 				if (!scope_manager.find_entry(voltmeters[index].elm.id, voltmeters[index].elm.type)) {
 					scope_manager.push(voltmeters[index].elm.id, voltmeters[index].elm.type, voltmeters[index].elm.properties['tag']);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				} else {
 					scope_manager.remove(voltmeters[index].elm.id, voltmeters[index].elm.type);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
@@ -1096,10 +1096,10 @@ class ElementOptions {
 			if (index < ohmmeters.length) {
 				if (!scope_manager.find_entry(ohmmeters[index].elm.id, ohmmeters[index].elm.type)) {
 					scope_manager.push(ohmmeters[index].elm.id, ohmmeters[index].elm.type, ohmmeters[index].elm.properties['tag']);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				} else {
 					scope_manager.remove(ohmmeters[index].elm.id, ohmmeters[index].elm.type);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
@@ -1108,10 +1108,10 @@ class ElementOptions {
 			if (index < ammeters.length) {
 				if (!scope_manager.find_entry(ammeters[index].elm.id, ammeters[index].elm.type)) {
 					scope_manager.push(ammeters[index].elm.id, ammeters[index].elm.type, ammeters[index].elm.properties['tag']);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				} else {
 					scope_manager.remove(ammeters[index].elm.id, ammeters[index].elm.type);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
@@ -1120,10 +1120,10 @@ class ElementOptions {
 			if (index < wattmeters.length) {
 				if (!scope_manager.find_entry(wattmeters[index].elm.id, wattmeters[index].elm.type)) {
 					scope_manager.push(wattmeters[index].elm.id, wattmeters[index].elm.type, wattmeters[index].elm.properties['tag']);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				} else {
 					scope_manager.remove(wattmeters[index].elm.id, wattmeters[index].elm.type);
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 				}
 			}
 		}
@@ -1553,483 +1553,483 @@ class ElementOptions {
 
 			if (index < resistors.length) {
 				engine_functions.remove_resistor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 			index = engine_functions.get_capacitor(global.variables.selected_id);
 
 			if (index < capacitors.length) {
 				engine_functions.remove_capacitor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 			index = engine_functions.get_inductor(global.variables.selected_id);
 
 			if (index < inductors.length) {
 				engine_functions.remove_inductor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 			index = engine_functions.get_ground(global.variables.selected_id);
 
 			if (index < grounds.length) {
 				engine_functions.remove_ground(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 			index = engine_functions.get_dcsource(global.variables.selected_id);
 
 			if (index < dcsources.length) {
 				engine_functions.remove_dcsource(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 			index = engine_functions.get_dccurrent(global.variables.selected_id);
 
 			if (index < dccurrents.length) {
 				engine_functions.remove_dccurrent(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 			index = engine_functions.get_acsource(global.variables.selected_id);
 
 			if (index < acsources.length) {
 				engine_functions.remove_acsource(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 			index = engine_functions.get_accurrent(global.variables.selected_id);
 
 			if (index < accurrents.length) {
 				engine_functions.remove_accurrent(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 			index = engine_functions.get_squarewave(global.variables.selected_id);
 
 			if (index < squarewaves.length) {
 				engine_functions.remove_squarewave(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 			index = engine_functions.get_sawwave(global.variables.selected_id);
 
 			if (index < sawwaves.length) {
 				engine_functions.remove_sawwave(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 			index = engine_functions.get_trianglewave(global.variables.selected_id);
 
 			if (index < trianglewaves.length) {
 				engine_functions.remove_trianglewave(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 			index = engine_functions.get_constant(global.variables.selected_id);
 
 			if (index < constants.length) {
 				engine_functions.remove_constant(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 			index = engine_functions.get_wire(global.variables.selected_id);
 
 			if (index < wires.length) {
 				engine_functions.remove_wire(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 			index = engine_functions.get_net(global.variables.selected_id);
 
 			if (index < nets.length) {
 				engine_functions.remove_net(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 			index = engine_functions.get_note(global.variables.selected_id);
 
 			if (index < notes.length) {
 				engine_functions.remove_note(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 			index = engine_functions.get_rail(global.variables.selected_id);
 
 			if (index < rails.length) {
 				engine_functions.remove_rail(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 			index = engine_functions.get_voltmeter(global.variables.selected_id);
 
 			if (index < voltmeters.length) {
 				engine_functions.remove_voltmeter(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 			index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
 			if (index < ohmmeters.length) {
 				engine_functions.remove_ohmmeter(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 			index = engine_functions.get_ammeter(global.variables.selected_id);
 
 			if (index < ammeters.length) {
 				engine_functions.remove_ammeter(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 			index = engine_functions.get_wattmeter(global.variables.selected_id);
 
 			if (index < wattmeters.length) {
 				engine_functions.remove_wattmeter(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 			index = engine_functions.get_fuse(global.variables.selected_id);
 
 			if (index < fuses.length) {
 				engine_functions.remove_fuse(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 			index = engine_functions.get_spst(global.variables.selected_id);
 
 			if (index < spsts.length) {
 				engine_functions.remove_spst(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 			index = engine_functions.get_spdt(global.variables.selected_id);
 
 			if (index < spdts.length) {
 				engine_functions.remove_spdt(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 			index = engine_functions.get_not(global.variables.selected_id);
 
 			if (index < nots.length) {
 				engine_functions.remove_not(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 			index = engine_functions.get_diode(global.variables.selected_id);
 
 			if (index < diodes.length) {
 				engine_functions.remove_diode(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 			index = engine_functions.get_led(global.variables.selected_id);
 
 			if (index < leds.length) {
 				engine_functions.remove_led(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 			index = engine_functions.get_zener(global.variables.selected_id);
 
 			if (index < zeners.length) {
 				engine_functions.remove_zener(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 			index = engine_functions.get_potentiometer(global.variables.selected_id);
 
 			if (index < potentiometers.length) {
 				engine_functions.remove_potentiometer(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 			index = engine_functions.get_and(global.variables.selected_id);
 
 			if (index < ands.length) {
 				engine_functions.remove_and(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 			index = engine_functions.get_or(global.variables.selected_id);
 
 			if (index < ors.length) {
 				engine_functions.remove_or(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 			index = engine_functions.get_nand(global.variables.selected_id);
 
 			if (index < nands.length) {
 				engine_functions.remove_nand(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 			index = engine_functions.get_nor(global.variables.selected_id);
 
 			if (index < nors.length) {
 				engine_functions.remove_nor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 			index = engine_functions.get_xor(global.variables.selected_id);
 
 			if (index < xors.length) {
 				engine_functions.remove_xor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 			index = engine_functions.get_xnor(global.variables.selected_id);
 
 			if (index < xnors.length) {
 				engine_functions.remove_xnor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 			index = engine_functions.get_dff(global.variables.selected_id);
 
 			if (index < dffs.length) {
 				engine_functions.remove_dff(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 			index = engine_functions.get_vsat(global.variables.selected_id);
 
 			if (index < vsats.length) {
 				engine_functions.remove_vsat(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 			index = engine_functions.get_adder(global.variables.selected_id);
 
 			if (index < adders.length) {
 				engine_functions.remove_adder(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 			index = engine_functions.get_subtractor(global.variables.selected_id);
 
 			if (index < subtractors.length) {
 				engine_functions.remove_subtractor(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 			index = engine_functions.get_multiplier(global.variables.selected_id);
 
 			if (index < multipliers.length) {
 				engine_functions.remove_multiplier(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 			index = engine_functions.get_divider(global.variables.selected_id);
 
 			if (index < dividers.length) {
 				engine_functions.remove_divider(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 			index = engine_functions.get_gain(global.variables.selected_id);
 
 			if (index < gains.length) {
 				engine_functions.remove_gain(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 			index = engine_functions.get_absval(global.variables.selected_id);
 
 			if (index < absvals.length) {
 				engine_functions.remove_absval(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 			index = engine_functions.get_vcsw(global.variables.selected_id);
 
 			if (index < vcsws.length) {
 				engine_functions.remove_vcsw(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 			index = engine_functions.get_vcvs(global.variables.selected_id);
 
 			if (index < vcvss.length) {
 				engine_functions.remove_vcvs(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 			index = engine_functions.get_vccs(global.variables.selected_id);
 
 			if (index < vccss.length) {
 				engine_functions.remove_vccs(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 			index = engine_functions.get_cccs(global.variables.selected_id);
 
 			if (index < cccss.length) {
 				engine_functions.remove_cccs(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 			index = engine_functions.get_ccvs(global.variables.selected_id);
 
 			if (index < ccvss.length) {
 				engine_functions.remove_ccvs(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 			index = engine_functions.get_opamp(global.variables.selected_id);
 
 			if (index < opamps.length) {
 				engine_functions.remove_opamp(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 			index = engine_functions.get_nmosfet(global.variables.selected_id);
 
 			if (index < nmosfets.length) {
 				engine_functions.remove_nmosfet(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 			index = engine_functions.get_pmosfet(global.variables.selected_id);
 
 			if (index < pmosfets.length) {
 				engine_functions.remove_pmosfet(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 			index = engine_functions.get_npn(global.variables.selected_id);
 
 			if (index < npns.length) {
 				engine_functions.remove_npn(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 			index = engine_functions.get_pnp(global.variables.selected_id);
 
 			if (index < pnps.length) {
 				engine_functions.remove_pnp(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 			index = engine_functions.get_adc(global.variables.selected_id);
 
 			if (index < adcs.length) {
 				engine_functions.remove_adc(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 			index = engine_functions.get_dac(global.variables.selected_id);
 
 			if (index < dacs.length) {
 				engine_functions.remove_dac(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 			index = engine_functions.get_samplers(global.variables.selected_id);
 
 			if (index < sandhs.length) {
 				engine_functions.remove_samplers(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 			index = engine_functions.get_pwm(global.variables.selected_id);
 
 			if (index < pwms.length) {
 				engine_functions.remove_pwm(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 			index = engine_functions.get_integrator(global.variables.selected_id);
 
 			if (index < integrators.length) {
 				engine_functions.remove_integrator(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 			index = engine_functions.get_differentiator(global.variables.selected_id);
 
 			if (index < differentiators.length) {
 				engine_functions.remove_differentiator(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 			index = engine_functions.get_lowpass(global.variables.selected_id);
 
 			if (index < lowpasses.length) {
 				engine_functions.remove_lowpass(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 			index = engine_functions.get_highpass(global.variables.selected_id);
 
 			if (index < highpasses.length) {
 				engine_functions.remove_highpass(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 			index = engine_functions.get_relay(global.variables.selected_id);
 
 			if (index < relays.length) {
 				engine_functions.remove_relay(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 			index = engine_functions.get_pid(global.variables.selected_id);
 
 			if (index < pids.length) {
 				engine_functions.remove_pid(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 			index = engine_functions.get_lut(global.variables.selected_id);
 
 			if (index < luts.length) {
 				engine_functions.remove_lut(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 			index = engine_functions.get_vcr(global.variables.selected_id);
 
 			if (index < vcrs.length) {
 				engine_functions.remove_vcr(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 			index = engine_functions.get_vcca(global.variables.selected_id);
 
 			if (index < vccas.length) {
 				engine_functions.remove_vcca(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 			index = engine_functions.get_vcl(global.variables.selected_id);
 
 			if (index < vcls.length) {
 				engine_functions.remove_vcl(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 			index = engine_functions.get_grt(global.variables.selected_id);
 
 			if (index < grts.length) {
 				engine_functions.remove_grt(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 			index = engine_functions.get_tptz(global.variables.selected_id);
 
 			if (index < tptzs.length) {
 				engine_functions.remove_tptz(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 			index = engine_functions.get_transformer(global.variables.selected_id);
 
 			if (index < transformers.length) {
 				engine_functions.remove_transformer(index);
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 			}
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */

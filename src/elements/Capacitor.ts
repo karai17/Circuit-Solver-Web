@@ -360,7 +360,7 @@ class Capacitor {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	build_element(): void {
@@ -442,7 +442,7 @@ class Capacitor {
 		this.elm.properties['Transient Resistance'] = simulation_manager.time_step / (2 * this.elm.properties['Capacitance']);
 		this.elm.properties['Equivalent Current'] = -this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] - this.elm.properties['Transient Current'];
 	}
-	update(): void {}
+	update(): void { }
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -450,7 +450,7 @@ class Capacitor {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {

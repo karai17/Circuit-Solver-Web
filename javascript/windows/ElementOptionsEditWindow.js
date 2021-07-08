@@ -2748,7 +2748,7 @@ class ElementOptionsEditWindow {
         }
         /* <!-- END AUTOMATICALLY GENERATED !--> */
         if (!ERROR_FLAG) {
-            global.variables.history['packet'].push(engine_functions.history_snapshot());
+            global.utils.push_history();
             this.option_index = -1;
         }
         return ERROR_FLAG;

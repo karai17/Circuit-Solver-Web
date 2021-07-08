@@ -224,7 +224,7 @@ function load_app(): void {
 			resize_canvas();
 			simulation_manager = new SimulationManager();
 			engine_functions.create_nodes(workspace.bounds);
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		} else if (step === 1) {
 			menu_bar = new MenuBar();
 			bottom_menu = new BottomMenu();
@@ -307,8 +307,12 @@ function load_app(): void {
 			//@ts-expect-error
 			ctx.msImageSmoothingEnabled = false;
 			ctx.globalCompositeOperation = 'copy';
-			virtual_surface.context.globalCompositeOperation = 'source-over';
+			view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
 			canvas.on_resize();
+			surface.style.backfaceVisibility = 'hidden';
+			if (surface.style.visibility === 'hidden') {
+				surface.style.visibility = 'visible';
+			}
 		} catch (e) { }
 	}
 	function resize_canvas(): void {
@@ -2086,7 +2090,7 @@ function load_app(): void {
 			wires[i].mouse_up();
 		}
 		if (global.flags.flag_wire_created) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 			global.flags.flag_wire_created = false;
 		}
 		let component_touched: boolean = global.variables.component_touched;
@@ -2125,7 +2129,10 @@ function load_app(): void {
 		) {
 			engine_functions.handle_nearest_neighbors(temp_translation_lock);
 		}
-		global.flags.flag_history_lock = false;
+		if (global.flags.flag_history_lock) {
+			global.flags.flag_history_lock = false;
+			global.utils.push_history();
+		}
 	}
 	function handle_mouse_wheel(): void {
 		global.variables.mouse_x = global.events.mouse_wheel_event.clientX * global.variables.device_pixel_ratio;

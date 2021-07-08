@@ -145,8 +145,8 @@ class ACSource {
 				this.elm.n1,
 				this.elm.n2,
 				global.utils.sine(2 * Math.PI * this.elm.properties['Frequency'] * simulation_manager.simulation_time + global.utils.to_radians(this.elm.properties['Phase'])) *
-					this.elm.properties['Voltage'] +
-					this.elm.properties['Offset'],
+				this.elm.properties['Voltage'] +
+				this.elm.properties['Offset'],
 				simulation_manager.ELEMENT_ACSOURCE_OFFSET + this.simulation_id
 			);
 		}
@@ -369,7 +369,7 @@ class ACSource {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	build_element(): void {
@@ -440,7 +440,7 @@ class ACSource {
 		this.theta = global.utils.retrieve_angle_radian(this.p2.x - this.p1.x, this.p2.y - this.p1.y);
 		this.build_element();
 	}
-	update(): void {}
+	update(): void { }
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -448,7 +448,7 @@ class ACSource {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;
@@ -627,5 +627,5 @@ class ACSource {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }

@@ -103,7 +103,7 @@ class EngineFunctions {
             engine_functions.parse_elements(global.variables.user_file.content);
         }
         catch (error) { }
-        global.variables.history['packet'].push(engine_functions.history_snapshot());
+        global.utils.push_history();
         global.flags.flag_draw_block = true;
         global.variables.user_file_selected = false;
     }
@@ -5727,7 +5727,7 @@ class EngineFunctions {
                 this.parse_elements(global.variables.user_file.content);
             }
             catch (error) { }
-            global.variables.history['packet'].push(engine_functions.history_snapshot());
+            global.utils.push_history();
             global.variables.user_file_selected = false;
         }
     }

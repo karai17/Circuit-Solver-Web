@@ -118,6 +118,11 @@ class Util {
 		this.abs_input = 0;
 		this.found = false;
 	}
+	push_history(): void {
+		if (!global.flags.flag_history_lock) {
+			global.variables.history['packet'].push(engine_functions.history_snapshot());
+		}
+	}
 	sine(theta: number): number {
 		return this.TRIG_SINE_TABLE[(theta * this.TRIG_TABLE_INDEX_CONSTANT) & this.TRIG_TABLE_MASK];
 	}

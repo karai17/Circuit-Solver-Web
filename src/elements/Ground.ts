@@ -273,7 +273,7 @@ class Ground {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	resize(): void {
@@ -306,8 +306,8 @@ class Ground {
 		this.c_y = this.bounds.get_center_y();
 		this.build_element_flag = false;
 	}
-	update(): void {}
-	set_flip(flip: number): void {}
+	update(): void { }
+	set_flip(flip: number): void { }
 	set_rotation(rotation: number): void {
 		this.build_element_flag = true;
 		wire_manager.reset_wire_builder();
@@ -324,7 +324,7 @@ class Ground {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -459,5 +459,5 @@ class Ground {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }

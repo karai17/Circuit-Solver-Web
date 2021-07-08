@@ -672,7 +672,7 @@ class MultiSelectManager {
 			this.ctrl_pressed = false;
 			this.delta_latch = false;
 			if (this.elements_moved) {
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 				this.elements_moved = false;
 			}
 		}

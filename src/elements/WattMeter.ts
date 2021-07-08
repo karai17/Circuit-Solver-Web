@@ -207,7 +207,7 @@ class WattMeter {
 	push_reference(ref: WIRE_REFERENCE_T): void {
 		this.wire_reference.push(ref);
 	}
-	update(): void {}
+	update(): void { }
 	stamp(): void {
 		if (this.elm.consistent()) {
 			engine_functions.stamp_resistor(this.elm.n1, this.elm.n2, global.settings.WIRE_RESISTANCE);
@@ -507,7 +507,7 @@ class WattMeter {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	build_element(): void {

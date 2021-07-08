@@ -133,7 +133,7 @@ class ConfirmWindow {
 				scope_manager.clear_entries();
 				graph_window.reset();
 				global.variables.user_file.title = 'untitled';
-				global.variables.history['packet'].push(engine_functions.history_snapshot());
+				global.utils.push_history();
 				bottom_menu.resize_bottom_menu();
 			}
 		}
@@ -166,7 +166,7 @@ class ConfirmWindow {
 					scope_manager.clear_entries();
 					graph_window.reset();
 					global.variables.user_file.title = 'untitled';
-					global.variables.history['packet'].push(engine_functions.history_snapshot());
+					global.utils.push_history();
 					menu_bar.handle_remove_all_flag(!global.flags.flag_remove_all);
 					global.variables.component_touched = true;
 					bottom_menu.resize_bottom_menu();

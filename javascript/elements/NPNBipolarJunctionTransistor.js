@@ -510,7 +510,7 @@ class NPNBipolarJunctionTransistor {
     }
     push_history() {
         if (this.initialized) {
-            global.variables.history['packet'].push(engine_functions.history_snapshot());
+            global.utils.push_history();
         }
     }
     build_element() {

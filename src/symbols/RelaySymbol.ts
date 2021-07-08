@@ -125,7 +125,7 @@ class RelaySymbol {
 		this.circle_buffer = [];
 	}
 	update() {
-		if (this.flag_add_element) {
+		if (this.flag_add_element && !global.flags.flag_history_lock && global.flags.flag_add_element && global.variables.component_touched) {
 			if (
 				workspace.bounds.contains_xywh(
 					global.variables.mouse_x,
@@ -145,7 +145,7 @@ class RelaySymbol {
 	mouse_down(page: number, width: number, height: number) {
 		if (this.page === page) {
 			if (this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, width, height)) {
-				if (!this.flag_add_element && !global.flags.flag_history_lock && !global.flags.flag_add_element) {
+				if (!this.flag_add_element && !global.flags.flag_history_lock && !global.flags.flag_add_element && !global.variables.component_touched) {
 					this.flag_add_element = true;
 					global.flags.flag_add_element = true;
 					global.variables.component_touched = true;
@@ -159,8 +159,8 @@ class RelaySymbol {
 		} else {
 			this.draw_tag = false;
 		}
-		this.update();
 		if (this.page === page) {
+			this.update();
 		}
 	}
 	mouse_up(page: number, width: number, height: number) {

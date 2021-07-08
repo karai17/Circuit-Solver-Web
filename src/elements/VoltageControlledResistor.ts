@@ -442,7 +442,7 @@ class VoltageControlledResistor {
 	}
 	push_history(): void {
 		if (this.initialized) {
-			global.variables.history['packet'].push(engine_functions.history_snapshot());
+			global.utils.push_history();
 		}
 	}
 	build_element(): void {
@@ -557,7 +557,7 @@ class VoltageControlledResistor {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void {}
+	increment_flip(): void { }
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -734,5 +734,5 @@ class VoltageControlledResistor {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void {}
+	reset(): void { }
 }
