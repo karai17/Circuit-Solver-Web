@@ -359,7 +359,7 @@ class DCCurrent {
 		this.anchor_wires();
 	}
 	push_history(): void {
-		if (this.initialized) {
+		if (this.initialized && !this.is_translating) {
 			global.utils.push_history();
 		}
 	}
@@ -560,7 +560,8 @@ class DCCurrent {
 					!global.flags.flag_select_element &&
 					!global.flags.flag_remove_all &&
 					!global.flags.flag_add_element &&
-					!global.variables.is_dragging
+					!global.variables.is_dragging &&
+					!this.is_translating
 				) {
 					if (this.elm.consistent()) {
 						this.node_id_array = this.elm.get_nodes();

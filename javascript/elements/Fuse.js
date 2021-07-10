@@ -321,7 +321,7 @@ class Fuse {
         this.anchor_wires();
     }
     push_history() {
-        if (this.initialized) {
+        if (this.initialized && !this.is_translating) {
             global.utils.push_history();
         }
     }
@@ -495,7 +495,8 @@ class Fuse {
                     !global.flags.flag_select_element &&
                     !global.flags.flag_remove_all &&
                     !global.flags.flag_add_element &&
-                    !global.variables.is_dragging) {
+                    !global.variables.is_dragging &&
+                    !this.is_translating) {
                     if (this.elm.consistent()) {
                         this.node_id_array = this.elm.get_nodes();
                         for (var i = 0; i < this.node_id_array.length; i++) {

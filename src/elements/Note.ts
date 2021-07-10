@@ -287,7 +287,7 @@ class Note {
 		global.utils.anchor_wires(this.wire_reference, this.get_vertices());
 	}
 	push_history(): void {
-		if (this.initialized) {
+		if (this.initialized && !this.is_translating) {
 			global.utils.push_history();
 		}
 	}

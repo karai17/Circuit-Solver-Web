@@ -90,7 +90,7 @@ class Constants {
 		let indexer: number = 0;
 		this.NULL = null;
 		this.NODE_HINTS = true;
-		this.VERSION_TAG = '1.1.09';
+		this.VERSION_TAG = '1.1.10';
 		if (MOBILE_MODE) {
 			this.ZOOM_MAX = 3.5;
 			this.ZOOM_MIN = 1.0;

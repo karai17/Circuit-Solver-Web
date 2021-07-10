@@ -264,7 +264,7 @@ class Wire {
         this.capture_nodes();
     }
     push_history() {
-        if (this.initialized) {
+        if (this.initialized && !this.is_translating) {
             global.utils.push_history();
         }
     }
