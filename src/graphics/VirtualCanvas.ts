@@ -11,28 +11,86 @@ class VirtualCanvas {
 	}
 	refresh_settings(): void {
 		try {
-			this.surface.style.position = 'absolute';
-			this.surface.style.visibility = 'hidden';
-			this.surface.style.display = 'none';
-			this.surface.style.zIndex = '0';
-			this.context.imageSmoothingEnabled = false;
+			let temp = "absolute";
+			if (this.surface.style.position !== temp) {
+				this.surface.style.position = temp;
+			}
+
+			temp = "hidden";
+			if (this.surface.style.visibility !== temp) {
+				this.surface.style.visibility = temp;
+			}
+
+			temp = "none";
+
+			if (this.surface.style.display !== temp) {
+				this.surface.style.display = temp;
+			}
+
+			temp = "0";
+
+			if (this.surface.style.zIndex !== "temp") {
+				this.surface.style.zIndex = temp;
+			}
+
+			if (this.context.imageSmoothingEnabled) {
+				this.context.imageSmoothingEnabled = false;
+			}
 			//@ts-expect-error
-			this.context.mozImageSmoothingEnabled = false;
+			if (this.context.mozImageSmoothingEnabled) {
+				//@ts-expect-error
+				this.context.mozImageSmoothingEnabled = false;
+			}
+
 			//@ts-expect-error
-			this.context.oImageSmoothingEnabled = false;
+			if (this.context.oImageSmoothingEnabled) {
+				//@ts-expect-error
+				this.context.oImageSmoothingEnabled = false;
+			}
+
 			//@ts-expect-error
-			this.context.webkitImageSmoothingEnabled = false;
+			if (this.context.webkitImageSmoothingEnabled) {
+				//@ts-expect-error
+				this.context.webkitImageSmoothingEnabled = false;
+			}
+
 			//@ts-expect-error
-			this.context.msImageSmoothingEnabled = false;
-			this.context.globalCompositeOperation = 'source-over';
-			this.surface.style.backfaceVisibility = 'hidden';
+			if (this.context.msImageSmoothingEnabled) {
+				//@ts-expect-error
+				this.context.msImageSmoothingEnabled = false;
+			}
+
+			temp = "source-over";
+			if (this.context.globalCompositeOperation !== temp) {
+				this.context.globalCompositeOperation = temp;
+			}
+
+			temp = "hidden";
+			if (this.surface.style.backfaceVisibility !== temp) {
+				this.surface.style.backfaceVisibility = temp;
+			}
 		} catch (e) { }
 	}
 	resize(width: number, height: number): void {
-		this.surface.width = width;
-		this.surface.height = height;
-		this.surface.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
-		this.surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+
+		if (this.surface.width !== width) {
+			this.surface.width = width;
+		}
+
+		if (this.surface.height !== height) {
+			this.surface.height = height;
+		}
+
+		let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+		if (this.surface.style.width !== temp) {
+			this.surface.style.width = temp;
+		}
+
+		temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+		if (this.surface.style.height !== temp) {
+			this.surface.style.height = temp;
+		}
+
 		this.refresh_settings();
 	}
 }

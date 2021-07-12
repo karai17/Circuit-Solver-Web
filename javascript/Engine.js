@@ -254,13 +254,6 @@ function load_app() {
         else if (step === 4) {
             register_cross_platform_listeners();
             if (!MOBILE_MODE) {
-                window.addEventListener('keydown', key_down, true);
-                window.addEventListener('keyup', key_up, true);
-            }
-            window.addEventListener('resize', resize_canvas, true);
-            window.addEventListener('focus', on_focus, true);
-            if (!MOBILE_MODE) {
-                window.addEventListener('dblclick', double_click, true);
                 webpage_document_title = document.getElementById('title_text');
             }
             if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] === global.CONSTANTS.ON) {
@@ -279,15 +272,18 @@ function load_app() {
             surface.addEventListener('mousedown', mouse_down, true);
             surface.addEventListener('mousemove', mouse_move, true);
             surface.addEventListener('mouseup', mouse_up, true);
-        }
-        if (!MOBILE_MODE) {
             if (global.variables.browser_firefox) {
                 surface.addEventListener('DOMMouseScroll', mouse_wheel, true);
             }
             else {
                 surface.addEventListener('mousewheel', mouse_wheel, true);
             }
+            window.addEventListener('keydown', key_down, true);
+            window.addEventListener('keyup', key_up, true);
+            window.addEventListener('dblclick', double_click, true);
         }
+        window.addEventListener('resize', resize_canvas, true);
+        window.addEventListener('focus', on_focus, true);
     }
     function on_focus() {
         global.flags.flag_focus_event = true;
@@ -296,100 +292,112 @@ function load_app() {
         global.variables.flag_build_counter = 0;
         global.flags.flag_mouse_down_event = true;
     }
-    function focus_canvas() {
+    function resize_canvas() {
         try {
-            virtual_surface.context.imageSmoothingEnabled = false;
-            //@ts-expect-error
-            virtual_surface.context.mozImageSmoothingEnabled = false;
-            //@ts-expect-error
-            virtual_surface.context.oImageSmoothingEnabled = false;
-            //@ts-expect-error
-            virtual_surface.context.webkitImageSmoothingEnabled = false;
-            //@ts-expect-error
-            virtual_surface.context.msImageSmoothingEnabled = false;
-            ctx.imageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.mozImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.oImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.webkitImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.msImageSmoothingEnabled = false;
-            ctx.globalCompositeOperation = 'copy';
+            global.variables.device_pixel_ratio = window.devicePixelRatio;
+            if (global.flags.flag_resize_event === false) {
+                global.utils.last_view_port_right = view_port.right;
+                global.utils.last_view_port_bottom = view_port.bottom;
+                global.utils.last_view_port_width = view_port.view_width;
+                global.utils.last_view_port_height = view_port.view_height;
+                global.utils.last_surface_width = surface.width;
+                global.utils.last_surface_height = surface.height;
+            }
+            let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
+            if (solver_container.style.width !== temp) {
+                solver_container.style.width = temp;
+            }
+            temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
+            if (solver_container.style.height !== temp) {
+                solver_container.style.height = temp;
+            }
+            temp = 'black';
+            if (solver_container.style.background !== temp) {
+                solver_container.style.background = temp;
+            }
+            cached_width = window.innerWidth * global.variables.device_pixel_ratio;
+            cached_height = window.innerHeight * global.variables.device_pixel_ratio;
             view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
+            if (surface.width !== cached_width) {
+                surface.width = cached_width;
+            }
+            if (surface.height !== cached_height) {
+                surface.height = cached_height;
+            }
+            temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
+            if (surface.style.width !== temp) {
+                surface.style.width = temp;
+            }
+            temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
+            if (surface.style.height !== temp) {
+                surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
+            }
+            global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
+            global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
+            if (MOBILE_MODE) {
+                global.variables.canvas_stroke_width_base = 0.000775 * view_port.view_width;
+                global.variables.canvas_text_size_base = 0.000775 * view_port.view_width;
+            }
+            else {
+                global.variables.canvas_stroke_width_base = 0.000725 * view_port.view_width;
+                global.variables.canvas_text_size_base = 0.000725 * view_port.view_width;
+            }
+            try {
+                temp = 'copy';
+                if (ctx.globalCompositeOperation !== temp) {
+                    ctx.globalCompositeOperation = temp;
+                }
+                if (ctx.imageSmoothingEnabled) {
+                    ctx.imageSmoothingEnabled = false;
+                }
+                //@ts-expect-error
+                if (ctx.mozImageSmoothingEnabled) {
+                    //@ts-expect-error
+                    ctx.mozImageSmoothingEnabled = false;
+                }
+                //@ts-expect-error
+                if (ctx.oImageSmoothingEnabled) {
+                    //@ts-expect-error
+                    ctx.oImageSmoothingEnabled = false;
+                }
+                //@ts-expect-error
+                if (ctx.webkitImageSmoothingEnabled) {
+                    //@ts-expect-error
+                    ctx.webkitImageSmoothingEnabled = false;
+                }
+                //@ts-expect-error
+                if (ctx.msImageSmoothingEnabled) {
+                    //@ts-expect-error
+                    ctx.msImageSmoothingEnabled = false;
+                }
+            }
+            catch (e) { }
+            global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
+            global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
+            global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
+            global.variables.canvas_stroke_width_4 = global.variables.canvas_stroke_width_base * 16;
+            global.variables.canvas_stroke_width_5 = global.variables.canvas_stroke_width_base * 21;
+            global.variables.canvas_stroke_width_6 = global.variables.canvas_stroke_width_base * 43;
+            global.variables.canvas_text_size_1 = global.variables.canvas_text_size_base * 2.25;
+            global.variables.canvas_text_size_2 = global.variables.canvas_text_size_base * 2.65;
+            global.variables.canvas_text_size_3 = global.variables.canvas_text_size_base * 9;
+            global.variables.canvas_text_size_4 = global.variables.canvas_text_size_base * 16;
+            global.variables.canvas_text_size_5 = global.variables.canvas_text_size_base * 21;
+            global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
+            global.flags.flag_build_element = true;
+            global.variables.flag_build_counter = 0;
+            virtual_surface.resize(cached_width, cached_height);
+            global.flags.flag_resize_event = true;
             canvas.on_resize();
-            surface.style.backfaceVisibility = 'hidden';
+            temp = 'hidden';
+            if (surface.style.backfaceVisibility !== temp) {
+                surface.style.backfaceVisibility = temp;
+            }
             if (surface.style.visibility === 'hidden') {
                 surface.style.visibility = 'visible';
             }
         }
         catch (e) { }
-    }
-    function resize_canvas() {
-        global.variables.device_pixel_ratio = window.devicePixelRatio;
-        if (global.flags.flag_resize_event === false) {
-            global.utils.last_view_port_right = view_port.right;
-            global.utils.last_view_port_bottom = view_port.bottom;
-            global.utils.last_view_port_width = view_port.view_width;
-            global.utils.last_view_port_height = view_port.view_height;
-            global.utils.last_surface_width = surface.width;
-            global.utils.last_surface_height = surface.height;
-        }
-        solver_container.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
-        solver_container.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
-        solver_container.style.background = 'black';
-        cached_width = window.innerWidth * global.variables.device_pixel_ratio;
-        cached_height = window.innerHeight * global.variables.device_pixel_ratio;
-        view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
-        surface.width = cached_width;
-        surface.height = cached_height;
-        surface.style.width = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
-        surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
-        global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
-        global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
-        if (MOBILE_MODE) {
-            global.variables.canvas_stroke_width_base = 0.000775 * view_port.view_width;
-            global.variables.canvas_text_size_base = 0.000775 * view_port.view_width;
-        }
-        else {
-            global.variables.canvas_stroke_width_base = 0.000725 * view_port.view_width;
-            global.variables.canvas_text_size_base = 0.000725 * view_port.view_width;
-        }
-        try {
-            ctx.globalCompositeOperation = 'copy';
-            ctx.imageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.mozImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.oImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.webkitImageSmoothingEnabled = false;
-            //@ts-expect-error
-            ctx.msImageSmoothingEnabled = false;
-        }
-        catch (e) { }
-        global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
-        global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
-        global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
-        global.variables.canvas_stroke_width_4 = global.variables.canvas_stroke_width_base * 16;
-        global.variables.canvas_stroke_width_5 = global.variables.canvas_stroke_width_base * 21;
-        global.variables.canvas_stroke_width_6 = global.variables.canvas_stroke_width_base * 43;
-        global.variables.canvas_text_size_1 = global.variables.canvas_text_size_base * 2.25;
-        global.variables.canvas_text_size_2 = global.variables.canvas_text_size_base * 2.65;
-        global.variables.canvas_text_size_3 = global.variables.canvas_text_size_base * 9;
-        global.variables.canvas_text_size_4 = global.variables.canvas_text_size_base * 16;
-        global.variables.canvas_text_size_5 = global.variables.canvas_text_size_base * 21;
-        global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
-        global.flags.flag_build_element = true;
-        global.variables.flag_build_counter = 0;
-        virtual_surface.resize(cached_width, cached_height);
-        global.flags.flag_resize_event = true;
-        canvas.on_resize();
-        surface.style.backfaceVisibility = 'hidden';
-        if (surface.style.visibility === 'hidden') {
-            surface.style.visibility = 'visible';
-        }
     }
     function mouse_down(mouse_event) {
         mouse_event.preventDefault();
@@ -591,21 +599,26 @@ function load_app() {
     }
     function render() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!global.flags.flag_draw_block) {
-                ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-            }
             if (global.flags.flag_focus_event) {
                 if (global.variables.flag_focus_counter++ >= global.CONSTANTS.SIGNAL_FOCUS_COUNTER_MAX) {
-                    focus_canvas();
+                    resize_canvas();
                     global.flags.flag_focus_event = false;
                     global.variables.flag_focus_counter = 0;
+                    canvas.release();
+                    canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                    draw();
                 }
             }
-            canvas.release();
-            canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-            draw();
-            if (global.flags.flag_draw_block) {
-                global.flags.flag_draw_block = false;
+            else {
+                if (!global.flags.flag_draw_block) {
+                    ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                }
+                canvas.release();
+                canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+                draw();
+                if (global.flags.flag_draw_block) {
+                    global.flags.flag_draw_block = false;
+                }
             }
             return null;
         });
