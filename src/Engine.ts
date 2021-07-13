@@ -250,6 +250,8 @@ function load_app(): void {
 			if (global.variables.system_options['values'][global.CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] === global.CONSTANTS.ON) {
 				view_port.apply_spread_factor = true;
 				global.flags.flag_force_resize_event = true;
+			} else {
+				global.flags.flag_force_resize_event = true;
 			}
 		}
 	}
