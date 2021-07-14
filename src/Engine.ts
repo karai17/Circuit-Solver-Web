@@ -257,18 +257,18 @@ function load_app(): void {
 	}
 	function register_cross_platform_listeners(): void {
 		if (MOBILE_MODE === true) {
-			surface.addEventListener('touchstart', mouse_down, true);
-			surface.addEventListener('touchmove', mouse_move, true);
-			surface.addEventListener('touchend', mouse_up, true);
+			window.addEventListener('touchstart', mouse_down, true);
+			window.addEventListener('touchmove', mouse_move, true);
+			window.addEventListener('touchend', mouse_up, true);
 		} else {
-			surface.addEventListener('mousedown', mouse_down, true);
-			surface.addEventListener('mousemove', mouse_move, true);
-			surface.addEventListener('mouseup', mouse_up, true);
+			window.addEventListener('mousedown', mouse_down, true);
+			window.addEventListener('mousemove', mouse_move, true);
+			window.addEventListener('mouseup', mouse_up, true);
 
 			if (global.variables.browser_firefox) {
-				surface.addEventListener('DOMMouseScroll', mouse_wheel, true);
+				window.addEventListener('DOMMouseScroll', mouse_wheel, true);
 			} else {
-				surface.addEventListener('mousewheel', mouse_wheel, true);
+				window.addEventListener('mousewheel', mouse_wheel, true);
 			}
 
 			window.addEventListener('keydown', key_down, true);
@@ -290,119 +290,125 @@ function load_app(): void {
 
 	function resize_canvas(): void {
 		try {
-			global.variables.device_pixel_ratio = window.devicePixelRatio;
-			if (global.flags.flag_resize_event === false) {
-				global.utils.last_view_port_right = view_port.right;
-				global.utils.last_view_port_bottom = view_port.bottom;
-				global.utils.last_view_port_width = view_port.view_width;
-				global.utils.last_view_port_height = view_port.view_height;
-				global.utils.last_surface_width = surface.width;
-				global.utils.last_surface_height = surface.height;
-			}
+			let resize_enabled = false;
 
 			let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
 			if (solver_container.style.width !== temp) {
 				solver_container.style.width = temp;
+				resize_enabled = true;
 			}
 
 			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
 			if (solver_container.style.height !== temp) {
 				solver_container.style.height = temp;
+				resize_enabled = true;
 			}
 
-			temp = 'black';
-			if (solver_container.style.background !== temp) {
-				solver_container.style.background = temp;
-			}
-
-			cached_width = window.innerWidth * global.variables.device_pixel_ratio;
-			cached_height = window.innerHeight * global.variables.device_pixel_ratio;
-
-			view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
-
-			if (surface.width !== cached_width) {
-				surface.width = cached_width;
-			}
-			if (surface.height !== cached_height) {
-				surface.height = cached_height;
-			}
-
-			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
-			if (surface.style.width !== temp) {
-				surface.style.width = temp;
-			}
-
-			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
-			if (surface.style.height !== temp) {
-				surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
-			}
-
-			global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
-			global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
-			if (MOBILE_MODE) {
-				global.variables.canvas_stroke_width_base = 0.000775 * view_port.view_width;
-				global.variables.canvas_text_size_base = 0.000775 * view_port.view_width;
-			} else {
-				global.variables.canvas_stroke_width_base = 0.000725 * view_port.view_width;
-				global.variables.canvas_text_size_base = 0.000725 * view_port.view_width;
-			}
-			try {
-				temp = 'copy';
-				if (ctx.globalCompositeOperation !== temp) {
-					ctx.globalCompositeOperation = temp;
+			if (resize_enabled) {
+				global.variables.device_pixel_ratio = window.devicePixelRatio;
+				if (global.flags.flag_resize_event === false) {
+					global.utils.last_view_port_right = view_port.right;
+					global.utils.last_view_port_bottom = view_port.bottom;
+					global.utils.last_view_port_width = view_port.view_width;
+					global.utils.last_view_port_height = view_port.view_height;
+					global.utils.last_surface_width = surface.width;
+					global.utils.last_surface_height = surface.height;
 				}
 
-				if (ctx.imageSmoothingEnabled) {
-					ctx.imageSmoothingEnabled = false;
+				temp = 'black';
+				if (solver_container.style.background !== temp) {
+					solver_container.style.background = temp;
 				}
-				//@ts-expect-error
-				if (ctx.mozImageSmoothingEnabled) {
+
+				cached_width = window.innerWidth * global.variables.device_pixel_ratio;
+				cached_height = window.innerHeight * global.variables.device_pixel_ratio;
+
+				view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
+
+				if (surface.width !== cached_width) {
+					surface.width = cached_width;
+				}
+				if (surface.height !== cached_height) {
+					surface.height = cached_height;
+				}
+
+				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+				if (surface.style.width !== temp) {
+					surface.style.width = temp;
+				}
+
+				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+				if (surface.style.height !== temp) {
+					surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+				}
+
+				global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
+				global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
+				if (MOBILE_MODE) {
+					global.variables.canvas_stroke_width_base = 0.000775 * view_port.view_width;
+					global.variables.canvas_text_size_base = 0.000775 * view_port.view_width;
+				} else {
+					global.variables.canvas_stroke_width_base = 0.000725 * view_port.view_width;
+					global.variables.canvas_text_size_base = 0.000725 * view_port.view_width;
+				}
+				try {
+					temp = 'copy';
+					if (ctx.globalCompositeOperation !== temp) {
+						ctx.globalCompositeOperation = temp;
+					}
+
+					if (ctx.imageSmoothingEnabled) {
+						ctx.imageSmoothingEnabled = false;
+					}
 					//@ts-expect-error
-					ctx.mozImageSmoothingEnabled = false;
-				}
+					if (ctx.mozImageSmoothingEnabled) {
+						//@ts-expect-error
+						ctx.mozImageSmoothingEnabled = false;
+					}
 
-				//@ts-expect-error
-				if (ctx.oImageSmoothingEnabled) {
 					//@ts-expect-error
-					ctx.oImageSmoothingEnabled = false;
-				}
+					if (ctx.oImageSmoothingEnabled) {
+						//@ts-expect-error
+						ctx.oImageSmoothingEnabled = false;
+					}
 
-				//@ts-expect-error
-				if (ctx.webkitImageSmoothingEnabled) {
 					//@ts-expect-error
-					ctx.webkitImageSmoothingEnabled = false;
-				}
+					if (ctx.webkitImageSmoothingEnabled) {
+						//@ts-expect-error
+						ctx.webkitImageSmoothingEnabled = false;
+					}
 
-				//@ts-expect-error
-				if (ctx.msImageSmoothingEnabled) {
 					//@ts-expect-error
-					ctx.msImageSmoothingEnabled = false;
-				}
-			} catch (e) { }
-			global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
-			global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
-			global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
-			global.variables.canvas_stroke_width_4 = global.variables.canvas_stroke_width_base * 16;
-			global.variables.canvas_stroke_width_5 = global.variables.canvas_stroke_width_base * 21;
-			global.variables.canvas_stroke_width_6 = global.variables.canvas_stroke_width_base * 43;
-			global.variables.canvas_text_size_1 = global.variables.canvas_text_size_base * 2.25;
-			global.variables.canvas_text_size_2 = global.variables.canvas_text_size_base * 2.65;
-			global.variables.canvas_text_size_3 = global.variables.canvas_text_size_base * 9;
-			global.variables.canvas_text_size_4 = global.variables.canvas_text_size_base * 16;
-			global.variables.canvas_text_size_5 = global.variables.canvas_text_size_base * 21;
-			global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
-			global.flags.flag_build_element = true;
-			global.variables.flag_build_counter = 0;
-			virtual_surface.resize(cached_width, cached_height);
-			global.flags.flag_resize_event = true;
-			canvas.on_resize();
+					if (ctx.msImageSmoothingEnabled) {
+						//@ts-expect-error
+						ctx.msImageSmoothingEnabled = false;
+					}
+				} catch (e) { }
+				global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
+				global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
+				global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
+				global.variables.canvas_stroke_width_4 = global.variables.canvas_stroke_width_base * 16;
+				global.variables.canvas_stroke_width_5 = global.variables.canvas_stroke_width_base * 21;
+				global.variables.canvas_stroke_width_6 = global.variables.canvas_stroke_width_base * 43;
+				global.variables.canvas_text_size_1 = global.variables.canvas_text_size_base * 2.25;
+				global.variables.canvas_text_size_2 = global.variables.canvas_text_size_base * 2.65;
+				global.variables.canvas_text_size_3 = global.variables.canvas_text_size_base * 9;
+				global.variables.canvas_text_size_4 = global.variables.canvas_text_size_base * 16;
+				global.variables.canvas_text_size_5 = global.variables.canvas_text_size_base * 21;
+				global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
+				global.flags.flag_build_element = true;
+				global.variables.flag_build_counter = 0;
+				virtual_surface.resize(cached_width, cached_height);
+				global.flags.flag_resize_event = true;
+				canvas.on_resize();
 
-			temp = 'hidden';
-			if (surface.style.backfaceVisibility !== temp) {
-				surface.style.backfaceVisibility = temp;
-			}
-			if (surface.style.visibility === 'hidden') {
-				surface.style.visibility = 'visible';
+				temp = 'hidden';
+				if (surface.style.backfaceVisibility !== temp) {
+					surface.style.backfaceVisibility = temp;
+				}
+				if (surface.style.visibility === 'hidden') {
+					surface.style.visibility = 'visible';
+				}
 			}
 		} catch (e) { }
 	}
