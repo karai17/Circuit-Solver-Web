@@ -309,7 +309,7 @@ function load_app() {
                 resize_enabled = true;
             }
             if (resize_enabled) {
-                global.variables.device_pixel_ratio = window.devicePixelRatio;
+                global.variables.device_pixel_ratio = window.devicePixelRatio || 1;
                 if (global.flags.flag_resize_event === false) {
                     global.utils.last_view_port_right = view_port.right;
                     global.utils.last_view_port_bottom = view_port.bottom;
