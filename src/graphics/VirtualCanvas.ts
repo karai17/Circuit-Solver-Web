@@ -5,8 +5,8 @@ class VirtualCanvas {
 	public context: CanvasRenderingContext2D;
 	constructor(width: number, height: number, id: number) {
 		this.surface = document.createElement('canvas');
-		this.surface.width = 1;
-		this.surface.height = 1;
+		this.surface.width = width;
+		this.surface.height = height;
 		this.context = this.surface.getContext('2d', { alpha: false });
 	}
 	refresh_settings(): void {

@@ -8945,6 +8945,228 @@ class EngineFunctions {
 			/* <!-- END AUTOMATICALLY GENERATED !--> */
 		}
 	}
+	async async_history_snapshot() {
+		let packet: Array<string> = [];
+		let indexer: number = 0;
+		this.meta_data.elm.properties['date'] = global.utils.get_date_stamp();
+		this.meta_data.user_scope_settings = global.utils.copy(scope_manager.entry);
+		this.meta_data.user_settings = global.utils.copy(global.settings);
+		this.meta_data.user_timestep = global.utils.copy(simulation_manager.time_step);
+		this.meta_data.file_name = global.utils.copy(global.variables.user_file.title);
+		this.meta_data.calibration_string = workspace.bounds.left + ', ' + workspace.bounds.top + ', ' + workspace.bounds.right + ', ' + workspace.bounds.bottom;
+		packet[indexer++] = JSON.stringify(this.meta_data);
+		/* #INSERT_GENERATE_ELEMENT_HISTORY# */
+		/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
+		for (var i: number = resistors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(resistors[i]);
+		}
+		for (var i: number = capacitors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(capacitors[i]);
+		}
+		for (var i: number = inductors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(inductors[i]);
+		}
+		for (var i: number = grounds.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(grounds[i]);
+		}
+		for (var i: number = dcsources.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(dcsources[i]);
+		}
+		for (var i: number = dccurrents.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(dccurrents[i]);
+		}
+		for (var i: number = acsources.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(acsources[i]);
+		}
+		for (var i: number = accurrents.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(accurrents[i]);
+		}
+		for (var i: number = squarewaves.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(squarewaves[i]);
+		}
+		for (var i: number = sawwaves.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(sawwaves[i]);
+		}
+		for (var i: number = trianglewaves.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(trianglewaves[i]);
+		}
+		for (var i: number = constants.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(constants[i]);
+		}
+		for (var i: number = wires.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(wires[i]);
+		}
+		for (var i: number = nets.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(nets[i]);
+		}
+		for (var i: number = notes.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(notes[i]);
+		}
+		for (var i: number = rails.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(rails[i]);
+		}
+		for (var i: number = voltmeters.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(voltmeters[i]);
+		}
+		for (var i: number = ohmmeters.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(ohmmeters[i]);
+		}
+		for (var i: number = ammeters.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(ammeters[i]);
+		}
+		for (var i: number = wattmeters.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(wattmeters[i]);
+		}
+		for (var i: number = fuses.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(fuses[i]);
+		}
+		for (var i: number = spsts.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(spsts[i]);
+		}
+		for (var i: number = spdts.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(spdts[i]);
+		}
+		for (var i: number = nots.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(nots[i]);
+		}
+		for (var i: number = diodes.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(diodes[i]);
+		}
+		for (var i: number = leds.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(leds[i]);
+		}
+		for (var i: number = zeners.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(zeners[i]);
+		}
+		for (var i: number = potentiometers.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(potentiometers[i]);
+		}
+		for (var i: number = ands.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(ands[i]);
+		}
+		for (var i: number = ors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(ors[i]);
+		}
+		for (var i: number = nands.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(nands[i]);
+		}
+		for (var i: number = nors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(nors[i]);
+		}
+		for (var i: number = xors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(xors[i]);
+		}
+		for (var i: number = xnors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(xnors[i]);
+		}
+		for (var i: number = dffs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(dffs[i]);
+		}
+		for (var i: number = vsats.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vsats[i]);
+		}
+		for (var i: number = adders.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(adders[i]);
+		}
+		for (var i: number = subtractors.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(subtractors[i]);
+		}
+		for (var i: number = multipliers.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(multipliers[i]);
+		}
+		for (var i: number = dividers.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(dividers[i]);
+		}
+		for (var i: number = gains.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(gains[i]);
+		}
+		for (var i: number = absvals.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(absvals[i]);
+		}
+		for (var i: number = vcsws.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vcsws[i]);
+		}
+		for (var i: number = vcvss.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vcvss[i]);
+		}
+		for (var i: number = vccss.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vccss[i]);
+		}
+		for (var i: number = cccss.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(cccss[i]);
+		}
+		for (var i: number = ccvss.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(ccvss[i]);
+		}
+		for (var i: number = opamps.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(opamps[i]);
+		}
+		for (var i: number = nmosfets.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(nmosfets[i]);
+		}
+		for (var i: number = pmosfets.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(pmosfets[i]);
+		}
+		for (var i: number = npns.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(npns[i]);
+		}
+		for (var i: number = pnps.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(pnps[i]);
+		}
+		for (var i: number = adcs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(adcs[i]);
+		}
+		for (var i: number = dacs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(dacs[i]);
+		}
+		for (var i: number = sandhs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(sandhs[i]);
+		}
+		for (var i: number = pwms.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(pwms[i]);
+		}
+		for (var i: number = integrators.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(integrators[i]);
+		}
+		for (var i: number = differentiators.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(differentiators[i]);
+		}
+		for (var i: number = lowpasses.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(lowpasses[i]);
+		}
+		for (var i: number = highpasses.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(highpasses[i]);
+		}
+		for (var i: number = relays.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(relays[i]);
+		}
+		for (var i: number = pids.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(pids[i]);
+		}
+		for (var i: number = luts.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(luts[i]);
+		}
+		for (var i: number = vcrs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vcrs[i]);
+		}
+		for (var i: number = vccas.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vccas[i]);
+		}
+		for (var i: number = vcls.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(vcls[i]);
+		}
+		for (var i: number = grts.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(grts[i]);
+		}
+		for (var i: number = tptzs.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(tptzs[i]);
+		}
+		for (var i: number = transformers.length - 1; i > -1; i--) {
+			packet[indexer++] = JSON.stringify(transformers[i]);
+		}
+		/* <!-- END AUTOMATICALLY GENERATED !--> */
+		return packet.join(global.CONSTANTS.PACKET_DIVIDER);
+	}
 	history_snapshot(): string {
 		let packet: Array<string> = [];
 		let indexer: number = 0;

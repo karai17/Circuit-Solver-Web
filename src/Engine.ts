@@ -339,7 +339,7 @@ function load_app(): void {
 
 				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
 				if (surface.style.height !== temp) {
-					surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+					surface.style.height = temp;
 				}
 
 				global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
@@ -668,7 +668,7 @@ function load_app(): void {
 						!workspace.flag_draw_to_screen;
 				}
 				global.variables.last_selected = global.variables.selected;
-				update();
+				update().then(function () { });
 				if (global.variables.last_selected !== global.variables.selected) {
 					wire_manager.reset_wire_builder();
 				}
@@ -684,7 +684,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(null);
+								render().then(function () { });
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -729,7 +729,7 @@ function load_app(): void {
 			}
 		}
 	}
-	function update(): void {
+	async function update() {
 		if (global.variables.system_initialization['completed']) {
 			engine_functions.file_manager();
 			global.variables.component_translating = false;

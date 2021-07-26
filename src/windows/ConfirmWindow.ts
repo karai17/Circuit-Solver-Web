@@ -108,13 +108,13 @@ class ConfirmWindow {
 		this.OFFSCREEN_X = -500e3;
 		this.OFFSCREEN_Y = -500e3;
 	}
-	reset_tab() {
+	reset_tab(): void {
 		global.variables.mouse_x = this.OFFSCREEN_X;
 		global.variables.mouse_y = this.OFFSCREEN_Y;
 		this.tab_indexer = -1;
 		this.hover();
 	}
-	handle_tab() {
+	handle_tab(): void {
 		this.tab_indexer++;
 		if (this.tab_indexer >= this.TAB_INDEX_MAX) {
 			this.tab_indexer = 0;
@@ -123,7 +123,7 @@ class ConfirmWindow {
 		global.variables.mouse_y = this.tab_index_location[this.tab_indexer][1];
 		this.hover();
 	}
-	handle_enter() {
+	handle_enter(): void {
 		if (this.tab_indexer > -1) {
 			global.variables.mouse_x = this.tab_index_location[this.tab_indexer][0];
 			global.variables.mouse_y = this.tab_index_location[this.tab_indexer][1];

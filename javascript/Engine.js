@@ -337,7 +337,7 @@ function load_app() {
                 }
                 temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
                 if (surface.style.height !== temp) {
-                    surface.style.height = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
+                    surface.style.height = temp;
                 }
                 global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
                 global.utils.resize_h_factor = view_port.view_height / global.utils.last_view_port_height;
@@ -670,7 +670,7 @@ function load_app() {
                             !workspace.flag_draw_to_screen;
                 }
                 global.variables.last_selected = global.variables.selected;
-                update();
+                update().then(function () { });
                 if (global.variables.last_selected !== global.variables.selected) {
                     wire_manager.reset_wire_builder();
                 }
@@ -686,7 +686,7 @@ function load_app() {
                     if (global.variables.system_initialization['completed']) {
                         if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
                             if (!global.flags.flag_on_restore_event) {
-                                render().then(null);
+                                render().then(function () { });
                             }
                             if (global.flags.flag_canvas_draw_request) {
                                 if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -733,316 +733,318 @@ function load_app() {
         }
     }
     function update() {
-        if (global.variables.system_initialization['completed']) {
-            engine_functions.file_manager();
-            global.variables.component_translating = false;
-            if (MOBILE_MODE) {
-                if (global.flags.flag_on_restore_event) {
-                    global.flags.flag_build_element = true;
-                    window.JsInterface.onRestore();
-                    global.flags.flag_on_restore_event = false;
+        return __awaiter(this, void 0, void 0, function* () {
+            if (global.variables.system_initialization['completed']) {
+                engine_functions.file_manager();
+                global.variables.component_translating = false;
+                if (MOBILE_MODE) {
+                    if (global.flags.flag_on_restore_event) {
+                        global.flags.flag_build_element = true;
+                        window.JsInterface.onRestore();
+                        global.flags.flag_on_restore_event = false;
+                    }
                 }
-            }
-            if (global.events.mouse_down_event_queue.length > 0) {
-                fifo_index = global.events.mouse_down_event_queue.length - 1;
-                global.events.mouse_down_event = global.events.mouse_down_event_queue[fifo_index];
-                handle_mouse_down();
-                global.events.mouse_down_event_queue.splice(fifo_index, 1);
-                if (global.events.mouse_down_event_queue.length === 0) {
-                    global.flags.flag_mouse_down_event = false;
+                if (global.events.mouse_down_event_queue.length > 0) {
+                    fifo_index = global.events.mouse_down_event_queue.length - 1;
+                    global.events.mouse_down_event = global.events.mouse_down_event_queue[fifo_index];
+                    handle_mouse_down();
+                    global.events.mouse_down_event_queue.splice(fifo_index, 1);
+                    if (global.events.mouse_down_event_queue.length === 0) {
+                        global.flags.flag_mouse_down_event = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
                 }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-            }
-            if (global.flags.flag_mouse_move_event) {
-                handle_mouse_move();
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-                global.flags.flag_mouse_move_event = false;
-            }
-            if (global.events.mouse_up_event_queue.length > 0) {
-                fifo_index = global.events.mouse_up_event_queue.length - 1;
-                global.events.mouse_up_event = global.events.mouse_up_event_queue[fifo_index];
-                handle_mouse_up();
-                global.events.mouse_up_event_queue.splice(fifo_index, 1);
-                if (global.events.mouse_up_event_queue.length === 0) {
-                    global.flags.flag_mouse_up_event = false;
+                if (global.flags.flag_mouse_move_event) {
+                    handle_mouse_move();
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
+                    global.flags.flag_mouse_move_event = false;
+                }
+                if (global.events.mouse_up_event_queue.length > 0) {
+                    fifo_index = global.events.mouse_up_event_queue.length - 1;
+                    global.events.mouse_up_event = global.events.mouse_up_event_queue[fifo_index];
+                    handle_mouse_up();
+                    global.events.mouse_up_event_queue.splice(fifo_index, 1);
+                    if (global.events.mouse_up_event_queue.length === 0) {
+                        global.flags.flag_mouse_up_event = false;
+                        global.variables.is_dragging = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
+                }
+                if (global.events.mouse_double_click_event_queue.length > 0) {
+                    fifo_index = global.events.mouse_double_click_event_queue.length - 1;
+                    global.events.mouse_double_click_event = global.events.mouse_double_click_event_queue[fifo_index];
+                    handle_double_click();
+                    global.events.mouse_double_click_event_queue.splice(fifo_index, 1);
+                    if (global.events.mouse_double_click_event_queue.length === 0) {
+                        global.flags.flag_mouse_double_click_event = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
+                }
+                if (global.events.mouse_wheel_event_queue.length > 0) {
+                    fifo_index = global.events.mouse_wheel_event_queue.length - 1;
+                    global.events.mouse_wheel_event = global.events.mouse_wheel_event_queue[fifo_index];
+                    handle_mouse_wheel();
+                    global.events.mouse_wheel_event_queue.splice(fifo_index, 1);
+                    if (global.events.mouse_wheel_event_queue.length === 0) {
+                        global.flags.flag_mouse_wheel_event = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
                     global.variables.is_dragging = false;
                 }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-            }
-            if (global.events.mouse_double_click_event_queue.length > 0) {
-                fifo_index = global.events.mouse_double_click_event_queue.length - 1;
-                global.events.mouse_double_click_event = global.events.mouse_double_click_event_queue[fifo_index];
-                handle_double_click();
-                global.events.mouse_double_click_event_queue.splice(fifo_index, 1);
-                if (global.events.mouse_double_click_event_queue.length === 0) {
-                    global.flags.flag_mouse_double_click_event = false;
+                if (global.flags.flag_resize_event) {
+                    watermark_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+                    watermark_paint.set_text_size(global.variables.canvas_text_size_4_zoom);
+                    web_link_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+                    web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+                    drag_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+                    drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+                    drag_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
+                    drag_fill_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
+                    global.variables.mouse_x = 0;
+                    global.variables.mouse_y = 0;
+                    resize_components();
+                    if (!sizing_initialized) {
+                        sizing_initialized = true;
+                    }
+                    global.flags.flag_resize_event = false;
                 }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-            }
-            if (global.events.mouse_wheel_event_queue.length > 0) {
-                fifo_index = global.events.mouse_wheel_event_queue.length - 1;
-                global.events.mouse_wheel_event = global.events.mouse_wheel_event_queue[fifo_index];
-                handle_mouse_wheel();
-                global.events.mouse_wheel_event_queue.splice(fifo_index, 1);
-                if (global.events.mouse_wheel_event_queue.length === 0) {
-                    global.flags.flag_mouse_wheel_event = false;
+                if (global.events.key_down_event_queue.length > 0) {
+                    fifo_index = global.events.key_down_event_queue.length - 1;
+                    global.events.key_down_event = global.events.key_down_event_queue[fifo_index];
+                    handle_key_down();
+                    global.events.key_down_event_queue.splice(fifo_index, 1);
+                    if (global.events.key_down_event_queue.length === 0) {
+                        global.flags.flag_key_down_event = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
                 }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-                global.variables.is_dragging = false;
-            }
-            if (global.flags.flag_resize_event) {
-                watermark_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                watermark_paint.set_text_size(global.variables.canvas_text_size_4_zoom);
-                web_link_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                web_link_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
-                drag_text_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                drag_text_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
-                drag_fill_paint.set_stroke_width(global.variables.canvas_stroke_width_1);
-                drag_fill_paint.set_text_size(global.variables.canvas_text_size_5_zoom);
-                global.variables.mouse_x = 0;
-                global.variables.mouse_y = 0;
-                resize_components();
-                if (!sizing_initialized) {
-                    sizing_initialized = true;
+                if (global.events.key_up_event_queue.length > 0) {
+                    fifo_index = global.events.key_up_event_queue.length - 1;
+                    global.events.key_up_event = global.events.key_up_event_queue[fifo_index];
+                    handle_key_up();
+                    global.events.key_up_event_queue.splice(fifo_index, 1);
+                    if (global.events.key_up_event_queue.length === 0) {
+                        global.events.key_down_event_queue = [];
+                        global.flags.flag_key_up_event = false;
+                    }
+                    global.flags.flag_canvas_draw_request = true;
+                    global.variables.flag_canvas_draw_request_counter = 0;
                 }
-                global.flags.flag_resize_event = false;
-            }
-            if (global.events.key_down_event_queue.length > 0) {
-                fifo_index = global.events.key_down_event_queue.length - 1;
-                global.events.key_down_event = global.events.key_down_event_queue[fifo_index];
-                handle_key_down();
-                global.events.key_down_event_queue.splice(fifo_index, 1);
-                if (global.events.key_down_event_queue.length === 0) {
-                    global.flags.flag_key_down_event = false;
+                if (global.variables.mouse_keyboard_lock) {
+                    global.variables.mouse_keyboard_lock = false;
                 }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-            }
-            if (global.events.key_up_event_queue.length > 0) {
-                fifo_index = global.events.key_up_event_queue.length - 1;
-                global.events.key_up_event = global.events.key_up_event_queue[fifo_index];
-                handle_key_up();
-                global.events.key_up_event_queue.splice(fifo_index, 1);
-                if (global.events.key_up_event_queue.length === 0) {
-                    global.events.key_down_event_queue = [];
-                    global.flags.flag_key_up_event = false;
-                }
-                global.flags.flag_canvas_draw_request = true;
-                global.variables.flag_canvas_draw_request_counter = 0;
-            }
-            if (global.variables.mouse_keyboard_lock) {
-                global.variables.mouse_keyboard_lock = false;
-            }
-            if (global.flags.flag_idle &&
-                !global.flags.flag_save_image &&
-                !global.flags.flag_save_circuit &&
-                !global.flags.flag_zoom &&
-                !global.flags.flag_element_options &&
-                !global.flags.flag_element_options_edit &&
-                !global.flags.flag_select_timestep &&
-                !global.flags.flag_select_settings &&
-                !global.flags.flag_remove_all) {
-                simulation_manager.simulate();
-                if (simulation_manager.simulation_step !== 0) {
-                    /* #INSERT_GENERATE_UPDATE# */
-                    /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
-                    for (var i = resistors.length - 1; i > -1; i--) {
-                        resistors[i].update();
+                if (global.flags.flag_idle &&
+                    !global.flags.flag_save_image &&
+                    !global.flags.flag_save_circuit &&
+                    !global.flags.flag_zoom &&
+                    !global.flags.flag_element_options &&
+                    !global.flags.flag_element_options_edit &&
+                    !global.flags.flag_select_timestep &&
+                    !global.flags.flag_select_settings &&
+                    !global.flags.flag_remove_all) {
+                    simulation_manager.simulate();
+                    if (simulation_manager.simulation_step !== 0) {
+                        /* #INSERT_GENERATE_UPDATE# */
+                        /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
+                        for (var i = resistors.length - 1; i > -1; i--) {
+                            resistors[i].update();
+                        }
+                        for (var i = capacitors.length - 1; i > -1; i--) {
+                            capacitors[i].update();
+                        }
+                        for (var i = inductors.length - 1; i > -1; i--) {
+                            inductors[i].update();
+                        }
+                        for (var i = grounds.length - 1; i > -1; i--) {
+                            grounds[i].update();
+                        }
+                        for (var i = dcsources.length - 1; i > -1; i--) {
+                            dcsources[i].update();
+                        }
+                        for (var i = dccurrents.length - 1; i > -1; i--) {
+                            dccurrents[i].update();
+                        }
+                        for (var i = acsources.length - 1; i > -1; i--) {
+                            acsources[i].update();
+                        }
+                        for (var i = accurrents.length - 1; i > -1; i--) {
+                            accurrents[i].update();
+                        }
+                        for (var i = squarewaves.length - 1; i > -1; i--) {
+                            squarewaves[i].update();
+                        }
+                        for (var i = sawwaves.length - 1; i > -1; i--) {
+                            sawwaves[i].update();
+                        }
+                        for (var i = trianglewaves.length - 1; i > -1; i--) {
+                            trianglewaves[i].update();
+                        }
+                        for (var i = constants.length - 1; i > -1; i--) {
+                            constants[i].update();
+                        }
+                        for (var i = wires.length - 1; i > -1; i--) {
+                            wires[i].update();
+                        }
+                        for (var i = nets.length - 1; i > -1; i--) {
+                            nets[i].update();
+                        }
+                        for (var i = notes.length - 1; i > -1; i--) {
+                            notes[i].update();
+                        }
+                        for (var i = rails.length - 1; i > -1; i--) {
+                            rails[i].update();
+                        }
+                        for (var i = voltmeters.length - 1; i > -1; i--) {
+                            voltmeters[i].update();
+                        }
+                        for (var i = ohmmeters.length - 1; i > -1; i--) {
+                            ohmmeters[i].update();
+                        }
+                        for (var i = ammeters.length - 1; i > -1; i--) {
+                            ammeters[i].update();
+                        }
+                        for (var i = wattmeters.length - 1; i > -1; i--) {
+                            wattmeters[i].update();
+                        }
+                        for (var i = fuses.length - 1; i > -1; i--) {
+                            fuses[i].update();
+                        }
+                        for (var i = spsts.length - 1; i > -1; i--) {
+                            spsts[i].update();
+                        }
+                        for (var i = spdts.length - 1; i > -1; i--) {
+                            spdts[i].update();
+                        }
+                        for (var i = potentiometers.length - 1; i > -1; i--) {
+                            potentiometers[i].update();
+                        }
+                        for (var i = dffs.length - 1; i > -1; i--) {
+                            dffs[i].update();
+                        }
+                        for (var i = vsats.length - 1; i > -1; i--) {
+                            vsats[i].update();
+                        }
+                        for (var i = adders.length - 1; i > -1; i--) {
+                            adders[i].update();
+                        }
+                        for (var i = subtractors.length - 1; i > -1; i--) {
+                            subtractors[i].update();
+                        }
+                        for (var i = multipliers.length - 1; i > -1; i--) {
+                            multipliers[i].update();
+                        }
+                        for (var i = dividers.length - 1; i > -1; i--) {
+                            dividers[i].update();
+                        }
+                        for (var i = gains.length - 1; i > -1; i--) {
+                            gains[i].update();
+                        }
+                        for (var i = absvals.length - 1; i > -1; i--) {
+                            absvals[i].update();
+                        }
+                        for (var i = vcsws.length - 1; i > -1; i--) {
+                            vcsws[i].update();
+                        }
+                        for (var i = vcvss.length - 1; i > -1; i--) {
+                            vcvss[i].update();
+                        }
+                        for (var i = vccss.length - 1; i > -1; i--) {
+                            vccss[i].update();
+                        }
+                        for (var i = cccss.length - 1; i > -1; i--) {
+                            cccss[i].update();
+                        }
+                        for (var i = ccvss.length - 1; i > -1; i--) {
+                            ccvss[i].update();
+                        }
+                        for (var i = opamps.length - 1; i > -1; i--) {
+                            opamps[i].update();
+                        }
+                        for (var i = adcs.length - 1; i > -1; i--) {
+                            adcs[i].update();
+                        }
+                        for (var i = dacs.length - 1; i > -1; i--) {
+                            dacs[i].update();
+                        }
+                        for (var i = sandhs.length - 1; i > -1; i--) {
+                            sandhs[i].update();
+                        }
+                        for (var i = pwms.length - 1; i > -1; i--) {
+                            pwms[i].update();
+                        }
+                        for (var i = integrators.length - 1; i > -1; i--) {
+                            integrators[i].update();
+                        }
+                        for (var i = differentiators.length - 1; i > -1; i--) {
+                            differentiators[i].update();
+                        }
+                        for (var i = lowpasses.length - 1; i > -1; i--) {
+                            lowpasses[i].update();
+                        }
+                        for (var i = highpasses.length - 1; i > -1; i--) {
+                            highpasses[i].update();
+                        }
+                        for (var i = relays.length - 1; i > -1; i--) {
+                            relays[i].update();
+                        }
+                        for (var i = pids.length - 1; i > -1; i--) {
+                            pids[i].update();
+                        }
+                        for (var i = luts.length - 1; i > -1; i--) {
+                            luts[i].update();
+                        }
+                        for (var i = vcrs.length - 1; i > -1; i--) {
+                            vcrs[i].update();
+                        }
+                        for (var i = vccas.length - 1; i > -1; i--) {
+                            vccas[i].update();
+                        }
+                        for (var i = vcls.length - 1; i > -1; i--) {
+                            vcls[i].update();
+                        }
+                        for (var i = grts.length - 1; i > -1; i--) {
+                            grts[i].update();
+                        }
+                        for (var i = tptzs.length - 1; i > -1; i--) {
+                            tptzs[i].update();
+                        }
+                        for (var i = transformers.length - 1; i > -1; i--) {
+                            transformers[i].update();
+                        }
+                        /* <!-- END AUTOMATICALLY GENERATED !--> */
                     }
-                    for (var i = capacitors.length - 1; i > -1; i--) {
-                        capacitors[i].update();
-                    }
-                    for (var i = inductors.length - 1; i > -1; i--) {
-                        inductors[i].update();
-                    }
-                    for (var i = grounds.length - 1; i > -1; i--) {
-                        grounds[i].update();
-                    }
-                    for (var i = dcsources.length - 1; i > -1; i--) {
-                        dcsources[i].update();
-                    }
-                    for (var i = dccurrents.length - 1; i > -1; i--) {
-                        dccurrents[i].update();
-                    }
-                    for (var i = acsources.length - 1; i > -1; i--) {
-                        acsources[i].update();
-                    }
-                    for (var i = accurrents.length - 1; i > -1; i--) {
-                        accurrents[i].update();
-                    }
-                    for (var i = squarewaves.length - 1; i > -1; i--) {
-                        squarewaves[i].update();
-                    }
-                    for (var i = sawwaves.length - 1; i > -1; i--) {
-                        sawwaves[i].update();
-                    }
-                    for (var i = trianglewaves.length - 1; i > -1; i--) {
-                        trianglewaves[i].update();
-                    }
-                    for (var i = constants.length - 1; i > -1; i--) {
-                        constants[i].update();
-                    }
-                    for (var i = wires.length - 1; i > -1; i--) {
-                        wires[i].update();
-                    }
-                    for (var i = nets.length - 1; i > -1; i--) {
-                        nets[i].update();
-                    }
-                    for (var i = notes.length - 1; i > -1; i--) {
-                        notes[i].update();
-                    }
-                    for (var i = rails.length - 1; i > -1; i--) {
-                        rails[i].update();
-                    }
-                    for (var i = voltmeters.length - 1; i > -1; i--) {
-                        voltmeters[i].update();
-                    }
-                    for (var i = ohmmeters.length - 1; i > -1; i--) {
-                        ohmmeters[i].update();
-                    }
-                    for (var i = ammeters.length - 1; i > -1; i--) {
-                        ammeters[i].update();
-                    }
-                    for (var i = wattmeters.length - 1; i > -1; i--) {
-                        wattmeters[i].update();
-                    }
-                    for (var i = fuses.length - 1; i > -1; i--) {
-                        fuses[i].update();
-                    }
-                    for (var i = spsts.length - 1; i > -1; i--) {
-                        spsts[i].update();
-                    }
-                    for (var i = spdts.length - 1; i > -1; i--) {
-                        spdts[i].update();
-                    }
-                    for (var i = potentiometers.length - 1; i > -1; i--) {
-                        potentiometers[i].update();
-                    }
-                    for (var i = dffs.length - 1; i > -1; i--) {
-                        dffs[i].update();
-                    }
-                    for (var i = vsats.length - 1; i > -1; i--) {
-                        vsats[i].update();
-                    }
-                    for (var i = adders.length - 1; i > -1; i--) {
-                        adders[i].update();
-                    }
-                    for (var i = subtractors.length - 1; i > -1; i--) {
-                        subtractors[i].update();
-                    }
-                    for (var i = multipliers.length - 1; i > -1; i--) {
-                        multipliers[i].update();
-                    }
-                    for (var i = dividers.length - 1; i > -1; i--) {
-                        dividers[i].update();
-                    }
-                    for (var i = gains.length - 1; i > -1; i--) {
-                        gains[i].update();
-                    }
-                    for (var i = absvals.length - 1; i > -1; i--) {
-                        absvals[i].update();
-                    }
-                    for (var i = vcsws.length - 1; i > -1; i--) {
-                        vcsws[i].update();
-                    }
-                    for (var i = vcvss.length - 1; i > -1; i--) {
-                        vcvss[i].update();
-                    }
-                    for (var i = vccss.length - 1; i > -1; i--) {
-                        vccss[i].update();
-                    }
-                    for (var i = cccss.length - 1; i > -1; i--) {
-                        cccss[i].update();
-                    }
-                    for (var i = ccvss.length - 1; i > -1; i--) {
-                        ccvss[i].update();
-                    }
-                    for (var i = opamps.length - 1; i > -1; i--) {
-                        opamps[i].update();
-                    }
-                    for (var i = adcs.length - 1; i > -1; i--) {
-                        adcs[i].update();
-                    }
-                    for (var i = dacs.length - 1; i > -1; i--) {
-                        dacs[i].update();
-                    }
-                    for (var i = sandhs.length - 1; i > -1; i--) {
-                        sandhs[i].update();
-                    }
-                    for (var i = pwms.length - 1; i > -1; i--) {
-                        pwms[i].update();
-                    }
-                    for (var i = integrators.length - 1; i > -1; i--) {
-                        integrators[i].update();
-                    }
-                    for (var i = differentiators.length - 1; i > -1; i--) {
-                        differentiators[i].update();
-                    }
-                    for (var i = lowpasses.length - 1; i > -1; i--) {
-                        lowpasses[i].update();
-                    }
-                    for (var i = highpasses.length - 1; i > -1; i--) {
-                        highpasses[i].update();
-                    }
-                    for (var i = relays.length - 1; i > -1; i--) {
-                        relays[i].update();
-                    }
-                    for (var i = pids.length - 1; i > -1; i--) {
-                        pids[i].update();
-                    }
-                    for (var i = luts.length - 1; i > -1; i--) {
-                        luts[i].update();
-                    }
-                    for (var i = vcrs.length - 1; i > -1; i--) {
-                        vcrs[i].update();
-                    }
-                    for (var i = vccas.length - 1; i > -1; i--) {
-                        vccas[i].update();
-                    }
-                    for (var i = vcls.length - 1; i > -1; i--) {
-                        vcls[i].update();
-                    }
-                    for (var i = grts.length - 1; i > -1; i--) {
-                        grts[i].update();
-                    }
-                    for (var i = tptzs.length - 1; i > -1; i--) {
-                        tptzs[i].update();
-                    }
-                    for (var i = transformers.length - 1; i > -1; i--) {
-                        transformers[i].update();
-                    }
-                    /* <!-- END AUTOMATICALLY GENERATED !--> */
-                }
-                menu_bar.update();
-                bottom_menu.update();
-                element_options.update();
-                history_manager.watch();
-                wire_manager.watch();
-                if (!MOBILE_MODE) {
-                    if (last_webpage_document_title !== global.variables.user_file.title) {
-                        webpage_document_title.innerHTML = global.variables.user_file.title;
-                        last_webpage_document_title = global.variables.user_file.title;
+                    menu_bar.update();
+                    bottom_menu.update();
+                    element_options.update();
+                    history_manager.watch();
+                    wire_manager.watch();
+                    if (!MOBILE_MODE) {
+                        if (last_webpage_document_title !== global.variables.user_file.title) {
+                            webpage_document_title.innerHTML = global.variables.user_file.title;
+                            last_webpage_document_title = global.variables.user_file.title;
+                        }
                     }
                 }
             }
-        }
-        else {
-            initialize(global.variables.system_initialization['step']);
-            global.variables.system_initialization['step']++;
-            if (global.variables.system_initialization['step'] >= global.variables.system_initialization['max']) {
-                if (MOBILE_MODE) {
-                    global.flags.flag_on_restore_event = true;
+            else {
+                initialize(global.variables.system_initialization['step']);
+                global.variables.system_initialization['step']++;
+                if (global.variables.system_initialization['step'] >= global.variables.system_initialization['max']) {
+                    if (MOBILE_MODE) {
+                        global.flags.flag_on_restore_event = true;
+                    }
+                    global.variables.system_initialization['step'] = 0;
+                    global.variables.system_initialization['completed'] = true;
+                    global.flags.flag_build_element = true;
                 }
-                global.variables.system_initialization['step'] = 0;
-                global.variables.system_initialization['completed'] = true;
-                global.flags.flag_build_element = true;
             }
-        }
+        });
     }
     function refactor_sizes() {
         global.variables.canvas_stroke_width_1_zoom = global.variables.canvas_stroke_width_base * 2.25 * global.variables.workspace_zoom_scale;
