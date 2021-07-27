@@ -286,14 +286,7 @@ function load_app() {
             window.addEventListener('dblclick', double_click, true);
         }
         window.addEventListener('resize', resize_canvas, true);
-        window.addEventListener('focus', on_focus, true);
-    }
-    function on_focus() {
-        global.flags.flag_focus_event = true;
-        global.variables.flag_focus_counter = 0;
-        global.flags.flag_build_element = true;
-        global.variables.flag_build_counter = 0;
-        global.flags.flag_mouse_down_event = true;
+        window.addEventListener('focus', resize_canvas, true);
     }
     function resize_canvas() {
         try {
@@ -576,7 +569,6 @@ function load_app() {
     function normal_draw_permissions() {
         if (global.variables.system_initialization['completed']) {
             return (global.flags.flag_resize_event ||
-                global.flags.flag_focus_event ||
                 global.flags.flag_mouse_down_event ||
                 global.flags.flag_mouse_move_event ||
                 global.flags.flag_mouse_up_event ||
@@ -592,7 +584,6 @@ function load_app() {
         }
         else {
             return (global.flags.flag_resize_event ||
-                global.flags.flag_focus_event ||
                 global.flags.flag_mouse_down_event ||
                 global.flags.flag_mouse_move_event ||
                 global.flags.flag_mouse_up_event ||
@@ -607,26 +598,14 @@ function load_app() {
     }
     function render() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (global.flags.flag_focus_event) {
-                if (global.variables.flag_focus_counter++ >= global.CONSTANTS.SIGNAL_FOCUS_COUNTER_MAX) {
-                    resize_canvas();
-                    global.flags.flag_focus_event = false;
-                    global.variables.flag_focus_counter = 0;
-                    canvas.release();
-                    canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-                    draw();
-                }
+            if (!global.flags.flag_draw_block) {
+                ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
             }
-            else {
-                if (!global.flags.flag_draw_block) {
-                    ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-                }
-                canvas.release();
-                canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-                draw();
-                if (global.flags.flag_draw_block) {
-                    global.flags.flag_draw_block = false;
-                }
+            canvas.release();
+            canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+            draw();
+            if (global.flags.flag_draw_block) {
+                global.flags.flag_draw_block = false;
             }
             return null;
         });
@@ -641,7 +620,6 @@ function load_app() {
                 if (global.variables.system_initialization['completed']) {
                     temp_draw_signal =
                         !global.flags.flag_simulating ||
-                            global.flags.flag_focus_event ||
                             global.flags.flag_resize_event ||
                             global.flags.flag_mouse_down_event ||
                             global.flags.flag_mouse_move_event ||
@@ -657,7 +635,6 @@ function load_app() {
                 else {
                     temp_draw_signal =
                         !global.flags.flag_simulating ||
-                            global.flags.flag_focus_event ||
                             global.flags.flag_resize_event ||
                             global.flags.flag_mouse_down_event ||
                             global.flags.flag_mouse_move_event ||

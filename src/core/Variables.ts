@@ -31,7 +31,6 @@ class Variables {
 	public component_translating: boolean;
 	public flag_build_counter: number;
 	public flag_wire_deleted_counter: number;
-	public flag_focus_counter: number;
 	public component_touched: boolean;
 	public mouse_keyboard_lock: boolean;
 	public translation_lock: boolean;
@@ -136,7 +135,6 @@ class Variables {
 		this.clipboard_property = CONSTANTS.NULL;
 		this.component_translating = false;
 		this.flag_build_counter = 0;
-		this.flag_focus_counter = 0;
 		this.flag_wire_deleted_counter = 0;
 		this.component_touched = false;
 		this.mouse_keyboard_lock = false;

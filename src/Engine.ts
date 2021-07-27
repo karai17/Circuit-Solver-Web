@@ -277,15 +277,7 @@ function load_app(): void {
 		}
 
 		window.addEventListener('resize', resize_canvas, true);
-		window.addEventListener('focus', on_focus, true);
-	}
-
-	function on_focus(): void {
-		global.flags.flag_focus_event = true;
-		global.variables.flag_focus_counter = 0;
-		global.flags.flag_build_element = true;
-		global.variables.flag_build_counter = 0;
-		global.flags.flag_mouse_down_event = true;
+		window.addEventListener('focus', resize_canvas, true);
 	}
 
 	function resize_canvas(): void {
@@ -576,7 +568,6 @@ function load_app(): void {
 		if (global.variables.system_initialization['completed']) {
 			return (
 				global.flags.flag_resize_event ||
-				global.flags.flag_focus_event ||
 				global.flags.flag_mouse_down_event ||
 				global.flags.flag_mouse_move_event ||
 				global.flags.flag_mouse_up_event ||
@@ -593,7 +584,6 @@ function load_app(): void {
 		} else {
 			return (
 				global.flags.flag_resize_event ||
-				global.flags.flag_focus_event ||
 				global.flags.flag_mouse_down_event ||
 				global.flags.flag_mouse_move_event ||
 				global.flags.flag_mouse_up_event ||
@@ -608,25 +598,14 @@ function load_app(): void {
 		}
 	}
 	async function render() {
-		if (global.flags.flag_focus_event) {
-			if (global.variables.flag_focus_counter++ >= global.CONSTANTS.SIGNAL_FOCUS_COUNTER_MAX) {
-				resize_canvas();
-				global.flags.flag_focus_event = false;
-				global.variables.flag_focus_counter = 0;
-				canvas.release();
-				canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-				draw();
-			}
-		} else {
-			if (!global.flags.flag_draw_block) {
-				ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-			}
-			canvas.release();
-			canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
-			draw();
-			if (global.flags.flag_draw_block) {
-				global.flags.flag_draw_block = false;
-			}
+		if (!global.flags.flag_draw_block) {
+			ctx.drawImage(virtual_surface.surface, view_port.left, view_port.top, view_port.view_width, view_port.view_height, view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+		}
+		canvas.release();
+		canvas.clear_xywh(view_port.left, view_port.top, view_port.view_width, view_port.view_height);
+		draw();
+		if (global.flags.flag_draw_block) {
+			global.flags.flag_draw_block = false;
 		}
 		return null;
 	}
@@ -640,7 +619,6 @@ function load_app(): void {
 				if (global.variables.system_initialization['completed']) {
 					temp_draw_signal =
 						!global.flags.flag_simulating ||
-						global.flags.flag_focus_event ||
 						global.flags.flag_resize_event ||
 						global.flags.flag_mouse_down_event ||
 						global.flags.flag_mouse_move_event ||
@@ -655,7 +633,6 @@ function load_app(): void {
 				} else {
 					temp_draw_signal =
 						!global.flags.flag_simulating ||
-						global.flags.flag_focus_event ||
 						global.flags.flag_resize_event ||
 						global.flags.flag_mouse_down_event ||
 						global.flags.flag_mouse_move_event ||
