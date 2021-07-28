@@ -690,20 +690,7 @@ function load_app(): void {
 				}
 			}
 		} catch (e) {
-			if (!global.CONSTANTS.DEVELOPER_MODE && !MOBILE_MODE) {
-				let post_data: string = e + '\r\n' + e.stack + '\r\n';
-				let url: string = 'solver_errors.php?msg="' + post_data + '"';
-				let method: string = 'POST';
-				let should_be_async: boolean = true;
-				let request: XMLHttpRequest = new XMLHttpRequest();
-				request.onload = function (): void {
-					let status: number = request.status;
-					let data: string = request.responseText;
-				};
-				request.open(method, url, should_be_async);
-				request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-				request.send(post_data);
-			}
+
 		}
 	}
 	async function update() {

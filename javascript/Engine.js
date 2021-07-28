@@ -693,20 +693,6 @@ function load_app() {
             }
         }
         catch (e) {
-            if (!global.CONSTANTS.DEVELOPER_MODE && !MOBILE_MODE) {
-                let post_data = e + '\r\n' + e.stack + '\r\n';
-                let url = 'solver_errors.php?msg="' + post_data + '"';
-                let method = 'POST';
-                let should_be_async = true;
-                let request = new XMLHttpRequest();
-                request.onload = function () {
-                    let status = request.status;
-                    let data = request.responseText;
-                };
-                request.open(method, url, should_be_async);
-                request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-                request.send(post_data);
-            }
         }
     }
     function update() {
