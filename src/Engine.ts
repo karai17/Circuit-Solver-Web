@@ -282,8 +282,7 @@ function load_app(): void {
 
 	function resize_canvas(override: any): void {
 		try {
-			let override_signal = (override != null && override);
-
+			let override_signal = (override != null && override === true);
 			let resize_enabled = false;
 
 			let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
