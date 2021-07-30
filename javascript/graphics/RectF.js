@@ -46,8 +46,7 @@ class RectF {
         this.w_last_bottom = -1;
     }
     is_near(bounds, norm_magnitude) {
-        let norm = global.utils.norm(this.get_center_x() - bounds.get_center_x(), this.get_center_y() - bounds.get_center_y());
-        if (norm <= norm_magnitude) {
+        if (global.utils.norm(this.get_center_x() - bounds.get_center_x(), this.get_center_y() - bounds.get_center_y()) <= norm_magnitude) {
             return true;
         }
         else {
@@ -109,8 +108,5 @@ class RectF {
             this.last_height = Math.abs(this.bottom - this.top);
         }
         return this.last_height;
-    }
-    round(value) {
-        return Math.round((value + Number.EPSILON) * 1000) / 1000;
     }
 }

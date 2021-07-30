@@ -228,7 +228,7 @@ function load_app() {
     function initialize(step) {
         if (step === 0) {
             toast = new Toast();
-            resize_canvas();
+            resize_canvas(true);
             simulation_manager = new SimulationManager();
             engine_functions.create_nodes(workspace.bounds);
             global.utils.push_history();
@@ -288,22 +288,23 @@ function load_app() {
         window.addEventListener('resize', resize_canvas, true);
         window.addEventListener('focus', resize_canvas, true);
     }
-    function resize_canvas() {
+    function resize_canvas(override) {
         try {
+            let override_signal = (override != null && override);
             let resize_enabled = false;
             let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
-            if (solver_container.style.width !== temp) {
+            if (solver_container.style.width !== temp || override_signal) {
                 solver_container.style.width = temp;
                 resize_enabled = true;
             }
             temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
-            if (solver_container.style.height !== temp) {
+            if (solver_container.style.height !== temp || override_signal) {
                 solver_container.style.height = temp;
                 resize_enabled = true;
             }
             if (resize_enabled) {
                 global.variables.device_pixel_ratio = window.devicePixelRatio || 1;
-                if (global.flags.flag_resize_event === false) {
+                if (global.flags.flag_resize_event === false || override_signal) {
                     global.utils.last_view_port_right = view_port.right;
                     global.utils.last_view_port_bottom = view_port.bottom;
                     global.utils.last_view_port_width = view_port.view_width;
@@ -312,24 +313,24 @@ function load_app() {
                     global.utils.last_surface_height = surface.height;
                 }
                 temp = 'black';
-                if (solver_container.style.background !== temp) {
+                if (solver_container.style.background !== temp || override_signal) {
                     solver_container.style.background = temp;
                 }
                 cached_width = window.innerWidth * global.variables.device_pixel_ratio;
                 cached_height = window.innerHeight * global.variables.device_pixel_ratio;
                 view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
-                if (surface.width !== cached_width) {
+                if (surface.width !== cached_width || override_signal) {
                     surface.width = cached_width;
                 }
-                if (surface.height !== cached_height) {
+                if (surface.height !== cached_height || override_signal) {
                     surface.height = cached_height;
                 }
                 temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
-                if (surface.style.width !== temp) {
+                if (surface.style.width !== temp || override_signal) {
                     surface.style.width = temp;
                 }
                 temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
-                if (surface.style.height !== temp) {
+                if (surface.style.height !== temp || override_signal) {
                     surface.style.height = temp;
                 }
                 global.utils.resize_w_factor = view_port.view_width / global.utils.last_view_port_width;
@@ -344,29 +345,29 @@ function load_app() {
                 }
                 try {
                     temp = 'copy';
-                    if (ctx.globalCompositeOperation !== temp) {
+                    if (ctx.globalCompositeOperation !== temp || override_signal) {
                         ctx.globalCompositeOperation = temp;
                     }
-                    if (ctx.imageSmoothingEnabled) {
+                    if (ctx.imageSmoothingEnabled || override_signal) {
                         ctx.imageSmoothingEnabled = false;
                     }
                     //@ts-expect-error
-                    if (ctx.mozImageSmoothingEnabled) {
+                    if (ctx.mozImageSmoothingEnabled || override_signal) {
                         //@ts-expect-error
                         ctx.mozImageSmoothingEnabled = false;
                     }
                     //@ts-expect-error
-                    if (ctx.oImageSmoothingEnabled) {
+                    if (ctx.oImageSmoothingEnabled || override_signal) {
                         //@ts-expect-error
                         ctx.oImageSmoothingEnabled = false;
                     }
                     //@ts-expect-error
-                    if (ctx.webkitImageSmoothingEnabled) {
+                    if (ctx.webkitImageSmoothingEnabled || override_signal) {
                         //@ts-expect-error
                         ctx.webkitImageSmoothingEnabled = false;
                     }
                     //@ts-expect-error
-                    if (ctx.msImageSmoothingEnabled) {
+                    if (ctx.msImageSmoothingEnabled || override_signal) {
                         //@ts-expect-error
                         ctx.msImageSmoothingEnabled = false;
                     }
@@ -386,14 +387,14 @@ function load_app() {
                 global.variables.canvas_text_size_6 = global.variables.canvas_text_size_base * 43;
                 global.flags.flag_build_element = true;
                 global.variables.flag_build_counter = 0;
-                virtual_surface.resize(cached_width, cached_height);
+                virtual_surface.resize(cached_width, cached_height, override_signal);
                 global.flags.flag_resize_event = true;
                 canvas.on_resize();
                 temp = 'hidden';
-                if (surface.style.backfaceVisibility !== temp) {
+                if (surface.style.backfaceVisibility !== temp || override_signal) {
                     surface.style.backfaceVisibility = temp;
                 }
-                if (surface.style.visibility === 'hidden') {
+                if (surface.style.visibility === temp || override_signal) {
                     surface.style.visibility = 'visible';
                 }
             }
@@ -656,7 +657,7 @@ function load_app() {
                     global.variables.flag_build_counter = 0;
                     global.flags.flag_force_resize_event = false;
                     global.flags.flag_draw_block = true;
-                    resize_canvas();
+                    resize_canvas(true);
                 }
                 fps_div ^= 1;
                 if (((fps_div === 1 || temp_draw_signal) && global.flags.flag_simulating) || !global.flags.flag_simulating) {
