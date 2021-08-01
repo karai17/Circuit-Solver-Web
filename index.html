@@ -260,6 +260,9 @@
 	<div id="solver" style="margin: 0; padding: 0; backface-visibility: hidden">
 		<input type="file" id="file_explorer" onchange="engine_functions.file_event(this)" onclick="this.value=null;"
 			style="visibility: hidden; display: none;" accept=".txt" />
+		<button id="open_file_explorer"
+			style="position:absolute; z-index: 1; background-color: transparent; padding: 0; border: none; background: none;"
+			title=""></button>
 		<button id="file_explorer_mobile" style="visibility: hidden; display: none;"
 			onclick="window.JsInterface.javascript_native_hook('pull-circuit', 'null', 'null')"></button>
 		<button id="file_saver" style="visibility: hidden; display: none;"

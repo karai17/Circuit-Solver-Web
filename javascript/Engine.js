@@ -32,6 +32,12 @@ if (MOBILE_MODE) {
 else {
     file_reader = document.getElementById('file_explorer');
 }
+var open_file_reader = document.getElementById('open_file_explorer');
+if (!MOBILE_MODE) {
+    open_file_reader.addEventListener("click", function () {
+        file_reader.click();
+    });
+}
 var file_saver = document.getElementById('file_saver');
 var file_loader = document.getElementById('file_loader');
 var solver_container = document.getElementById('solver');
@@ -416,7 +422,9 @@ function load_app() {
             }
             if (bottom_menu.handle_file_explorer()) {
                 if (!global.variables.user_file_selected) {
-                    file_reader.click();
+                    if (MOBILE_MODE) {
+                        file_reader.click();
+                    }
                 }
                 else {
                     toast.set_text(language_manager.TRY_AGAIN[global.CONSTANTS.LANGUAGES[global.variables.language_index]]);
@@ -1006,6 +1014,7 @@ function load_app() {
                     global.variables.system_initialization['step'] = 0;
                     global.variables.system_initialization['completed'] = true;
                     global.flags.flag_build_element = true;
+                    bottom_menu.resize_bottom_menu();
                 }
             }
         });

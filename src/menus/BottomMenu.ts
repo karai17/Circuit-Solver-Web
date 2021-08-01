@@ -15,6 +15,7 @@ class BottomMenu {
 	private reload_bottom_path: boolean;
 	private padding: number;
 	public TIME_STEP_UPDATE_LOCK: boolean;
+
 	constructor() {
 		this.TIME_STEP_UPDATE_LOCK = false;
 		this.draw_bottom_path = true;
@@ -103,7 +104,7 @@ class BottomMenu {
 		this.bottom_path.line_to(view_port.left, view_port.bottom + 5);
 		this.bottom_path.close();
 	}
-	update(): void {}
+	update(): void { }
 	resize_bottom_menu(): void {
 		this.initial_resize_counter = 0;
 		this.reload_bottom_path = true;
@@ -132,6 +133,12 @@ class BottomMenu {
 		} else {
 			this.text_paint.set_text_size(global.variables.canvas_text_size_5);
 		}
+		if (!MOBILE_MODE) {
+			open_file_reader.style.width = this.file_button.get_width() + "px";
+			open_file_reader.style.height = this.file_button.get_height() + "px";
+			open_file_reader.style.left = view_port.left + "px";
+			open_file_reader.style.top = (view_port.bottom - open_file_reader.offsetHeight) + "px";
+		}
 	}
 	mouse_down(): void {
 		if (this.time_step_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y)) {
@@ -143,7 +150,7 @@ class BottomMenu {
 		this.first_touch_x = global.variables.mouse_x;
 		this.first_touch_y = global.variables.mouse_y;
 	}
-	mouse_move(): void {}
+	mouse_move(): void { }
 	mouse_up(): void {
 		if (!global.variables.is_right_click && this.time_step_button.contains_xy(this.first_touch_x, this.first_touch_y)) {
 			if (!global.variables.mouse_keyboard_lock && !multi_select_manager.ctrl_pressed && global.variables.component_touched) {
@@ -245,6 +252,7 @@ class BottomMenu {
 			view_port.left + this.file_button.text_paint.measure_text(global.TEMPLATES.FILE_BUTTON_TEXT_TEMPLATE.replace('{TEXT}', this.file_button.text)),
 			view_port.bottom
 		);
+
 		if (!this.TIME_STEP_UPDATE_LOCK) {
 			this.time_step_button.set_bounds(view_port.right - this.time_step_button_width, menu_bar.settings_button.bottom + this.padding, view_port.right, view_port.bottom);
 		}
