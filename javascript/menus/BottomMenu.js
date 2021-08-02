@@ -118,12 +118,6 @@ class BottomMenu {
         else {
             this.text_paint.set_text_size(global.variables.canvas_text_size_5);
         }
-        if (!MOBILE_MODE) {
-            open_file_reader.style.width = this.file_button.get_width() + "px";
-            open_file_reader.style.height = this.file_button.get_height() + "px";
-            open_file_reader.style.left = view_port.left + "px";
-            open_file_reader.style.top = (view_port.bottom - open_file_reader.offsetHeight) + "px";
-        }
     }
     mouse_down() {
         if (this.time_step_button.contains_xy(global.variables.mouse_x, global.variables.mouse_y)) {
