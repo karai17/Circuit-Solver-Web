@@ -65,7 +65,13 @@ class VirtualCanvas {
         if (this.surface.height !== height || override) {
             this.surface.height = height;
         }
-        let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerWidth);
+        let temp = "0";
+        if (MOBILE_MODE || DESKTOP_MODE) {
+            temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
+        }
+        else {
+            temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', center_panel.offsetWidth);
+        }
         if (this.surface.style.width !== temp || override) {
             this.surface.style.width = temp;
         }

@@ -80,7 +80,12 @@ class VirtualCanvas {
 			this.surface.height = height;
 		}
 
-		let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+		let temp = "0";
+		if (MOBILE_MODE || DESKTOP_MODE) {
+			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+		} else {
+			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>center_panel.offsetWidth));
+		}
 		if (this.surface.style.width !== temp || override) {
 			this.surface.style.width = temp;
 		}

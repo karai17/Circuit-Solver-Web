@@ -40,6 +40,7 @@ class Variables {
 	public browser_opera: boolean;
 	public browser_firefox: boolean;
 	public browser_safari: boolean;
+	public mouse_offset_x: number;
 	public mouse_down_x: number;
 	public mouse_down_y: number;
 	public last_mouse_x: number;
@@ -145,6 +146,7 @@ class Variables {
 		this.browser_opera = false;
 		this.browser_firefox = false;
 		this.browser_safari = false;
+		this.mouse_offset_x = 0;
 		this.mouse_down_x = 0;
 		this.mouse_down_y = 0;
 		this.last_mouse_x = 0;
@@ -207,9 +209,7 @@ class Variables {
 		if (MOBILE_MODE) {
 			this.system_options['values'][CONSTANTS.SYSTEM_OPTION_SHORTCUT_HINTS] = CONSTANTS.OFF;
 		}
-		if (DESKTOP_MODE || MOBILE_MODE) {
-			this.system_options['values'][CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] = CONSTANTS.ON;
-		}
+		this.system_options['values'][CONSTANTS.SYSTEM_OPTION_STRETCH_WINDOW] = CONSTANTS.ON;
 		this.user_file_selected = false;
 		this.user_file = new Circuit();
 		this.flag_canvas_draw_request_counter = 0;

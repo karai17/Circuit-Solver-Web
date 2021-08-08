@@ -257,17 +257,26 @@
 </head>
 
 <body oncontextmenu="return false;" style="margin: 0; padding: 0; backface-visibility: hidden">
-	<div id="solver" style="margin: 0; padding: 0; backface-visibility: hidden">
-		<input type="file" id="file_explorer" onchange="engine_functions.file_event(this)" onclick="this.value=null;"
-			style="visibility: hidden; display: none;" accept=".txt" />
-		<button id="file_explorer_mobile" style="visibility: hidden; display: none;"
-			onclick="window.JsInterface.javascript_native_hook('pull-circuit', 'null', 'null')"></button>
-		<button id="file_saver" style="visibility: hidden; display: none;"
-			onclick="window.JsInterface.javascript_native_hook('push-circuit', global.user_file.title + '.txt', engine_functions.history_snapshot())"></button>
-		<button id="file_loader" style="visibility: hidden; display: none;"
-			onclick="engine_functions.handle_file_loading()"></button>
-		<input type="text" value="undefined" id="text_input" style="visibility: hidden; display: none;" />
-	</div>
+	<div id="main_wrapper" class="wrapper">
+		<div id="id_left_panel" class="left_panel">
+		</div>
+
+		<div id="id_center_panel" class="center_panel">
+			<div id="solver" style="margin: 0; padding: 0; backface-visibility: hidden">
+				<input type="file" id="file_explorer" onchange="engine_functions.file_event(this)"
+					onclick="this.value=null;" style="visibility: hidden; display: none;" accept=".txt" />
+				<button id="file_explorer_mobile" style="visibility: hidden; display: none;"
+					onclick="window.JsInterface.javascript_native_hook('pull-circuit', 'null', 'null')"></button>
+				<button id="file_saver" style="visibility: hidden; display: none;"
+					onclick="window.JsInterface.javascript_native_hook('push-circuit', global.user_file.title + '.txt', engine_functions.history_snapshot())"></button>
+				<button id="file_loader" style="visibility: hidden; display: none;"
+					onclick="engine_functions.handle_file_loading()"></button>
+				<input type="text" value="undefined" id="text_input" style="visibility: hidden; display: none;" />
+			</div>
+		</div>
+
+		<div id="id_right_panel" class="right_panel">
+		</div>
 </body>
 
 </html>

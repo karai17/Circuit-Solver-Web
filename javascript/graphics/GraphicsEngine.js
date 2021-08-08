@@ -291,8 +291,8 @@ class GraphicsEngine {
                 break;
         }
     }
-    draw_circle3(rect, strech_factor, paint) {
-        this.width = (global.CONSTANTS.ZERO_PT_FIVE + ((rect.get_width() * strech_factor) >> 1)) >> global.CONSTANTS.ZERO;
+    draw_circle3(rect, stretch_factor, paint) {
+        this.width = (global.CONSTANTS.ZERO_PT_FIVE + ((rect.get_width() * stretch_factor) >> 1)) >> global.CONSTANTS.ZERO;
         this.x = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_x()) >> global.CONSTANTS.ZERO;
         this.y = (global.CONSTANTS.ZERO_PT_FIVE + rect.get_center_y()) >> global.CONSTANTS.ZERO;
         this.apply_paint(paint, false);

@@ -28,6 +28,10 @@ var file_saver = document.getElementById('file_saver');
 var file_loader = document.getElementById('file_loader');
 var solver_container: HTMLElement = document.getElementById('solver');
 var surface: HTMLCanvasElement = document.createElement('canvas');
+var left_panel: HTMLElement = document.getElementById('id_left_panel');
+var center_panel: HTMLElement = document.getElementById('id_center_panel');
+var right_panel: HTMLElement = document.getElementById('id_right_panel');
+var wrapper: HTMLElement = document.getElementById('main_wrapper');
 surface.id = 'canvas';
 surface.style.visibility = 'hidden';
 surface.style.zIndex = '0';
@@ -284,14 +288,92 @@ function load_app(): void {
 		try {
 			let override_signal = (override != null && override === true);
 			let resize_enabled = false;
+			let temp = "1";
 
-			let temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+			if (MOBILE_MODE || DESKTOP_MODE) {
+				if (left_panel.style.gridColumn !== temp) {
+					left_panel.style.gridColumn = temp;
+				}
+
+				temp = "0";
+
+				if (left_panel.style.minWidth !== temp) {
+					left_panel.style.minWidth = temp;
+				}
+
+				if (left_panel.style.width !== temp) {
+					left_panel.style.width = temp;
+				}
+
+				temp = "hidden";
+
+				if (left_panel.style.visibility !== temp) {
+					left_panel.style.visibility = temp;
+				}
+
+				temp = "1";
+
+				if (right_panel.style.gridColumn !== temp) {
+					right_panel.style.gridColumn = temp;
+				}
+
+				temp = "0";
+
+				if (right_panel.style.minWidth !== temp) {
+					right_panel.style.minWidth = temp;
+				}
+
+				if (right_panel.style.width !== temp) {
+					right_panel.style.width = temp;
+				}
+
+				temp = "hidden";
+
+				if (right_panel.style.visibility !== temp) {
+					right_panel.style.visibility = temp;
+				}
+
+				temp = "1";
+
+				if (center_panel.style.gridColumn !== temp) {
+					center_panel.style.gridColumn = temp;
+				}
+
+				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+
+				if (center_panel.style.width !== temp) {
+					center_panel.style.width = temp;
+				}
+			}
+
+			let center_panel_width = center_panel.offsetWidth;
+			global.variables.mouse_offset_x = left_panel.offsetWidth;
+
+			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>center_panel_width));
+
 			if (solver_container.style.width !== temp || override_signal) {
 				solver_container.style.width = temp;
 				resize_enabled = true;
 			}
 
 			temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerHeight));
+
+			if (wrapper.style.height !== temp) {
+				wrapper.style.height = temp;
+			}
+
+			if (left_panel.style.height !== temp) {
+				left_panel.style.height = temp;
+			}
+
+			if (center_panel.style.height !== temp) {
+				center_panel.style.height = temp;
+			}
+
+			if (right_panel.style.height !== temp) {
+				right_panel.style.height = temp;
+			}
+
 			if (solver_container.style.height !== temp || override_signal) {
 				solver_container.style.height = temp;
 				resize_enabled = true;
@@ -313,7 +395,7 @@ function load_app(): void {
 					solver_container.style.background = temp;
 				}
 
-				cached_width = window.innerWidth * global.variables.device_pixel_ratio;
+				cached_width = center_panel_width * global.variables.device_pixel_ratio;
 				cached_height = window.innerHeight * global.variables.device_pixel_ratio;
 
 				view_port.resize(canvas_aspect_ratio, cached_width, cached_height);
@@ -325,7 +407,7 @@ function load_app(): void {
 					surface.height = cached_height;
 				}
 
-				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>window.innerWidth));
+				temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', <string>(<unknown>center_panel_width));
 				if (surface.style.width !== temp || override_signal) {
 					surface.style.width = temp;
 				}
@@ -409,7 +491,7 @@ function load_app(): void {
 		mouse_event.preventDefault();
 		if (global.variables.system_initialization['completed']) {
 			if (MOBILE_MODE === false) {
-				global.variables.mouse_x = mouse_event.clientX * global.variables.device_pixel_ratio;
+				global.variables.mouse_x = (mouse_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 				global.variables.mouse_y = mouse_event.clientY * global.variables.device_pixel_ratio;
 			} else {
 				//@ts-ignore
@@ -436,7 +518,7 @@ function load_app(): void {
 		mouse_event.preventDefault();
 		if (!global.flags.flag_mouse_move_event) {
 			if (!MOBILE_MODE) {
-				temp_mouse_x = mouse_event.clientX * global.variables.device_pixel_ratio;
+				temp_mouse_x = (mouse_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 				temp_mouse_y = mouse_event.clientY * global.variables.device_pixel_ratio;
 				if (temp_mouse_x >= view_port.left && temp_mouse_x <= view_port.right && temp_mouse_y >= view_port.top && temp_mouse_y <= view_port.bottom) {
 					global.flags.flag_mouse_move_event = true;
@@ -460,9 +542,14 @@ function load_app(): void {
 		global.events.mouse_up_event_queue.push(mouse_event);
 	}
 	function mouse_wheel(mouse_event: MouseEvent): void {
+		mouse_event.preventDefault();
 		if (!global.flags.flag_mouse_wheel_event && !MOBILE_MODE) {
-			global.flags.flag_mouse_wheel_event = true;
-			global.events.mouse_wheel_event_queue.push(mouse_event);
+			temp_mouse_x = (mouse_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
+			temp_mouse_y = mouse_event.clientY * global.variables.device_pixel_ratio;
+			if (temp_mouse_x >= view_port.left && temp_mouse_x <= view_port.right && temp_mouse_y >= view_port.top && temp_mouse_y <= view_port.bottom) {
+				global.flags.flag_mouse_wheel_event = true;
+				global.events.mouse_wheel_event_queue.push(mouse_event);
+			}
 		}
 	}
 	function double_click(mouse_event: MouseEvent): void {
@@ -1300,7 +1387,7 @@ function load_app(): void {
 	function handle_mouse_down(): void {
 		global.variables.component_touched = false;
 		if (MOBILE_MODE === false) {
-			global.variables.mouse_x = global.events.mouse_down_event.clientX * global.variables.device_pixel_ratio;
+			global.variables.mouse_x = (global.events.mouse_down_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 			global.variables.mouse_y = global.events.mouse_down_event.clientY * global.variables.device_pixel_ratio;
 		} else {
 			//@ts-expect-error
@@ -1584,7 +1671,7 @@ function load_app(): void {
 		global.variables.last_mouse_x = global.variables.mouse_x;
 		global.variables.last_mouse_y = global.variables.mouse_y;
 		if (MOBILE_MODE === false) {
-			global.variables.mouse_x = global.events.mouse_move_event.clientX * global.variables.device_pixel_ratio;
+			global.variables.mouse_x = (global.events.mouse_move_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 			global.variables.mouse_y = global.events.mouse_move_event.clientY * global.variables.device_pixel_ratio;
 		} else {
 			//@ts-expect-error
@@ -1853,7 +1940,7 @@ function load_app(): void {
 		global.variables.mouse_down_x = -1;
 		global.variables.mouse_down_y = -1;
 		if (MOBILE_MODE === false) {
-			global.variables.mouse_x = global.events.mouse_up_event.clientX * global.variables.device_pixel_ratio;
+			global.variables.mouse_x = (global.events.mouse_up_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 			global.variables.mouse_y = global.events.mouse_up_event.clientY * global.variables.device_pixel_ratio;
 		} else {
 		}
@@ -2136,7 +2223,7 @@ function load_app(): void {
 		}
 	}
 	function handle_mouse_wheel(): void {
-		global.variables.mouse_x = global.events.mouse_wheel_event.clientX * global.variables.device_pixel_ratio;
+		global.variables.mouse_x = (global.events.mouse_wheel_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 		global.variables.mouse_y = global.events.mouse_wheel_event.clientY * global.variables.device_pixel_ratio;
 		if (
 			!global.flags.flag_save_image &&
@@ -2156,7 +2243,7 @@ function load_app(): void {
 		menu_bar.mouse_wheel();
 	}
 	function handle_double_click(): void {
-		global.variables.mouse_x = global.events.mouse_double_click_event.clientX * global.variables.device_pixel_ratio;
+		global.variables.mouse_x = (global.events.mouse_double_click_event.clientX - global.variables.mouse_offset_x) * global.variables.device_pixel_ratio;
 		global.variables.mouse_y = global.events.mouse_double_click_event.clientY * global.variables.device_pixel_ratio;
 		time_step_window.double_click();
 		save_image_window.double_click();

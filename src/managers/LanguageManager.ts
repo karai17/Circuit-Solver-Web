@@ -140,7 +140,7 @@ class LanguageManager {
 			Indonesian: 'Koneksi tidak diizinkan'
 		};
 		this.STRETCH_WINDOW = {
-			English: 'Strech Window',
+			English: 'Stretch Window',
 			Spanish: 'Ventana elástica',
 			French: 'Fenêtre extensible',
 			Italian: 'Finestra allungata',
