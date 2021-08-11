@@ -632,6 +632,10 @@ class MultiSelectManager {
 				if (global.variables.component_translating) {
 					this.ctrl_pressed = false;
 					this.ctrl_pressed_started = false;
+					this.mouse_down_flag = false;
+					this.delta_latch = false;
+					this.elements_moved = false;
+					this.multi_select = false;
 				}
 			}
 			if (global.variables.multi_selected && this.delta_latch) {
