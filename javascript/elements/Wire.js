@@ -74,6 +74,12 @@ class Wire {
         }
     }
     stamp() { }
+    set_build_element_flag() {
+        this.build_element_flag = true;
+    }
+    clear_build_element_flag() {
+        this.build_element_flag = false;
+    }
     release_wires() { }
     release_nodes() {
         if (this.elm.consistent()) {

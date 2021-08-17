@@ -24,10 +24,14 @@ class Variables {
 	public selection_nearest_neighbors: Array<NEAREST_NEIGHBOR_T>;
 	public nearest_neighbor_index: number;
 	public multi_selected: boolean;
-	public clipboard_type: number;
-	public clipboard_rotation: number;
-	public clipboard_flip: number;
-	public clipboard_property: any;
+
+	// public clipboard_type: number;
+	// public clipboard_rotation: number;
+	// public clipboard_flip: number;
+	// public clipboard_property: any;
+
+	public clipboard_data: Array<CLIPBOARD_ENTRY_T>;
+
 	public component_translating: boolean;
 	public flag_build_counter: number;
 	public flag_wire_deleted_counter: number;
@@ -49,7 +53,6 @@ class Variables {
 	public dy: number;
 	public mouse_x: number;
 	public mouse_y: number;
-	public is_touching: boolean;
 	public is_dragging: boolean;
 	public temp_is_dragging: boolean;
 	public is_right_click: boolean;
@@ -130,10 +133,14 @@ class Variables {
 		this.selection_nearest_neighbors = [];
 		this.nearest_neighbor_index = 0;
 		this.multi_selected = false;
-		this.clipboard_type = CONSTANTS.NULL;
-		this.clipboard_rotation = CONSTANTS.NULL;
-		this.clipboard_flip = CONSTANTS.NULL;
-		this.clipboard_property = CONSTANTS.NULL;
+
+		// this.clipboard_type = CONSTANTS.NULL;
+		// this.clipboard_rotation = CONSTANTS.NULL;
+		// this.clipboard_flip = CONSTANTS.NULL;
+		// this.clipboard_property = CONSTANTS.NULL;
+
+		this.clipboard_data = [];
+
 		this.component_translating = false;
 		this.flag_build_counter = 0;
 		this.flag_wire_deleted_counter = 0;
@@ -155,7 +162,6 @@ class Variables {
 		this.dy = 0;
 		this.mouse_x = 0;
 		this.mouse_y = 0;
-		this.is_touching = false;
 		this.is_dragging = false;
 		this.temp_is_dragging = false;
 		this.is_right_click = false;

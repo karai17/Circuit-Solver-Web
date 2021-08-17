@@ -31,10 +31,11 @@ class Variables {
         this.selection_nearest_neighbors = [];
         this.nearest_neighbor_index = 0;
         this.multi_selected = false;
-        this.clipboard_type = CONSTANTS.NULL;
-        this.clipboard_rotation = CONSTANTS.NULL;
-        this.clipboard_flip = CONSTANTS.NULL;
-        this.clipboard_property = CONSTANTS.NULL;
+        // this.clipboard_type = CONSTANTS.NULL;
+        // this.clipboard_rotation = CONSTANTS.NULL;
+        // this.clipboard_flip = CONSTANTS.NULL;
+        // this.clipboard_property = CONSTANTS.NULL;
+        this.clipboard_data = [];
         this.component_translating = false;
         this.flag_build_counter = 0;
         this.flag_wire_deleted_counter = 0;
@@ -56,7 +57,6 @@ class Variables {
         this.dy = 0;
         this.mouse_x = 0;
         this.mouse_y = 0;
-        this.is_touching = false;
         this.is_dragging = false;
         this.temp_is_dragging = false;
         this.is_right_click = false;

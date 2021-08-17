@@ -118,9 +118,9 @@ class Util {
 		this.abs_input = 0;
 		this.found = false;
 	}
-	async push_history(): Promise<void> {
+	push_history(): void {
 		if (!global.flags.flag_history_lock) {
-			global.variables.history['packet'].push(await engine_functions.async_history_snapshot());
+			global.variables.history['packet'].push(engine_functions.history_snapshot());
 		}
 	}
 	sine(theta: number): number {

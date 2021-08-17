@@ -1,13 +1,4 @@
 'use strict';
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 class Util {
     constructor(CONSTANTS, TEMPLATES, KEY_CODES) {
         this.TRIG_SINE_TABLE = CONSTANTS.TRIG_SINE_TABLE;
@@ -78,11 +69,9 @@ class Util {
         this.found = false;
     }
     push_history() {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (!global.flags.flag_history_lock) {
-                global.variables.history['packet'].push(yield engine_functions.async_history_snapshot());
-            }
-        });
+        if (!global.flags.flag_history_lock) {
+            global.variables.history['packet'].push(engine_functions.history_snapshot());
+        }
     }
     sine(theta) {
         return this.TRIG_SINE_TABLE[(theta * this.TRIG_TABLE_INDEX_CONSTANT) & this.TRIG_TABLE_MASK];

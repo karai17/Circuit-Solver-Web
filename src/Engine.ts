@@ -1397,7 +1397,6 @@ function load_app(): void {
 		}
 		global.variables.last_mouse_x = global.variables.mouse_x;
 		global.variables.last_mouse_y = global.variables.mouse_y;
-		global.variables.is_touching = true;
 		global.variables.mouse_down_x = global.variables.mouse_x;
 		global.variables.mouse_down_y = global.variables.mouse_y;
 		global.variables.translation_lock = true;
@@ -1946,7 +1945,6 @@ function load_app(): void {
 		}
 		global.variables.last_mouse_x = global.variables.mouse_x;
 		global.variables.last_mouse_y = global.variables.mouse_y;
-		global.variables.is_touching = false;
 		global.variables.is_dragging = false;
 		global.variables.temp_is_dragging = global.variables.is_dragging;
 		if (

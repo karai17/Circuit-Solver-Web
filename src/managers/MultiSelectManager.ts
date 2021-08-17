@@ -25,6 +25,8 @@ class MultiSelectManager {
 	private mouse_down_flag: boolean;
 	public selected_components_bounds: RectF;
 	private draw_bounds_flag: RectF;
+	public is_paste_operation: boolean;
+
 	constructor() {
 		this.OFFSCREEN_X = -500e3;
 		this.OFFSCREEN_Y = -500e3;
@@ -93,7 +95,6 @@ class MultiSelectManager {
 			!global.flags.flag_select_settings &&
 			!global.flags.flag_remove_all &&
 			!global.flags.flag_menu_element_toolbox &&
-			!global.flags.flag_history_lock &&
 			!MOBILE_MODE
 		);
 	}
@@ -118,6 +119,9 @@ class MultiSelectManager {
 		this.selected_components_bounds.top = -this.OFFSCREEN_Y;
 		this.selected_components_bounds.right = this.OFFSCREEN_X + 1;
 		this.selected_components_bounds.bottom = this.OFFSCREEN_Y + 1;
+	}
+	set_multi_selected_element(setter: boolean): void {
+		this.multi_selected_element = setter;
 	}
 	refresh_multi_select(): void {
 		this.multi_selected_element = false;
@@ -559,14 +563,14 @@ class MultiSelectManager {
 		this.multi_select = false;
 	}
 	key_down(key_event: KEY_EVENT_T): void {
-		if (this.multi_select_input_conditions()) {
+		if (this.multi_select_input_conditions() && !global.flags.flag_history_lock) {
 			if (key_event['ctrl'] === true) {
 				this.ctrl_pressed_started = true;
 			}
 		}
 	}
 	key_up(key_event: KEY_EVENT_T): void {
-		if (!global.flags.flag_history_lock && !MOBILE_MODE) {
+		if (!MOBILE_MODE && !global.flags.flag_history_lock) {
 			if (!this.mouse_down_flag) {
 				this.ctrl_pressed_started = false;
 				this.ctrl_pressed = false;
@@ -576,36 +580,19 @@ class MultiSelectManager {
 	}
 	mouse_down(): void {
 		if (this.multi_select_input_conditions()) {
-			if (!global.flags.flag_history_lock) {
-				this.mouse_down_flag = true;
-				if (this.ctrl_pressed_started) {
-					this.multi_select = true;
-					this.select_x = global.variables.mouse_x;
-					this.select_y = global.variables.mouse_y;
-					this.multi_select_bounds.left = global.variables.mouse_x;
-					this.multi_select_bounds.top = global.variables.mouse_y;
-					this.multi_select_bounds.right = global.variables.mouse_x;
-					this.multi_select_bounds.bottom = global.variables.mouse_y;
-					this.selected_components_bounds.left = -this.OFFSCREEN_X;
-					this.selected_components_bounds.top = -this.OFFSCREEN_Y;
-					this.selected_components_bounds.right = this.OFFSCREEN_X + 1;
-					this.selected_components_bounds.bottom = this.OFFSCREEN_Y + 1;
-				}
-			} else {
-				if (!global.variables.component_touched) {
-					this.ctrl_pressed_started = true;
-					this.multi_select = true;
-					this.select_x = global.variables.mouse_x;
-					this.select_y = global.variables.mouse_y;
-					this.multi_select_bounds.left = global.variables.mouse_x;
-					this.multi_select_bounds.top = global.variables.mouse_y;
-					this.multi_select_bounds.right = global.variables.mouse_x;
-					this.multi_select_bounds.bottom = global.variables.mouse_y;
-					this.selected_components_bounds.left = -this.OFFSCREEN_X;
-					this.selected_components_bounds.top = -this.OFFSCREEN_Y;
-					this.selected_components_bounds.right = this.OFFSCREEN_X + 1;
-					this.selected_components_bounds.bottom = this.OFFSCREEN_Y + 1;
-				}
+			this.mouse_down_flag = true;
+			if (this.ctrl_pressed_started) {
+				this.multi_select = true;
+				this.select_x = global.variables.mouse_x;
+				this.select_y = global.variables.mouse_y;
+				this.multi_select_bounds.left = global.variables.mouse_x;
+				this.multi_select_bounds.top = global.variables.mouse_y;
+				this.multi_select_bounds.right = global.variables.mouse_x;
+				this.multi_select_bounds.bottom = global.variables.mouse_y;
+				this.selected_components_bounds.left = -this.OFFSCREEN_X;
+				this.selected_components_bounds.top = -this.OFFSCREEN_Y;
+				this.selected_components_bounds.right = this.OFFSCREEN_X + 1;
+				this.selected_components_bounds.bottom = this.OFFSCREEN_Y + 1;
 			}
 			if (global.variables.multi_selected) {
 				this.delta_center_x = global.variables.mouse_x;
@@ -623,6 +610,24 @@ class MultiSelectManager {
 			}
 		}
 	}
+
+	initialize_multi_drag(): void {
+		global.variables.multi_selected = true;
+		this.ctrl_pressed_started = false;
+		this.ctrl_pressed = false;
+		this.mouse_down_flag = true;
+		this.multi_select = true;
+		this.multi_selected_element = true;
+		this.delta_center_x = global.variables.mouse_x;
+		this.delta_center_y = global.variables.mouse_y;
+		this.delta_dx = 0;
+		this.delta_dy = 0;
+		this.delta_last_dx = 0;
+		this.delta_last_dy = 0;
+		this.elements_moved = true;
+		this.delta_latch = true;
+	}
+
 	mouse_move(): void {
 		if (this.multi_select_input_conditions()) {
 			if (this.ctrl_pressed_started) {
@@ -671,13 +676,19 @@ class MultiSelectManager {
 	}
 	mouse_up(): void {
 		if (!MOBILE_MODE) {
+			if (this.is_paste_operation) {
+				this.elements_moved = false;
+			}
 			this.mouse_down_flag = false;
 			this.ctrl_pressed_started = false;
 			this.ctrl_pressed = false;
 			this.delta_latch = false;
-			if (this.elements_moved) {
+			if (this.elements_moved && !this.is_paste_operation) {
 				global.utils.push_history();
 				this.elements_moved = false;
+			}
+			if (this.is_paste_operation) {
+				this.is_paste_operation = false;
 			}
 		}
 	}

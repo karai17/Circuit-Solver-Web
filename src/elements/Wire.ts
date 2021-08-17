@@ -98,6 +98,12 @@ class Wire {
 		}
 	}
 	stamp(): void { }
+	set_build_element_flag(): void {
+		this.build_element_flag = true;
+	}
+	clear_build_element_flag(): void {
+		this.build_element_flag = false;
+	}
 	release_wires(): void { }
 	release_nodes(): void {
 		if (this.elm.consistent()) {
