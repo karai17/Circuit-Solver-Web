@@ -1198,7 +1198,7 @@ class ElementOptionsEditWindow {
         if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
             var index = -1;
             index = engine_functions.get_resistor(global.variables.selected_id);
-            if (index < resistors.length) {
+            if (index > -1 && index < resistors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1221,7 +1221,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
             var index = -1;
             index = engine_functions.get_capacitor(global.variables.selected_id);
-            if (index < capacitors.length) {
+            if (index > -1 && index < capacitors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1247,7 +1247,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
             var index = -1;
             index = engine_functions.get_inductor(global.variables.selected_id);
-            if (index < inductors.length) {
+            if (index > -1 && index < inductors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1273,7 +1273,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
             var index = -1;
             index = engine_functions.get_ground(global.variables.selected_id);
-            if (index < grounds.length) {
+            if (index > -1 && index < grounds.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1296,7 +1296,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
             var index = -1;
             index = engine_functions.get_dcsource(global.variables.selected_id);
-            if (index < dcsources.length) {
+            if (index > -1 && index < dcsources.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1319,7 +1319,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
             var index = -1;
             index = engine_functions.get_dccurrent(global.variables.selected_id);
-            if (index < dccurrents.length) {
+            if (index > -1 && index < dccurrents.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1342,7 +1342,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
             var index = -1;
             index = engine_functions.get_acsource(global.variables.selected_id);
-            if (index < acsources.length) {
+            if (index > -1 && index < acsources.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1365,7 +1365,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
             var index = -1;
             index = engine_functions.get_accurrent(global.variables.selected_id);
-            if (index < accurrents.length) {
+            if (index > -1 && index < accurrents.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1388,7 +1388,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
             var index = -1;
             index = engine_functions.get_squarewave(global.variables.selected_id);
-            if (index < squarewaves.length) {
+            if (index > -1 && index < squarewaves.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1411,7 +1411,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
             var index = -1;
             index = engine_functions.get_sawwave(global.variables.selected_id);
-            if (index < sawwaves.length) {
+            if (index > -1 && index < sawwaves.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1434,7 +1434,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
             var index = -1;
             index = engine_functions.get_trianglewave(global.variables.selected_id);
-            if (index < trianglewaves.length) {
+            if (index > -1 && index < trianglewaves.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1457,7 +1457,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
             var index = -1;
             index = engine_functions.get_constant(global.variables.selected_id);
-            if (index < constants.length) {
+            if (index > -1 && index < constants.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1480,7 +1480,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
             var index = -1;
             index = engine_functions.get_net(global.variables.selected_id);
-            if (index < nets.length) {
+            if (index > -1 && index < nets.length) {
                 //@ts-expect-error
                 var value = global.utils.copy(this.input_button.text);
                 //@ts-expect-error
@@ -1492,7 +1492,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
             var index = -1;
             index = engine_functions.get_note(global.variables.selected_id);
-            if (index < notes.length) {
+            if (index > -1 && index < notes.length) {
                 //@ts-expect-error
                 var value = global.utils.copy(this.input_button.text);
                 //@ts-expect-error
@@ -1504,7 +1504,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
             var index = -1;
             index = engine_functions.get_rail(global.variables.selected_id);
-            if (index < rails.length) {
+            if (index > -1 && index < rails.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1527,7 +1527,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
             var index = -1;
             index = engine_functions.get_voltmeter(global.variables.selected_id);
-            if (index < voltmeters.length) {
+            if (index > -1 && index < voltmeters.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1550,7 +1550,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
             var index = -1;
             index = engine_functions.get_ohmmeter(global.variables.selected_id);
-            if (index < ohmmeters.length) {
+            if (index > -1 && index < ohmmeters.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1573,7 +1573,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
             var index = -1;
             index = engine_functions.get_ammeter(global.variables.selected_id);
-            if (index < ammeters.length) {
+            if (index > -1 && index < ammeters.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1596,7 +1596,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
             var index = -1;
             index = engine_functions.get_wattmeter(global.variables.selected_id);
-            if (index < wattmeters.length) {
+            if (index > -1 && index < wattmeters.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1619,7 +1619,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
             var index = -1;
             index = engine_functions.get_fuse(global.variables.selected_id);
-            if (index < fuses.length) {
+            if (index > -1 && index < fuses.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1642,7 +1642,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
             var index = -1;
             index = engine_functions.get_spst(global.variables.selected_id);
-            if (index < spsts.length) {
+            if (index > -1 && index < spsts.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1665,7 +1665,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
             var index = -1;
             index = engine_functions.get_spdt(global.variables.selected_id);
-            if (index < spdts.length) {
+            if (index > -1 && index < spdts.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1688,7 +1688,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
             var index = -1;
             index = engine_functions.get_not(global.variables.selected_id);
-            if (index < nots.length) {
+            if (index > -1 && index < nots.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1711,7 +1711,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
             var index = -1;
             index = engine_functions.get_diode(global.variables.selected_id);
-            if (index < diodes.length) {
+            if (index > -1 && index < diodes.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1734,7 +1734,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
             var index = -1;
             index = engine_functions.get_led(global.variables.selected_id);
-            if (index < leds.length) {
+            if (index > -1 && index < leds.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1757,7 +1757,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
             var index = -1;
             index = engine_functions.get_zener(global.variables.selected_id);
-            if (index < zeners.length) {
+            if (index > -1 && index < zeners.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1780,7 +1780,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
             var index = -1;
             index = engine_functions.get_potentiometer(global.variables.selected_id);
-            if (index < potentiometers.length) {
+            if (index > -1 && index < potentiometers.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1803,7 +1803,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
             var index = -1;
             index = engine_functions.get_and(global.variables.selected_id);
-            if (index < ands.length) {
+            if (index > -1 && index < ands.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1826,7 +1826,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
             var index = -1;
             index = engine_functions.get_or(global.variables.selected_id);
-            if (index < ors.length) {
+            if (index > -1 && index < ors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1849,7 +1849,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
             var index = -1;
             index = engine_functions.get_nand(global.variables.selected_id);
-            if (index < nands.length) {
+            if (index > -1 && index < nands.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1872,7 +1872,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
             var index = -1;
             index = engine_functions.get_nor(global.variables.selected_id);
-            if (index < nors.length) {
+            if (index > -1 && index < nors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1895,7 +1895,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
             var index = -1;
             index = engine_functions.get_xor(global.variables.selected_id);
-            if (index < xors.length) {
+            if (index > -1 && index < xors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1918,7 +1918,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
             var index = -1;
             index = engine_functions.get_xnor(global.variables.selected_id);
-            if (index < xnors.length) {
+            if (index > -1 && index < xnors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1941,7 +1941,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
             var index = -1;
             index = engine_functions.get_dff(global.variables.selected_id);
-            if (index < dffs.length) {
+            if (index > -1 && index < dffs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1964,7 +1964,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
             var index = -1;
             index = engine_functions.get_vsat(global.variables.selected_id);
-            if (index < vsats.length) {
+            if (index > -1 && index < vsats.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -1987,7 +1987,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
             var index = -1;
             index = engine_functions.get_adder(global.variables.selected_id);
-            if (index < adders.length) {
+            if (index > -1 && index < adders.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2010,7 +2010,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
             var index = -1;
             index = engine_functions.get_subtractor(global.variables.selected_id);
-            if (index < subtractors.length) {
+            if (index > -1 && index < subtractors.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2033,7 +2033,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
             var index = -1;
             index = engine_functions.get_multiplier(global.variables.selected_id);
-            if (index < multipliers.length) {
+            if (index > -1 && index < multipliers.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2056,7 +2056,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
             var index = -1;
             index = engine_functions.get_divider(global.variables.selected_id);
-            if (index < dividers.length) {
+            if (index > -1 && index < dividers.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2079,7 +2079,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
             var index = -1;
             index = engine_functions.get_gain(global.variables.selected_id);
-            if (index < gains.length) {
+            if (index > -1 && index < gains.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2102,7 +2102,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
             var index = -1;
             index = engine_functions.get_absval(global.variables.selected_id);
-            if (index < absvals.length) {
+            if (index > -1 && index < absvals.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2125,7 +2125,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
             var index = -1;
             index = engine_functions.get_vcsw(global.variables.selected_id);
-            if (index < vcsws.length) {
+            if (index > -1 && index < vcsws.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2148,7 +2148,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
             var index = -1;
             index = engine_functions.get_vcvs(global.variables.selected_id);
-            if (index < vcvss.length) {
+            if (index > -1 && index < vcvss.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2171,7 +2171,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
             var index = -1;
             index = engine_functions.get_vccs(global.variables.selected_id);
-            if (index < vccss.length) {
+            if (index > -1 && index < vccss.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2194,7 +2194,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
             var index = -1;
             index = engine_functions.get_cccs(global.variables.selected_id);
-            if (index < cccss.length) {
+            if (index > -1 && index < cccss.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2217,7 +2217,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
             var index = -1;
             index = engine_functions.get_ccvs(global.variables.selected_id);
-            if (index < ccvss.length) {
+            if (index > -1 && index < ccvss.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2240,7 +2240,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
             var index = -1;
             index = engine_functions.get_opamp(global.variables.selected_id);
-            if (index < opamps.length) {
+            if (index > -1 && index < opamps.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2263,7 +2263,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
             var index = -1;
             index = engine_functions.get_nmosfet(global.variables.selected_id);
-            if (index < nmosfets.length) {
+            if (index > -1 && index < nmosfets.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2286,7 +2286,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
             var index = -1;
             index = engine_functions.get_pmosfet(global.variables.selected_id);
-            if (index < pmosfets.length) {
+            if (index > -1 && index < pmosfets.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2309,7 +2309,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
             var index = -1;
             index = engine_functions.get_npn(global.variables.selected_id);
-            if (index < npns.length) {
+            if (index > -1 && index < npns.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2332,7 +2332,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
             var index = -1;
             index = engine_functions.get_pnp(global.variables.selected_id);
-            if (index < pnps.length) {
+            if (index > -1 && index < pnps.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2355,7 +2355,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
             var index = -1;
             index = engine_functions.get_adc(global.variables.selected_id);
-            if (index < adcs.length) {
+            if (index > -1 && index < adcs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2378,7 +2378,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
             var index = -1;
             index = engine_functions.get_dac(global.variables.selected_id);
-            if (index < dacs.length) {
+            if (index > -1 && index < dacs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2401,7 +2401,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
             var index = -1;
             index = engine_functions.get_samplers(global.variables.selected_id);
-            if (index < sandhs.length) {
+            if (index > -1 && index < sandhs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2424,7 +2424,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
             var index = -1;
             index = engine_functions.get_pwm(global.variables.selected_id);
-            if (index < pwms.length) {
+            if (index > -1 && index < pwms.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2447,7 +2447,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
             var index = -1;
             index = engine_functions.get_integrator(global.variables.selected_id);
-            if (index < integrators.length) {
+            if (index > -1 && index < integrators.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2470,7 +2470,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
             var index = -1;
             index = engine_functions.get_differentiator(global.variables.selected_id);
-            if (index < differentiators.length) {
+            if (index > -1 && index < differentiators.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2493,7 +2493,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
             var index = -1;
             index = engine_functions.get_lowpass(global.variables.selected_id);
-            if (index < lowpasses.length) {
+            if (index > -1 && index < lowpasses.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2516,7 +2516,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
             var index = -1;
             index = engine_functions.get_highpass(global.variables.selected_id);
-            if (index < highpasses.length) {
+            if (index > -1 && index < highpasses.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2539,7 +2539,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
             var index = -1;
             index = engine_functions.get_relay(global.variables.selected_id);
-            if (index < relays.length) {
+            if (index > -1 && index < relays.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2565,7 +2565,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
             var index = -1;
             index = engine_functions.get_pid(global.variables.selected_id);
-            if (index < pids.length) {
+            if (index > -1 && index < pids.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2588,7 +2588,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
             var index = -1;
             index = engine_functions.get_lut(global.variables.selected_id);
-            if (index < luts.length) {
+            if (index > -1 && index < luts.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2611,7 +2611,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
             var index = -1;
             index = engine_functions.get_vcr(global.variables.selected_id);
-            if (index < vcrs.length) {
+            if (index > -1 && index < vcrs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2634,7 +2634,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
             var index = -1;
             index = engine_functions.get_vcca(global.variables.selected_id);
-            if (index < vccas.length) {
+            if (index > -1 && index < vccas.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2657,7 +2657,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
             var index = -1;
             index = engine_functions.get_vcl(global.variables.selected_id);
-            if (index < vcls.length) {
+            if (index > -1 && index < vcls.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2680,7 +2680,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
             var index = -1;
             index = engine_functions.get_grt(global.variables.selected_id);
-            if (index < grts.length) {
+            if (index > -1 && index < grts.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2703,7 +2703,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
             var index = -1;
             index = engine_functions.get_tptz(global.variables.selected_id);
-            if (index < tptzs.length) {
+            if (index > -1 && index < tptzs.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&
@@ -2726,7 +2726,7 @@ class ElementOptionsEditWindow {
         else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
             var index = -1;
             index = engine_functions.get_transformer(global.variables.selected_id);
-            if (index < transformers.length) {
+            if (index > -1 && index < transformers.length) {
                 var value = string_operator.parse(this.input_button.text);
                 if (Math.abs(value) === 0 ||
                     (Math.abs(value) >= Math.abs(global.variables.selected_properties['option_limits'][global.variables.selected_properties['options'][this.option_index]][global.PROPERTY.PROPERTY_LIMIT_MIN]) &&

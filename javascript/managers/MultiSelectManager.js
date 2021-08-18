@@ -548,7 +548,7 @@ class MultiSelectManager {
         }
     }
     mouse_down() {
-        if (this.multi_select_input_conditions()) {
+        if (this.multi_select_input_conditions() && !global.flags.flag_history_lock) {
             this.mouse_down_flag = true;
             if (this.ctrl_pressed_started) {
                 this.multi_select = true;
@@ -595,6 +595,16 @@ class MultiSelectManager {
         this.delta_last_dy = 0;
         this.elements_moved = true;
         this.delta_latch = true;
+        this.select_x = global.variables.mouse_x;
+        this.select_y = global.variables.mouse_y;
+        this.multi_select_bounds.left = global.variables.mouse_x;
+        this.multi_select_bounds.top = global.variables.mouse_y;
+        this.multi_select_bounds.right = global.variables.mouse_x;
+        this.multi_select_bounds.bottom = global.variables.mouse_y;
+        this.selected_components_bounds.left = -this.OFFSCREEN_X;
+        this.selected_components_bounds.top = -this.OFFSCREEN_Y;
+        this.selected_components_bounds.right = this.OFFSCREEN_X + 1;
+        this.selected_components_bounds.bottom = this.OFFSCREEN_Y + 1;
     }
     mouse_move() {
         if (this.multi_select_input_conditions()) {
@@ -602,7 +612,7 @@ class MultiSelectManager {
                 if (Math.abs(global.variables.mouse_x - this.select_x) > global.variables.node_space_x || Math.abs(global.variables.mouse_y - this.select_y) > global.variables.node_space_y) {
                     this.ctrl_pressed = true;
                 }
-                if (global.variables.component_translating) {
+                if (global.variables.component_translating || this.is_paste_operation) {
                     this.ctrl_pressed = false;
                     this.ctrl_pressed_started = false;
                     this.mouse_down_flag = false;
@@ -625,7 +635,7 @@ class MultiSelectManager {
                 }
             }
         }
-        if (this.ctrl_pressed) {
+        if (this.ctrl_pressed && !this.is_paste_operation) {
             if (global.variables.mouse_x >= this.select_x) {
                 this.multi_select_bounds.left = this.select_x;
                 this.multi_select_bounds.right = global.variables.mouse_x;

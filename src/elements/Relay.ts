@@ -172,8 +172,8 @@ class Relay {
 			this.elm.properties['Transient Voltage'] =
 				voltage -
 				this.elm.properties['Coil Resistance'] *
-				(this.elm.properties['Equivalent Current'] / (1.0 + this.elm.properties['Coil Resistance'] / this.elm.properties['Transient Resistance']) +
-					voltage / (this.elm.properties['Transient Resistance'] + this.elm.properties['Coil Resistance']));
+					(this.elm.properties['Equivalent Current'] / (1.0 + this.elm.properties['Coil Resistance'] / this.elm.properties['Transient Resistance']) +
+						voltage / (this.elm.properties['Transient Resistance'] + this.elm.properties['Coil Resistance']));
 			this.elm.properties['Transient Current'] = voltage / this.elm.properties['Transient Resistance'] + this.elm.properties['Equivalent Current'];
 			this.elm.properties['Equivalent Current'] = this.elm.properties['Transient Voltage'] / this.elm.properties['Transient Resistance'] + this.elm.properties['Transient Current'];
 		}
@@ -293,7 +293,11 @@ class Relay {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -547,7 +551,7 @@ class Relay {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {

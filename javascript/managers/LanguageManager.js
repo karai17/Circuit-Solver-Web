@@ -286,6 +286,16 @@ class LanguageManager {
             German: 'Kopiert',
             Indonesian: 'Disalin'
         };
+        this.COPIED_SELECTION = {
+            English: 'Copied Selection',
+            Spanish: 'Selección copiada',
+            French: 'Sélection copiée',
+            Italian: 'Selezione copiata',
+            Dutch: 'Gekopieerde selectie',
+            Russian: 'Скопированный выбор',
+            German: 'Kopierte Auswahl',
+            Indonesian: 'Pilihan yang Disalin'
+        };
         this.CANNOT_COPY_WIRE = {
             English: 'Wires cannot be copied',
             Spanish: 'Los cables no se pueden copiar',

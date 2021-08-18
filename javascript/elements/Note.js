@@ -58,8 +58,8 @@ class Note {
         this.indexer = 0;
         this.m_x = 0;
         this.m_y = 0;
-        this.c_x = 0;
-        this.c_y = 0;
+        this.c_x = this.bounds.get_center_x();
+        this.c_y = this.bounds.get_center_y();
         this.initialized = true;
         this.multi_selected = false;
         this.line_buffer = [];

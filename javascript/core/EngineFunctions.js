@@ -3415,7 +3415,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         resistors.push(new Resistor(global.ELEMENT_TYPES.TYPE_RESISTOR, engine_functions.get_resistor_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = resistors.length - 1;
-        if (index < resistors.length) {
+        if (index > -1 && index < resistors.length) {
             resistors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = resistors[index].elm.id;
@@ -3437,7 +3437,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         capacitors.push(new Capacitor(global.ELEMENT_TYPES.TYPE_CAPACITOR, engine_functions.get_capacitor_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = capacitors.length - 1;
-        if (index < capacitors.length) {
+        if (index > -1 && index < capacitors.length) {
             capacitors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = capacitors[index].elm.id;
@@ -3459,7 +3459,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         inductors.push(new Inductor(global.ELEMENT_TYPES.TYPE_INDUCTOR, engine_functions.get_inductor_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = inductors.length - 1;
-        if (index < inductors.length) {
+        if (index > -1 && index < inductors.length) {
             inductors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = inductors[index].elm.id;
@@ -3478,7 +3478,7 @@ class EngineFunctions {
         this.mapper1.map_node1(p1[0], p1[1]);
         grounds.push(new Ground(global.ELEMENT_TYPES.TYPE_GROUND, engine_functions.get_ground_assignment(), this.mapper1.n1));
         var index = grounds.length - 1;
-        if (index < grounds.length) {
+        if (index > -1 && index < grounds.length) {
             grounds[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = grounds[index].elm.id;
@@ -3500,7 +3500,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         dcsources.push(new DCSource(global.ELEMENT_TYPES.TYPE_DCSOURCE, engine_functions.get_dcsource_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = dcsources.length - 1;
-        if (index < dcsources.length) {
+        if (index > -1 && index < dcsources.length) {
             dcsources[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = dcsources[index].elm.id;
@@ -3522,7 +3522,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         dccurrents.push(new DCCurrent(global.ELEMENT_TYPES.TYPE_DCCURRENT, engine_functions.get_dccurrent_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = dccurrents.length - 1;
-        if (index < dccurrents.length) {
+        if (index > -1 && index < dccurrents.length) {
             dccurrents[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = dccurrents[index].elm.id;
@@ -3544,7 +3544,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         acsources.push(new ACSource(global.ELEMENT_TYPES.TYPE_ACSOURCE, engine_functions.get_acsource_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = acsources.length - 1;
-        if (index < acsources.length) {
+        if (index > -1 && index < acsources.length) {
             acsources[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = acsources[index].elm.id;
@@ -3566,7 +3566,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         accurrents.push(new ACCurrent(global.ELEMENT_TYPES.TYPE_ACCURRENT, engine_functions.get_accurrent_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = accurrents.length - 1;
-        if (index < accurrents.length) {
+        if (index > -1 && index < accurrents.length) {
             accurrents[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = accurrents[index].elm.id;
@@ -3588,7 +3588,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         squarewaves.push(new SquareWave(global.ELEMENT_TYPES.TYPE_SQUAREWAVE, engine_functions.get_squarewave_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = squarewaves.length - 1;
-        if (index < squarewaves.length) {
+        if (index > -1 && index < squarewaves.length) {
             squarewaves[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = squarewaves[index].elm.id;
@@ -3610,7 +3610,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         sawwaves.push(new SawWave(global.ELEMENT_TYPES.TYPE_SAW, engine_functions.get_sawwave_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = sawwaves.length - 1;
-        if (index < sawwaves.length) {
+        if (index > -1 && index < sawwaves.length) {
             sawwaves[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = sawwaves[index].elm.id;
@@ -3632,7 +3632,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         trianglewaves.push(new TriangleWave(global.ELEMENT_TYPES.TYPE_TRI, engine_functions.get_trianglewave_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = trianglewaves.length - 1;
-        if (index < trianglewaves.length) {
+        if (index > -1 && index < trianglewaves.length) {
             trianglewaves[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = trianglewaves[index].elm.id;
@@ -3651,7 +3651,7 @@ class EngineFunctions {
         this.mapper1.map_node1(p1[0], p1[1]);
         constants.push(new Constant(global.ELEMENT_TYPES.TYPE_CONSTANT, engine_functions.get_constant_assignment(), this.mapper1.n1));
         var index = constants.length - 1;
-        if (index < constants.length) {
+        if (index > -1 && index < constants.length) {
             constants[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = constants[index].elm.id;
@@ -3670,7 +3670,7 @@ class EngineFunctions {
         this.mapper1.map_node1(p1[0], p1[1]);
         nets.push(new Net(global.ELEMENT_TYPES.TYPE_NET, engine_functions.get_net_assignment(), this.mapper1.n1));
         var index = nets.length - 1;
-        if (index < nets.length) {
+        if (index > -1 && index < nets.length) {
             nets[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = nets[index].elm.id;
@@ -3689,7 +3689,7 @@ class EngineFunctions {
         this.mapper1.map_node1(p1[0], p1[1]);
         notes.push(new Note(global.ELEMENT_TYPES.TYPE_NOTE, engine_functions.get_note_assignment(), this.mapper1.n1));
         var index = notes.length - 1;
-        if (index < notes.length) {
+        if (index > -1 && index < notes.length) {
             notes[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = notes[index].elm.id;
@@ -3708,7 +3708,7 @@ class EngineFunctions {
         this.mapper1.map_node1(p1[0], p1[1]);
         rails.push(new Rail(global.ELEMENT_TYPES.TYPE_RAIL, engine_functions.get_rail_assignment(), this.mapper1.n1));
         var index = rails.length - 1;
-        if (index < rails.length) {
+        if (index > -1 && index < rails.length) {
             rails[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = rails[index].elm.id;
@@ -3730,7 +3730,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         voltmeters.push(new VoltMeter(global.ELEMENT_TYPES.TYPE_VOLTMETER, engine_functions.get_voltmeter_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = voltmeters.length - 1;
-        if (index < voltmeters.length) {
+        if (index > -1 && index < voltmeters.length) {
             voltmeters[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = voltmeters[index].elm.id;
@@ -3752,7 +3752,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         ohmmeters.push(new OhmMeter(global.ELEMENT_TYPES.TYPE_OHMMETER, engine_functions.get_ohmmeter_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = ohmmeters.length - 1;
-        if (index < ohmmeters.length) {
+        if (index > -1 && index < ohmmeters.length) {
             ohmmeters[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = ohmmeters[index].elm.id;
@@ -3774,7 +3774,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         ammeters.push(new AmMeter(global.ELEMENT_TYPES.TYPE_AMMETER, engine_functions.get_ammeter_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = ammeters.length - 1;
-        if (index < ammeters.length) {
+        if (index > -1 && index < ammeters.length) {
             ammeters[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = ammeters[index].elm.id;
@@ -3799,7 +3799,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         wattmeters.push(new WattMeter(global.ELEMENT_TYPES.TYPE_WATTMETER, engine_functions.get_wattmeter_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = wattmeters.length - 1;
-        if (index < wattmeters.length) {
+        if (index > -1 && index < wattmeters.length) {
             wattmeters[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = wattmeters[index].elm.id;
@@ -3821,7 +3821,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         fuses.push(new Fuse(global.ELEMENT_TYPES.TYPE_FUSE, engine_functions.get_fuse_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = fuses.length - 1;
-        if (index < fuses.length) {
+        if (index > -1 && index < fuses.length) {
             fuses[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = fuses[index].elm.id;
@@ -3843,7 +3843,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         spsts.push(new SinglePoleSingleThrow(global.ELEMENT_TYPES.TYPE_SPST, engine_functions.get_spst_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = spsts.length - 1;
-        if (index < spsts.length) {
+        if (index > -1 && index < spsts.length) {
             spsts[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = spsts[index].elm.id;
@@ -3868,7 +3868,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         spdts.push(new SinglePoleDoubleThrow(global.ELEMENT_TYPES.TYPE_SPDT, engine_functions.get_spdt_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = spdts.length - 1;
-        if (index < spdts.length) {
+        if (index > -1 && index < spdts.length) {
             spdts[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = spdts[index].elm.id;
@@ -3890,7 +3890,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         nots.push(new NOTGate(global.ELEMENT_TYPES.TYPE_NOT, engine_functions.get_not_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = nots.length - 1;
-        if (index < nots.length) {
+        if (index > -1 && index < nots.length) {
             nots[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = nots[index].elm.id;
@@ -3912,7 +3912,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         diodes.push(new Diode(global.ELEMENT_TYPES.TYPE_DIODE, engine_functions.get_diode_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = diodes.length - 1;
-        if (index < diodes.length) {
+        if (index > -1 && index < diodes.length) {
             diodes[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = diodes[index].elm.id;
@@ -3934,7 +3934,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         leds.push(new LightEmittingDiode(global.ELEMENT_TYPES.TYPE_LED, engine_functions.get_led_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = leds.length - 1;
-        if (index < leds.length) {
+        if (index > -1 && index < leds.length) {
             leds[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = leds[index].elm.id;
@@ -3956,7 +3956,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         zeners.push(new ZenerDiode(global.ELEMENT_TYPES.TYPE_ZENER, engine_functions.get_zener_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = zeners.length - 1;
-        if (index < zeners.length) {
+        if (index > -1 && index < zeners.length) {
             zeners[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = zeners[index].elm.id;
@@ -3981,7 +3981,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         potentiometers.push(new Potentiometer(global.ELEMENT_TYPES.TYPE_POTENTIOMETER, engine_functions.get_potentiometer_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = potentiometers.length - 1;
-        if (index < potentiometers.length) {
+        if (index > -1 && index < potentiometers.length) {
             potentiometers[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = potentiometers[index].elm.id;
@@ -4006,7 +4006,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         ands.push(new ANDGate(global.ELEMENT_TYPES.TYPE_AND, engine_functions.get_and_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = ands.length - 1;
-        if (index < ands.length) {
+        if (index > -1 && index < ands.length) {
             ands[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = ands[index].elm.id;
@@ -4031,7 +4031,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         ors.push(new ORGate(global.ELEMENT_TYPES.TYPE_OR, engine_functions.get_or_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = ors.length - 1;
-        if (index < ors.length) {
+        if (index > -1 && index < ors.length) {
             ors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = ors[index].elm.id;
@@ -4056,7 +4056,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         nands.push(new NANDGate(global.ELEMENT_TYPES.TYPE_NAND, engine_functions.get_nand_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = nands.length - 1;
-        if (index < nands.length) {
+        if (index > -1 && index < nands.length) {
             nands[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = nands[index].elm.id;
@@ -4081,7 +4081,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         nors.push(new NORGate(global.ELEMENT_TYPES.TYPE_NOR, engine_functions.get_nor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = nors.length - 1;
-        if (index < nors.length) {
+        if (index > -1 && index < nors.length) {
             nors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = nors[index].elm.id;
@@ -4106,7 +4106,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         xors.push(new XORGate(global.ELEMENT_TYPES.TYPE_XOR, engine_functions.get_xor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = xors.length - 1;
-        if (index < xors.length) {
+        if (index > -1 && index < xors.length) {
             xors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = xors[index].elm.id;
@@ -4131,7 +4131,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         xnors.push(new XNORGate(global.ELEMENT_TYPES.TYPE_XNOR, engine_functions.get_xnor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = xnors.length - 1;
-        if (index < xnors.length) {
+        if (index > -1 && index < xnors.length) {
             xnors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = xnors[index].elm.id;
@@ -4159,7 +4159,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         dffs.push(new DFlipFlop(global.ELEMENT_TYPES.TYPE_DFF, engine_functions.get_dff_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = dffs.length - 1;
-        if (index < dffs.length) {
+        if (index > -1 && index < dffs.length) {
             dffs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = dffs[index].elm.id;
@@ -4181,7 +4181,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         vsats.push(new VoltageSaturation(global.ELEMENT_TYPES.TYPE_VSAT, engine_functions.get_vsat_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = vsats.length - 1;
-        if (index < vsats.length) {
+        if (index > -1 && index < vsats.length) {
             vsats[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vsats[index].elm.id;
@@ -4206,7 +4206,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         adders.push(new Adder(global.ELEMENT_TYPES.TYPE_ADD, engine_functions.get_adder_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = adders.length - 1;
-        if (index < adders.length) {
+        if (index > -1 && index < adders.length) {
             adders[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = adders[index].elm.id;
@@ -4231,7 +4231,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         subtractors.push(new Subtractor(global.ELEMENT_TYPES.TYPE_SUB, engine_functions.get_subtractor_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = subtractors.length - 1;
-        if (index < subtractors.length) {
+        if (index > -1 && index < subtractors.length) {
             subtractors[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = subtractors[index].elm.id;
@@ -4256,7 +4256,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         multipliers.push(new Multiplier(global.ELEMENT_TYPES.TYPE_MUL, engine_functions.get_multiplier_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = multipliers.length - 1;
-        if (index < multipliers.length) {
+        if (index > -1 && index < multipliers.length) {
             multipliers[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = multipliers[index].elm.id;
@@ -4281,7 +4281,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         dividers.push(new Divider(global.ELEMENT_TYPES.TYPE_DIV, engine_functions.get_divider_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = dividers.length - 1;
-        if (index < dividers.length) {
+        if (index > -1 && index < dividers.length) {
             dividers[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = dividers[index].elm.id;
@@ -4303,7 +4303,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         gains.push(new GainBlock(global.ELEMENT_TYPES.TYPE_GAIN, engine_functions.get_gain_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = gains.length - 1;
-        if (index < gains.length) {
+        if (index > -1 && index < gains.length) {
             gains[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = gains[index].elm.id;
@@ -4325,7 +4325,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         absvals.push(new AbsoluteValue(global.ELEMENT_TYPES.TYPE_ABS, engine_functions.get_absval_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = absvals.length - 1;
-        if (index < absvals.length) {
+        if (index > -1 && index < absvals.length) {
             absvals[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = absvals[index].elm.id;
@@ -4350,7 +4350,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         vcsws.push(new VoltageControlledSwitch(global.ELEMENT_TYPES.TYPE_VCSW, engine_functions.get_vcsw_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = vcsws.length - 1;
-        if (index < vcsws.length) {
+        if (index > -1 && index < vcsws.length) {
             vcsws[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vcsws[index].elm.id;
@@ -4378,7 +4378,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         vcvss.push(new VoltageControlledVoltageSource(global.ELEMENT_TYPES.TYPE_VCVS, engine_functions.get_vcvs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = vcvss.length - 1;
-        if (index < vcvss.length) {
+        if (index > -1 && index < vcvss.length) {
             vcvss[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vcvss[index].elm.id;
@@ -4406,7 +4406,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         vccss.push(new VoltageControlledCurrentSource(global.ELEMENT_TYPES.TYPE_VCCS, engine_functions.get_vccs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = vccss.length - 1;
-        if (index < vccss.length) {
+        if (index > -1 && index < vccss.length) {
             vccss[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vccss[index].elm.id;
@@ -4434,7 +4434,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         cccss.push(new CurrentControlledCurrentSource(global.ELEMENT_TYPES.TYPE_CCCS, engine_functions.get_cccs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = cccss.length - 1;
-        if (index < cccss.length) {
+        if (index > -1 && index < cccss.length) {
             cccss[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = cccss[index].elm.id;
@@ -4462,7 +4462,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         ccvss.push(new CurrentControlledVoltageSource(global.ELEMENT_TYPES.TYPE_CCVS, engine_functions.get_ccvs_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = ccvss.length - 1;
-        if (index < ccvss.length) {
+        if (index > -1 && index < ccvss.length) {
             ccvss[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = ccvss[index].elm.id;
@@ -4487,7 +4487,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         opamps.push(new OperationalAmplifier(global.ELEMENT_TYPES.TYPE_OPAMP, engine_functions.get_opamp_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = opamps.length - 1;
-        if (index < opamps.length) {
+        if (index > -1 && index < opamps.length) {
             opamps[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = opamps[index].elm.id;
@@ -4512,7 +4512,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         nmosfets.push(new NChannelMOSFET(global.ELEMENT_TYPES.TYPE_NMOS, engine_functions.get_nmosfet_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = nmosfets.length - 1;
-        if (index < nmosfets.length) {
+        if (index > -1 && index < nmosfets.length) {
             nmosfets[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = nmosfets[index].elm.id;
@@ -4537,7 +4537,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         pmosfets.push(new PChannelMOSFET(global.ELEMENT_TYPES.TYPE_PMOS, engine_functions.get_pmosfet_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = pmosfets.length - 1;
-        if (index < pmosfets.length) {
+        if (index > -1 && index < pmosfets.length) {
             pmosfets[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = pmosfets[index].elm.id;
@@ -4562,7 +4562,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         npns.push(new NPNBipolarJunctionTransistor(global.ELEMENT_TYPES.TYPE_NPN, engine_functions.get_npn_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = npns.length - 1;
-        if (index < npns.length) {
+        if (index > -1 && index < npns.length) {
             npns[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = npns[index].elm.id;
@@ -4587,7 +4587,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         pnps.push(new PNPBipolarJunctionTransistor(global.ELEMENT_TYPES.TYPE_PNP, engine_functions.get_pnp_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = pnps.length - 1;
-        if (index < pnps.length) {
+        if (index > -1 && index < pnps.length) {
             pnps[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = pnps[index].elm.id;
@@ -4609,7 +4609,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         adcs.push(new ADCModule(global.ELEMENT_TYPES.TYPE_ADC, engine_functions.get_adc_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = adcs.length - 1;
-        if (index < adcs.length) {
+        if (index > -1 && index < adcs.length) {
             adcs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = adcs[index].elm.id;
@@ -4631,7 +4631,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         dacs.push(new DACModule(global.ELEMENT_TYPES.TYPE_DAC, engine_functions.get_dac_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = dacs.length - 1;
-        if (index < dacs.length) {
+        if (index > -1 && index < dacs.length) {
             dacs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = dacs[index].elm.id;
@@ -4656,7 +4656,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         sandhs.push(new SampleAndHold(global.ELEMENT_TYPES.TYPE_SAH, engine_functions.get_samplers_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = sandhs.length - 1;
-        if (index < sandhs.length) {
+        if (index > -1 && index < sandhs.length) {
             sandhs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = sandhs[index].elm.id;
@@ -4681,7 +4681,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         pwms.push(new PulseWidthModulator(global.ELEMENT_TYPES.TYPE_PWM, engine_functions.get_pwm_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = pwms.length - 1;
-        if (index < pwms.length) {
+        if (index > -1 && index < pwms.length) {
             pwms[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = pwms[index].elm.id;
@@ -4703,7 +4703,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         integrators.push(new IntegratorModule(global.ELEMENT_TYPES.TYPE_INTEGRATOR, engine_functions.get_integrator_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = integrators.length - 1;
-        if (index < integrators.length) {
+        if (index > -1 && index < integrators.length) {
             integrators[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = integrators[index].elm.id;
@@ -4725,7 +4725,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         differentiators.push(new DifferentiatorModule(global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR, engine_functions.get_differentiator_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = differentiators.length - 1;
-        if (index < differentiators.length) {
+        if (index > -1 && index < differentiators.length) {
             differentiators[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = differentiators[index].elm.id;
@@ -4747,7 +4747,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         lowpasses.push(new LowPassFilter(global.ELEMENT_TYPES.TYPE_LPF, engine_functions.get_lowpass_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = lowpasses.length - 1;
-        if (index < lowpasses.length) {
+        if (index > -1 && index < lowpasses.length) {
             lowpasses[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = lowpasses[index].elm.id;
@@ -4769,7 +4769,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         highpasses.push(new HighPassFilter(global.ELEMENT_TYPES.TYPE_HPF, engine_functions.get_highpass_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = highpasses.length - 1;
-        if (index < highpasses.length) {
+        if (index > -1 && index < highpasses.length) {
             highpasses[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = highpasses[index].elm.id;
@@ -4797,7 +4797,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         relays.push(new Relay(global.ELEMENT_TYPES.TYPE_REL, engine_functions.get_relay_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = relays.length - 1;
-        if (index < relays.length) {
+        if (index > -1 && index < relays.length) {
             relays[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = relays[index].elm.id;
@@ -4822,7 +4822,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         pids.push(new PIDModule(global.ELEMENT_TYPES.TYPE_PID, engine_functions.get_pid_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = pids.length - 1;
-        if (index < pids.length) {
+        if (index > -1 && index < pids.length) {
             pids[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = pids[index].elm.id;
@@ -4844,7 +4844,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         luts.push(new LookUpTable(global.ELEMENT_TYPES.TYPE_LUT, engine_functions.get_lut_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = luts.length - 1;
-        if (index < luts.length) {
+        if (index > -1 && index < luts.length) {
             luts[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = luts[index].elm.id;
@@ -4869,7 +4869,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         vcrs.push(new VoltageControlledResistor(global.ELEMENT_TYPES.TYPE_VCR, engine_functions.get_vcr_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = vcrs.length - 1;
-        if (index < vcrs.length) {
+        if (index > -1 && index < vcrs.length) {
             vcrs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vcrs[index].elm.id;
@@ -4894,7 +4894,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         vccas.push(new VoltageControlledCapacitor(global.ELEMENT_TYPES.TYPE_VCCA, engine_functions.get_vcca_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = vccas.length - 1;
-        if (index < vccas.length) {
+        if (index > -1 && index < vccas.length) {
             vccas[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vccas[index].elm.id;
@@ -4919,7 +4919,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         vcls.push(new VoltageControlledInductor(global.ELEMENT_TYPES.TYPE_VCL, engine_functions.get_vcl_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = vcls.length - 1;
-        if (index < vcls.length) {
+        if (index > -1 && index < vcls.length) {
             vcls[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = vcls[index].elm.id;
@@ -4944,7 +4944,7 @@ class EngineFunctions {
         this.mapper3.map_node3(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
         grts.push(new GreaterThan(global.ELEMENT_TYPES.TYPE_GRT, engine_functions.get_grt_assignment(), this.mapper3.n1, this.mapper3.n2, this.mapper3.n3));
         var index = grts.length - 1;
-        if (index < grts.length) {
+        if (index > -1 && index < grts.length) {
             grts[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = grts[index].elm.id;
@@ -4966,7 +4966,7 @@ class EngineFunctions {
         this.mapper2.map_node2(p1[0], p1[1], p2[0], p2[1]);
         tptzs.push(new TPTZModule(global.ELEMENT_TYPES.TYPE_TPTZ, engine_functions.get_tptz_assignment(), this.mapper2.n1, this.mapper2.n2));
         var index = tptzs.length - 1;
-        if (index < tptzs.length) {
+        if (index > -1 && index < tptzs.length) {
             tptzs[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = tptzs[index].elm.id;
@@ -4994,7 +4994,7 @@ class EngineFunctions {
         this.mapper4.map_node4(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1], p4[0], p4[1]);
         transformers.push(new Transformer(global.ELEMENT_TYPES.TYPE_TRAN, engine_functions.get_transformer_assignment(), this.mapper4.n1, this.mapper4.n2, this.mapper4.n3, this.mapper4.n4));
         var index = transformers.length - 1;
-        if (index < transformers.length) {
+        if (index > -1 && index < transformers.length) {
             transformers[index].is_translating = false;
             global.flags.flag_build_element = true;
             global.variables.focused_id = transformers[index].elm.id;
@@ -8460,7 +8460,7 @@ class EngineFunctions {
     /* #INSERT_GENERATE_REMOVE_ELEMENTS# */
     /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
     remove_resistor(index) {
-        if (index < resistors.length) {
+        if (index > -1 && index < resistors.length) {
             resistors[index].release_wires();
             resistors[index].release_nodes();
             resistors[index].remove_focus();
@@ -8472,7 +8472,7 @@ class EngineFunctions {
         }
     }
     remove_capacitor(index) {
-        if (index < capacitors.length) {
+        if (index > -1 && index < capacitors.length) {
             capacitors[index].release_wires();
             capacitors[index].release_nodes();
             capacitors[index].remove_focus();
@@ -8484,7 +8484,7 @@ class EngineFunctions {
         }
     }
     remove_inductor(index) {
-        if (index < inductors.length) {
+        if (index > -1 && index < inductors.length) {
             inductors[index].release_wires();
             inductors[index].release_nodes();
             inductors[index].remove_focus();
@@ -8496,7 +8496,7 @@ class EngineFunctions {
         }
     }
     remove_ground(index) {
-        if (index < grounds.length) {
+        if (index > -1 && index < grounds.length) {
             grounds[index].release_wires();
             grounds[index].release_nodes();
             grounds[index].remove_focus();
@@ -8508,7 +8508,7 @@ class EngineFunctions {
         }
     }
     remove_dcsource(index) {
-        if (index < dcsources.length) {
+        if (index > -1 && index < dcsources.length) {
             dcsources[index].release_wires();
             dcsources[index].release_nodes();
             dcsources[index].remove_focus();
@@ -8520,7 +8520,7 @@ class EngineFunctions {
         }
     }
     remove_dccurrent(index) {
-        if (index < dccurrents.length) {
+        if (index > -1 && index < dccurrents.length) {
             dccurrents[index].release_wires();
             dccurrents[index].release_nodes();
             dccurrents[index].remove_focus();
@@ -8532,7 +8532,7 @@ class EngineFunctions {
         }
     }
     remove_acsource(index) {
-        if (index < acsources.length) {
+        if (index > -1 && index < acsources.length) {
             acsources[index].release_wires();
             acsources[index].release_nodes();
             acsources[index].remove_focus();
@@ -8544,7 +8544,7 @@ class EngineFunctions {
         }
     }
     remove_accurrent(index) {
-        if (index < accurrents.length) {
+        if (index > -1 && index < accurrents.length) {
             accurrents[index].release_wires();
             accurrents[index].release_nodes();
             accurrents[index].remove_focus();
@@ -8556,7 +8556,7 @@ class EngineFunctions {
         }
     }
     remove_squarewave(index) {
-        if (index < squarewaves.length) {
+        if (index > -1 && index < squarewaves.length) {
             squarewaves[index].release_wires();
             squarewaves[index].release_nodes();
             squarewaves[index].remove_focus();
@@ -8568,7 +8568,7 @@ class EngineFunctions {
         }
     }
     remove_sawwave(index) {
-        if (index < sawwaves.length) {
+        if (index > -1 && index < sawwaves.length) {
             sawwaves[index].release_wires();
             sawwaves[index].release_nodes();
             sawwaves[index].remove_focus();
@@ -8580,7 +8580,7 @@ class EngineFunctions {
         }
     }
     remove_trianglewave(index) {
-        if (index < trianglewaves.length) {
+        if (index > -1 && index < trianglewaves.length) {
             trianglewaves[index].release_wires();
             trianglewaves[index].release_nodes();
             trianglewaves[index].remove_focus();
@@ -8592,7 +8592,7 @@ class EngineFunctions {
         }
     }
     remove_constant(index) {
-        if (index < constants.length) {
+        if (index > -1 && index < constants.length) {
             constants[index].release_wires();
             constants[index].release_nodes();
             constants[index].remove_focus();
@@ -8604,7 +8604,7 @@ class EngineFunctions {
         }
     }
     remove_wire(index) {
-        if (index < wires.length) {
+        if (index > -1 && index < wires.length) {
             wires[index].release_wires();
             wires[index].release_nodes();
             wires[index].remove_focus();
@@ -8616,7 +8616,7 @@ class EngineFunctions {
         }
     }
     remove_net(index) {
-        if (index < nets.length) {
+        if (index > -1 && index < nets.length) {
             nets[index].release_wires();
             nets[index].release_nodes();
             nets[index].remove_focus();
@@ -8628,7 +8628,7 @@ class EngineFunctions {
         }
     }
     remove_note(index) {
-        if (index < notes.length) {
+        if (index > -1 && index < notes.length) {
             notes[index].release_wires();
             notes[index].release_nodes();
             notes[index].remove_focus();
@@ -8640,7 +8640,7 @@ class EngineFunctions {
         }
     }
     remove_rail(index) {
-        if (index < rails.length) {
+        if (index > -1 && index < rails.length) {
             rails[index].release_wires();
             rails[index].release_nodes();
             rails[index].remove_focus();
@@ -8652,7 +8652,7 @@ class EngineFunctions {
         }
     }
     remove_voltmeter(index) {
-        if (index < voltmeters.length) {
+        if (index > -1 && index < voltmeters.length) {
             voltmeters[index].release_wires();
             voltmeters[index].release_nodes();
             voltmeters[index].remove_focus();
@@ -8665,7 +8665,7 @@ class EngineFunctions {
         }
     }
     remove_ohmmeter(index) {
-        if (index < ohmmeters.length) {
+        if (index > -1 && index < ohmmeters.length) {
             ohmmeters[index].release_wires();
             ohmmeters[index].release_nodes();
             ohmmeters[index].remove_focus();
@@ -8678,7 +8678,7 @@ class EngineFunctions {
         }
     }
     remove_ammeter(index) {
-        if (index < ammeters.length) {
+        if (index > -1 && index < ammeters.length) {
             ammeters[index].release_wires();
             ammeters[index].release_nodes();
             ammeters[index].remove_focus();
@@ -8691,7 +8691,7 @@ class EngineFunctions {
         }
     }
     remove_wattmeter(index) {
-        if (index < wattmeters.length) {
+        if (index > -1 && index < wattmeters.length) {
             wattmeters[index].release_wires();
             wattmeters[index].release_nodes();
             wattmeters[index].remove_focus();
@@ -8704,7 +8704,7 @@ class EngineFunctions {
         }
     }
     remove_fuse(index) {
-        if (index < fuses.length) {
+        if (index > -1 && index < fuses.length) {
             fuses[index].release_wires();
             fuses[index].release_nodes();
             fuses[index].remove_focus();
@@ -8716,7 +8716,7 @@ class EngineFunctions {
         }
     }
     remove_spst(index) {
-        if (index < spsts.length) {
+        if (index > -1 && index < spsts.length) {
             spsts[index].release_wires();
             spsts[index].release_nodes();
             spsts[index].remove_focus();
@@ -8728,7 +8728,7 @@ class EngineFunctions {
         }
     }
     remove_spdt(index) {
-        if (index < spdts.length) {
+        if (index > -1 && index < spdts.length) {
             spdts[index].release_wires();
             spdts[index].release_nodes();
             spdts[index].remove_focus();
@@ -8740,7 +8740,7 @@ class EngineFunctions {
         }
     }
     remove_not(index) {
-        if (index < nots.length) {
+        if (index > -1 && index < nots.length) {
             nots[index].release_wires();
             nots[index].release_nodes();
             nots[index].remove_focus();
@@ -8752,7 +8752,7 @@ class EngineFunctions {
         }
     }
     remove_diode(index) {
-        if (index < diodes.length) {
+        if (index > -1 && index < diodes.length) {
             diodes[index].release_wires();
             diodes[index].release_nodes();
             diodes[index].remove_focus();
@@ -8764,7 +8764,7 @@ class EngineFunctions {
         }
     }
     remove_led(index) {
-        if (index < leds.length) {
+        if (index > -1 && index < leds.length) {
             leds[index].release_wires();
             leds[index].release_nodes();
             leds[index].remove_focus();
@@ -8776,7 +8776,7 @@ class EngineFunctions {
         }
     }
     remove_zener(index) {
-        if (index < zeners.length) {
+        if (index > -1 && index < zeners.length) {
             zeners[index].release_wires();
             zeners[index].release_nodes();
             zeners[index].remove_focus();
@@ -8788,7 +8788,7 @@ class EngineFunctions {
         }
     }
     remove_potentiometer(index) {
-        if (index < potentiometers.length) {
+        if (index > -1 && index < potentiometers.length) {
             potentiometers[index].release_wires();
             potentiometers[index].release_nodes();
             potentiometers[index].remove_focus();
@@ -8800,7 +8800,7 @@ class EngineFunctions {
         }
     }
     remove_and(index) {
-        if (index < ands.length) {
+        if (index > -1 && index < ands.length) {
             ands[index].release_wires();
             ands[index].release_nodes();
             ands[index].remove_focus();
@@ -8812,7 +8812,7 @@ class EngineFunctions {
         }
     }
     remove_or(index) {
-        if (index < ors.length) {
+        if (index > -1 && index < ors.length) {
             ors[index].release_wires();
             ors[index].release_nodes();
             ors[index].remove_focus();
@@ -8824,7 +8824,7 @@ class EngineFunctions {
         }
     }
     remove_nand(index) {
-        if (index < nands.length) {
+        if (index > -1 && index < nands.length) {
             nands[index].release_wires();
             nands[index].release_nodes();
             nands[index].remove_focus();
@@ -8836,7 +8836,7 @@ class EngineFunctions {
         }
     }
     remove_nor(index) {
-        if (index < nors.length) {
+        if (index > -1 && index < nors.length) {
             nors[index].release_wires();
             nors[index].release_nodes();
             nors[index].remove_focus();
@@ -8848,7 +8848,7 @@ class EngineFunctions {
         }
     }
     remove_xor(index) {
-        if (index < xors.length) {
+        if (index > -1 && index < xors.length) {
             xors[index].release_wires();
             xors[index].release_nodes();
             xors[index].remove_focus();
@@ -8860,7 +8860,7 @@ class EngineFunctions {
         }
     }
     remove_xnor(index) {
-        if (index < xnors.length) {
+        if (index > -1 && index < xnors.length) {
             xnors[index].release_wires();
             xnors[index].release_nodes();
             xnors[index].remove_focus();
@@ -8872,7 +8872,7 @@ class EngineFunctions {
         }
     }
     remove_dff(index) {
-        if (index < dffs.length) {
+        if (index > -1 && index < dffs.length) {
             dffs[index].release_wires();
             dffs[index].release_nodes();
             dffs[index].remove_focus();
@@ -8884,7 +8884,7 @@ class EngineFunctions {
         }
     }
     remove_vsat(index) {
-        if (index < vsats.length) {
+        if (index > -1 && index < vsats.length) {
             vsats[index].release_wires();
             vsats[index].release_nodes();
             vsats[index].remove_focus();
@@ -8896,7 +8896,7 @@ class EngineFunctions {
         }
     }
     remove_adder(index) {
-        if (index < adders.length) {
+        if (index > -1 && index < adders.length) {
             adders[index].release_wires();
             adders[index].release_nodes();
             adders[index].remove_focus();
@@ -8908,7 +8908,7 @@ class EngineFunctions {
         }
     }
     remove_subtractor(index) {
-        if (index < subtractors.length) {
+        if (index > -1 && index < subtractors.length) {
             subtractors[index].release_wires();
             subtractors[index].release_nodes();
             subtractors[index].remove_focus();
@@ -8920,7 +8920,7 @@ class EngineFunctions {
         }
     }
     remove_multiplier(index) {
-        if (index < multipliers.length) {
+        if (index > -1 && index < multipliers.length) {
             multipliers[index].release_wires();
             multipliers[index].release_nodes();
             multipliers[index].remove_focus();
@@ -8932,7 +8932,7 @@ class EngineFunctions {
         }
     }
     remove_divider(index) {
-        if (index < dividers.length) {
+        if (index > -1 && index < dividers.length) {
             dividers[index].release_wires();
             dividers[index].release_nodes();
             dividers[index].remove_focus();
@@ -8944,7 +8944,7 @@ class EngineFunctions {
         }
     }
     remove_gain(index) {
-        if (index < gains.length) {
+        if (index > -1 && index < gains.length) {
             gains[index].release_wires();
             gains[index].release_nodes();
             gains[index].remove_focus();
@@ -8956,7 +8956,7 @@ class EngineFunctions {
         }
     }
     remove_absval(index) {
-        if (index < absvals.length) {
+        if (index > -1 && index < absvals.length) {
             absvals[index].release_wires();
             absvals[index].release_nodes();
             absvals[index].remove_focus();
@@ -8968,7 +8968,7 @@ class EngineFunctions {
         }
     }
     remove_vcsw(index) {
-        if (index < vcsws.length) {
+        if (index > -1 && index < vcsws.length) {
             vcsws[index].release_wires();
             vcsws[index].release_nodes();
             vcsws[index].remove_focus();
@@ -8980,7 +8980,7 @@ class EngineFunctions {
         }
     }
     remove_vcvs(index) {
-        if (index < vcvss.length) {
+        if (index > -1 && index < vcvss.length) {
             vcvss[index].release_wires();
             vcvss[index].release_nodes();
             vcvss[index].remove_focus();
@@ -8992,7 +8992,7 @@ class EngineFunctions {
         }
     }
     remove_vccs(index) {
-        if (index < vccss.length) {
+        if (index > -1 && index < vccss.length) {
             vccss[index].release_wires();
             vccss[index].release_nodes();
             vccss[index].remove_focus();
@@ -9004,7 +9004,7 @@ class EngineFunctions {
         }
     }
     remove_cccs(index) {
-        if (index < cccss.length) {
+        if (index > -1 && index < cccss.length) {
             cccss[index].release_wires();
             cccss[index].release_nodes();
             cccss[index].remove_focus();
@@ -9016,7 +9016,7 @@ class EngineFunctions {
         }
     }
     remove_ccvs(index) {
-        if (index < ccvss.length) {
+        if (index > -1 && index < ccvss.length) {
             ccvss[index].release_wires();
             ccvss[index].release_nodes();
             ccvss[index].remove_focus();
@@ -9028,7 +9028,7 @@ class EngineFunctions {
         }
     }
     remove_opamp(index) {
-        if (index < opamps.length) {
+        if (index > -1 && index < opamps.length) {
             opamps[index].release_wires();
             opamps[index].release_nodes();
             opamps[index].remove_focus();
@@ -9040,7 +9040,7 @@ class EngineFunctions {
         }
     }
     remove_nmosfet(index) {
-        if (index < nmosfets.length) {
+        if (index > -1 && index < nmosfets.length) {
             nmosfets[index].release_wires();
             nmosfets[index].release_nodes();
             nmosfets[index].remove_focus();
@@ -9052,7 +9052,7 @@ class EngineFunctions {
         }
     }
     remove_pmosfet(index) {
-        if (index < pmosfets.length) {
+        if (index > -1 && index < pmosfets.length) {
             pmosfets[index].release_wires();
             pmosfets[index].release_nodes();
             pmosfets[index].remove_focus();
@@ -9064,7 +9064,7 @@ class EngineFunctions {
         }
     }
     remove_npn(index) {
-        if (index < npns.length) {
+        if (index > -1 && index < npns.length) {
             npns[index].release_wires();
             npns[index].release_nodes();
             npns[index].remove_focus();
@@ -9076,7 +9076,7 @@ class EngineFunctions {
         }
     }
     remove_pnp(index) {
-        if (index < pnps.length) {
+        if (index > -1 && index < pnps.length) {
             pnps[index].release_wires();
             pnps[index].release_nodes();
             pnps[index].remove_focus();
@@ -9088,7 +9088,7 @@ class EngineFunctions {
         }
     }
     remove_adc(index) {
-        if (index < adcs.length) {
+        if (index > -1 && index < adcs.length) {
             adcs[index].release_wires();
             adcs[index].release_nodes();
             adcs[index].remove_focus();
@@ -9100,7 +9100,7 @@ class EngineFunctions {
         }
     }
     remove_dac(index) {
-        if (index < dacs.length) {
+        if (index > -1 && index < dacs.length) {
             dacs[index].release_wires();
             dacs[index].release_nodes();
             dacs[index].remove_focus();
@@ -9112,7 +9112,7 @@ class EngineFunctions {
         }
     }
     remove_samplers(index) {
-        if (index < sandhs.length) {
+        if (index > -1 && index < sandhs.length) {
             sandhs[index].release_wires();
             sandhs[index].release_nodes();
             sandhs[index].remove_focus();
@@ -9124,7 +9124,7 @@ class EngineFunctions {
         }
     }
     remove_pwm(index) {
-        if (index < pwms.length) {
+        if (index > -1 && index < pwms.length) {
             pwms[index].release_wires();
             pwms[index].release_nodes();
             pwms[index].remove_focus();
@@ -9136,7 +9136,7 @@ class EngineFunctions {
         }
     }
     remove_integrator(index) {
-        if (index < integrators.length) {
+        if (index > -1 && index < integrators.length) {
             integrators[index].release_wires();
             integrators[index].release_nodes();
             integrators[index].remove_focus();
@@ -9148,7 +9148,7 @@ class EngineFunctions {
         }
     }
     remove_differentiator(index) {
-        if (index < differentiators.length) {
+        if (index > -1 && index < differentiators.length) {
             differentiators[index].release_wires();
             differentiators[index].release_nodes();
             differentiators[index].remove_focus();
@@ -9160,7 +9160,7 @@ class EngineFunctions {
         }
     }
     remove_lowpass(index) {
-        if (index < lowpasses.length) {
+        if (index > -1 && index < lowpasses.length) {
             lowpasses[index].release_wires();
             lowpasses[index].release_nodes();
             lowpasses[index].remove_focus();
@@ -9172,7 +9172,7 @@ class EngineFunctions {
         }
     }
     remove_highpass(index) {
-        if (index < highpasses.length) {
+        if (index > -1 && index < highpasses.length) {
             highpasses[index].release_wires();
             highpasses[index].release_nodes();
             highpasses[index].remove_focus();
@@ -9184,7 +9184,7 @@ class EngineFunctions {
         }
     }
     remove_relay(index) {
-        if (index < relays.length) {
+        if (index > -1 && index < relays.length) {
             relays[index].release_wires();
             relays[index].release_nodes();
             relays[index].remove_focus();
@@ -9196,7 +9196,7 @@ class EngineFunctions {
         }
     }
     remove_pid(index) {
-        if (index < pids.length) {
+        if (index > -1 && index < pids.length) {
             pids[index].release_wires();
             pids[index].release_nodes();
             pids[index].remove_focus();
@@ -9208,7 +9208,7 @@ class EngineFunctions {
         }
     }
     remove_lut(index) {
-        if (index < luts.length) {
+        if (index > -1 && index < luts.length) {
             luts[index].release_wires();
             luts[index].release_nodes();
             luts[index].remove_focus();
@@ -9220,7 +9220,7 @@ class EngineFunctions {
         }
     }
     remove_vcr(index) {
-        if (index < vcrs.length) {
+        if (index > -1 && index < vcrs.length) {
             vcrs[index].release_wires();
             vcrs[index].release_nodes();
             vcrs[index].remove_focus();
@@ -9232,7 +9232,7 @@ class EngineFunctions {
         }
     }
     remove_vcca(index) {
-        if (index < vccas.length) {
+        if (index > -1 && index < vccas.length) {
             vccas[index].release_wires();
             vccas[index].release_nodes();
             vccas[index].remove_focus();
@@ -9244,7 +9244,7 @@ class EngineFunctions {
         }
     }
     remove_vcl(index) {
-        if (index < vcls.length) {
+        if (index > -1 && index < vcls.length) {
             vcls[index].release_wires();
             vcls[index].release_nodes();
             vcls[index].remove_focus();
@@ -9256,7 +9256,7 @@ class EngineFunctions {
         }
     }
     remove_grt(index) {
-        if (index < grts.length) {
+        if (index > -1 && index < grts.length) {
             grts[index].release_wires();
             grts[index].release_nodes();
             grts[index].remove_focus();
@@ -9268,7 +9268,7 @@ class EngineFunctions {
         }
     }
     remove_tptz(index) {
-        if (index < tptzs.length) {
+        if (index > -1 && index < tptzs.length) {
             tptzs[index].release_wires();
             tptzs[index].release_nodes();
             tptzs[index].remove_focus();
@@ -9280,7 +9280,7 @@ class EngineFunctions {
         }
     }
     remove_transformer(index) {
-        if (index < transformers.length) {
+        if (index > -1 && index < transformers.length) {
             transformers[index].release_wires();
             transformers[index].release_nodes();
             transformers[index].remove_focus();

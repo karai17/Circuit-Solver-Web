@@ -286,16 +286,16 @@ function load_app(): void {
 
 	function resize_canvas(override: any): void {
 		try {
-			let override_signal = (override != null && override === true);
+			let override_signal = override != null && override === true;
 			let resize_enabled = false;
-			let temp = "1";
+			let temp = '1';
 
 			if (MOBILE_MODE || DESKTOP_MODE) {
 				if (left_panel.style.gridColumn !== temp) {
 					left_panel.style.gridColumn = temp;
 				}
 
-				temp = "0";
+				temp = '0';
 
 				if (left_panel.style.minWidth !== temp) {
 					left_panel.style.minWidth = temp;
@@ -305,19 +305,19 @@ function load_app(): void {
 					left_panel.style.width = temp;
 				}
 
-				temp = "hidden";
+				temp = 'hidden';
 
 				if (left_panel.style.visibility !== temp) {
 					left_panel.style.visibility = temp;
 				}
 
-				temp = "1";
+				temp = '1';
 
 				if (right_panel.style.gridColumn !== temp) {
 					right_panel.style.gridColumn = temp;
 				}
 
-				temp = "0";
+				temp = '0';
 
 				if (right_panel.style.minWidth !== temp) {
 					right_panel.style.minWidth = temp;
@@ -327,13 +327,13 @@ function load_app(): void {
 					right_panel.style.width = temp;
 				}
 
-				temp = "hidden";
+				temp = 'hidden';
 
 				if (right_panel.style.visibility !== temp) {
 					right_panel.style.visibility = temp;
 				}
 
-				temp = "1";
+				temp = '1';
 
 				if (center_panel.style.gridColumn !== temp) {
 					center_panel.style.gridColumn = temp;
@@ -458,7 +458,7 @@ function load_app(): void {
 						//@ts-expect-error
 						ctx.msImageSmoothingEnabled = false;
 					}
-				} catch (e) { }
+				} catch (e) {}
 				global.variables.canvas_stroke_width_1 = global.variables.canvas_stroke_width_base * 2.25;
 				global.variables.canvas_stroke_width_2 = global.variables.canvas_stroke_width_base * 2.65;
 				global.variables.canvas_stroke_width_3 = global.variables.canvas_stroke_width_base * 9;
@@ -485,7 +485,7 @@ function load_app(): void {
 					surface.style.visibility = 'visible';
 				}
 			}
-		} catch (e) { }
+		} catch (e) {}
 	}
 	function mouse_down(mouse_event: MouseEvent): void {
 		mouse_event.preventDefault();
@@ -733,7 +733,7 @@ function load_app(): void {
 						!workspace.flag_draw_to_screen;
 				}
 				global.variables.last_selected = global.variables.selected;
-				update().then(function () { });
+				update().then(function () {});
 				if (global.variables.last_selected !== global.variables.selected) {
 					wire_manager.reset_wire_builder();
 				}
@@ -749,7 +749,7 @@ function load_app(): void {
 					if (global.variables.system_initialization['completed']) {
 						if ((global.flags.flag_simulating && global.flags.flag_canvas_draw_request) || temp_draw_signal) {
 							if (!global.flags.flag_on_restore_event) {
-								render().then(function () { });
+								render().then(function () {});
 							}
 							if (global.flags.flag_canvas_draw_request) {
 								if (global.variables.flag_canvas_draw_request_counter++ >= global.CONSTANTS.CANVAS_DRAW_REQUEST_COUNTER_MAX) {
@@ -777,9 +777,7 @@ function load_app(): void {
 					global.flags.flag_canvas_draw_event = false;
 				}
 			}
-		} catch (e) {
-
-		}
+		} catch (e) {}
 	}
 	async function update() {
 		if (global.variables.system_initialization['completed']) {
@@ -1682,7 +1680,7 @@ function load_app(): void {
 		global.variables.dy = -(global.variables.last_mouse_y - global.variables.mouse_y) * global.settings.TRANSLATION_SCALE;
 		if (
 			global.utils.norm(global.variables.mouse_down_x - global.variables.mouse_x, global.variables.mouse_down_y - global.variables.mouse_y) >
-			1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
+				1.0 * Math.min(global.variables.node_space_x, global.variables.node_space_y) &&
 			global.variables.translation_lock
 		) {
 			global.variables.translation_lock = false;

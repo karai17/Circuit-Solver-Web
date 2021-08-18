@@ -8,20 +8,20 @@ class VirtualCanvas {
     }
     refresh_settings(override) {
         try {
-            let temp = "absolute";
+            let temp = 'absolute';
             if (this.surface.style.position !== temp || override) {
                 this.surface.style.position = temp;
             }
-            temp = "hidden";
+            temp = 'hidden';
             if (this.surface.style.visibility !== temp || override) {
                 this.surface.style.visibility = temp;
             }
-            temp = "none";
+            temp = 'none';
             if (this.surface.style.display !== temp || override) {
                 this.surface.style.display = temp;
             }
-            temp = "0";
-            if (this.surface.style.zIndex !== "temp" || override) {
+            temp = '0';
+            if (this.surface.style.zIndex !== 'temp' || override) {
                 this.surface.style.zIndex = temp;
             }
             if (this.context.imageSmoothingEnabled || override) {
@@ -47,11 +47,11 @@ class VirtualCanvas {
                 //@ts-expect-error
                 this.context.msImageSmoothingEnabled = false;
             }
-            temp = "source-over";
+            temp = 'source-over';
             if (this.context.globalCompositeOperation !== temp || override) {
                 this.context.globalCompositeOperation = temp;
             }
-            temp = "hidden";
+            temp = 'hidden';
             if (this.surface.style.backfaceVisibility !== temp || override) {
                 this.surface.style.backfaceVisibility = temp;
             }
@@ -65,7 +65,7 @@ class VirtualCanvas {
         if (this.surface.height !== height || override) {
             this.surface.height = height;
         }
-        let temp = "0";
+        let temp = '0';
         if (MOBILE_MODE || DESKTOP_MODE) {
             temp = global.TEMPLATES.PIXEL_TEMPLATE.replace('{VALUE}', window.innerHeight);
         }

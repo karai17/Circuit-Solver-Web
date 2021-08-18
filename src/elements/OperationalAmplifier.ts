@@ -181,9 +181,7 @@ class OperationalAmplifier {
 			engine_functions.stamp_ideal_opamp(this.elm.n1, this.elm.n2, this.elm.n3, simulation_manager.ELEMENT_OPAMP_OFFSET + this.simulation_id);
 		}
 	}
-	update(): void {
-
-	}
+	update(): void {}
 	get_vertices(): Array<number> {
 		let vertices: Array<number> = [];
 		let p1: Array<number> = [];
@@ -312,7 +310,11 @@ class OperationalAmplifier {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -732,5 +734,5 @@ class OperationalAmplifier {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

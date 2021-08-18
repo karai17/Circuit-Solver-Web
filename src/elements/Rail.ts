@@ -80,8 +80,8 @@ class Rail {
 		this.indexer = 0;
 		this.m_x = 0;
 		this.m_y = 0;
-		this.c_x = 0;
-		this.c_y = 0;
+		this.c_x = this.bounds.get_center_x();
+		this.c_y = this.bounds.get_center_y();
 		this.initialized = true;
 		this.multi_selected = false;
 		this.line_buffer = [];
@@ -306,8 +306,8 @@ class Rail {
 		this.c_y = this.bounds.get_center_y();
 		this.build_element_flag = false;
 	}
-	update(): void { }
-	set_flip(flip: number): void { }
+	update(): void {}
+	set_flip(flip: number): void {}
 	set_rotation(rotation: number): void {
 		this.build_element_flag = true;
 		wire_manager.reset_wire_builder();
@@ -324,7 +324,7 @@ class Rail {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -490,5 +490,5 @@ class Rail {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

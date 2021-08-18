@@ -1042,7 +1042,7 @@ class ShortcutManager {
 				/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 				if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 					var index: number = engine_functions.get_resistor(global.variables.selected_id);
-					if (index < resistors.length) {
+					if (index > -1 && index < resistors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							resistors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1055,7 +1055,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 					var index: number = engine_functions.get_capacitor(global.variables.selected_id);
-					if (index < capacitors.length) {
+					if (index > -1 && index < capacitors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							capacitors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1068,7 +1068,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 					var index: number = engine_functions.get_inductor(global.variables.selected_id);
-					if (index < inductors.length) {
+					if (index > -1 && index < inductors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							inductors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1081,7 +1081,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 					var index: number = engine_functions.get_ground(global.variables.selected_id);
-					if (index < grounds.length) {
+					if (index > -1 && index < grounds.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							grounds[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1094,7 +1094,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 					var index: number = engine_functions.get_dcsource(global.variables.selected_id);
-					if (index < dcsources.length) {
+					if (index > -1 && index < dcsources.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							dcsources[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1107,7 +1107,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 					var index: number = engine_functions.get_dccurrent(global.variables.selected_id);
-					if (index < dccurrents.length) {
+					if (index > -1 && index < dccurrents.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							dccurrents[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1120,7 +1120,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 					var index: number = engine_functions.get_acsource(global.variables.selected_id);
-					if (index < acsources.length) {
+					if (index > -1 && index < acsources.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							acsources[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1133,7 +1133,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 					var index: number = engine_functions.get_accurrent(global.variables.selected_id);
-					if (index < accurrents.length) {
+					if (index > -1 && index < accurrents.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							accurrents[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1146,7 +1146,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 					var index: number = engine_functions.get_squarewave(global.variables.selected_id);
-					if (index < squarewaves.length) {
+					if (index > -1 && index < squarewaves.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							squarewaves[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1159,7 +1159,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 					var index: number = engine_functions.get_sawwave(global.variables.selected_id);
-					if (index < sawwaves.length) {
+					if (index > -1 && index < sawwaves.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							sawwaves[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1172,7 +1172,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 					var index: number = engine_functions.get_trianglewave(global.variables.selected_id);
-					if (index < trianglewaves.length) {
+					if (index > -1 && index < trianglewaves.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							trianglewaves[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1185,7 +1185,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 					var index: number = engine_functions.get_constant(global.variables.selected_id);
-					if (index < constants.length) {
+					if (index > -1 && index < constants.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							constants[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1198,7 +1198,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 					var index: number = engine_functions.get_net(global.variables.selected_id);
-					if (index < nets.length) {
+					if (index > -1 && index < nets.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							nets[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1211,7 +1211,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 					var index: number = engine_functions.get_note(global.variables.selected_id);
-					if (index < notes.length) {
+					if (index > -1 && index < notes.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							notes[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1224,7 +1224,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 					var index: number = engine_functions.get_rail(global.variables.selected_id);
-					if (index < rails.length) {
+					if (index > -1 && index < rails.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							rails[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1237,7 +1237,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 					var index: number = engine_functions.get_voltmeter(global.variables.selected_id);
-					if (index < voltmeters.length) {
+					if (index > -1 && index < voltmeters.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							voltmeters[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1250,7 +1250,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 					var index: number = engine_functions.get_ohmmeter(global.variables.selected_id);
-					if (index < ohmmeters.length) {
+					if (index > -1 && index < ohmmeters.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							ohmmeters[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1263,7 +1263,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 					var index: number = engine_functions.get_ammeter(global.variables.selected_id);
-					if (index < ammeters.length) {
+					if (index > -1 && index < ammeters.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							ammeters[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1276,7 +1276,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 					var index: number = engine_functions.get_wattmeter(global.variables.selected_id);
-					if (index < wattmeters.length) {
+					if (index > -1 && index < wattmeters.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							wattmeters[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1289,7 +1289,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 					var index: number = engine_functions.get_fuse(global.variables.selected_id);
-					if (index < fuses.length) {
+					if (index > -1 && index < fuses.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							fuses[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1302,7 +1302,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 					var index: number = engine_functions.get_spst(global.variables.selected_id);
-					if (index < spsts.length) {
+					if (index > -1 && index < spsts.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							spsts[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1315,7 +1315,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 					var index: number = engine_functions.get_spdt(global.variables.selected_id);
-					if (index < spdts.length) {
+					if (index > -1 && index < spdts.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							spdts[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1328,7 +1328,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 					var index: number = engine_functions.get_not(global.variables.selected_id);
-					if (index < nots.length) {
+					if (index > -1 && index < nots.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							nots[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1341,7 +1341,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 					var index: number = engine_functions.get_diode(global.variables.selected_id);
-					if (index < diodes.length) {
+					if (index > -1 && index < diodes.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							diodes[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1354,7 +1354,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 					var index: number = engine_functions.get_led(global.variables.selected_id);
-					if (index < leds.length) {
+					if (index > -1 && index < leds.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							leds[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1367,7 +1367,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 					var index: number = engine_functions.get_zener(global.variables.selected_id);
-					if (index < zeners.length) {
+					if (index > -1 && index < zeners.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							zeners[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1380,7 +1380,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 					var index: number = engine_functions.get_potentiometer(global.variables.selected_id);
-					if (index < potentiometers.length) {
+					if (index > -1 && index < potentiometers.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							potentiometers[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1393,7 +1393,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 					var index: number = engine_functions.get_and(global.variables.selected_id);
-					if (index < ands.length) {
+					if (index > -1 && index < ands.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							ands[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1406,7 +1406,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 					var index: number = engine_functions.get_or(global.variables.selected_id);
-					if (index < ors.length) {
+					if (index > -1 && index < ors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							ors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1419,7 +1419,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 					var index: number = engine_functions.get_nand(global.variables.selected_id);
-					if (index < nands.length) {
+					if (index > -1 && index < nands.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							nands[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1432,7 +1432,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 					var index: number = engine_functions.get_nor(global.variables.selected_id);
-					if (index < nors.length) {
+					if (index > -1 && index < nors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							nors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1445,7 +1445,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 					var index: number = engine_functions.get_xor(global.variables.selected_id);
-					if (index < xors.length) {
+					if (index > -1 && index < xors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							xors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1458,7 +1458,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 					var index: number = engine_functions.get_xnor(global.variables.selected_id);
-					if (index < xnors.length) {
+					if (index > -1 && index < xnors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							xnors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1471,7 +1471,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 					var index: number = engine_functions.get_dff(global.variables.selected_id);
-					if (index < dffs.length) {
+					if (index > -1 && index < dffs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							dffs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1484,7 +1484,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 					var index: number = engine_functions.get_vsat(global.variables.selected_id);
-					if (index < vsats.length) {
+					if (index > -1 && index < vsats.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vsats[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1497,7 +1497,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 					var index: number = engine_functions.get_adder(global.variables.selected_id);
-					if (index < adders.length) {
+					if (index > -1 && index < adders.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							adders[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1510,7 +1510,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 					var index: number = engine_functions.get_subtractor(global.variables.selected_id);
-					if (index < subtractors.length) {
+					if (index > -1 && index < subtractors.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							subtractors[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1523,7 +1523,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 					var index: number = engine_functions.get_multiplier(global.variables.selected_id);
-					if (index < multipliers.length) {
+					if (index > -1 && index < multipliers.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							multipliers[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1536,7 +1536,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 					var index: number = engine_functions.get_divider(global.variables.selected_id);
-					if (index < dividers.length) {
+					if (index > -1 && index < dividers.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							dividers[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1549,7 +1549,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 					var index: number = engine_functions.get_gain(global.variables.selected_id);
-					if (index < gains.length) {
+					if (index > -1 && index < gains.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							gains[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1562,7 +1562,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 					var index: number = engine_functions.get_absval(global.variables.selected_id);
-					if (index < absvals.length) {
+					if (index > -1 && index < absvals.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							absvals[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1575,7 +1575,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 					var index: number = engine_functions.get_vcsw(global.variables.selected_id);
-					if (index < vcsws.length) {
+					if (index > -1 && index < vcsws.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vcsws[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1588,7 +1588,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 					var index: number = engine_functions.get_vcvs(global.variables.selected_id);
-					if (index < vcvss.length) {
+					if (index > -1 && index < vcvss.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vcvss[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1601,7 +1601,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 					var index: number = engine_functions.get_vccs(global.variables.selected_id);
-					if (index < vccss.length) {
+					if (index > -1 && index < vccss.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vccss[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1614,7 +1614,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 					var index: number = engine_functions.get_cccs(global.variables.selected_id);
-					if (index < cccss.length) {
+					if (index > -1 && index < cccss.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							cccss[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1627,7 +1627,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 					var index: number = engine_functions.get_ccvs(global.variables.selected_id);
-					if (index < ccvss.length) {
+					if (index > -1 && index < ccvss.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							ccvss[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1640,7 +1640,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 					var index: number = engine_functions.get_opamp(global.variables.selected_id);
-					if (index < opamps.length) {
+					if (index > -1 && index < opamps.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							opamps[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1653,7 +1653,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 					var index: number = engine_functions.get_nmosfet(global.variables.selected_id);
-					if (index < nmosfets.length) {
+					if (index > -1 && index < nmosfets.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							nmosfets[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1666,7 +1666,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 					var index: number = engine_functions.get_pmosfet(global.variables.selected_id);
-					if (index < pmosfets.length) {
+					if (index > -1 && index < pmosfets.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							pmosfets[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1679,7 +1679,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 					var index: number = engine_functions.get_npn(global.variables.selected_id);
-					if (index < npns.length) {
+					if (index > -1 && index < npns.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							npns[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1692,7 +1692,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 					var index: number = engine_functions.get_pnp(global.variables.selected_id);
-					if (index < pnps.length) {
+					if (index > -1 && index < pnps.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							pnps[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1705,7 +1705,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 					var index: number = engine_functions.get_adc(global.variables.selected_id);
-					if (index < adcs.length) {
+					if (index > -1 && index < adcs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							adcs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1718,7 +1718,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 					var index: number = engine_functions.get_dac(global.variables.selected_id);
-					if (index < dacs.length) {
+					if (index > -1 && index < dacs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							dacs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1731,7 +1731,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 					var index: number = engine_functions.get_samplers(global.variables.selected_id);
-					if (index < sandhs.length) {
+					if (index > -1 && index < sandhs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							sandhs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1744,7 +1744,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 					var index: number = engine_functions.get_pwm(global.variables.selected_id);
-					if (index < pwms.length) {
+					if (index > -1 && index < pwms.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							pwms[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1757,7 +1757,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 					var index: number = engine_functions.get_integrator(global.variables.selected_id);
-					if (index < integrators.length) {
+					if (index > -1 && index < integrators.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							integrators[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1770,7 +1770,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 					var index: number = engine_functions.get_differentiator(global.variables.selected_id);
-					if (index < differentiators.length) {
+					if (index > -1 && index < differentiators.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							differentiators[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1783,7 +1783,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 					var index: number = engine_functions.get_lowpass(global.variables.selected_id);
-					if (index < lowpasses.length) {
+					if (index > -1 && index < lowpasses.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							lowpasses[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1796,7 +1796,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 					var index: number = engine_functions.get_highpass(global.variables.selected_id);
-					if (index < highpasses.length) {
+					if (index > -1 && index < highpasses.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							highpasses[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1809,7 +1809,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 					var index: number = engine_functions.get_relay(global.variables.selected_id);
-					if (index < relays.length) {
+					if (index > -1 && index < relays.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							relays[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1822,7 +1822,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 					var index: number = engine_functions.get_pid(global.variables.selected_id);
-					if (index < pids.length) {
+					if (index > -1 && index < pids.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							pids[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1835,7 +1835,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 					var index: number = engine_functions.get_lut(global.variables.selected_id);
-					if (index < luts.length) {
+					if (index > -1 && index < luts.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							luts[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1848,7 +1848,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 					var index: number = engine_functions.get_vcr(global.variables.selected_id);
-					if (index < vcrs.length) {
+					if (index > -1 && index < vcrs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vcrs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1861,7 +1861,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 					var index: number = engine_functions.get_vcca(global.variables.selected_id);
-					if (index < vccas.length) {
+					if (index > -1 && index < vccas.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vccas[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1874,7 +1874,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 					var index: number = engine_functions.get_vcl(global.variables.selected_id);
-					if (index < vcls.length) {
+					if (index > -1 && index < vcls.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							vcls[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1887,7 +1887,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 					var index: number = engine_functions.get_grt(global.variables.selected_id);
-					if (index < grts.length) {
+					if (index > -1 && index < grts.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							grts[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1900,7 +1900,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 					var index: number = engine_functions.get_tptz(global.variables.selected_id);
-					if (index < tptzs.length) {
+					if (index > -1 && index < tptzs.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							tptzs[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -1913,7 +1913,7 @@ class ShortcutManager {
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 					var index: number = engine_functions.get_transformer(global.variables.selected_id);
-					if (index < transformers.length) {
+					if (index > -1 && index < transformers.length) {
 						if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_UP) {
 							transformers[index].move_element(0, -global.variables.node_space_y);
 						} else if (key_event['event'].code === global.KEY_CODES.KEY_CODE_ARROW_DOWN) {
@@ -2032,485 +2032,485 @@ class ShortcutManager {
 				if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 					index = engine_functions.get_resistor(global.variables.selected_id);
 
-					if (index < resistors.length) {
+					if (index > -1 && index < resistors.length) {
 						engine_functions.remove_resistor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 					index = engine_functions.get_capacitor(global.variables.selected_id);
 
-					if (index < capacitors.length) {
+					if (index > -1 && index < capacitors.length) {
 						engine_functions.remove_capacitor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 					index = engine_functions.get_inductor(global.variables.selected_id);
 
-					if (index < inductors.length) {
+					if (index > -1 && index < inductors.length) {
 						engine_functions.remove_inductor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 					index = engine_functions.get_ground(global.variables.selected_id);
 
-					if (index < grounds.length) {
+					if (index > -1 && index < grounds.length) {
 						engine_functions.remove_ground(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 					index = engine_functions.get_dcsource(global.variables.selected_id);
 
-					if (index < dcsources.length) {
+					if (index > -1 && index < dcsources.length) {
 						engine_functions.remove_dcsource(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 					index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-					if (index < dccurrents.length) {
+					if (index > -1 && index < dccurrents.length) {
 						engine_functions.remove_dccurrent(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 					index = engine_functions.get_acsource(global.variables.selected_id);
 
-					if (index < acsources.length) {
+					if (index > -1 && index < acsources.length) {
 						engine_functions.remove_acsource(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 					index = engine_functions.get_accurrent(global.variables.selected_id);
 
-					if (index < accurrents.length) {
+					if (index > -1 && index < accurrents.length) {
 						engine_functions.remove_accurrent(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 					index = engine_functions.get_squarewave(global.variables.selected_id);
 
-					if (index < squarewaves.length) {
+					if (index > -1 && index < squarewaves.length) {
 						engine_functions.remove_squarewave(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 					index = engine_functions.get_sawwave(global.variables.selected_id);
 
-					if (index < sawwaves.length) {
+					if (index > -1 && index < sawwaves.length) {
 						engine_functions.remove_sawwave(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 					index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-					if (index < trianglewaves.length) {
+					if (index > -1 && index < trianglewaves.length) {
 						engine_functions.remove_trianglewave(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 					index = engine_functions.get_constant(global.variables.selected_id);
 
-					if (index < constants.length) {
+					if (index > -1 && index < constants.length) {
 						engine_functions.remove_constant(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 					index = engine_functions.get_wire(global.variables.selected_id);
 
-					if (index < wires.length) {
+					if (index > -1 && index < wires.length) {
 						engine_functions.remove_wire(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 					index = engine_functions.get_net(global.variables.selected_id);
 
-					if (index < nets.length) {
+					if (index > -1 && index < nets.length) {
 						engine_functions.remove_net(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 					index = engine_functions.get_note(global.variables.selected_id);
 
-					if (index < notes.length) {
+					if (index > -1 && index < notes.length) {
 						engine_functions.remove_note(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 					index = engine_functions.get_rail(global.variables.selected_id);
 
-					if (index < rails.length) {
+					if (index > -1 && index < rails.length) {
 						engine_functions.remove_rail(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 					index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-					if (index < voltmeters.length) {
+					if (index > -1 && index < voltmeters.length) {
 						engine_functions.remove_voltmeter(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 					index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-					if (index < ohmmeters.length) {
+					if (index > -1 && index < ohmmeters.length) {
 						engine_functions.remove_ohmmeter(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 					index = engine_functions.get_ammeter(global.variables.selected_id);
 
-					if (index < ammeters.length) {
+					if (index > -1 && index < ammeters.length) {
 						engine_functions.remove_ammeter(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 					index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-					if (index < wattmeters.length) {
+					if (index > -1 && index < wattmeters.length) {
 						engine_functions.remove_wattmeter(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 					index = engine_functions.get_fuse(global.variables.selected_id);
 
-					if (index < fuses.length) {
+					if (index > -1 && index < fuses.length) {
 						engine_functions.remove_fuse(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 					index = engine_functions.get_spst(global.variables.selected_id);
 
-					if (index < spsts.length) {
+					if (index > -1 && index < spsts.length) {
 						engine_functions.remove_spst(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 					index = engine_functions.get_spdt(global.variables.selected_id);
 
-					if (index < spdts.length) {
+					if (index > -1 && index < spdts.length) {
 						engine_functions.remove_spdt(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 					index = engine_functions.get_not(global.variables.selected_id);
 
-					if (index < nots.length) {
+					if (index > -1 && index < nots.length) {
 						engine_functions.remove_not(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 					index = engine_functions.get_diode(global.variables.selected_id);
 
-					if (index < diodes.length) {
+					if (index > -1 && index < diodes.length) {
 						engine_functions.remove_diode(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 					index = engine_functions.get_led(global.variables.selected_id);
 
-					if (index < leds.length) {
+					if (index > -1 && index < leds.length) {
 						engine_functions.remove_led(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 					index = engine_functions.get_zener(global.variables.selected_id);
 
-					if (index < zeners.length) {
+					if (index > -1 && index < zeners.length) {
 						engine_functions.remove_zener(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 					index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-					if (index < potentiometers.length) {
+					if (index > -1 && index < potentiometers.length) {
 						engine_functions.remove_potentiometer(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 					index = engine_functions.get_and(global.variables.selected_id);
 
-					if (index < ands.length) {
+					if (index > -1 && index < ands.length) {
 						engine_functions.remove_and(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 					index = engine_functions.get_or(global.variables.selected_id);
 
-					if (index < ors.length) {
+					if (index > -1 && index < ors.length) {
 						engine_functions.remove_or(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 					index = engine_functions.get_nand(global.variables.selected_id);
 
-					if (index < nands.length) {
+					if (index > -1 && index < nands.length) {
 						engine_functions.remove_nand(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 					index = engine_functions.get_nor(global.variables.selected_id);
 
-					if (index < nors.length) {
+					if (index > -1 && index < nors.length) {
 						engine_functions.remove_nor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 					index = engine_functions.get_xor(global.variables.selected_id);
 
-					if (index < xors.length) {
+					if (index > -1 && index < xors.length) {
 						engine_functions.remove_xor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 					index = engine_functions.get_xnor(global.variables.selected_id);
 
-					if (index < xnors.length) {
+					if (index > -1 && index < xnors.length) {
 						engine_functions.remove_xnor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 					index = engine_functions.get_dff(global.variables.selected_id);
 
-					if (index < dffs.length) {
+					if (index > -1 && index < dffs.length) {
 						engine_functions.remove_dff(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 					index = engine_functions.get_vsat(global.variables.selected_id);
 
-					if (index < vsats.length) {
+					if (index > -1 && index < vsats.length) {
 						engine_functions.remove_vsat(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 					index = engine_functions.get_adder(global.variables.selected_id);
 
-					if (index < adders.length) {
+					if (index > -1 && index < adders.length) {
 						engine_functions.remove_adder(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 					index = engine_functions.get_subtractor(global.variables.selected_id);
 
-					if (index < subtractors.length) {
+					if (index > -1 && index < subtractors.length) {
 						engine_functions.remove_subtractor(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 					index = engine_functions.get_multiplier(global.variables.selected_id);
 
-					if (index < multipliers.length) {
+					if (index > -1 && index < multipliers.length) {
 						engine_functions.remove_multiplier(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 					index = engine_functions.get_divider(global.variables.selected_id);
 
-					if (index < dividers.length) {
+					if (index > -1 && index < dividers.length) {
 						engine_functions.remove_divider(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 					index = engine_functions.get_gain(global.variables.selected_id);
 
-					if (index < gains.length) {
+					if (index > -1 && index < gains.length) {
 						engine_functions.remove_gain(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 					index = engine_functions.get_absval(global.variables.selected_id);
 
-					if (index < absvals.length) {
+					if (index > -1 && index < absvals.length) {
 						engine_functions.remove_absval(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 					index = engine_functions.get_vcsw(global.variables.selected_id);
 
-					if (index < vcsws.length) {
+					if (index > -1 && index < vcsws.length) {
 						engine_functions.remove_vcsw(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 					index = engine_functions.get_vcvs(global.variables.selected_id);
 
-					if (index < vcvss.length) {
+					if (index > -1 && index < vcvss.length) {
 						engine_functions.remove_vcvs(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 					index = engine_functions.get_vccs(global.variables.selected_id);
 
-					if (index < vccss.length) {
+					if (index > -1 && index < vccss.length) {
 						engine_functions.remove_vccs(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 					index = engine_functions.get_cccs(global.variables.selected_id);
 
-					if (index < cccss.length) {
+					if (index > -1 && index < cccss.length) {
 						engine_functions.remove_cccs(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 					index = engine_functions.get_ccvs(global.variables.selected_id);
 
-					if (index < ccvss.length) {
+					if (index > -1 && index < ccvss.length) {
 						engine_functions.remove_ccvs(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 					index = engine_functions.get_opamp(global.variables.selected_id);
 
-					if (index < opamps.length) {
+					if (index > -1 && index < opamps.length) {
 						engine_functions.remove_opamp(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 					index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-					if (index < nmosfets.length) {
+					if (index > -1 && index < nmosfets.length) {
 						engine_functions.remove_nmosfet(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 					index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-					if (index < pmosfets.length) {
+					if (index > -1 && index < pmosfets.length) {
 						engine_functions.remove_pmosfet(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 					index = engine_functions.get_npn(global.variables.selected_id);
 
-					if (index < npns.length) {
+					if (index > -1 && index < npns.length) {
 						engine_functions.remove_npn(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 					index = engine_functions.get_pnp(global.variables.selected_id);
 
-					if (index < pnps.length) {
+					if (index > -1 && index < pnps.length) {
 						engine_functions.remove_pnp(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 					index = engine_functions.get_adc(global.variables.selected_id);
 
-					if (index < adcs.length) {
+					if (index > -1 && index < adcs.length) {
 						engine_functions.remove_adc(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 					index = engine_functions.get_dac(global.variables.selected_id);
 
-					if (index < dacs.length) {
+					if (index > -1 && index < dacs.length) {
 						engine_functions.remove_dac(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 					index = engine_functions.get_samplers(global.variables.selected_id);
 
-					if (index < sandhs.length) {
+					if (index > -1 && index < sandhs.length) {
 						engine_functions.remove_samplers(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 					index = engine_functions.get_pwm(global.variables.selected_id);
 
-					if (index < pwms.length) {
+					if (index > -1 && index < pwms.length) {
 						engine_functions.remove_pwm(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 					index = engine_functions.get_integrator(global.variables.selected_id);
 
-					if (index < integrators.length) {
+					if (index > -1 && index < integrators.length) {
 						engine_functions.remove_integrator(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 					index = engine_functions.get_differentiator(global.variables.selected_id);
 
-					if (index < differentiators.length) {
+					if (index > -1 && index < differentiators.length) {
 						engine_functions.remove_differentiator(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 					index = engine_functions.get_lowpass(global.variables.selected_id);
 
-					if (index < lowpasses.length) {
+					if (index > -1 && index < lowpasses.length) {
 						engine_functions.remove_lowpass(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 					index = engine_functions.get_highpass(global.variables.selected_id);
 
-					if (index < highpasses.length) {
+					if (index > -1 && index < highpasses.length) {
 						engine_functions.remove_highpass(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 					index = engine_functions.get_relay(global.variables.selected_id);
 
-					if (index < relays.length) {
+					if (index > -1 && index < relays.length) {
 						engine_functions.remove_relay(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 					index = engine_functions.get_pid(global.variables.selected_id);
 
-					if (index < pids.length) {
+					if (index > -1 && index < pids.length) {
 						engine_functions.remove_pid(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 					index = engine_functions.get_lut(global.variables.selected_id);
 
-					if (index < luts.length) {
+					if (index > -1 && index < luts.length) {
 						engine_functions.remove_lut(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 					index = engine_functions.get_vcr(global.variables.selected_id);
 
-					if (index < vcrs.length) {
+					if (index > -1 && index < vcrs.length) {
 						engine_functions.remove_vcr(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 					index = engine_functions.get_vcca(global.variables.selected_id);
 
-					if (index < vccas.length) {
+					if (index > -1 && index < vccas.length) {
 						engine_functions.remove_vcca(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 					index = engine_functions.get_vcl(global.variables.selected_id);
 
-					if (index < vcls.length) {
+					if (index > -1 && index < vcls.length) {
 						engine_functions.remove_vcl(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 					index = engine_functions.get_grt(global.variables.selected_id);
 
-					if (index < grts.length) {
+					if (index > -1 && index < grts.length) {
 						engine_functions.remove_grt(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 					index = engine_functions.get_tptz(global.variables.selected_id);
 
-					if (index < tptzs.length) {
+					if (index > -1 && index < tptzs.length) {
 						engine_functions.remove_tptz(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 					index = engine_functions.get_transformer(global.variables.selected_id);
 
-					if (index < transformers.length) {
+					if (index > -1 && index < transformers.length) {
 						engine_functions.remove_transformer(index);
-						global.utils.push_history();
+						global.variables.history['packet'].push(engine_functions.history_snapshot());
 					}
 				}
 				/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -2531,415 +2531,415 @@ class ShortcutManager {
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 				index = engine_functions.get_resistor(global.variables.selected_id);
 
-				if (index < resistors.length) {
+				if (index > -1 && index < resistors.length) {
 					resistors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 				index = engine_functions.get_capacitor(global.variables.selected_id);
 
-				if (index < capacitors.length) {
+				if (index > -1 && index < capacitors.length) {
 					capacitors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 				index = engine_functions.get_inductor(global.variables.selected_id);
 
-				if (index < inductors.length) {
+				if (index > -1 && index < inductors.length) {
 					inductors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 				index = engine_functions.get_ground(global.variables.selected_id);
 
-				if (index < grounds.length) {
+				if (index > -1 && index < grounds.length) {
 					grounds[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 				index = engine_functions.get_dcsource(global.variables.selected_id);
 
-				if (index < dcsources.length) {
+				if (index > -1 && index < dcsources.length) {
 					dcsources[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 				index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-				if (index < dccurrents.length) {
+				if (index > -1 && index < dccurrents.length) {
 					dccurrents[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 				index = engine_functions.get_acsource(global.variables.selected_id);
 
-				if (index < acsources.length) {
+				if (index > -1 && index < acsources.length) {
 					acsources[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 				index = engine_functions.get_accurrent(global.variables.selected_id);
 
-				if (index < accurrents.length) {
+				if (index > -1 && index < accurrents.length) {
 					accurrents[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 				index = engine_functions.get_squarewave(global.variables.selected_id);
 
-				if (index < squarewaves.length) {
+				if (index > -1 && index < squarewaves.length) {
 					squarewaves[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 				index = engine_functions.get_sawwave(global.variables.selected_id);
 
-				if (index < sawwaves.length) {
+				if (index > -1 && index < sawwaves.length) {
 					sawwaves[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 				index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-				if (index < trianglewaves.length) {
+				if (index > -1 && index < trianglewaves.length) {
 					trianglewaves[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 				index = engine_functions.get_constant(global.variables.selected_id);
 
-				if (index < constants.length) {
+				if (index > -1 && index < constants.length) {
 					constants[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 				index = engine_functions.get_wire(global.variables.selected_id);
 
-				if (index < wires.length) {
+				if (index > -1 && index < wires.length) {
 					wires[index].increment_style();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 				index = engine_functions.get_net(global.variables.selected_id);
 
-				if (index < nets.length) {
+				if (index > -1 && index < nets.length) {
 					nets[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 				index = engine_functions.get_note(global.variables.selected_id);
 
-				if (index < notes.length) {
+				if (index > -1 && index < notes.length) {
 					notes[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 				index = engine_functions.get_rail(global.variables.selected_id);
 
-				if (index < rails.length) {
+				if (index > -1 && index < rails.length) {
 					rails[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 				index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-				if (index < voltmeters.length) {
+				if (index > -1 && index < voltmeters.length) {
 					voltmeters[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 				index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-				if (index < ohmmeters.length) {
+				if (index > -1 && index < ohmmeters.length) {
 					ohmmeters[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 				index = engine_functions.get_ammeter(global.variables.selected_id);
 
-				if (index < ammeters.length) {
+				if (index > -1 && index < ammeters.length) {
 					ammeters[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 				index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-				if (index < wattmeters.length) {
+				if (index > -1 && index < wattmeters.length) {
 					wattmeters[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 				index = engine_functions.get_fuse(global.variables.selected_id);
 
-				if (index < fuses.length) {
+				if (index > -1 && index < fuses.length) {
 					fuses[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 				index = engine_functions.get_spst(global.variables.selected_id);
 
-				if (index < spsts.length) {
+				if (index > -1 && index < spsts.length) {
 					spsts[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 				index = engine_functions.get_spdt(global.variables.selected_id);
 
-				if (index < spdts.length) {
+				if (index > -1 && index < spdts.length) {
 					spdts[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 				index = engine_functions.get_not(global.variables.selected_id);
 
-				if (index < nots.length) {
+				if (index > -1 && index < nots.length) {
 					nots[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 				index = engine_functions.get_diode(global.variables.selected_id);
 
-				if (index < diodes.length) {
+				if (index > -1 && index < diodes.length) {
 					diodes[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 				index = engine_functions.get_led(global.variables.selected_id);
 
-				if (index < leds.length) {
+				if (index > -1 && index < leds.length) {
 					leds[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 				index = engine_functions.get_zener(global.variables.selected_id);
 
-				if (index < zeners.length) {
+				if (index > -1 && index < zeners.length) {
 					zeners[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 				index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-				if (index < potentiometers.length) {
+				if (index > -1 && index < potentiometers.length) {
 					potentiometers[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 				index = engine_functions.get_and(global.variables.selected_id);
 
-				if (index < ands.length) {
+				if (index > -1 && index < ands.length) {
 					ands[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 				index = engine_functions.get_or(global.variables.selected_id);
 
-				if (index < ors.length) {
+				if (index > -1 && index < ors.length) {
 					ors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 				index = engine_functions.get_nand(global.variables.selected_id);
 
-				if (index < nands.length) {
+				if (index > -1 && index < nands.length) {
 					nands[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 				index = engine_functions.get_nor(global.variables.selected_id);
 
-				if (index < nors.length) {
+				if (index > -1 && index < nors.length) {
 					nors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 				index = engine_functions.get_xor(global.variables.selected_id);
 
-				if (index < xors.length) {
+				if (index > -1 && index < xors.length) {
 					xors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 				index = engine_functions.get_xnor(global.variables.selected_id);
 
-				if (index < xnors.length) {
+				if (index > -1 && index < xnors.length) {
 					xnors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 				index = engine_functions.get_dff(global.variables.selected_id);
 
-				if (index < dffs.length) {
+				if (index > -1 && index < dffs.length) {
 					dffs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 				index = engine_functions.get_vsat(global.variables.selected_id);
 
-				if (index < vsats.length) {
+				if (index > -1 && index < vsats.length) {
 					vsats[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 				index = engine_functions.get_adder(global.variables.selected_id);
 
-				if (index < adders.length) {
+				if (index > -1 && index < adders.length) {
 					adders[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 				index = engine_functions.get_subtractor(global.variables.selected_id);
 
-				if (index < subtractors.length) {
+				if (index > -1 && index < subtractors.length) {
 					subtractors[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 				index = engine_functions.get_multiplier(global.variables.selected_id);
 
-				if (index < multipliers.length) {
+				if (index > -1 && index < multipliers.length) {
 					multipliers[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 				index = engine_functions.get_divider(global.variables.selected_id);
 
-				if (index < dividers.length) {
+				if (index > -1 && index < dividers.length) {
 					dividers[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 				index = engine_functions.get_gain(global.variables.selected_id);
 
-				if (index < gains.length) {
+				if (index > -1 && index < gains.length) {
 					gains[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 				index = engine_functions.get_absval(global.variables.selected_id);
 
-				if (index < absvals.length) {
+				if (index > -1 && index < absvals.length) {
 					absvals[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 				index = engine_functions.get_vcsw(global.variables.selected_id);
 
-				if (index < vcsws.length) {
+				if (index > -1 && index < vcsws.length) {
 					vcsws[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 				index = engine_functions.get_vcvs(global.variables.selected_id);
 
-				if (index < vcvss.length) {
+				if (index > -1 && index < vcvss.length) {
 					vcvss[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 				index = engine_functions.get_vccs(global.variables.selected_id);
 
-				if (index < vccss.length) {
+				if (index > -1 && index < vccss.length) {
 					vccss[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 				index = engine_functions.get_cccs(global.variables.selected_id);
 
-				if (index < cccss.length) {
+				if (index > -1 && index < cccss.length) {
 					cccss[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 				index = engine_functions.get_ccvs(global.variables.selected_id);
 
-				if (index < ccvss.length) {
+				if (index > -1 && index < ccvss.length) {
 					ccvss[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 				index = engine_functions.get_opamp(global.variables.selected_id);
 
-				if (index < opamps.length) {
+				if (index > -1 && index < opamps.length) {
 					opamps[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 				index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-				if (index < nmosfets.length) {
+				if (index > -1 && index < nmosfets.length) {
 					nmosfets[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 				index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-				if (index < pmosfets.length) {
+				if (index > -1 && index < pmosfets.length) {
 					pmosfets[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 				index = engine_functions.get_npn(global.variables.selected_id);
 
-				if (index < npns.length) {
+				if (index > -1 && index < npns.length) {
 					npns[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 				index = engine_functions.get_pnp(global.variables.selected_id);
 
-				if (index < pnps.length) {
+				if (index > -1 && index < pnps.length) {
 					pnps[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 				index = engine_functions.get_adc(global.variables.selected_id);
 
-				if (index < adcs.length) {
+				if (index > -1 && index < adcs.length) {
 					adcs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 				index = engine_functions.get_dac(global.variables.selected_id);
 
-				if (index < dacs.length) {
+				if (index > -1 && index < dacs.length) {
 					dacs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 				index = engine_functions.get_samplers(global.variables.selected_id);
 
-				if (index < sandhs.length) {
+				if (index > -1 && index < sandhs.length) {
 					sandhs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 				index = engine_functions.get_pwm(global.variables.selected_id);
 
-				if (index < pwms.length) {
+				if (index > -1 && index < pwms.length) {
 					pwms[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 				index = engine_functions.get_integrator(global.variables.selected_id);
 
-				if (index < integrators.length) {
+				if (index > -1 && index < integrators.length) {
 					integrators[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 				index = engine_functions.get_differentiator(global.variables.selected_id);
 
-				if (index < differentiators.length) {
+				if (index > -1 && index < differentiators.length) {
 					differentiators[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 				index = engine_functions.get_lowpass(global.variables.selected_id);
 
-				if (index < lowpasses.length) {
+				if (index > -1 && index < lowpasses.length) {
 					lowpasses[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 				index = engine_functions.get_highpass(global.variables.selected_id);
 
-				if (index < highpasses.length) {
+				if (index > -1 && index < highpasses.length) {
 					highpasses[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 				index = engine_functions.get_relay(global.variables.selected_id);
 
-				if (index < relays.length) {
+				if (index > -1 && index < relays.length) {
 					relays[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 				index = engine_functions.get_pid(global.variables.selected_id);
 
-				if (index < pids.length) {
+				if (index > -1 && index < pids.length) {
 					pids[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 				index = engine_functions.get_lut(global.variables.selected_id);
 
-				if (index < luts.length) {
+				if (index > -1 && index < luts.length) {
 					luts[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 				index = engine_functions.get_vcr(global.variables.selected_id);
 
-				if (index < vcrs.length) {
+				if (index > -1 && index < vcrs.length) {
 					vcrs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 				index = engine_functions.get_vcca(global.variables.selected_id);
 
-				if (index < vccas.length) {
+				if (index > -1 && index < vccas.length) {
 					vccas[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 				index = engine_functions.get_vcl(global.variables.selected_id);
 
-				if (index < vcls.length) {
+				if (index > -1 && index < vcls.length) {
 					vcls[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 				index = engine_functions.get_grt(global.variables.selected_id);
 
-				if (index < grts.length) {
+				if (index > -1 && index < grts.length) {
 					grts[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 				index = engine_functions.get_tptz(global.variables.selected_id);
 
-				if (index < tptzs.length) {
+				if (index > -1 && index < tptzs.length) {
 					tptzs[index].increment_rotation();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 				index = engine_functions.get_transformer(global.variables.selected_id);
 
-				if (index < transformers.length) {
+				if (index > -1 && index < transformers.length) {
 					transformers[index].increment_rotation();
 				}
 			}
@@ -3060,415 +3060,415 @@ class ShortcutManager {
 			if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 				index = engine_functions.get_resistor(global.variables.selected_id);
 
-				if (index < resistors.length) {
+				if (index > -1 && index < resistors.length) {
 					resistors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 				index = engine_functions.get_capacitor(global.variables.selected_id);
 
-				if (index < capacitors.length) {
+				if (index > -1 && index < capacitors.length) {
 					capacitors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 				index = engine_functions.get_inductor(global.variables.selected_id);
 
-				if (index < inductors.length) {
+				if (index > -1 && index < inductors.length) {
 					inductors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 				index = engine_functions.get_ground(global.variables.selected_id);
 
-				if (index < grounds.length) {
+				if (index > -1 && index < grounds.length) {
 					grounds[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 				index = engine_functions.get_dcsource(global.variables.selected_id);
 
-				if (index < dcsources.length) {
+				if (index > -1 && index < dcsources.length) {
 					dcsources[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 				index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-				if (index < dccurrents.length) {
+				if (index > -1 && index < dccurrents.length) {
 					dccurrents[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 				index = engine_functions.get_acsource(global.variables.selected_id);
 
-				if (index < acsources.length) {
+				if (index > -1 && index < acsources.length) {
 					acsources[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 				index = engine_functions.get_accurrent(global.variables.selected_id);
 
-				if (index < accurrents.length) {
+				if (index > -1 && index < accurrents.length) {
 					accurrents[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 				index = engine_functions.get_squarewave(global.variables.selected_id);
 
-				if (index < squarewaves.length) {
+				if (index > -1 && index < squarewaves.length) {
 					squarewaves[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 				index = engine_functions.get_sawwave(global.variables.selected_id);
 
-				if (index < sawwaves.length) {
+				if (index > -1 && index < sawwaves.length) {
 					sawwaves[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 				index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-				if (index < trianglewaves.length) {
+				if (index > -1 && index < trianglewaves.length) {
 					trianglewaves[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 				index = engine_functions.get_constant(global.variables.selected_id);
 
-				if (index < constants.length) {
+				if (index > -1 && index < constants.length) {
 					constants[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 				index = engine_functions.get_wire(global.variables.selected_id);
 
-				if (index < wires.length) {
+				if (index > -1 && index < wires.length) {
 					wires[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 				index = engine_functions.get_net(global.variables.selected_id);
 
-				if (index < nets.length) {
+				if (index > -1 && index < nets.length) {
 					nets[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 				index = engine_functions.get_note(global.variables.selected_id);
 
-				if (index < notes.length) {
+				if (index > -1 && index < notes.length) {
 					notes[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 				index = engine_functions.get_rail(global.variables.selected_id);
 
-				if (index < rails.length) {
+				if (index > -1 && index < rails.length) {
 					rails[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 				index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-				if (index < voltmeters.length) {
+				if (index > -1 && index < voltmeters.length) {
 					voltmeters[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 				index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-				if (index < ohmmeters.length) {
+				if (index > -1 && index < ohmmeters.length) {
 					ohmmeters[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 				index = engine_functions.get_ammeter(global.variables.selected_id);
 
-				if (index < ammeters.length) {
+				if (index > -1 && index < ammeters.length) {
 					ammeters[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 				index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-				if (index < wattmeters.length) {
+				if (index > -1 && index < wattmeters.length) {
 					wattmeters[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 				index = engine_functions.get_fuse(global.variables.selected_id);
 
-				if (index < fuses.length) {
+				if (index > -1 && index < fuses.length) {
 					fuses[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 				index = engine_functions.get_spst(global.variables.selected_id);
 
-				if (index < spsts.length) {
+				if (index > -1 && index < spsts.length) {
 					spsts[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 				index = engine_functions.get_spdt(global.variables.selected_id);
 
-				if (index < spdts.length) {
+				if (index > -1 && index < spdts.length) {
 					spdts[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 				index = engine_functions.get_not(global.variables.selected_id);
 
-				if (index < nots.length) {
+				if (index > -1 && index < nots.length) {
 					nots[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 				index = engine_functions.get_diode(global.variables.selected_id);
 
-				if (index < diodes.length) {
+				if (index > -1 && index < diodes.length) {
 					diodes[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 				index = engine_functions.get_led(global.variables.selected_id);
 
-				if (index < leds.length) {
+				if (index > -1 && index < leds.length) {
 					leds[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 				index = engine_functions.get_zener(global.variables.selected_id);
 
-				if (index < zeners.length) {
+				if (index > -1 && index < zeners.length) {
 					zeners[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 				index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-				if (index < potentiometers.length) {
+				if (index > -1 && index < potentiometers.length) {
 					potentiometers[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 				index = engine_functions.get_and(global.variables.selected_id);
 
-				if (index < ands.length) {
+				if (index > -1 && index < ands.length) {
 					ands[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 				index = engine_functions.get_or(global.variables.selected_id);
 
-				if (index < ors.length) {
+				if (index > -1 && index < ors.length) {
 					ors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 				index = engine_functions.get_nand(global.variables.selected_id);
 
-				if (index < nands.length) {
+				if (index > -1 && index < nands.length) {
 					nands[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 				index = engine_functions.get_nor(global.variables.selected_id);
 
-				if (index < nors.length) {
+				if (index > -1 && index < nors.length) {
 					nors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 				index = engine_functions.get_xor(global.variables.selected_id);
 
-				if (index < xors.length) {
+				if (index > -1 && index < xors.length) {
 					xors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 				index = engine_functions.get_xnor(global.variables.selected_id);
 
-				if (index < xnors.length) {
+				if (index > -1 && index < xnors.length) {
 					xnors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 				index = engine_functions.get_dff(global.variables.selected_id);
 
-				if (index < dffs.length) {
+				if (index > -1 && index < dffs.length) {
 					dffs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 				index = engine_functions.get_vsat(global.variables.selected_id);
 
-				if (index < vsats.length) {
+				if (index > -1 && index < vsats.length) {
 					vsats[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 				index = engine_functions.get_adder(global.variables.selected_id);
 
-				if (index < adders.length) {
+				if (index > -1 && index < adders.length) {
 					adders[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 				index = engine_functions.get_subtractor(global.variables.selected_id);
 
-				if (index < subtractors.length) {
+				if (index > -1 && index < subtractors.length) {
 					subtractors[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 				index = engine_functions.get_multiplier(global.variables.selected_id);
 
-				if (index < multipliers.length) {
+				if (index > -1 && index < multipliers.length) {
 					multipliers[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 				index = engine_functions.get_divider(global.variables.selected_id);
 
-				if (index < dividers.length) {
+				if (index > -1 && index < dividers.length) {
 					dividers[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 				index = engine_functions.get_gain(global.variables.selected_id);
 
-				if (index < gains.length) {
+				if (index > -1 && index < gains.length) {
 					gains[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 				index = engine_functions.get_absval(global.variables.selected_id);
 
-				if (index < absvals.length) {
+				if (index > -1 && index < absvals.length) {
 					absvals[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 				index = engine_functions.get_vcsw(global.variables.selected_id);
 
-				if (index < vcsws.length) {
+				if (index > -1 && index < vcsws.length) {
 					vcsws[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 				index = engine_functions.get_vcvs(global.variables.selected_id);
 
-				if (index < vcvss.length) {
+				if (index > -1 && index < vcvss.length) {
 					vcvss[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 				index = engine_functions.get_vccs(global.variables.selected_id);
 
-				if (index < vccss.length) {
+				if (index > -1 && index < vccss.length) {
 					vccss[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 				index = engine_functions.get_cccs(global.variables.selected_id);
 
-				if (index < cccss.length) {
+				if (index > -1 && index < cccss.length) {
 					cccss[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 				index = engine_functions.get_ccvs(global.variables.selected_id);
 
-				if (index < ccvss.length) {
+				if (index > -1 && index < ccvss.length) {
 					ccvss[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 				index = engine_functions.get_opamp(global.variables.selected_id);
 
-				if (index < opamps.length) {
+				if (index > -1 && index < opamps.length) {
 					opamps[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 				index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-				if (index < nmosfets.length) {
+				if (index > -1 && index < nmosfets.length) {
 					nmosfets[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 				index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-				if (index < pmosfets.length) {
+				if (index > -1 && index < pmosfets.length) {
 					pmosfets[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 				index = engine_functions.get_npn(global.variables.selected_id);
 
-				if (index < npns.length) {
+				if (index > -1 && index < npns.length) {
 					npns[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 				index = engine_functions.get_pnp(global.variables.selected_id);
 
-				if (index < pnps.length) {
+				if (index > -1 && index < pnps.length) {
 					pnps[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 				index = engine_functions.get_adc(global.variables.selected_id);
 
-				if (index < adcs.length) {
+				if (index > -1 && index < adcs.length) {
 					adcs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 				index = engine_functions.get_dac(global.variables.selected_id);
 
-				if (index < dacs.length) {
+				if (index > -1 && index < dacs.length) {
 					dacs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 				index = engine_functions.get_samplers(global.variables.selected_id);
 
-				if (index < sandhs.length) {
+				if (index > -1 && index < sandhs.length) {
 					sandhs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 				index = engine_functions.get_pwm(global.variables.selected_id);
 
-				if (index < pwms.length) {
+				if (index > -1 && index < pwms.length) {
 					pwms[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 				index = engine_functions.get_integrator(global.variables.selected_id);
 
-				if (index < integrators.length) {
+				if (index > -1 && index < integrators.length) {
 					integrators[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 				index = engine_functions.get_differentiator(global.variables.selected_id);
 
-				if (index < differentiators.length) {
+				if (index > -1 && index < differentiators.length) {
 					differentiators[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 				index = engine_functions.get_lowpass(global.variables.selected_id);
 
-				if (index < lowpasses.length) {
+				if (index > -1 && index < lowpasses.length) {
 					lowpasses[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 				index = engine_functions.get_highpass(global.variables.selected_id);
 
-				if (index < highpasses.length) {
+				if (index > -1 && index < highpasses.length) {
 					highpasses[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 				index = engine_functions.get_relay(global.variables.selected_id);
 
-				if (index < relays.length) {
+				if (index > -1 && index < relays.length) {
 					relays[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 				index = engine_functions.get_pid(global.variables.selected_id);
 
-				if (index < pids.length) {
+				if (index > -1 && index < pids.length) {
 					pids[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 				index = engine_functions.get_lut(global.variables.selected_id);
 
-				if (index < luts.length) {
+				if (index > -1 && index < luts.length) {
 					luts[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 				index = engine_functions.get_vcr(global.variables.selected_id);
 
-				if (index < vcrs.length) {
+				if (index > -1 && index < vcrs.length) {
 					vcrs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 				index = engine_functions.get_vcca(global.variables.selected_id);
 
-				if (index < vccas.length) {
+				if (index > -1 && index < vccas.length) {
 					vccas[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 				index = engine_functions.get_vcl(global.variables.selected_id);
 
-				if (index < vcls.length) {
+				if (index > -1 && index < vcls.length) {
 					vcls[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 				index = engine_functions.get_grt(global.variables.selected_id);
 
-				if (index < grts.length) {
+				if (index > -1 && index < grts.length) {
 					grts[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 				index = engine_functions.get_tptz(global.variables.selected_id);
 
-				if (index < tptzs.length) {
+				if (index > -1 && index < tptzs.length) {
 					tptzs[index].increment_flip();
 				}
 			} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 				index = engine_functions.get_transformer(global.variables.selected_id);
 
-				if (index < transformers.length) {
+				if (index > -1 && index < transformers.length) {
 					transformers[index].increment_flip();
 				}
 			}
@@ -3548,409 +3548,409 @@ class ShortcutManager {
 						/* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
 						if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 							index = engine_functions.get_resistor(global.variables.selected_id);
-							if (index < resistors.length) {
+							if (index > -1 && index < resistors.length) {
 								clipboard_entry.clipboard_rotation = resistors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = resistors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 							index = engine_functions.get_capacitor(global.variables.selected_id);
-							if (index < capacitors.length) {
+							if (index > -1 && index < capacitors.length) {
 								clipboard_entry.clipboard_rotation = capacitors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = capacitors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 							index = engine_functions.get_inductor(global.variables.selected_id);
-							if (index < inductors.length) {
+							if (index > -1 && index < inductors.length) {
 								clipboard_entry.clipboard_rotation = inductors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = inductors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 							index = engine_functions.get_ground(global.variables.selected_id);
-							if (index < grounds.length) {
+							if (index > -1 && index < grounds.length) {
 								clipboard_entry.clipboard_rotation = grounds[index].elm.rotation;
 								clipboard_entry.clipboard_flip = grounds[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 							index = engine_functions.get_dcsource(global.variables.selected_id);
-							if (index < dcsources.length) {
+							if (index > -1 && index < dcsources.length) {
 								clipboard_entry.clipboard_rotation = dcsources[index].elm.rotation;
 								clipboard_entry.clipboard_flip = dcsources[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 							index = engine_functions.get_dccurrent(global.variables.selected_id);
-							if (index < dccurrents.length) {
+							if (index > -1 && index < dccurrents.length) {
 								clipboard_entry.clipboard_rotation = dccurrents[index].elm.rotation;
 								clipboard_entry.clipboard_flip = dccurrents[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 							index = engine_functions.get_acsource(global.variables.selected_id);
-							if (index < acsources.length) {
+							if (index > -1 && index < acsources.length) {
 								clipboard_entry.clipboard_rotation = acsources[index].elm.rotation;
 								clipboard_entry.clipboard_flip = acsources[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 							index = engine_functions.get_accurrent(global.variables.selected_id);
-							if (index < accurrents.length) {
+							if (index > -1 && index < accurrents.length) {
 								clipboard_entry.clipboard_rotation = accurrents[index].elm.rotation;
 								clipboard_entry.clipboard_flip = accurrents[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 							index = engine_functions.get_squarewave(global.variables.selected_id);
-							if (index < squarewaves.length) {
+							if (index > -1 && index < squarewaves.length) {
 								clipboard_entry.clipboard_rotation = squarewaves[index].elm.rotation;
 								clipboard_entry.clipboard_flip = squarewaves[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SAW) {
 							index = engine_functions.get_sawwave(global.variables.selected_id);
-							if (index < sawwaves.length) {
+							if (index > -1 && index < sawwaves.length) {
 								clipboard_entry.clipboard_rotation = sawwaves[index].elm.rotation;
 								clipboard_entry.clipboard_flip = sawwaves[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_TRI) {
 							index = engine_functions.get_trianglewave(global.variables.selected_id);
-							if (index < trianglewaves.length) {
+							if (index > -1 && index < trianglewaves.length) {
 								clipboard_entry.clipboard_rotation = trianglewaves[index].elm.rotation;
 								clipboard_entry.clipboard_flip = trianglewaves[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 							index = engine_functions.get_constant(global.variables.selected_id);
-							if (index < constants.length) {
+							if (index > -1 && index < constants.length) {
 								clipboard_entry.clipboard_rotation = constants[index].elm.rotation;
 								clipboard_entry.clipboard_flip = constants[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NET) {
 							index = engine_functions.get_net(global.variables.selected_id);
-							if (index < nets.length) {
+							if (index > -1 && index < nets.length) {
 								clipboard_entry.clipboard_rotation = nets[index].elm.rotation;
 								clipboard_entry.clipboard_flip = nets[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 							index = engine_functions.get_note(global.variables.selected_id);
-							if (index < notes.length) {
+							if (index > -1 && index < notes.length) {
 								clipboard_entry.clipboard_rotation = notes[index].elm.rotation;
 								clipboard_entry.clipboard_flip = notes[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 							index = engine_functions.get_rail(global.variables.selected_id);
-							if (index < rails.length) {
+							if (index > -1 && index < rails.length) {
 								clipboard_entry.clipboard_rotation = rails[index].elm.rotation;
 								clipboard_entry.clipboard_flip = rails[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 							index = engine_functions.get_voltmeter(global.variables.selected_id);
-							if (index < voltmeters.length) {
+							if (index > -1 && index < voltmeters.length) {
 								clipboard_entry.clipboard_rotation = voltmeters[index].elm.rotation;
 								clipboard_entry.clipboard_flip = voltmeters[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 							index = engine_functions.get_ohmmeter(global.variables.selected_id);
-							if (index < ohmmeters.length) {
+							if (index > -1 && index < ohmmeters.length) {
 								clipboard_entry.clipboard_rotation = ohmmeters[index].elm.rotation;
 								clipboard_entry.clipboard_flip = ohmmeters[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 							index = engine_functions.get_ammeter(global.variables.selected_id);
-							if (index < ammeters.length) {
+							if (index > -1 && index < ammeters.length) {
 								clipboard_entry.clipboard_rotation = ammeters[index].elm.rotation;
 								clipboard_entry.clipboard_flip = ammeters[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 							index = engine_functions.get_wattmeter(global.variables.selected_id);
-							if (index < wattmeters.length) {
+							if (index > -1 && index < wattmeters.length) {
 								clipboard_entry.clipboard_rotation = wattmeters[index].elm.rotation;
 								clipboard_entry.clipboard_flip = wattmeters[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 							index = engine_functions.get_fuse(global.variables.selected_id);
-							if (index < fuses.length) {
+							if (index > -1 && index < fuses.length) {
 								clipboard_entry.clipboard_rotation = fuses[index].elm.rotation;
 								clipboard_entry.clipboard_flip = fuses[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SPST) {
 							index = engine_functions.get_spst(global.variables.selected_id);
-							if (index < spsts.length) {
+							if (index > -1 && index < spsts.length) {
 								clipboard_entry.clipboard_rotation = spsts[index].elm.rotation;
 								clipboard_entry.clipboard_flip = spsts[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 							index = engine_functions.get_spdt(global.variables.selected_id);
-							if (index < spdts.length) {
+							if (index > -1 && index < spdts.length) {
 								clipboard_entry.clipboard_rotation = spdts[index].elm.rotation;
 								clipboard_entry.clipboard_flip = spdts[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NOT) {
 							index = engine_functions.get_not(global.variables.selected_id);
-							if (index < nots.length) {
+							if (index > -1 && index < nots.length) {
 								clipboard_entry.clipboard_rotation = nots[index].elm.rotation;
 								clipboard_entry.clipboard_flip = nots[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 							index = engine_functions.get_diode(global.variables.selected_id);
-							if (index < diodes.length) {
+							if (index > -1 && index < diodes.length) {
 								clipboard_entry.clipboard_rotation = diodes[index].elm.rotation;
 								clipboard_entry.clipboard_flip = diodes[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_LED) {
 							index = engine_functions.get_led(global.variables.selected_id);
-							if (index < leds.length) {
+							if (index > -1 && index < leds.length) {
 								clipboard_entry.clipboard_rotation = leds[index].elm.rotation;
 								clipboard_entry.clipboard_flip = leds[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 							index = engine_functions.get_zener(global.variables.selected_id);
-							if (index < zeners.length) {
+							if (index > -1 && index < zeners.length) {
 								clipboard_entry.clipboard_rotation = zeners[index].elm.rotation;
 								clipboard_entry.clipboard_flip = zeners[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 							index = engine_functions.get_potentiometer(global.variables.selected_id);
-							if (index < potentiometers.length) {
+							if (index > -1 && index < potentiometers.length) {
 								clipboard_entry.clipboard_rotation = potentiometers[index].elm.rotation;
 								clipboard_entry.clipboard_flip = potentiometers[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_AND) {
 							index = engine_functions.get_and(global.variables.selected_id);
-							if (index < ands.length) {
+							if (index > -1 && index < ands.length) {
 								clipboard_entry.clipboard_rotation = ands[index].elm.rotation;
 								clipboard_entry.clipboard_flip = ands[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_OR) {
 							index = engine_functions.get_or(global.variables.selected_id);
-							if (index < ors.length) {
+							if (index > -1 && index < ors.length) {
 								clipboard_entry.clipboard_rotation = ors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = ors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NAND) {
 							index = engine_functions.get_nand(global.variables.selected_id);
-							if (index < nands.length) {
+							if (index > -1 && index < nands.length) {
 								clipboard_entry.clipboard_rotation = nands[index].elm.rotation;
 								clipboard_entry.clipboard_flip = nands[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NOR) {
 							index = engine_functions.get_nor(global.variables.selected_id);
-							if (index < nors.length) {
+							if (index > -1 && index < nors.length) {
 								clipboard_entry.clipboard_rotation = nors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = nors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_XOR) {
 							index = engine_functions.get_xor(global.variables.selected_id);
-							if (index < xors.length) {
+							if (index > -1 && index < xors.length) {
 								clipboard_entry.clipboard_rotation = xors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = xors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 							index = engine_functions.get_xnor(global.variables.selected_id);
-							if (index < xnors.length) {
+							if (index > -1 && index < xnors.length) {
 								clipboard_entry.clipboard_rotation = xnors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = xnors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DFF) {
 							index = engine_functions.get_dff(global.variables.selected_id);
-							if (index < dffs.length) {
+							if (index > -1 && index < dffs.length) {
 								clipboard_entry.clipboard_rotation = dffs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = dffs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 							index = engine_functions.get_vsat(global.variables.selected_id);
-							if (index < vsats.length) {
+							if (index > -1 && index < vsats.length) {
 								clipboard_entry.clipboard_rotation = vsats[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vsats[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ADD) {
 							index = engine_functions.get_adder(global.variables.selected_id);
-							if (index < adders.length) {
+							if (index > -1 && index < adders.length) {
 								clipboard_entry.clipboard_rotation = adders[index].elm.rotation;
 								clipboard_entry.clipboard_flip = adders[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SUB) {
 							index = engine_functions.get_subtractor(global.variables.selected_id);
-							if (index < subtractors.length) {
+							if (index > -1 && index < subtractors.length) {
 								clipboard_entry.clipboard_rotation = subtractors[index].elm.rotation;
 								clipboard_entry.clipboard_flip = subtractors[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_MUL) {
 							index = engine_functions.get_multiplier(global.variables.selected_id);
-							if (index < multipliers.length) {
+							if (index > -1 && index < multipliers.length) {
 								clipboard_entry.clipboard_rotation = multipliers[index].elm.rotation;
 								clipboard_entry.clipboard_flip = multipliers[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DIV) {
 							index = engine_functions.get_divider(global.variables.selected_id);
-							if (index < dividers.length) {
+							if (index > -1 && index < dividers.length) {
 								clipboard_entry.clipboard_rotation = dividers[index].elm.rotation;
 								clipboard_entry.clipboard_flip = dividers[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 							index = engine_functions.get_gain(global.variables.selected_id);
-							if (index < gains.length) {
+							if (index > -1 && index < gains.length) {
 								clipboard_entry.clipboard_rotation = gains[index].elm.rotation;
 								clipboard_entry.clipboard_flip = gains[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ABS) {
 							index = engine_functions.get_absval(global.variables.selected_id);
-							if (index < absvals.length) {
+							if (index > -1 && index < absvals.length) {
 								clipboard_entry.clipboard_rotation = absvals[index].elm.rotation;
 								clipboard_entry.clipboard_flip = absvals[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 							index = engine_functions.get_vcsw(global.variables.selected_id);
-							if (index < vcsws.length) {
+							if (index > -1 && index < vcsws.length) {
 								clipboard_entry.clipboard_rotation = vcsws[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vcsws[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 							index = engine_functions.get_vcvs(global.variables.selected_id);
-							if (index < vcvss.length) {
+							if (index > -1 && index < vcvss.length) {
 								clipboard_entry.clipboard_rotation = vcvss[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vcvss[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 							index = engine_functions.get_vccs(global.variables.selected_id);
-							if (index < vccss.length) {
+							if (index > -1 && index < vccss.length) {
 								clipboard_entry.clipboard_rotation = vccss[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vccss[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 							index = engine_functions.get_cccs(global.variables.selected_id);
-							if (index < cccss.length) {
+							if (index > -1 && index < cccss.length) {
 								clipboard_entry.clipboard_rotation = cccss[index].elm.rotation;
 								clipboard_entry.clipboard_flip = cccss[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 							index = engine_functions.get_ccvs(global.variables.selected_id);
-							if (index < ccvss.length) {
+							if (index > -1 && index < ccvss.length) {
 								clipboard_entry.clipboard_rotation = ccvss[index].elm.rotation;
 								clipboard_entry.clipboard_flip = ccvss[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 							index = engine_functions.get_opamp(global.variables.selected_id);
-							if (index < opamps.length) {
+							if (index > -1 && index < opamps.length) {
 								clipboard_entry.clipboard_rotation = opamps[index].elm.rotation;
 								clipboard_entry.clipboard_flip = opamps[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 							index = engine_functions.get_nmosfet(global.variables.selected_id);
-							if (index < nmosfets.length) {
+							if (index > -1 && index < nmosfets.length) {
 								clipboard_entry.clipboard_rotation = nmosfets[index].elm.rotation;
 								clipboard_entry.clipboard_flip = nmosfets[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 							index = engine_functions.get_pmosfet(global.variables.selected_id);
-							if (index < pmosfets.length) {
+							if (index > -1 && index < pmosfets.length) {
 								clipboard_entry.clipboard_rotation = pmosfets[index].elm.rotation;
 								clipboard_entry.clipboard_flip = pmosfets[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_NPN) {
 							index = engine_functions.get_npn(global.variables.selected_id);
-							if (index < npns.length) {
+							if (index > -1 && index < npns.length) {
 								clipboard_entry.clipboard_rotation = npns[index].elm.rotation;
 								clipboard_entry.clipboard_flip = npns[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_PNP) {
 							index = engine_functions.get_pnp(global.variables.selected_id);
-							if (index < pnps.length) {
+							if (index > -1 && index < pnps.length) {
 								clipboard_entry.clipboard_rotation = pnps[index].elm.rotation;
 								clipboard_entry.clipboard_flip = pnps[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_ADC) {
 							index = engine_functions.get_adc(global.variables.selected_id);
-							if (index < adcs.length) {
+							if (index > -1 && index < adcs.length) {
 								clipboard_entry.clipboard_rotation = adcs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = adcs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DAC) {
 							index = engine_functions.get_dac(global.variables.selected_id);
-							if (index < dacs.length) {
+							if (index > -1 && index < dacs.length) {
 								clipboard_entry.clipboard_rotation = dacs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = dacs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_SAH) {
 							index = engine_functions.get_samplers(global.variables.selected_id);
-							if (index < sandhs.length) {
+							if (index > -1 && index < sandhs.length) {
 								clipboard_entry.clipboard_rotation = sandhs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = sandhs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_PWM) {
 							index = engine_functions.get_pwm(global.variables.selected_id);
-							if (index < pwms.length) {
+							if (index > -1 && index < pwms.length) {
 								clipboard_entry.clipboard_rotation = pwms[index].elm.rotation;
 								clipboard_entry.clipboard_flip = pwms[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 							index = engine_functions.get_integrator(global.variables.selected_id);
-							if (index < integrators.length) {
+							if (index > -1 && index < integrators.length) {
 								clipboard_entry.clipboard_rotation = integrators[index].elm.rotation;
 								clipboard_entry.clipboard_flip = integrators[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 							index = engine_functions.get_differentiator(global.variables.selected_id);
-							if (index < differentiators.length) {
+							if (index > -1 && index < differentiators.length) {
 								clipboard_entry.clipboard_rotation = differentiators[index].elm.rotation;
 								clipboard_entry.clipboard_flip = differentiators[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_LPF) {
 							index = engine_functions.get_lowpass(global.variables.selected_id);
-							if (index < lowpasses.length) {
+							if (index > -1 && index < lowpasses.length) {
 								clipboard_entry.clipboard_rotation = lowpasses[index].elm.rotation;
 								clipboard_entry.clipboard_flip = lowpasses[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_HPF) {
 							index = engine_functions.get_highpass(global.variables.selected_id);
-							if (index < highpasses.length) {
+							if (index > -1 && index < highpasses.length) {
 								clipboard_entry.clipboard_rotation = highpasses[index].elm.rotation;
 								clipboard_entry.clipboard_flip = highpasses[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_REL) {
 							index = engine_functions.get_relay(global.variables.selected_id);
-							if (index < relays.length) {
+							if (index > -1 && index < relays.length) {
 								clipboard_entry.clipboard_rotation = relays[index].elm.rotation;
 								clipboard_entry.clipboard_flip = relays[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_PID) {
 							index = engine_functions.get_pid(global.variables.selected_id);
-							if (index < pids.length) {
+							if (index > -1 && index < pids.length) {
 								clipboard_entry.clipboard_rotation = pids[index].elm.rotation;
 								clipboard_entry.clipboard_flip = pids[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_LUT) {
 							index = engine_functions.get_lut(global.variables.selected_id);
-							if (index < luts.length) {
+							if (index > -1 && index < luts.length) {
 								clipboard_entry.clipboard_rotation = luts[index].elm.rotation;
 								clipboard_entry.clipboard_flip = luts[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCR) {
 							index = engine_functions.get_vcr(global.variables.selected_id);
-							if (index < vcrs.length) {
+							if (index > -1 && index < vcrs.length) {
 								clipboard_entry.clipboard_rotation = vcrs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vcrs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 							index = engine_functions.get_vcca(global.variables.selected_id);
-							if (index < vccas.length) {
+							if (index > -1 && index < vccas.length) {
 								clipboard_entry.clipboard_rotation = vccas[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vccas[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_VCL) {
 							index = engine_functions.get_vcl(global.variables.selected_id);
-							if (index < vcls.length) {
+							if (index > -1 && index < vcls.length) {
 								clipboard_entry.clipboard_rotation = vcls[index].elm.rotation;
 								clipboard_entry.clipboard_flip = vcls[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_GRT) {
 							index = engine_functions.get_grt(global.variables.selected_id);
-							if (index < grts.length) {
+							if (index > -1 && index < grts.length) {
 								clipboard_entry.clipboard_rotation = grts[index].elm.rotation;
 								clipboard_entry.clipboard_flip = grts[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 							index = engine_functions.get_tptz(global.variables.selected_id);
-							if (index < tptzs.length) {
+							if (index > -1 && index < tptzs.length) {
 								clipboard_entry.clipboard_rotation = tptzs[index].elm.rotation;
 								clipboard_entry.clipboard_flip = tptzs[index].elm.flip;
 							}
 						} else if (clipboard_entry.clipboard_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 							index = engine_functions.get_transformer(global.variables.selected_id);
-							if (index < transformers.length) {
+							if (index > -1 && index < transformers.length) {
 								clipboard_entry.clipboard_rotation = transformers[index].elm.rotation;
 								clipboard_entry.clipboard_flip = transformers[index].elm.flip;
 							}
@@ -3997,11 +3997,880 @@ class ShortcutManager {
 						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
 					}
 				}
+				for (var i = 0; i < capacitors.length; i++) {
+					if (capacitors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = capacitors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = capacitors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = capacitors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(capacitors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = capacitors[i].elm.rotation;
+						clipboard_entry.clipboard_type = capacitors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = capacitors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(capacitors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < inductors.length; i++) {
+					if (inductors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = inductors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = inductors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = inductors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(inductors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = inductors[i].elm.rotation;
+						clipboard_entry.clipboard_type = inductors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = inductors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(inductors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < grounds.length; i++) {
+					if (grounds[i].multi_selected) {
+						clipboard_entry.clipboard_flip = grounds[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = grounds[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = grounds[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(grounds[i].elm.properties);
+						clipboard_entry.clipboard_rotation = grounds[i].elm.rotation;
+						clipboard_entry.clipboard_type = grounds[i].elm.type;
+						clipboard_entry.clipboard_reference_id = grounds[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(grounds[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < dcsources.length; i++) {
+					if (dcsources[i].multi_selected) {
+						clipboard_entry.clipboard_flip = dcsources[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = dcsources[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = dcsources[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(dcsources[i].elm.properties);
+						clipboard_entry.clipboard_rotation = dcsources[i].elm.rotation;
+						clipboard_entry.clipboard_type = dcsources[i].elm.type;
+						clipboard_entry.clipboard_reference_id = dcsources[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(dcsources[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < dccurrents.length; i++) {
+					if (dccurrents[i].multi_selected) {
+						clipboard_entry.clipboard_flip = dccurrents[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = dccurrents[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = dccurrents[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(dccurrents[i].elm.properties);
+						clipboard_entry.clipboard_rotation = dccurrents[i].elm.rotation;
+						clipboard_entry.clipboard_type = dccurrents[i].elm.type;
+						clipboard_entry.clipboard_reference_id = dccurrents[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(dccurrents[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < acsources.length; i++) {
+					if (acsources[i].multi_selected) {
+						clipboard_entry.clipboard_flip = acsources[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = acsources[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = acsources[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(acsources[i].elm.properties);
+						clipboard_entry.clipboard_rotation = acsources[i].elm.rotation;
+						clipboard_entry.clipboard_type = acsources[i].elm.type;
+						clipboard_entry.clipboard_reference_id = acsources[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(acsources[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < accurrents.length; i++) {
+					if (accurrents[i].multi_selected) {
+						clipboard_entry.clipboard_flip = accurrents[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = accurrents[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = accurrents[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(accurrents[i].elm.properties);
+						clipboard_entry.clipboard_rotation = accurrents[i].elm.rotation;
+						clipboard_entry.clipboard_type = accurrents[i].elm.type;
+						clipboard_entry.clipboard_reference_id = accurrents[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(accurrents[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < squarewaves.length; i++) {
+					if (squarewaves[i].multi_selected) {
+						clipboard_entry.clipboard_flip = squarewaves[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = squarewaves[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = squarewaves[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(squarewaves[i].elm.properties);
+						clipboard_entry.clipboard_rotation = squarewaves[i].elm.rotation;
+						clipboard_entry.clipboard_type = squarewaves[i].elm.type;
+						clipboard_entry.clipboard_reference_id = squarewaves[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(squarewaves[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < sawwaves.length; i++) {
+					if (sawwaves[i].multi_selected) {
+						clipboard_entry.clipboard_flip = sawwaves[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = sawwaves[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = sawwaves[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(sawwaves[i].elm.properties);
+						clipboard_entry.clipboard_rotation = sawwaves[i].elm.rotation;
+						clipboard_entry.clipboard_type = sawwaves[i].elm.type;
+						clipboard_entry.clipboard_reference_id = sawwaves[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(sawwaves[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < trianglewaves.length; i++) {
+					if (trianglewaves[i].multi_selected) {
+						clipboard_entry.clipboard_flip = trianglewaves[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = trianglewaves[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = trianglewaves[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(trianglewaves[i].elm.properties);
+						clipboard_entry.clipboard_rotation = trianglewaves[i].elm.rotation;
+						clipboard_entry.clipboard_type = trianglewaves[i].elm.type;
+						clipboard_entry.clipboard_reference_id = trianglewaves[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(trianglewaves[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < constants.length; i++) {
+					if (constants[i].multi_selected) {
+						clipboard_entry.clipboard_flip = constants[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = constants[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = constants[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(constants[i].elm.properties);
+						clipboard_entry.clipboard_rotation = constants[i].elm.rotation;
+						clipboard_entry.clipboard_type = constants[i].elm.type;
+						clipboard_entry.clipboard_reference_id = constants[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(constants[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < nets.length; i++) {
+					if (nets[i].multi_selected) {
+						clipboard_entry.clipboard_flip = nets[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = nets[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = nets[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(nets[i].elm.properties);
+						clipboard_entry.clipboard_rotation = nets[i].elm.rotation;
+						clipboard_entry.clipboard_type = nets[i].elm.type;
+						clipboard_entry.clipboard_reference_id = nets[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(nets[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < notes.length; i++) {
+					if (notes[i].multi_selected) {
+						clipboard_entry.clipboard_flip = notes[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = notes[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = notes[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(notes[i].elm.properties);
+						clipboard_entry.clipboard_rotation = notes[i].elm.rotation;
+						clipboard_entry.clipboard_type = notes[i].elm.type;
+						clipboard_entry.clipboard_reference_id = notes[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(notes[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < rails.length; i++) {
+					if (rails[i].multi_selected) {
+						clipboard_entry.clipboard_flip = rails[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = rails[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = rails[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(rails[i].elm.properties);
+						clipboard_entry.clipboard_rotation = rails[i].elm.rotation;
+						clipboard_entry.clipboard_type = rails[i].elm.type;
+						clipboard_entry.clipboard_reference_id = rails[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(rails[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < voltmeters.length; i++) {
+					if (voltmeters[i].multi_selected) {
+						clipboard_entry.clipboard_flip = voltmeters[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = voltmeters[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = voltmeters[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(voltmeters[i].elm.properties);
+						clipboard_entry.clipboard_rotation = voltmeters[i].elm.rotation;
+						clipboard_entry.clipboard_type = voltmeters[i].elm.type;
+						clipboard_entry.clipboard_reference_id = voltmeters[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(voltmeters[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < ohmmeters.length; i++) {
+					if (ohmmeters[i].multi_selected) {
+						clipboard_entry.clipboard_flip = ohmmeters[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = ohmmeters[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = ohmmeters[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(ohmmeters[i].elm.properties);
+						clipboard_entry.clipboard_rotation = ohmmeters[i].elm.rotation;
+						clipboard_entry.clipboard_type = ohmmeters[i].elm.type;
+						clipboard_entry.clipboard_reference_id = ohmmeters[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(ohmmeters[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < ammeters.length; i++) {
+					if (ammeters[i].multi_selected) {
+						clipboard_entry.clipboard_flip = ammeters[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = ammeters[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = ammeters[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(ammeters[i].elm.properties);
+						clipboard_entry.clipboard_rotation = ammeters[i].elm.rotation;
+						clipboard_entry.clipboard_type = ammeters[i].elm.type;
+						clipboard_entry.clipboard_reference_id = ammeters[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(ammeters[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < wattmeters.length; i++) {
+					if (wattmeters[i].multi_selected) {
+						clipboard_entry.clipboard_flip = wattmeters[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = wattmeters[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = wattmeters[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(wattmeters[i].elm.properties);
+						clipboard_entry.clipboard_rotation = wattmeters[i].elm.rotation;
+						clipboard_entry.clipboard_type = wattmeters[i].elm.type;
+						clipboard_entry.clipboard_reference_id = wattmeters[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(wattmeters[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < fuses.length; i++) {
+					if (fuses[i].multi_selected) {
+						clipboard_entry.clipboard_flip = fuses[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = fuses[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = fuses[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(fuses[i].elm.properties);
+						clipboard_entry.clipboard_rotation = fuses[i].elm.rotation;
+						clipboard_entry.clipboard_type = fuses[i].elm.type;
+						clipboard_entry.clipboard_reference_id = fuses[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(fuses[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < spsts.length; i++) {
+					if (spsts[i].multi_selected) {
+						clipboard_entry.clipboard_flip = spsts[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = spsts[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = spsts[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(spsts[i].elm.properties);
+						clipboard_entry.clipboard_rotation = spsts[i].elm.rotation;
+						clipboard_entry.clipboard_type = spsts[i].elm.type;
+						clipboard_entry.clipboard_reference_id = spsts[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(spsts[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < spdts.length; i++) {
+					if (spdts[i].multi_selected) {
+						clipboard_entry.clipboard_flip = spdts[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = spdts[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = spdts[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(spdts[i].elm.properties);
+						clipboard_entry.clipboard_rotation = spdts[i].elm.rotation;
+						clipboard_entry.clipboard_type = spdts[i].elm.type;
+						clipboard_entry.clipboard_reference_id = spdts[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(spdts[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < nots.length; i++) {
+					if (nots[i].multi_selected) {
+						clipboard_entry.clipboard_flip = nots[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = nots[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = nots[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(nots[i].elm.properties);
+						clipboard_entry.clipboard_rotation = nots[i].elm.rotation;
+						clipboard_entry.clipboard_type = nots[i].elm.type;
+						clipboard_entry.clipboard_reference_id = nots[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(nots[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < diodes.length; i++) {
+					if (diodes[i].multi_selected) {
+						clipboard_entry.clipboard_flip = diodes[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = diodes[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = diodes[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(diodes[i].elm.properties);
+						clipboard_entry.clipboard_rotation = diodes[i].elm.rotation;
+						clipboard_entry.clipboard_type = diodes[i].elm.type;
+						clipboard_entry.clipboard_reference_id = diodes[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(diodes[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < leds.length; i++) {
+					if (leds[i].multi_selected) {
+						clipboard_entry.clipboard_flip = leds[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = leds[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = leds[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(leds[i].elm.properties);
+						clipboard_entry.clipboard_rotation = leds[i].elm.rotation;
+						clipboard_entry.clipboard_type = leds[i].elm.type;
+						clipboard_entry.clipboard_reference_id = leds[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(leds[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < zeners.length; i++) {
+					if (zeners[i].multi_selected) {
+						clipboard_entry.clipboard_flip = zeners[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = zeners[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = zeners[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(zeners[i].elm.properties);
+						clipboard_entry.clipboard_rotation = zeners[i].elm.rotation;
+						clipboard_entry.clipboard_type = zeners[i].elm.type;
+						clipboard_entry.clipboard_reference_id = zeners[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(zeners[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < potentiometers.length; i++) {
+					if (potentiometers[i].multi_selected) {
+						clipboard_entry.clipboard_flip = potentiometers[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = potentiometers[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = potentiometers[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(potentiometers[i].elm.properties);
+						clipboard_entry.clipboard_rotation = potentiometers[i].elm.rotation;
+						clipboard_entry.clipboard_type = potentiometers[i].elm.type;
+						clipboard_entry.clipboard_reference_id = potentiometers[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(potentiometers[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < ands.length; i++) {
+					if (ands[i].multi_selected) {
+						clipboard_entry.clipboard_flip = ands[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = ands[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = ands[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(ands[i].elm.properties);
+						clipboard_entry.clipboard_rotation = ands[i].elm.rotation;
+						clipboard_entry.clipboard_type = ands[i].elm.type;
+						clipboard_entry.clipboard_reference_id = ands[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(ands[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < ors.length; i++) {
+					if (ors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = ors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = ors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = ors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(ors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = ors[i].elm.rotation;
+						clipboard_entry.clipboard_type = ors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = ors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(ors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < nands.length; i++) {
+					if (nands[i].multi_selected) {
+						clipboard_entry.clipboard_flip = nands[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = nands[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = nands[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(nands[i].elm.properties);
+						clipboard_entry.clipboard_rotation = nands[i].elm.rotation;
+						clipboard_entry.clipboard_type = nands[i].elm.type;
+						clipboard_entry.clipboard_reference_id = nands[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(nands[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < nors.length; i++) {
+					if (nors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = nors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = nors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = nors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(nors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = nors[i].elm.rotation;
+						clipboard_entry.clipboard_type = nors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = nors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(nors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < xors.length; i++) {
+					if (xors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = xors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = xors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = xors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(xors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = xors[i].elm.rotation;
+						clipboard_entry.clipboard_type = xors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = xors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(xors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < xnors.length; i++) {
+					if (xnors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = xnors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = xnors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = xnors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(xnors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = xnors[i].elm.rotation;
+						clipboard_entry.clipboard_type = xnors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = xnors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(xnors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < dffs.length; i++) {
+					if (dffs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = dffs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = dffs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = dffs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(dffs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = dffs[i].elm.rotation;
+						clipboard_entry.clipboard_type = dffs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = dffs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(dffs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vsats.length; i++) {
+					if (vsats[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vsats[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vsats[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vsats[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vsats[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vsats[i].elm.rotation;
+						clipboard_entry.clipboard_type = vsats[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vsats[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vsats[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < adders.length; i++) {
+					if (adders[i].multi_selected) {
+						clipboard_entry.clipboard_flip = adders[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = adders[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = adders[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(adders[i].elm.properties);
+						clipboard_entry.clipboard_rotation = adders[i].elm.rotation;
+						clipboard_entry.clipboard_type = adders[i].elm.type;
+						clipboard_entry.clipboard_reference_id = adders[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(adders[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < subtractors.length; i++) {
+					if (subtractors[i].multi_selected) {
+						clipboard_entry.clipboard_flip = subtractors[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = subtractors[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = subtractors[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(subtractors[i].elm.properties);
+						clipboard_entry.clipboard_rotation = subtractors[i].elm.rotation;
+						clipboard_entry.clipboard_type = subtractors[i].elm.type;
+						clipboard_entry.clipboard_reference_id = subtractors[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(subtractors[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < multipliers.length; i++) {
+					if (multipliers[i].multi_selected) {
+						clipboard_entry.clipboard_flip = multipliers[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = multipliers[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = multipliers[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(multipliers[i].elm.properties);
+						clipboard_entry.clipboard_rotation = multipliers[i].elm.rotation;
+						clipboard_entry.clipboard_type = multipliers[i].elm.type;
+						clipboard_entry.clipboard_reference_id = multipliers[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(multipliers[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < dividers.length; i++) {
+					if (dividers[i].multi_selected) {
+						clipboard_entry.clipboard_flip = dividers[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = dividers[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = dividers[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(dividers[i].elm.properties);
+						clipboard_entry.clipboard_rotation = dividers[i].elm.rotation;
+						clipboard_entry.clipboard_type = dividers[i].elm.type;
+						clipboard_entry.clipboard_reference_id = dividers[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(dividers[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < gains.length; i++) {
+					if (gains[i].multi_selected) {
+						clipboard_entry.clipboard_flip = gains[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = gains[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = gains[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(gains[i].elm.properties);
+						clipboard_entry.clipboard_rotation = gains[i].elm.rotation;
+						clipboard_entry.clipboard_type = gains[i].elm.type;
+						clipboard_entry.clipboard_reference_id = gains[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(gains[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < absvals.length; i++) {
+					if (absvals[i].multi_selected) {
+						clipboard_entry.clipboard_flip = absvals[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = absvals[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = absvals[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(absvals[i].elm.properties);
+						clipboard_entry.clipboard_rotation = absvals[i].elm.rotation;
+						clipboard_entry.clipboard_type = absvals[i].elm.type;
+						clipboard_entry.clipboard_reference_id = absvals[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(absvals[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vcsws.length; i++) {
+					if (vcsws[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vcsws[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vcsws[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vcsws[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vcsws[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vcsws[i].elm.rotation;
+						clipboard_entry.clipboard_type = vcsws[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vcsws[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vcsws[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vcvss.length; i++) {
+					if (vcvss[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vcvss[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vcvss[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vcvss[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vcvss[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vcvss[i].elm.rotation;
+						clipboard_entry.clipboard_type = vcvss[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vcvss[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vcvss[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vccss.length; i++) {
+					if (vccss[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vccss[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vccss[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vccss[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vccss[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vccss[i].elm.rotation;
+						clipboard_entry.clipboard_type = vccss[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vccss[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vccss[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < cccss.length; i++) {
+					if (cccss[i].multi_selected) {
+						clipboard_entry.clipboard_flip = cccss[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = cccss[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = cccss[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(cccss[i].elm.properties);
+						clipboard_entry.clipboard_rotation = cccss[i].elm.rotation;
+						clipboard_entry.clipboard_type = cccss[i].elm.type;
+						clipboard_entry.clipboard_reference_id = cccss[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(cccss[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < ccvss.length; i++) {
+					if (ccvss[i].multi_selected) {
+						clipboard_entry.clipboard_flip = ccvss[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = ccvss[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = ccvss[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(ccvss[i].elm.properties);
+						clipboard_entry.clipboard_rotation = ccvss[i].elm.rotation;
+						clipboard_entry.clipboard_type = ccvss[i].elm.type;
+						clipboard_entry.clipboard_reference_id = ccvss[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(ccvss[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < opamps.length; i++) {
+					if (opamps[i].multi_selected) {
+						clipboard_entry.clipboard_flip = opamps[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = opamps[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = opamps[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(opamps[i].elm.properties);
+						clipboard_entry.clipboard_rotation = opamps[i].elm.rotation;
+						clipboard_entry.clipboard_type = opamps[i].elm.type;
+						clipboard_entry.clipboard_reference_id = opamps[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(opamps[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < nmosfets.length; i++) {
+					if (nmosfets[i].multi_selected) {
+						clipboard_entry.clipboard_flip = nmosfets[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = nmosfets[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = nmosfets[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(nmosfets[i].elm.properties);
+						clipboard_entry.clipboard_rotation = nmosfets[i].elm.rotation;
+						clipboard_entry.clipboard_type = nmosfets[i].elm.type;
+						clipboard_entry.clipboard_reference_id = nmosfets[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(nmosfets[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < pmosfets.length; i++) {
+					if (pmosfets[i].multi_selected) {
+						clipboard_entry.clipboard_flip = pmosfets[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = pmosfets[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = pmosfets[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(pmosfets[i].elm.properties);
+						clipboard_entry.clipboard_rotation = pmosfets[i].elm.rotation;
+						clipboard_entry.clipboard_type = pmosfets[i].elm.type;
+						clipboard_entry.clipboard_reference_id = pmosfets[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(pmosfets[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < npns.length; i++) {
+					if (npns[i].multi_selected) {
+						clipboard_entry.clipboard_flip = npns[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = npns[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = npns[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(npns[i].elm.properties);
+						clipboard_entry.clipboard_rotation = npns[i].elm.rotation;
+						clipboard_entry.clipboard_type = npns[i].elm.type;
+						clipboard_entry.clipboard_reference_id = npns[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(npns[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < pnps.length; i++) {
+					if (pnps[i].multi_selected) {
+						clipboard_entry.clipboard_flip = pnps[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = pnps[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = pnps[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(pnps[i].elm.properties);
+						clipboard_entry.clipboard_rotation = pnps[i].elm.rotation;
+						clipboard_entry.clipboard_type = pnps[i].elm.type;
+						clipboard_entry.clipboard_reference_id = pnps[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(pnps[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < adcs.length; i++) {
+					if (adcs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = adcs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = adcs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = adcs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(adcs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = adcs[i].elm.rotation;
+						clipboard_entry.clipboard_type = adcs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = adcs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(adcs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < dacs.length; i++) {
+					if (dacs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = dacs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = dacs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = dacs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(dacs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = dacs[i].elm.rotation;
+						clipboard_entry.clipboard_type = dacs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = dacs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(dacs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < sandhs.length; i++) {
+					if (sandhs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = sandhs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = sandhs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = sandhs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(sandhs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = sandhs[i].elm.rotation;
+						clipboard_entry.clipboard_type = sandhs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = sandhs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(sandhs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < pwms.length; i++) {
+					if (pwms[i].multi_selected) {
+						clipboard_entry.clipboard_flip = pwms[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = pwms[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = pwms[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(pwms[i].elm.properties);
+						clipboard_entry.clipboard_rotation = pwms[i].elm.rotation;
+						clipboard_entry.clipboard_type = pwms[i].elm.type;
+						clipboard_entry.clipboard_reference_id = pwms[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(pwms[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < integrators.length; i++) {
+					if (integrators[i].multi_selected) {
+						clipboard_entry.clipboard_flip = integrators[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = integrators[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = integrators[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(integrators[i].elm.properties);
+						clipboard_entry.clipboard_rotation = integrators[i].elm.rotation;
+						clipboard_entry.clipboard_type = integrators[i].elm.type;
+						clipboard_entry.clipboard_reference_id = integrators[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(integrators[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < differentiators.length; i++) {
+					if (differentiators[i].multi_selected) {
+						clipboard_entry.clipboard_flip = differentiators[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = differentiators[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = differentiators[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(differentiators[i].elm.properties);
+						clipboard_entry.clipboard_rotation = differentiators[i].elm.rotation;
+						clipboard_entry.clipboard_type = differentiators[i].elm.type;
+						clipboard_entry.clipboard_reference_id = differentiators[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(differentiators[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < lowpasses.length; i++) {
+					if (lowpasses[i].multi_selected) {
+						clipboard_entry.clipboard_flip = lowpasses[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = lowpasses[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = lowpasses[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(lowpasses[i].elm.properties);
+						clipboard_entry.clipboard_rotation = lowpasses[i].elm.rotation;
+						clipboard_entry.clipboard_type = lowpasses[i].elm.type;
+						clipboard_entry.clipboard_reference_id = lowpasses[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(lowpasses[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < highpasses.length; i++) {
+					if (highpasses[i].multi_selected) {
+						clipboard_entry.clipboard_flip = highpasses[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = highpasses[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = highpasses[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(highpasses[i].elm.properties);
+						clipboard_entry.clipboard_rotation = highpasses[i].elm.rotation;
+						clipboard_entry.clipboard_type = highpasses[i].elm.type;
+						clipboard_entry.clipboard_reference_id = highpasses[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(highpasses[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < relays.length; i++) {
+					if (relays[i].multi_selected) {
+						clipboard_entry.clipboard_flip = relays[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = relays[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = relays[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(relays[i].elm.properties);
+						clipboard_entry.clipboard_rotation = relays[i].elm.rotation;
+						clipboard_entry.clipboard_type = relays[i].elm.type;
+						clipboard_entry.clipboard_reference_id = relays[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(relays[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < pids.length; i++) {
+					if (pids[i].multi_selected) {
+						clipboard_entry.clipboard_flip = pids[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = pids[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = pids[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(pids[i].elm.properties);
+						clipboard_entry.clipboard_rotation = pids[i].elm.rotation;
+						clipboard_entry.clipboard_type = pids[i].elm.type;
+						clipboard_entry.clipboard_reference_id = pids[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(pids[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < luts.length; i++) {
+					if (luts[i].multi_selected) {
+						clipboard_entry.clipboard_flip = luts[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = luts[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = luts[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(luts[i].elm.properties);
+						clipboard_entry.clipboard_rotation = luts[i].elm.rotation;
+						clipboard_entry.clipboard_type = luts[i].elm.type;
+						clipboard_entry.clipboard_reference_id = luts[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(luts[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vcrs.length; i++) {
+					if (vcrs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vcrs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vcrs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vcrs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vcrs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vcrs[i].elm.rotation;
+						clipboard_entry.clipboard_type = vcrs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vcrs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vcrs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vccas.length; i++) {
+					if (vccas[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vccas[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vccas[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vccas[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vccas[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vccas[i].elm.rotation;
+						clipboard_entry.clipboard_type = vccas[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vccas[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vccas[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < vcls.length; i++) {
+					if (vcls[i].multi_selected) {
+						clipboard_entry.clipboard_flip = vcls[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = vcls[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = vcls[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(vcls[i].elm.properties);
+						clipboard_entry.clipboard_rotation = vcls[i].elm.rotation;
+						clipboard_entry.clipboard_type = vcls[i].elm.type;
+						clipboard_entry.clipboard_reference_id = vcls[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(vcls[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < grts.length; i++) {
+					if (grts[i].multi_selected) {
+						clipboard_entry.clipboard_flip = grts[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = grts[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = grts[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(grts[i].elm.properties);
+						clipboard_entry.clipboard_rotation = grts[i].elm.rotation;
+						clipboard_entry.clipboard_type = grts[i].elm.type;
+						clipboard_entry.clipboard_reference_id = grts[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(grts[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < tptzs.length; i++) {
+					if (tptzs[i].multi_selected) {
+						clipboard_entry.clipboard_flip = tptzs[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = tptzs[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = tptzs[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(tptzs[i].elm.properties);
+						clipboard_entry.clipboard_rotation = tptzs[i].elm.rotation;
+						clipboard_entry.clipboard_type = tptzs[i].elm.type;
+						clipboard_entry.clipboard_reference_id = tptzs[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(tptzs[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
+				for (var i = 0; i < transformers.length; i++) {
+					if (transformers[i].multi_selected) {
+						clipboard_entry.clipboard_flip = transformers[i].elm.flip;
+						clipboard_entry.clipboard_location_dx = transformers[i].bounds.get_center_x() - multi_select_manager.selected_components_bounds.get_center_x();
+						clipboard_entry.clipboard_location_dy = transformers[i].bounds.get_center_y() - multi_select_manager.selected_components_bounds.get_center_y();
+						clipboard_entry.clipboard_property = global.utils.copy(transformers[i].elm.properties);
+						clipboard_entry.clipboard_rotation = transformers[i].elm.rotation;
+						clipboard_entry.clipboard_type = transformers[i].elm.type;
+						clipboard_entry.clipboard_reference_id = transformers[i].elm.id;
+						clipboard_entry.clipboard_wire_references = global.utils.copy(transformers[i].wire_reference);
+						global.variables.clipboard_data.push(global.utils.copy(clipboard_entry));
+					}
+				}
 				/* <!-- END AUTOMATICALLY GENERATED !--> */
 
-				toast.set_text(
-					language_manager.COPIED[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + '.'
-				);
+				toast.set_text(language_manager.COPIED_SELECTION[global.CONSTANTS.LANGUAGES[global.variables.language_index]]);
 				toast.show(global.COLORS.GENERAL_GREEN_COLOR);
 			}
 		}
@@ -4268,684 +5137,817 @@ class ShortcutManager {
 							id = engine_functions.get_resistor_assignment();
 							engine_functions.add_resistor();
 							index = engine_functions.get_resistor(id);
-							if (index < resistors.length) {
+							if (index > -1 && index < resistors.length) {
 								resistors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								resistors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								resistors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
 								resistors[index].multi_selected = multi_selected;
-								resistors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx,
-									global.variables.clipboard_data[j].clipboard_location_dy);
+								resistors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
 								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 							id = engine_functions.get_capacitor_assignment();
 							engine_functions.add_capacitor();
 							index = engine_functions.get_capacitor(id);
-							if (index < capacitors.length) {
+							if (index > -1 && index < capacitors.length) {
 								capacitors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								capacitors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								capacitors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								capacitors[index].multi_selected = multi_selected;
+								capacitors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 							id = engine_functions.get_inductor_assignment();
 							engine_functions.add_inductor();
 							index = engine_functions.get_inductor(id);
-							if (index < inductors.length) {
+							if (index > -1 && index < inductors.length) {
 								inductors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								inductors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								inductors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								inductors[index].multi_selected = multi_selected;
+								inductors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 							id = engine_functions.get_ground_assignment();
 							engine_functions.add_ground();
 							index = engine_functions.get_ground(id);
-							if (index < grounds.length) {
+							if (index > -1 && index < grounds.length) {
 								grounds[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								grounds[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								grounds[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								grounds[index].multi_selected = multi_selected;
+								grounds[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 							id = engine_functions.get_dcsource_assignment();
 							engine_functions.add_dcsource();
 							index = engine_functions.get_dcsource(id);
-							if (index < dcsources.length) {
+							if (index > -1 && index < dcsources.length) {
 								dcsources[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								dcsources[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								dcsources[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								dcsources[index].multi_selected = multi_selected;
+								dcsources[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 							id = engine_functions.get_dccurrent_assignment();
 							engine_functions.add_dccurrent();
 							index = engine_functions.get_dccurrent(id);
-							if (index < dccurrents.length) {
+							if (index > -1 && index < dccurrents.length) {
 								dccurrents[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								dccurrents[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								dccurrents[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								dccurrents[index].multi_selected = multi_selected;
+								dccurrents[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 							id = engine_functions.get_acsource_assignment();
 							engine_functions.add_acsource();
 							index = engine_functions.get_acsource(id);
-							if (index < acsources.length) {
+							if (index > -1 && index < acsources.length) {
 								acsources[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								acsources[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								acsources[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								acsources[index].multi_selected = multi_selected;
+								acsources[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 							id = engine_functions.get_accurrent_assignment();
 							engine_functions.add_accurrent();
 							index = engine_functions.get_accurrent(id);
-							if (index < accurrents.length) {
+							if (index > -1 && index < accurrents.length) {
 								accurrents[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								accurrents[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								accurrents[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								accurrents[index].multi_selected = multi_selected;
+								accurrents[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 							id = engine_functions.get_squarewave_assignment();
 							engine_functions.add_squarewave();
 							index = engine_functions.get_squarewave(id);
-							if (index < squarewaves.length) {
+							if (index > -1 && index < squarewaves.length) {
 								squarewaves[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								squarewaves[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								squarewaves[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								squarewaves[index].multi_selected = multi_selected;
+								squarewaves[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SAW) {
 							id = engine_functions.get_sawwave_assignment();
 							engine_functions.add_sawwave();
 							index = engine_functions.get_sawwave(id);
-							if (index < sawwaves.length) {
+							if (index > -1 && index < sawwaves.length) {
 								sawwaves[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								sawwaves[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								sawwaves[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								sawwaves[index].multi_selected = multi_selected;
+								sawwaves[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TRI) {
 							id = engine_functions.get_trianglewave_assignment();
 							engine_functions.add_trianglewave();
 							index = engine_functions.get_trianglewave(id);
-							if (index < trianglewaves.length) {
+							if (index > -1 && index < trianglewaves.length) {
 								trianglewaves[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								trianglewaves[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								trianglewaves[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								trianglewaves[index].multi_selected = multi_selected;
+								trianglewaves[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 							id = engine_functions.get_constant_assignment();
 							engine_functions.add_constant();
 							index = engine_functions.get_constant(id);
-							if (index < constants.length) {
+							if (index > -1 && index < constants.length) {
 								constants[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								constants[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								constants[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								constants[index].multi_selected = multi_selected;
+								constants[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NET) {
 							id = engine_functions.get_net_assignment();
 							engine_functions.add_net();
 							index = engine_functions.get_net(id);
-							if (index < nets.length) {
+							if (index > -1 && index < nets.length) {
 								nets[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								nets[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								nets[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								nets[index].multi_selected = multi_selected;
+								nets[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 							id = engine_functions.get_note_assignment();
 							engine_functions.add_note();
 							index = engine_functions.get_note(id);
-							if (index < notes.length) {
+							if (index > -1 && index < notes.length) {
 								notes[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								notes[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								notes[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								notes[index].multi_selected = multi_selected;
+								notes[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 							id = engine_functions.get_rail_assignment();
 							engine_functions.add_rail();
 							index = engine_functions.get_rail(id);
-							if (index < rails.length) {
+							if (index > -1 && index < rails.length) {
 								rails[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								rails[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								rails[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								rails[index].multi_selected = multi_selected;
+								rails[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 							id = engine_functions.get_voltmeter_assignment();
 							engine_functions.add_voltmeter();
 							index = engine_functions.get_voltmeter(id);
-							if (index < voltmeters.length) {
+							if (index > -1 && index < voltmeters.length) {
 								voltmeters[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								voltmeters[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								voltmeters[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								voltmeters[index].multi_selected = multi_selected;
+								voltmeters[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 							id = engine_functions.get_ohmmeter_assignment();
 							engine_functions.add_ohmmeter();
 							index = engine_functions.get_ohmmeter(id);
-							if (index < ohmmeters.length) {
+							if (index > -1 && index < ohmmeters.length) {
 								ohmmeters[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								ohmmeters[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								ohmmeters[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								ohmmeters[index].multi_selected = multi_selected;
+								ohmmeters[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 							id = engine_functions.get_ammeter_assignment();
 							engine_functions.add_ammeter();
 							index = engine_functions.get_ammeter(id);
-							if (index < ammeters.length) {
+							if (index > -1 && index < ammeters.length) {
 								ammeters[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								ammeters[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								ammeters[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								ammeters[index].multi_selected = multi_selected;
+								ammeters[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 							id = engine_functions.get_wattmeter_assignment();
 							engine_functions.add_wattmeter();
 							index = engine_functions.get_wattmeter(id);
-							if (index < wattmeters.length) {
+							if (index > -1 && index < wattmeters.length) {
 								wattmeters[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								wattmeters[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								wattmeters[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								wattmeters[index].multi_selected = multi_selected;
+								wattmeters[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 							id = engine_functions.get_fuse_assignment();
 							engine_functions.add_fuse();
 							index = engine_functions.get_fuse(id);
-							if (index < fuses.length) {
+							if (index > -1 && index < fuses.length) {
 								fuses[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								fuses[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								fuses[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								fuses[index].multi_selected = multi_selected;
+								fuses[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SPST) {
 							id = engine_functions.get_spst_assignment();
 							engine_functions.add_spst();
 							index = engine_functions.get_spst(id);
-							if (index < spsts.length) {
+							if (index > -1 && index < spsts.length) {
 								spsts[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								spsts[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								spsts[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								spsts[index].multi_selected = multi_selected;
+								spsts[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 							id = engine_functions.get_spdt_assignment();
 							engine_functions.add_spdt();
 							index = engine_functions.get_spdt(id);
-							if (index < spdts.length) {
+							if (index > -1 && index < spdts.length) {
 								spdts[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								spdts[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								spdts[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								spdts[index].multi_selected = multi_selected;
+								spdts[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOT) {
 							id = engine_functions.get_not_assignment();
 							engine_functions.add_not();
 							index = engine_functions.get_not(id);
-							if (index < nots.length) {
+							if (index > -1 && index < nots.length) {
 								nots[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								nots[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								nots[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								nots[index].multi_selected = multi_selected;
+								nots[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 							id = engine_functions.get_diode_assignment();
 							engine_functions.add_diode();
 							index = engine_functions.get_diode(id);
-							if (index < diodes.length) {
+							if (index > -1 && index < diodes.length) {
 								diodes[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								diodes[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								diodes[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								diodes[index].multi_selected = multi_selected;
+								diodes[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LED) {
 							id = engine_functions.get_led_assignment();
 							engine_functions.add_led();
 							index = engine_functions.get_led(id);
-							if (index < leds.length) {
+							if (index > -1 && index < leds.length) {
 								leds[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								leds[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								leds[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								leds[index].multi_selected = multi_selected;
+								leds[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 							id = engine_functions.get_zener_assignment();
 							engine_functions.add_zener();
 							index = engine_functions.get_zener(id);
-							if (index < zeners.length) {
+							if (index > -1 && index < zeners.length) {
 								zeners[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								zeners[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								zeners[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								zeners[index].multi_selected = multi_selected;
+								zeners[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 							id = engine_functions.get_potentiometer_assignment();
 							engine_functions.add_potentiometer();
 							index = engine_functions.get_potentiometer(id);
-							if (index < potentiometers.length) {
+							if (index > -1 && index < potentiometers.length) {
 								potentiometers[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								potentiometers[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								potentiometers[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								potentiometers[index].multi_selected = multi_selected;
+								potentiometers[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_AND) {
 							id = engine_functions.get_and_assignment();
 							engine_functions.add_and();
 							index = engine_functions.get_and(id);
-							if (index < ands.length) {
+							if (index > -1 && index < ands.length) {
 								ands[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								ands[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								ands[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								ands[index].multi_selected = multi_selected;
+								ands[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OR) {
 							id = engine_functions.get_or_assignment();
 							engine_functions.add_or();
 							index = engine_functions.get_or(id);
-							if (index < ors.length) {
+							if (index > -1 && index < ors.length) {
 								ors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								ors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								ors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								ors[index].multi_selected = multi_selected;
+								ors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NAND) {
 							id = engine_functions.get_nand_assignment();
 							engine_functions.add_nand();
 							index = engine_functions.get_nand(id);
-							if (index < nands.length) {
+							if (index > -1 && index < nands.length) {
 								nands[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								nands[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								nands[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								nands[index].multi_selected = multi_selected;
+								nands[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOR) {
 							id = engine_functions.get_nor_assignment();
 							engine_functions.add_nor();
 							index = engine_functions.get_nor(id);
-							if (index < nors.length) {
+							if (index > -1 && index < nors.length) {
 								nors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								nors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								nors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								nors[index].multi_selected = multi_selected;
+								nors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_XOR) {
 							id = engine_functions.get_xor_assignment();
 							engine_functions.add_xor();
 							index = engine_functions.get_xor(id);
-							if (index < xors.length) {
+							if (index > -1 && index < xors.length) {
 								xors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								xors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								xors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								xors[index].multi_selected = multi_selected;
+								xors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 							id = engine_functions.get_xnor_assignment();
 							engine_functions.add_xnor();
 							index = engine_functions.get_xnor(id);
-							if (index < xnors.length) {
+							if (index > -1 && index < xnors.length) {
 								xnors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								xnors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								xnors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								xnors[index].multi_selected = multi_selected;
+								xnors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DFF) {
 							id = engine_functions.get_dff_assignment();
 							engine_functions.add_dff();
 							index = engine_functions.get_dff(id);
-							if (index < dffs.length) {
+							if (index > -1 && index < dffs.length) {
 								dffs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								dffs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								dffs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								dffs[index].multi_selected = multi_selected;
+								dffs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 							id = engine_functions.get_vsat_assignment();
 							engine_functions.add_vsat();
 							index = engine_functions.get_vsat(id);
-							if (index < vsats.length) {
+							if (index > -1 && index < vsats.length) {
 								vsats[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vsats[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vsats[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vsats[index].multi_selected = multi_selected;
+								vsats[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ADD) {
 							id = engine_functions.get_adder_assignment();
 							engine_functions.add_adder();
 							index = engine_functions.get_adder(id);
-							if (index < adders.length) {
+							if (index > -1 && index < adders.length) {
 								adders[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								adders[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								adders[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								adders[index].multi_selected = multi_selected;
+								adders[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SUB) {
 							id = engine_functions.get_subtractor_assignment();
 							engine_functions.add_subtractor();
 							index = engine_functions.get_subtractor(id);
-							if (index < subtractors.length) {
+							if (index > -1 && index < subtractors.length) {
 								subtractors[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								subtractors[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								subtractors[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								subtractors[index].multi_selected = multi_selected;
+								subtractors[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_MUL) {
 							id = engine_functions.get_multiplier_assignment();
 							engine_functions.add_multiplier();
 							index = engine_functions.get_multiplier(id);
-							if (index < multipliers.length) {
+							if (index > -1 && index < multipliers.length) {
 								multipliers[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								multipliers[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								multipliers[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								multipliers[index].multi_selected = multi_selected;
+								multipliers[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIV) {
 							id = engine_functions.get_divider_assignment();
 							engine_functions.add_divider();
 							index = engine_functions.get_divider(id);
-							if (index < dividers.length) {
+							if (index > -1 && index < dividers.length) {
 								dividers[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								dividers[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								dividers[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								dividers[index].multi_selected = multi_selected;
+								dividers[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 							id = engine_functions.get_gain_assignment();
 							engine_functions.add_gain();
 							index = engine_functions.get_gain(id);
-							if (index < gains.length) {
+							if (index > -1 && index < gains.length) {
 								gains[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								gains[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								gains[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								gains[index].multi_selected = multi_selected;
+								gains[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ABS) {
 							id = engine_functions.get_absval_assignment();
 							engine_functions.add_absval();
 							index = engine_functions.get_absval(id);
-							if (index < absvals.length) {
+							if (index > -1 && index < absvals.length) {
 								absvals[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								absvals[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								absvals[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								absvals[index].multi_selected = multi_selected;
+								absvals[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 							id = engine_functions.get_vcsw_assignment();
 							engine_functions.add_vcsw();
 							index = engine_functions.get_vcsw(id);
-							if (index < vcsws.length) {
+							if (index > -1 && index < vcsws.length) {
 								vcsws[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vcsws[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vcsws[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vcsws[index].multi_selected = multi_selected;
+								vcsws[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 							id = engine_functions.get_vcvs_assignment();
 							engine_functions.add_vcvs();
 							index = engine_functions.get_vcvs(id);
-							if (index < vcvss.length) {
+							if (index > -1 && index < vcvss.length) {
 								vcvss[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vcvss[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vcvss[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vcvss[index].multi_selected = multi_selected;
+								vcvss[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 							id = engine_functions.get_vccs_assignment();
 							engine_functions.add_vccs();
 							index = engine_functions.get_vccs(id);
-							if (index < vccss.length) {
+							if (index > -1 && index < vccss.length) {
 								vccss[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vccss[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vccss[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vccss[index].multi_selected = multi_selected;
+								vccss[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 							id = engine_functions.get_cccs_assignment();
 							engine_functions.add_cccs();
 							index = engine_functions.get_cccs(id);
-							if (index < cccss.length) {
+							if (index > -1 && index < cccss.length) {
 								cccss[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								cccss[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								cccss[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								cccss[index].multi_selected = multi_selected;
+								cccss[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 							id = engine_functions.get_ccvs_assignment();
 							engine_functions.add_ccvs();
 							index = engine_functions.get_ccvs(id);
-							if (index < ccvss.length) {
+							if (index > -1 && index < ccvss.length) {
 								ccvss[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								ccvss[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								ccvss[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								ccvss[index].multi_selected = multi_selected;
+								ccvss[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 							id = engine_functions.get_opamp_assignment();
 							engine_functions.add_opamp();
 							index = engine_functions.get_opamp(id);
-							if (index < opamps.length) {
+							if (index > -1 && index < opamps.length) {
 								opamps[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								opamps[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								opamps[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								opamps[index].multi_selected = multi_selected;
+								opamps[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 							id = engine_functions.get_nmosfet_assignment();
 							engine_functions.add_nmosfet();
 							index = engine_functions.get_nmosfet(id);
-							if (index < nmosfets.length) {
+							if (index > -1 && index < nmosfets.length) {
 								nmosfets[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								nmosfets[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								nmosfets[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								nmosfets[index].multi_selected = multi_selected;
+								nmosfets[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 							id = engine_functions.get_pmosfet_assignment();
 							engine_functions.add_pmosfet();
 							index = engine_functions.get_pmosfet(id);
-							if (index < pmosfets.length) {
+							if (index > -1 && index < pmosfets.length) {
 								pmosfets[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								pmosfets[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								pmosfets[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								pmosfets[index].multi_selected = multi_selected;
+								pmosfets[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NPN) {
 							id = engine_functions.get_npn_assignment();
 							engine_functions.add_npn();
 							index = engine_functions.get_npn(id);
-							if (index < npns.length) {
+							if (index > -1 && index < npns.length) {
 								npns[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								npns[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								npns[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								npns[index].multi_selected = multi_selected;
+								npns[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PNP) {
 							id = engine_functions.get_pnp_assignment();
 							engine_functions.add_pnp();
 							index = engine_functions.get_pnp(id);
-							if (index < pnps.length) {
+							if (index > -1 && index < pnps.length) {
 								pnps[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								pnps[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								pnps[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								pnps[index].multi_selected = multi_selected;
+								pnps[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ADC) {
 							id = engine_functions.get_adc_assignment();
 							engine_functions.add_adc();
 							index = engine_functions.get_adc(id);
-							if (index < adcs.length) {
+							if (index > -1 && index < adcs.length) {
 								adcs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								adcs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								adcs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								adcs[index].multi_selected = multi_selected;
+								adcs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DAC) {
 							id = engine_functions.get_dac_assignment();
 							engine_functions.add_dac();
 							index = engine_functions.get_dac(id);
-							if (index < dacs.length) {
+							if (index > -1 && index < dacs.length) {
 								dacs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								dacs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								dacs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								dacs[index].multi_selected = multi_selected;
+								dacs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SAH) {
 							id = engine_functions.get_samplers_assignment();
 							engine_functions.add_samplers();
 							index = engine_functions.get_samplers(id);
-							if (index < sandhs.length) {
+							if (index > -1 && index < sandhs.length) {
 								sandhs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								sandhs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								sandhs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								sandhs[index].multi_selected = multi_selected;
+								sandhs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PWM) {
 							id = engine_functions.get_pwm_assignment();
 							engine_functions.add_pwm();
 							index = engine_functions.get_pwm(id);
-							if (index < pwms.length) {
+							if (index > -1 && index < pwms.length) {
 								pwms[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								pwms[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								pwms[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								pwms[index].multi_selected = multi_selected;
+								pwms[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 							id = engine_functions.get_integrator_assignment();
 							engine_functions.add_integrator();
 							index = engine_functions.get_integrator(id);
-							if (index < integrators.length) {
+							if (index > -1 && index < integrators.length) {
 								integrators[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								integrators[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								integrators[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								integrators[index].multi_selected = multi_selected;
+								integrators[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 							id = engine_functions.get_differentiator_assignment();
 							engine_functions.add_differentiator();
 							index = engine_functions.get_differentiator(id);
-							if (index < differentiators.length) {
+							if (index > -1 && index < differentiators.length) {
 								differentiators[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								differentiators[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								differentiators[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								differentiators[index].multi_selected = multi_selected;
+								differentiators[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LPF) {
 							id = engine_functions.get_lowpass_assignment();
 							engine_functions.add_lowpass();
 							index = engine_functions.get_lowpass(id);
-							if (index < lowpasses.length) {
+							if (index > -1 && index < lowpasses.length) {
 								lowpasses[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								lowpasses[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								lowpasses[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								lowpasses[index].multi_selected = multi_selected;
+								lowpasses[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_HPF) {
 							id = engine_functions.get_highpass_assignment();
 							engine_functions.add_highpass();
 							index = engine_functions.get_highpass(id);
-							if (index < highpasses.length) {
+							if (index > -1 && index < highpasses.length) {
 								highpasses[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								highpasses[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								highpasses[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								highpasses[index].multi_selected = multi_selected;
+								highpasses[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_REL) {
 							id = engine_functions.get_relay_assignment();
 							engine_functions.add_relay();
 							index = engine_functions.get_relay(id);
-							if (index < relays.length) {
+							if (index > -1 && index < relays.length) {
 								relays[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								relays[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								relays[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								relays[index].multi_selected = multi_selected;
+								relays[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PID) {
 							id = engine_functions.get_pid_assignment();
 							engine_functions.add_pid();
 							index = engine_functions.get_pid(id);
-							if (index < pids.length) {
+							if (index > -1 && index < pids.length) {
 								pids[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								pids[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								pids[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								pids[index].multi_selected = multi_selected;
+								pids[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LUT) {
 							id = engine_functions.get_lut_assignment();
 							engine_functions.add_lut();
 							index = engine_functions.get_lut(id);
-							if (index < luts.length) {
+							if (index > -1 && index < luts.length) {
 								luts[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								luts[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								luts[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								luts[index].multi_selected = multi_selected;
+								luts[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCR) {
 							id = engine_functions.get_vcr_assignment();
 							engine_functions.add_vcr();
 							index = engine_functions.get_vcr(id);
-							if (index < vcrs.length) {
+							if (index > -1 && index < vcrs.length) {
 								vcrs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vcrs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vcrs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vcrs[index].multi_selected = multi_selected;
+								vcrs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 							id = engine_functions.get_vcca_assignment();
 							engine_functions.add_vcca();
 							index = engine_functions.get_vcca(id);
-							if (index < vccas.length) {
+							if (index > -1 && index < vccas.length) {
 								vccas[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vccas[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vccas[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vccas[index].multi_selected = multi_selected;
+								vccas[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCL) {
 							id = engine_functions.get_vcl_assignment();
 							engine_functions.add_vcl();
 							index = engine_functions.get_vcl(id);
-							if (index < vcls.length) {
+							if (index > -1 && index < vcls.length) {
 								vcls[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								vcls[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								vcls[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								vcls[index].multi_selected = multi_selected;
+								vcls[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GRT) {
 							id = engine_functions.get_grt_assignment();
 							engine_functions.add_grt();
 							index = engine_functions.get_grt(id);
-							if (index < grts.length) {
+							if (index > -1 && index < grts.length) {
 								grts[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								grts[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								grts[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								grts[index].multi_selected = multi_selected;
+								grts[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 							id = engine_functions.get_tptz_assignment();
 							engine_functions.add_tptz();
 							index = engine_functions.get_tptz(id);
-							if (index < tptzs.length) {
+							if (index > -1 && index < tptzs.length) {
 								tptzs[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								tptzs[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								tptzs[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								tptzs[index].multi_selected = multi_selected;
+								tptzs[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 							id = engine_functions.get_transformer_assignment();
 							engine_functions.add_transformer();
 							index = engine_functions.get_transformer(id);
-							if (index < transformers.length) {
+							if (index > -1 && index < transformers.length) {
 								transformers[index].elm.set_properties(global.utils.copy(global.variables.clipboard_data[j].clipboard_property));
 								transformers[index].elm.set_rotation(global.variables.clipboard_data[j].clipboard_rotation);
 								transformers[index].elm.set_flip(global.variables.clipboard_data[j].clipboard_flip);
-								global.flags.flag_history_lock = true;
+								transformers[index].multi_selected = multi_selected;
+								transformers[index].move_element(global.variables.clipboard_data[j].clipboard_location_dx, global.variables.clipboard_data[j].clipboard_location_dy);
+								global.variables.clipboard_data[j].clipboard_new_reference_id = index;
 							}
 						}
 						/* <!-- END AUTOMATICALLY GENERATED !--> */
@@ -4961,8 +5963,6 @@ class ShortcutManager {
 						linkage: -1
 					};
 					let existing_wire_id: number = -1;
-					let n1: number = -1;
-					let n2: number = -1;
 
 					for (var j = 0; j < global.variables.clipboard_data.length; j++) {
 						if (global.utils.not_null(global.variables.clipboard_data[j].clipboard_type) && global.utils.not_null(global.variables.clipboard_data[j].clipboard_property)) {
@@ -5004,14 +6004,8 @@ class ShortcutManager {
 											wire_links.push(global.utils.copy(wire_link));
 
 											elm_index = engine_functions.get_resistor(global.variables.clipboard_data[j].clipboard_new_reference_id);
-											if (elm_index > -1 && elm_index < resistors.length) {
-												n1 = resistors[elm_index].elm.n1;
-												n2 = resistors[elm_index].elm.n2;
-											} else {
-												n1 = -1;
-												n2 = -1;
-											}
-											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, n1, n2));
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
 											wire_manager.handle_wire_references(next_wire_id);
 											index = engine_functions.get_wire(next_wire_id);
 											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
@@ -5038,13 +6032,4300 @@ class ShortcutManager {
 										}
 									}
 								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_capacitor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < capacitors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													capacitors[elm_index].push_reference(global.utils.copy(wire_reference));
+													capacitors[elm_index].anchor_wires();
+													capacitors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_capacitor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < capacitors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													capacitors[elm_index].push_reference(global.utils.copy(wire_reference));
+													capacitors[elm_index].anchor_wires();
+													capacitors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_inductor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < inductors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													inductors[elm_index].push_reference(global.utils.copy(wire_reference));
+													inductors[elm_index].anchor_wires();
+													inductors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_inductor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < inductors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													inductors[elm_index].push_reference(global.utils.copy(wire_reference));
+													inductors[elm_index].anchor_wires();
+													inductors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GROUND) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_ground(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < grounds.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													grounds[elm_index].push_reference(global.utils.copy(wire_reference));
+													grounds[elm_index].anchor_wires();
+													grounds[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_ground(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < grounds.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													grounds[elm_index].push_reference(global.utils.copy(wire_reference));
+													grounds[elm_index].anchor_wires();
+													grounds[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_dcsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < dcsources.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dcsources[elm_index].push_reference(global.utils.copy(wire_reference));
+													dcsources[elm_index].anchor_wires();
+													dcsources[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_dcsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < dcsources.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dcsources[elm_index].push_reference(global.utils.copy(wire_reference));
+													dcsources[elm_index].anchor_wires();
+													dcsources[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_dccurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < dccurrents.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dccurrents[elm_index].push_reference(global.utils.copy(wire_reference));
+													dccurrents[elm_index].anchor_wires();
+													dccurrents[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_dccurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < dccurrents.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dccurrents[elm_index].push_reference(global.utils.copy(wire_reference));
+													dccurrents[elm_index].anchor_wires();
+													dccurrents[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_acsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < acsources.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													acsources[elm_index].push_reference(global.utils.copy(wire_reference));
+													acsources[elm_index].anchor_wires();
+													acsources[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_acsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < acsources.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													acsources[elm_index].push_reference(global.utils.copy(wire_reference));
+													acsources[elm_index].anchor_wires();
+													acsources[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_accurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < accurrents.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													accurrents[elm_index].push_reference(global.utils.copy(wire_reference));
+													accurrents[elm_index].anchor_wires();
+													accurrents[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_accurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < accurrents.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													accurrents[elm_index].push_reference(global.utils.copy(wire_reference));
+													accurrents[elm_index].anchor_wires();
+													accurrents[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_squarewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < squarewaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													squarewaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													squarewaves[elm_index].anchor_wires();
+													squarewaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_squarewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < squarewaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													squarewaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													squarewaves[elm_index].anchor_wires();
+													squarewaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SAW) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_sawwave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < sawwaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													sawwaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													sawwaves[elm_index].anchor_wires();
+													sawwaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_sawwave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < sawwaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													sawwaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													sawwaves[elm_index].anchor_wires();
+													sawwaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TRI) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_trianglewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < trianglewaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													trianglewaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													trianglewaves[elm_index].anchor_wires();
+													trianglewaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_trianglewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < trianglewaves.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													trianglewaves[elm_index].push_reference(global.utils.copy(wire_reference));
+													trianglewaves[elm_index].anchor_wires();
+													trianglewaves[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_constant(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < constants.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													constants[elm_index].push_reference(global.utils.copy(wire_reference));
+													constants[elm_index].anchor_wires();
+													constants[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_constant(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < constants.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													constants[elm_index].push_reference(global.utils.copy(wire_reference));
+													constants[elm_index].anchor_wires();
+													constants[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NET) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_net(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < nets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nets[elm_index].push_reference(global.utils.copy(wire_reference));
+													nets[elm_index].anchor_wires();
+													nets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_net(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < nets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nets[elm_index].push_reference(global.utils.copy(wire_reference));
+													nets[elm_index].anchor_wires();
+													nets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOTE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_note(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < notes.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													notes[elm_index].push_reference(global.utils.copy(wire_reference));
+													notes[elm_index].anchor_wires();
+													notes[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_note(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < notes.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													notes[elm_index].push_reference(global.utils.copy(wire_reference));
+													notes[elm_index].anchor_wires();
+													notes[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_RAIL) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_rail(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < rails.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													rails[elm_index].push_reference(global.utils.copy(wire_reference));
+													rails[elm_index].anchor_wires();
+													rails[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_rail(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < rails.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													rails[elm_index].push_reference(global.utils.copy(wire_reference));
+													rails[elm_index].anchor_wires();
+													rails[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_voltmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < voltmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													voltmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													voltmeters[elm_index].anchor_wires();
+													voltmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_voltmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < voltmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													voltmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													voltmeters[elm_index].anchor_wires();
+													voltmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_ohmmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < ohmmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ohmmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													ohmmeters[elm_index].anchor_wires();
+													ohmmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_ohmmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < ohmmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ohmmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													ohmmeters[elm_index].anchor_wires();
+													ohmmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_ammeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < ammeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ammeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													ammeters[elm_index].anchor_wires();
+													ammeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_ammeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < ammeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ammeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													ammeters[elm_index].anchor_wires();
+													ammeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_wattmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < wattmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													wattmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													wattmeters[elm_index].anchor_wires();
+													wattmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_wattmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < wattmeters.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													wattmeters[elm_index].push_reference(global.utils.copy(wire_reference));
+													wattmeters[elm_index].anchor_wires();
+													wattmeters[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_FUSE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_fuse(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < fuses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													fuses[elm_index].push_reference(global.utils.copy(wire_reference));
+													fuses[elm_index].anchor_wires();
+													fuses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_fuse(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < fuses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													fuses[elm_index].push_reference(global.utils.copy(wire_reference));
+													fuses[elm_index].anchor_wires();
+													fuses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SPST) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_spst(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < spsts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													spsts[elm_index].push_reference(global.utils.copy(wire_reference));
+													spsts[elm_index].anchor_wires();
+													spsts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_spst(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < spsts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													spsts[elm_index].push_reference(global.utils.copy(wire_reference));
+													spsts[elm_index].anchor_wires();
+													spsts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SPDT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_spdt(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < spdts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													spdts[elm_index].push_reference(global.utils.copy(wire_reference));
+													spdts[elm_index].anchor_wires();
+													spdts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_spdt(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < spdts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													spdts[elm_index].push_reference(global.utils.copy(wire_reference));
+													spdts[elm_index].anchor_wires();
+													spdts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_not(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < nots.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nots[elm_index].push_reference(global.utils.copy(wire_reference));
+													nots[elm_index].anchor_wires();
+													nots[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_not(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < nots.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nots[elm_index].push_reference(global.utils.copy(wire_reference));
+													nots[elm_index].anchor_wires();
+													nots[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIODE) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_diode(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < diodes.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													diodes[elm_index].push_reference(global.utils.copy(wire_reference));
+													diodes[elm_index].anchor_wires();
+													diodes[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_diode(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < diodes.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													diodes[elm_index].push_reference(global.utils.copy(wire_reference));
+													diodes[elm_index].anchor_wires();
+													diodes[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LED) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_led(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < leds.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													leds[elm_index].push_reference(global.utils.copy(wire_reference));
+													leds[elm_index].anchor_wires();
+													leds[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_led(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < leds.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													leds[elm_index].push_reference(global.utils.copy(wire_reference));
+													leds[elm_index].anchor_wires();
+													leds[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ZENER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_zener(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < zeners.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													zeners[elm_index].push_reference(global.utils.copy(wire_reference));
+													zeners[elm_index].anchor_wires();
+													zeners[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_zener(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < zeners.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													zeners[elm_index].push_reference(global.utils.copy(wire_reference));
+													zeners[elm_index].anchor_wires();
+													zeners[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_potentiometer(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < potentiometers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													potentiometers[elm_index].push_reference(global.utils.copy(wire_reference));
+													potentiometers[elm_index].anchor_wires();
+													potentiometers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_potentiometer(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < potentiometers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													potentiometers[elm_index].push_reference(global.utils.copy(wire_reference));
+													potentiometers[elm_index].anchor_wires();
+													potentiometers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_AND) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_and(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < ands.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ands[elm_index].push_reference(global.utils.copy(wire_reference));
+													ands[elm_index].anchor_wires();
+													ands[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_and(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < ands.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ands[elm_index].push_reference(global.utils.copy(wire_reference));
+													ands[elm_index].anchor_wires();
+													ands[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_or(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < ors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ors[elm_index].push_reference(global.utils.copy(wire_reference));
+													ors[elm_index].anchor_wires();
+													ors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_or(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < ors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ors[elm_index].push_reference(global.utils.copy(wire_reference));
+													ors[elm_index].anchor_wires();
+													ors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NAND) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_nand(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < nands.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nands[elm_index].push_reference(global.utils.copy(wire_reference));
+													nands[elm_index].anchor_wires();
+													nands[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_nand(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < nands.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nands[elm_index].push_reference(global.utils.copy(wire_reference));
+													nands[elm_index].anchor_wires();
+													nands[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_nor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < nors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nors[elm_index].push_reference(global.utils.copy(wire_reference));
+													nors[elm_index].anchor_wires();
+													nors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_nor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < nors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nors[elm_index].push_reference(global.utils.copy(wire_reference));
+													nors[elm_index].anchor_wires();
+													nors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_XOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_xor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < xors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													xors[elm_index].push_reference(global.utils.copy(wire_reference));
+													xors[elm_index].anchor_wires();
+													xors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_xor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < xors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													xors[elm_index].push_reference(global.utils.copy(wire_reference));
+													xors[elm_index].anchor_wires();
+													xors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_XNOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_xnor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < xnors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													xnors[elm_index].push_reference(global.utils.copy(wire_reference));
+													xnors[elm_index].anchor_wires();
+													xnors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_xnor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < xnors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													xnors[elm_index].push_reference(global.utils.copy(wire_reference));
+													xnors[elm_index].anchor_wires();
+													xnors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DFF) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_dff(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < dffs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dffs[elm_index].push_reference(global.utils.copy(wire_reference));
+													dffs[elm_index].anchor_wires();
+													dffs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_dff(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < dffs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dffs[elm_index].push_reference(global.utils.copy(wire_reference));
+													dffs[elm_index].anchor_wires();
+													dffs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VSAT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vsat(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vsats.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vsats[elm_index].push_reference(global.utils.copy(wire_reference));
+													vsats[elm_index].anchor_wires();
+													vsats[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vsat(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vsats.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vsats[elm_index].push_reference(global.utils.copy(wire_reference));
+													vsats[elm_index].anchor_wires();
+													vsats[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ADD) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_adder(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < adders.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													adders[elm_index].push_reference(global.utils.copy(wire_reference));
+													adders[elm_index].anchor_wires();
+													adders[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_adder(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < adders.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													adders[elm_index].push_reference(global.utils.copy(wire_reference));
+													adders[elm_index].anchor_wires();
+													adders[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SUB) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_subtractor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < subtractors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													subtractors[elm_index].push_reference(global.utils.copy(wire_reference));
+													subtractors[elm_index].anchor_wires();
+													subtractors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_subtractor(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < subtractors.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													subtractors[elm_index].push_reference(global.utils.copy(wire_reference));
+													subtractors[elm_index].anchor_wires();
+													subtractors[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_MUL) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_multiplier(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < multipliers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													multipliers[elm_index].push_reference(global.utils.copy(wire_reference));
+													multipliers[elm_index].anchor_wires();
+													multipliers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_multiplier(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < multipliers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													multipliers[elm_index].push_reference(global.utils.copy(wire_reference));
+													multipliers[elm_index].anchor_wires();
+													multipliers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIV) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_divider(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < dividers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dividers[elm_index].push_reference(global.utils.copy(wire_reference));
+													dividers[elm_index].anchor_wires();
+													dividers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_divider(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < dividers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dividers[elm_index].push_reference(global.utils.copy(wire_reference));
+													dividers[elm_index].anchor_wires();
+													dividers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GAIN) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_gain(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < gains.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													gains[elm_index].push_reference(global.utils.copy(wire_reference));
+													gains[elm_index].anchor_wires();
+													gains[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_gain(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < gains.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													gains[elm_index].push_reference(global.utils.copy(wire_reference));
+													gains[elm_index].anchor_wires();
+													gains[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ABS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_absval(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < absvals.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													absvals[elm_index].push_reference(global.utils.copy(wire_reference));
+													absvals[elm_index].anchor_wires();
+													absvals[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_absval(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < absvals.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													absvals[elm_index].push_reference(global.utils.copy(wire_reference));
+													absvals[elm_index].anchor_wires();
+													absvals[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCSW) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vcsw(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vcsws.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcsws[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcsws[elm_index].anchor_wires();
+													vcsws[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vcsw(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vcsws.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcsws[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcsws[elm_index].anchor_wires();
+													vcsws[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCVS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vcvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vcvss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcvss[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcvss[elm_index].anchor_wires();
+													vcvss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vcvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vcvss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcvss[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcvss[elm_index].anchor_wires();
+													vcvss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCCS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vccss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vccss[elm_index].push_reference(global.utils.copy(wire_reference));
+													vccss[elm_index].anchor_wires();
+													vccss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vccss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vccss[elm_index].push_reference(global.utils.copy(wire_reference));
+													vccss[elm_index].anchor_wires();
+													vccss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CCCS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_cccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < cccss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													cccss[elm_index].push_reference(global.utils.copy(wire_reference));
+													cccss[elm_index].anchor_wires();
+													cccss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_cccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < cccss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													cccss[elm_index].push_reference(global.utils.copy(wire_reference));
+													cccss[elm_index].anchor_wires();
+													cccss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_CCVS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_ccvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < ccvss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ccvss[elm_index].push_reference(global.utils.copy(wire_reference));
+													ccvss[elm_index].anchor_wires();
+													ccvss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_ccvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < ccvss.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													ccvss[elm_index].push_reference(global.utils.copy(wire_reference));
+													ccvss[elm_index].anchor_wires();
+													ccvss[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_opamp(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < opamps.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													opamps[elm_index].push_reference(global.utils.copy(wire_reference));
+													opamps[elm_index].anchor_wires();
+													opamps[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_opamp(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < opamps.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													opamps[elm_index].push_reference(global.utils.copy(wire_reference));
+													opamps[elm_index].anchor_wires();
+													opamps[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NMOS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_nmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < nmosfets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nmosfets[elm_index].push_reference(global.utils.copy(wire_reference));
+													nmosfets[elm_index].anchor_wires();
+													nmosfets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_nmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < nmosfets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													nmosfets[elm_index].push_reference(global.utils.copy(wire_reference));
+													nmosfets[elm_index].anchor_wires();
+													nmosfets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PMOS) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_pmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < pmosfets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pmosfets[elm_index].push_reference(global.utils.copy(wire_reference));
+													pmosfets[elm_index].anchor_wires();
+													pmosfets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_pmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < pmosfets.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pmosfets[elm_index].push_reference(global.utils.copy(wire_reference));
+													pmosfets[elm_index].anchor_wires();
+													pmosfets[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_NPN) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_npn(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < npns.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													npns[elm_index].push_reference(global.utils.copy(wire_reference));
+													npns[elm_index].anchor_wires();
+													npns[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_npn(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < npns.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													npns[elm_index].push_reference(global.utils.copy(wire_reference));
+													npns[elm_index].anchor_wires();
+													npns[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PNP) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_pnp(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < pnps.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pnps[elm_index].push_reference(global.utils.copy(wire_reference));
+													pnps[elm_index].anchor_wires();
+													pnps[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_pnp(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < pnps.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pnps[elm_index].push_reference(global.utils.copy(wire_reference));
+													pnps[elm_index].anchor_wires();
+													pnps[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_ADC) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_adc(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < adcs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													adcs[elm_index].push_reference(global.utils.copy(wire_reference));
+													adcs[elm_index].anchor_wires();
+													adcs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_adc(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < adcs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													adcs[elm_index].push_reference(global.utils.copy(wire_reference));
+													adcs[elm_index].anchor_wires();
+													adcs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DAC) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_dac(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < dacs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dacs[elm_index].push_reference(global.utils.copy(wire_reference));
+													dacs[elm_index].anchor_wires();
+													dacs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_dac(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < dacs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													dacs[elm_index].push_reference(global.utils.copy(wire_reference));
+													dacs[elm_index].anchor_wires();
+													dacs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_SAH) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_samplers(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < sandhs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													sandhs[elm_index].push_reference(global.utils.copy(wire_reference));
+													sandhs[elm_index].anchor_wires();
+													sandhs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_samplers(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < sandhs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													sandhs[elm_index].push_reference(global.utils.copy(wire_reference));
+													sandhs[elm_index].anchor_wires();
+													sandhs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PWM) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_pwm(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < pwms.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pwms[elm_index].push_reference(global.utils.copy(wire_reference));
+													pwms[elm_index].anchor_wires();
+													pwms[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_pwm(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < pwms.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pwms[elm_index].push_reference(global.utils.copy(wire_reference));
+													pwms[elm_index].anchor_wires();
+													pwms[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_integrator(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < integrators.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													integrators[elm_index].push_reference(global.utils.copy(wire_reference));
+													integrators[elm_index].anchor_wires();
+													integrators[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_integrator(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < integrators.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													integrators[elm_index].push_reference(global.utils.copy(wire_reference));
+													integrators[elm_index].anchor_wires();
+													integrators[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_differentiator(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < differentiators.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													differentiators[elm_index].push_reference(global.utils.copy(wire_reference));
+													differentiators[elm_index].anchor_wires();
+													differentiators[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_differentiator(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < differentiators.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													differentiators[elm_index].push_reference(global.utils.copy(wire_reference));
+													differentiators[elm_index].anchor_wires();
+													differentiators[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LPF) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_lowpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < lowpasses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													lowpasses[elm_index].push_reference(global.utils.copy(wire_reference));
+													lowpasses[elm_index].anchor_wires();
+													lowpasses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_lowpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < lowpasses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													lowpasses[elm_index].push_reference(global.utils.copy(wire_reference));
+													lowpasses[elm_index].anchor_wires();
+													lowpasses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_HPF) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_highpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < highpasses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													highpasses[elm_index].push_reference(global.utils.copy(wire_reference));
+													highpasses[elm_index].anchor_wires();
+													highpasses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_highpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < highpasses.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													highpasses[elm_index].push_reference(global.utils.copy(wire_reference));
+													highpasses[elm_index].anchor_wires();
+													highpasses[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_REL) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_relay(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < relays.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													relays[elm_index].push_reference(global.utils.copy(wire_reference));
+													relays[elm_index].anchor_wires();
+													relays[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_relay(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < relays.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													relays[elm_index].push_reference(global.utils.copy(wire_reference));
+													relays[elm_index].anchor_wires();
+													relays[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_PID) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_pid(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < pids.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pids[elm_index].push_reference(global.utils.copy(wire_reference));
+													pids[elm_index].anchor_wires();
+													pids[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_pid(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < pids.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													pids[elm_index].push_reference(global.utils.copy(wire_reference));
+													pids[elm_index].anchor_wires();
+													pids[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_LUT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_lut(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < luts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													luts[elm_index].push_reference(global.utils.copy(wire_reference));
+													luts[elm_index].anchor_wires();
+													luts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_lut(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < luts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													luts[elm_index].push_reference(global.utils.copy(wire_reference));
+													luts[elm_index].anchor_wires();
+													luts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCR) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vcr(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vcrs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcrs[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcrs[elm_index].anchor_wires();
+													vcrs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vcr(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vcrs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcrs[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcrs[elm_index].anchor_wires();
+													vcrs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCCA) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vcca(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vccas.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vccas[elm_index].push_reference(global.utils.copy(wire_reference));
+													vccas[elm_index].anchor_wires();
+													vccas[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vcca(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vccas.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vccas[elm_index].push_reference(global.utils.copy(wire_reference));
+													vccas[elm_index].anchor_wires();
+													vccas[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_VCL) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_vcl(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < vcls.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcls[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcls[elm_index].anchor_wires();
+													vcls[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_vcl(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < vcls.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													vcls[elm_index].push_reference(global.utils.copy(wire_reference));
+													vcls[elm_index].anchor_wires();
+													vcls[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_GRT) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_grt(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < grts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													grts[elm_index].push_reference(global.utils.copy(wire_reference));
+													grts[elm_index].anchor_wires();
+													grts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_grt(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < grts.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													grts[elm_index].push_reference(global.utils.copy(wire_reference));
+													grts[elm_index].anchor_wires();
+													grts[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_tptz(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < tptzs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													tptzs[elm_index].push_reference(global.utils.copy(wire_reference));
+													tptzs[elm_index].anchor_wires();
+													tptzs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_tptz(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < tptzs.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													tptzs[elm_index].push_reference(global.utils.copy(wire_reference));
+													tptzs[elm_index].anchor_wires();
+													tptzs[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
+							} else if (global.variables.clipboard_data[j].clipboard_type === global.ELEMENT_TYPES.TYPE_TRAN) {
+								if (global.variables.clipboard_data[j].clipboard_wire_references.length > 0) {
+									for (var k = 0; k < global.variables.clipboard_data[j].clipboard_wire_references.length; k++) {
+										next_wire_id = this.search_wire_links(wire_links, global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+										if (next_wire_id !== -1) {
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												elm_index = engine_functions.get_transformer(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+												if (elm_index > -1 && elm_index < transformers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													transformers[elm_index].push_reference(global.utils.copy(wire_reference));
+													transformers[elm_index].anchor_wires();
+													transformers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										} else {
+											next_wire_id = engine_functions.get_wire_assignment();
+											wire_link.old_wire_ref = global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id;
+											wire_link.new_wire_ref = next_wire_id;
+											wire_links.push(global.utils.copy(wire_link));
+
+											elm_index = engine_functions.get_transformer(global.variables.clipboard_data[j].clipboard_new_reference_id);
+
+											wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
+											wire_manager.handle_wire_references(next_wire_id);
+											index = engine_functions.get_wire(next_wire_id);
+											existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
+											if (existing_wire_id > -1 && existing_wire_id < wires.length) {
+												wires[index].set_build_element_flag();
+												wires[index].set_wire_style(wires[existing_wire_id].elm.wire_style);
+												wires[index].refactor();
+												wires[index].recolor();
+												wires[index].resize();
+											}
+
+											if (index > -1 && index < wires.length) {
+												if (elm_index > -1 && elm_index < transformers.length) {
+													wire_reference.wire_id = next_wire_id;
+													wire_reference.anchor_point = global.variables.clipboard_data[j].clipboard_wire_references[k].anchor_point;
+													wire_reference.linkage = global.variables.clipboard_data[j].clipboard_wire_references[k].linkage;
+
+													transformers[elm_index].push_reference(global.utils.copy(wire_reference));
+													transformers[elm_index].anchor_wires();
+													transformers[elm_index].unanchor_wires();
+												}
+											}
+											wires[index].multi_selected = true;
+										}
+									}
+								}
 							}
 							/* <!-- END AUTOMATICALLY GENERATED !--> */
 						}
 					}
 				}
-			}
-			else {
+			} else {
 				toast.set_text(language_manager.NO_CLIPBOARD_DATA[global.CONSTANTS.LANGUAGES[global.variables.language_index]] + '.');
 				toast.show(global.COLORS.GENERAL_RED_COLOR);
 			}

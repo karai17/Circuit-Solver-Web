@@ -276,7 +276,7 @@ class GraphicsEngine {
 		this.c_xp = (global.CONSTANTS.ZERO_PT_FIVE + c_x) >> global.CONSTANTS.ZERO;
 		this.c_yp = (global.CONSTANTS.ZERO_PT_FIVE + c_y) >> global.CONSTANTS.ZERO;
 		this.radiusp = (global.CONSTANTS.ZERO_PT_FIVE + radius) >> global.CONSTANTS.ZERO;
-		this.radiusp_div_2 = (this.radiusp >> 1)
+		this.radiusp_div_2 = this.radiusp >> 1;
 
 		if (is_up) {
 			this.general_path.move_to(this.c_xp, this.c_yp - this.radiusp);
@@ -293,11 +293,9 @@ class GraphicsEngine {
 		this.draw_path(this.general_path.path_2d, paint);
 
 		if (is_up) {
-			this.draw_rect(this.c_xp - this.radiusp, this.c_yp + this.radiusp_div_2 + (this.radiusp_div_2 >> 1),
-				this.c_xp + this.radiusp, this.c_yp + this.radiusp, paint);
+			this.draw_rect(this.c_xp - this.radiusp, this.c_yp + this.radiusp_div_2 + (this.radiusp_div_2 >> 1), this.c_xp + this.radiusp, this.c_yp + this.radiusp, paint);
 		} else {
-			this.draw_rect(this.c_xp - this.radiusp, this.c_yp - this.radiusp_div_2 - (this.radiusp_div_2 >> 1),
-				this.c_xp + this.radiusp, this.c_yp - this.radiusp, paint);
+			this.draw_rect(this.c_xp - this.radiusp, this.c_yp - this.radiusp_div_2 - (this.radiusp_div_2 >> 1), this.c_xp + this.radiusp, this.c_yp - this.radiusp, paint);
 		}
 		this.general_path.reset();
 	}

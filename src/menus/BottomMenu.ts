@@ -104,7 +104,7 @@ class BottomMenu {
 		this.bottom_path.line_to(view_port.left, view_port.bottom + 5);
 		this.bottom_path.close();
 	}
-	update(): void { }
+	update(): void {}
 	resize_bottom_menu(): void {
 		this.initial_resize_counter = 0;
 		this.reload_bottom_path = true;
@@ -144,7 +144,7 @@ class BottomMenu {
 		this.first_touch_x = global.variables.mouse_x;
 		this.first_touch_y = global.variables.mouse_y;
 	}
-	mouse_move(): void { }
+	mouse_move(): void {}
 	mouse_up(): void {
 		if (!global.variables.is_right_click && this.time_step_button.contains_xy(this.first_touch_x, this.first_touch_y)) {
 			if (!global.variables.mouse_keyboard_lock && !multi_select_manager.ctrl_pressed && global.variables.component_touched) {

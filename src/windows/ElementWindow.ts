@@ -328,9 +328,7 @@ class ElementWindow {
 			this.positions.push(new RectF(this.temp_bounds.left, this.temp_bounds.top, this.temp_bounds.right, this.temp_bounds.bottom));
 		}
 	}
-	update(): void {
-
-	}
+	update(): void {}
 	mouse_wheel(): void {
 		if (this.ENABLE_MOUSE_WHEEL) {
 			if (global.flags.flag_menu_element_toolbox) {

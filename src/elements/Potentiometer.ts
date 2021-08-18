@@ -248,7 +248,11 @@ class Potentiometer {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -503,7 +507,7 @@ class Potentiometer {
 		this.phi = global.utils.retrieve_angle_radian(this.c_x - this.p2.x, this.c_y - this.p2.y);
 		this.build_element();
 	}
-	update(): void { }
+	update(): void {}
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -511,7 +515,7 @@ class Potentiometer {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	recolor(): void {
 		if (global.variables.selected) {
 			if (global.variables.selected_id === this.elm.id && global.variables.selected_type === this.elm.type) {
@@ -700,5 +704,5 @@ class Potentiometer {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

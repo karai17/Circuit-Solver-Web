@@ -294,40 +294,40 @@ function load_app() {
     }
     function resize_canvas(override) {
         try {
-            let override_signal = (override != null && override === true);
+            let override_signal = override != null && override === true;
             let resize_enabled = false;
-            let temp = "1";
+            let temp = '1';
             if (MOBILE_MODE || DESKTOP_MODE) {
                 if (left_panel.style.gridColumn !== temp) {
                     left_panel.style.gridColumn = temp;
                 }
-                temp = "0";
+                temp = '0';
                 if (left_panel.style.minWidth !== temp) {
                     left_panel.style.minWidth = temp;
                 }
                 if (left_panel.style.width !== temp) {
                     left_panel.style.width = temp;
                 }
-                temp = "hidden";
+                temp = 'hidden';
                 if (left_panel.style.visibility !== temp) {
                     left_panel.style.visibility = temp;
                 }
-                temp = "1";
+                temp = '1';
                 if (right_panel.style.gridColumn !== temp) {
                     right_panel.style.gridColumn = temp;
                 }
-                temp = "0";
+                temp = '0';
                 if (right_panel.style.minWidth !== temp) {
                     right_panel.style.minWidth = temp;
                 }
                 if (right_panel.style.width !== temp) {
                     right_panel.style.width = temp;
                 }
-                temp = "hidden";
+                temp = 'hidden';
                 if (right_panel.style.visibility !== temp) {
                     right_panel.style.visibility = temp;
                 }
-                temp = "1";
+                temp = '1';
                 if (center_panel.style.gridColumn !== temp) {
                     center_panel.style.gridColumn = temp;
                 }
@@ -756,8 +756,7 @@ function load_app() {
                 }
             }
         }
-        catch (e) {
-        }
+        catch (e) { }
     }
     function update() {
         return __awaiter(this, void 0, void 0, function* () {

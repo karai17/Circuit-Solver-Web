@@ -45,7 +45,7 @@ class ElectricalNode {
 		this.bounds = new RectF(this.location.x - node_space_x, this.location.y - node_space_y, this.location.x + node_space_x, this.location.y + node_space_y);
 		this.loc_x_precalc = this.row * global.settings.INV_SQRT_MAXNODES_M_1;
 		this.loc_y_precalc = this.column * global.settings.INV_SQRT_MAXNODES_M_1;
-		this.str = "";
+		this.str = '';
 	}
 	resize(n_x: number, n_y: number, m_n_x: number, m_n_y: number): void {
 		if (global.flags.flag_build_element) {
@@ -148,7 +148,7 @@ class ElectricalNode {
 		}
 	}
 	debug_info(): string {
-		this.str = "";
+		this.str = '';
 		for (var i: number = 0; i < this.references.length; i++) {
 			this.str += global.TEMPLATES.DEBUG_TEMPLATE.replace('{ID}', <string>(<unknown>this.references[i].id)).replace('{TYPE}', <string>(<unknown>this.references[i].type));
 		}

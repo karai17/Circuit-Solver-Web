@@ -32,7 +32,7 @@ class ElectricalNode {
         this.bounds = new RectF(this.location.x - node_space_x, this.location.y - node_space_y, this.location.x + node_space_x, this.location.y + node_space_y);
         this.loc_x_precalc = this.row * global.settings.INV_SQRT_MAXNODES_M_1;
         this.loc_y_precalc = this.column * global.settings.INV_SQRT_MAXNODES_M_1;
-        this.str = "";
+        this.str = '';
     }
     resize(n_x, n_y, m_n_x, m_n_y) {
         if (global.flags.flag_build_element) {
@@ -138,7 +138,7 @@ class ElectricalNode {
         }
     }
     debug_info() {
-        this.str = "";
+        this.str = '';
         for (var i = 0; i < this.references.length; i++) {
             this.str += global.TEMPLATES.DEBUG_TEMPLATE.replace('{ID}', this.references[i].id).replace('{TYPE}', this.references[i].type);
         }

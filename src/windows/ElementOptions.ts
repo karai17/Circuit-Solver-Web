@@ -591,7 +591,7 @@ class ElementOptions {
 			}
 		}
 	}
-	mouse_move(): void { }
+	mouse_move(): void {}
 	mouse_up(): void {
 		if (!global.variables.mouse_keyboard_lock && !global.variables.is_right_click) {
 			if (
@@ -660,415 +660,415 @@ class ElementOptions {
 		if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 			index = engine_functions.get_resistor(global.variables.selected_id);
 
-			if (index < resistors.length) {
+			if (index > -1 && index < resistors.length) {
 				resistors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 			index = engine_functions.get_capacitor(global.variables.selected_id);
 
-			if (index < capacitors.length) {
+			if (index > -1 && index < capacitors.length) {
 				capacitors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 			index = engine_functions.get_inductor(global.variables.selected_id);
 
-			if (index < inductors.length) {
+			if (index > -1 && index < inductors.length) {
 				inductors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 			index = engine_functions.get_ground(global.variables.selected_id);
 
-			if (index < grounds.length) {
+			if (index > -1 && index < grounds.length) {
 				grounds[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 			index = engine_functions.get_dcsource(global.variables.selected_id);
 
-			if (index < dcsources.length) {
+			if (index > -1 && index < dcsources.length) {
 				dcsources[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 			index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-			if (index < dccurrents.length) {
+			if (index > -1 && index < dccurrents.length) {
 				dccurrents[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 			index = engine_functions.get_acsource(global.variables.selected_id);
 
-			if (index < acsources.length) {
+			if (index > -1 && index < acsources.length) {
 				acsources[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 			index = engine_functions.get_accurrent(global.variables.selected_id);
 
-			if (index < accurrents.length) {
+			if (index > -1 && index < accurrents.length) {
 				accurrents[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 			index = engine_functions.get_squarewave(global.variables.selected_id);
 
-			if (index < squarewaves.length) {
+			if (index > -1 && index < squarewaves.length) {
 				squarewaves[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 			index = engine_functions.get_sawwave(global.variables.selected_id);
 
-			if (index < sawwaves.length) {
+			if (index > -1 && index < sawwaves.length) {
 				sawwaves[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 			index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-			if (index < trianglewaves.length) {
+			if (index > -1 && index < trianglewaves.length) {
 				trianglewaves[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 			index = engine_functions.get_constant(global.variables.selected_id);
 
-			if (index < constants.length) {
+			if (index > -1 && index < constants.length) {
 				constants[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 			index = engine_functions.get_wire(global.variables.selected_id);
 
-			if (index < wires.length) {
+			if (index > -1 && index < wires.length) {
 				wires[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 			index = engine_functions.get_net(global.variables.selected_id);
 
-			if (index < nets.length) {
+			if (index > -1 && index < nets.length) {
 				nets[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 			index = engine_functions.get_note(global.variables.selected_id);
 
-			if (index < notes.length) {
+			if (index > -1 && index < notes.length) {
 				notes[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 			index = engine_functions.get_rail(global.variables.selected_id);
 
-			if (index < rails.length) {
+			if (index > -1 && index < rails.length) {
 				rails[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 			index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-			if (index < voltmeters.length) {
+			if (index > -1 && index < voltmeters.length) {
 				voltmeters[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 			index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-			if (index < ohmmeters.length) {
+			if (index > -1 && index < ohmmeters.length) {
 				ohmmeters[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 			index = engine_functions.get_ammeter(global.variables.selected_id);
 
-			if (index < ammeters.length) {
+			if (index > -1 && index < ammeters.length) {
 				ammeters[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 			index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-			if (index < wattmeters.length) {
+			if (index > -1 && index < wattmeters.length) {
 				wattmeters[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 			index = engine_functions.get_fuse(global.variables.selected_id);
 
-			if (index < fuses.length) {
+			if (index > -1 && index < fuses.length) {
 				fuses[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 			index = engine_functions.get_spst(global.variables.selected_id);
 
-			if (index < spsts.length) {
+			if (index > -1 && index < spsts.length) {
 				spsts[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 			index = engine_functions.get_spdt(global.variables.selected_id);
 
-			if (index < spdts.length) {
+			if (index > -1 && index < spdts.length) {
 				spdts[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 			index = engine_functions.get_not(global.variables.selected_id);
 
-			if (index < nots.length) {
+			if (index > -1 && index < nots.length) {
 				nots[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 			index = engine_functions.get_diode(global.variables.selected_id);
 
-			if (index < diodes.length) {
+			if (index > -1 && index < diodes.length) {
 				diodes[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 			index = engine_functions.get_led(global.variables.selected_id);
 
-			if (index < leds.length) {
+			if (index > -1 && index < leds.length) {
 				leds[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 			index = engine_functions.get_zener(global.variables.selected_id);
 
-			if (index < zeners.length) {
+			if (index > -1 && index < zeners.length) {
 				zeners[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 			index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-			if (index < potentiometers.length) {
+			if (index > -1 && index < potentiometers.length) {
 				potentiometers[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 			index = engine_functions.get_and(global.variables.selected_id);
 
-			if (index < ands.length) {
+			if (index > -1 && index < ands.length) {
 				ands[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 			index = engine_functions.get_or(global.variables.selected_id);
 
-			if (index < ors.length) {
+			if (index > -1 && index < ors.length) {
 				ors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 			index = engine_functions.get_nand(global.variables.selected_id);
 
-			if (index < nands.length) {
+			if (index > -1 && index < nands.length) {
 				nands[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 			index = engine_functions.get_nor(global.variables.selected_id);
 
-			if (index < nors.length) {
+			if (index > -1 && index < nors.length) {
 				nors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 			index = engine_functions.get_xor(global.variables.selected_id);
 
-			if (index < xors.length) {
+			if (index > -1 && index < xors.length) {
 				xors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 			index = engine_functions.get_xnor(global.variables.selected_id);
 
-			if (index < xnors.length) {
+			if (index > -1 && index < xnors.length) {
 				xnors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 			index = engine_functions.get_dff(global.variables.selected_id);
 
-			if (index < dffs.length) {
+			if (index > -1 && index < dffs.length) {
 				dffs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 			index = engine_functions.get_vsat(global.variables.selected_id);
 
-			if (index < vsats.length) {
+			if (index > -1 && index < vsats.length) {
 				vsats[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 			index = engine_functions.get_adder(global.variables.selected_id);
 
-			if (index < adders.length) {
+			if (index > -1 && index < adders.length) {
 				adders[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 			index = engine_functions.get_subtractor(global.variables.selected_id);
 
-			if (index < subtractors.length) {
+			if (index > -1 && index < subtractors.length) {
 				subtractors[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 			index = engine_functions.get_multiplier(global.variables.selected_id);
 
-			if (index < multipliers.length) {
+			if (index > -1 && index < multipliers.length) {
 				multipliers[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 			index = engine_functions.get_divider(global.variables.selected_id);
 
-			if (index < dividers.length) {
+			if (index > -1 && index < dividers.length) {
 				dividers[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 			index = engine_functions.get_gain(global.variables.selected_id);
 
-			if (index < gains.length) {
+			if (index > -1 && index < gains.length) {
 				gains[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 			index = engine_functions.get_absval(global.variables.selected_id);
 
-			if (index < absvals.length) {
+			if (index > -1 && index < absvals.length) {
 				absvals[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 			index = engine_functions.get_vcsw(global.variables.selected_id);
 
-			if (index < vcsws.length) {
+			if (index > -1 && index < vcsws.length) {
 				vcsws[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 			index = engine_functions.get_vcvs(global.variables.selected_id);
 
-			if (index < vcvss.length) {
+			if (index > -1 && index < vcvss.length) {
 				vcvss[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 			index = engine_functions.get_vccs(global.variables.selected_id);
 
-			if (index < vccss.length) {
+			if (index > -1 && index < vccss.length) {
 				vccss[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 			index = engine_functions.get_cccs(global.variables.selected_id);
 
-			if (index < cccss.length) {
+			if (index > -1 && index < cccss.length) {
 				cccss[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 			index = engine_functions.get_ccvs(global.variables.selected_id);
 
-			if (index < ccvss.length) {
+			if (index > -1 && index < ccvss.length) {
 				ccvss[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 			index = engine_functions.get_opamp(global.variables.selected_id);
 
-			if (index < opamps.length) {
+			if (index > -1 && index < opamps.length) {
 				opamps[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 			index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-			if (index < nmosfets.length) {
+			if (index > -1 && index < nmosfets.length) {
 				nmosfets[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 			index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-			if (index < pmosfets.length) {
+			if (index > -1 && index < pmosfets.length) {
 				pmosfets[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 			index = engine_functions.get_npn(global.variables.selected_id);
 
-			if (index < npns.length) {
+			if (index > -1 && index < npns.length) {
 				npns[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 			index = engine_functions.get_pnp(global.variables.selected_id);
 
-			if (index < pnps.length) {
+			if (index > -1 && index < pnps.length) {
 				pnps[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 			index = engine_functions.get_adc(global.variables.selected_id);
 
-			if (index < adcs.length) {
+			if (index > -1 && index < adcs.length) {
 				adcs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 			index = engine_functions.get_dac(global.variables.selected_id);
 
-			if (index < dacs.length) {
+			if (index > -1 && index < dacs.length) {
 				dacs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 			index = engine_functions.get_samplers(global.variables.selected_id);
 
-			if (index < sandhs.length) {
+			if (index > -1 && index < sandhs.length) {
 				sandhs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 			index = engine_functions.get_pwm(global.variables.selected_id);
 
-			if (index < pwms.length) {
+			if (index > -1 && index < pwms.length) {
 				pwms[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 			index = engine_functions.get_integrator(global.variables.selected_id);
 
-			if (index < integrators.length) {
+			if (index > -1 && index < integrators.length) {
 				integrators[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 			index = engine_functions.get_differentiator(global.variables.selected_id);
 
-			if (index < differentiators.length) {
+			if (index > -1 && index < differentiators.length) {
 				differentiators[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 			index = engine_functions.get_lowpass(global.variables.selected_id);
 
-			if (index < lowpasses.length) {
+			if (index > -1 && index < lowpasses.length) {
 				lowpasses[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 			index = engine_functions.get_highpass(global.variables.selected_id);
 
-			if (index < highpasses.length) {
+			if (index > -1 && index < highpasses.length) {
 				highpasses[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 			index = engine_functions.get_relay(global.variables.selected_id);
 
-			if (index < relays.length) {
+			if (index > -1 && index < relays.length) {
 				relays[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 			index = engine_functions.get_pid(global.variables.selected_id);
 
-			if (index < pids.length) {
+			if (index > -1 && index < pids.length) {
 				pids[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 			index = engine_functions.get_lut(global.variables.selected_id);
 
-			if (index < luts.length) {
+			if (index > -1 && index < luts.length) {
 				luts[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 			index = engine_functions.get_vcr(global.variables.selected_id);
 
-			if (index < vcrs.length) {
+			if (index > -1 && index < vcrs.length) {
 				vcrs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 			index = engine_functions.get_vcca(global.variables.selected_id);
 
-			if (index < vccas.length) {
+			if (index > -1 && index < vccas.length) {
 				vccas[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 			index = engine_functions.get_vcl(global.variables.selected_id);
 
-			if (index < vcls.length) {
+			if (index > -1 && index < vcls.length) {
 				vcls[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 			index = engine_functions.get_grt(global.variables.selected_id);
 
-			if (index < grts.length) {
+			if (index > -1 && index < grts.length) {
 				grts[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 			index = engine_functions.get_tptz(global.variables.selected_id);
 
-			if (index < tptzs.length) {
+			if (index > -1 && index < tptzs.length) {
 				tptzs[index].increment_flip();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 			index = engine_functions.get_transformer(global.variables.selected_id);
 
-			if (index < transformers.length) {
+			if (index > -1 && index < transformers.length) {
 				transformers[index].increment_flip();
 			}
 		}
@@ -1081,49 +1081,49 @@ class ElementOptions {
 		if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 			index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-			if (index < voltmeters.length) {
+			if (index > -1 && index < voltmeters.length) {
 				if (!scope_manager.find_entry(voltmeters[index].elm.id, voltmeters[index].elm.type)) {
 					scope_manager.push(voltmeters[index].elm.id, voltmeters[index].elm.type, voltmeters[index].elm.properties['tag']);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				} else {
 					scope_manager.remove(voltmeters[index].elm.id, voltmeters[index].elm.type);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 			index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-			if (index < ohmmeters.length) {
+			if (index > -1 && index < ohmmeters.length) {
 				if (!scope_manager.find_entry(ohmmeters[index].elm.id, ohmmeters[index].elm.type)) {
 					scope_manager.push(ohmmeters[index].elm.id, ohmmeters[index].elm.type, ohmmeters[index].elm.properties['tag']);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				} else {
 					scope_manager.remove(ohmmeters[index].elm.id, ohmmeters[index].elm.type);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 			index = engine_functions.get_ammeter(global.variables.selected_id);
 
-			if (index < ammeters.length) {
+			if (index > -1 && index < ammeters.length) {
 				if (!scope_manager.find_entry(ammeters[index].elm.id, ammeters[index].elm.type)) {
 					scope_manager.push(ammeters[index].elm.id, ammeters[index].elm.type, ammeters[index].elm.properties['tag']);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				} else {
 					scope_manager.remove(ammeters[index].elm.id, ammeters[index].elm.type);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				}
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 			index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-			if (index < wattmeters.length) {
+			if (index > -1 && index < wattmeters.length) {
 				if (!scope_manager.find_entry(wattmeters[index].elm.id, wattmeters[index].elm.type)) {
 					scope_manager.push(wattmeters[index].elm.id, wattmeters[index].elm.type, wattmeters[index].elm.properties['tag']);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				} else {
 					scope_manager.remove(wattmeters[index].elm.id, wattmeters[index].elm.type);
-					global.utils.push_history();
+					global.variables.history['packet'].push(engine_functions.history_snapshot());
 				}
 			}
 		}
@@ -1136,409 +1136,409 @@ class ElementOptions {
 		if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 			index = engine_functions.get_resistor(global.variables.selected_id);
 
-			if (index < resistors.length) {
+			if (index > -1 && index < resistors.length) {
 				resistors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 			index = engine_functions.get_capacitor(global.variables.selected_id);
 
-			if (index < capacitors.length) {
+			if (index > -1 && index < capacitors.length) {
 				capacitors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 			index = engine_functions.get_inductor(global.variables.selected_id);
 
-			if (index < inductors.length) {
+			if (index > -1 && index < inductors.length) {
 				inductors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 			index = engine_functions.get_ground(global.variables.selected_id);
 
-			if (index < grounds.length) {
+			if (index > -1 && index < grounds.length) {
 				grounds[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 			index = engine_functions.get_dcsource(global.variables.selected_id);
 
-			if (index < dcsources.length) {
+			if (index > -1 && index < dcsources.length) {
 				dcsources[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 			index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-			if (index < dccurrents.length) {
+			if (index > -1 && index < dccurrents.length) {
 				dccurrents[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 			index = engine_functions.get_acsource(global.variables.selected_id);
 
-			if (index < acsources.length) {
+			if (index > -1 && index < acsources.length) {
 				acsources[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 			index = engine_functions.get_accurrent(global.variables.selected_id);
 
-			if (index < accurrents.length) {
+			if (index > -1 && index < accurrents.length) {
 				accurrents[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 			index = engine_functions.get_squarewave(global.variables.selected_id);
 
-			if (index < squarewaves.length) {
+			if (index > -1 && index < squarewaves.length) {
 				squarewaves[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 			index = engine_functions.get_sawwave(global.variables.selected_id);
 
-			if (index < sawwaves.length) {
+			if (index > -1 && index < sawwaves.length) {
 				sawwaves[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 			index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-			if (index < trianglewaves.length) {
+			if (index > -1 && index < trianglewaves.length) {
 				trianglewaves[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 			index = engine_functions.get_constant(global.variables.selected_id);
 
-			if (index < constants.length) {
+			if (index > -1 && index < constants.length) {
 				constants[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 			index = engine_functions.get_net(global.variables.selected_id);
 
-			if (index < nets.length) {
+			if (index > -1 && index < nets.length) {
 				nets[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 			index = engine_functions.get_note(global.variables.selected_id);
 
-			if (index < notes.length) {
+			if (index > -1 && index < notes.length) {
 				notes[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 			index = engine_functions.get_rail(global.variables.selected_id);
 
-			if (index < rails.length) {
+			if (index > -1 && index < rails.length) {
 				rails[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 			index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-			if (index < voltmeters.length) {
+			if (index > -1 && index < voltmeters.length) {
 				voltmeters[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 			index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-			if (index < ohmmeters.length) {
+			if (index > -1 && index < ohmmeters.length) {
 				ohmmeters[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 			index = engine_functions.get_ammeter(global.variables.selected_id);
 
-			if (index < ammeters.length) {
+			if (index > -1 && index < ammeters.length) {
 				ammeters[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 			index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-			if (index < wattmeters.length) {
+			if (index > -1 && index < wattmeters.length) {
 				wattmeters[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 			index = engine_functions.get_fuse(global.variables.selected_id);
 
-			if (index < fuses.length) {
+			if (index > -1 && index < fuses.length) {
 				fuses[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 			index = engine_functions.get_spst(global.variables.selected_id);
 
-			if (index < spsts.length) {
+			if (index > -1 && index < spsts.length) {
 				spsts[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 			index = engine_functions.get_spdt(global.variables.selected_id);
 
-			if (index < spdts.length) {
+			if (index > -1 && index < spdts.length) {
 				spdts[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 			index = engine_functions.get_not(global.variables.selected_id);
 
-			if (index < nots.length) {
+			if (index > -1 && index < nots.length) {
 				nots[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 			index = engine_functions.get_diode(global.variables.selected_id);
 
-			if (index < diodes.length) {
+			if (index > -1 && index < diodes.length) {
 				diodes[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 			index = engine_functions.get_led(global.variables.selected_id);
 
-			if (index < leds.length) {
+			if (index > -1 && index < leds.length) {
 				leds[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 			index = engine_functions.get_zener(global.variables.selected_id);
 
-			if (index < zeners.length) {
+			if (index > -1 && index < zeners.length) {
 				zeners[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 			index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-			if (index < potentiometers.length) {
+			if (index > -1 && index < potentiometers.length) {
 				potentiometers[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 			index = engine_functions.get_and(global.variables.selected_id);
 
-			if (index < ands.length) {
+			if (index > -1 && index < ands.length) {
 				ands[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 			index = engine_functions.get_or(global.variables.selected_id);
 
-			if (index < ors.length) {
+			if (index > -1 && index < ors.length) {
 				ors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 			index = engine_functions.get_nand(global.variables.selected_id);
 
-			if (index < nands.length) {
+			if (index > -1 && index < nands.length) {
 				nands[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 			index = engine_functions.get_nor(global.variables.selected_id);
 
-			if (index < nors.length) {
+			if (index > -1 && index < nors.length) {
 				nors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 			index = engine_functions.get_xor(global.variables.selected_id);
 
-			if (index < xors.length) {
+			if (index > -1 && index < xors.length) {
 				xors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 			index = engine_functions.get_xnor(global.variables.selected_id);
 
-			if (index < xnors.length) {
+			if (index > -1 && index < xnors.length) {
 				xnors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 			index = engine_functions.get_dff(global.variables.selected_id);
 
-			if (index < dffs.length) {
+			if (index > -1 && index < dffs.length) {
 				dffs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 			index = engine_functions.get_vsat(global.variables.selected_id);
 
-			if (index < vsats.length) {
+			if (index > -1 && index < vsats.length) {
 				vsats[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 			index = engine_functions.get_adder(global.variables.selected_id);
 
-			if (index < adders.length) {
+			if (index > -1 && index < adders.length) {
 				adders[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 			index = engine_functions.get_subtractor(global.variables.selected_id);
 
-			if (index < subtractors.length) {
+			if (index > -1 && index < subtractors.length) {
 				subtractors[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 			index = engine_functions.get_multiplier(global.variables.selected_id);
 
-			if (index < multipliers.length) {
+			if (index > -1 && index < multipliers.length) {
 				multipliers[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 			index = engine_functions.get_divider(global.variables.selected_id);
 
-			if (index < dividers.length) {
+			if (index > -1 && index < dividers.length) {
 				dividers[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 			index = engine_functions.get_gain(global.variables.selected_id);
 
-			if (index < gains.length) {
+			if (index > -1 && index < gains.length) {
 				gains[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 			index = engine_functions.get_absval(global.variables.selected_id);
 
-			if (index < absvals.length) {
+			if (index > -1 && index < absvals.length) {
 				absvals[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 			index = engine_functions.get_vcsw(global.variables.selected_id);
 
-			if (index < vcsws.length) {
+			if (index > -1 && index < vcsws.length) {
 				vcsws[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 			index = engine_functions.get_vcvs(global.variables.selected_id);
 
-			if (index < vcvss.length) {
+			if (index > -1 && index < vcvss.length) {
 				vcvss[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 			index = engine_functions.get_vccs(global.variables.selected_id);
 
-			if (index < vccss.length) {
+			if (index > -1 && index < vccss.length) {
 				vccss[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 			index = engine_functions.get_cccs(global.variables.selected_id);
 
-			if (index < cccss.length) {
+			if (index > -1 && index < cccss.length) {
 				cccss[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 			index = engine_functions.get_ccvs(global.variables.selected_id);
 
-			if (index < ccvss.length) {
+			if (index > -1 && index < ccvss.length) {
 				ccvss[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 			index = engine_functions.get_opamp(global.variables.selected_id);
 
-			if (index < opamps.length) {
+			if (index > -1 && index < opamps.length) {
 				opamps[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 			index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-			if (index < nmosfets.length) {
+			if (index > -1 && index < nmosfets.length) {
 				nmosfets[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 			index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-			if (index < pmosfets.length) {
+			if (index > -1 && index < pmosfets.length) {
 				pmosfets[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 			index = engine_functions.get_npn(global.variables.selected_id);
 
-			if (index < npns.length) {
+			if (index > -1 && index < npns.length) {
 				npns[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 			index = engine_functions.get_pnp(global.variables.selected_id);
 
-			if (index < pnps.length) {
+			if (index > -1 && index < pnps.length) {
 				pnps[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 			index = engine_functions.get_adc(global.variables.selected_id);
 
-			if (index < adcs.length) {
+			if (index > -1 && index < adcs.length) {
 				adcs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 			index = engine_functions.get_dac(global.variables.selected_id);
 
-			if (index < dacs.length) {
+			if (index > -1 && index < dacs.length) {
 				dacs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 			index = engine_functions.get_samplers(global.variables.selected_id);
 
-			if (index < sandhs.length) {
+			if (index > -1 && index < sandhs.length) {
 				sandhs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 			index = engine_functions.get_pwm(global.variables.selected_id);
 
-			if (index < pwms.length) {
+			if (index > -1 && index < pwms.length) {
 				pwms[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 			index = engine_functions.get_integrator(global.variables.selected_id);
 
-			if (index < integrators.length) {
+			if (index > -1 && index < integrators.length) {
 				integrators[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 			index = engine_functions.get_differentiator(global.variables.selected_id);
 
-			if (index < differentiators.length) {
+			if (index > -1 && index < differentiators.length) {
 				differentiators[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 			index = engine_functions.get_lowpass(global.variables.selected_id);
 
-			if (index < lowpasses.length) {
+			if (index > -1 && index < lowpasses.length) {
 				lowpasses[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 			index = engine_functions.get_highpass(global.variables.selected_id);
 
-			if (index < highpasses.length) {
+			if (index > -1 && index < highpasses.length) {
 				highpasses[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 			index = engine_functions.get_relay(global.variables.selected_id);
 
-			if (index < relays.length) {
+			if (index > -1 && index < relays.length) {
 				relays[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 			index = engine_functions.get_pid(global.variables.selected_id);
 
-			if (index < pids.length) {
+			if (index > -1 && index < pids.length) {
 				pids[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 			index = engine_functions.get_lut(global.variables.selected_id);
 
-			if (index < luts.length) {
+			if (index > -1 && index < luts.length) {
 				luts[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 			index = engine_functions.get_vcr(global.variables.selected_id);
 
-			if (index < vcrs.length) {
+			if (index > -1 && index < vcrs.length) {
 				vcrs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 			index = engine_functions.get_vcca(global.variables.selected_id);
 
-			if (index < vccas.length) {
+			if (index > -1 && index < vccas.length) {
 				vccas[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 			index = engine_functions.get_vcl(global.variables.selected_id);
 
-			if (index < vcls.length) {
+			if (index > -1 && index < vcls.length) {
 				vcls[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 			index = engine_functions.get_grt(global.variables.selected_id);
 
-			if (index < grts.length) {
+			if (index > -1 && index < grts.length) {
 				grts[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 			index = engine_functions.get_tptz(global.variables.selected_id);
 
-			if (index < tptzs.length) {
+			if (index > -1 && index < tptzs.length) {
 				tptzs[index].increment_rotation();
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 			index = engine_functions.get_transformer(global.variables.selected_id);
 
-			if (index < transformers.length) {
+			if (index > -1 && index < transformers.length) {
 				transformers[index].increment_rotation();
 			}
 		}
@@ -1551,485 +1551,485 @@ class ElementOptions {
 		if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RESISTOR) {
 			index = engine_functions.get_resistor(global.variables.selected_id);
 
-			if (index < resistors.length) {
+			if (index > -1 && index < resistors.length) {
 				engine_functions.remove_resistor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
 			index = engine_functions.get_capacitor(global.variables.selected_id);
 
-			if (index < capacitors.length) {
+			if (index > -1 && index < capacitors.length) {
 				engine_functions.remove_capacitor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
 			index = engine_functions.get_inductor(global.variables.selected_id);
 
-			if (index < inductors.length) {
+			if (index > -1 && index < inductors.length) {
 				engine_functions.remove_inductor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GROUND) {
 			index = engine_functions.get_ground(global.variables.selected_id);
 
-			if (index < grounds.length) {
+			if (index > -1 && index < grounds.length) {
 				engine_functions.remove_ground(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
 			index = engine_functions.get_dcsource(global.variables.selected_id);
 
-			if (index < dcsources.length) {
+			if (index > -1 && index < dcsources.length) {
 				engine_functions.remove_dcsource(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
 			index = engine_functions.get_dccurrent(global.variables.selected_id);
 
-			if (index < dccurrents.length) {
+			if (index > -1 && index < dccurrents.length) {
 				engine_functions.remove_dccurrent(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
 			index = engine_functions.get_acsource(global.variables.selected_id);
 
-			if (index < acsources.length) {
+			if (index > -1 && index < acsources.length) {
 				engine_functions.remove_acsource(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
 			index = engine_functions.get_accurrent(global.variables.selected_id);
 
-			if (index < accurrents.length) {
+			if (index > -1 && index < accurrents.length) {
 				engine_functions.remove_accurrent(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
 			index = engine_functions.get_squarewave(global.variables.selected_id);
 
-			if (index < squarewaves.length) {
+			if (index > -1 && index < squarewaves.length) {
 				engine_functions.remove_squarewave(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAW) {
 			index = engine_functions.get_sawwave(global.variables.selected_id);
 
-			if (index < sawwaves.length) {
+			if (index > -1 && index < sawwaves.length) {
 				engine_functions.remove_sawwave(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRI) {
 			index = engine_functions.get_trianglewave(global.variables.selected_id);
 
-			if (index < trianglewaves.length) {
+			if (index > -1 && index < trianglewaves.length) {
 				engine_functions.remove_trianglewave(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CONSTANT) {
 			index = engine_functions.get_constant(global.variables.selected_id);
 
-			if (index < constants.length) {
+			if (index > -1 && index < constants.length) {
 				engine_functions.remove_constant(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WIRE) {
 			index = engine_functions.get_wire(global.variables.selected_id);
 
-			if (index < wires.length) {
+			if (index > -1 && index < wires.length) {
 				engine_functions.remove_wire(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NET) {
 			index = engine_functions.get_net(global.variables.selected_id);
 
-			if (index < nets.length) {
+			if (index > -1 && index < nets.length) {
 				engine_functions.remove_net(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOTE) {
 			index = engine_functions.get_note(global.variables.selected_id);
 
-			if (index < notes.length) {
+			if (index > -1 && index < notes.length) {
 				engine_functions.remove_note(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_RAIL) {
 			index = engine_functions.get_rail(global.variables.selected_id);
 
-			if (index < rails.length) {
+			if (index > -1 && index < rails.length) {
 				engine_functions.remove_rail(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
 			index = engine_functions.get_voltmeter(global.variables.selected_id);
 
-			if (index < voltmeters.length) {
+			if (index > -1 && index < voltmeters.length) {
 				engine_functions.remove_voltmeter(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OHMMETER) {
 			index = engine_functions.get_ohmmeter(global.variables.selected_id);
 
-			if (index < ohmmeters.length) {
+			if (index > -1 && index < ohmmeters.length) {
 				engine_functions.remove_ohmmeter(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AMMETER) {
 			index = engine_functions.get_ammeter(global.variables.selected_id);
 
-			if (index < ammeters.length) {
+			if (index > -1 && index < ammeters.length) {
 				engine_functions.remove_ammeter(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_WATTMETER) {
 			index = engine_functions.get_wattmeter(global.variables.selected_id);
 
-			if (index < wattmeters.length) {
+			if (index > -1 && index < wattmeters.length) {
 				engine_functions.remove_wattmeter(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_FUSE) {
 			index = engine_functions.get_fuse(global.variables.selected_id);
 
-			if (index < fuses.length) {
+			if (index > -1 && index < fuses.length) {
 				engine_functions.remove_fuse(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPST) {
 			index = engine_functions.get_spst(global.variables.selected_id);
 
-			if (index < spsts.length) {
+			if (index > -1 && index < spsts.length) {
 				engine_functions.remove_spst(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SPDT) {
 			index = engine_functions.get_spdt(global.variables.selected_id);
 
-			if (index < spdts.length) {
+			if (index > -1 && index < spdts.length) {
 				engine_functions.remove_spdt(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOT) {
 			index = engine_functions.get_not(global.variables.selected_id);
 
-			if (index < nots.length) {
+			if (index > -1 && index < nots.length) {
 				engine_functions.remove_not(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIODE) {
 			index = engine_functions.get_diode(global.variables.selected_id);
 
-			if (index < diodes.length) {
+			if (index > -1 && index < diodes.length) {
 				engine_functions.remove_diode(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LED) {
 			index = engine_functions.get_led(global.variables.selected_id);
 
-			if (index < leds.length) {
+			if (index > -1 && index < leds.length) {
 				engine_functions.remove_led(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ZENER) {
 			index = engine_functions.get_zener(global.variables.selected_id);
 
-			if (index < zeners.length) {
+			if (index > -1 && index < zeners.length) {
 				engine_functions.remove_zener(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
 			index = engine_functions.get_potentiometer(global.variables.selected_id);
 
-			if (index < potentiometers.length) {
+			if (index > -1 && index < potentiometers.length) {
 				engine_functions.remove_potentiometer(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_AND) {
 			index = engine_functions.get_and(global.variables.selected_id);
 
-			if (index < ands.length) {
+			if (index > -1 && index < ands.length) {
 				engine_functions.remove_and(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OR) {
 			index = engine_functions.get_or(global.variables.selected_id);
 
-			if (index < ors.length) {
+			if (index > -1 && index < ors.length) {
 				engine_functions.remove_or(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NAND) {
 			index = engine_functions.get_nand(global.variables.selected_id);
 
-			if (index < nands.length) {
+			if (index > -1 && index < nands.length) {
 				engine_functions.remove_nand(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NOR) {
 			index = engine_functions.get_nor(global.variables.selected_id);
 
-			if (index < nors.length) {
+			if (index > -1 && index < nors.length) {
 				engine_functions.remove_nor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XOR) {
 			index = engine_functions.get_xor(global.variables.selected_id);
 
-			if (index < xors.length) {
+			if (index > -1 && index < xors.length) {
 				engine_functions.remove_xor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_XNOR) {
 			index = engine_functions.get_xnor(global.variables.selected_id);
 
-			if (index < xnors.length) {
+			if (index > -1 && index < xnors.length) {
 				engine_functions.remove_xnor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DFF) {
 			index = engine_functions.get_dff(global.variables.selected_id);
 
-			if (index < dffs.length) {
+			if (index > -1 && index < dffs.length) {
 				engine_functions.remove_dff(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VSAT) {
 			index = engine_functions.get_vsat(global.variables.selected_id);
 
-			if (index < vsats.length) {
+			if (index > -1 && index < vsats.length) {
 				engine_functions.remove_vsat(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADD) {
 			index = engine_functions.get_adder(global.variables.selected_id);
 
-			if (index < adders.length) {
+			if (index > -1 && index < adders.length) {
 				engine_functions.remove_adder(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SUB) {
 			index = engine_functions.get_subtractor(global.variables.selected_id);
 
-			if (index < subtractors.length) {
+			if (index > -1 && index < subtractors.length) {
 				engine_functions.remove_subtractor(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_MUL) {
 			index = engine_functions.get_multiplier(global.variables.selected_id);
 
-			if (index < multipliers.length) {
+			if (index > -1 && index < multipliers.length) {
 				engine_functions.remove_multiplier(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIV) {
 			index = engine_functions.get_divider(global.variables.selected_id);
 
-			if (index < dividers.length) {
+			if (index > -1 && index < dividers.length) {
 				engine_functions.remove_divider(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GAIN) {
 			index = engine_functions.get_gain(global.variables.selected_id);
 
-			if (index < gains.length) {
+			if (index > -1 && index < gains.length) {
 				engine_functions.remove_gain(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ABS) {
 			index = engine_functions.get_absval(global.variables.selected_id);
 
-			if (index < absvals.length) {
+			if (index > -1 && index < absvals.length) {
 				engine_functions.remove_absval(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCSW) {
 			index = engine_functions.get_vcsw(global.variables.selected_id);
 
-			if (index < vcsws.length) {
+			if (index > -1 && index < vcsws.length) {
 				engine_functions.remove_vcsw(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCVS) {
 			index = engine_functions.get_vcvs(global.variables.selected_id);
 
-			if (index < vcvss.length) {
+			if (index > -1 && index < vcvss.length) {
 				engine_functions.remove_vcvs(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCS) {
 			index = engine_functions.get_vccs(global.variables.selected_id);
 
-			if (index < vccss.length) {
+			if (index > -1 && index < vccss.length) {
 				engine_functions.remove_vccs(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCCS) {
 			index = engine_functions.get_cccs(global.variables.selected_id);
 
-			if (index < cccss.length) {
+			if (index > -1 && index < cccss.length) {
 				engine_functions.remove_cccs(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_CCVS) {
 			index = engine_functions.get_ccvs(global.variables.selected_id);
 
-			if (index < ccvss.length) {
+			if (index > -1 && index < ccvss.length) {
 				engine_functions.remove_ccvs(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_OPAMP) {
 			index = engine_functions.get_opamp(global.variables.selected_id);
 
-			if (index < opamps.length) {
+			if (index > -1 && index < opamps.length) {
 				engine_functions.remove_opamp(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NMOS) {
 			index = engine_functions.get_nmosfet(global.variables.selected_id);
 
-			if (index < nmosfets.length) {
+			if (index > -1 && index < nmosfets.length) {
 				engine_functions.remove_nmosfet(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PMOS) {
 			index = engine_functions.get_pmosfet(global.variables.selected_id);
 
-			if (index < pmosfets.length) {
+			if (index > -1 && index < pmosfets.length) {
 				engine_functions.remove_pmosfet(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_NPN) {
 			index = engine_functions.get_npn(global.variables.selected_id);
 
-			if (index < npns.length) {
+			if (index > -1 && index < npns.length) {
 				engine_functions.remove_npn(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PNP) {
 			index = engine_functions.get_pnp(global.variables.selected_id);
 
-			if (index < pnps.length) {
+			if (index > -1 && index < pnps.length) {
 				engine_functions.remove_pnp(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_ADC) {
 			index = engine_functions.get_adc(global.variables.selected_id);
 
-			if (index < adcs.length) {
+			if (index > -1 && index < adcs.length) {
 				engine_functions.remove_adc(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DAC) {
 			index = engine_functions.get_dac(global.variables.selected_id);
 
-			if (index < dacs.length) {
+			if (index > -1 && index < dacs.length) {
 				engine_functions.remove_dac(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_SAH) {
 			index = engine_functions.get_samplers(global.variables.selected_id);
 
-			if (index < sandhs.length) {
+			if (index > -1 && index < sandhs.length) {
 				engine_functions.remove_samplers(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PWM) {
 			index = engine_functions.get_pwm(global.variables.selected_id);
 
-			if (index < pwms.length) {
+			if (index > -1 && index < pwms.length) {
 				engine_functions.remove_pwm(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
 			index = engine_functions.get_integrator(global.variables.selected_id);
 
-			if (index < integrators.length) {
+			if (index > -1 && index < integrators.length) {
 				engine_functions.remove_integrator(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
 			index = engine_functions.get_differentiator(global.variables.selected_id);
 
-			if (index < differentiators.length) {
+			if (index > -1 && index < differentiators.length) {
 				engine_functions.remove_differentiator(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LPF) {
 			index = engine_functions.get_lowpass(global.variables.selected_id);
 
-			if (index < lowpasses.length) {
+			if (index > -1 && index < lowpasses.length) {
 				engine_functions.remove_lowpass(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_HPF) {
 			index = engine_functions.get_highpass(global.variables.selected_id);
 
-			if (index < highpasses.length) {
+			if (index > -1 && index < highpasses.length) {
 				engine_functions.remove_highpass(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_REL) {
 			index = engine_functions.get_relay(global.variables.selected_id);
 
-			if (index < relays.length) {
+			if (index > -1 && index < relays.length) {
 				engine_functions.remove_relay(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_PID) {
 			index = engine_functions.get_pid(global.variables.selected_id);
 
-			if (index < pids.length) {
+			if (index > -1 && index < pids.length) {
 				engine_functions.remove_pid(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_LUT) {
 			index = engine_functions.get_lut(global.variables.selected_id);
 
-			if (index < luts.length) {
+			if (index > -1 && index < luts.length) {
 				engine_functions.remove_lut(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCR) {
 			index = engine_functions.get_vcr(global.variables.selected_id);
 
-			if (index < vcrs.length) {
+			if (index > -1 && index < vcrs.length) {
 				engine_functions.remove_vcr(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCCA) {
 			index = engine_functions.get_vcca(global.variables.selected_id);
 
-			if (index < vccas.length) {
+			if (index > -1 && index < vccas.length) {
 				engine_functions.remove_vcca(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_VCL) {
 			index = engine_functions.get_vcl(global.variables.selected_id);
 
-			if (index < vcls.length) {
+			if (index > -1 && index < vcls.length) {
 				engine_functions.remove_vcl(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_GRT) {
 			index = engine_functions.get_grt(global.variables.selected_id);
 
-			if (index < grts.length) {
+			if (index > -1 && index < grts.length) {
 				engine_functions.remove_grt(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TPTZ) {
 			index = engine_functions.get_tptz(global.variables.selected_id);
 
-			if (index < tptzs.length) {
+			if (index > -1 && index < tptzs.length) {
 				engine_functions.remove_tptz(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		} else if (global.variables.selected_type === global.ELEMENT_TYPES.TYPE_TRAN) {
 			index = engine_functions.get_transformer(global.variables.selected_id);
 
-			if (index < transformers.length) {
+			if (index > -1 && index < transformers.length) {
 				engine_functions.remove_transformer(index);
-				global.utils.push_history();
+				global.variables.history['packet'].push(engine_functions.history_snapshot());
 			}
 		}
 		/* <!-- END AUTOMATICALLY GENERATED !--> */

@@ -1,7 +1,7 @@
 'use strict';
 class MenuBar {
     constructor() {
-        let temp_stroke_width = 0.70 * global.variables.canvas_stroke_width_3;
+        let temp_stroke_width = 0.7 * global.variables.canvas_stroke_width_3;
         this.MAX_ICONS = 8;
         if (MOBILE_MODE) {
             this.height_ratio = 0.15;
@@ -350,7 +350,7 @@ class MenuBar {
         this.save_img_path.close();
     }
     resize_menu_bar() {
-        let temp_stroke_width = 0.70 * global.variables.canvas_stroke_width_3;
+        let temp_stroke_width = 0.7 * global.variables.canvas_stroke_width_3;
         if (MOBILE_MODE) {
             temp_stroke_width = 0.85 * global.variables.canvas_stroke_width_3;
         }
@@ -1105,9 +1105,9 @@ class MenuBar {
         this.line_buffer[this.indexer++] = Array(this.settings_button.left + padding_cache_w, this.settings_button.get_center_y(), this.settings_button.right - padding_cache_w, this.settings_button.get_center_y());
         this.line_buffer[this.indexer++] = Array(this.settings_button.left + padding_cache_w, this.settings_button.bottom - padding_cache_h, this.settings_button.right - padding_cache_w, this.settings_button.bottom - padding_cache_h);
         canvas.draw_line_buffer(this.line_buffer, this.settings_paint);
-        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.20, this.settings_button.top + padding_cache_h, padding_cache_w * 0.2, this.settings_paint);
-        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.80, this.settings_button.get_center_y(), padding_cache_w * 0.2, this.settings_paint);
-        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.20, this.settings_button.bottom - padding_cache_h, padding_cache_w * 0.2, this.settings_paint);
+        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.2, this.settings_button.top + padding_cache_h, padding_cache_w * 0.2, this.settings_paint);
+        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.8, this.settings_button.get_center_y(), padding_cache_w * 0.2, this.settings_paint);
+        canvas.draw_circle(this.settings_button.left + padding_cache_w + (width_cache - (padding_cache_w << 1)) * 0.2, this.settings_button.bottom - padding_cache_h, padding_cache_w * 0.2, this.settings_paint);
         if (!global.flags.flag_add_element) {
             this.element_window.draw_window(canvas);
         }

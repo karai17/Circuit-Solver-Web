@@ -191,9 +191,9 @@ class PulseWidthModulator {
 				this.elm.properties['Saw Wave'] =
 					0.5 -
 					(1 / Math.PI) *
-					Math.atan(
-						1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS)
-					);
+						Math.atan(
+							1.0 / (Math.tan(simulation_manager.simulation_time * Math.PI * this.elm.properties['Frequency'] + global.utils.to_radians(this.elm.properties['Phase'])) + global.CONSTANTS.ZERO_BIAS)
+						);
 				if (this.elm.properties['Saw Wave'] > 1.0 - this.elm.properties['Duty'] * 0.01) {
 					this.elm.properties['A'] = global.utils.copy(this.elm.properties['High Voltage']);
 				} else {
@@ -335,7 +335,11 @@ class PulseWidthModulator {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;

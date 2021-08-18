@@ -276,7 +276,11 @@ class Diode {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -499,7 +503,7 @@ class Diode {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;

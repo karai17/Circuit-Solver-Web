@@ -149,8 +149,8 @@ class ACCurrent {
 				this.elm.n1,
 				this.elm.n2,
 				global.utils.sine(2 * Math.PI * this.elm.properties['Frequency'] * simulation_manager.simulation_time + global.utils.to_radians(this.elm.properties['Phase'])) *
-				this.elm.properties['Current'] +
-				this.elm.properties['Offset']
+					this.elm.properties['Current'] +
+					this.elm.properties['Offset']
 			);
 		}
 	}
@@ -224,7 +224,11 @@ class ACCurrent {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -451,7 +455,7 @@ class ACCurrent {
 		this.theta = global.utils.retrieve_angle_radian(this.p2.x - this.p1.x, this.p2.y - this.p1.y);
 		this.build_element();
 	}
-	update(): void { }
+	update(): void {}
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -459,7 +463,7 @@ class ACCurrent {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;
@@ -635,5 +639,5 @@ class ACCurrent {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

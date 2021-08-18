@@ -100,7 +100,7 @@ class WireManager {
         /* <!-- AUTOMATICALLY GENERATED DO NOT EDIT DIRECTLY !--> */
         if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_RESISTOR) {
             var index = engine_functions.get_resistor(global.variables.wire_builder['id1']);
-            if (index < resistors.length) {
+            if (index > -1 && index < resistors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -111,7 +111,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
             var index = engine_functions.get_capacitor(global.variables.wire_builder['id1']);
-            if (index < capacitors.length) {
+            if (index > -1 && index < capacitors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -122,7 +122,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
             var index = engine_functions.get_inductor(global.variables.wire_builder['id1']);
-            if (index < inductors.length) {
+            if (index > -1 && index < inductors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -133,7 +133,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_GROUND) {
             var index = engine_functions.get_ground(global.variables.wire_builder['id1']);
-            if (index < grounds.length) {
+            if (index > -1 && index < grounds.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -144,7 +144,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
             var index = engine_functions.get_dcsource(global.variables.wire_builder['id1']);
-            if (index < dcsources.length) {
+            if (index > -1 && index < dcsources.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -155,7 +155,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
             var index = engine_functions.get_dccurrent(global.variables.wire_builder['id1']);
-            if (index < dccurrents.length) {
+            if (index > -1 && index < dccurrents.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -166,7 +166,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
             var index = engine_functions.get_acsource(global.variables.wire_builder['id1']);
-            if (index < acsources.length) {
+            if (index > -1 && index < acsources.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -177,7 +177,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
             var index = engine_functions.get_accurrent(global.variables.wire_builder['id1']);
-            if (index < accurrents.length) {
+            if (index > -1 && index < accurrents.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -188,7 +188,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
             var index = engine_functions.get_squarewave(global.variables.wire_builder['id1']);
-            if (index < squarewaves.length) {
+            if (index > -1 && index < squarewaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -199,7 +199,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SAW) {
             var index = engine_functions.get_sawwave(global.variables.wire_builder['id1']);
-            if (index < sawwaves.length) {
+            if (index > -1 && index < sawwaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -210,7 +210,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_TRI) {
             var index = engine_functions.get_trianglewave(global.variables.wire_builder['id1']);
-            if (index < trianglewaves.length) {
+            if (index > -1 && index < trianglewaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -221,7 +221,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_CONSTANT) {
             var index = engine_functions.get_constant(global.variables.wire_builder['id1']);
-            if (index < constants.length) {
+            if (index > -1 && index < constants.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -232,7 +232,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NET) {
             var index = engine_functions.get_net(global.variables.wire_builder['id1']);
-            if (index < nets.length) {
+            if (index > -1 && index < nets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -243,7 +243,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NOTE) {
             var index = engine_functions.get_note(global.variables.wire_builder['id1']);
-            if (index < notes.length) {
+            if (index > -1 && index < notes.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -254,7 +254,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_RAIL) {
             var index = engine_functions.get_rail(global.variables.wire_builder['id1']);
-            if (index < rails.length) {
+            if (index > -1 && index < rails.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -265,7 +265,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
             var index = engine_functions.get_voltmeter(global.variables.wire_builder['id1']);
-            if (index < voltmeters.length) {
+            if (index > -1 && index < voltmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -276,7 +276,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_OHMMETER) {
             var index = engine_functions.get_ohmmeter(global.variables.wire_builder['id1']);
-            if (index < ohmmeters.length) {
+            if (index > -1 && index < ohmmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -287,7 +287,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_AMMETER) {
             var index = engine_functions.get_ammeter(global.variables.wire_builder['id1']);
-            if (index < ammeters.length) {
+            if (index > -1 && index < ammeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -298,7 +298,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_WATTMETER) {
             var index = engine_functions.get_wattmeter(global.variables.wire_builder['id1']);
-            if (index < wattmeters.length) {
+            if (index > -1 && index < wattmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -309,7 +309,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_FUSE) {
             var index = engine_functions.get_fuse(global.variables.wire_builder['id1']);
-            if (index < fuses.length) {
+            if (index > -1 && index < fuses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -320,7 +320,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SPST) {
             var index = engine_functions.get_spst(global.variables.wire_builder['id1']);
-            if (index < spsts.length) {
+            if (index > -1 && index < spsts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -331,7 +331,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SPDT) {
             var index = engine_functions.get_spdt(global.variables.wire_builder['id1']);
-            if (index < spdts.length) {
+            if (index > -1 && index < spdts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -342,7 +342,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NOT) {
             var index = engine_functions.get_not(global.variables.wire_builder['id1']);
-            if (index < nots.length) {
+            if (index > -1 && index < nots.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -353,7 +353,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DIODE) {
             var index = engine_functions.get_diode(global.variables.wire_builder['id1']);
-            if (index < diodes.length) {
+            if (index > -1 && index < diodes.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -364,7 +364,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_LED) {
             var index = engine_functions.get_led(global.variables.wire_builder['id1']);
-            if (index < leds.length) {
+            if (index > -1 && index < leds.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -375,7 +375,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ZENER) {
             var index = engine_functions.get_zener(global.variables.wire_builder['id1']);
-            if (index < zeners.length) {
+            if (index > -1 && index < zeners.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -386,7 +386,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
             var index = engine_functions.get_potentiometer(global.variables.wire_builder['id1']);
-            if (index < potentiometers.length) {
+            if (index > -1 && index < potentiometers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -397,7 +397,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_AND) {
             var index = engine_functions.get_and(global.variables.wire_builder['id1']);
-            if (index < ands.length) {
+            if (index > -1 && index < ands.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -408,7 +408,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_OR) {
             var index = engine_functions.get_or(global.variables.wire_builder['id1']);
-            if (index < ors.length) {
+            if (index > -1 && index < ors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -419,7 +419,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NAND) {
             var index = engine_functions.get_nand(global.variables.wire_builder['id1']);
-            if (index < nands.length) {
+            if (index > -1 && index < nands.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -430,7 +430,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NOR) {
             var index = engine_functions.get_nor(global.variables.wire_builder['id1']);
-            if (index < nors.length) {
+            if (index > -1 && index < nors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -441,7 +441,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_XOR) {
             var index = engine_functions.get_xor(global.variables.wire_builder['id1']);
-            if (index < xors.length) {
+            if (index > -1 && index < xors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -452,7 +452,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_XNOR) {
             var index = engine_functions.get_xnor(global.variables.wire_builder['id1']);
-            if (index < xnors.length) {
+            if (index > -1 && index < xnors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -463,7 +463,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DFF) {
             var index = engine_functions.get_dff(global.variables.wire_builder['id1']);
-            if (index < dffs.length) {
+            if (index > -1 && index < dffs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -474,7 +474,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VSAT) {
             var index = engine_functions.get_vsat(global.variables.wire_builder['id1']);
-            if (index < vsats.length) {
+            if (index > -1 && index < vsats.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -485,7 +485,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ADD) {
             var index = engine_functions.get_adder(global.variables.wire_builder['id1']);
-            if (index < adders.length) {
+            if (index > -1 && index < adders.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -496,7 +496,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SUB) {
             var index = engine_functions.get_subtractor(global.variables.wire_builder['id1']);
-            if (index < subtractors.length) {
+            if (index > -1 && index < subtractors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -507,7 +507,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_MUL) {
             var index = engine_functions.get_multiplier(global.variables.wire_builder['id1']);
-            if (index < multipliers.length) {
+            if (index > -1 && index < multipliers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -518,7 +518,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DIV) {
             var index = engine_functions.get_divider(global.variables.wire_builder['id1']);
-            if (index < dividers.length) {
+            if (index > -1 && index < dividers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -529,7 +529,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_GAIN) {
             var index = engine_functions.get_gain(global.variables.wire_builder['id1']);
-            if (index < gains.length) {
+            if (index > -1 && index < gains.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -540,7 +540,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ABS) {
             var index = engine_functions.get_absval(global.variables.wire_builder['id1']);
-            if (index < absvals.length) {
+            if (index > -1 && index < absvals.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -551,7 +551,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCSW) {
             var index = engine_functions.get_vcsw(global.variables.wire_builder['id1']);
-            if (index < vcsws.length) {
+            if (index > -1 && index < vcsws.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -562,7 +562,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCVS) {
             var index = engine_functions.get_vcvs(global.variables.wire_builder['id1']);
-            if (index < vcvss.length) {
+            if (index > -1 && index < vcvss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -573,7 +573,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCCS) {
             var index = engine_functions.get_vccs(global.variables.wire_builder['id1']);
-            if (index < vccss.length) {
+            if (index > -1 && index < vccss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -584,7 +584,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_CCCS) {
             var index = engine_functions.get_cccs(global.variables.wire_builder['id1']);
-            if (index < cccss.length) {
+            if (index > -1 && index < cccss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -595,7 +595,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_CCVS) {
             var index = engine_functions.get_ccvs(global.variables.wire_builder['id1']);
-            if (index < ccvss.length) {
+            if (index > -1 && index < ccvss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -606,7 +606,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_OPAMP) {
             var index = engine_functions.get_opamp(global.variables.wire_builder['id1']);
-            if (index < opamps.length) {
+            if (index > -1 && index < opamps.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -617,7 +617,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NMOS) {
             var index = engine_functions.get_nmosfet(global.variables.wire_builder['id1']);
-            if (index < nmosfets.length) {
+            if (index > -1 && index < nmosfets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -628,7 +628,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_PMOS) {
             var index = engine_functions.get_pmosfet(global.variables.wire_builder['id1']);
-            if (index < pmosfets.length) {
+            if (index > -1 && index < pmosfets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -639,7 +639,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_NPN) {
             var index = engine_functions.get_npn(global.variables.wire_builder['id1']);
-            if (index < npns.length) {
+            if (index > -1 && index < npns.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -650,7 +650,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_PNP) {
             var index = engine_functions.get_pnp(global.variables.wire_builder['id1']);
-            if (index < pnps.length) {
+            if (index > -1 && index < pnps.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -661,7 +661,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_ADC) {
             var index = engine_functions.get_adc(global.variables.wire_builder['id1']);
-            if (index < adcs.length) {
+            if (index > -1 && index < adcs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -672,7 +672,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DAC) {
             var index = engine_functions.get_dac(global.variables.wire_builder['id1']);
-            if (index < dacs.length) {
+            if (index > -1 && index < dacs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -683,7 +683,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_SAH) {
             var index = engine_functions.get_samplers(global.variables.wire_builder['id1']);
-            if (index < sandhs.length) {
+            if (index > -1 && index < sandhs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -694,7 +694,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_PWM) {
             var index = engine_functions.get_pwm(global.variables.wire_builder['id1']);
-            if (index < pwms.length) {
+            if (index > -1 && index < pwms.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -705,7 +705,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
             var index = engine_functions.get_integrator(global.variables.wire_builder['id1']);
-            if (index < integrators.length) {
+            if (index > -1 && index < integrators.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -716,7 +716,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
             var index = engine_functions.get_differentiator(global.variables.wire_builder['id1']);
-            if (index < differentiators.length) {
+            if (index > -1 && index < differentiators.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -727,7 +727,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_LPF) {
             var index = engine_functions.get_lowpass(global.variables.wire_builder['id1']);
-            if (index < lowpasses.length) {
+            if (index > -1 && index < lowpasses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -738,7 +738,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_HPF) {
             var index = engine_functions.get_highpass(global.variables.wire_builder['id1']);
-            if (index < highpasses.length) {
+            if (index > -1 && index < highpasses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -749,7 +749,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_REL) {
             var index = engine_functions.get_relay(global.variables.wire_builder['id1']);
-            if (index < relays.length) {
+            if (index > -1 && index < relays.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -760,7 +760,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_PID) {
             var index = engine_functions.get_pid(global.variables.wire_builder['id1']);
-            if (index < pids.length) {
+            if (index > -1 && index < pids.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -771,7 +771,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_LUT) {
             var index = engine_functions.get_lut(global.variables.wire_builder['id1']);
-            if (index < luts.length) {
+            if (index > -1 && index < luts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -782,7 +782,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCR) {
             var index = engine_functions.get_vcr(global.variables.wire_builder['id1']);
-            if (index < vcrs.length) {
+            if (index > -1 && index < vcrs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -793,7 +793,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCCA) {
             var index = engine_functions.get_vcca(global.variables.wire_builder['id1']);
-            if (index < vccas.length) {
+            if (index > -1 && index < vccas.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -804,7 +804,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_VCL) {
             var index = engine_functions.get_vcl(global.variables.wire_builder['id1']);
-            if (index < vcls.length) {
+            if (index > -1 && index < vcls.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -815,7 +815,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_GRT) {
             var index = engine_functions.get_grt(global.variables.wire_builder['id1']);
-            if (index < grts.length) {
+            if (index > -1 && index < grts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -826,7 +826,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_TPTZ) {
             var index = engine_functions.get_tptz(global.variables.wire_builder['id1']);
-            if (index < tptzs.length) {
+            if (index > -1 && index < tptzs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -837,7 +837,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type1'] === global.ELEMENT_TYPES.TYPE_TRAN) {
             var index = engine_functions.get_transformer(global.variables.wire_builder['id1']);
-            if (index < transformers.length) {
+            if (index > -1 && index < transformers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage1']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point1']);
@@ -848,7 +848,7 @@ class WireManager {
         }
         if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_RESISTOR) {
             var index = engine_functions.get_resistor(global.variables.wire_builder['id2']);
-            if (index < resistors.length) {
+            if (index > -1 && index < resistors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -859,7 +859,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_CAPACITOR) {
             var index = engine_functions.get_capacitor(global.variables.wire_builder['id2']);
-            if (index < capacitors.length) {
+            if (index > -1 && index < capacitors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -870,7 +870,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_INDUCTOR) {
             var index = engine_functions.get_inductor(global.variables.wire_builder['id2']);
-            if (index < inductors.length) {
+            if (index > -1 && index < inductors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -881,7 +881,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_GROUND) {
             var index = engine_functions.get_ground(global.variables.wire_builder['id2']);
-            if (index < grounds.length) {
+            if (index > -1 && index < grounds.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -892,7 +892,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DCSOURCE) {
             var index = engine_functions.get_dcsource(global.variables.wire_builder['id2']);
-            if (index < dcsources.length) {
+            if (index > -1 && index < dcsources.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -903,7 +903,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DCCURRENT) {
             var index = engine_functions.get_dccurrent(global.variables.wire_builder['id2']);
-            if (index < dccurrents.length) {
+            if (index > -1 && index < dccurrents.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -914,7 +914,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ACSOURCE) {
             var index = engine_functions.get_acsource(global.variables.wire_builder['id2']);
-            if (index < acsources.length) {
+            if (index > -1 && index < acsources.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -925,7 +925,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ACCURRENT) {
             var index = engine_functions.get_accurrent(global.variables.wire_builder['id2']);
-            if (index < accurrents.length) {
+            if (index > -1 && index < accurrents.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -936,7 +936,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SQUAREWAVE) {
             var index = engine_functions.get_squarewave(global.variables.wire_builder['id2']);
-            if (index < squarewaves.length) {
+            if (index > -1 && index < squarewaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -947,7 +947,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SAW) {
             var index = engine_functions.get_sawwave(global.variables.wire_builder['id2']);
-            if (index < sawwaves.length) {
+            if (index > -1 && index < sawwaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -958,7 +958,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_TRI) {
             var index = engine_functions.get_trianglewave(global.variables.wire_builder['id2']);
-            if (index < trianglewaves.length) {
+            if (index > -1 && index < trianglewaves.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -969,7 +969,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_CONSTANT) {
             var index = engine_functions.get_constant(global.variables.wire_builder['id2']);
-            if (index < constants.length) {
+            if (index > -1 && index < constants.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -980,7 +980,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NET) {
             var index = engine_functions.get_net(global.variables.wire_builder['id2']);
-            if (index < nets.length) {
+            if (index > -1 && index < nets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -991,7 +991,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NOTE) {
             var index = engine_functions.get_note(global.variables.wire_builder['id2']);
-            if (index < notes.length) {
+            if (index > -1 && index < notes.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1002,7 +1002,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_RAIL) {
             var index = engine_functions.get_rail(global.variables.wire_builder['id2']);
-            if (index < rails.length) {
+            if (index > -1 && index < rails.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1013,7 +1013,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VOLTMETER) {
             var index = engine_functions.get_voltmeter(global.variables.wire_builder['id2']);
-            if (index < voltmeters.length) {
+            if (index > -1 && index < voltmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1024,7 +1024,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_OHMMETER) {
             var index = engine_functions.get_ohmmeter(global.variables.wire_builder['id2']);
-            if (index < ohmmeters.length) {
+            if (index > -1 && index < ohmmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1035,7 +1035,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_AMMETER) {
             var index = engine_functions.get_ammeter(global.variables.wire_builder['id2']);
-            if (index < ammeters.length) {
+            if (index > -1 && index < ammeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1046,7 +1046,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_WATTMETER) {
             var index = engine_functions.get_wattmeter(global.variables.wire_builder['id2']);
-            if (index < wattmeters.length) {
+            if (index > -1 && index < wattmeters.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1057,7 +1057,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_FUSE) {
             var index = engine_functions.get_fuse(global.variables.wire_builder['id2']);
-            if (index < fuses.length) {
+            if (index > -1 && index < fuses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1068,7 +1068,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SPST) {
             var index = engine_functions.get_spst(global.variables.wire_builder['id2']);
-            if (index < spsts.length) {
+            if (index > -1 && index < spsts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1079,7 +1079,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SPDT) {
             var index = engine_functions.get_spdt(global.variables.wire_builder['id2']);
-            if (index < spdts.length) {
+            if (index > -1 && index < spdts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1090,7 +1090,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NOT) {
             var index = engine_functions.get_not(global.variables.wire_builder['id2']);
-            if (index < nots.length) {
+            if (index > -1 && index < nots.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1101,7 +1101,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DIODE) {
             var index = engine_functions.get_diode(global.variables.wire_builder['id2']);
-            if (index < diodes.length) {
+            if (index > -1 && index < diodes.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1112,7 +1112,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_LED) {
             var index = engine_functions.get_led(global.variables.wire_builder['id2']);
-            if (index < leds.length) {
+            if (index > -1 && index < leds.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1123,7 +1123,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ZENER) {
             var index = engine_functions.get_zener(global.variables.wire_builder['id2']);
-            if (index < zeners.length) {
+            if (index > -1 && index < zeners.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1134,7 +1134,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_POTENTIOMETER) {
             var index = engine_functions.get_potentiometer(global.variables.wire_builder['id2']);
-            if (index < potentiometers.length) {
+            if (index > -1 && index < potentiometers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1145,7 +1145,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_AND) {
             var index = engine_functions.get_and(global.variables.wire_builder['id2']);
-            if (index < ands.length) {
+            if (index > -1 && index < ands.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1156,7 +1156,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_OR) {
             var index = engine_functions.get_or(global.variables.wire_builder['id2']);
-            if (index < ors.length) {
+            if (index > -1 && index < ors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1167,7 +1167,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NAND) {
             var index = engine_functions.get_nand(global.variables.wire_builder['id2']);
-            if (index < nands.length) {
+            if (index > -1 && index < nands.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1178,7 +1178,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NOR) {
             var index = engine_functions.get_nor(global.variables.wire_builder['id2']);
-            if (index < nors.length) {
+            if (index > -1 && index < nors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1189,7 +1189,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_XOR) {
             var index = engine_functions.get_xor(global.variables.wire_builder['id2']);
-            if (index < xors.length) {
+            if (index > -1 && index < xors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1200,7 +1200,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_XNOR) {
             var index = engine_functions.get_xnor(global.variables.wire_builder['id2']);
-            if (index < xnors.length) {
+            if (index > -1 && index < xnors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1211,7 +1211,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DFF) {
             var index = engine_functions.get_dff(global.variables.wire_builder['id2']);
-            if (index < dffs.length) {
+            if (index > -1 && index < dffs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1222,7 +1222,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VSAT) {
             var index = engine_functions.get_vsat(global.variables.wire_builder['id2']);
-            if (index < vsats.length) {
+            if (index > -1 && index < vsats.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1233,7 +1233,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ADD) {
             var index = engine_functions.get_adder(global.variables.wire_builder['id2']);
-            if (index < adders.length) {
+            if (index > -1 && index < adders.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1244,7 +1244,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SUB) {
             var index = engine_functions.get_subtractor(global.variables.wire_builder['id2']);
-            if (index < subtractors.length) {
+            if (index > -1 && index < subtractors.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1255,7 +1255,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_MUL) {
             var index = engine_functions.get_multiplier(global.variables.wire_builder['id2']);
-            if (index < multipliers.length) {
+            if (index > -1 && index < multipliers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1266,7 +1266,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DIV) {
             var index = engine_functions.get_divider(global.variables.wire_builder['id2']);
-            if (index < dividers.length) {
+            if (index > -1 && index < dividers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1277,7 +1277,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_GAIN) {
             var index = engine_functions.get_gain(global.variables.wire_builder['id2']);
-            if (index < gains.length) {
+            if (index > -1 && index < gains.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1288,7 +1288,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ABS) {
             var index = engine_functions.get_absval(global.variables.wire_builder['id2']);
-            if (index < absvals.length) {
+            if (index > -1 && index < absvals.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1299,7 +1299,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCSW) {
             var index = engine_functions.get_vcsw(global.variables.wire_builder['id2']);
-            if (index < vcsws.length) {
+            if (index > -1 && index < vcsws.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1310,7 +1310,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCVS) {
             var index = engine_functions.get_vcvs(global.variables.wire_builder['id2']);
-            if (index < vcvss.length) {
+            if (index > -1 && index < vcvss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1321,7 +1321,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCCS) {
             var index = engine_functions.get_vccs(global.variables.wire_builder['id2']);
-            if (index < vccss.length) {
+            if (index > -1 && index < vccss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1332,7 +1332,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_CCCS) {
             var index = engine_functions.get_cccs(global.variables.wire_builder['id2']);
-            if (index < cccss.length) {
+            if (index > -1 && index < cccss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1343,7 +1343,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_CCVS) {
             var index = engine_functions.get_ccvs(global.variables.wire_builder['id2']);
-            if (index < ccvss.length) {
+            if (index > -1 && index < ccvss.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1354,7 +1354,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_OPAMP) {
             var index = engine_functions.get_opamp(global.variables.wire_builder['id2']);
-            if (index < opamps.length) {
+            if (index > -1 && index < opamps.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1365,7 +1365,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NMOS) {
             var index = engine_functions.get_nmosfet(global.variables.wire_builder['id2']);
-            if (index < nmosfets.length) {
+            if (index > -1 && index < nmosfets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1376,7 +1376,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_PMOS) {
             var index = engine_functions.get_pmosfet(global.variables.wire_builder['id2']);
-            if (index < pmosfets.length) {
+            if (index > -1 && index < pmosfets.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1387,7 +1387,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_NPN) {
             var index = engine_functions.get_npn(global.variables.wire_builder['id2']);
-            if (index < npns.length) {
+            if (index > -1 && index < npns.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1398,7 +1398,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_PNP) {
             var index = engine_functions.get_pnp(global.variables.wire_builder['id2']);
-            if (index < pnps.length) {
+            if (index > -1 && index < pnps.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1409,7 +1409,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_ADC) {
             var index = engine_functions.get_adc(global.variables.wire_builder['id2']);
-            if (index < adcs.length) {
+            if (index > -1 && index < adcs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1420,7 +1420,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DAC) {
             var index = engine_functions.get_dac(global.variables.wire_builder['id2']);
-            if (index < dacs.length) {
+            if (index > -1 && index < dacs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1431,7 +1431,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_SAH) {
             var index = engine_functions.get_samplers(global.variables.wire_builder['id2']);
-            if (index < sandhs.length) {
+            if (index > -1 && index < sandhs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1442,7 +1442,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_PWM) {
             var index = engine_functions.get_pwm(global.variables.wire_builder['id2']);
-            if (index < pwms.length) {
+            if (index > -1 && index < pwms.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1453,7 +1453,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_INTEGRATOR) {
             var index = engine_functions.get_integrator(global.variables.wire_builder['id2']);
-            if (index < integrators.length) {
+            if (index > -1 && index < integrators.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1464,7 +1464,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_DIFFERENTIATOR) {
             var index = engine_functions.get_differentiator(global.variables.wire_builder['id2']);
-            if (index < differentiators.length) {
+            if (index > -1 && index < differentiators.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1475,7 +1475,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_LPF) {
             var index = engine_functions.get_lowpass(global.variables.wire_builder['id2']);
-            if (index < lowpasses.length) {
+            if (index > -1 && index < lowpasses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1486,7 +1486,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_HPF) {
             var index = engine_functions.get_highpass(global.variables.wire_builder['id2']);
-            if (index < highpasses.length) {
+            if (index > -1 && index < highpasses.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1497,7 +1497,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_REL) {
             var index = engine_functions.get_relay(global.variables.wire_builder['id2']);
-            if (index < relays.length) {
+            if (index > -1 && index < relays.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1508,7 +1508,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_PID) {
             var index = engine_functions.get_pid(global.variables.wire_builder['id2']);
-            if (index < pids.length) {
+            if (index > -1 && index < pids.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1519,7 +1519,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_LUT) {
             var index = engine_functions.get_lut(global.variables.wire_builder['id2']);
-            if (index < luts.length) {
+            if (index > -1 && index < luts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1530,7 +1530,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCR) {
             var index = engine_functions.get_vcr(global.variables.wire_builder['id2']);
-            if (index < vcrs.length) {
+            if (index > -1 && index < vcrs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1541,7 +1541,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCCA) {
             var index = engine_functions.get_vcca(global.variables.wire_builder['id2']);
-            if (index < vccas.length) {
+            if (index > -1 && index < vccas.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1552,7 +1552,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_VCL) {
             var index = engine_functions.get_vcl(global.variables.wire_builder['id2']);
-            if (index < vcls.length) {
+            if (index > -1 && index < vcls.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1563,7 +1563,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_GRT) {
             var index = engine_functions.get_grt(global.variables.wire_builder['id2']);
-            if (index < grts.length) {
+            if (index > -1 && index < grts.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1574,7 +1574,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_TPTZ) {
             var index = engine_functions.get_tptz(global.variables.wire_builder['id2']);
-            if (index < tptzs.length) {
+            if (index > -1 && index < tptzs.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);
@@ -1585,7 +1585,7 @@ class WireManager {
         }
         else if (global.variables.wire_builder['type2'] === global.ELEMENT_TYPES.TYPE_TRAN) {
             var index = engine_functions.get_transformer(global.variables.wire_builder['id2']);
-            if (index < transformers.length) {
+            if (index > -1 && index < transformers.length) {
                 global.variables.wire_reference['wire_id'] = wire_id;
                 global.variables.wire_reference['linkage'] = global.utils.copy(global.variables.wire_builder['linkage2']['wire']);
                 global.variables.wire_reference['anchor_point'] = global.utils.copy(global.variables.wire_builder['anchor_point2']);

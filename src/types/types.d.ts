@@ -10,7 +10,7 @@ declare type WIRE_REFERENCE_T = {
 declare type WIRE_LINK_T = {
 	old_wire_ref: number;
 	new_wire_ref: number;
-}
+};
 declare type WIRE_BUILDER_T = {
 	n1: number;
 	id1: number;
@@ -1426,7 +1426,6 @@ declare type PROPERTY_STORAGE_T = {
 	Property: ELEMENT_PROPERTY_T;
 };
 
-/* TODO: Rename these... */
 declare type CLIPBOARD_ENTRY_T = {
 	clipboard_type: number;
 	clipboard_rotation: number;
@@ -1437,4 +1436,4 @@ declare type CLIPBOARD_ENTRY_T = {
 	clipboard_reference_id: number;
 	clipboard_new_reference_id: number;
 	clipboard_wire_references: Array<WIRE_REFERENCE_T>;
-}
+};

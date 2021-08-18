@@ -32,6 +32,7 @@ class LanguageManager {
 	public readonly STOP_SIMULATION: LANGUAGE_T;
 	public readonly TRY_AGAIN: LANGUAGE_T;
 	public readonly COPIED: LANGUAGE_T;
+	public readonly COPIED_SELECTION: LANGUAGE_T;
 	public readonly CANNOT_COPY_WIRE: LANGUAGE_T;
 	public readonly CANNOT_MULTI_SELECT: LANGUAGE_T;
 	public readonly NO_CLIPBOARD_DATA: LANGUAGE_T;
@@ -398,6 +399,16 @@ class LanguageManager {
 			Russian: 'скопированный',
 			German: 'Kopiert',
 			Indonesian: 'Disalin'
+		};
+		this.COPIED_SELECTION = {
+			English: 'Copied Selection',
+			Spanish: 'Selección copiada',
+			French: 'Sélection copiée',
+			Italian: 'Selezione copiata',
+			Dutch: 'Gekopieerde selectie',
+			Russian: 'Скопированный выбор',
+			German: 'Kopierte Auswahl',
+			Indonesian: 'Pilihan yang Disalin'
 		};
 		this.CANNOT_COPY_WIRE = {
 			English: 'Wires cannot be copied',

@@ -151,8 +151,8 @@ class SquareWave {
 				this.elm.n1,
 				this.elm.n2,
 				this.elm.properties['Offset'] +
-				this.elm.properties['Voltage'] *
-				(global.utils.wrap(simulation_manager.simulation_time, 1.0 / this.elm.properties['Frequency']) < this.elm.properties['Duty'] * 0.01 * (1.0 / this.elm.properties['Frequency']) ? 1 : 0),
+					this.elm.properties['Voltage'] *
+						(global.utils.wrap(simulation_manager.simulation_time, 1.0 / this.elm.properties['Frequency']) < this.elm.properties['Duty'] * 0.01 * (1.0 / this.elm.properties['Frequency']) ? 1 : 0),
 				simulation_manager.ELEMENT_SQUAREWAVE_OFFSET + this.simulation_id
 			);
 		}
@@ -227,7 +227,11 @@ class SquareWave {
 			!global.flags.flag_menu_element_toolbox
 		) {
 			if (!global.variables.focused && !global.variables.component_touched && !global.variables.multi_selected) {
-				if (global.variables.wire_builder['step'] === 0 && this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) && !global.variables.component_touched) {
+				if (
+					global.variables.wire_builder['step'] === 0 &&
+					this.bounds.contains_xywh(global.variables.mouse_x, global.variables.mouse_y, this.bounds.get_width() >> 1, this.bounds.get_height() >> 1) &&
+					!global.variables.component_touched
+				) {
 					this.is_translating = false;
 					global.variables.focused_id = this.elm.id;
 					global.variables.focused_type = this.elm.type;
@@ -451,7 +455,7 @@ class SquareWave {
 		this.theta = global.utils.retrieve_angle_radian(this.p2.x - this.p1.x, this.p2.y - this.p1.y);
 		this.build_element();
 	}
-	update(): void { }
+	update(): void {}
 	increment_rotation(): void {
 		this.elm.rotation++;
 		if (this.elm.rotation > global.CONSTANTS.ROTATION_270) {
@@ -459,7 +463,7 @@ class SquareWave {
 		}
 		this.set_rotation(this.elm.rotation);
 	}
-	increment_flip(): void { }
+	increment_flip(): void {}
 	map_rotation(): number {
 		if (this.elm.rotation === global.CONSTANTS.ROTATION_0 || this.elm.rotation === global.CONSTANTS.ROTATION_180) {
 			return this.x_space;
@@ -637,5 +641,5 @@ class SquareWave {
 			this.multi_selected = false;
 		}
 	}
-	reset(): void { }
+	reset(): void {}
 }

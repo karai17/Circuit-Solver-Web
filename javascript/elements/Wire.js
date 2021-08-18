@@ -343,7 +343,7 @@ class Wire {
         this.refactor();
         this.recolor();
         this.resize();
-        if (this.multi_selected) {
+        if (this.multi_selected && this.elm.consistent()) {
             multi_select_manager.determine_enveloping_bounds(this.bounds);
         }
         if (this.elm.wire_style === global.CONSTANTS.WIRE_STYLE_0) {
