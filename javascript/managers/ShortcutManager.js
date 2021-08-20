@@ -6358,7 +6358,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_resistor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6417,7 +6416,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_capacitor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6476,7 +6474,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_inductor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6535,7 +6532,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_ground(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6594,7 +6590,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_dcsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6653,7 +6648,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_dccurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6712,7 +6706,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_acsource(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6771,7 +6764,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_accurrent(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6830,7 +6822,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_squarewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6889,7 +6880,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_sawwave(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -6948,7 +6938,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_trianglewave(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7007,7 +6996,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_constant(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7066,7 +7054,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_net(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7125,7 +7112,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_note(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7184,7 +7170,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_rail(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7243,7 +7228,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_voltmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7302,7 +7286,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_ohmmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7361,7 +7344,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_ammeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7420,7 +7402,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_wattmeter(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7479,7 +7460,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_fuse(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7538,7 +7518,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_spst(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7597,7 +7576,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_spdt(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7656,7 +7634,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_not(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7715,7 +7692,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_diode(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7774,7 +7750,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_led(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7833,7 +7808,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_zener(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7892,7 +7866,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_potentiometer(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -7951,7 +7924,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_and(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8010,7 +7982,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_or(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8069,7 +8040,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_nand(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8128,7 +8098,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_nor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8187,7 +8156,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_xor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8246,7 +8214,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_xnor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8305,7 +8272,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_dff(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8364,7 +8330,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vsat(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8423,7 +8388,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_adder(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8482,7 +8446,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_subtractor(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8541,7 +8504,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_multiplier(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8600,7 +8562,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_divider(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8659,7 +8620,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_gain(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8718,7 +8678,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_absval(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8777,7 +8736,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vcsw(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8836,7 +8794,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vcvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8895,7 +8852,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -8954,7 +8910,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_cccs(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9013,7 +8968,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_ccvs(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9072,7 +9026,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_opamp(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9131,7 +9084,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_nmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9190,7 +9142,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_pmosfet(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9249,7 +9200,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_npn(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9308,7 +9258,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_pnp(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9367,7 +9316,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_adc(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9426,7 +9374,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_dac(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9485,7 +9432,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_samplers(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9544,7 +9490,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_pwm(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9603,7 +9548,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_integrator(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9662,7 +9606,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_differentiator(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9721,7 +9664,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_lowpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9780,7 +9722,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_highpass(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9839,7 +9780,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_relay(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9898,7 +9838,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_pid(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -9957,7 +9896,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_lut(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10016,7 +9954,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vcr(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10075,7 +10012,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vcca(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10134,7 +10070,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_vcl(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10193,7 +10128,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_grt(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10252,7 +10186,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_tptz(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10311,7 +10244,6 @@ class ShortcutManager {
                                             wire_links.push(global.utils.copy(wire_link));
                                             elm_index = engine_functions.get_transformer(global.variables.clipboard_data[j].clipboard_new_reference_id);
                                             wires.push(new Wire(global.ELEMENT_TYPES.TYPE_WIRE, next_wire_id, -1, -1));
-                                            wire_manager.handle_wire_references(next_wire_id);
                                             index = engine_functions.get_wire(next_wire_id);
                                             existing_wire_id = engine_functions.get_wire(global.variables.clipboard_data[j].clipboard_wire_references[k].wire_id);
                                             if (existing_wire_id > -1 && existing_wire_id < wires.length) {
@@ -10337,6 +10269,19 @@ class ShortcutManager {
                                 }
                             }
                             /* <!-- END AUTOMATICALLY GENERATED !--> */
+                        }
+                    }
+                    for (var i = wires.length - 1; i > -1; i--) {
+                        if (wires[i].multi_selected &&
+                            !(view_port.left <= wires[i].p1.x &&
+                                view_port.right >= wires[i].p1.x &&
+                                view_port.top <= wires[i].p1.y &&
+                                view_port.bottom >= wires[i].p1.y &&
+                                view_port.left <= wires[i].p2.x &&
+                                view_port.right >= wires[i].p2.x &&
+                                view_port.top <= wires[i].p2.y &&
+                                view_port.bottom >= wires[i].p2.y)) {
+                            engine_functions.remove_wire(i);
                         }
                     }
                 }

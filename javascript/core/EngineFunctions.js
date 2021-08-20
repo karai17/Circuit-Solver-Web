@@ -6243,6 +6243,7 @@ class EngineFunctions {
                 obj[key] = Resistor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_capacitor(obj) {
@@ -6270,6 +6271,7 @@ class EngineFunctions {
                 obj[key] = Capacitor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_inductor(obj) {
@@ -6305,6 +6307,7 @@ class EngineFunctions {
                 obj[key] = Inductor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_ground(obj) {
@@ -6332,6 +6335,7 @@ class EngineFunctions {
                 obj[key] = Ground[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_dcsource(obj) {
@@ -6359,6 +6363,7 @@ class EngineFunctions {
                 obj[key] = DCSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_dccurrent(obj) {
@@ -6386,6 +6391,7 @@ class EngineFunctions {
                 obj[key] = DCCurrent[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_acsource(obj) {
@@ -6415,6 +6421,7 @@ class EngineFunctions {
                 obj[key] = ACSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_accurrent(obj) {
@@ -6444,6 +6451,7 @@ class EngineFunctions {
                 obj[key] = ACCurrent[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_squarewave(obj) {
@@ -6471,6 +6479,7 @@ class EngineFunctions {
                 obj[key] = SquareWave[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_sawwave(obj) {
@@ -6498,6 +6507,7 @@ class EngineFunctions {
                 obj[key] = SawWave[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_trianglewave(obj) {
@@ -6525,6 +6535,7 @@ class EngineFunctions {
                 obj[key] = TriangleWave[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_constant(obj) {
@@ -6552,6 +6563,7 @@ class EngineFunctions {
                 obj[key] = Constant[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_wire(obj) {
@@ -6580,6 +6592,7 @@ class EngineFunctions {
                 obj[key] = Wire[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_net(obj) {
@@ -6607,6 +6620,7 @@ class EngineFunctions {
                 obj[key] = Net[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_note(obj) {
@@ -6634,6 +6648,7 @@ class EngineFunctions {
                 obj[key] = Note[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_rail(obj) {
@@ -6661,6 +6676,7 @@ class EngineFunctions {
                 obj[key] = Rail[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_voltmeter(obj) {
@@ -6700,6 +6716,7 @@ class EngineFunctions {
                 obj[key] = VoltMeter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_ohmmeter(obj) {
@@ -6739,6 +6756,7 @@ class EngineFunctions {
                 obj[key] = OhmMeter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_ammeter(obj) {
@@ -6778,6 +6796,7 @@ class EngineFunctions {
                 obj[key] = AmMeter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_wattmeter(obj) {
@@ -6817,6 +6836,7 @@ class EngineFunctions {
                 obj[key] = WattMeter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_fuse(obj) {
@@ -6844,6 +6864,7 @@ class EngineFunctions {
                 obj[key] = Fuse[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_spst(obj) {
@@ -6871,6 +6892,7 @@ class EngineFunctions {
                 obj[key] = SinglePoleSingleThrow[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_spdt(obj) {
@@ -6898,6 +6920,7 @@ class EngineFunctions {
                 obj[key] = SinglePoleDoubleThrow[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_not(obj) {
@@ -6925,6 +6948,7 @@ class EngineFunctions {
                 obj[key] = NOTGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_diode(obj) {
@@ -6952,6 +6976,7 @@ class EngineFunctions {
                 obj[key] = Diode[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_led(obj) {
@@ -6979,6 +7004,7 @@ class EngineFunctions {
                 obj[key] = LightEmittingDiode[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_zener(obj) {
@@ -7006,6 +7032,7 @@ class EngineFunctions {
                 obj[key] = ZenerDiode[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_potentiometer(obj) {
@@ -7033,6 +7060,7 @@ class EngineFunctions {
                 obj[key] = Potentiometer[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_and(obj) {
@@ -7060,6 +7088,7 @@ class EngineFunctions {
                 obj[key] = ANDGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_or(obj) {
@@ -7087,6 +7116,7 @@ class EngineFunctions {
                 obj[key] = ORGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_nand(obj) {
@@ -7114,6 +7144,7 @@ class EngineFunctions {
                 obj[key] = NANDGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_nor(obj) {
@@ -7141,6 +7172,7 @@ class EngineFunctions {
                 obj[key] = NORGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_xor(obj) {
@@ -7168,6 +7200,7 @@ class EngineFunctions {
                 obj[key] = XORGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_xnor(obj) {
@@ -7195,6 +7228,7 @@ class EngineFunctions {
                 obj[key] = XNORGate[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_dff(obj) {
@@ -7222,6 +7256,7 @@ class EngineFunctions {
                 obj[key] = DFlipFlop[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vsat(obj) {
@@ -7249,6 +7284,7 @@ class EngineFunctions {
                 obj[key] = VoltageSaturation[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_adder(obj) {
@@ -7276,6 +7312,7 @@ class EngineFunctions {
                 obj[key] = Adder[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_subtractor(obj) {
@@ -7303,6 +7340,7 @@ class EngineFunctions {
                 obj[key] = Subtractor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_multiplier(obj) {
@@ -7330,6 +7368,7 @@ class EngineFunctions {
                 obj[key] = Multiplier[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_divider(obj) {
@@ -7357,6 +7396,7 @@ class EngineFunctions {
                 obj[key] = Divider[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_gain(obj) {
@@ -7384,6 +7424,7 @@ class EngineFunctions {
                 obj[key] = GainBlock[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_absval(obj) {
@@ -7411,6 +7452,7 @@ class EngineFunctions {
                 obj[key] = AbsoluteValue[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vcsw(obj) {
@@ -7438,6 +7480,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledSwitch[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vcvs(obj) {
@@ -7465,6 +7508,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledVoltageSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vccs(obj) {
@@ -7492,6 +7536,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledCurrentSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_cccs(obj) {
@@ -7519,6 +7564,7 @@ class EngineFunctions {
                 obj[key] = CurrentControlledCurrentSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_ccvs(obj) {
@@ -7546,6 +7592,7 @@ class EngineFunctions {
                 obj[key] = CurrentControlledVoltageSource[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_opamp(obj) {
@@ -7573,6 +7620,7 @@ class EngineFunctions {
                 obj[key] = OperationalAmplifier[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_nmosfet(obj) {
@@ -7600,6 +7648,7 @@ class EngineFunctions {
                 obj[key] = NChannelMOSFET[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_pmosfet(obj) {
@@ -7627,6 +7676,7 @@ class EngineFunctions {
                 obj[key] = PChannelMOSFET[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_npn(obj) {
@@ -7654,6 +7704,7 @@ class EngineFunctions {
                 obj[key] = NPNBipolarJunctionTransistor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_pnp(obj) {
@@ -7681,6 +7732,7 @@ class EngineFunctions {
                 obj[key] = PNPBipolarJunctionTransistor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_adc(obj) {
@@ -7708,6 +7760,7 @@ class EngineFunctions {
                 obj[key] = ADCModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_dac(obj) {
@@ -7735,6 +7788,7 @@ class EngineFunctions {
                 obj[key] = DACModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_samplers(obj) {
@@ -7762,6 +7816,7 @@ class EngineFunctions {
                 obj[key] = SampleAndHold[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_pwm(obj) {
@@ -7789,6 +7844,7 @@ class EngineFunctions {
                 obj[key] = PulseWidthModulator[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_integrator(obj) {
@@ -7816,6 +7872,7 @@ class EngineFunctions {
                 obj[key] = IntegratorModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_differentiator(obj) {
@@ -7843,6 +7900,7 @@ class EngineFunctions {
                 obj[key] = DifferentiatorModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_lowpass(obj) {
@@ -7870,6 +7928,7 @@ class EngineFunctions {
                 obj[key] = LowPassFilter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_highpass(obj) {
@@ -7897,6 +7956,7 @@ class EngineFunctions {
                 obj[key] = HighPassFilter[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_relay(obj) {
@@ -7924,6 +7984,7 @@ class EngineFunctions {
                 obj[key] = Relay[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_pid(obj) {
@@ -7952,6 +8013,7 @@ class EngineFunctions {
                 obj[key] = PIDModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_lut(obj) {
@@ -7979,6 +8041,7 @@ class EngineFunctions {
                 obj[key] = LookUpTable[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vcr(obj) {
@@ -8006,6 +8069,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledResistor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vcca(obj) {
@@ -8033,6 +8097,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledCapacitor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_vcl(obj) {
@@ -8068,6 +8133,7 @@ class EngineFunctions {
                 obj[key] = VoltageControlledInductor[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_grt(obj) {
@@ -8095,6 +8161,7 @@ class EngineFunctions {
                 obj[key] = GreaterThan[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_tptz(obj) {
@@ -8123,6 +8190,7 @@ class EngineFunctions {
                 obj[key] = TPTZModule[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     rebuild_transformer(obj) {
@@ -8150,6 +8218,7 @@ class EngineFunctions {
                 obj[key] = Transformer[key];
             }
         });
+        obj.build_element_flag = true;
         return obj;
     }
     /* <!-- END AUTOMATICALLY GENERATED !--> */

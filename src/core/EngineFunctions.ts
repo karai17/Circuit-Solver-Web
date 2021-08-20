@@ -6748,6 +6748,7 @@ class EngineFunctions {
 				obj[key] = Resistor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6778,6 +6779,7 @@ class EngineFunctions {
 				obj[key] = Capacitor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6816,6 +6818,7 @@ class EngineFunctions {
 				obj[key] = Inductor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6846,6 +6849,7 @@ class EngineFunctions {
 				obj[key] = Ground[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6876,6 +6880,7 @@ class EngineFunctions {
 				obj[key] = DCSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6906,6 +6911,7 @@ class EngineFunctions {
 				obj[key] = DCCurrent[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6938,6 +6944,7 @@ class EngineFunctions {
 				obj[key] = ACSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -6970,6 +6977,7 @@ class EngineFunctions {
 				obj[key] = ACCurrent[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7000,6 +7008,7 @@ class EngineFunctions {
 				obj[key] = SquareWave[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7030,6 +7039,7 @@ class EngineFunctions {
 				obj[key] = SawWave[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7060,6 +7070,7 @@ class EngineFunctions {
 				obj[key] = TriangleWave[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7090,6 +7101,7 @@ class EngineFunctions {
 				obj[key] = Constant[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7121,6 +7133,7 @@ class EngineFunctions {
 				obj[key] = Wire[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7151,6 +7164,7 @@ class EngineFunctions {
 				obj[key] = Net[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7181,6 +7195,7 @@ class EngineFunctions {
 				obj[key] = Note[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7211,6 +7226,7 @@ class EngineFunctions {
 				obj[key] = Rail[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7253,6 +7269,7 @@ class EngineFunctions {
 				obj[key] = VoltMeter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7295,6 +7312,7 @@ class EngineFunctions {
 				obj[key] = OhmMeter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7337,6 +7355,7 @@ class EngineFunctions {
 				obj[key] = AmMeter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7379,6 +7398,7 @@ class EngineFunctions {
 				obj[key] = WattMeter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7409,6 +7429,7 @@ class EngineFunctions {
 				obj[key] = Fuse[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7439,6 +7460,7 @@ class EngineFunctions {
 				obj[key] = SinglePoleSingleThrow[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7469,6 +7491,7 @@ class EngineFunctions {
 				obj[key] = SinglePoleDoubleThrow[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7499,6 +7522,7 @@ class EngineFunctions {
 				obj[key] = NOTGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7529,6 +7553,7 @@ class EngineFunctions {
 				obj[key] = Diode[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7559,6 +7584,7 @@ class EngineFunctions {
 				obj[key] = LightEmittingDiode[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7589,6 +7615,7 @@ class EngineFunctions {
 				obj[key] = ZenerDiode[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7619,6 +7646,7 @@ class EngineFunctions {
 				obj[key] = Potentiometer[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7649,6 +7677,7 @@ class EngineFunctions {
 				obj[key] = ANDGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7679,6 +7708,7 @@ class EngineFunctions {
 				obj[key] = ORGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7709,6 +7739,7 @@ class EngineFunctions {
 				obj[key] = NANDGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7739,6 +7770,7 @@ class EngineFunctions {
 				obj[key] = NORGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7769,6 +7801,7 @@ class EngineFunctions {
 				obj[key] = XORGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7799,6 +7832,7 @@ class EngineFunctions {
 				obj[key] = XNORGate[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7829,6 +7863,7 @@ class EngineFunctions {
 				obj[key] = DFlipFlop[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7859,6 +7894,7 @@ class EngineFunctions {
 				obj[key] = VoltageSaturation[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7889,6 +7925,7 @@ class EngineFunctions {
 				obj[key] = Adder[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7919,6 +7956,7 @@ class EngineFunctions {
 				obj[key] = Subtractor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7949,6 +7987,7 @@ class EngineFunctions {
 				obj[key] = Multiplier[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -7979,6 +8018,7 @@ class EngineFunctions {
 				obj[key] = Divider[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8009,6 +8049,7 @@ class EngineFunctions {
 				obj[key] = GainBlock[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8039,6 +8080,7 @@ class EngineFunctions {
 				obj[key] = AbsoluteValue[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8069,6 +8111,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledSwitch[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8099,6 +8142,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledVoltageSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8129,6 +8173,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledCurrentSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8159,6 +8204,7 @@ class EngineFunctions {
 				obj[key] = CurrentControlledCurrentSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8189,6 +8235,7 @@ class EngineFunctions {
 				obj[key] = CurrentControlledVoltageSource[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8219,6 +8266,7 @@ class EngineFunctions {
 				obj[key] = OperationalAmplifier[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8249,6 +8297,7 @@ class EngineFunctions {
 				obj[key] = NChannelMOSFET[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8279,6 +8328,7 @@ class EngineFunctions {
 				obj[key] = PChannelMOSFET[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8309,6 +8359,7 @@ class EngineFunctions {
 				obj[key] = NPNBipolarJunctionTransistor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8339,6 +8390,7 @@ class EngineFunctions {
 				obj[key] = PNPBipolarJunctionTransistor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8369,6 +8421,7 @@ class EngineFunctions {
 				obj[key] = ADCModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8399,6 +8452,7 @@ class EngineFunctions {
 				obj[key] = DACModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8429,6 +8483,7 @@ class EngineFunctions {
 				obj[key] = SampleAndHold[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8459,6 +8514,7 @@ class EngineFunctions {
 				obj[key] = PulseWidthModulator[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8489,6 +8545,7 @@ class EngineFunctions {
 				obj[key] = IntegratorModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8519,6 +8576,7 @@ class EngineFunctions {
 				obj[key] = DifferentiatorModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8549,6 +8607,7 @@ class EngineFunctions {
 				obj[key] = LowPassFilter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8579,6 +8638,7 @@ class EngineFunctions {
 				obj[key] = HighPassFilter[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8609,6 +8669,7 @@ class EngineFunctions {
 				obj[key] = Relay[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8640,6 +8701,7 @@ class EngineFunctions {
 				obj[key] = PIDModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8670,6 +8732,7 @@ class EngineFunctions {
 				obj[key] = LookUpTable[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8700,6 +8763,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledResistor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8730,6 +8794,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledCapacitor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8768,6 +8833,7 @@ class EngineFunctions {
 				obj[key] = VoltageControlledInductor[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8798,6 +8864,7 @@ class EngineFunctions {
 				obj[key] = GreaterThan[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8829,6 +8896,7 @@ class EngineFunctions {
 				obj[key] = TPTZModule[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
@@ -8859,6 +8927,7 @@ class EngineFunctions {
 				obj[key] = Transformer[key];
 			}
 		});
+		obj.build_element_flag = true;
 		return obj;
 	}
 
