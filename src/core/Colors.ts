@@ -30,37 +30,37 @@ class Colors {
 	public readonly GENERAL_HOVER_COLOR: string;
 	public readonly GENERAL_YELLOW_COLOR: string;
 	constructor() {
-		this.BACKGROUND_COLOR = this.ColorNameToHex('black');
-		this.ELEMENT_COLOR = this.ColorNameToHex('silver');
-		this.SELECTED_COLOR = this.ColorNameToHex('cyan');
-		this.MULTI_SELECTED_COLOR = this.ColorNameToHex('yellow');
+		this.BACKGROUND_COLOR = this.color_name_to_hex('black');
+		this.ELEMENT_COLOR = this.color_name_to_hex('silver');
+		this.SELECTED_COLOR = this.color_name_to_hex('cyan');
+		this.MULTI_SELECTED_COLOR = this.color_name_to_hex('yellow');
 		this.WORKSPACE_WORK_AREA_COLOR = '#292D29';
 		this.GRAPH_AREA_COLOR = '#282828';
 		this.ZOOM_AREA_COLOR = '#3C3C3C';
-		this.TRACE_I_COLOR = this.ColorNameToHex('cyan');
-		this.TRACE_II_COLOR = this.ColorNameToHex('magenta');
-		this.TRACE_III_COLOR = this.ColorNameToHex('green');
-		this.TRACE_DEFAULT_COLOR = this.ColorNameToHex('yellow');
-		this.MENU_ICON_ACTIVE_COLOR = this.ColorNameToHex('cyan');
+		this.TRACE_I_COLOR = this.color_name_to_hex('cyan');
+		this.TRACE_II_COLOR = this.color_name_to_hex('magenta');
+		this.TRACE_III_COLOR = this.color_name_to_hex('green');
+		this.TRACE_DEFAULT_COLOR = this.color_name_to_hex('yellow');
+		this.MENU_ICON_ACTIVE_COLOR = this.color_name_to_hex('cyan');
 		this.MENU_ICON_INACTIVE_COLOR = '#9B9B9B';
-		this.MENU_ICON_DEFAULT_COLOR = this.ColorNameToHex('white');
+		this.MENU_ICON_DEFAULT_COLOR = this.color_name_to_hex('white');
 		this.MENU_HIGHLIGHT_COLOR = '#606060';
-		this.MENU_FILL_COLOR = this.ColorNameToHex('gray');
-		this.GENERAL_WHITE_COLOR = this.ColorNameToHex('white');
-		this.GENERAL_BLACK_COLOR = this.ColorNameToHex('black');
-		this.GENERAL_GRAY_COLOR = this.ColorNameToHex('gray');
-		this.GENERAL_DARK_GRAY_COLOR = this.ColorNameToHex('darkgray');
-		this.GENERAL_GREEN_COLOR = this.ColorNameToHex('green');
-		this.GENERAL_RED_COLOR = this.ColorNameToHex('red');
-		this.GENERAL_BLUE_COLOR = this.ColorNameToHex('blue');
+		this.MENU_FILL_COLOR = this.color_name_to_hex('gray');
+		this.GENERAL_WHITE_COLOR = this.color_name_to_hex('white');
+		this.GENERAL_BLACK_COLOR = this.color_name_to_hex('black');
+		this.GENERAL_GRAY_COLOR = this.color_name_to_hex('gray');
+		this.GENERAL_DARK_GRAY_COLOR = this.color_name_to_hex('darkgray');
+		this.GENERAL_GREEN_COLOR = this.color_name_to_hex('green');
+		this.GENERAL_RED_COLOR = this.color_name_to_hex('red');
+		this.GENERAL_BLUE_COLOR = this.color_name_to_hex('blue');
 		this.GENERAL_BOUNDS_COLOR = '#2e2e2e';
 		this.GENERAL_FILL_COLOR = '#202020';
 		this.GENERAL_INPUT_COLOR = '#1e2325';
-		this.GENERAL_CYAN_COLOR = this.ColorNameToHex('cyan');
+		this.GENERAL_CYAN_COLOR = this.color_name_to_hex('cyan');
 		this.GENERAL_HOVER_COLOR = '#18d8d8';
-		this.GENERAL_YELLOW_COLOR = this.ColorNameToHex('yellow');
+		this.GENERAL_YELLOW_COLOR = this.color_name_to_hex('yellow');
 	}
-	ColorNameToHex(color: string) {
+	color_name_to_hex(color: string) {
 		var colors: COLOR_ARRAY_T = {
 			aliceblue: '#f0f8ff',
 			antiquewhite: '#faebd7',
