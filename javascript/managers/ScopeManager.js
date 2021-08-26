@@ -143,13 +143,13 @@ class ScopeManager {
         }
     }
     push_to_graph(selector, value, time) {
-        if (selector === 0) {
+        if (selector === SCOPE_CHANNEL_T.CHANNEL_0) {
             graph_window.push_trace_a(value, time);
         }
-        else if (selector === 1) {
+        else if (selector === SCOPE_CHANNEL_T.CHANNEL_1) {
             graph_window.push_trace_b(value, time);
         }
-        else if (selector === 2) {
+        else if (selector === SCOPE_CHANNEL_T.CHANNEL_2) {
             graph_window.push_trace_c(value, time);
         }
     }

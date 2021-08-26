@@ -1437,3 +1437,9 @@ declare type CLIPBOARD_ENTRY_T = {
 	clipboard_new_reference_id: number;
 	clipboard_wire_references: Array<WIRE_REFERENCE_T>;
 };
+
+declare enum SCOPE_CHANNEL_T {
+	CHANNEL_0 = 0,
+	CHANNEL_1,
+	CHANNEL_2
+}
