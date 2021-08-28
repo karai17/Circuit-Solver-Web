@@ -75,8 +75,8 @@ class SaveCircuitWindow {
             this.height = view_port.view_height * 0.15;
         }
         else {
-            this.width = view_port.view_width * 0.15;
-            this.height = view_port.view_height * 0.075;
+            this.width = view_port.view_width * 0.25;
+            this.height = view_port.view_height * 0.1;
         }
         if (MOBILE_MODE) {
             let c_y = 0.25 * view_port.view_height;
@@ -673,8 +673,8 @@ class SaveCircuitWindow {
             this.height = view_port.view_height * 0.15;
         }
         else {
-            this.width = view_port.view_width * 0.15;
-            this.height = view_port.view_height * 0.075;
+            this.width = view_port.view_width * 0.25;
+            this.height = view_port.view_height * 0.1;
         }
         if (MOBILE_MODE) {
             let c_y = 0.25 * view_port.view_height;

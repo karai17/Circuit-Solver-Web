@@ -81,7 +81,7 @@ class Constants {
         for (var i = 0; i < this.TRIG_TABLE_SIZE; i++) {
             this.TRIG_SINE_TABLE.push(Math.sin(i * Math.PI * this.TRIG_TABLE_SCALE_CONSTANT));
         }
-        this.MAX_TEXT_LENGTH = 30;
+        this.MAX_TEXT_LENGTH = 50;
         this.ALPHA_ARRAY = [];
         for (var i = 0; i <= 256; i++) {
             this.ALPHA_ARRAY.push(i / 256.0);

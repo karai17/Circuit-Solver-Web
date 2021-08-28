@@ -93,12 +93,12 @@ class ElementOptionsWindow {
         this.bounds_paint.set_alpha(255);
         this.bounds_paint.set_paint_align(paint.align.CENTER);
         if (MOBILE_MODE) {
-            this.width = view_port.view_width * 0.2;
-            this.height = view_port.view_height * 0.4;
+            this.width = view_port.view_width * 0.2625;
+            this.height = view_port.view_height * 0.45;
         }
         else {
-            this.width = view_port.view_width * 0.15;
-            this.height = view_port.view_height * 0.3;
+            this.width = view_port.view_width * 0.25;
+            this.height = view_port.view_height * 0.3825;
         }
         this.bounds = new RectF(view_port.center_x - this.width, view_port.center_y - this.height, view_port.center_x + this.width, view_port.center_y + this.height);
         this.title_bounds = new Button(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top + this.TITLE_HEIGHT_RATIO * this.bounds.get_height());
@@ -356,12 +356,12 @@ class ElementOptionsWindow {
     }
     resize_window() {
         if (MOBILE_MODE) {
-            this.width = view_port.view_width * 0.2;
-            this.height = view_port.view_height * 0.4;
+            this.width = view_port.view_width * 0.2625;
+            this.height = view_port.view_height * 0.45;
         }
         else {
-            this.width = view_port.view_width * 0.15;
-            this.height = view_port.view_height * 0.3;
+            this.width = view_port.view_width * 0.25;
+            this.height = view_port.view_height * 0.3825;
         }
         this.bounds.set_bounds(view_port.center_x - this.width, view_port.center_y - this.height, view_port.center_x + this.width, view_port.center_y + this.height);
         this.title_bounds.set_bounds(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top + this.TITLE_HEIGHT_RATIO * this.bounds.get_height());

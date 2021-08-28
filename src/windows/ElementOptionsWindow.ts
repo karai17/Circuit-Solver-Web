@@ -122,11 +122,11 @@ class ElementOptionsWindow {
 		this.bounds_paint.set_alpha(255);
 		this.bounds_paint.set_paint_align(paint.align.CENTER);
 		if (MOBILE_MODE) {
-			this.width = view_port.view_width * 0.2;
-			this.height = view_port.view_height * 0.4;
+			this.width = view_port.view_width * 0.2625;
+			this.height = view_port.view_height * 0.45;
 		} else {
-			this.width = view_port.view_width * 0.15;
-			this.height = view_port.view_height * 0.3;
+			this.width = view_port.view_width * 0.25;
+			this.height = view_port.view_height * 0.3825;
 		}
 		this.bounds = new RectF(view_port.center_x - this.width, view_port.center_y - this.height, view_port.center_x + this.width, view_port.center_y + this.height);
 		this.title_bounds = new Button(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top + this.TITLE_HEIGHT_RATIO * this.bounds.get_height());
@@ -268,9 +268,9 @@ class ElementOptionsWindow {
 			} else {
 				element_options_edit_window.set_title(
 					language_manager.SET[global.CONSTANTS.LANGUAGES[global.variables.language_index]] +
-						' ' +
-						global.variables.selected_properties['options'][index] +
-						(global.variables.selected_properties['options_units'][index] === '' ? '' : ' [' + global.variables.selected_properties['options_units'][index] + ']')
+					' ' +
+					global.variables.selected_properties['options'][index] +
+					(global.variables.selected_properties['options_units'][index] === '' ? '' : ' [' + global.variables.selected_properties['options_units'][index] + ']')
 				);
 				if (!this.special_type(global.variables.selected_type)) {
 					element_options_edit_window.set_input_text(global.utils.exponentiate_quickly(<any>(<string>global.variables.selected_properties[global.variables.selected_properties['options'][index]])));
@@ -387,11 +387,11 @@ class ElementOptionsWindow {
 	}
 	resize_window(): void {
 		if (MOBILE_MODE) {
-			this.width = view_port.view_width * 0.2;
-			this.height = view_port.view_height * 0.4;
+			this.width = view_port.view_width * 0.2625;
+			this.height = view_port.view_height * 0.45;
 		} else {
-			this.width = view_port.view_width * 0.15;
-			this.height = view_port.view_height * 0.3;
+			this.width = view_port.view_width * 0.25;
+			this.height = view_port.view_height * 0.3825;
 		}
 		this.bounds.set_bounds(view_port.center_x - this.width, view_port.center_y - this.height, view_port.center_x + this.width, view_port.center_y + this.height);
 		this.title_bounds.set_bounds(this.bounds.left, this.bounds.top, this.bounds.right, this.bounds.top + this.TITLE_HEIGHT_RATIO * this.bounds.get_height());
@@ -489,7 +489,7 @@ class ElementOptionsWindow {
 							if (!this.special_type(global.variables.selected_type)) {
 								canvas.draw_text(
 									global.utils.exponentiate_quickly(<any>(<string>global.variables.selected_properties[global.variables.selected_properties['options'][i]])) +
-										global.variables.selected_properties['options_units'][i],
+									global.variables.selected_properties['options_units'][i],
 									this.attributes[i].right - this.PADDING * this.bounds.get_width() + this.offset_x,
 									this.attributes[i].get_center_y() + this.offset_y,
 									this.value_paint
