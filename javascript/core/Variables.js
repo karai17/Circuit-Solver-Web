@@ -31,10 +31,6 @@ class Variables {
         this.selection_nearest_neighbors = [];
         this.nearest_neighbor_index = 0;
         this.multi_selected = false;
-        // this.clipboard_type = CONSTANTS.NULL;
-        // this.clipboard_rotation = CONSTANTS.NULL;
-        // this.clipboard_flip = CONSTANTS.NULL;
-        // this.clipboard_property = CONSTANTS.NULL;
         this.clipboard_data = [];
         this.component_translating = false;
         this.flag_build_counter = 0;
