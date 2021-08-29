@@ -39,7 +39,7 @@ class ElementOptionsWindow {
 		if (MOBILE_MODE === false) {
 			this.PADDING = 0.0175;
 		} else {
-			this.PADDING = 0.0125;
+			this.PADDING = 0.013125;
 		}
 		this.ATTRIBUTE_SIZE = 6;
 		this.ATTRIBUTE_SELECT = ['1', '2', '3', '4', '5', '6'];

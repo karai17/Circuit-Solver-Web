@@ -47,7 +47,11 @@ class SaveCircuitWindow {
 		this.TITLE_HEIGHT_RATIO = 0.25;
 		this.BUTTON_WIDTH_RATIO = 0.3;
 		this.BUTTON_HEIGHT_RATIO = 0.25;
-		this.PADDING = 0.025;
+		if (MOBILE_MODE === false) {
+			this.PADDING = 0.0175;
+		} else {
+			this.PADDING = 0.013125;
+		}
 		this.line_paint = new Paint();
 		this.line_paint.set_paint_style(paint.style.STROKE);
 		this.line_paint.set_paint_cap(paint.cap.ROUND);
@@ -114,10 +118,10 @@ class SaveCircuitWindow {
 		this.select_paint.set_paint_align(paint.align.CENTER);
 		if (MOBILE_MODE) {
 			this.width = view_port.view_width * 0.2625;
-			this.height = view_port.view_height * 0.15;
+			this.height = view_port.view_height * 0.125;
 		} else {
 			this.width = view_port.view_width * 0.25;
-			this.height = view_port.view_height * 0.1;
+			this.height = view_port.view_height * 0.085;
 		}
 		if (MOBILE_MODE) {
 			let c_y = 0.25 * view_port.view_height;
@@ -680,10 +684,10 @@ class SaveCircuitWindow {
 	resize_window(): void {
 		if (MOBILE_MODE) {
 			this.width = view_port.view_width * 0.2625;
-			this.height = view_port.view_height * 0.15;
+			this.height = view_port.view_height * 0.125;
 		} else {
 			this.width = view_port.view_width * 0.25;
-			this.height = view_port.view_height * 0.1;
+			this.height = view_port.view_height * 0.085;
 		}
 		if (MOBILE_MODE) {
 			let c_y = 0.25 * view_port.view_height;
